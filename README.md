@@ -79,7 +79,7 @@ To preview locally, install Quarto and the R packages jsonlite, yaml, and knitr,
 
 - quarto render website
 
-The rendered website is written to _site/ and is not committed to the source branch.
+The rendered website is written to website/_site/ and is not committed to the source branch.
 
 ## Data layout
 

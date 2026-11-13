@@ -6,3 +6,7 @@
 renv/library/
 renv/staging/
 .DS_Store
+
+# Quarto website build output
+.quarto/
+website/_site/
