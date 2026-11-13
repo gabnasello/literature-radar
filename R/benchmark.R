@@ -55,7 +55,7 @@ sample_benchmark_articles <- function(records, sample_size = 12L, seed = 2026111
       if (length(selected) >= n) break
       candidates <- which(vapply(records, function(x) x$journal_id == journal_id, logical(1)))
       candidates <- setdiff(candidates, selected)
-      if (length(candidates)) selected <- c(selected, sample(candidates, 1L))
+      if (length(candidates)) selected <- c(selected, candidates[sample.int(length(candidates), 1L)])
     }
   }
   records[selected]
