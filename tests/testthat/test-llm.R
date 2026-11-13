@@ -51,3 +51,39 @@ test_that("benchmark sampling is reproducible and balanced across journals", {
   counts <- table(vapply(first, function(x) x$journal_id, character(1)))
   expect_equal(as.integer(counts), c(2L, 2L))
 })
+
+test_that("Ollama-only benchmark writes one metrics row per paper", {
+  results <- list(
+    list(
+      article = list(pmid = "123", journal_name = "Test Journal", title = "Test paper", pubmed_url = ""),
+      ollama = list(
+        model = "qwen3:4b",
+        status = "ok",
+        elapsed_seconds = 12.5,
+        input_tokens = 100,
+        output_tokens = 200,
+        total_tokens = 300,
+        parsed = list(
+          summary = "A concise summary.",
+          key_findings = list("Finding one"),
+          study_type = "In vitro",
+          relevance_to_biomaterials_and_regenerative_medicine = "Relevant.",
+          limitations_or_unknowns = "Not stated."
+        ),
+        response_text = "",
+        error = NULL
+      )
+    )
+  )
+
+  metrics <- benchmark_metrics(results)
+  expect_equal(nrow(metrics), 1L)
+  expect_equal(metrics$provider, "ollama")
+  expect_equal(metrics$model, "qwen3:4b")
+
+  output <- tempfile(fileext = ".md")
+  write_benchmark_markdown(results, "test-run", "paper_summary_v1", output)
+  report <- paste(readLines(output, warn = FALSE), collapse = "\\n")
+  expect_match(report, "OLLAMA", fixed = TRUE)
+  expect_false(grepl("GEMINI", report, fixed = TRUE))
+})
