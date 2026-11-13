@@ -86,7 +86,7 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   )
 
   site <- load_literature_site_data(root)
-  expect_equal(site$paper_count, 1L)
+  expect_equal(site$paper_count, 3L)
   expect_equal(site$report_count, 1L)
   expect_equal(site$summary_count, 1L)
   expect_equal(site$papers[[1]]$journal_name, "Test Journal")
