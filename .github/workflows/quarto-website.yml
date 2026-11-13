@@ -1,0 +1,65 @@
+name: Publish Quarto website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "website/**"
+      - "R/site.R"
+      - "reports/**"
+      - "data/papers/**"
+      - "data/benchmarks/**"
+      - "config/journals.yml"
+      - ".github/workflows/quarto-website.yml"
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - "Weekly PubMed retrieval"
+      - "Ollama benchmark"
+    types: [completed]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: \${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install R packages for the website
+        run: |
+          Rscript -e 'packages <- c("jsonlite", "yaml", "knitr"); missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) install.packages(missing, repos = "https://cloud.r-project.org"); missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) stop("Failed to install: ", paste(missing, collapse = ", "))'
+
+      - name: Render website
+        run: quarto render website
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

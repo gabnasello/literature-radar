@@ -1,0 +1,100 @@
+---
+title: "Papers"
+---
+
+# Papers
+
+The indexed collection is grouped by journal. Papers with an available Ollama summary show the summary and extracted findings; otherwise, the original abstract is available below the citation.
+
+~~~{r}
+source("../R/site.R")
+site <- load_literature_site_data("..")
+journal_names <- unique(vapply(site$papers, function(x) x$journal_name, character(1)))
+~~~
+
+~~~{r, results='asis'}
+for (journal_name in journal_names) {
+  journal_papers <- Filter(function(x) identical(x$journal_name, journal_name), site$papers)
+  journal_id <- site_text(journal_papers[[1]]$journal_id, gsub("[^a-z0-9]+", "-", tolower(journal_name)))
+  anchor <- gsub("[^a-z0-9-]", "-", tolower(journal_id))
+  cat(sprintf(
+    '<section class="journal-section" id="%s"><h2>%s <span class="paper-count">%d papers</span></h2>',
+    site_html_escape(anchor), site_html_escape(journal_name), length(journal_papers)
+  ))
+
+  for (paper in journal_papers) {
+    title <- site_html_escape(site_text(paper$title, "Untitled paper"))
+    pmid <- site_html_escape(paper$pmid)
+    pubmed_url <- site_safe_url(paper$pubmed_url)
+    doi_url <- site_safe_url(paper$doi_url)
+    publication_date <- site_html_escape(site_text(paper$publication_date))
+    authors <- paper$authors
+    if (is.list(authors)) authors <- unlist(authors, use.names = FALSE)
+    authors <- as.character(authors)
+    authors <- authors[!is.na(authors) & nzchar(authors)]
+    if (length(authors) > 5L) authors <- c(authors[1:5], paste0("and ", length(authors) - 5L, " more"))
+    author_text <- if (length(authors)) paste(authors, collapse = ", ") else ""
+    abstract <- site_html_escape(site_text(paper$abstract))
+    summary <- paper$summary
+
+    cat('<article class="paper-card">')
+    if (nzchar(pubmed_url)) {
+      cat(sprintf('<h3><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h3>',
+                  site_html_escape(pubmed_url), title))
+    } else {
+      cat(sprintf('<h3>%s</h3>', title))
+    }
+
+    metadata <- c(
+      if (nzchar(author_text)) site_html_escape(author_text) else NULL,
+      if (nzchar(publication_date)) publication_date else NULL,
+      paste0("PMID ", pmid)
+    )
+    cat(sprintf('<p class="paper-meta">%s</p>', paste(metadata, collapse = " · ")))
+
+    links <- c(
+      if (nzchar(pubmed_url)) sprintf('<a href="%s" target="_blank" rel="noopener noreferrer">PubMed</a>', site_html_escape(pubmed_url)) else NULL,
+      if (nzchar(doi_url)) sprintf('<a href="%s" target="_blank" rel="noopener noreferrer">DOI</a>', site_html_escape(doi_url)) else NULL
+    )
+    if (length(links)) cat(sprintf('<p class="paper-links">%s</p>', paste(links, collapse = " · ")))
+
+    if (!is.null(summary) && !is.null(summary$parsed)) {
+      parsed <- summary$parsed
+      summary_text <- summary_values(parsed, "summary")
+      if (length(summary_text)) {
+        cat(sprintf('<div class="ai-summary"><div class="section-label">AI summary</div><p>%s</p></div>',
+                    site_html_escape(paste(summary_text, collapse = " "))))
+      }
+      findings <- summary_values(parsed, "key_findings")
+      if (length(findings)) {
+        cat('<div class="summary-section"><div class="section-label">Key findings</div><ul>')
+        for (finding in findings) cat(sprintf('<li>%s</li>', site_html_escape(finding)))
+        cat('</ul></div>')
+      }
+      fields <- list(
+        "Study type" = "study_type",
+        "Relevance to biomaterials and regenerative medicine" = "relevance_to_biomaterials_and_regenerative_medicine",
+        "Limitations / unknowns" = "limitations_or_unknowns"
+      )
+      for (heading in names(fields)) {
+        values <- summary_values(parsed, fields[[heading]])
+        if (length(values)) {
+          cat(sprintf(
+            '<div class="summary-section"><div class="section-label">%s</div><p>%s</p></div>',
+            site_html_escape(heading), site_html_escape(paste(values, collapse = "; "))
+          ))
+        }
+      }
+      if (nzchar(abstract)) {
+        cat(sprintf('<details class="abstract-details"><summary>Original abstract</summary><p>%s</p></details>', abstract))
+      }
+      cat('<p class="ai-note">AI-generated from the PubMed abstract; verify important details against the original paper.</p>')
+    } else if (nzchar(abstract)) {
+      cat(sprintf('<details class="abstract-details"><summary>Read abstract</summary><p>%s</p></details>', abstract))
+    }
+
+    cat('</article>')
+  }
+  cat('</section>')
+}
+~~~

@@ -52,23 +52,21 @@ test_that("benchmark sampling is reproducible and balanced across journals", {
   expect_equal(as.integer(counts), c(2L, 2L))
 })
 
-test_that("Ollama-only benchmark writes one metrics row per paper", {
+test_that("summary Markdown omits empty fields and benchmark diagnostics", {
   results <- list(
     list(
-      article = list(pmid = "123", journal_name = "Test Journal", title = "Test paper", pubmed_url = ""),
+      article = list(pmid = "123", journal_name = "Test Journal", title = "Test paper",
+                     pubmed_url = "https://pubmed.ncbi.nlm.nih.gov/123/"),
       ollama = list(
         model = "qwen3:4b",
         status = "ok",
         elapsed_seconds = 12.5,
-        input_tokens = 100,
-        output_tokens = 200,
-        total_tokens = 300,
         parsed = list(
           summary = "A concise summary.",
-          key_findings = list("Finding one"),
-          study_type = "In vitro",
+          key_findings = list("Finding one", "Finding two"),
+          study_type = "Not specified in abstract",
           relevance_to_biomaterials_and_regenerative_medicine = "Relevant.",
-          limitations_or_unknowns = "Not stated."
+          limitations_or_unknowns = "Not returned."
         ),
         response_text = "",
         error = NULL
@@ -83,7 +81,13 @@ test_that("Ollama-only benchmark writes one metrics row per paper", {
 
   output <- tempfile(fileext = ".md")
   write_benchmark_markdown(results, "test-run", "paper_summary_v1", output)
-  report <- paste(readLines(output, warn = FALSE), collapse = "\\n")
-  expect_match(report, "OLLAMA", fixed = TRUE)
-  expect_false(grepl("GEMINI", report, fixed = TRUE))
+  report <- paste(readLines(output, warn = FALSE), collapse = "\n")
+  expect_match(report, "A concise summary.", fixed = TRUE)
+  expect_match(report, "- Finding one", fixed = TRUE)
+  expect_match(report, "**Relevance**", fixed = TRUE)
+  expect_false(grepl("OLLAMA", report, fixed = TRUE))
+  expect_false(grepl("Status:", report, fixed = TRUE))
+  expect_false(grepl("Elapsed:", report, fixed = TRUE))
+  expect_false(grepl("Study type", report, fixed = TRUE))
+  expect_false(grepl("Limitations / unknowns", report, fixed = TRUE))
 })

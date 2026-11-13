@@ -109,70 +109,55 @@ benchmark_metrics <- function(results) {
   do.call(rbind, rows)
 }
 
-summary_field <- function(parsed, field, fallback = "") {
-  if (is.null(parsed) || is.null(parsed[[field]])) return(fallback)
-  value <- parsed[[field]]
-  if (is.character(value)) return(paste(value, collapse = "; "))
-  if (is.list(value)) return(paste(unlist(value, use.names = FALSE), collapse = "; "))
-  as.character(value)
+summary_field <- function(parsed, field, fallback = NULL) {
+  values <- summary_values(parsed, field)
+  if (!length(values)) return(fallback)
+  paste(values, collapse = "; ")
 }
 
 write_benchmark_markdown <- function(results, run_id, prompt_version, output_path) {
-  lines <- c(
-    paste0("# Ollama benchmark: ", run_id),
-    "",
-    paste0("Prompt version: ", prompt_version),
-    "",
-    "Each paper was sent to the local Ollama model with the same versioned prompt.",
-    ""
-  )
+  lines <- c("# Paper summaries", "")
   for (paper in results) {
     article <- paper$article
-    lines <- c(
-      lines,
-      paste0("## ", article$title),
-      "",
-      paste0("PMID: ", article$pmid, " | Journal: ", article$journal_name),
-      if (nzchar(article$pubmed_url)) paste0("PubMed: ", article$pubmed_url) else NULL,
-      ""
-    )
+    title <- if (is.null(article$title) || !nzchar(article$title)) "Untitled paper" else article$title
+    journal <- if (is.null(article$journal_name)) "Unknown journal" else article$journal_name
+    pmid <- if (is.null(article$pmid)) "" else article$pmid
+    metadata <- paste0("PMID: ", pmid, " | Journal: ", journal)
+
+    lines <- c(lines, paste0("## ", title), "", metadata)
+    if (!is.null(article$pubmed_url) && nzchar(article$pubmed_url)) {
+      lines <- c(lines, paste0("PubMed: ", article$pubmed_url))
+    }
+    lines <- c(lines, "")
+
     x <- paper$ollama
-    elapsed <- if (is.finite(x$elapsed_seconds)) paste0(round(x$elapsed_seconds, 2), " s") else "n/a"
-    lines <- c(
-      lines,
-      paste0("### OLLAMA (", x$model, ")"),
-      "",
-      paste0("Status: ", x$status, " | Elapsed: ", elapsed),
-      ""
-    )
     if (!is.null(x$parsed)) {
-      lines <- c(
-        lines,
-        "**Summary**",
-        "",
-        summary_field(x$parsed, "summary", x$response_text),
-        "",
-        "**Key findings**",
-        "",
-        summary_field(x$parsed, "key_findings", "Not returned."),
-        "",
-        "**Study type**",
-        "",
-        summary_field(x$parsed, "study_type", "Not returned."),
-        "",
-        "**Relevance**",
-        "",
-        summary_field(x$parsed, "relevance_to_biomaterials_and_regenerative_medicine", "Not returned."),
-        "",
-        "**Limitations / unknowns**",
-        "",
-        summary_field(x$parsed, "limitations_or_unknowns", "Not returned."),
-        ""
+      summary <- summary_field(x$parsed, "summary", x$response_text)
+      if (!is.null(summary) && nzchar(trimws(summary))) {
+        lines <- c(lines, "**Summary**", "", summary, "")
+      }
+
+      findings <- summary_values(x$parsed, "key_findings")
+      if (length(findings)) {
+        lines <- c(lines, "**Key findings**", "", paste0("- ", findings), "")
+      }
+
+      fields <- list(
+        "Study type" = "study_type",
+        "Relevance" = "relevance_to_biomaterials_and_regenerative_medicine",
+        "Limitations / unknowns" = "limitations_or_unknowns"
       )
-    } else if (nzchar(x$response_text)) {
+      for (heading in names(fields)) {
+        value <- summary_field(x$parsed, fields[[heading]])
+        if (!is.null(value) && nzchar(trimws(value))) {
+          lines <- c(lines, paste0("**", heading, "**"), "", value, "")
+        }
+      }
+    } else if (!is.null(x$response_text) && nzchar(x$response_text)) {
       lines <- c(lines, x$response_text, "")
     } else {
-      lines <- c(lines, paste0("Error: ", x$error), "")
+      error <- if (is.null(x$error)) "No summary was returned." else x$error
+      lines <- c(lines, paste0("Summary unavailable: ", error), "")
     }
     lines <- c(lines, "---", "")
   }
