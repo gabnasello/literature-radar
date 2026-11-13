@@ -8,16 +8,10 @@ website:
   site-url: "https://gabnasello.github.io/literature-radar/"
   description: "A date-based archive of PubMed updates and AI-generated paper summaries from selected journals."
   navbar:
-    left:
-      - href: index.qmd
-        text: Journals
     right:
       - icon: github
         href: https://github.com/gabnasello/literature-radar
         aria-label: GitHub repository
-  page-footer:
-    left: "Literature Radar · PubMed journal monitoring"
-    right: "AI-generated summaries should be checked against the original paper."
 
 format:
   html:
