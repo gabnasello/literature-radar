@@ -2,7 +2,7 @@
 # ISSN is preferred because journal titles can be ambiguous in PubMed.
 # Provide the print or electronic ISSN used by the PubMed journal record.
 settings:
-  journals_per_run: 3
+  journals_per_run: 11
   initial_backfill_days: 30
   overlap_days: 2
   pubmed_batch_size: 200
