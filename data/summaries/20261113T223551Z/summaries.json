@@ -1,0 +1,880 @@
+{
+  "schema_version": 1,
+  "run_id": "20261113T223551Z",
+  "generated_at_utc": "2026-11-13 22:52:52 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v2",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific: do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use this schema:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section or generic caveats.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 287,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42885387",
+        "title": "Achieving High Spatial Resolution Transmission Electron Microscopy Studies in Closed Liquid Cells.",
+        "abstract": "NA: Liquid cell transmission electron microscopy (LCTEM) is a rising technique for probing dynamic processes and structural transformations in liquid environments at the nanoscale. However, its broader application is largely constrained by limited spatial resolution, which arises from electron scattering by the encapsulating membranes and the liquid layer. Recent advances in instrument design, micro-electro-mechanical system (MEMS)-based cells, and ultrathin window materials have substantially improved imaging quality, yet achieving atomic-scale resolution in liquids remains a formidable challenge. This review provides a comprehensive overview of such strategies developed to enhance the spatial resolution of LCTEM, emphasizing the roles of liquid layer thickness, MEMS design, and cell configuration. We highlight representative approaches, such as reducing liquid and membrane thicknesses, optimizing MEMS architectures, and employing grid-based liquid cells, and discuss their underlying mechanisms and recent progress. Finally, we outline current challenges and future opportunities for achieving high-resolution, multifunctional LCTEM systems capable of capturing dynamic processes in realistic liquid environments.",
+        "doi": "10.1002/adma.75081",
+        "doi_url": "https://doi.org/10.1002/adma.75081",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885387/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines strategies to enhance spatial resolution in liquid cell transmission electron microscopy (LCTEM) by addressing electron scattering from membranes and liquid layers. It evaluates MEMS-based designs, ultrathin windows, and liquid layer thickness optimization to achieve higher resolution imaging while maintaining dynamic process observation in liquid environments.\",\n  \"key_findings\": [\n    \"Reducing liquid and membrane thicknesses minimizes electron scattering\",\n    \"Optimizing MEMS architectures improves imaging quality\",\n    \"Grid-based liquid cells enable high-resolution dynamic observations\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work advances LCTEM by systematically addressing resolution limitations through material and design innovations, enabling atomic-scale imaging of liquid-phase processes with enhanced structural and dynamic resolution.\"\n}",
+        "parsed": {
+          "summary": "This review examines strategies to enhance spatial resolution in liquid cell transmission electron microscopy (LCTEM) by addressing electron scattering from membranes and liquid layers. It evaluates MEMS-based designs, ultrathin windows, and liquid layer thickness optimization to achieve higher resolution imaging while maintaining dynamic process observation in liquid environments.",
+          "key_findings": [
+            "Reducing liquid and membrane thicknesses minimizes electron scattering",
+            "Optimizing MEMS architectures improves imaging quality",
+            "Grid-based liquid cells enable high-resolution dynamic observations"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work advances LCTEM by systematically addressing resolution limitations through material and design innovations, enabling atomic-scale imaging of liquid-phase processes with enhanced structural and dynamic resolution."
+        },
+        "elapsed_seconds": 35.5993,
+        "input_tokens": 575,
+        "output_tokens": 161,
+        "thoughts_tokens": null,
+        "total_tokens": 736,
+        "model_eval_seconds": 24.3098,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42945945",
+        "title": "An injectable ROS-responsive natural drug self-delivery hydrogel relieves neuropathic pain by remodeling DRG macrophage-mediated neuroinflammation.",
+        "abstract": "NA: Neuropathic pain remains a major clinical challenge owing to complex neuroimmune mechanisms and limited disease-modifying therapies. Neuroinflammation within the dorsal root ganglion (DRG), particularly macrophage infiltration and pro-inflammatory polarization, is a key driver of sensory neuronal sensitization and pain persistence. Here, we report an injectable reactive oxygen species (ROS)-responsive natural drug self-delivery hydrogel for localized and sustained treatment of neuropathic pain. Single-cell transcriptomic reanalysis revealed marked macrophage accumulation in injured DRGs, accompanied by M1-like polarization and aberrant phosphatidylinositol 3-kinase (PI3K)-Akt activation. Mechanism-guided virtual screening identified glycyrrhizic acid (GA), a bioactive natural product, as a promising PI3K-targeting candidate. To improve local bioavailability, GA was engineered into a 1,4-phenylenediboronic acid (1,4-PBA)-functionalized self-assembled hydrogel, termed GA-PBA-GA (GPG), through dynamic boronate ester bonds and non-covalent interactions. The GPG hydrogel exhibited injectability, self-healing, biodegradability, biocompatibility, and inflammation-associated ROS-triggered GA release. In vitro, GPG suppressed PI3K-Akt signaling, reduced pro-inflammatory macrophage activation, and promoted M1-to-M2 repolarization. In a rat model of L5 spinal nerve ligation-induced neuropathic pain, peri-DRG administration alleviated mechanical and thermal hypersensitivity, improved gait and electrophysiological function, reduced DRG macrophage-mediated neuroinflammation, and attenuated spinal microglial activation. This ROS-responsive natural drug self-delivery hydrogel provides a minimally invasive strategy for remodeling DRG neuroinflammation and achieving sustained relief of neuropathic pain through localized drug delivery.",
+        "doi": "10.1016/j.biomaterials.2026.124723",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124723",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42945945/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated an injectable ROS-responsive hydrogel for neuropathic pain relief by targeting DRG macrophage-mediated neuroinflammation. Using glycyrrhizic acid (GA) as a PI3K-targeting agent, the hydrogel was engineered to release GA in response to inflammation-associated ROS. In rats with neuropathic pain, peri-DRG administration reduced hypersensitivity, improved function, and decreased macrophage-driven neuroinflammation, demonstrating localized efficacy in pain modulation.\",\n  \"key_findings\": [\n    \"GPG hydrogel releases GA in response to ROS, suppressing PI3K-Akt signaling in DRG macrophages\",\n    \"Peri-DRG administration alleviated mechanical and thermal hypersensitivity in neuropathic pain models\",\n    \"The hydrogel reduced DRG macrophage-mediated neuroinflammation and spinal microglial activation\"\n  ],\n  \"study_type\": \"In vivo rat model of neuropathic pain\",\n  \"scientific_significance\": \"This ROS-triggered natural drug delivery system provides a targeted mechanism to remodel DRG neuroinflammation, offering a minimally invasive approach for sustained neuropathic pain relief without systemic side effects.\"\n}",
+        "parsed": {
+          "summary": "This study investigated an injectable ROS-responsive hydrogel for neuropathic pain relief by targeting DRG macrophage-mediated neuroinflammation. Using glycyrrhizic acid (GA) as a PI3K-targeting agent, the hydrogel was engineered to release GA in response to inflammation-associated ROS. In rats with neuropathic pain, peri-DRG administration reduced hypersensitivity, improved function, and decreased macrophage-driven neuroinflammation, demonstrating localized efficacy in pain modulation.",
+          "key_findings": [
+            "GPG hydrogel releases GA in response to ROS, suppressing PI3K-Akt signaling in DRG macrophages",
+            "Peri-DRG administration alleviated mechanical and thermal hypersensitivity in neuropathic pain models",
+            "The hydrogel reduced DRG macrophage-mediated neuroinflammation and spinal microglial activation"
+          ],
+          "study_type": "In vivo rat model of neuropathic pain",
+          "scientific_significance": "This ROS-triggered natural drug delivery system provides a targeted mechanism to remodel DRG neuroinflammation, offering a minimally invasive approach for sustained neuropathic pain relief without systemic side effects."
+        },
+        "elapsed_seconds": 49.9437,
+        "input_tokens": 784,
+        "output_tokens": 253,
+        "thoughts_tokens": null,
+        "total_tokens": 1037,
+        "model_eval_seconds": 42.7276,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956716",
+        "title": "Guardians at the gate: cMAF keeps the brain's vasculature in check.",
+        "abstract": "NA: In this issue of Cell, Brioschi et al. identify cellular musculoaponeurotic fibrosarcoma (cMAF) as a key regulator of brain perivascular macrophages that supports cerebrovascular function through insulin-like growth factor 1 (IGF1) production. This cMAF-IGF1 program is enhanced in Alzheimer's disease (AD), potentially reflecting a protective response that is lost in APOE4 carriers.",
+        "doi": "10.1016/j.cell.2026.09.056",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.056",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956716/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies cMAF as a regulator of brain perivascular macrophages, maintaining cerebrovascular function via IGF1 production. The cMA:IGF1 pathway is upregulated in Alzheimer's disease but diminished in APOE4 carriers, suggesting a protective mechanism that may be compromised in disease progression.\",\n  \"key_findings\": [\n    \"cMAF regulates brain perivascular macrophages to support cerebrovascular function\",\n    \"cMAF-IGF1 signaling is enhanced in Alzheimer's disease\",\n    \"cMAF-IGF1 signaling is reduced in APOE4 carriers\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The identification of cMAF as a key regulator of cerebrovascular function through perivascular macrophages provides insight into potential protective mechanisms in neurodegenerative diseases.\"\n}",
+        "parsed": {
+          "summary": "This study identifies cMAF as a regulator of brain perivascular macrophages, maintaining cerebrovascular function via IGF1 production. The cMA:IGF1 pathway is upregulated in Alzheimer's disease but diminished in APOE4 carriers, suggesting a protective mechanism that may be compromised in disease progression.",
+          "key_findings": [
+            "cMAF regulates brain perivascular macrophages to support cerebrovascular function",
+            "cMAF-IGF1 signaling is enhanced in Alzheimer's disease",
+            "cMAF-IGF1 signaling is reduced in APOE4 carriers"
+          ],
+          "study_type": "",
+          "scientific_significance": "The identification of cMAF as a key regulator of cerebrovascular function through perivascular macrophages provides insight into potential protective mechanisms in neurodegenerative diseases."
+        },
+        "elapsed_seconds": 29.7063,
+        "input_tokens": 467,
+        "output_tokens": 186,
+        "thoughts_tokens": null,
+        "total_tokens": 653,
+        "model_eval_seconds": 27.0377,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42885394",
+        "title": "Methanesulfonic Acid as a Dual-Role Reagent for Porous Polymer Network Design.",
+        "abstract": "NA: The need to develop new materials for energy and environmental sustainability has drawn significant attention in recent years due to population growth, depletion of raw materials, and rising costs. Porous materials are at the center of this quest, necessitating facile approaches for their synthesis, as well as for both pristine and post-synthetically modified sorbents. This is crucial to reduce chemical waste and hazards involved in the process. Methanesulfonic acid (MSA) is currently being explored as a reagent for the design and fabrication of porous polymer networks (PPNs), with several successful reports so far in the literature. This perspective highlights the overall properties and benefits of MSA for the design of PPNs. A better understanding of MSA's capabilities will open new frontiers and help overcome the limitations of difficult-to-scale PPNs. This is because although these PPNs are robust, they still suffer major techno-economic setbacks that hinder their integration into industrial processes. In addition to the cost of starting materials, which pose a challenge to commercialization, the synthetic approach also contributes significantly. As MSA can play the role of both a solvent and an acid catalyst in a reaction, it is a promising dual-role reagent for the design of PPNs.",
+        "doi": "10.1002/adma.75348",
+        "doi_url": "https://doi.org/10.1002/adma.75348",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885394/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This perspective examines methanesulfonic acid (MSA) as a dual-role reagent for synthesizing porous polymer networks (PPNs), highlighting its utility as both solvent and acid catalyst to enhance scalability and reduce chemical waste. The study emphasizes MSA's potential to overcome techno-economic barriers in PPN production while maintaining robustness.\",\n  \"key_findings\": [\n    \"MSA functions as both solvent and acid catalyst in PPN synthesis\",\n    \"MSA enables scalable production of robust porous polymer networks\",\n    \"MSA reduces chemical waste and hazards in PPN fabrication\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work advances the understanding of dual-role reagents for sustainable porous polymer synthesis, providing a pathway to more industrially viable materials through simplified reaction conditions and reduced environmental impact.\"\n}",
+        "parsed": {
+          "summary": "This perspective examines methanesulfonic acid (MSA) as a dual-role reagent for synthesizing porous polymer networks (PPNs), highlighting its utility as both solvent and acid catalyst to enhance scalability and reduce chemical waste. The study emphasizes MSA's potential to overcome techno-economic barriers in PPN production while maintaining robustness.",
+          "key_findings": [
+            "MSA functions as both solvent and acid catalyst in PPN synthesis",
+            "MSA enables scalable production of robust porous polymer networks",
+            "MSA reduces chemical waste and hazards in PPN fabrication"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work advances the understanding of dual-role reagents for sustainable porous polymer synthesis, providing a pathway to more industrially viable materials through simplified reaction conditions and reduced environmental impact."
+        },
+        "elapsed_seconds": 31.1068,
+        "input_tokens": 626,
+        "output_tokens": 173,
+        "thoughts_tokens": null,
+        "total_tokens": 799,
+        "model_eval_seconds": 26.5037,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42945946",
+        "title": "Cell-enriched granular bioinks enable vascular integration and endometrial repair.",
+        "abstract": "NA: 3D bioprinting is essential for constructing functional tissue mimics but remains challenging due to the difficulty of simultaneously achieving adequate cell-cell interactions and appropriate biomaterial support. Here, we introduce a cell-driven clustering strategy that assembles hydrogel microparticles into cell-rich aggregates, in which cells occupy the interstitial spaces and establish pre-organized cellular interactions prior to printing. The cell volume fraction and aggregate size are tunable by microparticle properties and cell type. When applied to digital light processing 3D bioprinting, the cell-clustered granular bioink exhibits high printability while maintaining high cell density and viability. Importantly, preserving pre-established cellular organization translates into enhanced function, including improved stemness maintenance and a more regenerative paracrine profile characterized by increased angiogenic factor secretion and reduced inflammatory signaling. In vivo, implanted constructs show improved cell retention, successful vascular integration with host circulation, and significantly enhanced endometrial repair with reduced fibrosis. These results establish cell-clustered granular bioinks as a generalizable biofabrication strategy for engineering transplantable artificial tissues.",
+        "doi": "10.1016/j.biomaterials.2026.124709",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124709",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42945946/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates cell-enriched granular bioinks for vascular integration and endometrial repair using a cell-driven clustering strategy to create hydrogel microparticles with tunable cell density. The approach enhances stemness maintenance and angiogenic factor secretion while reducing inflammation. In vivo, constructs demonstrated improved vascular integration, reduced fibrosis, and enhanced endometrial repair compared to conventional methods.\",\n  \"key_findings\": [\n    \"Cell-clustered granular bioinks maintain high cell density and viability during 3D bioprinting\",\n    \"Pre-established cellular organization improves stemness maintenance and angiogenic factor secretion\",\n    \"Implanted constructs achieved vascular integration with host circulation and reduced fibrosis\"\n  ],\n  \"study_type\": \"3D bioprinting with cell-clustered gran: hydrogel microparticles\",\n  \"scientific_significance\": \"This strategy provides a generalizable method for engineering transplantable tissues by preserving pre-organized cellular interactions critical for vascular integration and tissue regeneration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates cell-enriched granular bioinks for vascular integration and endometrial repair using a cell-driven clustering strategy to create hydrogel microparticles with tunable cell density. The approach enhances stemness maintenance and angiogenic factor secretion while reducing inflammation. In vivo, constructs demonstrated improved vascular integration, reduced fibrosis, and enhanced endometrial repair compared to conventional methods.",
+          "key_findings": [
+            "Cell-clustered granular bioinks maintain high cell density and viability during 3D bioprinting",
+            "Pre-established cellular organization improves stemness maintenance and angiogenic factor secretion",
+            "Implanted constructs achieved vascular integration with host circulation and reduced fibrosis"
+          ],
+          "study_type": "3D bioprinting with cell-clustered gran: hydrogel microparticles",
+          "scientific_significance": "This strategy provides a generalizable method for engineering transplantable tissues by preserving pre-organized cellular interactions critical for vascular integration and tissue regeneration."
+        },
+        "elapsed_seconds": 36.8122,
+        "input_tokens": 596,
+        "output_tokens": 208,
+        "thoughts_tokens": null,
+        "total_tokens": 804,
+        "model_eval_seconds": 32.0745,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956717",
+        "title": "Toward planetary microbial systems biology.",
+        "abstract": "NA: Microorganisms underpin Earth's biosphere, sustaining life, shaping biogeochemical cycles, and maintaining ecosystem stability. In an era of scientific and geopolitical fragmentation, we advocate for a \"planetary microbial systems biology\" (PMSB) framework to uncover the mechanisms and organizational principles governing Earth's interconnected microbial systems across scales of matter, space, and time and in relation to underlying natural and anthropogenic drivers. PMSB combines molecular and cellular technologies, multi-omics data, artificial intelligence (AI), and integrated transdisciplinary research across ecosystems. By federating open data and combining field observations, experimentation, and modeling, PMSB enables predictive understanding of microbiome dynamics across planetary scales, thus filling a critical knowledge gap in our understanding of the co-evolution of life and the Earth-system.",
+        "doi": "10.1016/j.cell.2026.09.019",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.019",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956717/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study proposes a 'planetary microbial systems biology' (PMSB) framework to integrate molecular, multi-omics, AI, and transdisciplinary approaches for understanding Earth's interconnected microbial systems across spatial and temporal scales. It aims to predict microbiome dynamics by federating open data and combining field observations with modeling, addressing gaps in understanding life-Earth system co-evolution.\",\n  \"key_findings\": [\n    \"PMSB combines molecular technologies, multi-omics data, AI, and transdisciplinary research to study microbial systems\",\n    \"The framework enables predictive understanding of microbiome dynamics across planetary scales\",\n    \"PMSB addresses critical knowledge gaps in life-Earth system co-evolution\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes a conceptual framework for integrating diverse data and methodologies to advance predictive understanding of global microbial systems, contributing to the broader goal of elucidating Earth's biosphere dynamics through an interconnected planetary perspective.\"\n}",
+        "parsed": {
+          "summary": "This study proposes a 'planetary microbial systems biology' (PMSB) framework to integrate molecular, multi-omics, AI, and transdisciplinary approaches for understanding Earth's interconnected microbial systems across spatial and temporal scales. It aims to predict microbiome dynamics by federating open data and combining field observations with modeling, addressing gaps in understanding life-Earth system co-evolution.",
+          "key_findings": [
+            "PMSB combines molecular technologies, multi-omics data, AI, and transdisciplinary research to study microbial systems",
+            "The framework enables predictive understanding of microbiome dynamics across planetary scales",
+            "PMSB addresses critical knowledge gaps in life-Earth system co-evolution"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes a conceptual framework for integrating diverse data and methodologies to advance predictive understanding of global microbial systems, contributing to the broader goal of elucidating Earth's biosphere dynamics through an interconnected planetary perspective."
+        },
+        "elapsed_seconds": 33.6314,
+        "input_tokens": 522,
+        "output_tokens": 203,
+        "thoughts_tokens": null,
+        "total_tokens": 725,
+        "model_eval_seconds": 30.5459,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42885403",
+        "title": "Polyacrylate-Based Dielectric Elastomer Fiber Actuators for High-Performance Artificial Muscles.",
+        "abstract": "NA: Dielectric elastomer fiber actuators (DEFAs) are promising candidates for artificial muscle applications, owing to their high axial actuation and mechanical compliance, yet achieving scalable fabrication without compromising electromechanical performance remains a critical bottleneck. Existing continuous manufacturing routes are predominantly restricted to silicone elastomers, which yield limited actuation strains and low energy densities. Here, a continuous fabrication strategy that integrates coaxial wet spinning with in situ ultraviolet curing is developed to produce polyacrylate-based DEFAs (PA-DEFAs) from a bimodal-networked polyacrylate dielectric elastomer at rates up to 22.5 mm s-1. The fiber geometry and electromechanical properties are readily tunable by adjusting the core-to-shell flow-rate ratio and elastomer formulation. The resulting fiber actuators deliver a maximum prestretch-free axial strain of ∼39%, a maximum energy density of 54.8 J kg- 1, and a peak power density of 443 W kg- 1-outperforming previously reported continuously fabricated DEFAs. The long and continuous fiber architecture further enables wrapped actuator and parallel-connected arrays, facilitating seamless integration into diverse soft robotic systems, including a robotic arm, a crawling robot, and an underwater robotic manta-ray with modular fault-tolerance. By reconciling scalable manufacturing with high actuation performance, PA-DEFAs establish a versatile and manufacturing-compatible platform for next-generation artificial muscles and adaptive soft robotics.",
+        "doi": "10.1002/adma.75420",
+        "doi_url": "https://doi.org/10.1002/adma.75420",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885403/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed polyacrylate-based dielectric elastomer fiber actuators (PA-DEFAs) using continuous coaxial wet spinning with in situ UV curing. The approach enabled scalable fabrication while maintaining high electromechanical performance, yielding actuators with up to 39% axial strain, 54.8 J kg-1 energy density, and 443 W kg- 1 peak power density. The fibers support modular integration into soft robotic systems.\",\n  \"key_findings\": [\n    \"Continuous fabrication of PA-DEFAs via coaxial wet spinning and in situ UV curing\",\n    \"Maximum prestretch-free axial strain of ∼39% and energy density of 54.8 J kg-1\",\n    \"Fibers enable modular integration into soft robotic systems like robotic arms and underwater manta-rays\"\n  ],\n  \"study_type\": \"Continuous fabrication strategy with coaxial wet spinning and in situ UV curing\",\n  \"scientific_significance\": \"This work establishes a scalable manufacturing platform for high-performance dielectric elastomer actuators, bridging the gap between continuous production and electromechanical performance for artificial muscles.\"\n}",
+        "parsed": {
+          "summary": "This study developed polyacrylate-based dielectric elastomer fiber actuators (PA-DEFAs) using continuous coaxial wet spinning with in situ UV curing. The approach enabled scalable fabrication while maintaining high electromechanical performance, yielding actuators with up to 39% axial strain, 54.8 J kg-1 energy density, and 443 W kg- 1 peak power density. The fibers support modular integration into soft robotic systems.",
+          "key_findings": [
+            "Continuous fabrication of PA-DEFAs via coaxial wet spinning and in situ UV curing",
+            "Maximum prestretch-free axial strain of ∼39% and energy density of 54.8 J kg-1",
+            "Fibers enable modular integration into soft robotic systems like robotic arms and underwater manta-rays"
+          ],
+          "study_type": "Continuous fabrication strategy with coaxial wet spinning and in situ UV curing",
+          "scientific_significance": "This work establishes a scalable manufacturing platform for high-performance dielectric elastomer actuators, bridging the gap between continuous production and electromechanical performance for artificial muscles."
+        },
+        "elapsed_seconds": 45.2296,
+        "input_tokens": 677,
+        "output_tokens": 241,
+        "thoughts_tokens": null,
+        "total_tokens": 918,
+        "model_eval_seconds": 39.3925,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42950773",
+        "title": "Balancing localized and charge-transfer excited states in Dithieno[3,2-b:2',3'-d]pyrrole-based NIR-II AIE photosensitizers for low power phototheranostics.",
+        "abstract": "NA: Photodynamic therapy (PDT) is limited by the shallow tissue penetration of visible-light excitation and the hypoxic tumor microenvironment, while effective photothermal therapy (PTT) and PDT/PTT synergistic therapy remain difficult to achieve under clinically approved laser power. Here, we report a progressive donor-acceptor (D-A) intensification strategy that, counterintuitively, reveals a critical excited-state phase transition from a charge-transfer (CT)-dominated regime to a balanced localized-excitation (LE)/CT hybrid. At this tipping point, the inherent orthogonality between radiative decay, intersystem crossing, and thermal dissipation is synergistically breached. This process concurrently unlocks NIR-II emission, oxygen-independent Type-I photodynamic activity, and an exceptional photothermal conversion efficiency of 87.4%. Such tri-functional synergy is conspicuously absent in conventional D-A systems with either weak or excessive D-A interactions. Quantitative structure-property relationship analysis establishes the LE/CT composition ratio as a predictive descriptor for triplet-state reactivity, enabling rational rather than trial and error optimization. Guided by this paradigm, the optimal photosensitizer achieves potent antitumor efficacy under mild 808 nm irradiation (0.33 W/cm2), effectively decoupling therapeutic potency from reliance on high-intensity laser exposure. This work thus shifts phototheranostic design from discrete molecular screening to excited-state composition engineering, offering a conceptually transformative roadmap for safe and efficient NIR-II phototheranostics.",
+        "doi": "10.1016/j.biomaterials.2026.124720",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124720",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42950773/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates optimizing NIR-II photosensitizers for phototheranostics by balancing localized and charge-transfer excited states. Using a progressive donor-acceptor intensification strategy, researchers identified a critical transition point where the excited state shifts from charge-transfer-dominated to a balanced hybrid state. This achieved NIR-II emission, oxygen-independent photodynamic activity, and 87.4% photothermal efficiency under low-power 808 nm irradiation, enabling effective tumor treatment without high laser intensity.\",\n  \"key_findings\": [\n    \"Critical transition from charge-transfer-dominated to balanced localized-excitation/charge-transfer hybrid excited states\",\n    \"Oxygen-independent Type-I photodynamic activity\",\n    \"87..4% photothermal conversion efficiency under 0.33 W/cm² 808 nm irradiation\"\n  ],\n  \"study_type\": \"Progressive donor-acceptor intensification strategy\",\n  \"scientific_significance\": \"This work establishes a paradigm for excited-state composition engineering in NIR-II photosensitizers, enabling phototheranostic applications under clinically relevant low-power laser conditions without reliance on hypoxic environments or high-intensity irradiation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates optimizing NIR-II photosensitizers for phototheranostics by balancing localized and charge-transfer excited states. Using a progressive donor-acceptor intensification strategy, researchers identified a critical transition point where the excited state shifts from charge-transfer-dominated to a balanced hybrid state. This achieved NIR-II emission, oxygen-independent photodynamic activity, and 87.4% photothermal efficiency under low-power 808 nm irradiation, enabling effective tumor treatment without high laser intensity.",
+          "key_findings": [
+            "Critical transition from charge-transfer-dominated to balanced localized-excitation/charge-transfer hybrid excited states",
+            "Oxygen-independent Type-I photodynamic activity",
+            "87..4% photothermal conversion efficiency under 0.33 W/cm² 808 nm irradiation"
+          ],
+          "study_type": "Progressive donor-acceptor intensification strategy",
+          "scientific_significance": "This work establishes a paradigm for excited-state composition engineering in NIR-II photosensitizers, enabling phototheranostic applications under clinically relevant low-power laser conditions without reliance on hypoxic environments or high-intensity irradiation."
+        },
+        "elapsed_seconds": 45.962,
+        "input_tokens": 715,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 959,
+        "model_eval_seconds": 39.9282,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956738",
+        "title": "Innate sensor responses set a supra-unitary threshold for viral replication.",
+        "abstract": "NA: Cells resist viral infection by triggering rapid and sensitive innate immune responses, initiated by cytoplasmic viral sensor proteins (CyVSP), retinoic acid-inducible gene I (RIG-I), melanoma differentiation-associated protein 5 (MDA-5), and protein kinase R (PKR). Our single-cell analysis reveals that viral replication requires a supra-unitary viral genome input, significantly more than one, which we define as the virion input threshold for replication (VITREP). This threshold varies depending on viruses and cell types, independently of viral protein synthesis. Through mathematical modeling and experimental testing, we uncover that supra-unitary viral genome quantities activate negative feedback regulators (NFR) of CyVSP, including death-associated protein kinase 1 (DAPK1), Rio kinase 3 (RIOK3), and protein phosphatase 2 regulatory subunit alpha (PPP2R2A), that suppress innate immune responses and allow replication. We validate key predictions of our model, namely that downregulating NFR reduces replication, whereas upregulating NFR or coinfecting cells promotes replication. Together, these findings reveal a fundamental mechanism governing viral infectivity and tissue tropism.",
+        "doi": "10.1016/j.cell.2026.10.004",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.004",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956738/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"The study investigates how cells resist viral infection via innate immune sensors, identifying a supra-unitary viral genome threshold (VITREP) for replication. Using single-cell analysis and mathematical modeling, it demonstrates that viral replication requires more than one viral genome, with negative feedback regulators (NFR) suppressing immune responses to enable replication. This threshold varies by virus and cell type, independent of viral protein synthesis.\",\n  \"key_findings\": [\n    \"Viral replication requires a supra-unitary viral genome input (VITREP), exceeding one genome\",\n    \"Negative feedback regulators (NFR) like DAPK1, RIOK3, and PPP2R2A suppress innate immune responses to allow replication\",\n    \"The VITREP threshold varies across viruses and cell types, independent of viral protein synthesis\"\n  ],\n  \"study_type\": \"Single-cell analysis and mathematical modeling\",\n  \"scientific_significance\": \"This work establishes a fundamental mechanism where supra-unitary viral genome thresholds govern viral infectivity and tissue tropism through innate immune regulation.\"\n}",
+        "parsed": {
+          "summary": "The study investigates how cells resist viral infection via innate immune sensors, identifying a supra-unitary viral genome threshold (VITREP) for replication. Using single-cell analysis and mathematical modeling, it demonstrates that viral replication requires more than one viral genome, with negative feedback regulators (NFR) suppressing immune responses to enable replication. This threshold varies by virus and cell type, independent of viral protein synthesis.",
+          "key_findings": [
+            "Viral replication requires a supra-unitary viral genome input (VITREP), exceeding one genome",
+            "Negative feedback regulators (NFR) like DAPK1, RIOK3, and PPP2R2A suppress innate immune responses to allow replication",
+            "The VITREP threshold varies across viruses and cell types, independent of viral protein synthesis"
+          ],
+          "study_type": "Single-cell analysis and mathematical modeling",
+          "scientific_significance": "This work establishes a fundamental mechanism where supra-unitary viral genome thresholds govern viral infectivity and tissue tropism through innate immune regulation."
+        },
+        "elapsed_seconds": 38.4416,
+        "input_tokens": 613,
+        "output_tokens": 218,
+        "thoughts_tokens": null,
+        "total_tokens": 831,
+        "model_eval_seconds": 33.6569,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42885569",
+        "title": "Negative-Thermal-Expansion Strategy Enables Hard Carbon With Tuned Heat/Strain Tolerances for Sodium Storage.",
+        "abstract": "NA: The thermal/stress runaways pose a risk to the safety and industrialization of sodium-ion battery (SIB), which hence requires external management equipment. Actually, the thermal/stress generation originates from the repetitive Na+ intercalation within carbon interlayers and pore-filling in the initial stage. Herein, we propose a regulation strategy of \"in situ thermal strain relief\" to achieve internal thermal and stress managements of SIB hard carbon (HC) anode by incorporating negative thermal expansion oxide ZrW2O8. The results indicate that the heat and strain were reduced obviously after cycling, leading to rapid diffusion kinetics and enhanced sodium storage capacity. Moreover, the microstructure and efficient electron/ion transport within HC were preserved, demonstrating excellent capacity stability even after high-rate and long-term cycling over wide operating temperature ranges (-20°C to 60°C). This study provides a new approach for thermal and stress management inside the battery, which may play a joint effort with the conventional management equipment outside the battery and beyond.",
+        "doi": "10.1002/adma.75284",
+        "doi_url": "https://doi.org/10.1002/adma.75284",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885569/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates thermal and stress management in sodium-ion battery hard carbon anodes by integrating negative thermal expansion oxide ZrW2O8. The approach addresses heat and strain generation during sodium ion intercalation through in situ thermal strain relief. Results show reduced heat/strain during cycling, enhanced capacity stability across wide temperature ranges (-2.0°C to 60°C), and preserved microstructure for high-rate performance.\",\n  \"key_findings\": [\n    \"Integration of ZrW2O8 reduces heat and strain during sodium-ion cycling\",\n    \"Maintained capacity stability over wide temperature ranges (-20°C to 60°C)\",\n    \"Preserved microstructure enabling high-rate cycling and long-term stability\"\n  ],\n  \"study_type\": \"In situ thermal strain relief strategy\",\n  \"scientific_significance\": \"This work establishes a novel internal thermal and stress management mechanism for sodium-ion battery anodes, advancing the design of safer, more stable energy storage systems through material-level thermal regulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates thermal and stress management in sodium-ion battery hard carbon anodes by integrating negative thermal expansion oxide ZrW2O8. The approach addresses heat and strain generation during sodium ion intercalation through in situ thermal strain relief. Results show reduced heat/strain during cycling, enhanced capacity stability across wide temperature ranges (-2.0°C to 60°C), and preserved microstructure for high-rate performance.",
+          "key_findings": [
+            "Integration of ZrW2O8 reduces heat and strain during sodium-ion cycling",
+            "Maintained capacity stability over wide temperature ranges (-20°C to 60°C)",
+            "Preserved microstructure enabling high-rate cycling and long-term stability"
+          ],
+          "study_type": "In situ thermal strain relief strategy",
+          "scientific_significance": "This work establishes a novel internal thermal and stress management mechanism for sodium-ion battery anodes, advancing the design of safer, more stable energy storage systems through material-level thermal regulation."
+        },
+        "elapsed_seconds": 36.2569,
+        "input_tokens": 584,
+        "output_tokens": 210,
+        "thoughts_tokens": null,
+        "total_tokens": 794,
+        "model_eval_seconds": 32.1254,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962341",
+        "title": "Programming a pro-regenerative microenvironment via a photocurable albumin-matrix hydrogel for hepatic tissue reconstitution.",
+        "abstract": "NA: Liver tissue engineering (LTE) is constrained by poor hepatocyte survival and functional deterioration after transplantation. A central challenge is to support hepatocyte growth and expansion in vitro while preserving polarity and specialized hepatic functions. Graft immunogenicity and surgical intervention trigger inflammation and immune rejection, further compromising transplanted cell survival and performance. Limited vascularization also restricts graft survival, function, and expansion in vivo. Here, we developed a photocurable biomimetic composite hydrogel by combining bovine serum albumin methacrylate (BSA-MA) with decellularized liver extracellular matrix (dECM) derived from α1,3-galactosyltransferase knockout (GTKO) Bama miniature pigs, and used it to encapsulate primary hepatocyte spheroids to construct functional engineered hepatic tissue (EHT). The BSA-MA-dECM hydrogel exhibited favorable physicochemical properties, cytocompatibility, and histocompatibility, while sustaining and enhancing hepatocyte viability, function, and polarity. It also reduced inflammatory responses, promoted macrophage polarization toward the M2 phenotype, and stimulated angiogenesis through VEGF and FGF upregulation as well as PI3K-AKT pathway activation. Thus, the hydrogel established a pro-regenerative microenvironment that supported hepatocyte expansion and graft vascularization. Following implantation into the omentum of rats with CCl4-induced liver injury, the EHT underwent rapid vascularization and showed robust expansion in vivo. It alleviated liver injury, collagen deposition, and fibrosis, while transcriptomic analysis revealed enhanced metabolic repair and cytoprotective programs along with the suppression of inflammatory and fibrotic pathways. Overall, these findings identify BSA-MA-dECM as a versatile photocurable hydrogel for hepatocyte delivery and provide a broadly applicable strategy that integrates immune modulation with vascular induction for scalable EHT construction and liver regenerative therapy.",
+        "doi": "10.1016/j.biomaterials.2026.124721",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124721",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962341/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses challenges in liver tissue engineering by developing a photocurable hydrogel combining bovine serum albumin methacrylate with decellularized liver extracellular matrix. The hydrogel encapsulated hepatocyte spheroids to create functional engineered hepatic tissue, enhancing hepatocyte viability, polarity, and function while reducing inflammation, promoting M2 macrophage polarization, and stimulating angiogenesis. In vivo implantation in rats with liver injury demonstrated rapid vascularization, reduced fibrosis, and improved metabolic repair.\",\n  \"key_findings\": [\n    \"The hydrogel enhanced hepatocyte viability and polarity while maintaining hepatic functions\",\n    \"It promoted M2 macrophage polarization and angiogenesis via VEGF/FGF upregulation and PI3K-AKT pathway activation\",\n    \"In vivo implantation reduced liver injury, collagen deposition, and fibrosis with improved metabolic repair\"\n  ],\n  \"study_type\": \"In vitro hepatocyte spheroid encapsulation with in vivo rat implantation\",\n  \"scientific_significance\": \"This work establishes a pro-regenerative microenvironment that integrates immune modulation and vascular induction for scalable hepatic tissue engineering, advancing strategies for liver regenerative therapy.\"\n}",
+        "parsed": {
+          "summary": "This study addresses challenges in liver tissue engineering by developing a photocurable hydrogel combining bovine serum albumin methacrylate with decellularized liver extracellular matrix. The hydrogel encapsulated hepatocyte spheroids to create functional engineered hepatic tissue, enhancing hepatocyte viability, polarity, and function while reducing inflammation, promoting M2 macrophage polarization, and stimulating angiogenesis. In vivo implantation in rats with liver injury demonstrated rapid vascularization, reduced fibrosis, and improved metabolic repair.",
+          "key_findings": [
+            "The hydrogel enhanced hepatocyte viability and polarity while maintaining hepatic functions",
+            "It promoted M2 macrophage polarization and angiogenesis via VEGF/FGF upregulation and PI3K-AKT pathway activation",
+            "In vivo implantation reduced liver injury, collagen deposition, and fibrosis with improved metabolic repair"
+          ],
+          "study_type": "In vitro hepatocyte spheroid encapsulation with in vivo rat implantation",
+          "scientific_significance": "This work establishes a pro-regenerative microenvironment that integrates immune modulation and vascular induction for scalable hepatic tissue engineering, advancing strategies for liver regenerative therapy."
+        },
+        "elapsed_seconds": 47.4627,
+        "input_tokens": 772,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 1020,
+        "model_eval_seconds": 40.363,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962658",
+        "title": "Age-dependent structural evolution of a functional amyloid contributes to memory impairment in Drosophila.",
+        "abstract": "NA: Cryogenic electron microscopy has revealed endpoint structures of ex vivo amyloid filaments, but how amyloids assemble and evolve in living organisms-and how these transitions affect physiology-remains poorly understood. Here, we map the age-dependent structural landscape of Orb2 amyloid, a synaptic translation regulator required for long-term memory, across the adult lifespan of Drosophila melanogaster. By determining multiple Orb2 amyloid structures, we uncover a dynamic, age-linked progression of amyloid states. Translation-promoting assemblies predominate early in life, whereas aging shifts the Orb2 amyloid ensemble toward structurally distinct, destabilization-resistant assemblies with reduced translational activity, coinciding with memory impairment. Manipulating memory-related chaperones in the brain shifts Orb2 toward youthful, translation-promoting states and improves memory in old flies; conversely, shifting Orb2 toward aged-like, translation-deficient states in young adults is associated with premature memory impairment. These findings define an in vivo trajectory of amyloid evolution and link amyloid structural dynamics to synaptic translation and memory.",
+        "doi": "10.1016/j.cell.2026.10.009",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.009",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962658/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates age-dependent structural changes in Orb2 amyloid, a synaptic translation regulator in Drosophila, using cryogenic electron microscopy. It reveals a progression from translation-promoting assemblies in young flies to destabilization-resistant, translation-deficient states in aging flies, correlating with memory impairment. Manipulating chaperones shifts Orb2 states and memory outcomes, highlighting amyloid structural dynamics as a key factor in memory decline.\",\n  \"key_findings\": [\n    \"Orb2 amyloid transitions from translation-promoting states in young Drosophila to destabilization-resistant states in aging flies\",\n    \"Aging shifts Orb2 amyloid ensemble toward reduced translational activity, coinciding with memory impairment\",\n    \"Manipulating memory-related chaperones can shift Orb2 toward youthful states and improve memory in old flies\"\n  ],\n  \"study_type\": \"Cryogenic electron microscopy\",\n  \"scientific_significance\": \"This work establishes an in vivo trajectory of amyloid structural evolution linked to synaptic translation and memory decline, providing a model for understanding age-related amyloid dynamics in living organisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates age-dependent structural changes in Orb2 amyloid, a synaptic translation regulator in Drosophila, using cryogenic electron microscopy. It reveals a progression from translation-promoting assemblies in young flies to destabilization-resistant, translation-deficient states in aging flies, correlating with memory impairment. Manipulating chaperones shifts Orb2 states and memory outcomes, highlighting amyloid structural dynamics as a key factor in memory decline.",
+          "key_findings": [
+            "Orb2 amyloid transitions from translation-promoting states in young Drosophila to destabilization-resistant states in aging flies",
+            "Aging shifts Orb2 amyloid ensemble toward reduced translational activity, coinciding with memory impairment",
+            "Manipulating memory-related chaperones can shift Orb2 toward youthful states and improve memory in old flies"
+          ],
+          "study_type": "Cryogenic electron microscopy",
+          "scientific_significance": "This work establishes an in vivo trajectory of amyloid structural evolution linked to synaptic translation and memory decline, providing a model for understanding age-related amyloid dynamics in living organisms."
+        },
+        "elapsed_seconds": 39.1597,
+        "input_tokens": 588,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 817,
+        "model_eval_seconds": 35.1404,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42885575",
+        "title": "Self-Fueling Nanobacteria Harnesses Leaked Pancreatic Fluid to Eradicate Residual Tumors After Surgery.",
+        "abstract": "NA: Postoperative management of pancreatic ductal adenocarcinoma (PDAC) remains hindered by two closely linked challenges: the harmful effects of pancreatic fistula and the high risk of local tumor recurrence. Although leaked pancreatic fluid (PF) is generally regarded as a postoperative complication, its abundance of digestive enzymes also suggests an underexplored therapeutic opportunity. Here, we developed a localized therapeutic strategy that converts the enzyme-rich fistula microenvironment from a pathological burden into an antitumor resource. To achieve this, we nano-engineered Bacteroides thetaiotaomicron (B.t.) and integrated it with TRPV1 antagonist-loaded nanomicelles in a GelMA hydrogel, generating the platform TNPs-N@B.t. + Gel. Mechanistically, this system acts in a coordinated manner within the postoperative PDAC microenvironment. B.t. degrades tumor-associated mucins, thereby dismantling the protective barrier that shields PDAC cells from pancreatic enzymes and restoring their vulnerability to enzymatic attack. Meanwhile, PF forms an in situ digestive enzyme corona on the nanoengineered bacterial surface, which promotes deeper tumor penetration by disrupting intercellular adhesion. In parallel, delivery of the TRPV1 antagonist (TRPV1a) suppresses CGRP release, attenuates cancer-associated fibroblast (CAF) activation, and facilitates NK-cell-associated antitumor responses. In postoperative PDAC models, TNPs-N@B.t. + Gel showed durable local retention, enhanced tumor accumulation, suppressed recurrence, prolonged survival, and alleviated pain-related behaviors without evident systemic toxicity.",
+        "doi": "10.1002/adma.75411",
+        "doi_url": "https://doi.org/10.1002/adma.75411",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885575/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated a nano-engineered approach to combat pancreatic ductal adenocarcinoma (PDAC) recurrence after surgery by repurposing leaked pancreatic fluid (PF) as a therapeutic resource. The platform TNPs-N@B.t. + Gel combines engineered Bacteroides thetaiotaomicron to degrade tumor mucins, PF-induced enzyme corona for tumor penetration, and TRPV1 antagonist to suppress cancer-associated fibroblasts and enhance immune responses. It demonstrated reduced recurrence, prolonged survival, and pain alleviation in PDAC models without systemic toxicity.\",\n  \"key_findings\": [\n    \"Engineered Bacteroides thetaiotaomicron degrades tumor-associated mucins to expose PDAC cells to pancreatic enzymes\",\n    \"Leaked pancreatic fluid forms an enzyme corona that disrupts intercellular adhesion and enhances tumor penetration\",\n    \"TRPV1 antagonist delivery suppresses cancer-associated fibroblasts and promotes NK-cell-mediated antitumor responses\"\n  ],\n  \"study_type\": \"In vivo PDAC models\",\n  \"scientific_significance\": \"This work demonstrates a strategy to convert postoperative pancreatic fluid from a pathological complication into an active antitumor mechanism, providing a novel therapeutic paradigm for PDAC recurrence management.\"\n}",
+        "parsed": {
+          "summary": "This study investigated a nano-engineered approach to combat pancreatic ductal adenocarcinoma (PDAC) recurrence after surgery by repurposing leaked pancreatic fluid (PF) as a therapeutic resource. The platform TNPs-N@B.t. + Gel combines engineered Bacteroides thetaiotaomicron to degrade tumor mucins, PF-induced enzyme corona for tumor penetration, and TRPV1 antagonist to suppress cancer-associated fibroblasts and enhance immune responses. It demonstrated reduced recurrence, prolonged survival, and pain alleviation in PDAC models without systemic toxicity.",
+          "key_findings": [
+            "Engineered Bacteroides thetaiotaomicron degrades tumor-associated mucins to expose PDAC cells to pancreatic enzymes",
+            "Leaked pancreatic fluid forms an enzyme corona that disrupts intercellular adhesion and enhances tumor penetration",
+            "TRPV1 antagonist delivery suppresses cancer-associated fibroblasts and promotes NK-cell-mediated antitumor responses"
+          ],
+          "study_type": "In vivo PDAC models",
+          "scientific_significance": "This work demonstrates a strategy to convert postoperative pancreatic fluid from a pathological complication into an active antitumor mechanism, providing a novel therapeutic paradigm for PDAC recurrence management."
+        },
+        "elapsed_seconds": 48.7058,
+        "input_tokens": 705,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 969,
+        "model_eval_seconds": 42.6717,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962342",
+        "title": "Piezoelectric electroporation potentiates high-frequency irreversible electroporation for enhanced prostate cancer eradication.",
+        "abstract": "NA: Residual tumor cell persistence remains a critical unresolved barrier limiting focal therapy such as high-frequency irreversible electroporation (H-FIRE) for prostate cancer. In this study, we identified DNA damage repair as the central mechanism governing the reversible survival of residual cells after H-FIRE. By exploiting the transient membrane permeability of these residual cells following H-FIRE, we engineered a piezoelectrically active nanomaterial, BOIS. Exogenous electric pulses generated by H-FIRE enhance tumor membrane permeabilization, thereby facilitating the intracellular delivery of BOIS and promoting its efficient penetration into residual malignant cells. Upon ultrasound activation, BOIS induces surface charge separation and electron migration, producing an intrinsic electric field accompanied by reactive oxygen species (ROS). This dual mechanism cascade simultaneously inflicts endogenous electric field-mediated electroporation damage on both cellular and nuclear membranes and imposes lethal oxidative stress, thereby converting reversibly injured residual cells into an irreversible death trajectory. Consequently, residual tumor cells with damage repair capacity are converted from a reversibly injured state to irreversible lethal damage. Unlike conventional combination therapies, this study pioneered a new therapeutic paradigm in which the focal ablation procedure functions as a nanomaterial delivery mechanism, thereby establishing a self-reinforcing therapeutic loop. This strategy markedly amplified the therapeutic efficacy of H-FIRE and enhanced the eradication of residual tumor cells. Collectively, these findings establish a groundbreaking therapeutic paradigm for eliminating residual disease following focal ablation.",
+        "doi": "10.1016/j.biomaterials.2026.124683",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124683",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962342/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether piezoelectric electroporation could enhance high-frequency irreversible electroporation (H-FIRE) for prostate cancer treatment by targeting residual tumor cells. Using a piezoelectric nanomaterial (BOIS), the researchers exploited H-FIRE-induced membrane permeability to deliver BOIS into residual cells. Upon ultrasound activation, BOIS generated an electric field and reactive oxygen species (ROS), converting reversible injury to irreversible cell death. The approach significantly improved eradication of residual tumor cells without additional external energy input.\",\n  \"key_findings\": [\n    \"H-FIRE-induced membrane permeability enabled intracellular delivery of piezoelectric nanomaterial BOIS into residual prostate cancer cells\",\n    \"Ultrasound-activated BOIS generated an electric field and ROS, causing simultaneous membrane and nuclear damage\",\n    \"This dual mechanism converted reversibly injured residual cells into irreversible lethal damage, enhancing tumor eradication\"\n  ],\n  \"study_type\": \"In vitro and in vivo models\",\n  \"scientific_significance\": \"This work establishes a self-reinforcing therapeutic loop where focal ablation (H-FIRE) delivers nanomaterials to induce irreversible cell death in residual tumor cells, offering a novel strategy for complete tumor eradication post-ablation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether piezoelectric electroporation could enhance high-frequency irreversible electroporation (H-FIRE) for prostate cancer treatment by targeting residual tumor cells. Using a piezoelectric nanomaterial (BOIS), the researchers exploited H-FIRE-induced membrane permeability to deliver BOIS into residual cells. Upon ultrasound activation, BOIS generated an electric field and reactive oxygen species (ROS), converting reversible injury to irreversible cell death. The approach significantly improved eradication of residual tumor cells without additional external energy input.",
+          "key_findings": [
+            "H-FIRE-induced membrane permeability enabled intracellular delivery of piezoelectric nanomaterial BOIS into residual prostate cancer cells",
+            "Ultrasound-activated BOIS generated an electric field and ROS, causing simultaneous membrane and nuclear damage",
+            "This dual mechanism converted reversibly injured residual cells into irreversible lethal damage, enhancing tumor eradication"
+          ],
+          "study_type": "In vitro and in vivo models",
+          "scientific_significance": "This work establishes a self-reinforcing therapeutic loop where focal ablation (H-FIRE) delivers nanomaterials to induce irreversible cell death in residual tumor cells, offering a novel strategy for complete tumor eradication post-ablation."
+        },
+        "elapsed_seconds": 47.9286,
+        "input_tokens": 670,
+        "output_tokens": 262,
+        "thoughts_tokens": null,
+        "total_tokens": 932,
+        "model_eval_seconds": 42.1853,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42971201",
+        "title": "Fatty acid desaturation controls cellular fate decisions between senescence and ferroptosis.",
+        "abstract": "NA: When subject to damage or stress, cells develop responses in order to maintain tissue homeostasis. Two such responses are ferroptosis and cellular senescence, but how cells decide between these outcomes remains unclear. Here, we show that senescent cells increase import and membrane levels of multiple polyunsaturated fatty acids (PUFAs), but a specific intermediate PUFA, dihomo-gamma-linolenic acid (DGLA, 20:3ω-6), is reduced. Exogenous repletion of DGLA instead results in cell death by ferroptosis. Senescent cells manifest additional features associated with ferroptosis, including labile iron and expression of lipoxygenases as well as low-level membrane peroxidation. Oral DGLA supplementation lowers markers of senescence in aged mice and improves age-related functional outcomes. Finally, obese humans with lowered DGLA desaturation rates have lower markers of adipose tissue senescence. Together, our data implicate shifts in PUFA metabolism as a driver of decisions between senescence and ferroptosis.",
+        "doi": "10.1016/j.cell.2026.09.036",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.036",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42971201/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how fatty acid desaturation influences cell fate decisions between senescence and ferroptosis. Using cellular and in vivo models, researchers found that senescent cells exhibit reduced dihomo-gamma-linolenic acid (DGLA) levels, while exogenous DGLA supplementation induces ferroptosis. The findings demonstrate DGLA's role in determining cell death pathways and show potential therapeutic implications for age-related senescence in mice and humans.\",\n  \"key_findings\": [\n    \"Senescent cells show reduced levels of dihomo-gamma-linolenic acid (DGLA, 20:3ω-6)\",\n    \"Exogenous DGLA supplementation triggers ferroptosis in cells\",\n    \"Oral DGLA reduces senescence markers in aged mice and improves functional outcomes\"\n  ],\n  \"study_type\": \"In vivo and cellular models\",\n  \"scientific_significance\": \"The study identifies a specific fatty acid metabolic switch that governs the decision between senescence and ferroptosis, providing a mechanistic link between lipid metabolism and cellular aging pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how fatty acid desaturation influences cell fate decisions between senescence and ferroptosis. Using cellular and in vivo models, researchers found that senescent cells exhibit reduced dihomo-gamma-linolenic acid (DGLA) levels, while exogenous DGLA supplementation induces ferroptosis. The findings demonstrate DGLA's role in determining cell death pathways and show potential therapeutic implications for age-related senescence in mice and humans.",
+          "key_findings": [
+            "Senescent cells show reduced levels of dihomo-gamma-linolenic acid (DGLA, 20:3ω-6)",
+            "Exogenous DGLA supplementation triggers ferroptosis in cells",
+            "Oral DGLA reduces senescence markers in aged mice and improves functional outcomes"
+          ],
+          "study_type": "In vivo and cellular models",
+          "scientific_significance": "The study identifies a specific fatty acid metabolic switch that governs the decision between senescence and ferroptosis, providing a mechanistic link between lipid metabolism and cellular aging pathways."
+        },
+        "elapsed_seconds": 41.809,
+        "input_tokens": 603,
+        "output_tokens": 241,
+        "thoughts_tokens": null,
+        "total_tokens": 844,
+        "model_eval_seconds": 37.1198,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42885862",
+        "title": "Tuning N-Species Adsorption/Desorption Equilibrium by Ni1Aun-SrTiO3 for Artificial Urea Photosynthesis.",
+        "abstract": "NA: Inefficient generation of N-related intermediates, stemming from inert adsorption/photoactivation of N2, has hindered efficient artificial photosynthesis of urea from N2, CO2, and H2O. To overcome this bottleneck, we herein propose a strategy for modulating the adsorption/desorption equilibrium of N-related species using precisely designed bimetallic Ni1Aun active sites supported on a strontium titanate (NiAu-STO) semiconductor photocatalyst. This strategy significantly enhances N2 adsorption/activation and effective generation of N-related intermediates to facilitate C-N coupling for the photocatalytic urea synthesis, affording a considerable urea production rate of 1333.63 µg gcat. -1, with successful crystallization of a collectible solid-phase urea product. Furthermore, we developed a novel reaction-temperature programmed desorption-mass spectrometry tandem monitoring system to elucidate the adsorption behavior of N2, which can clarify the adsorption behavior of N2 and confirm the formation of critical N-related intermediates (e.g., *NH2) on the NiAu-STO photocatalyst. In addition, in situ Raman spectroscopy results further validated the formation of a distinctive C-N coupling intermediate (*NH2COO-) on the photocatalyst surface, providing mechanistic insights into urea photosynthesis from N2, CO2, and H2O.",
+        "doi": "10.1002/adma.75416",
+        "doi_url": "https://doi.org/10.1002/adma.75416",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885862/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses inefficient N2 activation in artificial urea photosynthesis by engineering NiAu-SrTiO3 photocatalysts with bimetallic sites to tune N2 adsorption/desorption equilibria. The approach enhances N2 activation and C-N coupling, achieving 1333.63 µg gcat⁻¹ urea production and confirming *NH2 intermediate formation via in situ techniques. The findings demonstrate improved N2 utilization for ure. \",\n  \"key_findings\": [\n    \"Enhanced N2 adsorption/activation via NiAu-SrTi:O3 bimetallic sites\",\n    \"1333.63 µg gcat⁻¹ urea production rate with collectible solid-phase urea\",\n    \"In situ confirmation of *NH2 and *NH2COO⁻ intermediates via Raman and desorption-MS\"\n  ],\n  \"study_type\": \"Photocatalytic urea synthesis using NiAu-SrTiO3\",\n  \"scientific_significance\": \"This work establishes a strategy for optimizing N2 activation in artificial photosynthesis, providing mechanistic insights into urea synthesis from N2, CO2, and H2O through tunable adsorption equilibria.\"\n}",
+        "parsed": {
+          "summary": "This study addresses inefficient N2 activation in artificial urea photosynthesis by engineering NiAu-SrTiO3 photocatalysts with bimetallic sites to tune N2 adsorption/desorption equilibria. The approach enhances N2 activation and C-N coupling, achieving 1333.63 µg gcat⁻¹ urea production and confirming *NH2 intermediate formation via in situ techniques. The findings demonstrate improved N2 utilization for ure. ",
+          "key_findings": [
+            "Enhanced N2 adsorption/activation via NiAu-SrTi:O3 bimetallic sites",
+            "1333.63 µg gcat⁻¹ urea production rate with collectible solid-phase urea",
+            "In situ confirmation of *NH2 and *NH2COO⁻ intermediates via Raman and desorption-MS"
+          ],
+          "study_type": "Photocatalytic urea synthesis using NiAu-SrTiO3",
+          "scientific_significance": "This work establishes a strategy for optimizing N2 activation in artificial photosynthesis, providing mechanistic insights into urea synthesis from N2, CO2, and H2O through tunable adsorption equilibria."
+        },
+        "elapsed_seconds": 48.2579,
+        "input_tokens": 680,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 944,
+        "model_eval_seconds": 42.5102,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42965979",
+        "title": "Transcription activator-like effector base editing delivered by a targeted lipid nanoparticle for therapy of lung cancer.",
+        "abstract": "NA: Lung cancer is the leading cause of cancer-related deaths worldwide. Among them, non-small cell lung cancer (NSCLC) accounts for approximately 85% of all cases, while the mutation of KRAS oncogene plays a crucial role in its formation and metastasis. Here, we report a transcription activator-like effector (TALE) base editor that can accurately identify KRAS gene under the guide of TALE and sgRNA, convert C base to T base, thereby generating a stop codon and blocking the expression of KRAS. Besides, a targeted TALE base editing lipid nanoparticle (targeted TALE LNP) is developed by rationally designing with cancer-targeted EGFR peptide. The targeted TALE LNP exhibits a base editing effect, cancer targeting, and remarkable therapy efficacy in NSCLC cancer-bearing mice. In conclusion, the targeted TALE LNP has the potential to treat lung cancer with KRAS gene mutation through an approach of transcription activator-like effector base editing.",
+        "doi": "10.1016/j.biomaterials.2026.124722",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124722",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42965979/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the development of a targeted lipid nanoparticle (LNP) delivering transcription activator-like effector (TALE) base editors to correct KRAS mutations in non-small cell lung cancer (NSCLC). The approach involved designing a cancer-targeted LNP using EGFR peptide to deliver TALE base editors that convert KRAS C to T, creating a stop codon. In NSCLC mouse models, the targeted TALE LNP demonstrated effective KRAS correction, cancer targeting, and therapeutic efficacy, suggesting potential for KRAS-mutant lung cancer therapy.\",\n  \"key_findings\": [\n    \"TALE base editors specifically convert KRAS C to T to generate a stop codon\",\n    \"Targeted TALE LNP using EGFR peptide achieves cancer-specific delivery\",\n    \"Targeted TALE LNP shows therapeutic efficacy in KRAS-mutant NSCLC mouse models\"\n  ],\n  \"study_type\": \"In vivo mouse model\",\n  \"scientific_significance\": \"This work demonstrates a targeted gene correction strategy for KRAS-mutant lung cancer using TALE base editing delivered via cancer-targeted lipid nanoparticles, providing a potential therapeutic approach for a major cancer subtype with high clinical relevance.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the development of a targeted lipid nanoparticle (LNP) delivering transcription activator-like effector (TALE) base editors to correct KRAS mutations in non-small cell lung cancer (NSCLC). The approach involved designing a cancer-targeted LNP using EGFR peptide to deliver TALE base editors that convert KRAS C to T, creating a stop codon. In NSCLC mouse models, the targeted TALE LNP demonstrated effective KRAS correction, cancer targeting, and therapeutic efficacy, suggesting potential for KRAS-mutant lung cancer therapy.",
+          "key_findings": [
+            "TALE base editors specifically convert KRAS C to T to generate a stop codon",
+            "Targeted TALE LNP using EGFR peptide achieves cancer-specific delivery",
+            "Targeted TALE LNP shows therapeutic efficacy in KRAS-mutant NSCLC mouse models"
+          ],
+          "study_type": "In vivo mouse model",
+          "scientific_significance": "This work demonstrates a targeted gene correction strategy for KRAS-mutant lung cancer using TALE base editing delivered via cancer-targeted lipid nanoparticles, providing a potential therapeutic approach for a major cancer subtype with high clinical relevance."
+        },
+        "elapsed_seconds": 44.0094,
+        "input_tokens": 583,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 838,
+        "model_eval_seconds": 39.918,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42971202",
+        "title": "Industrialization drives convergent microbiome and host physiological shifts in the human metaorganism.",
+        "abstract": "NA: Understanding how industrialization reshapes the human metaorganism requires integrating microbiome ecology with host physiology across globally diverse populations. Here, we generate multivariate data from the Global Microbiome Conservancy cohort, including gut microbiome, immunoglobulin A (IgA) sequencing, host genotyping, diet, lifestyle, and fecal biomarker profiles, to investigate host-microbiome interactions across gradients of industrialization and geography. We show that industrialization is associated with homogenized microbial compositions, reduced microbial diversity, and lower community stability, independent of host confounders. We further show that industrialization is linked to elevated markers of gut stress, increased IgA secretion, and altered patterns of IgA-bacteria interactions. Finally, we show that microbiome-based disease predictors trained on industrialized populations are uninformative in less industrialized cohorts, highlighting limited cross-population transferability. Together, our results reveal coordinated restructuring of the microbial ecosystem and host physiology and emphasize the need for inclusive, globally representative data to improve translational microbiome applications across diverse human populations.",
+        "doi": "10.1016/j.cell.2026.10.016",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.016",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42971202/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how industrialization impacts the human metaorgan: microbiome composition, host physiology, and their interactions across global populations. Using data from the Global Microbiome Conservancy cohort, it found industrialization correlates with homogenized microbial communities, reduced diversity, lower stability, elevated gut stress markers, increased IgA secretion, and altered IgA-bacteria interactions. Microbiome disease predictors from industrialized groups fail in less industrialized cohorts, indicating limited cross-population applicability of such models.\",\n  \"key_findings\": [\n    \"Industrialization correlates with homogenized gut microbial compositions\",\n    \"Industrialization is associated with reduced microbial diversity and community stability\",\n    \"Microbiome-based disease predictors trained on industrialized populations are uninformative in less industrialized cohorts\"\n  ],\n  \"study_type\": \"Multivariate cohort analysis\",\n  \"scientific_significance\": \"The findings demonstrate that industrialization drives coordinated restructuring of the human metaorganism, highlighting the necessity for globally representative data to ensure equitable translational microbiome applications across diverse human populations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how industrialization impacts the human metaorgan: microbiome composition, host physiology, and their interactions across global populations. Using data from the Global Microbiome Conservancy cohort, it found industrialization correlates with homogenized microbial communities, reduced diversity, lower stability, elevated gut stress markers, increased IgA secretion, and altered IgA-bacteria interactions. Microbiome disease predictors from industrialized groups fail in less industrialized cohorts, indicating limited cross-population applicability of such models.",
+          "key_findings": [
+            "Industrialization correlates with homogenized gut microbial compositions",
+            "Industrialization is associated with reduced microbial diversity and community stability",
+            "Microbiome-based disease predictors trained on industrialized populations are uninformative in less industrialized cohorts"
+          ],
+          "study_type": "Multivariate cohort analysis",
+          "scientific_significance": "The findings demonstrate that industrialization drives coordinated restructuring of the human metaorganism, highlighting the necessity for globally representative data to ensure equitable translational microbiome applications across diverse human populations."
+        },
+        "elapsed_seconds": 37.8891,
+        "input_tokens": 590,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 812,
+        "model_eval_seconds": 33.8568,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42886000",
+        "title": "High-Performance Liquid Crystal Elastomer Fibers via a Tandem Alignment Strategy.",
+        "abstract": "NA: Liquid crystal elastomer (LCE) fibers have shown great potential as shape-memory soft materials due to their large and reversible deformation capacity. However, fabrication methods for LCE fibers with ultrafast thermal response and the exploration of the factors influencing their thermal actuation performance remain limited. A tandem alignment strategy based on electrospinning is presented to fabricate highly aligned LCE fibers. These LCE fibers achieve an order parameter of up to 0.78 and exhibit exceptional actuation performance under thermal stimulation, including an actuation strain of 80%, an actuation speed of 1485% s-1, and a peak power density of 6105 W kg-1. Furthermore, the actuation performance can be significantly enhanced by resonance. Under constant heating conditions, modulation of the heating frequency enables the actuation speed of the LCE fibers to be amplified up to 10-fold, achieving bioinspired energy efficiency optimization similar to the wing-flapping of insects. The LCE fibers demonstrate promising applicability in scenarios requiring ultrafast and efficient thermal actuation.",
+        "doi": "10.1002/adma.75204",
+        "doi_url": "https://doi.org/10.1002/adma.75204",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42886000/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the fabrication of liquid crystal elastomer (LCE) fibers with ultrafast thermal response using a tandem electrospinning alignment strategy. The approach achieved high molecular order (0.78) and exceptional actuation performance, including 80% strain, 1485% s-1 speed, and 6105 W kg-. Resonance modulation further enhanced speed by 10-fold under heating, enabling bioinspired energy efficiency.\",\n  \"key_findings\": [\n    \"High molecular order (0.78) in LCE fibers fabricated via tandem electrospinning alignment\",\n    \"Actuation strain of 80% and speed of 1485% s-1 under thermal stimulation\",\n    \"Resonance modulation increased actuation speed by 10-fold for energy efficiency optimization\"\n  ],\n  \"study_type\": \"Electrospinning-based alignment strategy\",\n  \"scientific_significance\": \"This work advances the field of shape-memory soft materials by demonstrating a fabrication method for LCE fibers with ultrafast thermal actuation and resonance-enhanced energy efficiency, enabling applications requiring rapid, high-performance thermal responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the fabrication of liquid crystal elastomer (LCE) fibers with ultrafast thermal response using a tandem electrospinning alignment strategy. The approach achieved high molecular order (0.78) and exceptional actuation performance, including 80% strain, 1485% s-1 speed, and 6105 W kg-. Resonance modulation further enhanced speed by 10-fold under heating, enabling bioinspired energy efficiency.",
+          "key_findings": [
+            "High molecular order (0.78) in LCE fibers fabricated via tandem electrospinning alignment",
+            "Actuation strain of 80% and speed of 1485% s-1 under thermal stimulation",
+            "Resonance modulation increased actuation speed by 10-fold for energy efficiency optimization"
+          ],
+          "study_type": "Electrospinning-based alignment strategy",
+          "scientific_significance": "This work advances the field of shape-memory soft materials by demonstrating a fabrication method for LCE fibers with ultrafast thermal actuation and resonance-enhanced energy efficiency, enabling applications requiring rapid, high-performance thermal responses."
+        },
+        "elapsed_seconds": 42.9684,
+        "input_tokens": 596,
+        "output_tokens": 246,
+        "thoughts_tokens": null,
+        "total_tokens": 842,
+        "model_eval_seconds": 38.2582,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42967418",
+        "title": "Biomaterial thrombosis-on-a-chip: Real-time visualisation of biomaterial thrombosis at clinical heparin levels.",
+        "abstract": "NA: Blood-contacting medical device thrombosis causes device failure, embolism and bleeding due to reliance on anti-thrombotic drugs. The interplay between biological, material and flow parameters in medical device thrombosis remains poorly understood. Importantly, tools to evaluate acute, dynamic thrombotic events on materials in real-time are lacking, impacting the successful development and translation of new anti-thrombotic materials. We developed a biomaterial thrombosis-on-a-chip model to evaluate acute material thrombogenicity in real-time using human whole blood, mimicking clinical heparin doses (0.5-5 U/mL) and shear rates (50-2000 s-1). System validation showed expected platelet adhesion on hydrophilic glass and platelet passivation and detachment at increasing shears on hydrophobic silicone. For the first time, we characterised fibrin events on materials, finding a shear dependent decrease on glass but not silicone, pre-coating materials with albumin abolished fibrin on silicone but not glass, and inhibition of FXIIa reduced but did not abolish fibrin on either material. More and larger fibrin events (aggregation and channel occlusion) occurred at 0.5 U/mL compared to 5 U/mL heparin, and the heparin level did not affect platelet adhesion dynamics. Glass showed the most severe fibrin events, followed by polyvinyl chloride (PVC) > silicone > polycarbonate. Most fibrin events occurred in association with platelets and although platelets were P-selectin positive, very few platelets were procoagulant (P-selectin and Annexin V positive). This clinically relevant, biomaterial thrombosis-on-a-chip model could allow biomaterial thrombosis mechanism elucidation and fast-track evaluation and development of anti-thrombotic materials to improve medical device function and reduce adverse thrombotic and bleeding patient outcomes.",
+        "doi": "10.1016/j.biomaterials.2026.124724",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124724",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42967418/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a biomaterial thrombosis-on-a-chip model using human whole blood to evaluate acute thrombogenicity of medical devices under clinical heparin levels (0.5-5 U/mL) and shear rates (50-2000 s-1). It revealed shear-dependent fibrin events, differential fibrin responses across materials, and heparin concentration effects on fibrin aggregation without altering platelet adhesion dynamics.\",\n  \"key_findings\": [\n    \"Shear-dependent decrease in fibrin events on hydrophilic glass but not hydrophobic silicone\",\n    \"Albumin pre-coating abolished fibrin on silicone but not glass\",\n    \"Lower heparin levels (0.5 U/mL) induced more and larger fibrin aggregates compared to higher levels (5 U/mL)\"\n  ],\n  \"study_type\": \"In vitro thrombosis-on-a-chip model\",\n  \"scientific_significance\": \"This model provides real-time visualization of acute biomaterial thrombosis mechanisms under clinically relevant conditions, enabling rapid assessment of anti-thrombotic material efficacy without reliance on traditional in vivo or long-term in vitro methods.\"\n}",
+        "parsed": {
+          "summary": "This study developed a biomaterial thrombosis-on-a-chip model using human whole blood to evaluate acute thrombogenicity of medical devices under clinical heparin levels (0.5-5 U/mL) and shear rates (50-2000 s-1). It revealed shear-dependent fibrin events, differential fibrin responses across materials, and heparin concentration effects on fibrin aggregation without altering platelet adhesion dynamics.",
+          "key_findings": [
+            "Shear-dependent decrease in fibrin events on hydrophilic glass but not hydrophobic silicone",
+            "Albumin pre-coating abolished fibrin on silicone but not glass",
+            "Lower heparin levels (0.5 U/mL) induced more and larger fibrin aggregates compared to higher levels (5 U/mL)"
+          ],
+          "study_type": "In vitro thrombosis-on-a-chip model",
+          "scientific_significance": "This model provides real-time visualization of acute biomaterial thrombosis mechanisms under clinically relevant conditions, enabling rapid assessment of anti-thrombotic material efficacy without reliance on traditional in vivo or long-term in vitro methods."
+        },
+        "elapsed_seconds": 48.0292,
+        "input_tokens": 790,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 1033,
+        "model_eval_seconds": 40.2936,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42971203",
+        "title": "TECR palmitoylation triggers a necrotic cell death program driving acute liver injury.",
+        "abstract": "NA: Acute liver injury caused by drug toxicity or immune activation remains a major clinical challenge with limited mechanistic understanding and few effective therapies. Here, we identify a previously unrecognized form of regulated cell death driven by palmitoylation of the endoplasmic reticulum (ER)-resident enzyme trans-2,3-enoyl-coenzyme A (CoA) reductase (TECR). We show that multi-site palmitoylation of TECR, redundantly catalyzed by the palmitoyl acyltransferases ZDHHC5 and ZDHHC2 and dynamically reversed by the depalmitoylase ABHD10, activates PERK-dependent ER stress signaling to trigger cell death. This cell death pathway is a TECR-dependent, palmitoylation-induced, ER stress-mediated necrotic cell death program (TPNCD). TPNCD contributes to liver injury in mouse models of acetaminophen- and concanavalin A-induced hepatotoxicity and is attenuated by hepatocyte-specific TECR ablation or by pharmacological inhibition of palmitoylation or ER stress signaling. Together, these findings establish TPNCD as a distinct, necrotic cell death pathway underlying acute liver injury and highlight new therapeutic entry points for hepatoprotection.",
+        "doi": "10.1016/j.cell.2026.10.011",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.011",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42971203/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies a novel necrotic cell death pathway, TPNCD, driven by TECR palmitoylation. The research demonstrates that multi-site palmitoylation of TEC. The study used mouse models of acetaminophen- and concanavalin A-induced hepatotoxicity to show TPNCD contributes to acute liver injury. TPNCD was attenuated by TECR ablation or inhibition of palmitoylation/ER stress signaling.\",\n  \"key_findings\": [\n    \"Multi-site palmitoylation of TECR activates PERK-dependent ER stress signaling to trigger necrotic cell death\",\n    \"TPNCD contributes to liver injury in mouse models of acetaminophen- and concanavalin A-induced hepatotoxicity\",\n    \"Hepatocyte-specific TECR ablation or inhibition of palmitoylation/ER stress signaling attenuates TPNCD\"\n  ],\n  \"study_type\": \"Mouse models of hepatotoxicity\",\n  \"scientific_significance\": \"The discovery of TPNCD establishes a new necrotic cell death pathway underlying acute liver injury, providing potential therapeutic targets for hepatoprotection.\"\n}",
+        "parsed": {
+          "summary": "This study identifies a novel necrotic cell death pathway, TPNCD, driven by TECR palmitoylation. The research demonstrates that multi-site palmitoylation of TEC. The study used mouse models of acetaminophen- and concanavalin A-induced hepatotoxicity to show TPNCD contributes to acute liver injury. TPNCD was attenuated by TECR ablation or inhibition of palmitoylation/ER stress signaling.",
+          "key_findings": [
+            "Multi-site palmitoylation of TECR activates PERK-dependent ER stress signaling to trigger necrotic cell death",
+            "TPNCD contributes to liver injury in mouse models of acetaminophen- and concanavalin A-induced hepatotoxicity",
+            "Hepatocyte-specific TECR ablation or inhibition of palmitoylation/ER stress signaling attenuates TPNCD"
+          ],
+          "study_type": "Mouse models of hepatotoxicity",
+          "scientific_significance": "The discovery of TPNCD establishes a new necrotic cell death pathway underlying acute liver injury, providing potential therapeutic targets for hepatoprotection."
+        },
+        "elapsed_seconds": 43.3752,
+        "input_tokens": 640,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 888,
+        "model_eval_seconds": 38.3551,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42888888",
+        "title": "Spatially Decoupled Charge Compensation Enables Versatile Cation-Anion Co-Intercalation in Layered Metal Oxide Cathodes.",
+        "abstract": "NA: Multivalent cation-anion co-(de)intercalation offers a promising pathway to higher energy densities in multivalent ion batteries. However, its practical realization is challenged by lattice strain and the lack of effective dual charge-compensation strategies. Here, we report a layered vanadium oxide cathode with pre-intercalated melamine ligands (MeVO) that enables a spatially decoupled charge-compensation mechanism-organic ligands serve as redox centers for anions, while metal sites accommodate multivalent cation redox. This design alleviates electrostatic crowding, promotes ion mobility, and preserves structural integrity. Using Mg2 +-TFSI- as a representative system, MeVO delivers a record cycle life of over 36 000 cycles at a loading of approximately 3 mg cm- 2 and an areal capacity of 3.3 mAh cm- 2 at a higher loading of 16.4 mg cm- 2, surpassing leading Mg-ion cathodes. The hybrid structure also supports co-(de)intercalation of various multivalent cations and anions, demonstrating its potential as a versatile intercalation platform for high-performance energy storage.",
+        "doi": "10.1002/adma.75440",
+        "doi_url": "https://doi.org/10.1002/adma.75440",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42888888/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates spatially decoupled charge compensation in layered metal oxide cathodes for multivalent ion batteries. By incorporating pre-intercalated melamine ligands, the cathode enables organic ligands to act as anion redox centers while metal sites handle cation redox, reducing lattice strain and improving cycle life. The material achieves over 36,000 cycles at 3 mg cm⁻² loading and supports versatile cation-anion co-intercalation.\",\n  \"key_findings\": [\n    \"Pre-intercalated melamine ligands enable spatially decoupled charge compensation in layered vanadium oxide cathodes\",\n    \"The design achieves over 36,000 cycles at 3 mg cm⁻² loading with high areal capacity\",\n    \"The cathode supports co-intercalation of multiple multivalent cations and anions\"\n  ],\n  \"study_type\": \"In vitro electrochemical characterization with layered vanadium oxide cathodes\",\n  \"scientific_significance\": \"This work demonstrates a novel charge-compensation mechanism that enhances structural stability and cycle life for multivalent ion batteries, advancing the feasibility of high-energy-density cathodes through spatially decoupled redox processes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates spatially decoupled charge compensation in layered metal oxide cathodes for multivalent ion batteries. By incorporating pre-intercalated melamine ligands, the cathode enables organic ligands to act as anion redox centers while metal sites handle cation redox, reducing lattice strain and improving cycle life. The material achieves over 36,000 cycles at 3 mg cm⁻² loading and supports versatile cation-anion co-intercalation.",
+          "key_findings": [
+            "Pre-intercalated melamine ligands enable spatially decoupled charge compensation in layered vanadium oxide cathodes",
+            "The design achieves over 36,000 cycles at 3 mg cm⁻² loading with high areal capacity",
+            "The cathode supports co-intercalation of multiple multivalent cations and anions"
+          ],
+          "study_type": "In vitro electrochemical characterization with layered vanadium oxide cathodes",
+          "scientific_significance": "This work demonstrates a novel charge-compensation mechanism that enhances structural stability and cycle life for multivalent ion batteries, advancing the feasibility of high-energy-density cathodes through spatially decoupled redox processes."
+        },
+        "elapsed_seconds": 44.5927,
+        "input_tokens": 636,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 891,
+        "model_eval_seconds": 39.5938,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42971117",
+        "title": "Pharmacologically programmed tolerogenic dendritic cell membrane-coated nanoparticles for CCR7-dependent lymphoid organ targeting in transplantation.",
+        "abstract": "NA: Secondary lymphoid organs (SLOs) are critical sites for alloimmune activation and attractive targets for transplantation immunotherapy. However, current cell membrane-based targeting strategies face a fundamental trade-off between low immunogenicity and efficient SLO homing, limiting their therapeutic potential. To resolve this functional trade-off, we developed a biomimetic delivery system (PD-DmRK) by coating self-assembled RapaLink-1 (RK) nanoparticles with cell membranes derived from PP242 and docosahexaenoic acid (DHA)-induced tolerogenic dendritic cells (TolDCs). Compared with conventional tolerogenic induction strategies, PP242/DHA preserved low immunogenicity and markedly increased CCR7 expression, thereby improving SLO targeting. Mechanistically, PP242 and DHA cooperatively activated the transcription factor USF2, which directly bound to the Ccr7 promoter and transcriptionally upregulated Ccr7 expression. Consequently, PD-DmRK exhibited enhanced accumulation in SLOs, reduced hepatic and renal sequestration, and significantly prolonged skin and cardiac allograft survival. High-dimensional spectral flow cytometry and single-cell transcriptomic analyses further indicated that PD-DmRK treatment was associated with enrichment of Ccr9-expressing plasmacytoid dendritic cells and regulatory T cells, accompanied by reduced cytotoxic T-cell responses. Overall, PD-DmRK provides a TolDC membrane platform in which the USF2-CCR7 axis links immunoregulatory activity with CCR7-dependent SLO targeting, supporting its potential for targeted immunotherapy in transplantation.",
+        "doi": "10.1016/j.biomaterials.2026.124719",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124719",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42971117/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a biomimetic nanoparticle system (PD-DmRK) coated with tolerogenic dendritic cell membranes to enhance lymphoid organ targeting in transplantation. By combining PP242 and DHA, the system increased CCR7 expression via USF2 transcriptional activation, improving secondary lymphoid organ accumulation and prolonging allograft survival while reducing off-target sequestration.\",\n  \"key_findings\": [\n    \"PD-DmRK nanoparticles coated with tolerogenic dendritic cell membranes increased CCR7 expression through USF2-mediated transcriptional activation\",\n    \"The system enhanced accumulation in secondary lymphoid organs and prolonged skin and cardiac allograft survival\",\n    \"PD-DmRK reduced hepatic and renal sequestration and promoted regulatory T cell enrichment with reduced cytotoxic T-cell responses\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies\",\n  \"scientific_significance\": \"This work establishes a mechanistic link between immunoregulatory activity and CCR7-dependent lymphoid targeting, providing a biomimetic platform for targeted immunomodulation in transplantation.\"\n}",
+        "parsed": {
+          "summary": "This study developed a biomimetic nanoparticle system (PD-DmRK) coated with tolerogenic dendritic cell membranes to enhance lymphoid organ targeting in transplantation. By combining PP242 and DHA, the system increased CCR7 expression via USF2 transcriptional activation, improving secondary lymphoid organ accumulation and prolonging allograft survival while reducing off-target sequestration.",
+          "key_findings": [
+            "PD-DmRK nanoparticles coated with tolerogenic dendritic cell membranes increased CCR7 expression through USF2-mediated transcriptional activation",
+            "The system enhanced accumulation in secondary lymphoid organs and prolonged skin and cardiac allograft survival",
+            "PD-DmRK reduced hepatic and renal sequestration and promoted regulatory T cell enrichment with reduced cytotoxic T-cell responses"
+          ],
+          "study_type": "In vitro and in vivo studies",
+          "scientific_significance": "This work establishes a mechanistic link between immunoregulatory activity and CCR7-dependent lymphoid targeting, providing a biomimetic platform for targeted immunomodulation in transplantation."
+        },
+        "elapsed_seconds": 42.4868,
+        "input_tokens": 711,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 942,
+        "model_eval_seconds": 36.52,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42971204",
+        "title": "Convergent genomic evolution of human gut bacteria along an industrialization gradient.",
+        "abstract": "NA: Whether human-associated environments drive adaptive genome evolution in gut commensal bacteria remains largely unknown. Here, we investigate how genomic adaptation in gut bacteria differs between industrialized and non-industrialized human populations. We generated a collection of isolate genomes spanning diverse host geographies, lifestyles, species, and strains. We first found that, compared with metagenome-assembled genomes (MAGs), paired isolate genomes recover more functional elements and signals of horizontal gene transfer (HGT). Leveraging isolate genomes from multiple species, we find that strains from industrialized hosts experience an expansion of proteome size and harbor greater pangenome fluidity, driven by recent HGT events. Gene- and variant-level analyses reveal convergent patterns of lifestyle-specific adaptation in functions that are critical for ecological adaptation, such as the stress response, cell-envelope remodeling, and central metabolism. Our results demonstrate that industrialization drives convergent genome evolution in gut bacteria, providing a framework for understanding the mechanisms of microbial adaptation to rapidly changing human environments.",
+        "doi": "10.1016/j.cell.2026.10.014",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.014",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42971204/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates genomic adaptation differences between gut bacteria in industrialized versus non-industrialized human populations. Using isolate genomes across diverse geographies and host lifestyles, it found industrialized hosts' gut bacteria exhibit expanded proteomes and increased pangenome fluidity due to recent horizontal gene transfer. Convergent adaptations in stress response, cell-envelope remodeling, and central metabolism were observed, indicating industrialization drives convergent genome evolution in gut commensals.\",\n  \"key_findings\": [\n    \"Industrialized human hosts' gut bacteria show expanded proteome size compared to non-industrialized populations\",\n    \"Strains from industrialized hosts exhibit greater pangenome fluidity driven by recent horizontal gene transfer events\",\n    \"Convergent adaptations in stress response, cell as well as central metabolism pathways were identified across industrialized populations\"\n  ],\n  \"study_type\": \"Genomic analysis of gut bacterial isolates across industrialized and non-industrialized human populations\",\n  \"scientific_significance\": \"The study reveals industrialization drives convergent genome evolution in gut commensals, providing insights into microbial adaptation mechanisms to rapidly changing human environments.\"\n}",
+        "parsed": {
+          "summary": "This study investigates genomic adaptation differences between gut bacteria in industrialized versus non-industrialized human populations. Using isolate genomes across diverse geographies and host lifestyles, it found industrialized hosts' gut bacteria exhibit expanded proteomes and increased pangenome fluidity due to recent horizontal gene transfer. Convergent adaptations in stress response, cell-envelope remodeling, and central metabolism were observed, indicating industrialization drives convergent genome evolution in gut commensals.",
+          "key_findings": [
+            "Industrialized human hosts' gut bacteria show expanded proteome size compared to non-industrialized populations",
+            "Strains from industrialized hosts exhibit greater pangenome fluidity driven by recent horizontal gene transfer events",
+            "Convergent adaptations in stress response, cell as well as central metabolism pathways were identified across industrialized populations"
+          ],
+          "study_type": "Genomic analysis of gut bacterial isolates across industrialized and non-industrialized human populations",
+          "scientific_significance": "The study reveals industrialization drives convergent genome evolution in gut commensals, providing insights into microbial adaptation mechanisms to rapidly changing human environments."
+        },
+        "elapsed_seconds": 39.0578,
+        "input_tokens": 572,
+        "output_tokens": 235,
+        "thoughts_tokens": null,
+        "total_tokens": 807,
+        "model_eval_seconds": 35.1057,
+        "error": null
+      }
+    }
+  ]
+}
