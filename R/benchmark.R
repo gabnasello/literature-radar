@@ -136,8 +136,7 @@ write_benchmark_markdown <- function(results, run_id, prompt_version, output_pat
       if (nzchar(article$pubmed_url)) paste0("PubMed: ", article$pubmed_url) else NULL,
       ""
     )
-    {
-      x <- paper$ollama
+    x <- paper$ollama
       elapsed <- if (is.finite(x$elapsed_seconds)) paste0(round(x$elapsed_seconds, 2), " s") else "n/a"
       lines <- c(
         lines,
@@ -175,7 +174,6 @@ write_benchmark_markdown <- function(results, run_id, prompt_version, output_pat
       } else {
         lines <- c(lines, paste0("Error: ", x$error), "")
       }
-    }
     lines <- c(lines, "---", "")
   }
   writeLines(lines, output_path, useBytes = TRUE)
