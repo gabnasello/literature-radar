@@ -124,7 +124,19 @@ call_gemini <- function(prompt, model, api_key, temperature = 0.2,
       max_seconds = as.numeric(max_retry_seconds),
       retry_on_failure = TRUE,
       backoff = function(tries) min(60, 5 * 2^(tries - 1))
-    )
+    ) |>
+    httr2::req_error(body = function(resp) {
+      error_body <- tryCatch(
+        httr2::resp_body_json(resp, simplifyVector = FALSE),
+        error = function(e) NULL
+      )
+      detail <- error_body$error$message
+      if (is.null(detail) || !nzchar(detail)) {
+        detail <- httr2::resp_body_string(resp)
+      }
+      if (is.null(detail) || !nzchar(detail)) return(NULL)
+      paste0("Gemini API response: ", substr(detail, 1, 1000))
+    })
   response <- httr2::req_perform(request)
   body <- httr2::resp_body_json(response, simplifyVector = FALSE)
   elapsed <- as.numeric(difftime(Sys.time(), started, units = "secs"))
