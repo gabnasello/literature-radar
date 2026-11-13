@@ -31,15 +31,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check Gemini API secret
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          if [ -z "$GEMINI_API_KEY" ]; then
-            echo "Missing GEMINI_API_KEY. Add it in Settings > Secrets and variables > Actions."
-            exit 1
-          fi
-
       - name: Install system dependencies
         run: |
           sudo apt-get update
@@ -54,6 +45,15 @@ jobs:
 
       - name: Run unit tests
         run: Rscript tests/testthat.R
+
+      - name: Check Gemini API secret
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "Missing GEMINI_API_KEY. Add it in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
 
       - name: Install Ollama
         run: |
