@@ -1,0 +1,880 @@
+{
+  "schema_version": 1,
+  "run_id": "20261113T174833Z",
+  "generated_at_utc": "2026-11-13 18:02:25 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v2",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific: do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use this schema:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section or generic caveats.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 359,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42872324",
+        "title": "Nonreciprocal Bending in Ferroelectric Membranes Driven by Flexoelectricity.",
+        "abstract": "NA: Nonreciprocity reflects the asymmetric propagation or motion of an object in two opposite directions and can achieve directional transport in physics. However, nonreciprocity in natural quasi-static mechanical systems, including nonreciprocal bending, has rarely been explored. Here we demonstrate nonreciprocal bending in a freestanding ferroelectric single-crystalline PbTiO3 membrane using suspended-membrane nanoindentation. The mechanical bending of the ferroelectric membrane is strongly asymmetric in the two opposite bending directions with a difference in effective elastic modulus of up to 33%. The elastic recovery of bending deformation also becomes polarity-dependent. Such unconventional nonreciprocal bending originates from the asymmetric ferroelectric domain switching driven by the crucial flexoelectricity, as revealed by phase-field simulations. This work enriches the nonreciprocal functionalities of ferroelectrics and presents a route for exploring more nonreciprocal effects by flexoelectric engineering.",
+        "doi": "10.1002/adma.75369",
+        "doi_url": "https://doi.org/10.1002/adma.75369",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42872324/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates nonreciprocal bending in ferroelectric membranes using suspended-membrane nanoindentation. It demonstrates asymmetric bending with a 33% difference in effective elastic modulus between opposite directions and polarity-dependent elastic recovery. The findings attribute this behavior to asymmetric ferroelectric domain switching driven by flexoelectricity, highlighting a novel nonreciprocal mechanism in ferroelectrics.\",\n  \"key_findings\": [\n    \"Asymmetric bending in ferroelectric PbTiO3 membranes with a 3:1 elastic modulus difference between opposite directions\",\n    \"Polarity-dependent elastic recovery after bending\",\n    \"Nonreciprocal behavior originates from asymmetric ferroelectric domain switching via flexoelectricity\"\n  ],\n  \"study_type\": \"Suspended-membrane nanoindentation\",\n  \"scientific_significance\": \"This work identifies flexoelectricity as a key mechanism for inducing nonreciprocal mechanical responses in ferroelectrics, expanding the understanding of unconventional mechanical behaviors in these materials.\"\n}",
+        "parsed": {
+          "summary": "This study investigates nonreciprocal bending in ferroelectric membranes using suspended-membrane nanoindentation. It demonstrates asymmetric bending with a 33% difference in effective elastic modulus between opposite directions and polarity-dependent elastic recovery. The findings attribute this behavior to asymmetric ferroelectric domain switching driven by flexoelectricity, highlighting a novel nonreciprocal mechanism in ferroelectrics.",
+          "key_findings": [
+            "Asymmetric bending in ferroelectric PbTiO3 membranes with a 3:1 elastic modulus difference between opposite directions",
+            "Polarity-dependent elastic recovery after bending",
+            "Nonreciprocal behavior originates from asymmetric ferroelectric domain switching via flexoelectricity"
+          ],
+          "study_type": "Suspended-membrane nanoindentation",
+          "scientific_significance": "This work identifies flexoelectricity as a key mechanism for inducing nonreciprocal mechanical responses in ferroelectrics, expanding the understanding of unconventional mechanical behaviors in these materials."
+        },
+        "elapsed_seconds": 38.3842,
+        "input_tokens": 570,
+        "output_tokens": 212,
+        "thoughts_tokens": null,
+        "total_tokens": 782,
+        "model_eval_seconds": 20.6252,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42887235",
+        "title": "A tunable brain-targeted PEGylated ginsenoside Rg1 derivative disrupts the ROS-mediated inflammasome-pyroptosis cascade to ameliorate Alzheimer's cognitive deficits.",
+        "abstract": "NA: The pathogenic cascade of oxidative stress, neuroinflammation, and pyroptosis serves as a core driving factor in the pathogenesis and progression of Alzheimer's disease (AD). Although ginsenoside Rg1 exhibits pleiotropic neuroprotective activities, its poor blood-brain barrier (BBB) permeability severely hinders its clinical translation. To overcome this limitation, a brain-targeted delivery system was constructed using a covalent conjugation strategy, linking purified Rg1 with rhodamine B-modified polyethylene glycol (PEG) of varying chain lengths (Rg1s-PEG). After screening, the derivative Rg1s-PEG-600 was identified as achieving an optimal balance between hydrophilic stealth properties and steric hindrance, demonstrating enhanced brain accumulation and favorable biosafety profiles. In both in vitro and in vivo models of lipopolysaccharide-induced acute neuroinflammation, Rg1s-PEG-600 attenuated reactive oxygen species (ROS) accumulation, inhibited canonical neuronal pyroptosis mediated by the NLRP1/3 inflammasomes, and significantly ameliorated behavioral deficits and synaptic loss. Furthermore, in chronic 5xFAD transgenic mice, systemic administration of Rg1s-PEG-600 for 12 weeks markedly reversed spatial memory decline, anxiety-like behavior, and synaptic protein depletion. Mechanistic studies further revealed that this targeted nanotherapeutic not only suppressed the ROS-NLRP1 signaling axis and subsequent neuronal pyroptosis in the AD brain but also comprehensively inhibited amyloidogenesis and Tau hyperphosphorylation. This work provides a promising, multitarget nanotherapeutic strategy to overcome BBB limitations and disrupt the complex pathological networks underlying neurodegenerative diseases.",
+        "doi": "10.1016/j.biomaterials.2026.124707",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124707",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42887235/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated a brain-targeted PEGylated ginsenoside Rg1 derivative (Rg1s-PEG-600) for Alzheimer's disease treatment. Using covalent conjugation to enhance blood-brain barrier permeability, the derivative reduced reactive oxygen species, inhibited NLRP1/3 inflammasome-mediated pyroptosis, and improved cognitive deficits in both acute neuroinflammation models and chronic 5xFAD mice. The findings demonstrate its efficacy in disrupting ROS-driven inflammatory cascades and neurodegeneration.\",\n  \"key_findings\": [\n    \"Rg1s-PEG-600 enhanced brain accumulation and reduced ROS in neuroinflammation models\",\n    \"Inhibition of NLRP1/3 inflammasome-mediated pyroptosis in the brain\",\n    \"Reversal of spatial memory decline and synaptic loss in 5xFAD mice\"\n  ],\n  \"study_type\": \"In vitro and in vivo models\",\n  \"scientific_significance\": \"This nanotherapeutic strategy provides a multitarget approach to disrupt oxidative stress and neuroinflammatory pathways in Alzheimer's disease, offering a potential solution for BBB-impermeable therapeutics.\"\n}",
+        "parsed": {
+          "summary": "This study investigated a brain-targeted PEGylated ginsenoside Rg1 derivative (Rg1s-PEG-600) for Alzheimer's disease treatment. Using covalent conjugation to enhance blood-brain barrier permeability, the derivative reduced reactive oxygen species, inhibited NLRP1/3 inflammasome-mediated pyroptosis, and improved cognitive deficits in both acute neuroinflammation models and chronic 5xFAD mice. The findings demonstrate its efficacy in disrupting ROS-driven inflammatory cascades and neurodegeneration.",
+          "key_findings": [
+            "Rg1s-PEG-600 enhanced brain accumulation and reduced ROS in neuroinflammation models",
+            "Inhibition of NLRP1/3 inflammasome-mediated pyroptosis in the brain",
+            "Reversal of spatial memory decline and synaptic loss in 5xFAD mice"
+          ],
+          "study_type": "In vitro and in vivo models",
+          "scientific_significance": "This nanotherapeutic strategy provides a multitarget approach to disrupt oxidative stress and neuroinflammatory pathways in Alzheimer's disease, offering a potential solution for BBB-impermeable therapeutics."
+        },
+        "elapsed_seconds": 38.2969,
+        "input_tokens": 767,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 1022,
+        "model_eval_seconds": 26.9828,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880281",
+        "title": "Cellular self-organization orchestrates ferroptosis propagation.",
+        "abstract": "NA: Self-organization generates cellular patterns that guide morphogenesis, but how it regulates collective cell fate remains underexplored. We show that cellular self-organization constrains the propagation of ferroptosis, an iron-dependent form of oxidative cell death that can otherwise spread as unbounded trigger waves. The spatial patterning of cell density and alignment encodes transcriptional programs, priming cells toward ferroptosis-sensitive or -resistant fates. Low-density, misaligned regions with elevated YAP/TEAD1 activity are sensitive, whereas high-density, aligned regions with increased NRF2 expression form propagation-resistant boundaries. Cell elongation establishes a polarized distribution of oxidizable lipids, creating peroxidation hotspots at the cell poles that promote propagation along cell alignment. In silico and pharmacological perturbations reveal that pattern-dependent susceptibility and polarized lipid organization act together to constrain isotropic waves into spatially confined, anisotropic propagation. These findings identify self-organization as a systems-level mechanism governing collective homeostasis, providing a paradigm to explore how tissue-scale organization regulates cell death in development and disease.",
+        "doi": "10.1016/j.cell.2026.09.039",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.039",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880281/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"The study investigates how cellular self-organization regulates ferroptosis propagation. Using in silico and pharmacological approaches, it demonstrates that spatial patterns of cell density and alignment encode transcriptional programs, creating ferro: sensitive regions (low-density, misaligned) and propagation-resistant boundaries (high-density, aligned). These patterns constrain ferroptosis spread through polarized lipid distribution and YAP/TEAD1 or NRF2 activity.\",\n  \"key_findings\": [\n    \"Low-density, misaligned regions with elevated YAP/TEAD1 activity are ferroptosis-sensitive\",\n    \"High-density, aligned regions with increased NRF2 expression form propagation-resistant boundaries\",\n    \"Polarized lipid distribution at cell poles creates peroxidation hotspots driving anisotropic ferroptosis propagation\"\n  ],\n  \"study_type\": \"In silico and pharmacological perturbations\",\n  \"scientific_significance\": \"This work establishes cellular self-organization as a systems-level mechanism that constrains ferroptosis propagation, offering a framework for understanding tissue-scale regulation of cell death in development and disease.\"\n}",
+        "parsed": {
+          "summary": "The study investigates how cellular self-organization regulates ferroptosis propagation. Using in silico and pharmacological approaches, it demonstrates that spatial patterns of cell density and alignment encode transcriptional programs, creating ferro: sensitive regions (low-density, misaligned) and propagation-resistant boundaries (high-density, aligned). These patterns constrain ferroptosis spread through polarized lipid distribution and YAP/TEAD1 or NRF2 activity.",
+          "key_findings": [
+            "Low-density, misaligned regions with elevated YAP/TEAD1 activity are ferroptosis-sensitive",
+            "High-density, aligned regions with increased NRF2 expression form propagation-resistant boundaries",
+            "Polarized lipid distribution at cell poles creates peroxidation hotspots driving anisotropic ferroptosis propagation"
+          ],
+          "study_type": "In silico and pharmacological perturbations",
+          "scientific_significance": "This work establishes cellular self-organization as a systems-level mechanism that constrains ferroptosis propagation, offering a framework for understanding tissue-scale regulation of cell death in development and disease."
+        },
+        "elapsed_seconds": 29.4919,
+        "input_tokens": 591,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 822,
+        "model_eval_seconds": 22.8568,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42872417",
+        "title": "Beyond Facet Engineering: Dislocation-Mediated Nucleation Enables Stable Lithium Deposition on Practical Polycrystalline Cu Collectors.",
+        "abstract": "NA: Uniform Li deposition on practical Cu current collectors remains challenging in lithium metal batteries. Despite extensive efforts in facet engineering, achieving homogeneous Li deposition on practical polycrystalline Cu collectors remains elusive, highlighting an incomplete understanding of the structural factors governing Li deposition. Herein, a defect-mediated interfacial engineering strategy is developed by simultaneously introducing a high density of geometrically necessary dislocations (GNDs) and enriched <110>/<111> textures on commercial electrodeposited Cu foils. Theoretical calculations and experiments reveal that densely distributed dislocations provide thermodynamically favorable Li adsorption sites and abundant preferential heterogeneous nucleation sites, while the enriched <110>/<111> textures promote Li surface diffusion and lateral growth. This combined effect promotes uniform and compact initial Li deposition, guiding path-dependent deposition evolution and suppressing interfacial heterogeneity. The control experiments further support a key contribution of dislocation defects, while variations in surface chemistry or morphology alone cannot account for the observed performance differences. The optimized Cu foil sustains over 1200 cycles with an average Coulombic efficiency of 99.52% ± 0.20% over the final 200 cycles (n = 4) in Li||Cu cells and improves N/P = 0 Cu||NCM811 full-cell cycling. This work establishes dislocation-mediated nucleation and orientation-regulated growth as a design principle for practical Cu current collectors.",
+        "doi": "10.1002/adma.75368",
+        "doi_url": "https://doi.org/10.1002/adma.75368",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42872417/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"The study investigates uniform lithium deposition on polycrystalline copper current collectors by engineering dislocation defects and crystal textures. It demonstrates that high-density geometrically necessary dislocations and enriched <110>/<111> textures enable thermodynamically favorable lithium nucleation and surface diffusion, leading to stable deposition and over 1200 cycles with high Coulombic efficiency. This approach addresses a critical challenge in lithium metal batteries.\",\n  \"key_findings\": [\n    \"Densely distributed dislocations provide thermodynamically favorable lithium adsorption sites and heterogeneous nucleation sites\",\n    \"Enriched <110>/<111> textures promote lithium surface diffusion and lateral growth\",\n    \"Optimized Cu foils sustain over 1200 cycles with 99.52% average Coulombic efficiency in Li||Cu cells\"\n  ],\n  \"study_type\": \"Experimental with theoretical calculations\",\n  \"scientific_significance\": \"This work establishes dislocation-mediated nucleation as a fundamental design principle for achieving stable lithium deposition on practical copper current collectors, advancing the understanding of interfacial mechanisms in lithium metal batteries.\"\n}",
+        "parsed": {
+          "summary": "The study investigates uniform lithium deposition on polycrystalline copper current collectors by engineering dislocation defects and crystal textures. It demonstrates that high-density geometrically necessary dislocations and enriched <110>/<111> textures enable thermodynamically favorable lithium nucleation and surface diffusion, leading to stable deposition and over 1200 cycles with high Coulombic efficiency. This approach addresses a critical challenge in lithium metal batteries.",
+          "key_findings": [
+            "Densely distributed dislocations provide thermodynamically favorable lithium adsorption sites and heterogeneous nucleation sites",
+            "Enriched <110>/<111> textures promote lithium surface diffusion and lateral growth",
+            "Optimized Cu foils sustain over 1200 cycles with 99.52% average Coulombic efficiency in Li||Cu cells"
+          ],
+          "study_type": "Experimental with theoretical calculations",
+          "scientific_significance": "This work establishes dislocation-mediated nucleation as a fundamental design principle for achieving stable lithium deposition on practical copper current collectors, advancing the understanding of interfacial mechanisms in lithium metal batteries."
+        },
+        "elapsed_seconds": 34.8255,
+        "input_tokens": 690,
+        "output_tokens": 240,
+        "thoughts_tokens": null,
+        "total_tokens": 930,
+        "model_eval_seconds": 25.5764,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42887236",
+        "title": "From biomarkers to therapeutic targets: Biomaterial-mediated cfDNA scavenging in inflammation.",
+        "abstract": "NA: Cell-free DNA (cfDNA) displays disease-dependent changes in abundance, fragmentation, composition, and tissue origin. Beyond serving as a noninvasive biomarker, persistent cfDNA can act as a damage-associated molecular pattern, activating TLR9, cGAS-STING, inflammasome signaling, and thromboinflammation. This review synthesizes advances in cfDNA biology, clinical applications, and therapeutic scavenging across inflammatory diseases. We critically evaluate the extent to which current clinical studies support diagnostic, prognostic, and causal conclusions while considering methodological heterogeneity. Particular emphasis is placed on how biomaterials transform cfDNA recognition into treatment. We trace the evolution from free nucleases and soluble cationic agents to nanostructured platforms that integrate DNA sequestration with retention, degradation, lesion targeting, or immunomodulation. Comparison of cationic polymers, dendrimers, core-shell nanoparticles, hydrogels, microneedles, nanosheets, and nuclease-enabled systems reveals how material architecture governs cfDNA accessibility, stability in biofluids, tissue distribution, and therapeutic efficacy. Localized and stimuli-responsive designs may improve selectivity and reduce systemic toxicity, but most efficacy evidence remains preclinical. Clinical translation therefore requires standardized cfDNA measurement, realistic biofluid testing, rigorous pharmacology, scalable manufacturing, and prospective demonstration that selective cfDNA removal improves outcomes without compromising host defense.",
+        "doi": "10.1016/j.biomaterials.2026.124700",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124700",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42887236/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines how biomaterials can target cell-free DNA (cfDNA) to mitigate inflammation by scavenging it. It evaluates the progression from free nucleases to advanced nanostructured platforms that sequester, degrade, or modulate cfDNA. The study highlights that while preclinical evidence supports efficacy, clinical translation requires standardized measurement, biofluid testing, and prospective trials to ensure selective cf:DNA removal without impairing host immunity.\",\n  \"key_findings\": [\n    \"Biomaterials have evolved from simple nucleases to nanostructured platforms for targeted cfDNA scavenging\",\n    \"Material architecture influences cfDNA accessibility, stability, tissue distribution, and therapeutic efficacy\",\n    \"Preclinical evidence for cfDNA scavenging efficacy exists but clinical translation requires standardized measurement and prospective trials\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work advances the understanding of cfDNA as a therapeutic target in inflammation by demonstrating how biomaterial design can selectively remove pathogenic cfDNA while maintaining host immune function, providing a foundation for clinical translation.\"\n}",
+        "parsed": {
+          "summary": "This review examines how biomaterials can target cell-free DNA (cfDNA) to mitigate inflammation by scavenging it. It evaluates the progression from free nucleases to advanced nanostructured platforms that sequester, degrade, or modulate cfDNA. The study highlights that while preclinical evidence supports efficacy, clinical translation requires standardized measurement, biofluid testing, and prospective trials to ensure selective cf:DNA removal without impairing host immunity.",
+          "key_findings": [
+            "Biomaterials have evolved from simple nucleases to nanostructured platforms for targeted cfDNA scavenging",
+            "Material architecture influences cfDNA accessibility, stability, tissue distribution, and therapeutic efficacy",
+            "Preclinical evidence for cfDNA scavenging efficacy exists but clinical translation requires standardized measurement and prospective trials"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work advances the understanding of cfDNA as a therapeutic target in inflammation by demonstrating how biomaterial design can selectively remove pathogenic cfDNA while maintaining host immune function, providing a foundation for clinical translation."
+        },
+        "elapsed_seconds": 32.5042,
+        "input_tokens": 664,
+        "output_tokens": 223,
+        "thoughts_tokens": null,
+        "total_tokens": 887,
+        "model_eval_seconds": 23.785,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880282",
+        "title": "Functional diversification of the cephalopod proteome by RNA editing.",
+        "abstract": "NA: Coleoid cephalopods exhibit the highest levels of adenosine deaminases acting on RNA (ADAR)-mediated RNA editing of any known taxon, yet the functional consequences of most recoding events remain unclear. Here, we integrated proteomics with biochemical and cellular assays to characterize recoding across the Doryteuthis pealeii proteome. This confirmed the translation of 7,997 recoded sites at the protein level and revealed how recoding reshapes the proteome by altering protein stability, subcellular localization, post-translational modifications, and enzymatic activity. We find that recoding also creates or ablates post-translational modification sites, with direct effects on protein function and protein-protein interactions. Recoding the E3 ligase MARCHF5 drives widespread changes in substrate ubiquitylation and perturbs mitochondrial homeostasis, illustrating how RNA editing can influence organelle function. Together, these data give a proteome-scale view of how extensive RNA recoding diversifies protein function in coleoid cephalopods and offer a framework for understanding how RNA-level plasticity shapes protein function and cellular physiology.",
+        "doi": "10.1016/j.cell.2026.09.043",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.043",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880282/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the functional impact of RNA editing in coleoid cephalopods by analyzing the Doryteuthis pealeii proteome. Using integrated proteomics and biochemical assays, it confirmed 7,997 recoded sites and demonstrated how RNA editing alters protein stability, localization, post-translational modifications, and enzymatic activity. Recoding of the E3 ligase MARCHF5 was shown to disrupt mitochondrial homeostasis, highlighting RNA editing's role in cellular physiology.\",\n  \"key_findings\": [\n    \"7,99:997 recoded sites confirmed at the protein level in coleoid cephalopods\",\n    \"RNA editing alters protein stability, subcellular localization, and post-translational modifications\",\n    \"Recoding of the E3 ligase MARCHF5 perturbs mitochondrial homeostasis\"\n  ],\n  \"study_type\": \"Proteome-scale analysis with integrated biochemical assays\",\n  \"scientific_significance\": \"This work provides a comprehensive framework for understanding how RNA editing diversifies protein function and influences cellular physiology through proteome-wide recoding events.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the functional impact of RNA editing in coleoid cephalopods by analyzing the Doryteuthis pealeii proteome. Using integrated proteomics and biochemical assays, it confirmed 7,997 recoded sites and demonstrated how RNA editing alters protein stability, localization, post-translational modifications, and enzymatic activity. Recoding of the E3 ligase MARCHF5 was shown to disrupt mitochondrial homeostasis, highlighting RNA editing's role in cellular physiology.",
+          "key_findings": [
+            "7,99:997 recoded sites confirmed at the protein level in coleoid cephalopods",
+            "RNA editing alters protein stability, subcellular localization, and post-translational modifications",
+            "Recoding of the E3 ligase MARCHF5 perturbs mitochondrial homeostasis"
+          ],
+          "study_type": "Proteome-scale analysis with integrated biochemical assays",
+          "scientific_significance": "This work provides a comprehensive framework for understanding how RNA editing diversifies protein function and influences cellular physiology through proteome-wide recoding events."
+        },
+        "elapsed_seconds": 30.9295,
+        "input_tokens": 606,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 842,
+        "model_eval_seconds": 23.6734,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42872601",
+        "title": "Anatomically Accessible Local mRNA Therapeutics: From Anatomical Access to Disease-Focused Applications.",
+        "abstract": "NA: Messenger RNA (mRNA) therapeutics have expanded from clinically validated prophylactic vaccines toward protein replacement and supplementation. Yet mRNA delivery remains centered on intramuscular vaccination and intravenous administration, largely optimized for systemic adaptive immunity or circulation-mediated biodistribution. Many localized diseases, however, are confined to tissues or compartments accessible by topical, transdermal, inhaled, oral, catheter-based, ocular, or intra-articular administration without initial reliance on circulation. For these diseases, the therapeutic objective is likewise local: therapeutically relevant mRNA expression occurs within the affected tissue, and efficacy derives predominantly from the local biological activity of the encoded protein rather than from downstream systemic effects initiated by local expression. This therapeutic paradigm is defined here as Anatomically Accessible Local mRNA Therapeutics (ALmT). The review first distinguishes ALmT from intravenous mRNA delivery and intramuscular mRNA vaccination, then organizes site-specific barriers and engineering strategies across major anatomical sites. It further examines disease-focused ALmT applications, highlighting protein restoration, cytokine or growth-factor supplementation, local antibody-fragment production, regenerative modulation, and tissue repair. Finally, it discusses general design principles, quantitative PK/PD evaluation, repeat-dose safety, and clinical translation. Overall, the ALmT framework may facilitate the design, quantitative evaluation, and clinical translation of mRNA therapies for localized diseases.",
+        "doi": "10.1002/adma.75381",
+        "doi_url": "https://doi.org/10.1002/adma.75381",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42872601/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review explores Anatomically Accessible Local mRNA Therapeutics (ALmT), distinguishing them from systemic delivery methods. It examines site-specific barriers and engineering strategies for localized diseases, emphasizing protein restoration, supplementation, and tissue repair. The framework aims to enable targeted mRNA therapies without systemic circulation, improving efficacy for tissue-confined conditions.\",\n  \"key_findings\": [\n    \"ALmT targets localized diseases with tissue-specific delivery methods like topical or intra-articular administration\",\n    \"The framework enables protein restoration and tissue repair without systemic circulation\",\n    \"ALmT applications include cytokine supplementation and regenerative modulation for localized pathologies\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This review establishes a conceptual framework for designing mRNA therapies that operate locally within tissues, potentially enhancing efficacy for diseases confined to specific anatomical sites without systemic immune activation.\"\n}",
+        "parsed": {
+          "summary": "This review explores Anatomically Accessible Local mRNA Therapeutics (ALmT), distinguishing them from systemic delivery methods. It examines site-specific barriers and engineering strategies for localized diseases, emphasizing protein restoration, supplementation, and tissue repair. The framework aims to enable targeted mRNA therapies without systemic circulation, improving efficacy for tissue-confined conditions.",
+          "key_findings": [
+            "ALmT targets localized diseases with tissue-specific delivery methods like topical or intra-articular administration",
+            "The framework enables protein restoration and tissue repair without systemic circulation",
+            "ALmT applications include cytokine supplementation and regenerative modulation for localized pathologies"
+          ],
+          "study_type": "",
+          "scientific_significance": "This review establishes a conceptual framework for designing mRNA therapies that operate locally within tissues, potentially enhancing efficacy for diseases confined to specific anatomical sites without systemic immune activation."
+        },
+        "elapsed_seconds": 27.0094,
+        "input_tokens": 656,
+        "output_tokens": 182,
+        "thoughts_tokens": null,
+        "total_tokens": 838,
+        "model_eval_seconds": 18.6102,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42892255",
+        "title": "Polymeric and metallic occluders for interventional therapy of cardiovascular diseases.",
+        "abstract": "NA: Interventional therapy has, as a minimally invasive approach, been widely adopted for treating cardiovascular diseases, particularly structural heart disease, where occluders play a pivotal role in transcatheter closure. This paper comprehensively reviews the evolutionary trajectory and emerging frontiers of cardiovascular occluders, beginning with their interventional applications in congenital heart defects (atrial septal defect, ventricular septal defect, patent foramen ovale, and patent ductus arteriosus) and left atrial appendage closure. The focus then shifts to occluder materials and design principles, tracing the progression from early non-degradable metals like stainless steel to the current gold standard, nitinol, whose hyperelasticity enables self-expanding devices. To promote rapid endothelialization on nitinol implants, surface nanocoatings of bioceramics such as titanium nitride have been developed to modulate cell-material interactions. To eliminate risks from permanent metallic implants, biodegradable occluders have emerged as an alternative. The design of biodegradable occluders utilizing medical polymers such as polylactic acid and polydioxanone is illustrated, highlighting structural innovations such as locking strategies to overcome the lack of hyperelasticity. Key considerations including matching degradation rate with tissue regeneration and achieving X-ray visibility are also described. Finally, future perspectives are presented: expanding applications to infants and the elderly, incorporating tissue engineering for in situ regeneration, and leveraging nanotechnology and artificial intelligence to optimize device performance. The ongoing advancement of occluder technologies will propel interventional therapy for structural heart disease toward a safer and more effective treatment.",
+        "doi": "10.1016/j.biomaterials.2026.124701",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124701",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42892255/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines the evolution and design principles of cardiovascular occluders for interventional therapy, covering congenital heart defects and left atrial appendage closure. It compares non-degradable metals (e.g., stainless steel) to nitinol alloys and biodegradable polymers (e.g., polylactic acid), highlighting surface modifications for endothelialization and challenges in degradation kinetics. The study identifies key advancements in materials and design that enhance safety and efficacy for structural heart disease treatment.\",\n  \"key_findings\": [\n    \"Nitinol alloys offer hyperelasticity for self-expanding devices in transcatheter closure procedures.\",\n    \"Surface nanocoatings of bioceramics like titanium nitride promote rapid endothelialization on nitinol implants.\",\n    \"Biodegradable polymers such as polylactic acid and polydioxanone enable device design strategies to overcome hyperelasticity limitations.\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This review provides a comprehensive synthesis of material innovations and design principles that advance the safety and efficacy of interventional therapies for structural heart disease, addressing critical challenges in device performance and biocompatibility.\"\n}",
+        "parsed": {
+          "summary": "This review examines the evolution and design principles of cardiovascular occluders for interventional therapy, covering congenital heart defects and left atrial appendage closure. It compares non-degradable metals (e.g., stainless steel) to nitinol alloys and biodegradable polymers (e.g., polylactic acid), highlighting surface modifications for endothelialization and challenges in degradation kinetics. The study identifies key advancements in materials and design that enhance safety and efficacy for structural heart disease treatment.",
+          "key_findings": [
+            "Nitinol alloys offer hyperelasticity for self-expanding devices in transcatheter closure procedures.",
+            "Surface nanocoatings of bioceramics like titanium nitride promote rapid endothelialization on nitinol implants.",
+            "Biodegradable polymers such as polylactic acid and polydioxanone enable device design strategies to overcome hyperelasticity limitations."
+          ],
+          "study_type": "",
+          "scientific_significance": "This review provides a comprehensive synthesis of material innovations and design principles that advance the safety and efficacy of interventional therapies for structural heart disease, addressing critical challenges in device performance and biocompatibility."
+        },
+        "elapsed_seconds": 34.8388,
+        "input_tokens": 698,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 941,
+        "model_eval_seconds": 25.2999,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880283",
+        "title": "An opioid efficacy switch for reversible optical control of analgesia.",
+        "abstract": "NA: The mu-opioid receptor (MOR) is a major target for pain treatment, but its effectiveness is limited by dangerous side effects. However, the systemic administration of opioids makes it difficult both to decipher their underlying mechanisms of action and to limit drug action to specific receptor subpopulations to isolate therapeutic effects from adverse effects. Here, we develop a reversibly photoswitchable morphinan agonist termed \"azo-morphine-3\" (AM-3) that interconverts from low to high efficacy in response to light to enable optical control of MOR signaling. Structural analysis of the low (\"trans\") and high (\"cis\") efficacy states of AM-3 bound to the MOR reveals distinct binding modes, with each state driving unique ligand, receptor, and G protein dynamics. In mice, AM-3 drives reversible and repeatable optical control of antinociception across pain models with a reduced side effect profile owing to its limited brain accumulation and its ability to be locally activated.",
+        "doi": "10.1016/j.cell.2026.09.042",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.042",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880283/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a photoswitchable opioid agonist, azo-morphine-3 (AM- 3), that reversibly switches between low and high efficacy states via light to optically control mu-opioid receptor signaling. The compound demonstrated reversible pain relief in mice with reduced side effects due to limited brain accumulation and localized activation, offering a potential strategy for targeted analgesia without systemic toxicity.\",\n  \"key_findings\": [\n    \"AM-3 reversibly switches between low and high efficacy states of mu-opioid receptor signaling using light\",\n    \"The compound provides reversible pain relief in multiple mouse pain models\",\n    \"AM-3 exhibits reduced side effects due to minimal brain accumulation and localized activation\"\n  ],\n  \"study_type\": \"In vivo mouse model\",\n  \"scientific_significance\": \"This work establishes a photoswitchable opioid agonist platform for precise, reversible control of analgesia with reduced systemic side effects, advancing optogenetic approaches to targeted pain management.\"\n}",
+        "parsed": {
+          "summary": "This study developed a photoswitchable opioid agonist, azo-morphine-3 (AM- 3), that reversibly switches between low and high efficacy states via light to optically control mu-opioid receptor signaling. The compound demonstrated reversible pain relief in mice with reduced side effects due to limited brain accumulation and localized activation, offering a potential strategy for targeted analgesia without systemic toxicity.",
+          "key_findings": [
+            "AM-3 reversibly switches between low and high efficacy states of mu-opioid receptor signaling using light",
+            "The compound provides reversible pain relief in multiple mouse pain models",
+            "AM-3 exhibits reduced side effects due to minimal brain accumulation and localized activation"
+          ],
+          "study_type": "In vivo mouse model",
+          "scientific_significance": "This work establishes a photoswitchable opioid agonist platform for precise, reversible control of analgesia with reduced systemic side effects, advancing optogenetic approaches to targeted pain management."
+        },
+        "elapsed_seconds": 26.7034,
+        "input_tokens": 567,
+        "output_tokens": 208,
+        "thoughts_tokens": null,
+        "total_tokens": 775,
+        "model_eval_seconds": 20.7087,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42873191",
+        "title": "Synchronized Ablation of Multifocal Tumors Enabled by Multi-Channel Lanthanide Nanocomposites.",
+        "abstract": "NA: The multifocal nature of orthotopic breast tumors makes it difficult to treat due to individual tumor differences, requiring multiple therapeutic interventions. Here, a customized therapeutic strategy is presented for multiple tumors by using the same prescription based on a multi-channel lanthanide nanocomposite and orthogonally controlled drug release. The upconversion luminescence of the nanocomposite at different wavelengths can monitor pH-responsive mitoxantrone (MXT) release, reduced glutathione-responsive near-infrared (NIR) absorbance change, and eigen temperature, respectively, allowing modulation of photothermal treatment and temperature-responsive paclitaxel release through customized whole-body irradiation to achieve synchronized ablation of different individual tumors. Small animal experiments confirm multifocal breast tumors can be treated through this customized therapeutic strategy with both high efficiency and low overtherapy risk.",
+        "doi": "10.1002/adma.75392",
+        "doi_url": "https://doi.org/10.1002/adma.75392",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42873191/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a strategy for synchronizing ablation of multifocal orthotopic breast tumors using multi-channel lanthanide nanocomposites. The approach leverages orthogonally controlled drug release (pH-responsive mitoxantrone and glutathathione-responsive paclitaxel) with real-time monitoring via upconversion luminescence. Small animal experiments demonstrated effective tumor ablation with minimal overtherapy risk.\",\n  \"key_findings\": [\n    \"Multi-channel lanthan:ide nanocomposites enable orthogonally controlled drug release for multifocal tumors\",\n    \"Real-time monitoring of pH-responsive mitoxantrone release and glutathione-responsive paclitaxel release via upconversion luminescence\",\n    \"Synchronized ablation of multiple orthotopic breast tumors with high efficiency and low overtherapy risk in small animal models\"\n  ],\n  \"study_type\": \"Small animal experiments\",\n  \"scientific_significance\": \"This work demonstrates a customizable therapeutic strategy for multifocal tumors through integrated drug release and real-time monitoring, advancing precision oncology approaches for heterogeneous tumor populations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a strategy for synchronizing ablation of multifocal orthotopic breast tumors using multi-channel lanthanide nanocomposites. The approach leverages orthogonally controlled drug release (pH-responsive mitoxantrone and glutathathione-responsive paclitaxel) with real-time monitoring via upconversion luminescence. Small animal experiments demonstrated effective tumor ablation with minimal overtherapy risk.",
+          "key_findings": [
+            "Multi-channel lanthan:ide nanocomposites enable orthogonally controlled drug release for multifocal tumors",
+            "Real-time monitoring of pH-responsive mitoxantrone release and glutathione-responsive paclitaxel release via upconversion luminescence",
+            "Synchronized ablation of multiple orthotopic breast tumors with high efficiency and low overtherapy risk in small animal models"
+          ],
+          "study_type": "Small animal experiments",
+          "scientific_significance": "This work demonstrates a customizable therapeutic strategy for multifocal tumors through integrated drug release and real-time monitoring, advancing precision oncology approaches for heterogeneous tumor populations."
+        },
+        "elapsed_seconds": 28.4299,
+        "input_tokens": 551,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 782,
+        "model_eval_seconds": 22.7606,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42892256",
+        "title": "3D-bioprinted dual-factor nerve conduits promote neurovascular co-regeneration via activation of the PI3K/AKT and MAPK/ERK pathways.",
+        "abstract": "NA: Peripheral nerve repair across challenging defects remains a major clinical hurdle, partly because conventional nerve guidance conduits fail to reconstruct the neurovascular microenvironment essential for coordinated regeneration. To overcome this, we engineered a 3D-bioprinted multichannel conduit composed of alginate (Alg), gelatin methacryloyl (GelMA), and bacterial nanocellulose (BNC), incorporating separately prepared nerve growth factor (NGF)- and vascular endothelial growth factor (VEGF)-loaded poly(lactic-co-glycolic acid) (PLGA) nanospheres and Schwann-like cells derived from stem cells from human exfoliated deciduous teeth (SC-SHEDs). The conduit was evaluated in a 10-mm rat sciatic nerve defect. Combined NGF/VEGF stimulation was associated with sustained AKT and ERK phosphorylation over the measured in vitro time course, together with changes in mTOR and c-Jun phosphorylation. The selected formulation retained the intended printed geometry, supported short-term cell viability, and enabled sustained release of both factors. Across the 1- and 3-month assessments, the NGF + VEGF + SC-SHED group showed increased microvessel density, stronger S100β- and NF200-associated signals, improved myelin morphometry, better electrophysiological and sensorimotor outcomes, and greater gastrocnemius muscle preservation than the untreated control. The combined conduit generally produced the most favorable outcomes among the engineered groups and approached the autograft group for several endpoints. These findings support further evaluation of this integrated strategy for peripheral nerve reconstruction.",
+        "doi": "10.1016/j.biomaterials.2026.124708",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124708",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42892256/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated 3D-bioprinted nerve conduits incorporating NGF and VEGF to enhance peripheral nerve repair. Using a rat sciatic nerve defect model, the researchers designed a multichannel conduit with alginate, GelMA, BNC, and NGF/VEGF-loaded PLGA nanospheres. The conduit promoted neurovascular co-regeneration by activating PI3K/AKT and MAPK/ER. Results showed improved microvessel density, myelin integrity, and functional recovery compared to controls, with outcomes approaching autograft standards.\",\n  \"key_findings\": [\n    \"Increased microvessel density and S100β/NF200 signals in the NGF+VEGF+SC-SHED group\",\n    \"Improved myelin morphometry and electrophysiological outcomes\",\n    \"Enhanced gastrocnemius muscle preservation and functional recovery\"\n  ],\n  \"study_type\": \"In vivo rat sciatic nerve defect model\",\n  \"scientific_significance\": \"This work demonstrates that integrated neurovascular guidance via 3D-bioprinted conduits with dual growth factors can effectively support coordinated nerve regeneration, providing a promising strategy for complex peripheral nerve repair.\"\n}",
+        "parsed": {
+          "summary": "This study investigated 3D-bioprinted nerve conduits incorporating NGF and VEGF to enhance peripheral nerve repair. Using a rat sciatic nerve defect model, the researchers designed a multichannel conduit with alginate, GelMA, BNC, and NGF/VEGF-loaded PLGA nanospheres. The conduit promoted neurovascular co-regeneration by activating PI3K/AKT and MAPK/ER. Results showed improved microvessel density, myelin integrity, and functional recovery compared to controls, with outcomes approaching autograft standards.",
+          "key_findings": [
+            "Increased microvessel density and S100β/NF200 signals in the NGF+VEGF+SC-SHED group",
+            "Improved myelin morphometry and electrophysiological outcomes",
+            "Enhanced gastrocnemius muscle preservation and functional recovery"
+          ],
+          "study_type": "In vivo rat sciatic nerve defect model",
+          "scientific_significance": "This work demonstrates that integrated neurovascular guidance via 3D-bioprinted conduits with dual growth factors can effectively support coordinated nerve regeneration, providing a promising strategy for complex peripheral nerve repair."
+        },
+        "elapsed_seconds": 37.1887,
+        "input_tokens": 730,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 985,
+        "model_eval_seconds": 26.7421,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880284",
+        "title": "Multi-omics atlas of chronic exercise.",
+        "abstract": "NA: Exercise reduces all-cause mortality, yet its molecular effects across organs, sexes, and circadian phases remain incompletely understood. We subjected mice to 8 weeks of voluntary wheel running and collected 22 tissues and plasma during active and inactive phases for bulk RNA sequencing, metabolomics, proteomics, and single-nucleus RNA and methylation sequencing. Exercise induced canonical fiber-type switching and widespread, tissue-specific remodeling, with the largest transcriptomic changes in skeletal muscle. Except for the hypothalamus, kidney, and lung, most tissues changed more during the active phase. Females showed broader transcriptional responses, with distinct downregulation. Pairing single-nucleus methylomes with transcriptomes resolved the cell types driving exercise-induced epigenetic remodeling-changes undetectable by bulk studies. These included coordinated gene-body demethylation and transcription that tracked with fiber-type switching in specific myonuclei. Cell-type-resolved methylation, including partially methylated domains characterized in muscle, revealed a strong, sex-biased epigenetic response to training. Machine learning identified conserved exercise signatures across mammalian species.",
+        "doi": "10.1016/j.cell.2026.09.044",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.044",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880284/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated molecular responses to chronic exercise using multi-omics profiling in mice. Researchers analyzed 22 tissues and plasma from mice undergoing 8 weeks of voluntary wheel running, comparing active and inactive phases. Key findings include exercise-induced fiber-type switching in skeletal muscle, tissue-specific remodeling with greater changes during active phases, and sex-biased epigenetic responses. The study resolved cell-type-specific mechanisms underlying exercise adaptations.\",\n  \"key_findings\": [\n    \"Exercise induced canonical fiber-type switching and widespread tissue-specific remodeling, with skeletal muscle showing the largest transcriptomic changes\",\n    \"Most tissues exhibited greater molecular changes during active exercise phases, except hypothalamus, kidney, and lung\",\n    \"Cell-type-resolved epigenetic analysis revealed sex-biased demethylation patterns linked to fiber-type switching in skeletal muscle\"\n  ],\n  \"study_type\": \"Mouse model with 8 weeks of voluntary wheel running\",\n  \"scientific_significance\": \"This work provides a comprehensive multi-omics atlas of exercise-induced molecular adaptations across organs, revealing cell-type-specific mechanisms that were previously undetectable by bulk analyses.\"\n}",
+        "parsed": {
+          "summary": "This study investigated molecular responses to chronic exercise using multi-omics profiling in mice. Researchers analyzed 22 tissues and plasma from mice undergoing 8 weeks of voluntary wheel running, comparing active and inactive phases. Key findings include exercise-induced fiber-type switching in skeletal muscle, tissue-specific remodeling with greater changes during active phases, and sex-biased epigenetic responses. The study resolved cell-type-specific mechanisms underlying exercise adaptations.",
+          "key_findings": [
+            "Exercise induced canonical fiber-type switching and widespread tissue-specific remodeling, with skeletal muscle showing the largest transcriptomic changes",
+            "Most tissues exhibited greater molecular changes during active exercise phases, except hypothalamus, kidney, and lung",
+            "Cell-type-resolved epigenetic analysis revealed sex-biased demethylation patterns linked to fiber-type switching in skeletal muscle"
+          ],
+          "study_type": "Mouse model with 8 weeks of voluntary wheel running",
+          "scientific_significance": "This work provides a comprehensive multi-omics atlas of exercise-induced molecular adaptations across organs, revealing cell-type-specific mechanisms that were previously undetectable by bulk analyses."
+        },
+        "elapsed_seconds": 29.4554,
+        "input_tokens": 589,
+        "output_tokens": 232,
+        "thoughts_tokens": null,
+        "total_tokens": 821,
+        "model_eval_seconds": 22.8544,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876181",
+        "title": "Radiative Cooling Floating Covers Cool Lakes and Suppress Evaporation.",
+        "abstract": "NA: Globally, warmer lakes disrupt thermal balance, causing hypoxia, salinization, biodiversity loss, and increased evaporation. Conventional floating covers used to reduce evaporation absorb sunlight and warm the underlying water, limiting suppression efficiency to less than the coverage ratio (ηeff/Φ ≤ 1). Here, we break this limit by developing Superhydrophobic Radiative Cooling Covers (SRCC) via multi-level structural design. SRCC actively cools the water surface by combining high solar reflectance, strong mid-infrared emission, and superhydrophobicity. Experiments show SRCC lowers water temperature by 2.2°C versus uncovered water, achieving 93.1± 0.1% evaporation suppression at 91% coverage, yielding ηeff/Φ > 1.0 for the first time. Large‑scale simulations for nine Chinese lakes indicate that SRCC reduces water temperature by 4.87°C (vs. no cover) and by 12.44 °C (vs. black covers). This cooling could increase annual freshwater reserves by 10.78 km3 across China under full deployment, equivalent to 20.9 L per person per day. Unattainable with conventional covers, SRCC uniquely mitigates thermal accumulation while enhancing freshwater storage, providing a quantifiable engineering solution to climate‑driven water stress and enabling adaptive lake ecosystem management across regional and global scales.",
+        "doi": "10.1002/adma.75404",
+        "doi_url": "https://doi.org/10.1002/adma.75404",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876181/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates radiative cooling floating covers to suppress lake evaporation. By designing Superhydrophobic Radiative Cooling Covers (SRCC) with high solar reflectance, strong mid-infrared emission, and superhydrophobicity, the researchers achieved 93.1% evaporation suppression at 91% coverage, exceeding conventional cover efficiency (ηeff/Φ > 1.0). SRCC reduced water temperature by 2.2°C and could increase freshwater reserves by 10.78 km³ across China annually.\",\n  \"key_findings\": [\n    \"SRCC achieves 93.1% evaporation suppression at 91% coverage with 2.2°C water temperature reduction\",\n    \"SRCC yields ηeff/Φ > 1.0, surpassing conventional cover efficiency limits\",\n    \"Large-scale simulations indicate 10.78 km³ annual freshwater reserve increase across China\"\n  ],\n  \"study_type\": \"Experimental and simulation\",\n  \"scientific_significance\": \"SRCC provides the first engineering solution to exceed conventional evaporation suppression limits through radiative cooling, offering a scalable method to mitigate thermal accumulation in lakes and enhance freshwater storage under climate change.\"\n}",
+        "parsed": {
+          "summary": "This study investigates radiative cooling floating covers to suppress lake evaporation. By designing Superhydrophobic Radiative Cooling Covers (SRCC) with high solar reflectance, strong mid-infrared emission, and superhydrophobicity, the researchers achieved 93.1% evaporation suppression at 91% coverage, exceeding conventional cover efficiency (ηeff/Φ > 1.0). SRCC reduced water temperature by 2.2°C and could increase freshwater reserves by 10.78 km³ across China annually.",
+          "key_findings": [
+            "SRCC achieves 93.1% evaporation suppression at 91% coverage with 2.2°C water temperature reduction",
+            "SRCC yields ηeff/Φ > 1.0, surpassing conventional cover efficiency limits",
+            "Large-scale simulations indicate 10.78 km³ annual freshwater reserve increase across China"
+          ],
+          "study_type": "Experimental and simulation",
+          "scientific_significance": "SRCC provides the first engineering solution to exceed conventional evaporation suppression limits through radiative cooling, offering a scalable method to mitigate thermal accumulation in lakes and enhance freshwater storage under climate change."
+        },
+        "elapsed_seconds": 35.1958,
+        "input_tokens": 665,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 920,
+        "model_eval_seconds": 26.4368,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42892257",
+        "title": "Cryogenic sintering decellularized tissue particles creates porous scaffolds that support long-term alternative macrophage infiltration in large traumatic injuries.",
+        "abstract": "NA: Decellularized extracellular matrix (ECM) biomaterials are widely utilized in soft tissue reconstruction, triggering a Type 2 inflammatory response that promotes repair. However, it remains challenging to manipulate the geometry and porosity of native ECM forms, like sheets and particulates, without chemically altering composition. We describe a controlled freeze-drying method to cryogenically sinter ECM particles into large, mechanically stable, porous 3D ECM scaffolds without altering matrix composition. Modulating small intestinal submucosa (SIS) ECM particle concentration (50 to 200 mg/mL) and freezing rate (-30 °C to -196 °C) during sintering enabled control over 3D porosity (934-3476 μm2 pore area). Moderate ECM concentrations (100 mg/mL) and slow freezing rates (-80 °C) created scaffolds with the largest pores and high mechanical stability under large strain (storage modulus 4036 ± 172 Pa). In vivo, scaffolds bridged volumetric muscle and fat pad deficits, with fabrication conditions affecting degradation and immune response between 1 and 18 weeks. Rapid CD206+ macrophage infiltration occurred, particularly in 100 mg/mL -80 °C scaffolds (4752 ± 1773 macrophages/mm2). All ECM forms induced interleukin-4 (Il4) expression during the first 2 weeks (over 10-fold vs untreated), though expression in 100 mg/mL -80 °C scaffolds persisted substantially longer (8 weeks) than non-sintered particles. Small-pored 100 mg/mL -196 °C scaffolds degraded faster and remodeled into adipose tissue after 8 to 18 weeks. This study shows that ECM particulate can be processed into mechanically robust 3D scaffolds with controllable porosity and degradation without altering biochemical composition, influencing Type 2 immune activation and tissue remodeling after volumetric injury.",
+        "doi": "10.1016/j.biomaterials.2026.124706",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124706",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42892257/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates cryogenic sintering of decellularized extracellular matrix (ECM) particles to create porous 3D scaffolds for large traumatic injuries. By controlling particle concentration and freezing rate, the method achieved tunable porosity (934-3476 μm² pore area) and mechanical stability. In vivo, scaffolds bridged tissue deficits with rapid macrophage infiltration and sustained interleukin-4 expression, particularly in optimized conditions, promoting Type 2 immune responses and tissue remodeling.\",\n  \"key_findings\": [\n    \"Cryogenic sintering of ECM particles enabled tunable 3D porosity (934-3476 μm² pore area) without altering biochemical composition.\",\n    \"Optimized scaffolds (100 mg/mL, -80 °C) showed rapid CD206+ macrophage infiltration (4752 ± 1773 macrophages/mm²) and prolonged interleukin-4 expression (up to 8 weeks).\",\n    \"Small-pored scaffolds degraded faster and remodeled into adipose tissue within 8-18 weeks post-implantation.\"\n  ],\n  \"study_type\": \"In vitro and in vivo\",\n  \"scientific_significance\": \"This work demonstrates that ECM particulates can be engineered into mechanically robust, porosity-tunable scaffolds that sustain Type 2 immune responses and tissue remodeling, advancing biomaterial design for large soft tissue defects.\"\n}",
+        "parsed": {
+          "summary": "This study investigates cryogenic sintering of decellularized extracellular matrix (ECM) particles to create porous 3D scaffolds for large traumatic injuries. By controlling particle concentration and freezing rate, the method achieved tunable porosity (934-3476 μm² pore area) and mechanical stability. In vivo, scaffolds bridged tissue deficits with rapid macrophage infiltration and sustained interleukin-4 expression, particularly in optimized conditions, promoting Type 2 immune responses and tissue remodeling.",
+          "key_findings": [
+            "Cryogenic sintering of ECM particles enabled tunable 3D porosity (934-3476 μm² pore area) without altering biochemical composition.",
+            "Optimized scaffolds (100 mg/mL, -80 °C) showed rapid CD206+ macrophage infiltration (4752 ± 1773 macrophages/mm²) and prolonged interleukin-4 expression (up to 8 weeks).",
+            "Small-pored scaffolds degraded faster and remodeled into adipose tissue within 8-18 weeks post-implantation."
+          ],
+          "study_type": "In vitro and in vivo",
+          "scientific_significance": "This work demonstrates that ECM particulates can be engineered into mechanically robust, porosity-tunable scaffolds that sustain Type 2 immune responses and tissue remodeling, advancing biomaterial design for large soft tissue defects."
+        },
+        "elapsed_seconds": 47.6927,
+        "input_tokens": 838,
+        "output_tokens": 315,
+        "thoughts_tokens": null,
+        "total_tokens": 1153,
+        "model_eval_seconds": 34.3898,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880285",
+        "title": "Mitochondria-targeted tetraoxanes initiate lipid peroxidation to drive ferroptosis and tumor suppression.",
+        "abstract": "NA: Ferroptosis is implicated as a vulnerability in multiple cancers, yet approaches for effectively inducing ferroptosis in vivo are limited. Bypassing conventional strategies targeting the antiferroptotic glutathione peroxidase 4 (GPX4) and ferroptosis suppressor protein 1 (FSP1) proteins, we designed metabolic initiators of lipid peroxidation (MILPOs) and developed the compounds WMK-1/2, which contain tetraoxane radical-generating and mitochondria-targeting groups, as de novo ferroptosis inducers. WMK-1 localizes primarily to mitochondria, induces local lipid peroxidation, and impairs oxidative phosphorylation. WMK-1 induces a \"mito-ferroptosis\" sub-pathway that skips GPX4 inhibition as a prerequisite, can be rescued by lipophilic radical-trapping antioxidants, yet is minimally sensitive to acyl-coenzyme A synthetase long-chain family member 4 (ACSL4) perturbation and long-chain polyunsaturated fatty acid (PUFA) supplementation, and evades retinol-mediated protection. Instead, WMK-1-induced cell death requires labile Fe2+ and can be selectively suppressed by ɑ-lipoic acid, an endogenous, mitochondria-resident antioxidant. WMK-1/2 are bioavailable and exhibit significant efficacy in tumor suppression by eliciting ferroptosis in multiple cancer models and augmenting the antitumor effects of immune-checkpoint blockers. Our work provides a protein-targeting-independent metabolic ferroptosis induction strategy for potential cancer therapy.",
+        "doi": "10.1016/j.cell.2026.09.040",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.040",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880285/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study designed mitochondria-targeted tetraoxane compounds (WMK-1/2) to induce ferroptosis by initiating lipid peroxidation without targeting GPX4 or FSP1. The compounds localized to mitochondria, caused local lipid peroxidation, impaired oxidative phosphorylation, and triggered a 'mito-ferroptosis' pathway that requires labile Fe2+ and is suppressed by α-lipoic acid. WMK-1/2 showed tumor suppression efficacy in cancer models and enhanced immune-checkpoint blockade.\",\n  \"key_findings\": [\n    \"WMK-1/2 are mitochondria-targeted tetraoxanes that initiate lipid peroxidation to drive ferroptosis\",\n    \"The 'mito-ferroptosis' pathway skips GPX4 inhibition and requires labile Fe2+ for cell death\",\n    \"WMK-1/2 suppress tumor growth and augment immune-checkpoint blockade efficacy in cancer models\"\n  ],\n  \"study_type\": \"In vitro and in vivo cancer models\",\n  \"scientific_significance\": \"This work establishes a protein-targeting-independent metabolic strategy for ferroptosis induction, offering a novel approach to overcome limitations in current ferroptosis-targeted cancer therapies.\"\n}",
+        "parsed": {
+          "summary": "This study designed mitochondria-targeted tetraoxane compounds (WMK-1/2) to induce ferroptosis by initiating lipid peroxidation without targeting GPX4 or FSP1. The compounds localized to mitochondria, caused local lipid peroxidation, impaired oxidative phosphorylation, and triggered a 'mito-ferroptosis' pathway that requires labile Fe2+ and is suppressed by α-lipoic acid. WMK-1/2 showed tumor suppression efficacy in cancer models and enhanced immune-checkpoint blockade.",
+          "key_findings": [
+            "WMK-1/2 are mitochondria-targeted tetraoxanes that initiate lipid peroxidation to drive ferroptosis",
+            "The 'mito-ferroptosis' pathway skips GPX4 inhibition and requires labile Fe2+ for cell death",
+            "WMK-1/2 suppress tumor growth and augment immune-checkpoint blockade efficacy in cancer models"
+          ],
+          "study_type": "In vitro and in vivo cancer models",
+          "scientific_significance": "This work establishes a protein-targeting-independent metabolic strategy for ferroptosis induction, offering a novel approach to overcome limitations in current ferroptosis-targeted cancer therapies."
+        },
+        "elapsed_seconds": 37.6229,
+        "input_tokens": 715,
+        "output_tokens": 265,
+        "thoughts_tokens": null,
+        "total_tokens": 980,
+        "model_eval_seconds": 27.6379,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876183",
+        "title": "Axial Benzotriazole-Coordinated Ni Single Atoms Enable Rapid Interfacial Electron Transfer for Efficient Photocatalytic Acetylene Semi-Hydrogenation.",
+        "abstract": "NA: Photocatalytic semi-hydrogenation of acetylene (C2H2) to ethylene (C2H4) often suffers from inefficient interfacial electron transfer from the photocatalysts to adsorbed C2H2. Here, we demonstrate that axial coordination of benzotriazole (BTA) to Ni single atoms in C3N4 (BTA-Ni SAs-C3N4) facilitates interfacial electron-transfer processes. Femtosecond transient absorption spectroscopy, in situ transient surface photovoltage spectroscopy, in situ photochemical infrared spectroscopy, and theoretical simulations reveal that BTA-coordinated Ni SAs serve as the centers for rapid electron transfer by upshifting the Ni d-band center and strengthening the orbital overlap between Ni SA and adsorbed C2H2. Consequently, BTA-Ni SAs-C3N4 achieves a very high C2H4 production rate of 32.29 mmol gcat -1 h-1 with a C2H4 selectivity of 97.6% under simulated solar irradiation, which is ∼4-times higher than that for Ni SAs-C3N4. The apparent quantum yield at 365 nm is up to 4.65%, superior to reported photocatalytic acetylene semi-hydrogenation. This work highlights the importance of interfacial charge transfer in photocatalytic acetylene hydrogenation and provides a rational strategy for designing high-performance photocatalysts.",
+        "doi": "10.1002/adma.75414",
+        "doi_url": "https://doi.org/10.1002/adma.75414",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876183/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing photocatalytic acetylene semi-hydrogenation efficiency by optimizing interfacial electron transfer. Using benzotriazole-coordinated Ni single atoms in C3N4, the researchers demonstrated rapid electron transfer via upshifted Ni d-band centers and strengthened orbital overlap with adsorbed acetylene. The catalyst achieved high ethylene selectivity (97.6%) and production rate (32.29 mmol gcat⁻¹ h⁻¹) under solar light, outperforming conventional Ni SAs-C3N4 by ∼4×.\",\n  \"key_findings\": [\n    \"BTA-coordinated Ni single atoms in C3N4 facilitate rapid interfacial electron transfer for acetylene semi-hydrogenation\",\n    \"Upshifting of Ni d-band center and enhanced orbital overlap with adsorbed C2H2 improve electron transfer kinetics\",\n    \"BTA-Ni SAs-C3N4 achieves 97.6% ethylene selectivity and 32.29 mmol gcat⁻¹ h⁻¹ production rate under solar irradiation\"\n  ],\n  \"study_type\": \"In situ spectroscopic and theoretical analysis of photocatalytic systems\",\n  \"scientific_significance\": \"This work establishes a mechanism for optimizing interfacial charge transfer in photocatalytic acetylene hydrogenation, providing a general strategy for designing efficient catalysts through precise atomic-level coordination.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing photocatalytic acetylene semi-hydrogenation efficiency by optimizing interfacial electron transfer. Using benzotriazole-coordinated Ni single atoms in C3N4, the researchers demonstrated rapid electron transfer via upshifted Ni d-band centers and strengthened orbital overlap with adsorbed acetylene. The catalyst achieved high ethylene selectivity (97.6%) and production rate (32.29 mmol gcat⁻¹ h⁻¹) under solar light, outperforming conventional Ni SAs-C3N4 by ∼4×.",
+          "key_findings": [
+            "BTA-coordinated Ni single atoms in C3N4 facilitate rapid interfacial electron transfer for acetylene semi-hydrogenation",
+            "Upshifting of Ni d-band center and enhanced orbital overlap with adsorbed C2H2 improve electron transfer kinetics",
+            "BTA-Ni SAs-C3N4 achieves 97.6% ethylene selectivity and 32.29 mmol gcat⁻¹ h⁻¹ production rate under solar irradiation"
+          ],
+          "study_type": "In situ spectroscopic and theoretical analysis of photocatalytic systems",
+          "scientific_significance": "This work establishes a mechanism for optimizing interfacial charge transfer in photocatalytic acetylene hydrogenation, providing a general strategy for designing efficient catalysts through precise atomic-level coordination."
+        },
+        "elapsed_seconds": 40.6569,
+        "input_tokens": 707,
+        "output_tokens": 304,
+        "thoughts_tokens": null,
+        "total_tokens": 1011,
+        "model_eval_seconds": 31.0218,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42893684",
+        "title": "A nanostructured gradient Ta-O-F barrier-reservoir coating on 316L stainless steel coordinates anti-infective and osteoregenerative responses.",
+        "abstract": "NA: Early-stage bacterial infection and inadequate osseointegration remain major causes of failure of orthopedic 316L stainless steel (316L SS) implants. Fluoride-containing surfaces can provide antibacterial activity and support angiogenic and osteoblastic responses when fluoride exposure is appropriately regulated. However, uncontrolled release may cause burst exposure, compromised cytocompatibility, and limited functional durability. Herein, a nanostructured gradient Ta-O-F coating was constructed on 316L SS by stepwise plasma modification: an outer Ta2O5-rich region served as a corrosion-stable barrier, whereas an underlying fluoride-containing region functioned as an ion reservoir, thereby suppressing burst fluoride release and sustaining subsequent exposure. Compared with monofunctional coatings, TO/TF showed improved corrosion resistance, moderated fluoride release, and retained antibacterial activity against S. aureus and E. coli. Phenotypic and transcriptomic analyses indicated that the antibacterial response was primarily associated with fluoride-mediated membrane damage, oxidative stress, metabolic disturbance, and suppression of translation-related pathways. The Ta2O5-rich surface may provide an additional but relatively weak contribution through corrosion stabilization and favorable surface physicochemical properties. The regulated coating also enhanced endothelial migration and tube formation, while promoting osteoblastic adhesion, proliferation, ALP activity, matrix mineralization, and related gene expression in vitro. In an infected rat implantation model, TO/TF reduced local inflammatory infiltration and bacterial burden relative to unmodified 316L SS, while supporting vascular and osteogenic marker expression and improved peri-implant bone architecture. These findings establish a barrier-reservoir strategy for coordinating early anti-infective protection with subsequent osteoregenerative responses on metallic implants.",
+        "doi": "10.1016/j.biomaterials.2026.124687",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124687",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42893684/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated a nanostructured gradient Ta-O-F coating on 316L stainless steel to address early bacterial infection and poor osseointegration in orthopedic implants. The coating features a corrosion-stable Ta2O5 barrier layer and an underlying fluoride reservoir to regulate ion release. Results showed improved corrosion resistance, moderated fluoride release, enhanced antibacterial activity against common pathogens, and promoted osteoblastic and endothelial responses in vitro and in infected rat models.\",\n  \"key_findings\": [\n    \"Moderated fluoride release from the gradient coating suppressed burst exposure while maintaining antibacterial efficacy against S. aureus and E. coli\",\n    \"The coating enhanced osteoblastic adhesion, proliferation, matrix mineralization, and vascularization in vitro\",\n    \"In infected rat models, the coating reduced bacterial burden and inflammation while improving bone architecture compared to unmodified 316L SS\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies\",\n  \"scientific_significance\": \"This work demonstrates a barrier-reservoir strategy for synchronizing anti-infective and osteoregenerative responses on metallic implants, addressing a critical challenge in orthopedic implant failure.\"\n}",
+        "parsed": {
+          "summary": "This study investigated a nanostructured gradient Ta-O-F coating on 316L stainless steel to address early bacterial infection and poor osseointegration in orthopedic implants. The coating features a corrosion-stable Ta2O5 barrier layer and an underlying fluoride reservoir to regulate ion release. Results showed improved corrosion resistance, moderated fluoride release, enhanced antibacterial activity against common pathogens, and promoted osteoblastic and endothelial responses in vitro and in infected rat models.",
+          "key_findings": [
+            "Moderated fluoride release from the gradient coating suppressed burst exposure while maintaining antibacterial efficacy against S. aureus and E. coli",
+            "The coating enhanced osteoblastic adhesion, proliferation, matrix mineralization, and vascularization in vitro",
+            "In infected rat models, the coating reduced bacterial burden and inflammation while improving bone architecture compared to unmodified 316L SS"
+          ],
+          "study_type": "In vitro and in vivo studies",
+          "scientific_significance": "This work demonstrates a barrier-reservoir strategy for synchronizing anti-infective and osteoregenerative responses on metallic implants, addressing a critical challenge in orthopedic implant failure."
+        },
+        "elapsed_seconds": 36.3198,
+        "input_tokens": 740,
+        "output_tokens": 247,
+        "thoughts_tokens": null,
+        "total_tokens": 987,
+        "model_eval_seconds": 25.676,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880286",
+        "title": "A phenome-wide structural variant map from 467,152 UK Biobank genomes.",
+        "abstract": "NA: Structural variants (SVs) are large (>50 base pairs) genomic rearrangements that can significantly influence human phenotypes, yet their contribution to health and disease remains undercharacterized. We conducted a phenome-wide association study (PheWAS) of 1.6 million SVs identified in whole-genome sequencing data from 467,152 UK Biobank participants, across 13,322 binary, 2,018 quantitative, and 2,923 plasma protein traits. Of these, 82.25% of SVs were outside the detectable range of prior copy-number variant studies. Protein quantitative trait loci analysis linked 3,241 SVs to 1,608 proteins, with effects dependent on SV type and location. In SV-PheWAS, we detected 28,184 associations with human health outcomes. Notably, we uncovered rare SVs with strong phenotypic effects. Furthermore, we show that at known genome-wide association study loci, 32.21% of associated SVs overlapped functional genomic regions. This study underscores the underestimated role of SVs in human genetics and their potential to advance understanding of human biology and drug discovery.",
+        "doi": "10.1016/j.cell.2026.09.035",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.035",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880286/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study conducted a phenome-wide association study (PheWAS) across 13,322 traits using structural variants (SVs) from 467,1.52 UK Biobank genomes to assess their phenotypic impact. It identified 28,184 SV-trait associations, with 82.25% of SVs previously undetected by copy-number variant studies. The findings highlight SVs' significant but undercharacterized role in human health and disease.\",\n  \"key_findings\": [\n    \"82.25% of SVs were outside the detectable range of prior copy-number variant studies\",\n    \"28,184 associations between SVs and human health traits were detected\",\n    \"32.21% of SVs at known genome-wide association study loci overlapped functional genomic regions\"\n  ],\n  \"study_type\": \"Phenome-wide association study (PheWAS)\",\n  \"scientific_significance\": \"This work demonstrates the extensive phenotypic impact of structural variants, revealing their underestimated contribution to human health and disease and providing a resource for understanding genetic mechanisms underlying complex traits.\"\n}",
+        "parsed": {
+          "summary": "This study conducted a phenome-wide association study (PheWAS) across 13,322 traits using structural variants (SVs) from 467,1.52 UK Biobank genomes to assess their phenotypic impact. It identified 28,184 SV-trait associations, with 82.25% of SVs previously undetected by copy-number variant studies. The findings highlight SVs' significant but undercharacterized role in human health and disease.",
+          "key_findings": [
+            "82.25% of SVs were outside the detectable range of prior copy-number variant studies",
+            "28,184 associations between SVs and human health traits were detected",
+            "32.21% of SVs at known genome-wide association study loci overlapped functional genomic regions"
+          ],
+          "study_type": "Phenome-wide association study (PheWAS)",
+          "scientific_significance": "This work demonstrates the extensive phenotypic impact of structural variants, revealing their underestimated contribution to human health and disease and providing a resource for understanding genetic mechanisms underlying complex traits."
+        },
+        "elapsed_seconds": 33.9933,
+        "input_tokens": 640,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 891,
+        "model_eval_seconds": 25.9465,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876195",
+        "title": "Voltage Hysteresis Induced by Fragile Quasi-Flat Bands in Oxygen-Redox Cathodes.",
+        "abstract": "NA: Cathodes exploiting oxygen redox chemistry underpin the realization of lithium battery systems with specific energies beyond 600 Wh kg-1. However, voltage hysteresis exceeding 1 V, especially during the first cycle, remains a long-standing and unresolved challenge, severely limiting energy efficiency and practical deployment. Here, we propose a quasi-flat-band framework in which oxygen 2p states near the Fermi level are intrinsically sensitive to perturbations. Even weak perturbations, such as minor lattice distortions during delithiation or thermal vibrations at room temperature, can disproportionately amplify band dispersion and induce hysteresis. This insight reframes the long-standing design strategy by extending it beyond suppressing structural reconstructions to include control of perturbation-driven electronic instability. Future materials design should pursue two principles: stabilizing symmetry to sustain quasi-flat-band characteristics and engineering orbital hybridization to enhance their robustness against perturbations. This work rethinks the origin and mitigation of voltage hysteresis, bringing oxygen-redox cathodes closer to reliable operation at high voltages.",
+        "doi": "10.1002/adma.75396",
+        "doi_url": "https://doi.org/10.1002/adma.75396",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876195/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates voltage hysteresis in oxygen-redox cathodes, identifying quasi-flat bands as the origin of hysteresis exceeding 1 V during initial cycles. By linking weak lattice distortions and thermal vibrations to amplified band dispersion, the research proposes stabilizing symmetry and engineering orbital hybridization to mitigate hysteresis, enhancing energy efficiency for high-energy lithium batteries.\",\n  \"key_findings\": [\n    \"Oxygen 2p states near the Fermi level in quasi-flat bands are sensitive to minor lattice distortions\",\n    \"Weak perturbations disproportionately amplify band dispersion, causing voltage hysteresis\",\n    \"Stabilizing symmetry and engineering orbital hybridization reduce hysteresis for practical battery operation\"\n  ],\n  \"study_type\": \"Theoretical modeling and design principles\",\n  \"scientific_significance\": \"This work establishes a fundamental mechanism for voltage hysteresis in oxygen-redox cathodes, providing a design framework to enhance energy efficiency in high-capacity lithium batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates voltage hysteresis in oxygen-redox cathodes, identifying quasi-flat bands as the origin of hysteresis exceeding 1 V during initial cycles. By linking weak lattice distortions and thermal vibrations to amplified band dispersion, the research proposes stabilizing symmetry and engineering orbital hybridization to mitigate hysteresis, enhancing energy efficiency for high-energy lithium batteries.",
+          "key_findings": [
+            "Oxygen 2p states near the Fermi level in quasi-flat bands are sensitive to minor lattice distortions",
+            "Weak perturbations disproportionately amplify band dispersion, causing voltage hysteresis",
+            "Stabilizing symmetry and engineering orbital hybridization reduce hysteresis for practical battery operation"
+          ],
+          "study_type": "Theoretical modeling and design principles",
+          "scientific_significance": "This work establishes a fundamental mechanism for voltage hysteresis in oxygen-redox cathodes, providing a design framework to enhance energy efficiency in high-capacity lithium batteries."
+        },
+        "elapsed_seconds": 28.1182,
+        "input_tokens": 599,
+        "output_tokens": 211,
+        "thoughts_tokens": null,
+        "total_tokens": 810,
+        "model_eval_seconds": 21.0814,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42893685",
+        "title": "Microneedle-guided ultraviolet phototherapy with local calcipotriol delivery for enhanced psoriasis treatment.",
+        "abstract": "NA: Narrow-band ultraviolet B (NB-UVB) phototherapy is clinically regarded as a first-line treatment for moderate-to-severe plaque psoriasis owing to its high tolerance, broad applicability and easy affordability. However, the therapeutic efficacy of short-wave UV light is limited by poor penetration through the thickened stratum corneum of psoriatic skin, whereas excessive NB-UVB irradiation may provoke cutaneous photodamage. Moreover, NB-UVB administration necessitates trained personnel and frequent hospital visits, resulting in poor patient compliance. Here, we developed microneedles with high UV transmittance (UVMNs) to enhance the transdermal delivery efficiency of NB-UVB, thereby reducing the required irradiation dosage and mitigating the risk of photodamage without compromising therapeutic effect. A vitamin D analog, calcipotriol, was further coated onto the UVMN patch to augment the overall efficacy of the phototherapeutic regimen. After insertion into the skin, the calcipotriol is released from the dissolvable coating within minutes to suppress keratinocyte proliferation, followed by UVMN-guided NB-UVB therapy for regulation of regulatory T/T helper 17 cell balance as well as inhibition of keratinocyte proliferation. The integration of phototherapy and topical therapy effectively ameliorated symptoms in a psoriatic mouse model.",
+        "doi": "10.1016/j.biomaterials.2026.124697",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124697",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42893685/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated enhancing NB-UVB phototherapy for psoriasis by integrating microneedles with high UV transmittance and calcipotriol delivery. The approach combined UVMNs to improve UV penetration and reduce dosage, with calcip. The mouse model showed improved symptoms through reduced keratinocyte proliferation and immune modulation.\",\n  \"key_findings\": [\n    \"Microneedles with high UV transmittance increased NB-UVB penetration into psoriatic skin\",\n    \"Calcipotriol release suppressed keratinocyte proliferation within minutes\",\n    \"Integrated therapy reduced NB-UVB dosage while improving symptom amelioration in mice\"\n  ],\n  \"study_type\": \"Mouse model\",\n  \"scientific_significance\": \"This approach demonstrates a dual-modality strategy to overcome limitations of conventional NB-UVB therapy by enhancing delivery efficiency and reducing photodamage risk without compromising efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated enhancing NB-UVB phototherapy for psoriasis by integrating microneedles with high UV transmittance and calcipotriol delivery. The approach combined UVMNs to improve UV penetration and reduce dosage, with calcip. The mouse model showed improved symptoms through reduced keratinocyte proliferation and immune modulation.",
+          "key_findings": [
+            "Microneedles with high UV transmittance increased NB-UVB penetration into psoriatic skin",
+            "Calcipotriol release suppressed keratinocyte proliferation within minutes",
+            "Integrated therapy reduced NB-UVB dosage while improving symptom amelioration in mice"
+          ],
+          "study_type": "Mouse model",
+          "scientific_significance": "This approach demonstrates a dual-modality strategy to overcome limitations of conventional NB-UVB therapy by enhancing delivery efficiency and reducing photodamage risk without compromising efficacy."
+        },
+        "elapsed_seconds": 28.7065,
+        "input_tokens": 663,
+        "output_tokens": 192,
+        "thoughts_tokens": null,
+        "total_tokens": 855,
+        "model_eval_seconds": 19.9785,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896552",
+        "title": "A microbiome-bile acid axis mediates protection from chronic liver disease in females.",
+        "abstract": "NA: Sex-based differences in chronic liver disease (CLD) incidence and progression are well documented, yet the mechanistic basis of this sexual disparity remains elusive. Here, leveraging a large-scale metabolomics database comprising 9,254 individuals, we identify the endogenous bile acid, isoursodeoxycholic acid (isoUDCA), as a candidate mediator of female-associated hepatoprotection. We trace the origin of isoUDCA to a bacterial consortium, which is selectively enriched by estrogen through shaping a specialized intestinal microenvironment. Mechanistically, isoUDCA promotes the nuclear accumulation of SREBP2. This upregulates the intracellular transporter STARD4 and its functionally coupled downstream enzyme CYP7B1, thereby facilitating intracellular cholesterol handling and metabolic conversion. Collectively, our findings support a microbiome-bile acid-liver axis that may contribute to sex differences in CLD susceptibility and support further evaluation of isoUDCA as a potential therapeutic intervention.",
+        "doi": "10.1016/j.cell.2026.09.048",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.048",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896552/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"The study investigates the mechanism behind sex-based differences in chronic liver disease (CLD) using metabolomics data from 9,254 individuals. It identifies isoursodeoxycholic acid (isoUDCA) as a mediator of female hepatoprotection, originating from a bacterial consortium enriched by estrogen. The bile acid promotes SREBP2 nuclear accumulation, enhancing cholesterol handling via STARD4 and CYP7B1. This microbiome-bile acid-liver axis may explain sex disparities in CL. The findings suggest isoUDCA as a potential therapeutic target.\",\n  \"key_findings\": [\n    \"IsoUDCA, an endogenous bile acid, mediates female hepatoprotection in chronic liver disease.\",\n    \"Estrogen selectively enriches a bacterial consortium that produces isoUDCA.\",\n    \"IsoUDCA promotes SREBP2 nuclear accumulation to enhance intracellular cholesterol handling.\"\n  ],\n  \"study_type\": \"Metabolomics analysis of large-scale human data\",\n  \"scientific_significance\": \"This work identifies a microbiome-bile acid-liver axis that explains sex-based differences in chronic liver disease susceptibility, providing a mechanistic basis for potential sex-specific therapeutic strategies.\"\n}",
+        "parsed": {
+          "summary": "The study investigates the mechanism behind sex-based differences in chronic liver disease (CLD) using metabolomics data from 9,254 individuals. It identifies isoursodeoxycholic acid (isoUDCA) as a mediator of female hepatoprotection, originating from a bacterial consortium enriched by estrogen. The bile acid promotes SREBP2 nuclear accumulation, enhancing cholesterol handling via STARD4 and CYP7B1. This microbiome-bile acid-liver axis may explain sex disparities in CL. The findings suggest isoUDCA as a potential therapeutic target.",
+          "key_findings": [
+            "IsoUDCA, an endogenous bile acid, mediates female hepatoprotection in chronic liver disease.",
+            "Estrogen selectively enriches a bacterial consortium that produces isoUDCA.",
+            "IsoUDCA promotes SREBP2 nuclear accumulation to enhance intracellular cholesterol handling."
+          ],
+          "study_type": "Metabolomics analysis of large-scale human data",
+          "scientific_significance": "This work identifies a microbiome-bile acid-liver axis that explains sex-based differences in chronic liver disease susceptibility, providing a mechanistic basis for potential sex-specific therapeutic strategies."
+        },
+        "elapsed_seconds": 31.3444,
+        "input_tokens": 568,
+        "output_tokens": 250,
+        "thoughts_tokens": null,
+        "total_tokens": 818,
+        "model_eval_seconds": 25.2393,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876200",
+        "title": "Synthesis of Bulk Superconducting LiNbO2 Crystals Through CaH2 Reduction.",
+        "abstract": "NA: We have synthesized layered superconducting LiNbO2 crystals through a bulk phase transformation from LiNbO3 single crystals via CaH2 reduction. As the Nb valence is reduced from 5+ to 3+, the material undergoes a structural transformation to the resulting product, LiNbO2, which is accompanied by metallic behavior and a superconducting transition, Tc onset, as high as 14.4 K. Secondary ion mass spectroscopy (SIMS) and x-ray photoelectron spectroscopy (XPS) show that the resulting phase is hole-doped through de-lithiation during the reduction. Magnetization and AC susceptibility measurements from a tunnel diode resonator confirm the bulk nature of superconductivity with a superconducting volume fraction of ≈77% and an upper critical field approaching 26 T. Our study demonstrates extreme hydride reduction as an effective method to induce phase transformations with non-topochemical pathways and can be used to synthesize bulk materials with exotic properties.",
+        "doi": "10.1002/adma.75377",
+        "doi_url": "https://doi.org/10.1002/adma.75377",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876200/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the synthesis of bulk superconducting LiNbO2 crystals via CaH2 reduction of LiNbO3. The approach involves reducing Nb valence from 5+ to 3+ to induce a structural transformation, resulting in a superconducting phase with Tc onset up to : 14.4 K. Magnetization measurements confirm bulk superconductivity with ≈77% superconducting volume fraction and an upper critical field near 26 T.\",\n  \"key_findings\": [\n    \"Synthesis of bulk superconducting LiNbO2 crystals via CaH2 reduction of LiNbO3\",\n    \"Reduction of Nb valence from 5+ to 3+ induces structural transformation and superconductivity with Tc onset up to 14.4 K\",\n    \"Bulk superconductivity confirmed with ≈77% superconducting volume fraction and upper critical field near 26 T\"\n  ],\n  \"study_type\": \"Bulk phase transformation via CaH2 reduction\",\n  \"scientific_significance\": \"This work demonstrates that extreme hydride reduction can induce non-topochemical phase transformations to achieve bulk superconductivity with high critical field and volume fraction.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the synthesis of bulk superconducting LiNbO2 crystals via CaH2 reduction of LiNbO3. The approach involves reducing Nb valence from 5+ to 3+ to induce a structural transformation, resulting in a superconducting phase with Tc onset up to : 14.4 K. Magnetization measurements confirm bulk superconductivity with ≈77% superconducting volume fraction and an upper critical field near 26 T.",
+          "key_findings": [
+            "Synthesis of bulk superconducting LiNbO2 crystals via CaH2 reduction of LiNbO3",
+            "Reduction of Nb valence from 5+ to 3+ induces structural transformation and superconductivity with Tc onset up to 14.4 K",
+            "Bulk superconductivity confirmed with ≈77% superconducting volume fraction and upper critical field near 26 T"
+          ],
+          "study_type": "Bulk phase transformation via CaH2 reduction",
+          "scientific_significance": "This work demonstrates that extreme hydride reduction can induce non-topochemical phase transformations to achieve bulk superconductivity with high critical field and volume fraction."
+        },
+        "elapsed_seconds": 32.8949,
+        "input_tokens": 582,
+        "output_tokens": 258,
+        "thoughts_tokens": null,
+        "total_tokens": 840,
+        "model_eval_seconds": 26.4711,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896417",
+        "title": "Molecularly nanoengineered dendritic cells for tumor-specific antigen capture and sono-activatable cytokine-mediated immunotherapy.",
+        "abstract": "NA: Engineering artificial dendritic cells (DCs) holds great promise for cancer immunotherapy, but achieving spatiotemporally controlled multifunctionality within the immunosuppressive tumor microenvironment remains a challenge. Here, we report a chemically engineered, ultrasound (US)-activatable artificial DCs nanosystem (nDC-M) that mimics the DC-mediated T-cell immunity through a rationally designed molecular assembly. The nDC-M integrates three key functional modules including a semiconducting polymer nanoparticle and interleukin-2 (IL-2) crosslinked by hypoxia-cleavable fragment for on-demand cytokine release upon US trigger, a matured DC membrane cloak for tumor cell recognition and a surface-anchored maleimide (MAL) group for covalent antigen capture and presentation. Under US treatment, sonodynamic effect of semiconducting polymer ablates tumors and consumes oxygen to allow breakage of hypoxia-cleavable fragments, leading to IL-2 leakage. This nDC-M exhibits a comprehensive and conferred mimicking functions including tumor cell recognition, antigen presentation and sono-activatable cytokine secretion. In bilateral breast cancer and lung metastasis models, US-driven nDC-M therapy significantly suppresses tumor progression and metastasis. Moreover, combining nDC-M with checkpoint blockade achieves complete eradication of local and distant tumors and establishes long-term immunological memory against recurrence. This work presents a modular and stimuli-responsive artificial DC platform that integrates chemical synthesis, molecular nanoengineering, and function modulation, offering a versatile strategy for cancer immunotherapy.",
+        "doi": "10.1016/j.biomaterials.2026.124693",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124693",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896417/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered ultrasound-activatable artificial dendritic cells (nDC-M) with semiconducting polymers, hypoxia-cleavable IL-2 release, and tumor-targeting capabilities to enhance cancer immunotherapy. The system ablates tumors via sonodynamic effects, releases IL-2 under ultrasound, and suppresses metastasis in breast and lung cancer models, achieving complete tumor eradication when combined with checkpoint blockade.\",\n  \"key_findings\": [\n    \"nDC-M integrates semiconducting polymer nanoparticles for sonodynamic tumor ablation and hypoxia-cleavable IL-2 release\",\n    \"The system enables tumor-specific antigen capture and ultrasound-triggered cytokine secretion\",\n    \"Combination with checkpoint blockade eradicates tumors and induces long-term immunological memory\"\n  ],\n  \"study_type\": \"In vitro and in vivo models\",\n  \"scientific_significance\": \"This modular nanosystem demonstrates spatiotemporally controlled multifunctionality in immunosuppressive tumor environments, advancing targeted cancer immunotherapy through ultrasound-responsive design.\"\n}",
+        "parsed": {
+          "summary": "This study engineered ultrasound-activatable artificial dendritic cells (nDC-M) with semiconducting polymers, hypoxia-cleavable IL-2 release, and tumor-targeting capabilities to enhance cancer immunotherapy. The system ablates tumors via sonodynamic effects, releases IL-2 under ultrasound, and suppresses metastasis in breast and lung cancer models, achieving complete tumor eradication when combined with checkpoint blockade.",
+          "key_findings": [
+            "nDC-M integrates semiconducting polymer nanoparticles for sonodynamic tumor ablation and hypoxia-cleavable IL-2 release",
+            "The system enables tumor-specific antigen capture and ultrasound-triggered cytokine secretion",
+            "Combination with checkpoint blockade eradicates tumors and induces long-term immunological memory"
+          ],
+          "study_type": "In vitro and in vivo models",
+          "scientific_significance": "This modular nanosystem demonstrates spatiotemporally controlled multifunctionality in immunosuppressive tumor environments, advancing targeted cancer immunotherapy through ultrasound-responsive design."
+        },
+        "elapsed_seconds": 33.4481,
+        "input_tokens": 701,
+        "output_tokens": 223,
+        "thoughts_tokens": null,
+        "total_tokens": 924,
+        "model_eval_seconds": 23.7883,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896553",
+        "title": "The pyrin inflammasome senses OCTN2-mediated uptake of extracellular ʟ-carnitine from muscle injury or ingestion.",
+        "abstract": "NA: Red-meat-containing diets are epidemiologically associated with diseases of chronic inflammation, while diets that restrict red meat improve health. Yet, it is uncertain how red meat incites inflammation. Here, we discover that ʟ-carnitine, an amino acid highly concentrated in skeletal muscle myocytes, drives inflammasome activation in lipopolysaccharide (LPS)-challenged mice and LPS-primed murine and human macrophages. We find that extracellular ʟ-carnitine represses mevalonate synthesis, thereby triggering activation of the pyrin inflammasome, downstream of cellular import by the high-affinity ʟ-carnitine transporter OCTN2. We find that the inflammatory response to skeletal muscle injury also requires pyrin and OCTN2. Thus, in summary, we identify macrophages as sentinels of exogenous and endogenous extracellular ʟ-carnitine that serve as a proxy for skeletal myocyte damage, and we open the field to examine the mechanistic basis for how excess dietary intake of carnitine-rich food drives inflammatory disease.",
+        "doi": "10.1016/j.cell.2026.09.015",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.015",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896553/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how extracellular L-carnitine from muscle injury or red meat ingestion triggers inflammation via the pyrin inflammasome. Using LPS-challenged mice and LPS-primed macrophages, researchers found that L-carnitine uptake through OCTN2 represses mevalonate synthesis, activating the pyrin inflammasome. The inflammatory response to muscle injury requires both pyrin and OCTN2, suggesting L-carnitine acts as a biomarker for skeletal myocyte damage.\",\n  \"key_findings\": [\n    \"Extracellular L-carnitine activates the pyrin inflammasome in LPS-challenged mice and macrophages\",\n    \"OCTN2-mediated uptake of L-carnitine represses mevalonate synthesis, triggering pyrin inflammasome activation\",\n    \"The inflammatory response to skeletal muscle injury depends on pyrin and OCTN2\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies using LPS-challenged mice and LPS-primed macrophages\",\n  \"scientific_significance\": \"This work identifies L-carnitine as a biomarker for skeletal myocyte damage that links dietary red meat intake to inflammatory disease via pyrin inflammasome activation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how extracellular L-carnitine from muscle injury or red meat ingestion triggers inflammation via the pyrin inflammasome. Using LPS-challenged mice and LPS-primed macrophages, researchers found that L-carnitine uptake through OCTN2 represses mevalonate synthesis, activating the pyrin inflammasome. The inflammatory response to muscle injury requires both pyrin and OCTN2, suggesting L-carnitine acts as a biomarker for skeletal myocyte damage.",
+          "key_findings": [
+            "Extracellular L-carnitine activates the pyrin inflammasome in LPS-challenged mice and macrophages",
+            "OCTN2-mediated uptake of L-carnitine represses mevalonate synthesis, triggering pyrin inflammasome activation",
+            "The inflammatory response to skeletal muscle injury depends on pyrin and OCTN2"
+          ],
+          "study_type": "In vitro and in vivo studies using LPS-challenged mice and LPS-primed macrophages",
+          "scientific_significance": "This work identifies L-carnitine as a biomarker for skeletal myocyte damage that links dietary red meat intake to inflammatory disease via pyrin inflammasome activation."
+        },
+        "elapsed_seconds": 35.6148,
+        "input_tokens": 613,
+        "output_tokens": 277,
+        "thoughts_tokens": null,
+        "total_tokens": 890,
+        "model_eval_seconds": 28.2558,
+        "error": null
+      }
+    }
+  ]
+}
