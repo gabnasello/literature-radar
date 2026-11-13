@@ -139,3 +139,10 @@ test_that("summarization queue excludes only successfully summarized papers", {
   expect_equal(vapply(pending, function(x) x$pmid, character(1)), c("200", "300", "400"))
   expect_length(pending_summarization_articles(list(), character()), 0L)
 })
+
+test_that("publication dates support year-only and tolerate unknown formats", {
+  expect_equal(site_format_date("2026"), "2026")
+  expect_equal(site_format_date("2026-11-13"), "13 Nov 2026")
+  expect_equal(site_format_date("2026/11/13"), "13 Nov 2026")
+  expect_equal(site_format_date("Spring 2026"), "Spring 2026")
+})
