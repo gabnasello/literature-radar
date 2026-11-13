@@ -119,7 +119,7 @@ summary_field <- function(parsed, field, fallback = "") {
 
 write_benchmark_markdown <- function(results, run_id, prompt_version, output_path) {
   lines <- c(
-    paste0("# LLM benchmark: ", run_id),
+    paste0("# Ollama benchmark: ", run_id),
     "",
     paste0("Prompt version: ", prompt_version),
     "",
@@ -137,43 +137,43 @@ write_benchmark_markdown <- function(results, run_id, prompt_version, output_pat
       ""
     )
     x <- paper$ollama
-      elapsed <- if (is.finite(x$elapsed_seconds)) paste0(round(x$elapsed_seconds, 2), " s") else "n/a"
+    elapsed <- if (is.finite(x$elapsed_seconds)) paste0(round(x$elapsed_seconds, 2), " s") else "n/a"
+    lines <- c(
+      lines,
+      paste0("### OLLAMA (", x$model, ")"),
+      "",
+      paste0("Status: ", x$status, " | Elapsed: ", elapsed),
+      ""
+    )
+    if (!is.null(x$parsed)) {
       lines <- c(
         lines,
-        paste0("### OLLAMA (", x$model, ")"),
+        "**Summary**",
         "",
-        paste0("Status: ", x$status, " | Elapsed: ", elapsed),
+        summary_field(x$parsed, "summary", x$response_text),
+        "",
+        "**Key findings**",
+        "",
+        summary_field(x$parsed, "key_findings", "Not returned."),
+        "",
+        "**Study type**",
+        "",
+        summary_field(x$parsed, "study_type", "Not returned."),
+        "",
+        "**Relevance**",
+        "",
+        summary_field(x$parsed, "relevance_to_biomaterials_and_regenerative_medicine", "Not returned."),
+        "",
+        "**Limitations / unknowns**",
+        "",
+        summary_field(x$parsed, "limitations_or_unknowns", "Not returned."),
         ""
       )
-      if (!is.null(x$parsed)) {
-        lines <- c(
-          lines,
-          "**Summary**",
-          "",
-          summary_field(x$parsed, "summary", x$response_text),
-          "",
-          "**Key findings**",
-          "",
-          summary_field(x$parsed, "key_findings", "Not returned."),
-          "",
-          "**Study type**",
-          "",
-          summary_field(x$parsed, "study_type", "Not returned."),
-          "",
-          "**Relevance**",
-          "",
-          summary_field(x$parsed, "relevance_to_biomaterials_and_regenerative_medicine", "Not returned."),
-          "",
-          "**Limitations / unknowns**",
-          "",
-          summary_field(x$parsed, "limitations_or_unknowns", "Not returned."),
-          ""
-        )
-      } else if (nzchar(x$response_text)) {
-        lines <- c(lines, x$response_text, "")
-      } else {
-        lines <- c(lines, paste0("Error: ", x$error), "")
-      }
+    } else if (nzchar(x$response_text)) {
+      lines <- c(lines, x$response_text, "")
+    } else {
+      lines <- c(lines, paste0("Error: ", x$error), "")
+    }
     lines <- c(lines, "---", "")
   }
   writeLines(lines, output_path, useBytes = TRUE)
@@ -214,7 +214,7 @@ run_llm_benchmark <- function(
   metrics <- benchmark_metrics(paper_results)
   result_file <- file.path(output_dir, "benchmark.json")
   metrics_file <- file.path(output_dir, "metrics.csv")
-  markdown_file <- file.path(output_dir, "comparison.md")
+  markdown_file <- file.path(output_dir, "summaries.md")
 
   result <- list(
     schema_version = 2L,
