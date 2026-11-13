@@ -93,6 +93,7 @@ safe_provider_call <- function(provider, prompt, config, api_key) {
       elapsed_seconds = NA_real_,
       input_tokens = NA_real_,
       output_tokens = NA_real_,
+      thoughts_tokens = NA_real_,
       total_tokens = NA_real_,
       error = conditionMessage(e)
     )
@@ -106,9 +107,10 @@ benchmark_metrics <- function(results, config) {
       x <- paper[[provider]]
       cost <- NA_real_
       if (provider == "gemini" && is.finite(x$input_tokens) && is.finite(x$output_tokens)) {
+        thoughts <- if (is.finite(x$thoughts_tokens)) x$thoughts_tokens else 0
         cost <- (
           x$input_tokens * config$gemini$paid_input_usd_per_million +
-          x$output_tokens * config$gemini$paid_output_usd_per_million
+          (x$output_tokens + thoughts) * config$gemini$paid_output_usd_per_million
         ) / 1e6
       }
       rows[[length(rows) + 1L]] <- data.frame(
@@ -120,6 +122,7 @@ benchmark_metrics <- function(results, config) {
         elapsed_seconds = x$elapsed_seconds,
         input_tokens = x$input_tokens,
         output_tokens = x$output_tokens,
+        thoughts_tokens = x$thoughts_tokens,
         total_tokens = x$total_tokens,
         estimated_paid_tier_cost_usd = cost,
         error = if (is.null(x$error)) "" else x$error,
