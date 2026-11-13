@@ -132,7 +132,7 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   )
   journal_rendered <- paste(
     capture.output(site_render_journal_page(site_with_history, "test-journal")),
-    collapse = "\\n"
+    collapse = "\n"
   )
   expect_match(journal_rendered, "A test paper", fixed = TRUE)
   expect_match(journal_rendered, "Other and older updates (1)", fixed = TRUE)
