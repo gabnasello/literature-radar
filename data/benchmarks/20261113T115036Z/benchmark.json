@@ -1,0 +1,491 @@
+{
+  "schema_version": 1,
+  "run_id": "20261113T115036Z",
+  "generated_at_utc": "2026-11-13 12:28:22 UTC",
+  "prompt_version": "paper_summary_v1",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful structured summary for a researcher monitoring literature in biomaterials, immunology, skeletal biology, tissue engineering, and regenerative medicine.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use this schema:\n{\n  \"summary\": \"A clear summary in 70-110 words.\",\n  \"key_findings\": [\n    \"Up to three concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise say Not specified in abstract.\",\n  \"relevance_to_biomaterials_and_regenerative_medicine\": \"One or two sentences explaining the relevance to biomaterials, immunology, skeletal biology, tissue engineering, or regenerative medicine. If no direct connection is evident, say so explicitly.\",\n  \"limitations_or_unknowns\": \"Important limitations explicitly stated in the abstract, or key information that cannot be determined from the abstract. Do not invent limitations.\"\n}\n\nRules:\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Distinguish what the authors report from your interpretation of its relevance.\n- If the abstract is incomplete or unclear, say so rather than guessing.\n- Keep the language precise and useful to a biomedical researcher.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_sample_size": 12,
+  "actual_sample_size": 12,
+  "sampling_seed": 20261113,
+  "models": {
+    "ollama": "qwen3:4b",
+    "gemini": "gemini-3.8-flash"
+  },
+  "gemini_pricing_assumption": {
+    "tier": "paid standard tier estimate; actual free-tier use may be free",
+    "input_usd_per_million": 0.75,
+    "output_usd_per_million": 3.75,
+    "effective_until": "2026-12-31"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42974853",
+        "title": "Crystallinity-Governed Liquid Wettability and Mobility on Solid Surface.",
+        "abstract": "NA: Control over liquid wettability and droplet mobility is essential for several emerging applications including open microfluidics, anti-icing, self-cleaning, and heat transfer. Existing strategies generally rely on permanent chemical modification or continuous external stimuli to regulate droplet spreading, pinning, and sliding. Here, we report a unified approach for reconfiguring wettability states and droplet mobility by regulating crystalline packing of a semicrystalline polymer. A phase-transitioning polymer, poly(octadecyl acrylate) (PODAc), was incorporated into a porous polymeric coating, where melting and subsequent cooling pathways determine the extent of alkyl-chain crystallization and interfacial polar functionality. Cooling in air or underwater generates reversibly switchable hydrophilic (θW ∼ 85°), hydrophobic (θW ∼ 104°), and amphiphobic slippery states across liquids with surface tensions of 22-72 mN m-1. These distinct regimes enable programmable droplet spreading, pinning, and low-friction transport without post-synthetic chemical treatment or sustained external stimulation. Furthermore, reconfigurable wettability patterns enable guided liquid transport through spatially selective complete wetting or customized contact line frictional force.",
+        "doi": "10.1002/adma.75587",
+        "doi_url": "https://doi.org/10.1002/adma.75587",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974853/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 503 Service Unavailable."
+      }
+    },
+    {
+      "article": {
+        "pmid": "42874514",
+        "title": "A self-assembled hydrophobic polymer tagged nanoplatform for membrane protein degradation and immunomodulatory drug delivery.",
+        "abstract": "NA: Targeted protein degradation (TPD) has emerged as a powerful strategy for eliminating disease-driving proteins, yet its broader application remains constrained by limited target specificity and the lack of integrated therapeutic delivery functions. Here, we report Tri@N, a multimodal polymeric nanoplatform that extends hydrophobic polymer-based TPD to membrane-associated targets while simultaneously enabling immunomodulatory drug delivery. Tri@N is engineered to remain stable during systemic circulation but undergo intracellular disassembly in response to elevated GSH levels. This disassembly exposes hydrophobic polymer segments that function as a hydrophobic polymer tag, promoting EGFR destabilization and degradation through both proteasomal and autophagy-lysosomal pathways. In parallel, Tri@N releases niclosamide (NIC), which suppresses the STAT3/PD-L1 signaling axis. In colorectal cancer models, Tri@N achieved coordinated EGFR degradation and PD-L1 downregulation, resulting in enhanced CD8+ T cell-mediated antitumor immunity and robust tumor suppression in vivo. These findings establish Tri@N as a dual-functional polymeric nanoplatform that integrates hydrophobic polymer tagging-mediated degradation of a membrane protein with therapeutic payload delivery, providing a versatile strategy for multimodal cancer therapy.",
+        "doi": "10.1016/j.biomaterials.2026.124667",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124667",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42874514/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 503 Service Unavailable."
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956739",
+        "title": "Genetic coupling of floral rewards and signals underlies pollinator attraction.",
+        "abstract": "NA: Animal pollinators underpin biodiversity and global agriculture, yet the molecular mechanisms that coordinate floral rewards and signals to attract pollinators remain poorly understood. Through phenotyping melon genetic diversity, we identified nectarless1 (nls1), encoding the YABBY-family transcription factor YABBY5 (YAB5), as a central integrator of pollinator-attracting traits. YAB5 interacts with CRABS CLAW (CRC) during nectary initiation to specify nectary identity by repressing alternative floral organ fates. As flowers mature, YAB5 directly activates 4-α-glucanotransferase 2 (DPE2) to promote starch remobilization required for nectar secretion and promotes petal growth and flower opening. In petals, YAB5 directly engages an MYB111-dependent flavonoid pathway that generates UV nectar guides, while indirectly influencing floral volatile emission. Disrupting YAB5, DPE2, or MYB111 reduces pollinator visitation. Together, these findings reveal how a developmental regulator couples organ specification with organ-specific metabolic programs to synchronize floral rewards and signals at anthesis.",
+        "doi": "10.1016/j.cell.2026.10.005",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.005",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956739/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 503 Service Unavailable."
+      }
+    },
+    {
+      "article": {
+        "pmid": "42974889",
+        "title": "Flexible High-Speed Low-Noise Organic Photodiode Arrays for Dynamic Near-Infrared Imaging.",
+        "abstract": "NA: Organic photodiodes (OPDs) hold significant promise for next-generation IoT optical sensing and low-power imaging applications. However, widespread application of OPD in flexible and dynamic imaging has been constrained by high dark current, poor stability, and the lack of a cost-effective imaging system. In this work, we present an integrated solution through tailoring pseudo-planar heterojunction (PPHJ) OPD arrays and a customized, rapidly accessible imaging system, the dynamic organic photonics imaging system (DOIS). The resulting PPHJ OPD exhibited a high responsivity (0.6 A W-1 at 868 nm), low dark current (1.5 × 10-8 A cm-2 at -1 V) and fast response time (480 ns), benefiting from optimal vertical phase separation and donor-acceptor interface morphology. Moreover, flexible photodetector exhibits superior mechanical stability, photostability and storage stability. Crucially, a pixel-shifting strategy was incorporated into conventional convolutional neural network (CNN) based machine learning algorithms to capture dynamic images and enhance resolution by leveraging sub-pixel information sampling. This work demonstrates a significant potential for the extensive application of organic photovoltaic materials in image sensing and flexible electronics.",
+        "doi": "10.1002/adma.75605",
+        "doi_url": "https://doi.org/10.1002/adma.75605",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974889/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 503 Service Unavailable."
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914654",
+        "title": "A mechanically active microneedle platform integrated with engineered exosomes for enhanced tendon-bone regeneration.",
+        "abstract": "NA: Functional regeneration of the tendon-bone interface remains a major challenge because early healing is constrained by an adverse inflammatory microenvironment and insufficient mechanical cues. Here, we developed a mechano-regenerative strategy that combines YAP-primed engineered exosomes with localized biomaterial-based delivery and active mechanical stimulation. Exosomes derived from a YAP agonist (PY-60) preconditioned TDSCs (P-Exo) showed enhanced uptake and promoted the osteogenic and chondrogenic differentiation of bone marrow mesenchymal stem cells, accompanied by activation of YAP-associated signaling and PI3K-Akt-related pathways. To improve local retention, P-Exo were incorporated into a ROS-responsive adhesive hydrogel, which accelerated fibrocartilage formation, bone ingrowth, and biomechanical restoration in a rabbit tendon-bone healing model. To address more complex repair conditions, we engineered a three-layer self-contracting microneedle platform for deep-tissue delivery of P-Exo with concurrent active mechanical stimulation. In an infected rat rotator cuff model, this system reduced bacterial burden and oxidative stress, promoted a reparative macrophage polarization and angiogenesis, and improved tendon-bone structural regeneration, biomechanical strength, and functional recovery. Together, these findings support a therapeutic framework in which engineered exosome signaling and active mechanoregulation act in concert to enhance tendon-bone repair.",
+        "doi": "10.1016/j.biomaterials.2026.124715",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124715",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914654/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 503 Service Unavailable."
+      }
+    },
+    {
+      "article": {
+        "pmid": "42971205",
+        "title": "Subsistence transition preceded population turnover in the eastern Colombian Andes.",
+        "abstract": "NA: The Altiplano Cundiboyacense in the eastern Colombian Andes preserves one of the Americas' most continuous archaeological sequences, recording cultural and demographic change. We generated genome-wide data from 212 individuals spanning over 7,000 years, including early-middle and middle Holocene hunter-gatherers, initial late Holocene groups with mixed economies and the earliest isotopic evidence of maize consumption, and increasingly sedentary Herrera and Muisca populations. Individuals predating the Herrera Period form a lineage that persisted for five millennia, structured by drift in small groups without external gene flow. Two individuals dating ∼2,800 years before present (BP) retain autochthonous ancestry while showing isotopic signatures consistent with maize consumption, decoupling subsistence change from population replacement. The emergence of Herrera culture ∼2,200 BP coincided with a sharp genetic break by ∼2,000 BP, which reflects migration by people descended from admixture ∼4,000 BP between groups with Chibchan- and Amazonian-Andean-related ancestries. Herrera and Muisca Period individuals show north-south genetic substructure paralleling archaeological differentiation.",
+        "doi": "10.1016/j.cell.2026.10.010",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.010",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42971205/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 429 Too Many Requests."
+      }
+    },
+    {
+      "article": {
+        "pmid": "42974896",
+        "title": "Ultra-Long Helical CNFs 3D-Networks as High-Conductivity Current Collectors for Efficient Sodium Deposition.",
+        "abstract": "NA: Aluminum (Al) current collectors are crucial for sodium metal batteries (SMBs), yet sodium (Na) dendrite suppression and uniform Na deposition remain challenges. Surface modification could significantly optimize Na deposition behavior. Herein, a 20 nm copper (Cu) layer is designed to confine NiY diatomic catalyst (DAC) for Al surface modification via magnetron sputtering and heat treatment. The adjacent NiY atoms, with low single-point energy (-228.05 eV), minimum segregation energy (-0.67 eV), and maximum aggregation energy (5.84 eV), synergistically stabilize diatomic dispersion in the Cu nanolayer. Benefiting from the tailored acetylene adsorption energy (-1.16 eV) and favorable formation energies of C2H (-13.58 eV) and C2 (-11.44 eV), NiY-DAC exhibits excellent catalytic activity, in-situ growth ultra-long helical CNFs 3D-networks with a thickness of 46.3 µm on Al current collectors, enabling efficient Na storage and remarkable inhibition Na dendrite formation. The modified current collector delivers outstanding electrochemical performance. The coulombic efficiency is up to 99.49% over 3000 h of half-cells at 1.0 mA cm-2/1.0 mAh cm-2 with a low overpotential (3.1 mV), and the CNFs-Na||Na3V2(PO4)3 full-cells achieve stable cycling over 1500 cycles at 10.0 C. This diatomic catalyst confinement strategy provides new insight into designing high-performance carbon-modified current collectors.",
+        "doi": "10.1002/adma.75582",
+        "doi_url": "https://doi.org/10.1002/adma.75582",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974896/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "invalid_json",
+        "response_text": "{\n  \"summary\": \"This study presents a surface-modification strategy for aluminum current collectors in sodium metal batteries to mitigate dendrite",
+        "parsed": null,
+        "elapsed_seconds": 49.0831,
+        "input_tokens": 745,
+        "output_tokens": 27,
+        "thoughts_tokens": 769,
+        "total_tokens": 1541,
+        "finish_reason": "MAX_TOKENS",
+        "error": "Response was not valid JSON."
+      }
+    },
+    {
+      "article": {
+        "pmid": "43014062",
+        "title": "Ultrasound-programmable poly(amino acid) nanocomposite enables synchronized metal ion-cisplatin release to overcome multidrug resistance.",
+        "abstract": "NA: Although immunotherapy has demonstrated remarkable clinical anti-cancer efficacy, chemotherapy remains the most widely used therapeutic modality. Multidrug resistance (MDR) remains a major barrier to platinum-based chemotherapy and is closely associated with insufficient intracellular drug accumulation, elevated antioxidant capacity, and impaired stress responsiveness in cancer cells. Here, an ultrasound (US)-programmable poly(amino acid) nanocomposite, EG-KFc20-KSA/CDDP, is developed to enable synchronized intracellular release of Fe(II) and cisplatin (CDDP) for coordinated chemoresistance reversal. Under US irradiation, EG-KFc20-KSA/CDDP accelerates the release of Fe(II) and CDDP in tumor microenvironments (TMEs), triggering overproduction of intracellular reactive oxygen species (ROS) and amplifying oxidative stress. In CDDP-resistant A549DDP lung caner cells, EG-KFc20-KSA/CDDP elevates ROS levels by 2.7-fold and reduces glutathione (GSH) levels to 31.2% of those in the Control group. Further mechanistic investigation reveals that the robust intracellular oxidative stress and associated mitochondrial damage also enhance autophagic activity, as evidenced by a marked increase in autolysosome formation. EG-KFc20-KSA/CDDP combined with US achieves an 85.3% tumor inhibition rate and prolongs the survival of A549DDP tumor-bearing mice to 61 days in vivo. This study establishes a US-programmable metal ion/chemotherapeutic co-delivery strategy that integrates oxidative stress amplification with chemotherapy and provides a mechanistically supported strategy for overcoming MDR.",
+        "doi": "10.1016/j.biomaterials.2026.124713",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124713",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43014062/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Failed to perform HTTP request.\nCaused by error in `curl::curl_fetch_memory()`:\n! Timeout was reached [generativelanguage.googleapis.com]:\nOperation timed out after 240001 milliseconds with 0 bytes received"
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020025",
+        "title": "Multiscale spatial atlas of human basal ganglia cell types and communities.",
+        "abstract": "NA: The human basal ganglia comprise functionally varied nuclei, but their cell-type composition and spatial organization have not been comprehensively resolved. We generated a multi-region, subcellular-resolution spatial transcriptomic atlas by integrating multiplexed error-robust fluorescence in situ hybridization (MERFISH)+ and spatiotemporal enhanced-resolution omics sequencing (Stereo-seq) across four neurotypical donors. The datasets profiled ∼7.9 million cells across the caudate, putamen, nucleus accumbens, and globus pallidus, resolving 60 transcriptionally distinct cell types. We identify region-selective molecular and spatial diversification of spiny projection neurons and non-neuronal populations. Subcellular RNA localization captures somatic size and projection-inferred signatures, reflecting direct- and indirect-pathway topology. Cellular community analyses reveal astrocyte and oligodendrocyte subclusters enriched at striosome-matrix borders, while primate-expanded interneurons are confined to matrix territories. Cross-species comparisons reveal conserved and species-specialized organization, including orthologous striosome-matrix architecture and conserved dorsolateral-to-ventromedial transcriptional gradients. Together, this multi-centimeter-scale human basal ganglia atlas links cell types, spatial architecture, and subcellular transcript topography across scales.",
+        "doi": "10.1016/j.cell.2026.09.027",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.027",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020025/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 503 Service Unavailable."
+      }
+    },
+    {
+      "article": {
+        "pmid": "43000607",
+        "title": "Quantum Saturation of the Electro-Optic Effect.",
+        "abstract": "NA: Future quantum computing architectures require electro-optic materials that maintain a strong, stable performance at cryogenic temperatures. In conventional electro-optic materials, large electro-optic coefficients are often confined to narrow temperature windows near structural phase transitions, where small changes in temperature lead to large changes in the electro-optic response. Using thermodynamic analysis, phase-field simulations, experimental growth, and cryogenic optical measurements, we show that quantum fluctuations can be harnessed to overcome this trade-off. By tuning the ferroelectric phase boundaries down to 0 K, quantum fluctuations induce a saturation regime in which a large electro-optic response becomes nearly temperature-independent below 25 K. We demonstrate that the phase boundaries can be tuned through either strain in BaTiO3 or through chemical composition in Ba1- xCaxTiO3, leading to a large, temperature-insensitive, cryogenic electro-optic response, reff =  2850 pm V-1 (experiment) and r51 =  2900 pm V-1 (theory) for BaTiO3 on GdScO3 and r51 =  1898 pm V-1 (theory) for Ba0.77Ca0.23TiO3. These values exceed the room temperature performance of bulk BaTiO3 r51 =  1600 pm V-1 and surpass the cryogenic performance of BaTiO3-on-Si, reff =  200 pm V-1, by over an order of magnitude. These findings establish a general design principle for engineering high-performance electro-optic materials for cryogenic applications.",
+        "doi": "10.1002/adma.75543",
+        "doi_url": "https://doi.org/10.1002/adma.75543",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43000607/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 503 Service Unavailable."
+      }
+    },
+    {
+      "article": {
+        "pmid": "42887231",
+        "title": "Catalytic MXene implant interfaces reprogram radiation-induced foreign body response to prevent capsular contracture.",
+        "abstract": "NA: Radiotherapy markedly exacerbates foreign body response (FBR) to silicone implants, driving capsular fibrosis and contracture, yet actionable interfacial mechanisms remain insufficiently defined. Here, we engineer an implant-centered Ti3C2Tx MXene-modified PDMS coating (APM) to modulate the redox microenvironment at the tissue-implant interface to reprogram radiotherapy-induced FBR. Oxygen plasma activation and 3-aminopropyltriethoxysilane (APTES) silanization enable covalent anchoring of single-layer MXene nanosheets onto PDMS, yielding a conformal APM film with enhanced hydrophilicity, preserved layered MXene architecture, enzyme-mimicking ROS-scavenging activity, and excellent cytocompatibility. Transcriptomic profiling guides the study, revealing the coordinated downregulation of inflammatory and extracellular matrix remodeling pathways. Mechanistically, interfacial redox regulation dampens NF-κB signaling and reduces endothelial ICAM-1 expression, thereby limiting monocyte adhesion and downstream inflammatory amplification. A tri-culture endothelial-macrophage-fibroblast model further demonstrates that MXene interfaces disrupt pro-inflammatory crosstalk and inhibit myofibroblast activation. In a murine peri-implant irradiation model, APM-coated implants preserve a CD31+/ICAM-1-low microvasculature, reduce peri-implant pro-inflammatory macrophage accumulation, and significantly decrease capsular thickness and collagen deposition. Collectively, these findings demonstrate that MXene-based catalytic coatings can disrupt the positive feedback loop between radiation injury and fibrotic capsule formation, offering a mechanistically grounded strategy to mitigate implant-associated fibrosis.",
+        "doi": "10.1016/j.biomaterials.2026.124689",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124689",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42887231/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 503 Service Unavailable."
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914976",
+        "title": "Cell-state-specific metabolic networks govern ferroptosis versus apoptosis in small cell lung cancer.",
+        "abstract": "NA: Cellular heterogeneity and plasticity are hallmarks of cancer that contribute to tumor growth and therapy resistance. Here, we investigated metabolic heterogeneity in small cell lung cancer (SCLC), an aggressive cancer type with considerable plasticity between neuroendocrine (NE) and non-NE cellular states. Through integrated transcriptomic and metabolomic analyses, we identified a universal dependency on exogenous cysteine/cystine (Cys) across all NE/non-NE SCLC cell states. Notably, NE and non-NE cells with low ASCL1 transcription factor levels underwent ferroptosis upon Cys depletion, whereas ASCL1high cells underwent apoptosis while remaining resistant to ferroptosis. This ferroptosis resistance was driven by the direct transcriptional activation of GCH1 by ASCL1, resulting in increased levels of the antioxidants BH4/BH2. Accordingly, combined Cys depletion and inhibition of BH4/BH2 synthesis reduced tumor growth in patient-derived xenografts. These findings demonstrate that metabolic state influences cell-death susceptibility in SCLC and provide a rationale for therapeutic strategies that exploit these metabolic differences.",
+        "doi": "10.1016/j.cell.2026.09.045",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.045",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914976/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "Ollama returned an empty response for model qwen3:4b"
+      },
+      "gemini": {
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "response_text": "",
+        "parsed": null,
+        "elapsed_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "thoughts_tokens": null,
+        "total_tokens": null,
+        "error": "HTTP 503 Service Unavailable."
+      }
+    }
+  ]
+}
