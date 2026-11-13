@@ -3,7 +3,8 @@
 site_text <- function(x, default = "") {
   if (is.null(x) || !length(x)) return(default)
   value <- as.character(x[[1]])
-  if (is.na(value) || !nzchar(trimws(value))) default else value
+  if (!length(value) || is.na(value[[1]]) || !nzchar(trimws(value[[1]]))) return(default)
+  value[[1]]
 }
 
 site_read_json <- function(path, default = list()) {

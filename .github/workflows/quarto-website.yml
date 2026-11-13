@@ -47,7 +47,10 @@ jobs:
 
       - name: Install R packages for the website
         run: |
-          Rscript -e 'packages <- c("jsonlite", "yaml", "knitr"); missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) install.packages(missing, repos = "https://cloud.r-project.org"); missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) stop("Failed to install: ", paste(missing, collapse = ", "))'
+          Rscript -e 'packages <- c("jsonlite", "yaml", "knitr", "testthat"); missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) install.packages(missing, repos = "https://cloud.r-project.org"); missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) stop("Failed to install: ", paste(missing, collapse = ", "))'
+
+      - name: Run unit tests
+        run: Rscript tests/testthat.R
 
       - name: Render website
         run: quarto render website

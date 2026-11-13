@@ -1,17 +1,10 @@
-# Ollama benchmark: 20261113T132426Z
-
-Prompt version: paper_summary_v1
-
-Each paper was sent to the local Ollama model with the same versioned prompt.
+# Paper summaries
 
 ## Crystallinity-Governed Liquid Wettability and Mobility on Solid Surface.
 
 PMID: 42974853 | Journal: Advanced Materials
 PubMed: https://pubmed.ncbi.nlm.nih.gov/42974853/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 83.68 s
+DOI: https://doi.org/10.1002/adma.75587
 
 **Summary**
 
@@ -19,11 +12,9 @@ This study demonstrates a method to dynamically control liquid wettability and d
 
 **Key findings**
 
-Reversible switching between hydrophilic (θW ∼ 85°), hydrophobic (θW ∼ 104°), and amphiphobic slippery states via crystalline packing of PODAc; Programmable droplet spreading, pinning, and low-friction transport without post-synthetic chemical treatment or sustained external stimulation; Reconfigurable wettability patterns enable guided liquid transport through spatially selective wetting or customized contact line friction
-
-**Study type**
-
-Not specified in abstract
+- Reversible switching between hydrophilic (θW ∼ 85°), hydrophobic (θW ∼ 104°), and amphiphobic slippery states via crystalline packing of PODAc
+- Programmable droplet spreading, pinning, and low-friction transport without post-synthetic chemical treatment or sustained external stimulation
+- Reconfigurable wettability patterns enable guided liquid transport through spatially selective wetting or customized contact line friction
 
 **Relevance**
 
@@ -39,10 +30,7 @@ The abstract does not specify the exact mechanism of crystalline packing influen
 
 PMID: 42874514 | Journal: Biomaterials
 PubMed: https://pubmed.ncbi.nlm.nih.gov/42874514/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 56.25 s
+DOI: https://doi.org/10.1016/j.biomaterials.2026.124667
 
 **Summary**
 
@@ -50,7 +38,9 @@ This study introduces Tri@N, a self-assembled hydrophobic polymer nanoplatform d
 
 **Key findings**
 
-Tri@N uses GSH-responsive disassembly to expose hydrophobic polymer tags for EGFR degradation via proteasomal and autophagy-lysosomal pathways; Tri@N releases niclosamide to suppress STAT3/PD-L1 signaling, enhancing CD8+ T cell-mediated antitumor immunity; Tri@N demonstrated tumor suppression in colorectal cancer models through coordinated EGFR degradation and PD-L1 downregulation
+- Tri@N uses GSH-responsive disassembly to expose hydrophobic polymer tags for EGFR degradation via proteasomal and autophagy-lysosomal pathways
+- Tri@N releases niclosamide to suppress STAT3/PD-L1 signaling, enhancing CD8+ T cell-mediated antitumor immunity
+- Tri@N demonstrated tumor suppression in colorectal cancer models through coordinated EGFR degradation and PD-L1 downregulation
 
 **Study type**
 
@@ -60,20 +50,13 @@ In vivo colorectal cancer models
 
 This nanoplatform integrates hydrophobic polymer tagging for targeted protein degradation with immunomodulatory drug delivery, offering a biomaterial strategy for precision cancer therapy. It addresses key challenges in immunomodulation and membrane protein targeting relevant to regenerative medicine applications where immune modulation and tissue-specific protein regulation are critical.
 
-**Limitations / unknowns**
-
-Not returned.
-
 ---
 
 ## Genetic coupling of floral rewards and signals underlies pollinator attraction.
 
 PMID: 42956739 | Journal: Cell
 PubMed: https://pubmed.ncbi.nlm.nih.gov/42956739/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 48.53 s
+DOI: https://doi.org/10.1016/j.cell.2026.10.005
 
 **Summary**
 
@@ -81,19 +64,13 @@ This study identifies nectarless1 (nls1), encoding the YABBY5 transcription fact
 
 **Key findings**
 
-YAB5 represses alternative floral organ fates during nectary initiation; YAB5 directly activates DPE2 to promote starch remobilization for nectar secretion; YAB5 engages MYB111-dependent flavonoid pathway to generate UV nectar guides
-
-**Study type**
-
-Not specified in abstract
+- YAB5 represses alternative floral organ fates during nectary initiation
+- YAB5 directly activates DPE2 to promote starch remobilization for nectar secretion
+- YAB5 engages MYB111-dependent flavonoid pathway to generate UV nectar guides
 
 **Relevance**
 
 This work focuses on plant-pollinator interactions and floral development mechanisms, which have no direct relevance to biomaterials, immunology, skeletal biology, tissue engineering, or regenerative medicine as it pertains to animal systems and plant biology. The findings are not applicable to the specified biomedical fields.
-
-**Limitations / unknowns**
-
-Not returned.
 
 ---
 
@@ -101,10 +78,7 @@ Not returned.
 
 PMID: 42974889 | Journal: Advanced Materials
 PubMed: https://pubmed.ncbi.nlm.nih.gov/42974889/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 63.94 s
+DOI: https://doi.org/10.1002/adma.75605
 
 **Summary**
 
@@ -112,11 +86,9 @@ This study introduces flexible, high-speed organic photodiode arrays with low no
 
 **Key findings**
 
-High responsivity (0.6 A/W at 868 nm) in pseudo-planar heterojunction organic photodiodes; Low dark current (1.5 × 10^-8 A/cm² at -1 V) and fast response time (480 ns); Pixel-shifting strategy in CNN algorithms improves dynamic imaging resolution via sub-pixel sampling
-
-**Study type**
-
-Not specified in abstract
+- High responsivity (0.6 A/W at 868 nm) in pseudo-planar heterojunction organic photodiodes
+- Low dark current (1.5 × 10^-8 A/cm² at -1 V) and fast response time (480 ns)
+- Pixel-shifting strategy in CNN algorithms improves dynamic imaging resolution via sub-pixel sampling
 
 **Relevance**
 
@@ -132,10 +104,7 @@ The abstract does not specify mechanical strain tolerance, long-term in vivo sta
 
 PMID: 42914654 | Journal: Biomaterials
 PubMed: https://pubmed.ncbi.nlm.nih.gov/42914654/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 61.33 s
+DOI: https://doi.org/10.1016/j.biomaterials.2026.124715
 
 **Summary**
 
@@ -143,7 +112,9 @@ This study addresses tendon-bone interface regeneration challenges by integratin
 
 **Key findings**
 
-Exosomes from YAP-primed TDSCs promoted osteogenic and chondrogenic differentiation of bone marrow mesenchymal stem cells; ROS-responsive hydrogel improved local retention of exosomes and accelerated bone ingrowth and biomechanical restoration; Microneedle platform with active mechanical stimulation reduced bacterial burden and improved tendon-bone structural regeneration in infected rat models
+- Exosomes from YAP-primed TDSCs promoted osteogenic and chondrogenic differentiation of bone marrow mesenchymal stem cells
+- ROS-responsive hydrogel improved local retention of exosomes and accelerated bone ingrowth and biomechanical restoration
+- Microneedle platform with active mechanical stimulation reduced bacterial burden and improved tendon-bone structural regeneration in infected rat models
 
 **Study type**
 
@@ -163,10 +134,7 @@ The abstract does not specify long-term efficacy beyond 4 weeks post-implantatio
 
 PMID: 42971205 | Journal: Cell
 PubMed: https://pubmed.ncbi.nlm.nih.gov/42971205/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 54.77 s
+DOI: https://doi.org/10.1016/j.cell.2026.10.010
 
 **Summary**
 
@@ -174,7 +142,9 @@ This study analyzes 212 individuals from the eastern Colombian Andes over 7,000 
 
 **Key findings**
 
-A lineage persisted for five millennia before the Herrera Period without external gene flow; Two individuals predating the Herrera Period show maize consumption while retaining autochthonous ancestry; Herrera culture emergence coincided with a genetic break reflecting migration from admixed groups with Chibchan- and Amazonian-Andean ancestries
+- A lineage persisted for five millennia before the Herrera Period without external gene flow
+- Two individuals predating the Herrera Period show maize consumption while retaining autochthonous ancestry
+- Herrera culture emergence coincided with a genetic break reflecting migration from admixed groups with Chibchan- and Amazonian-Andean ancestries
 
 **Study type**
 
@@ -184,20 +154,13 @@ Genome-wide analysis of archaeological samples spanning 7,000 years
 
 This study focuses on ancient human population genetics and subsistence transitions in the Andes, with no direct relevance to biomaterials, immunology, skeletal biology, tissue engineering, or regenerative medicine. The findings pertain to archaeological and demographic history rather than biological or medical applications in these fields.
 
-**Limitations / unknowns**
-
-Not returned.
-
 ---
 
 ## Ultra-Long Helical CNFs 3D-Networks as High-Conductivity Current Collectors for Efficient Sodium Deposition.
 
 PMID: 42974896 | Journal: Advanced Materials
 PubMed: https://pubmed.ncbi.nlm.nih.gov/42974896/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 69.07 s
+DOI: https://doi.org/10.1002/adma.75582
 
 **Summary**
 
@@ -205,11 +168,9 @@ This study designs a 20 nm copper layer with NiY diatomic catalyst (DAC) to modi
 
 **Key findings**
 
-NiY DAC stabilizes ultra-long helical CNF 3D-networks on Al current collectors via tailored acetylene adsorption and C2H/C2 formation energies; The modified collectors achieve 99.49% coulombic efficiency over 3000 h at 1.0 mA cm⁻² with low overpotential (3.1 mV); Full cells with CNFs-Na||Na3V2(PO4)3 demonstrate stable cycling over 1500 cycles at 10 C
-
-**Study type**
-
-Not specified in abstract
+- NiY DAC stabilizes ultra-long helical CNF 3D-networks on Al current collectors via tailored acetylene adsorption and C2H/C2 formation energies
+- The modified collectors achieve 99.49% coulombic efficiency over 3000 h at 1.0 mA cm⁻² with low overpotential (3.1 mV)
+- Full cells with CNFs-Na||Na3V2(PO4)3 demonstrate stable cycling over 1500 cycles at 10 C
 
 **Relevance**
 
@@ -225,10 +186,7 @@ The abstract does not specify sample sizes, long-term stability beyond 3000 h, o
 
 PMID: 43014062 | Journal: Biomaterials
 PubMed: https://pubmed.ncbi.nlm.nih.gov/43014062/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 73.08 s
+DOI: https://doi.org/10.1016/j.biomaterials.2026.124713
 
 **Summary**
 
@@ -236,7 +194,9 @@ This study develops an ultrasound-programmable poly(amino acid) nanocomposite (E
 
 **Key findings**
 
-Synchronized intracellular release of Fe(II) and cisplatin under ultrasound irradiation; 2.7-fold elevation in intracellular ROS and 31.2% reduction in glutathione levels in CDDP-resistant cells; 85.3% tumor inhibition and 61-day survival in vivo with A549DDP tumor-bearing mice
+- Synchronized intracellular release of Fe(II) and cisplatin under ultrasound irradiation
+- 2.7-fold elevation in intracellular ROS and 31.2% reduction in glutathione levels in CDDP-resistant cells
+- 85.3% tumor inhibition and 61-day survival in vivo with A549DDP tumor-bearing mice
 
 **Study type**
 
@@ -256,10 +216,7 @@ The abstract does not specify the exact mechanism of ultrasound-triggered releas
 
 PMID: 43020025 | Journal: Cell
 PubMed: https://pubmed.ncbi.nlm.nih.gov/43020025/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 64.58 s
+DOI: https://doi.org/10.1016/j.cell.2026.09.027
 
 **Summary**
 
@@ -267,7 +224,9 @@ This study generates a high-resolution spatial transcriptomic atlas of human bas
 
 **Key findings**
 
-Identification of 60 transcriptionally distinct cell types across human basal ganglia regions; Region-selective molecular and spatial diversification of spiny projection neurons and non-neuronal populations; Astrocyte and oligodendrocyte subclusters enriched at striosome-matrix borders in human basal ganglia
+- Identification of 60 transcriptionally distinct cell types across human basal ganglia regions
+- Region-selective molecular and spatial diversification of spiny projection neurons and non-neuronal populations
+- Astrocyte and oligodendrocyte subclusters enriched at striosome-matrix borders in human basal ganglia
 
 **Study type**
 
@@ -287,10 +246,7 @@ The abstract does not specify limitations or unknowns explicitly; the study focu
 
 PMID: 43000607 | Journal: Advanced Materials
 PubMed: https://pubmed.ncbi.nlm.nih.gov/43000607/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 71.25 s
+DOI: https://doi.org/10.1002/adma.75543
 
 **Summary**
 
@@ -298,11 +254,9 @@ This study addresses the challenge of achieving stable electro-optic performance
 
 **Key findings**
 
-Quantum fluctuations in ferroelectric materials enable a temperature-independent electro-optic response below 25 K; Tuning ferroelectric phase boundaries via strain in BaTiO3 or chemical composition in Ba1- xCaxTiO3 achieves high electro-optic coefficients; Experimental reff = 2850 pm/V for BaTiO3 on GdScO3 surpasses room-temperature (1600 pm/V) and cryogenic (200 pm/V) benchmarks
-
-**Study type**
-
-Not specified in abstract
+- Quantum fluctuations in ferroelectric materials enable a temperature-independent electro-optic response below 25 K
+- Tuning ferroelectric phase boundaries via strain in BaTiO3 or chemical composition in Ba1- xCaxTiO3 achieves high electro-optic coefficients
+- Experimental reff = 2850 pm/V for BaTiO3 on GdScO3 surpasses room-temperature (1600 pm/V) and cryogenic (200 pm/V) benchmarks
 
 **Relevance**
 
@@ -318,10 +272,7 @@ The abstract does not specify limitations or unknowns beyond the stated performa
 
 PMID: 42887231 | Journal: Biomaterials
 PubMed: https://pubmed.ncbi.nlm.nih.gov/42887231/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 70.05 s
+DOI: https://doi.org/10.1016/j.biomaterials.2026.124689
 
 **Summary**
 
@@ -329,7 +280,9 @@ This study investigates MXene-modified PDMS coatings to mitigate radiation-induc
 
 **Key findings**
 
-APM-coated implants reduced capsular thickness and collagen deposition in irradiated murine models; MXene interfaces dampened NF-κB signaling and reduced endothelial ICAM-1 expression; APM disrupted pro-inflammatory crosstalk and inhibited myofibroblast activation in tri-culture models
+- APM-coated implants reduced capsular thickness and collagen deposition in irradiated murine models
+- MXene interfaces dampened NF-κB signaling and reduced endothelial ICAM-1 expression
+- APM disrupted pro-inflammatory crosstalk and inhibited myofibroblast activation in tri-culture models
 
 **Study type**
 
@@ -349,10 +302,7 @@ The abstract does not specify long-term stability of MXene coatings in vivo or t
 
 PMID: 42914976 | Journal: Cell
 PubMed: https://pubmed.ncbi.nlm.nih.gov/42914976/
-
-### OLLAMA (qwen3:4b)
-
-Status: ok | Elapsed: 69.12 s
+DOI: https://doi.org/10.1016/j.cell.2026.09.045
 
 **Summary**
 
@@ -360,7 +310,9 @@ This Cell study investigates metabolic heterogeneity in small cell lung cancer (
 
 **Key findings**
 
-Universal dependency on exogenous cysteine/cystine across all NE/non-NE SCLC cell states; NE and non-NE cells with low ASCL1 levels undergo ferroptosis upon cysteine depletion; ASCL1high cells undergo apoptosis and resist ferroptosis via GCH1-driven BH4/BH2 upregulation
+- Universal dependency on exogenous cysteine/cystine across all NE/non-NE SCLC cell states
+- NE and non-NE cells with low ASCL1 levels undergo ferroptosis upon cysteine depletion
+- ASCL1high cells undergo apoptosis and resist ferroptosis via GCH1-driven BH4/BH2 upregulation
 
 **Study type**
 
