@@ -1,4 +1,4 @@
-# Reproducible paired benchmark of local Ollama and Gemini -----------------
+# Reproducible single-provider benchmark using local Ollama ----------------
 
 read_benchmark_articles <- function(root = project_root()) {
   report_dir <- file.path(root, "reports")
@@ -61,78 +61,51 @@ sample_benchmark_articles <- function(records, sample_size = 12L, seed = 2026111
   records[selected]
 }
 
-safe_provider_call <- function(provider, prompt, config, api_key) {
-  tryCatch({
-    if (provider == "ollama") {
-      call_ollama(
-        prompt = prompt,
+safe_ollama_call <- function(prompt, config) {
+  tryCatch(
+    call_ollama(
+      prompt = prompt,
+      model = config$model,
+      base_url = config$base_url,
+      temperature = config$temperature,
+      num_ctx = config$num_ctx,
+      num_predict = config$num_predict,
+      timeout_seconds = config$timeout_seconds
+    ),
+    error = function(e) {
+      list(
+        provider = "ollama",
         model = config$model,
-        base_url = config$base_url,
-        temperature = config$temperature,
-        num_ctx = config$num_ctx,
-        num_predict = config$num_predict,
-        timeout_seconds = config$timeout_seconds
-      )
-    } else {
-      call_gemini(
-        prompt = prompt,
-        model = config$model,
-        api_key = api_key,
-        temperature = config$temperature,
-        thinking_level = config$thinking_level,
-        max_output_tokens = config$max_output_tokens,
-        timeout_seconds = config$timeout_seconds,
-        max_tries = config$max_tries,
-        max_retry_seconds = config$max_retry_seconds
+        status = "error",
+        response_text = "",
+        parsed = NULL,
+        elapsed_seconds = NA_real_,
+        input_tokens = NA_real_,
+        output_tokens = NA_real_,
+        total_tokens = NA_real_,
+        error = conditionMessage(e)
       )
     }
-  }, error = function(e) {
-    list(
-      provider = provider,
-      model = config$model,
-      status = "error",
-      response_text = "",
-      parsed = NULL,
-      elapsed_seconds = NA_real_,
-      input_tokens = NA_real_,
-      output_tokens = NA_real_,
-      thoughts_tokens = NA_real_,
-      total_tokens = NA_real_,
-      error = conditionMessage(e)
-    )
-  })
+  )
 }
 
-benchmark_metrics <- function(results, config) {
-  rows <- list()
-  for (paper in results) {
-    for (provider in c("ollama", "gemini")) {
-      x <- paper[[provider]]
-      cost <- NA_real_
-      if (provider == "gemini" && is.finite(x$input_tokens) && is.finite(x$output_tokens)) {
-        thoughts <- if (is.finite(x$thoughts_tokens)) x$thoughts_tokens else 0
-        cost <- (
-          x$input_tokens * config$gemini$paid_input_usd_per_million +
-          (x$output_tokens + thoughts) * config$gemini$paid_output_usd_per_million
-        ) / 1e6
-      }
-      rows[[length(rows) + 1L]] <- data.frame(
-        pmid = paper$article$pmid,
-        journal = paper$article$journal_name,
-        provider = provider,
-        model = x$model,
-        status = x$status,
-        elapsed_seconds = x$elapsed_seconds,
-        input_tokens = x$input_tokens,
-        output_tokens = x$output_tokens,
-        thoughts_tokens = x$thoughts_tokens,
-        total_tokens = x$total_tokens,
-        estimated_paid_tier_cost_usd = cost,
-        error = if (is.null(x$error)) "" else x$error,
-        stringsAsFactors = FALSE
-      )
-    }
-  }
+benchmark_metrics <- function(results) {
+  rows <- lapply(results, function(paper) {
+    x <- paper$ollama
+    data.frame(
+      pmid = paper$article$pmid,
+      journal = paper$article$journal_name,
+      provider = "ollama",
+      model = x$model,
+      status = x$status,
+      elapsed_seconds = x$elapsed_seconds,
+      input_tokens = x$input_tokens,
+      output_tokens = x$output_tokens,
+      total_tokens = x$total_tokens,
+      error = if (is.null(x$error)) "" else x$error,
+      stringsAsFactors = FALSE
+    )
+  })
   do.call(rbind, rows)
 }
 
@@ -150,7 +123,7 @@ write_benchmark_markdown <- function(results, run_id, prompt_version, output_pat
     "",
     paste0("Prompt version: ", prompt_version),
     "",
-    "Each paper was sent to both providers with the same prompt and abstract.",
+    "Each paper was sent to the local Ollama model with the same versioned prompt.",
     ""
   )
   for (paper in results) {
@@ -163,12 +136,12 @@ write_benchmark_markdown <- function(results, run_id, prompt_version, output_pat
       if (nzchar(article$pubmed_url)) paste0("PubMed: ", article$pubmed_url) else NULL,
       ""
     )
-    for (provider in c("ollama", "gemini")) {
-      x <- paper[[provider]]
+    {
+      x <- paper$ollama
       elapsed <- if (is.finite(x$elapsed_seconds)) paste0(round(x$elapsed_seconds, 2), " s") else "n/a"
       lines <- c(
         lines,
-        paste0("### ", toupper(provider), " (", x$model, ")"),
+        paste0("### OLLAMA (", x$model, ")"),
         "",
         paste0("Status: ", x$status, " | Elapsed: ", elapsed),
         ""
@@ -217,11 +190,6 @@ run_llm_benchmark <- function(
   config <- yaml::read_yaml(config_path)$benchmark
   if (is.null(sample_size)) sample_size <- as.integer(config$sample_size)
   if (is.null(seed)) seed <- as.integer(config$seed)
-  api_key <- Sys.getenv("GEMINI_API_KEY", unset = "")
-  if (!nzchar(api_key)) {
-    stop("GEMINI_API_KEY is missing. Add it under repository Settings > Secrets and variables > Actions.", call. = FALSE)
-  }
-
   articles <- read_benchmark_articles(root)
   selected <- sample_benchmark_articles(articles, sample_size, seed)
   prompt_template <- read_summary_prompt_template(file.path(
@@ -235,25 +203,23 @@ run_llm_benchmark <- function(
     prompt <- build_summary_prompt(article, prompt_template)
     message(sprintf("[%d/%d] Benchmarking PMID %s: %s", i, length(selected), article$pmid, article$title))
 
-    ollama_result <- safe_provider_call("ollama", prompt, config$ollama, api_key)
-    gemini_result <- safe_provider_call("gemini", prompt, config$gemini, api_key)
+    ollama_result <- safe_ollama_call(prompt, config$ollama)
     paper_results[[i]] <- list(
       article = article,
-      ollama = ollama_result,
-      gemini = gemini_result
+      ollama = ollama_result
     )
     if (i < length(selected)) Sys.sleep(1)
   }
 
   output_dir <- file.path(root, "data", "benchmarks", run_id)
   dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
-  metrics <- benchmark_metrics(paper_results, config)
+  metrics <- benchmark_metrics(paper_results)
   result_file <- file.path(output_dir, "benchmark.json")
   metrics_file <- file.path(output_dir, "metrics.csv")
   markdown_file <- file.path(output_dir, "comparison.md")
 
   result <- list(
-    schema_version = 1L,
+    schema_version = 2L,
     run_id = run_id,
     generated_at_utc = format(Sys.time(), tz = "UTC", usetz = TRUE),
     prompt_version = config$prompt_version,
@@ -261,13 +227,7 @@ run_llm_benchmark <- function(
     requested_sample_size = as.integer(sample_size),
     actual_sample_size = length(selected),
     sampling_seed = as.integer(seed),
-    models = list(ollama = config$ollama$model, gemini = config$gemini$model),
-    gemini_pricing_assumption = list(
-      tier = "paid standard tier estimate; actual free-tier use may be free",
-      input_usd_per_million = config$gemini$paid_input_usd_per_million,
-      output_usd_per_million = config$gemini$paid_output_usd_per_million,
-      effective_until = config$gemini$pricing_effective_until
-    ),
+    models = list(ollama = config$ollama$model),
     papers = paper_results
   )
   write_json_atomic(result, result_file)
@@ -277,11 +237,9 @@ run_llm_benchmark <- function(
   failed <- sum(metrics$status != "ok")
   message("Benchmark artifacts written to: ", output_dir)
   message("Successful outputs: ", sum(metrics$status == "ok"), " / ", nrow(metrics))
-  message("Estimated Gemini paid-tier cost (USD): ",
-    format(sum(metrics$estimated_paid_tier_cost_usd, na.rm = TRUE), scientific = FALSE, digits = 5))
 
   if (failed > 0L) {
-    stop(failed, " provider call(s) failed or returned invalid JSON. Partial results were saved.", call. = FALSE)
+    stop(failed, " Ollama call(s) failed or returned invalid JSON. Partial results were saved.", call. = FALSE)
   }
   invisible(list(result = result, metrics = metrics, output_dir = output_dir))
 }
