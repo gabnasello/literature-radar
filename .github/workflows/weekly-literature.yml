@@ -8,8 +8,9 @@ on:
         required: false
         type: string
   schedule:
-    # Monday 08:15 UTC. GitHub may delay scheduled starts during high load.
-    - cron: '15 8 * * 1'
+    # Sunday 05:00 UTC (06:00 Belgium in winter, 07:00 in summer).
+    # GitHub may delay scheduled starts during high load.
+    - cron: '0 5 * * 0'
 
 permissions:
   contents: write
