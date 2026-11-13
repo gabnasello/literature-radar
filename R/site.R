@@ -96,7 +96,14 @@ site_format_timestamp <- function(x) {
 site_format_date <- function(x) {
   x <- site_text(x)
   if (!nzchar(x)) return("Date unavailable")
-  parsed <- suppressWarnings(as.Date(x, tryFormats = c("%Y-%m-%d", "%Y/%m/%d")))
+
+  # PubMed sometimes supplies only the publication year (e.g. "2026").
+  if (grepl("^[0-9]{4}$", x)) return(x)
+
+  parsed <- tryCatch(
+    suppressWarnings(as.Date(x, tryFormats = c("%Y-%m-%d", "%Y/%m/%d"))),
+    error = function(e) as.Date(NA)
+  )
   if (is.na(parsed)) return(x)
   format(parsed, "%d %b %Y")
 }
