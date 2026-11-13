@@ -1,0 +1,880 @@
+{
+  "schema_version": 1,
+  "run_id": "20261113T221245Z",
+  "generated_at_utc": "2026-11-13 22:31:33 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v2",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific: do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use this schema:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section or generic caveats.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 311,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42876433",
+        "title": "Hypoxia-Tolerant Supramolecular Nanomicelles for Pyroptosis-Enhanced NIR-II Phototheranostics.",
+        "abstract": "NA: Tumor hypoxia, limited solid-tumor imaging, and insufficient systemic antitumor immunity remain major challenges to effective cancer phototheranostics. Here, a molecular conformation engineering strategy is developed to construct TBBP, which features a strengthened electron donor, a moderately twisted conformation, extended π-conjugation, and a robust molecular skeleton free of labile olefinic π-bridges. TBBP exhibits excellent photostability, broadband second near-infrared (1000-1600 nm) emission, and efficient photothermal conversion (42.17%). Supramolecular assembly with DSPE-PEG2000 affords stable TBBP nanomicelles, TBBP NPs, that selectively generate superoxide radicals (O2 -•) and retain potent Type I photodynamic therapy (PDT) activity under hypoxia. Photoactivated TBBP NPs further induce mitochondrial dysfunction and caspase-3/GSDME-mediated immunogenic pyroptosis, promoting dendritic cell maturation and CD8+ T cell infiltration. In a bilateral 4T1 tumor model, TBBP NPs enable high-contrast second near-infrared (NIR-II) imaging, while synergistic Type I PDT and photothermal therapy elicit systemic antitumor immunity, achieving 92.0% primary tumor inhibition and 47.7% distant tumor inhibition. This work establishes a molecular conformation engineering strategy and extends its functionality through supramolecular assembly, synergistically integrating NIR-II imaging, hypoxia-tolerant Type I phototherapy, and photoimmunotherapy, thereby providing a generalizable molecular design principle for the development of next-generation multifunctional organic phototheranostic agents.",
+        "doi": "10.1002/adma.75395",
+        "doi_url": "https://doi.org/10.1002/adma.75395",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876433/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered hypoxia-tolerant supramolecular nanomicelles (TBBP NPs) to enhance NIR-II phototheranostics. The approach combined molecular conformation engineering with supramolecular assembly, enabling efficient photothermal conversion, Type I photodynamic therapy, and immunogenic pyroptosis under hypoxia. In 4T1 tumors, TBBP NPs achieved 92% primary tumor inhibition and 47.7% distant tumor inhibition via synergistic imaging, phototherapy, and immune activation.\",\n  \"key_findings\": [\n    \"TBBP NPs exhibit 42.17% photothermal conversion efficiency and broadband NIR-II emission (1000-1600 nm)\",\n    \"TBBP NPs induce caspase-3/GSDME-mediated immunogenic pyroptosis, promoting dendritic cell maturation and CD8+ T cell infiltration\",\n    \"In 4T1 tumors, TBBP NPs achieved 92.0% primary tumor inhibition and 47.7% distant tumor inhibition through synergistic Type I PDT and photothermal therapy\"\n  ],\n  \"study_type\": \"In vivo tumor model\",\n  \"scientific_significance\": \"This work establishes a molecular conformation engineering strategy for hypoxia-tolerant phototheranostic nanocarriers that synergistically integrate imaging, phototherapy, and immunotherapy, providing a generalizable design principle for multifunctional cancer theranostics.\"\n}",
+        "parsed": {
+          "summary": "This study engineered hypoxia-tolerant supramolecular nanomicelles (TBBP NPs) to enhance NIR-II phototheranostics. The approach combined molecular conformation engineering with supramolecular assembly, enabling efficient photothermal conversion, Type I photodynamic therapy, and immunogenic pyroptosis under hypoxia. In 4T1 tumors, TBBP NPs achieved 92% primary tumor inhibition and 47.7% distant tumor inhibition via synergistic imaging, phototherapy, and immune activation.",
+          "key_findings": [
+            "TBBP NPs exhibit 42.17% photothermal conversion efficiency and broadband NIR-II emission (1000-1600 nm)",
+            "TBBP NPs induce caspase-3/GSDME-mediated immunogenic pyroptosis, promoting dendritic cell maturation and CD8+ T cell infiltration",
+            "In 4T1 tumors, TBBP NPs achieved 92.0% primary tumor inhibition and 47.7% distant tumor inhibition through synergistic Type I PDT and photothermal therapy"
+          ],
+          "study_type": "In vivo tumor model",
+          "scientific_significance": "This work establishes a molecular conformation engineering strategy for hypoxia-tolerant phototheranostic nanocarriers that synergistically integrate imaging, phototherapy, and immunotherapy, providing a generalizable design principle for multifunctional cancer theranostics."
+        },
+        "elapsed_seconds": 77.4859,
+        "input_tokens": 746,
+        "output_tokens": 319,
+        "thoughts_tokens": null,
+        "total_tokens": 1065,
+        "model_eval_seconds": 42.9814,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42906522",
+        "title": "Programming hemostasis and healing via charge-density modulation in a thermo-responsive hydrogel.",
+        "abstract": "NA: Uncontrolled bleeding and impaired healing are two interlinked challenges in wound management. Here, we introduce charge-density modulation of polymers as a universal design strategy to program biointerfaces that actively promote both hemostasis and healing. By tuning the cationic density of ε-polylysine, we develop an intermediate variant (EPL-C2) that preferentially interacts with fibrinogen over abundant plasma-protein competitors, as supported by protein-adsorption assays, LC-MS/MS analysis, and isothermal titration calorimetry. Incorporating EPL-C2 into a thermo-responsive hydrogel (FN-C2) creates a hemostatic interface that enhances fibrinogen adsorption and platelet adhesion while avoiding broad or excessive activation of the plasma coagulation cascade, leading to superior hemostatic performance in vitro and in a severe arterial injury model. A key advantage of this charge-optimized FN-C2 platform is its ability to serve as a matrix for integrated therapeutic delivery without compromising its hemostatic interface. By loading insulin, the obtained FN-C2-I formulation facilitates sustained release and significantly accelerates skin and intestinal wound healing through enhanced granulation tissue formation, collagen deposition, and a pro-healing immune response. This work presents a synergistic structure-function strategy for next-generation wound dressings, in which tailored control of charge density creates a fibrinogen-selective hemostatic interface inherently compatible with integrated therapeutic delivery.",
+        "doi": "10.1016/j.biomaterials.2026.124704",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124704",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42906522/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates programming hemostasis and healing through charge-density modulation in thermo-responsive hydrogels. By tuning ε-polylysine cationic density to create EPL-C2, the researchers developed a fibrinogen-selective hydrogel (FN-C2) that enhances hemostasis without excessive coagulation activation. FN-C2 also enabled sustained insulin delivery, accelerating wound healing via improved granulation tissue and collagen deposition.\",\n  \"key_findings\": [\n    \"EPL-C2 selectively interacts with fibrinogen over plasma proteins\",\n    \"FN-C2 hydrogel enhances hemostasis without broad coagulation cascade activation\",\n    \"FN-C2 with insulin delivery accelerates skin and intestinal wound healing\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies\",\n  \"scientific_significance\": \"This work demonstrates a universal design strategy for programmable hemostatic interfaces that inherently support integrated therapeutic delivery, advancing wound dressing technology through charge-density optimization.\"\n}",
+        "parsed": {
+          "summary": "This study investigates programming hemostasis and healing through charge-density modulation in thermo-responsive hydrogels. By tuning ε-polylysine cationic density to create EPL-C2, the researchers developed a fibrinogen-selective hydrogel (FN-C2) that enhances hemostasis without excessive coagulation activation. FN-C2 also enabled sustained insulin delivery, accelerating wound healing via improved granulation tissue and collagen deposition.",
+          "key_findings": [
+            "EPL-C2 selectively interacts with fibrinogen over plasma proteins",
+            "FN-C2 hydrogel enhances hemostasis without broad coagulation cascade activation",
+            "FN-C2 with insulin delivery accelerates skin and intestinal wound healing"
+          ],
+          "study_type": "In vitro and in vivo studies",
+          "scientific_significance": "This work demonstrates a universal design strategy for programmable hemostatic interfaces that inherently support integrated therapeutic delivery, advancing wound dressing technology through charge-density optimization."
+        },
+        "elapsed_seconds": 41.1274,
+        "input_tokens": 665,
+        "output_tokens": 205,
+        "thoughts_tokens": null,
+        "total_tokens": 870,
+        "model_eval_seconds": 26.7347,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914978",
+        "title": "Perforin triggers iron-induced mitochondrial damage to drive ferroptosis and anti-tumor immunity.",
+        "abstract": "NA: Cytotoxic CD8+ T cells and natural killer cells are critical effectors of anti-tumor immunity. Cytotoxic lymphocytes eliminate tumor cells by releasing perforin (Prf1), a pore-forming protein that enables granzymes (Gzms) to enter target cells and trigger both caspase-dependent and -independent cell death. Here, we uncover a previously unrecognized, Gzm-independent function of Prf1. We find that Prf1 directly induces tumoral ferroptosis, an iron- and lipid-dependent form of cell death. Mechanistically, Prf1-mediated pore formation drives endocytosis of the transferrin receptor, which increases cellular iron uptake. Prf1 promotes the formation of endosomal-mitochondrial contacts, which leads to mitochondrial iron accumulation, mitochondrial dysfunction, and tumor cell ferroptosis. Dietary iron supplementation suppresses tumor progression in murine tumor models in a Prf1-dependent manner. Higher Prf1 expression correlates with improved survival and enhanced response to immune checkpoint blockade in patients with cancer. These findings define a Gzm-independent function of Prf1 as a direct executioner of cancer cell death through ferroptosis.",
+        "doi": "10.1016/j.cell.2026.09.062",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.062",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914978/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates perforin's role in anti-tumor immunity by revealing a Gzm-independent mechanism where perforin induces ferroptosis in tumor cells. Perforin forms pores that increase iron uptake via transferrin receptor endocytosis, leading to mitochondrial iron accumulation, dysfunction, and ferroptosis. Dietary iron supplementation reduced tumor growth in mice, and higher perforin expression correlated with better patient survival and immune checkpoint response.\",\n  \"key_findings\": [\n    \"Perforin directly triggers ferroptosis in tumor cells without granzymes\",\n    \"Perforin increases cellular iron uptake by promoting transferrin receptor endocytosis\",\n    \"Higher perforin expression correlates with improved patient survival and immune checkpoint response\"\n  ],\n  \"study_type\": \"Murine tumor models and human patient data\",\n  \"scientific_significance\": \"This work establishes perforin as a direct executor of ferroptosis in cancer cell death, providing a novel mechanism for perforin's role in anti-tumor immunity beyond granzyme-dependent pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigates perforin's role in anti-tumor immunity by revealing a Gzm-independent mechanism where perforin induces ferroptosis in tumor cells. Perforin forms pores that increase iron uptake via transferrin receptor endocytosis, leading to mitochondrial iron accumulation, dysfunction, and ferroptosis. Dietary iron supplementation reduced tumor growth in mice, and higher perforin expression correlated with better patient survival and immune checkpoint response.",
+          "key_findings": [
+            "Perforin directly triggers ferroptosis in tumor cells without granzymes",
+            "Perforin increases cellular iron uptake by promoting transferrin receptor endocytosis",
+            "Higher perforin expression correlates with improved patient survival and immune checkpoint response"
+          ],
+          "study_type": "Murine tumor models and human patient data",
+          "scientific_significance": "This work establishes perforin as a direct executor of ferroptosis in cancer cell death, providing a novel mechanism for perforin's role in anti-tumor immunity beyond granzyme-dependent pathways."
+        },
+        "elapsed_seconds": 41.2249,
+        "input_tokens": 618,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 840,
+        "model_eval_seconds": 29.0329,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42877950",
+        "title": "Rare-Earth-Cluster-Mediated Long-Range Electronic Modulation Activates Zn Atomic Sites for Oxygen Reduction Catalysis.",
+        "abstract": "NA: Activating the inert Zn (d10) centers via precise ligand-field engineering to achieve superior oxygen reduction reaction (ORR) performance is highly appealing yet challenging. Herein, we report a general long-range electronic structure regulation strategy to construct ultrafine rare-earth oxide clusters anchored proximal to Zn single-atom sites (LaOx-Zn-SA/CNCl), aiming at boosting ORR activity. Benefiting from the tailored long-range electronic modulation by LaOx clusters and the hierarchical porous carbon support that maximizes Zn atom utilization, the catalysts exhibit a high half-wave potential of 0.90 V along with remarkable stability in alkaline media. This represents a non-precious-metal, rare-earth-based electrocatalyst among the best reported so far. A zinc-air battery (ZAB) integrating LaOx-Zn-SA/CNCl as the cathode catalyst delivers a maximum power density of 177.3 mW cm-2 at 225 mA cm-2. Theoretical calculations reveal that the proximal LaOx clusters remotely modulate the electronic structures of Zn sites, enhancing electron-transfer efficiency by strengthening electronic interactions. With the optimized electronic state of Zn sites, the adsorption of key intermediates is balanced to alleviate the energy barriers of the rate-determining step. This work provides insights into the long-range electronic regulation of transition-metal single-atom sites within a hierarchical rare-earth cluster-coupled microenvironment for efficient electrocatalysis.",
+        "doi": "10.1002/adma.75030",
+        "doi_url": "https://doi.org/10.1002/adma.75030",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42877950/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates using rare-earth oxide clusters to modulate electronic structures of zinc single-atom sites for enhanced oxygen reduction reaction (ORR) catalysis. By engineering LaOx clusters proximal to Zn sites on porous carbon, the catalyst achieves a high half-wave potential of 0.90 V and stable performance in alkaline media. It demonstrates superior ORR activity in non-precious-metal electrocatalysts with a zinc-air battery power density of 177.3 mW cm-2.\",\n  \"key_findings\": [\n    \"LaOx clusters remotely modulate Zn site electronic structures to enhance ORR activity\",\n    \"Catalyst achieves 0.90 V half-wave potential and 177.3 mW cm-2 power density in zinc-air batteries\",\n    \"Theoretical calculations confirm improved electron transfer efficiency via strengthened Zn site interactions\"\n  ],\n  \"study_type\": \"Electrocatalysis study with single-atom catalysts\",\n  \"scientific_significance\": \"This work establishes a strategy for long-range electronic modulation of single-atom sites using rare-earth clusters, advancing understanding of how to engineer electrocatalytic activity through hierarchical electronic interactions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates using rare-earth oxide clusters to modulate electronic structures of zinc single-atom sites for enhanced oxygen reduction reaction (ORR) catalysis. By engineering LaOx clusters proximal to Zn sites on porous carbon, the catalyst achieves a high half-wave potential of 0.90 V and stable performance in alkaline media. It demonstrates superior ORR activity in non-precious-metal electrocatalysts with a zinc-air battery power density of 177.3 mW cm-2.",
+          "key_findings": [
+            "LaOx clusters remotely modulate Zn site electronic structures to enhance ORR activity",
+            "Catalyst achieves 0.90 V half-wave potential and 177.3 mW cm-2 power density in zinc-air batteries",
+            "Theoretical calculations confirm improved electron transfer efficiency via strengthened Zn site interactions"
+          ],
+          "study_type": "Electrocatalysis study with single-atom catalysts",
+          "scientific_significance": "This work establishes a strategy for long-range electronic modulation of single-atom sites using rare-earth clusters, advancing understanding of how to engineer electrocatalytic activity through hierarchical electronic interactions."
+        },
+        "elapsed_seconds": 49.3873,
+        "input_tokens": 694,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 949,
+        "model_eval_seconds": 33.8746,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914653",
+        "title": "Hybrid nanovesicle artificial antigen-presenting cells integrate endogenous tumor antigen display with senescence-mimetic erythrocyte membrane-directed splenic T-cell priming.",
+        "abstract": "NA: Artificial antigen-presenting cells (aAPCs) provide a non-genetic approach to T-cell activation, but their in vivo performance is often limited by predefined peptide-major histocompatibility complex class I (pMHC-I) repertoires and inefficient delivery to secondary lymphoid organs. Here, we engineer senescence-derived hybrid nanovesicles that integrate endogenous antigen display and organ-directed trafficking within a single membrane material. Nanovesicles derived from senescent cancer cells retain increased levels of endogenously generated pMHC-I complexes, whereas nanovesicles derived from senescence-mimetic red blood cells confer spleen-directed biodistribution. Fusion of these membranes generates SS-hNVs, which are further functionalized with anti-CD28 and interleukin-2 to form SS-aAPCs that provide coordinated T-cell receptor (TCR), costimulatory, and cytokine signals. Hybrid membrane composition governs splenic accumulation and CD8+ T-cell engagement following intravenous administration. SS-aAPCs expand antigen-specific CD8+ T cells and TCF-1+PD-1+ progenitor-like populations, enhance cytotoxic responses, and suppress tumor growth in B16-OVA and MC38 models. Combination with programmed death-ligand 1 (PD-L1) blockade further improves tumor control. By assigning endogenous antigen display and lymphoid trafficking to distinct source membranes, this platform establishes a structure-function strategy for constructing systemically administered aAPCs. These findings support that physiologically remodeled membranes can be assembled as modular biomaterials to coordinate molecular immune signaling with organ-level biodistribution, enabling in vivo T-cell priming without predefined epitope loading or genetic modification of immune cells.",
+        "doi": "10.1016/j.biomaterials.2026.124717",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124717",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914653/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered hybrid nanovesicles (SS-hNVs) by fusing membranes from senescent cancer cells and senescence-mimetic red blood cells to create artificial antigen-presenting cells (aAPCs) that integrate endogenous tumor antigen display with spleen-directed biodistribution. SS-aAPCs provided coordinated TCR, costimulatory, and cytokine signals, expanding antigen-specific CD8+ T cells and enhancing tumor suppression in mouse models, with PD-L1 blockade improving outcomes.\",\n  \"key_findings\": [\n    \"SS-hNVs combine endogenous tumor antigen display from senescent cancer cells with spleen-targeted biodistribution from senescence-mimetic red blood cells\",\n    \"SS-aAPCs expanded antigen-specific CD8+ T cells and TCF-1+PD-1+ progenitor-like populations in tumor models\",\n    \"Combination with PD-L1 blockade enhanced tumor control in B16-OVA and MC38 mouse models\"\n  ],\n  \"study_type\": \"In vitro and in vivo mouse models\",\n  \"scientific_significance\": \"This work demonstrates a modular biomaterial strategy for systemically administered aAPCs that coordinate molecular immune signaling with organ-level biodistribution, enabling endogenous antigen-specific T-cell priming without genetic modification.\"\n}",
+        "parsed": {
+          "summary": "This study engineered hybrid nanovesicles (SS-hNVs) by fusing membranes from senescent cancer cells and senescence-mimetic red blood cells to create artificial antigen-presenting cells (aAPCs) that integrate endogenous tumor antigen display with spleen-directed biodistribution. SS-aAPCs provided coordinated TCR, costimulatory, and cytokine signals, expanding antigen-specific CD8+ T cells and enhancing tumor suppression in mouse models, with PD-L1 blockade improving outcomes.",
+          "key_findings": [
+            "SS-hNVs combine endogenous tumor antigen display from senescent cancer cells with spleen-targeted biodistribution from senescence-mimetic red blood cells",
+            "SS-aAPCs expanded antigen-specific CD8+ T cells and TCF-1+PD-1+ progenitor-like populations in tumor models",
+            "Combination with PD-L1 blockade enhanced tumor control in B16-OVA and MC38 mouse models"
+          ],
+          "study_type": "In vitro and in vivo mouse models",
+          "scientific_significance": "This work demonstrates a modular biomaterial strategy for systemically administered aAPCs that coordinate molecular immune signaling with organ-level biodistribution, enabling endogenous antigen-specific T-cell priming without genetic modification."
+        },
+        "elapsed_seconds": 53.6826,
+        "input_tokens": 742,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 1013,
+        "model_eval_seconds": 36.0989,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42933389",
+        "title": "In vivo genome-editing therapy for Duchenne muscular dystrophy: Preclinical studies and first-in-human trial.",
+        "abstract": "NA: We report the preclinical and early clinical evaluation of in vivo genome editing for Duchenne muscular dystrophy (DMD), delivered via a single AAV9 vector. In humanized DMD mice, systemic administration achieved targeted genome editing, partial dystrophin restoration, and improved muscle function. In non-human primates, efficient on-target editing was achieved with no dose-limiting toxicity identified under the conditions tested. In an open-label, dose-escalation, first-in-human clinical trial (NCT06594094), post-treatment muscle biopsies provided early molecular evidence of hfCas12Max-mediated genome editing and detectable dystrophin expression in participants with DMD. However, at the higher dose level (1.0 × 1014 vg/kg), one participant experienced a treatment-related fatal serious adverse event, characterized by marked complement activation and systemic cytokine response shortly after dosing. This work provides initial human proof-of-concept for muscle genome editing while crucially highlighting the critical role of immunologic risks and the narrow therapeutic window of systemic adeno-associated virus (AAV)-CRISPR therapies, underscoring the need to develop safer dosing and immunomodulation strategies.",
+        "doi": "10.1016/j.cell.2026.09.059",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.059",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42933389/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study evaluates in vivo genome editing using AAV9 vectors for Duchenne muscular dystrophy (DMD) therapy in preclinical models and early human trials. It demonstrated targeted dystrophin restoration in mice and primates with no dose-limiting toxicity, but a fatal adverse event occurred in one participant at the highest dose due to complement activation and cytokine release. The findings highlight immunologic risks and the narrow therapeutic window for AAV-CRISPR therapies.\",\n  \"key_findings\": [\n    \"Targeted genome editing restored partial dystrophin in humanized DMD mice\",\n    \"Efficient on-target editing with no dose-limiting toxicity in non-human primates\",\n    \"One participant experienced fatal adverse event at high dose due to complement activation and cytokine response\"\n  ],\n  \"study_type\": \"Open-label, dose-escalation clinical trial with preclinical models\",\n  \"scientific_significance\": \"The study provides initial human proof-of-concept for muscle genome editing while emphasizing the critical immunologic risks and narrow therapeutic window of systemic AAV-CRISPR therapies, necessitating safer dosing strategies.\"\n}",
+        "parsed": {
+          "summary": "This study evaluates in vivo genome editing using AAV9 vectors for Duchenne muscular dystrophy (DMD) therapy in preclinical models and early human trials. It demonstrated targeted dystrophin restoration in mice and primates with no dose-limiting toxicity, but a fatal adverse event occurred in one participant at the highest dose due to complement activation and cytokine release. The findings highlight immunologic risks and the narrow therapeutic window for AAV-CRISPR therapies.",
+          "key_findings": [
+            "Targeted genome editing restored partial dystrophin in humanized DMD mice",
+            "Efficient on-target editing with no dose-limiting toxicity in non-human primates",
+            "One participant experienced fatal adverse event at high dose due to complement activation and cytokine response"
+          ],
+          "study_type": "Open-label, dose-escalation clinical trial with preclinical models",
+          "scientific_significance": "The study provides initial human proof-of-concept for muscle genome editing while emphasizing the critical immunologic risks and narrow therapeutic window of systemic AAV-CRISPR therapies, necessitating safer dosing strategies."
+        },
+        "elapsed_seconds": 43.0758,
+        "input_tokens": 626,
+        "output_tokens": 235,
+        "thoughts_tokens": null,
+        "total_tokens": 861,
+        "model_eval_seconds": 30.6785,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42878109",
+        "title": "Advances in Bio-Integrated Edge Computing Systems for Smart and Connected Health.",
+        "abstract": "NA: Recent advances in bio-integrated healthcare technologies have enabled continuous, high-resolution monitoring and active therapeutic intervention through wearable, implantable, and ingestible platforms. In parallel, edge computing has emerged as a critical framework for processing biomedical data locally, enabling low-latency, energy-efficient, and privacy-preserving operation. This review provides a comprehensive overview of bio-integrated edge computing systems for smart and connected health, focusing on the co-design of computing, sensing, and energy strategies. We first examine computing approaches, including conventional von Neumann architectures and emerging paradigms such as compute-in-memory and neuromorphic systems, for on-device data processing and decision-making. We then discuss sensing strategies that enhance signal fidelity and enable efficient information representation at the biointerface. Finally, we review energy solutions that enable continuous, autonomous operation. By integrating these domains, this work outlines pathways toward scalable, adaptive, and fully autonomous edge healthcare systems.",
+        "doi": "10.1002/adma.75390",
+        "doi_url": "https://doi.org/10.1002/adma.75390",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42878109/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines bio-integrated edge computing systems for smart health applications, analyzing computing architectures, sensing strategies, and energy solutions to enable continuous, autonomous healthcare monitoring and intervention. It identifies key approaches for on-device data processing, signal fidelity enhancement, and energy efficiency to support scalable, adaptive healthcare systems.\",\n  \"key_findings\": [\n    \"Analysis of computing architectures including von Neumann and emerging paradigms like compute-in-memory and neuromorphic systems\",\n    \"Discussion of sensing strategies to improve signal fidelity and efficient information representation at biointerfaces\",\n    \"Review of energy solutions enabling continuous, autonomous operation of bio-integrated systems\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work provides a foundational framework for integrating computing, sensing, and energy strategies in bio-integrated edge systems, advancing the development of autonomous, scalable healthcare monitoring and intervention platforms.\"\n}",
+        "parsed": {
+          "summary": "This review examines bio-integrated edge computing systems for smart health applications, analyzing computing architectures, sensing strategies, and energy solutions to enable continuous, autonomous healthcare monitoring and intervention. It identifies key approaches for on-device data processing, signal fidelity enhancement, and energy efficiency to support scalable, adaptive healthcare systems.",
+          "key_findings": [
+            "Analysis of computing architectures including von Neumann and emerging paradigms like compute-in-memory and neuromorphic systems",
+            "Discussion of sensing strategies to improve signal fidelity and efficient information representation at biointerfaces",
+            "Review of energy solutions enabling continuous, autonomous operation of bio-integrated systems"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work provides a foundational framework for integrating computing, sensing, and energy strategies in bio-integrated edge systems, advancing the development of autonomous, scalable healthcare monitoring and intervention platforms."
+        },
+        "elapsed_seconds": 33.4532,
+        "input_tokens": 556,
+        "output_tokens": 186,
+        "thoughts_tokens": null,
+        "total_tokens": 742,
+        "model_eval_seconds": 23.612,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914655",
+        "title": "On-demand biocatalytic dual oxygen spray reprograms the hypoxia-ferroptosis axis to accelerate chronic wound healing.",
+        "abstract": "NA: Effective clinical management of chronic hypoxic wounds remains challenging due to persistent hypoxic signaling, oxidative stress, and cellular dysfunction. Hypoxia-induced ferroptosis has recently gained attention as a key molecular driver of impaired healing in chronic wounds such as ischemic and diabetic wounds. Herein, a bioinspired self-oxygenating dual spray incorporating silk fibroin, aloe vera mucilage, and hemoglobin in the primary SAH spray and hydrogen peroxide in the secondary Hp spray is developed. Upon application, the dual oxygenation spray (SAH-Hp) triggers peroxide-responsive instantaneous O2 release through the biocatalytic activity of hemoglobin. Localized O2 generation alleviates hypoxia and restores redox and iron homeostasis, thereby interrupting the hypoxia-driven ferroptotic cascade. Mechanistic investigations demonstrate that sustained oxygenation suppresses lipid peroxidation, limits iron overload, and enhances antioxidant defenses through restoration of the GSH-GPX4 antioxidant defense. Consequently, the SAH-Hp spray promotes angiogenic regeneration and tissue repair under pathological hypoxic conditions. Extensive preclinical validation in rabbit ear ischemic wounds and streptozotocin-induced diabetic wounds confirms accelerated healing accompanied by reduced hypoxic stress and ferroptosis regulation. Collectively, the on-demand SAH-Hp spray facilitates localized O2 generation as an effective strategy for managing chronic wounds by targeting the hypoxia-ferroptosis axis, providing a clinically translatable oxygenation platform for next-generation regenerative wound therapies.",
+        "doi": "10.1016/j.biomaterials.2026.124702",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124702",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914655/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the use of an on-demand biocatalytic dual oxygen spray to target hypoxia-ferroptosis in chronic wounds. The spray, composed of silk fibroin, aloe vera mucilage, and hemoglobin, releases oxygen upon application to alleviate hypoxia and restore redox balance. It suppressed lipid peroxidation, limited iron overload, and enhanced antioxidant defenses, accelerating healing in ischemic and diabetic wounds in preclinical models.\",\n  \"key_findings\": [\n    \"SAH-Hp spray triggers peroxide-responsive O2 release via hemoglobin biocatalysis\",\n    \"Sustained oxygenation suppresses lipid peroxidation and iron overload\",\n    \"Accelerated healing in ischemic and diabetic wounds with reduced hypoxic stress\"\n  ],\n  \"study_type\": \"Preclinical validation in rabbit ear ischemic wounds and streptozotocin-induced diabetic wounds\",\n  \"scientific_significance\": \"The study establishes a targeted oxygenation strategy to disrupt hypoxia-driven ferroptosis, offering a clinically translatable approach for managing chronic hypoxic wounds through restoration of redox and iron homeostasis.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the use of an on-demand biocatalytic dual oxygen spray to target hypoxia-ferroptosis in chronic wounds. The spray, composed of silk fibroin, aloe vera mucilage, and hemoglobin, releases oxygen upon application to alleviate hypoxia and restore redox balance. It suppressed lipid peroxidation, limited iron overload, and enhanced antioxidant defenses, accelerating healing in ischemic and diabetic wounds in preclinical models.",
+          "key_findings": [
+            "SAH-Hp spray triggers peroxide-responsive O2 release via hemoglobin biocatalysis",
+            "Sustained oxygenation suppresses lipid peroxidation and iron overload",
+            "Accelerated healing in ischemic and diabetic wounds with reduced hypoxic stress"
+          ],
+          "study_type": "Preclinical validation in rabbit ear ischemic wounds and streptozotocin-induced diabetic wounds",
+          "scientific_significance": "The study establishes a targeted oxygenation strategy to disrupt hypoxia-driven ferroptosis, offering a clinically translatable approach for managing chronic hypoxic wounds through restoration of redox and iron homeostasis."
+        },
+        "elapsed_seconds": 48.0409,
+        "input_tokens": 698,
+        "output_tokens": 242,
+        "thoughts_tokens": null,
+        "total_tokens": 940,
+        "model_eval_seconds": 32.36,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42945956",
+        "title": "Deep sequencing of 3,367 maize genomes uncovers substantial contribution of rare variants to agronomic traits.",
+        "abstract": "NA: Rare variants are highly abundant, yet their genome-wide contributions to agronomic traits remain elusive in plants. Here, we performed deep whole-genome sequencing of 3,367 diverse elite maize inbred lines, uncovering 75.3 million variants, of which 79.2% were rare. Overall, we identified 411 independent association signals for 10 agronomic traits, including 359 attributable to globally rare variants, with rare variants showing effect sizes approximately 2.4 times those of common variants. Frequency-stratified genome-based restricted maximum likelihood (GREML) analyses indicated that rare variants captured a substantial proportion of phenotypic variance for traits under strong adaptive selection, consistent with the allele frequencies of trait-associated variants shifting from common in tropical to rare in temperate maize. Complementing conventional variant-level genome-wide association studies (GWAS), gene-based tests identified an additional 94 candidate gene-trait associations. Our study highlights rare variants as important components of the genetic architecture of complex agronomic traits in maize and provides much-needed resources for future functional studies and breeding.",
+        "doi": "10.1016/j.cell.2026.09.063",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.063",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42945956/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used deep whole-genome sequencing of 3,36:7 maize inbred lines to investigate rare variants' contributions to agronomic traits. It identified 411 independent association signals for 10 traits, with 359 linked to globally rare variants. Rare variants exhibited effect sizes 2.4 times larger than common variants and captured significant phenotypic variance in traits under adaptive selection, particularly in temperate maize.\",\n  \"key_findings\": [\n    \"Deep sequencing of 3,367 maize inbred lines revealed 75.3 million variants, 79.2% of which were rare\",\n    \"411 independent association signals for 10 agronomic traits, 359 attributable to globally rare variants\",\n    \"Rare variants showed effect sizes 2.4 times those of common variants and captured substantial phenotypic variance in traits under adaptive selection\"\n  ],\n  \"study_type\": \"Deep whole-genome sequencing of diverse maize inbred lines\",\n  \"scientific_significance\": \"This work demonstrates that rare variants play a significant role in the genetic architecture of complex agronomic traits in maize, providing critical resources for functional studies and breeding programs.\"\n}",
+        "parsed": {
+          "summary": "This study used deep whole-genome sequencing of 3,36:7 maize inbred lines to investigate rare variants' contributions to agronomic traits. It identified 411 independent association signals for 10 traits, with 359 linked to globally rare variants. Rare variants exhibited effect sizes 2.4 times larger than common variants and captured significant phenotypic variance in traits under adaptive selection, particularly in temperate maize.",
+          "key_findings": [
+            "Deep sequencing of 3,367 maize inbred lines revealed 75.3 million variants, 79.2% of which were rare",
+            "411 independent association signals for 10 agronomic traits, 359 attributable to globally rare variants",
+            "Rare variants showed effect sizes 2.4 times those of common variants and captured substantial phenotypic variance in traits under adaptive selection"
+          ],
+          "study_type": "Deep whole-genome sequencing of diverse maize inbred lines",
+          "scientific_significance": "This work demonstrates that rare variants play a significant role in the genetic architecture of complex agronomic traits in maize, providing critical resources for functional studies and breeding programs."
+        },
+        "elapsed_seconds": 44.8835,
+        "input_tokens": 604,
+        "output_tokens": 254,
+        "thoughts_tokens": null,
+        "total_tokens": 858,
+        "model_eval_seconds": 33.0987,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42878139",
+        "title": "Cyclic Nonequilibrium Processing of Halide Solid Electrolytes for Low-Pressure Operation of all-Solid-State Batteries.",
+        "abstract": "NA: Sluggish ionic transport and high rigidity of inorganic solid electrolytes (SSEs) necessitate ultra-high external pressures in all-solid-state batteries (ASSBs), posing a major barrier to their deployment. Herein, we propose a cyclic nonequilibrium thermal process for Li3InCl6 (LIC) solid electrolyte, which is implemented through repeated quenching to concurrently optimize ionic transport and deformability. The initial quench refines particle size, whereas subsequent quenching induces local amorphization, thereby suppressing grain boundary resistance and enhancing compressibility. Meanwhile, additional Li vacancies are introduced, accelerating bulk phase ionic transport. These coupled mesoscopic and microscopic structural evolutions increase the room-temperature ionic conductivity (IC) of LIC from 1.3 to 6.8 mS/cm, while reducing the Young's modulus from 42.3 to 17.6 GPa. The optimized LIC enables a stable cycling of ASSBs at a low operation pressure of 2 MPa with a high areal capacity of 7.7 mAh/cm2, highlighting cyclic nonequilibrium processing as a promising route for practical ASSBs.",
+        "doi": "10.1002/adma.75398",
+        "doi_url": "https://doi.org/10.1002/adma.75398",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42878139/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing ionic conductivity and deformability in inorganic solid electrolytes for all-solid-state batteries. By applying cyclic nonequilibrium thermal processing to Li3InCl6, the researchers optimized particle size, induced local amorphization, and created Li vacancies. This approach increased ionic conductivity from 1.3 to 6.8 mS/cm and reduced Young's modulus from 42.3 to 17.6 GPa, enabling stable battery operation at 2 MPa.\",\n  \"key_findings\": [\n    \"Cyclic nonequilibrium thermal processing of Li3InCl6 improved ionic conductivity from 1.3 to 6.8 mS/cm\",\n    \"Reduction in Young's modulus from 42.3 to 17.6 GPa enhanced compressibility\",\n    \"Optimized solid electrolyte enabled stable cycling at low pressure (2 MPa) with high areal capacity (7.7 mAh/cm²)\"\n  ],\n  \"study_type\": \"Cyclic nonequilibrium thermal processing\",\n  \"scientific_significance\": \"This work demonstrates a structural engineering strategy to overcome mechanical and ionic transport barriers in solid electrolytes, providing a pathway to practical low-pressure all-solid-state batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing ionic conductivity and deformability in inorganic solid electrolytes for all-solid-state batteries. By applying cyclic nonequilibrium thermal processing to Li3InCl6, the researchers optimized particle size, induced local amorphization, and created Li vacancies. This approach increased ionic conductivity from 1.3 to 6.8 mS/cm and reduced Young's modulus from 42.3 to 17.6 GPa, enabling stable battery operation at 2 MPa.",
+          "key_findings": [
+            "Cyclic nonequilibrium thermal processing of Li3InCl6 improved ionic conductivity from 1.3 to 6.8 mS/cm",
+            "Reduction in Young's modulus from 42.3 to 17.6 GPa enhanced compressibility",
+            "Optimized solid electrolyte enabled stable cycling at low pressure (2 MPa) with high areal capacity (7.7 mAh/cm²)"
+          ],
+          "study_type": "Cyclic nonequilibrium thermal processing",
+          "scientific_significance": "This work demonstrates a structural engineering strategy to overcome mechanical and ionic transport barriers in solid electrolytes, providing a pathway to practical low-pressure all-solid-state batteries."
+        },
+        "elapsed_seconds": 47.0853,
+        "input_tokens": 623,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 887,
+        "model_eval_seconds": 34.6358,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42925646",
+        "title": "Reprogramming tumor vasculature: Integrating normalization biology with vascularized tumor-on-chip models.",
+        "abstract": "NA: Abnormal tumor vasculature is a hallmark of the tumor microenvironment that promotes hypoxia, therapeutic resistance, and disease progression while limiting the delivery of anticancer therapy. Although early anti-angiogenic therapies were designed to starve tumors by eliminating their blood supply, excessive vessel pruning often aggravated hypoxia and selected for more aggressive phenotypes. These observations led to the concept of vascular normalization, whereby judicious modulation of angiogenic signaling transiently restores vessel structure and function, improving perfusion, oxygenation, drug delivery, and anti-tumor immunity. In this review, we discuss the mechanisms governing tumor vessel formation, maturation, and dysfunction, and examine therapeutic strategies aimed at normalizing the tumor vasculature. We further highlight the major challenges limiting clinical translation, including the transient and heterogeneous nature of the normalization window, adaptive resistance mechanisms, and the lack of robust tools for longitudinal monitoring. We then integrate vascular normalization biology with vascularized tumor-on-chip platforms, examining how key features of the tumor microenvironment, including tissue architecture, extracellular matrix remodeling, hemodynamic forces, metabolic gradients, and multicellular interactions, can be recreated and quantitatively monitored. We critically evaluate how engineering design, biomaterial selection, vascularization strategies, perfusion, and integrated sensing influence the ability of these platforms to capture vascular normalization and therapeutic responses. By linking the hallmarks of vascular normalization to measurable on-chip phenotypes, vascularized tumor-on-chip systems provide controlled frameworks for investigating resistance mechanisms, optimizing treatment timing, and advancing precision oncology. However, challenges related to physiological fidelity, standardization, scalability, and clinical validation continue to limit their broader translation.",
+        "doi": "10.1016/j.biomaterials.2026.124696",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124696",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42925646/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review integrates vascular normalization biology with vascularized tumor-on-chip models to explore tumor vasculature dynamics. It examines how tumor microenvironment features influence vascular function and therapeutic responses, highlighting challenges in clinical translation and the potential of on-chip platforms for studying normalization windows and treatment optimization.\",\n  \"key_findings\": [\n    \"Vascular normalization transiently improves perfusion and drug delivery by restoring vessel structure\",\n    \"Tumor-on-chip models can quantify microenvironment features like extracellular matrix remodeling and hemodynamics\",\n    \"Clinical translation faces hurdles including transient normalization windows and adaptive resistance mechanisms\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work bridges fundamental vascular normalization mechanisms with engineered tumor models, providing a framework for mechanistic studies of vascular therapy responses and precision oncology applications.\"\n}",
+        "parsed": {
+          "summary": "This review integrates vascular normalization biology with vascularized tumor-on-chip models to explore tumor vasculature dynamics. It examines how tumor microenvironment features influence vascular function and therapeutic responses, highlighting challenges in clinical translation and the potential of on-chip platforms for studying normalization windows and treatment optimization.",
+          "key_findings": [
+            "Vascular normalization transiently improves perfusion and drug delivery by restoring vessel structure",
+            "Tumor-on-chip models can quantify microenvironment features like extracellular matrix remodeling and hemodynamics",
+            "Clinical translation faces hurdles including transient normalization windows and adaptive resistance mechanisms"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work bridges fundamental vascular normalization mechanisms with engineered tumor models, providing a framework for mechanistic studies of vascular therapy responses and precision oncology applications."
+        },
+        "elapsed_seconds": 39.0614,
+        "input_tokens": 712,
+        "output_tokens": 171,
+        "thoughts_tokens": null,
+        "total_tokens": 883,
+        "model_eval_seconds": 22.5251,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42950816",
+        "title": "Long-range actin-driven endosymbiont mobility in an animal-algal symbiosis.",
+        "abstract": "NA: In animal-microbe symbioses, established symbionts are often thought to be confined to a niche and to lose motile appendages such as flagella. Whether this loss implies immobility within the host remains poorly understood. We report long-range, host-driven symbiont mobility in a dinoflagellate-acoel worm symbiosis. Using long-term tracking, fluorescence, and electron microscopy, we find that hundreds of dinoflagellate symbionts (Amphidinium sp., 10-20 μm in size) travel across the body of an acoel worm host (Waminoa sp.) at around 1 μm/s while confined inside a network of ultra-thin (∼200 nm) host parenchymal cells. We show this mobility is driven by host actin machinery, with symbionts moving faster than comparable actin-based transport systems despite confinement. We further show spatiotemporal regulation of symbiont distribution during diel rhythms and regeneration. By characterizing an active, host-cytoskeleton-driven mechanism of symbiont transport, our work expands our understanding of the regulatory strategies by which holobionts maintain dynamic homeostasis.",
+        "doi": "10.1016/j.cell.2026.10.003",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.003",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42950816/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether symbionts in animal-microbe symbioses remain immobile after losing motile appendages. Using long-term tracking, fluorescence, and electron microscopy, researchers observed dinoflagellate symbionts moving long-range within acoel worm hosts via host actin machinery. The symbionts traveled at ~1 μm/s within ultra-thin host parenchymal cells, with mobility regulated by diel rhythms and regeneration. The findings reveal a host-driven mechanism for maintaining symbiont distribution in dynamic homeostasis.\",\n  \"key_findings\": [\n    \"Dinoflagellate symbionts move long-range within aco:el worm hosts at ~1 μm/s\",\n    \"Mobility is driven by host actin machinery despite confinement in ultra-thin parenchymal cells\",\n    \"Symbiont distribution is spatiotemporally regulated by diel rhythms and regeneration\"\n  ],\n  \"study_type\": \"Long-term tracking, fluorescence, and electron microscopy\",\n  \"scientific_significance\": \"This work demonstrates a host-cytoskeleton-driven mechanism for active symbiont transport, expanding understanding of how holobionts maintain dynamic homeostasis through host-directed mobility.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether symbionts in animal-microbe symbioses remain immobile after losing motile appendages. Using long-term tracking, fluorescence, and electron microscopy, researchers observed dinoflagellate symbionts moving long-range within acoel worm hosts via host actin machinery. The symbionts traveled at ~1 μm/s within ultra-thin host parenchymal cells, with mobility regulated by diel rhythms and regeneration. The findings reveal a host-driven mechanism for maintaining symbiont distribution in dynamic homeostasis.",
+          "key_findings": [
+            "Dinoflagellate symbionts move long-range within aco:el worm hosts at ~1 μm/s",
+            "Mobility is driven by host actin machinery despite confinement in ultra-thin parenchymal cells",
+            "Symbiont distribution is spatiotemporally regulated by diel rhythms and regeneration"
+          ],
+          "study_type": "Long-term tracking, fluorescence, and electron microscopy",
+          "scientific_significance": "This work demonstrates a host-cytoskeleton-driven mechanism for active symbiont transport, expanding understanding of how holobionts maintain dynamic homeostasis through host-directed mobility."
+        },
+        "elapsed_seconds": 46.7967,
+        "input_tokens": 625,
+        "output_tokens": 260,
+        "thoughts_tokens": null,
+        "total_tokens": 885,
+        "model_eval_seconds": 34.2451,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42885334",
+        "title": "From Dark Photocatalysis to Photobattery-Type Operation: A Re-Functionalized Ti-MOF for Solar Energy Storage.",
+        "abstract": "NA: Efficient harvesting, storage, and on-demand release of solar energy are essential for overcoming the intermittency of sunlight and enabling continuous solar energy-driven processes, yet achieving storage of photogenerated charge remains challenging. Here, we report a Ti-based bipyridine MOF, COK47-bpy, and its ReCl(CO)3-functionalized analogue, ReCl47-bpy, as photochargeable materials for time-decoupled solar energy utilization. Re incorporation introduces localized photosensitizing and \"electron sink\" sites while preserving the parent framework structure, enabling visible-light response, faster charge accumulation, and improved charge retention. In colloidal suspension, ReCl47-bpy reaches an electron storage capacity of 19.5 C g-1 MOF under simulated solar irradiation and retains about 70% of the stored charge after 2.5 months. The stored electrons can be released on demand for dark hydrogen (H2) evolution with electron-to-H2 efficiencies exceeding 90%. Beyond colloids, when fabricated as robust FTO-supported layers, ReCl47-bpy|FTO photoelectrodes deliver capacities of up to ∼7.0 mAh g-1 MOF upon photocharging under 1 Sun irradiation. Overall, this work establishes Re-functionalized Ti-MOFs as versatile platforms for solar-driven charge storage, dark photocatalysis, and MOF-based photoelectrodes, toward the development of next-generation MOF-based energy devices.",
+        "doi": "10.1002/adma.75419",
+        "doi_url": "https://doi.org/10.1002/adma.75419",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885334/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates Re-functionalized Ti-MOFs for solar energy storage, demonstrating their ability to harvest, store, and release photogenerated charge under visible light. The researchers synthesized COK47-bpy and ReCl47-bpy, showing Re incorporation enhances charge retention, enables visible-light response, and allows on-demand hydrogen evolution with >90% efficiency. The materials achieve 19.5 C g-1 storage in colloids and 7.0 mAh g-1 in photoelectrodes, highlighting their potential for solar-driven energy storage systems.\",\n  \"key_findings\": [\n    \"Re-functionalized Ti-MOFs (ReCl47-bpy) achieve 19.5 C g-1 electron storage capacity in colloidal suspension under solar irradiation\",\n    \"The material retains 70% of stored charge after 2.5 months and enables >90% electron-to-hydrogen evolution efficiency\",\n    \"FTO-supported ReCl47-bpy photoelectrodes deliver up to 7.0 mAh g-1 capacity under 1 Sun irradiation\"\n  ],\n  \"study_type\": \"Synthetic photochargeable materials\",\n  \"scientific_significance\": \"This work establishes Re-functionalized Ti-MOFs as versatile platforms for solar-driven charge storage and dark photocatalysis, advancing the development of MOF-based energy devices for continuous solar energy utilization.\"\n}",
+        "parsed": {
+          "summary": "This study investigates Re-functionalized Ti-MOFs for solar energy storage, demonstrating their ability to harvest, store, and release photogenerated charge under visible light. The researchers synthesized COK47-bpy and ReCl47-bpy, showing Re incorporation enhances charge retention, enables visible-light response, and allows on-demand hydrogen evolution with >90% efficiency. The materials achieve 19.5 C g-1 storage in colloids and 7.0 mAh g-1 in photoelectrodes, highlighting their potential for solar-driven energy storage systems.",
+          "key_findings": [
+            "Re-functionalized Ti-MOFs (ReCl47-bpy) achieve 19.5 C g-1 electron storage capacity in colloidal suspension under solar irradiation",
+            "The material retains 70% of stored charge after 2.5 months and enables >90% electron-to-hydrogen evolution efficiency",
+            "FTO-supported ReCl47-bpy photoelectrodes deliver up to 7.0 mAh g-1 capacity under 1 Sun irradiation"
+          ],
+          "study_type": "Synthetic photochargeable materials",
+          "scientific_significance": "This work establishes Re-functionalized Ti-MOFs as versatile platforms for solar-driven charge storage and dark photocatalysis, advancing the development of MOF-based energy devices for continuous solar energy utilization."
+        },
+        "elapsed_seconds": 55.3051,
+        "input_tokens": 688,
+        "output_tokens": 298,
+        "thoughts_tokens": null,
+        "total_tokens": 986,
+        "model_eval_seconds": 40.0124,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42925647",
+        "title": "Achieving the targeted retention of nanomotors via a controllable \"braking\" mechanism based on molecularly programmed engine disassembly.",
+        "abstract": "NA: Nanomotors have unique autonomous mobility capabilities, offering significant advantages for promoting deep penetration of drugs into pathological sites. However, achieving on-demand \"braking\" and active retention within target areas remains a critical challenge for efficient, intelligent delivery. The absence of controllable braking mechanisms may cause the nanomotor to continue moving and rapidly dissipate after reaching the target site, hindering effective local enrichment and sustained therapy. In this study, a peptide nucleic acid (PNA)-triggered, in vivo-controlled, engine-disassembly-based active braking mechanism is proposed for nanomotors. This nanomotor anchors the different catalytic engine (catalase, urease, glucose oxidase, and Pt) to the carrier surface via programmable PNA complementary, thus accommodating various application scenarios. After reaching the target area and achieving deep penetration, the injected exogenous complementary chains competitively displace the engine, triggering precise \"braking.\" This braking mechanism relies on PNA sequence-specific base-complementary pairing and competitive displacement, enabling on-demand braking in vivo. Experimental results demonstrate that the drug-loaded nanomotor exhibits excellent tumor-targeting accumulation and tissue penetration capabilities in tumor-bearing mouse models. Following the intravenous injection of PNA to trigger braking, it produces the strongest tumor suppression effect. This study provides a novel strategy for developing intelligent nanomotor therapeutic systems that combine deep penetration with long-lasting retention capabilities.",
+        "doi": "10.1016/j.biomaterials.2026.124718",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124718",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42925647/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of achieving on-demand nanomotor retention at target sites by developing a PNA-triggered engine-disassembly braking mechanism. The approach uses programmable PNA to anchor catalytic engines to nanomotors, enabling competitive displacement upon PNA injection to halt motion. Results show enhanced tumor targeting and suppression after braking, demonstrating improved retention for sustained therapeutic effects.\",\n  \"key_findings\": [\n    \"PNA-triggered competitive displacement of catalytic engines halts nanomotor motion in vivo\",\n    \"The braking mechanism enables precise tumor retention with superior therapeutic outcomes in mouse models\",\n    \"Engine-disassembly strategy accommodates multiple catalytic functions for versatile applications\"\n  ],\n  \"study_type\": \"In vivo-controlled experimental study\",\n  \"scientific_signingificance\": \"This work establishes a programmable braking mechanism for nanomotors, enabling targeted retention and sustained therapeutic effects without compromising deep tissue penetration capabilities.\"\n  }",
+        "parsed": {
+          "summary": "This study addresses the challenge of achieving on-demand nanomotor retention at target sites by developing a PNA-triggered engine-disassembly braking mechanism. The approach uses programmable PNA to anchor catalytic engines to nanomotors, enabling competitive displacement upon PNA injection to halt motion. Results show enhanced tumor targeting and suppression after braking, demonstrating improved retention for sustained therapeutic effects.",
+          "key_findings": [
+            "PNA-triggered competitive displacement of catalytic engines halts nanomotor motion in vivo",
+            "The braking mechanism enables precise tumor retention with superior therapeutic outcomes in mouse models",
+            "Engine-disassembly strategy accommodates multiple catalytic functions for versatile applications"
+          ],
+          "study_type": "In vivo-controlled experimental study",
+          "scientific_signingificance": "This work establishes a programmable braking mechanism for nanomotors, enabling targeted retention and sustained therapeutic effects without compromising deep tissue penetration capabilities."
+        },
+        "elapsed_seconds": 40.4005,
+        "input_tokens": 668,
+        "output_tokens": 196,
+        "thoughts_tokens": null,
+        "total_tokens": 864,
+        "model_eval_seconds": 25.7142,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42950817",
+        "title": "Somatic DNA-repeat expansions initiate distinct yet analogous changes in Huntington's disease cortical and striatal neurons.",
+        "abstract": "NA: Huntington's disease (HD) affects the neocortex and striatum with different timing, severity, and gene-expression changes. These pathologies have long been proposed to involve different pathogenic mechanisms, with one brain area's degeneration leading to the other's. Striatal neurons degenerate in HD as their huntingtin (HTT) CAG-repeat tracts expand somatically beyond 150 CAGs. Here, we find that cortical pyramidal neurons in HD undergo biological changes analogous to those in striatal neurons-the same sequence of pathological phases, with toxicity also commencing at ∼150 CAGs but then changing their gene expression in distinct ways. Pyramidal neurons' precise molecular identities, rather than their areal or laminar locations, appeared to determine the extent of this somatic DNA-repeat expansion, which varied up to 20-fold among pyramidal neuron subtypes. Cortical and striatal neurons also shared a key pathological feature: nuclear inclusions of aggregated HTT protein in those nuclei with expansions well beyond 150 CAGs.",
+        "doi": "10.1016/j.cell.2026.10.001",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.001",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42950817/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether somatic CAG-repeat expansions in Huntington's disease neurons follow similar pathological pathways in cortical and striatal regions. Using molecular and pathological analyses, it found that both neuron types exhibit analogous sequence of pathological phases starting at ∼150 CAGs, with distinct gene expression changes and 20-fold variation in expansion magnitude among cortical pyramidal neuron subtypes. Both regions develop nuclear inclusions of aggregated HTT protein beyond 150 CAGs.\",\n  \"key_findings\": [\n    \"Cortical pyramidal neurons undergo somatic CAG-repeat expansions starting at ∼150 CAGs, analogous to striatal neurons\",\n    \"Expansion magnitude varies up to 20-fold among cortical pyramidal neuron subtypes\",\n    \"Both cortical and striatal neurons form nuclear inclusions of aggregated HTT protein beyond 150 CAGs\"\n  ],\n  \"study_type\": \"Molecular and pathological analysis\",\n  \"scientific_significance\": \"The findings demonstrate that somatic CAG-repeat expansions initiate comparable pathological sequences in distinct brain regions of Huntington's disease, revealing shared mechanisms of early neuronal degeneration despite regional differences in gene expression.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether somatic CAG-repeat expansions in Huntington's disease neurons follow similar pathological pathways in cortical and striatal regions. Using molecular and pathological analyses, it found that both neuron types exhibit analogous sequence of pathological phases starting at ∼150 CAGs, with distinct gene expression changes and 20-fold variation in expansion magnitude among cortical pyramidal neuron subtypes. Both regions develop nuclear inclusions of aggregated HTT protein beyond 150 CAGs.",
+          "key_findings": [
+            "Cortical pyramidal neurons undergo somatic CAG-repeat expansions starting at ∼150 CAGs, analogous to striatal neurons",
+            "Expansion magnitude varies up to 20-fold among cortical pyramidal neuron subtypes",
+            "Both cortical and striatal neurons form nuclear inclusions of aggregated HTT protein beyond 150 CAGs"
+          ],
+          "study_type": "Molecular and pathological analysis",
+          "scientific_significance": "The findings demonstrate that somatic CAG-repeat expansions initiate comparable pathological sequences in distinct brain regions of Huntington's disease, revealing shared mechanisms of early neuronal degeneration despite regional differences in gene expression."
+        },
+        "elapsed_seconds": 44.4153,
+        "input_tokens": 597,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 848,
+        "model_eval_seconds": 32.6018,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42885335",
+        "title": "\"Water-in-Water\" Biphasic Electrolyte for Aqueous Zinc-ion Batteries.",
+        "abstract": "NA: Aqueous zinc-ion batteries (AZIBs) are constrained by unstable Zn metal interfaces, where nonuniform Zn2+ transport induces concentration polarization and accelerates parasitic reactions. Here we show that Zn2+ flux can instead be regulated by aqueous-aqueous interfaces. A fully aqueous \"water-in-water\" (W/W) biphasic electrolyte, comprising dextran (Dex)-rich phase droplets (∼10 µm) suspended in a polyethylene glycol (PEG)-rich aqueous phase, creates phase boundaries that continuously buffer local Zn2+ accumulation and redistribute ions during plating and stripping. As a result, Zn||Zn cells cycle stably for 1100 h at 10 mA cm-2 and 10 mAh cm-2, and Ah-level Zn||NaV3O8 pouch cells sustain long-term operation. This work demonstrates an aqueous electrolyte architecture in which interfacial electrostatics, rather than solvent chemistry, governs Zn2+ transport.",
+        "doi": "10.1002/adma.75382",
+        "doi_url": "https://doi.org/10.1002/adma.75382",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885335/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses unstable Zn metal interfaces in aqueous zinc-ion batteries by engineering a 'water-in-water' biphasic electrolyte with dextran droplets in a PEG-rich phase. The architecture buffers local Zn2+ accumulation, enabling stable cycling for 1100 hours at high current density and Ah-level pouch cells. The findings highlight interfacial electrostatics as the governing mechanism for Zn2+ transport.\",\n  \"key_findings\": [\n    \"A 'water-in-water' biphasic electrolyte with dextran droplets in PEG-rich phase buffers local Zn2+ accumulation\",\n    \"Zn||Zn cells cycle stably for 1100 h at 10 mA cm-2 and 10 mAh cm-2\",\n    \"Ah-level Zn||NaV3O8 pouch cells sustain long-term operation\"\n  ],\n  \"study_type\": \"Electrolyte engineering\",\n  \"scientific_significance\": \"This work establishes interfacial electrostatics as the primary mechanism for regulating Zn2+ transport in aqueous zinc-ion batteries, overcoming traditional limitations of solvent chemistry.\"\n}",
+        "parsed": {
+          "summary": "This study addresses unstable Zn metal interfaces in aqueous zinc-ion batteries by engineering a 'water-in-water' biphasic electrolyte with dextran droplets in a PEG-rich phase. The architecture buffers local Zn2+ accumulation, enabling stable cycling for 1100 hours at high current density and Ah-level pouch cells. The findings highlight interfacial electrostatics as the governing mechanism for Zn2+ transport.",
+          "key_findings": [
+            "A 'water-in-water' biphasic electrolyte with dextran droplets in PEG-rich phase buffers local Zn2+ accumulation",
+            "Zn||Zn cells cycle stably for 1100 h at 10 mA cm-2 and 10 mAh cm-2",
+            "Ah-level Zn||NaV3O8 pouch cells sustain long-term operation"
+          ],
+          "study_type": "Electrolyte engineering",
+          "scientific_significance": "This work establishes interfacial electrostatics as the primary mechanism for regulating Zn2+ transport in aqueous zinc-ion batteries, overcoming traditional limitations of solvent chemistry."
+        },
+        "elapsed_seconds": 43.7146,
+        "input_tokens": 599,
+        "output_tokens": 247,
+        "thoughts_tokens": null,
+        "total_tokens": 846,
+        "model_eval_seconds": 32.1584,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42927683",
+        "title": "Cytochalasin D-induced cytoskeletal remodeling with MYH9 enhances release of extracellular vesicles for therapeutic application.",
+        "abstract": "NA: Extracellular vesicles (EVs) hold great potential as therapeutic vehicles, but their clinical application is limited by low production yields. Here, we explored whether the pharmacological disruption of the actin cytoskeleton using cytochalasin D (CytoD) could enhance EV release while maintaining properties essential for therapeutic use. We examined monocytic U937 cells and colorectal cancer SW480 cells, discovering that CytoD increased EV production by approximately 8.27-fold in U937 cells and 10.06-fold in SW480 cells, while largely preserving the size distribution and surface charge of the EVs. Density gradient ultracentrifugation and label-free quantitative proteomics revealed that CytoD not only increased overall EV release but also selectively remodeled EV proteins. Notably, CytoD-EVs retained lineage-associated membrane proteins such as LFA-1 and showed an enrichment of cytoskeleton-related regulators, particularly MYH9, as well as proteins involved in adhesion and membrane trafficking. We observed the recruitment of MYH9 to membrane blebs,and both pharmacological inhibition with blebbistatin and MYH9 knockdown suppressed EV release, indicating that actomyosin-dependent contractility stimulates EV shedding. Importantly, CytoD-EVs proved to be highly effective drug carriers that doxorubicin-loaded EVs efficiently delivered cargo to recipient cells and induced greater cytotoxicity than free doxorubicin at equivalent doses. Overall, these findings demonstrate that CytoD-induced cytoskeletal remodeling enhances EV production through MYH9-associated membrane dynamics while preserving their capacity for therapeutic delivery. Thus, our findings establish CytoD-induced EV biogenesis as a robust, scalable, and translationally applicable platform for advanced EV-based drug delivery systems.",
+        "doi": "10.1016/j.biomaterials.2026.124716",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124716",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42927683/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether cytochalasin D (CytoD) could enhance extracellular vesicle (EV) production while maintaining therapeutic properties. Using monocytic and colorectal cancer cell lines, CytoD increased EV release by 8.27- to 10.06-fold, preserving EV size and surface charge. CytoD-EVs showed enrichment of MYH9 and adhesion proteins, with actomyosin-dependent contractility driving EV shedding. These EVs effectively delivered doxorubicin, demonstrating enhanced cytotoxicity.\",\n  \"key_findings\": [\n    \"CytoD increased EV production by 8.27-fold in U937 cells and 10.06-fold in SW480 cells\",\n    \"CytoD-EVs retained lineage-specific membrane proteins and enriched MYH9, adhesion proteins, and membrane trafficking regulators\",\n    \"Actomyosin-dependent contractility via MYH9 was essential for CytoD-induced EV release, as inhibition or knockdown reduced EV production\"\n  ],\n  \"study_type\": \"In vitro cell culture\",\n  \"scientific_significance\": \"This work establishes cytochalasin D-induced cytoskeletal remodeling as a scalable method to enhance extracellular vesicle production while maintaining therapeutic functionality, providing a platform for improved drug delivery systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether cytochalasin D (CytoD) could enhance extracellular vesicle (EV) production while maintaining therapeutic properties. Using monocytic and colorectal cancer cell lines, CytoD increased EV release by 8.27- to 10.06-fold, preserving EV size and surface charge. CytoD-EVs showed enrichment of MYH9 and adhesion proteins, with actomyosin-dependent contractility driving EV shedding. These EVs effectively delivered doxorubicin, demonstrating enhanced cytotoxicity.",
+          "key_findings": [
+            "CytoD increased EV production by 8.27-fold in U937 cells and 10.06-fold in SW480 cells",
+            "CytoD-EVs retained lineage-specific membrane proteins and enriched MYH9, adhesion proteins, and membrane trafficking regulators",
+            "Actomyosin-dependent contractility via MYH9 was essential for CytoD-induced EV release, as inhibition or knockdown reduced EV production"
+          ],
+          "study_type": "In vitro cell culture",
+          "scientific_significance": "This work establishes cytochalasin D-induced cytoskeletal remodeling as a scalable method to enhance extracellular vesicle production while maintaining therapeutic functionality, providing a platform for improved drug delivery systems."
+        },
+        "elapsed_seconds": 56.052,
+        "input_tokens": 757,
+        "output_tokens": 280,
+        "thoughts_tokens": null,
+        "total_tokens": 1037,
+        "model_eval_seconds": 37.7502,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42950818",
+        "title": "Multimodal spatial transcriptomics redefines cortical pathology in Huntington's disease.",
+        "abstract": "NA: Huntington's disease (HD) is caused by CAG expansion in the huntingtin gene (HTT), yet how somatic repeat instability and HTT inclusions relate to selective cell loss in the human brain remains unclear. We have developed a multimodal spatial transcriptomics approach that enables the definition of transcriptional programs with subcellular resolution, somatic CAG repeat lengths, and eight other pathology markers, including HTT inclusions, in every cell of intact brain sections. Imaging 428,173 cells in the control and HD cortex revealed the selective vulnerability of layer 5-6 (L5-6) near-projecting (NP) neurons and L6b deep-layer excitatory neurons, which undergo a >50% loss that is closely linked to large somatic repeat expansions (>450 ± 55 CAGs). Intranuclear inclusions were most prevalent at intermediate somatic repeat expansions (250-350 CAGs) and were associated with broader transcriptional changes than somatic repeat expansion alone. These data provide a comprehensive resource and establish a general framework for connecting repeat expansion and protein pathology across diverse cell types.",
+        "doi": "10.1016/j.cell.2026.09.064",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.064",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42950818/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used multimodal spatial transcriptomics to investigate the relationship between somatic CAG repeat expansions, HTT inusing, and neuronal loss in Huntington's disease. By analyzing 428,173 cells in human cortical tissue, it identified layer 5-6 near-projecting neurons and L6b deep-layer excitatory neurons as selectively vulnerable, with >50% loss linked to large repeat expansions (>450 CAGs). Intranuclear inclusions were most common at intermediate expansions (250-350 CAGs) and correlated with broader transcriptional changes.\",\n  \"key_findings\": [\n    \"Layer 5-6 near-projecting neurons and L6b deep-layer excitatory neurons show >50% loss in HD cortex\",\n    \"Somatic CAG expansions >450 CAGs correlate with selective neuronal loss in HD\",\n    \"Intranuclear inclusions peak at intermediate CAG expansions (250-350 CAGs) and drive transcriptional changes\"\n  ],\n  \"study_type\": \"Multimodal spatial transcriptomics\",\n  \"scientific_significance\": \"This work establishes a framework for linking somatic CAG repeat expansions with protein pathology and neuronal vulnerability across cell types in Huntington's disease.\"\n}",
+        "parsed": {
+          "summary": "This study used multimodal spatial transcriptomics to investigate the relationship between somatic CAG repeat expansions, HTT inusing, and neuronal loss in Huntington's disease. By analyzing 428,173 cells in human cortical tissue, it identified layer 5-6 near-projecting neurons and L6b deep-layer excitatory neurons as selectively vulnerable, with >50% loss linked to large repeat expansions (>450 CAGs). Intranuclear inclusions were most common at intermediate expansions (250-350 CAGs) and correlated with broader transcriptional changes.",
+          "key_findings": [
+            "Layer 5-6 near-projecting neurons and L6b deep-layer excitatory neurons show >50% loss in HD cortex",
+            "Somatic CAG expansions >450 CAGs correlate with selective neuronal loss in HD",
+            "Intranuclear inclusions peak at intermediate CAG expansions (250-350 CAGs) and drive transcriptional changes"
+          ],
+          "study_type": "Multimodal spatial transcriptomics",
+          "scientific_significance": "This work establishes a framework for linking somatic CAG repeat expansions with protein pathology and neuronal vulnerability across cell types in Huntington's disease."
+        },
+        "elapsed_seconds": 47.4388,
+        "input_tokens": 608,
+        "output_tokens": 270,
+        "thoughts_tokens": null,
+        "total_tokens": 878,
+        "model_eval_seconds": 35.4591,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42885381",
+        "title": "Cation-Framework-Preserving Oxygen-Vacancy Engineering for Broadband Infrared Emission in High-Entropy Spinel Oxides.",
+        "abstract": "NA: High-temperature radiative ceramics require broadband infrared emission and stable structures, but the defects that enhance emission can also weaken oxide lattices. Here, we regulate oxygen vacancies in (MnCrFeNiCu)3O4, a high-entropy spinel oxide (HEO), by vacuum annealing without changing the nominal cation composition. This approach regulates oxygen nonstoichiometry without introducing an additional cation-substitution variable. The binary Mn-Cr reference has band-averaged emissivities of 0.668 and 0.726 over 0.78-2.5 and 2.5-16 µm, respectively. Pristine HEO increases these values to 0.919 and 0.863, while the optimized HEO-OV-5 h reaches 0.932 and 0.902. Multication incorporation broadens electronic states near the band edges. Oxygen removal creates vacancy-derived states, redistributes charge, and changes local M─O coordination. The vacancy-derived states are consistent with localized d-d excitation, intervalence charge transfer, and polaron-related absorption, while changes in M─O coordination broaden vibrational absorption. Together, these electronic and local structural changes are consistent with the enhanced infrared emissivity. The spinel framework and high emissivity remain largely preserved after annealing at 1000°C for 5 h. These results show that oxygen vacancies can be regulated within a stable multication spinel to combine broadband infrared emission with high-temperature stability.",
+        "doi": "10.1002/adma.75418",
+        "doi_url": "https://doi.org/10.1002/adma.75418",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885381/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates oxygen vacancy engineering in high-entropy spinel oxides to achieve broadband infrared emission while maintaining structural stability. By vacuum annealing (MnCrFeNiCu)3O4 without altering cation composition, researchers enhanced emissivity from 0.668-0.726 to 0.932-0.902 across 0.78-16 µm. The approach preserves the spinel framework and demonstrates that oxygen vacancies can improve emission without compromising thermal stability.\",\n  \"key_findings\": [\n    \"Vacuum annealing of (MnCrFeNiCu)3O4 increased infrared emissivity to 0.932-0.902 across 0.78-16 µm\",\n    \"Oxygen vacancies created vacancy-derived states and redistributed charge without degrading the spinel framework\",\n    \"The high-entropy spinel maintained structural integrity after 1000°C annealing for 5 hours\"\n  ],\n  \"study_type\": \"Vacuum annealing of high-entropy spinel oxide\",\n  \"scientific_significance\": \"This work establishes a method to engineer oxygen vacancies in multication spinels for broadband infrared emission while retaining high-temperature structural stability, providing a pathway to enhance thermal emission in advanced ceramics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates oxygen vacancy engineering in high-entropy spinel oxides to achieve broadband infrared emission while maintaining structural stability. By vacuum annealing (MnCrFeNiCu)3O4 without altering cation composition, researchers enhanced emissivity from 0.668-0.726 to 0.932-0.902 across 0.78-16 µm. The approach preserves the spinel framework and demonstrates that oxygen vacancies can improve emission without compromising thermal stability.",
+          "key_findings": [
+            "Vacuum annealing of (MnCrFeNiCu)3O4 increased infrared emissivity to 0.932-0.902 across 0.78-16 µm",
+            "Oxygen vacancies created vacancy-derived states and redistributed charge without degrading the spinel framework",
+            "The high-entropy spinel maintained structural integrity after 1000°C annealing for 5 hours"
+          ],
+          "study_type": "Vacuum annealing of high-entropy spinel oxide",
+          "scientific_significance": "This work establishes a method to engineer oxygen vacancies in multication spinels for broadband infrared emission while retaining high-temperature structural stability, providing a pathway to enhance thermal emission in advanced ceramics."
+        },
+        "elapsed_seconds": 53.7018,
+        "input_tokens": 709,
+        "output_tokens": 278,
+        "thoughts_tokens": null,
+        "total_tokens": 987,
+        "model_eval_seconds": 37.5661,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42927684",
+        "title": "Bioactive shape-memory biodegradable biliary stent functionalized with dHAM-Curcumin for improved biliary repair and microenvironment modulation.",
+        "abstract": "NA: Anastomotic stricture after biliodigestive reconstruction remains a clinical challenge leading to recurrent cholangitis, jaundice, and secondary biliary cirrhosis. Conventional plastic stents provide temporary support but are prone to biofilm formation and biliary sludge accumulation and require secondary removal procedures. There is a need for biodegradable biliary stents that provide sufficient mechanical support while actively modulating the local microenvironment. A biodegradable shape-memory biliary stent composed of a poly(CL-co-TOSUO)/BaSO4 (PCT/BaSO4) composite core coated with a decellularized human amniotic membrane-curcumin (dHAM-Cur) hydrogel was developed. In vivo performance was assessed in rat subcutaneous and duodenal implantation models and in a rabbit orthotopic common bile duct stenting model. Gut microbiota and bile metabolomic changes were analyzed by 16S rRNA sequencing and untargeted Liquid Chromatography-Mass Spectrometry (LC-MS). The PCT/BaSO4 stent exhibited suitable mechanical properties, radiopacity, and shape memory functionality, with a degradation profile that matched the expected biliary healing period. The dHAM-Cur coating increased surface hydrophilicity and supported sustained curcumin release. The functionalized stent reduced inflammatory cell infiltration, fibrous capsule formation, and bile duct fibrosis, and preserved biliary patency compared with plastic and PCL/BaSO4 controls in vivo. Multi-omics analyses suggested that the stent subtly reshaped gut microbial composition and modulated bile acid-related metabolic pathways. The PCT/BaSO4@dHAM-Cur composite demonstrated local anti-inflammatory and anti-adhesion effects in preclinical models, along with favorable biocompatibility and anti-restenotic potential. This system holds promise as a therapeutic platform for the clinical management of biliodigestive anastomoses.",
+        "doi": "10.1016/j.biomaterials.2026.124688",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124688",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42927684/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a biodegradable shape-memory biliary stent coated with decellularized human amniotic membrane-curcumin hydrogel to address post-biliodigestive reconstruction stricture. In vivo assessments in rat and rabbit models showed reduced inflammation, fibrosis, and biliary obstruction compared to conventional stents, with evidence of gut microbiota modulation and bile acid pathway changes.\",\n  \"key_findings\": [\n    \"The PCT/BaSO4 stent core provided mechanical support and matched biliary healing timelines\",\n    \"dHAM-Cur coating enhanced hydrophilicity and sustained curcumin release\",\n    \"Functionalized stents reduced inflammatory infiltration and fibrosis while preserving biliary patency\"\n  ],\n  \"study_type\": \"In vivo animal models (rat subcutaneous, duodenal, and rabbit orthotopic bile duct)\",\n  \"scientific_significance\": \"This work demonstrates a biodegradable stent system that actively modulates the biliary microenvironment to promote healing, offering a potential therapeutic strategy for preventing post-reconstruction strictures without requiring secondary removal.\"\n}",
+        "parsed": {
+          "summary": "This study developed a biodegradable shape-memory biliary stent coated with decellularized human amniotic membrane-curcumin hydrogel to address post-biliodigestive reconstruction stricture. In vivo assessments in rat and rabbit models showed reduced inflammation, fibrosis, and biliary obstruction compared to conventional stents, with evidence of gut microbiota modulation and bile acid pathway changes.",
+          "key_findings": [
+            "The PCT/BaSO4 stent core provided mechanical support and matched biliary healing timelines",
+            "dHAM-Cur coating enhanced hydrophilicity and sustained curcumin release",
+            "Functionalized stents reduced inflammatory infiltration and fibrosis while preserving biliary patency"
+          ],
+          "study_type": "In vivo animal models (rat subcutaneous, duodenal, and rabbit orthotopic bile duct)",
+          "scientific_significance": "This work demonstrates a biodegradable stent system that actively modulates the biliary microenvironment to promote healing, offering a potential therapeutic strategy for preventing post-reconstruction strictures without requiring secondary removal."
+        },
+        "elapsed_seconds": 50.0525,
+        "input_tokens": 780,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 1009,
+        "model_eval_seconds": 30.7415,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956714",
+        "title": "Roads not taken: The mismatch between safety and regulation of plant breeding innovation.",
+        "abstract": "NA: Meeting global food security goals while reducing agriculture's environmental impact requires continued crop improvement and innovation. Advances in transgenesis, cisgenesis, and genome editing now enable increasingly precise genetic modification with risks comparable to those of conventional breeding, yet regulatory frameworks remain focused on the method used rather than the product. We highlight recent examples, including immune receptor transfer, cisgenesis-based disease resistance stacking, photosynthesis engineering, and AI-guided protein design, that illustrate innovations constrained by current regulatory approaches. A decisive shift toward science-based, proportionate, and product-focused regulation is needed so that improved crops are evaluated on the basis of their properties, not how they were made.",
+        "doi": "10.1016/j.cell.2026.09.018",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.018",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956714/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"The study examines regulatory frameworks for plant breeding innovation, emphasizing the mismatch between safety assessments and current regulations that prioritize methods over product outcomes. It identifies constraints from regulatory approaches on innovations like immune receptor transfer and genome editing, advocating for science-based, product-focused evaluation to enable crop improvements without methodological bias.\",\n  \"key_findings\": [\n    \"Regulatory frameworks prioritize breeding methods over product safety in plant innovation\",\n    \"Innovations such as immune receptor transfer and genome editing face regulatory constraints\",\n    \"A shift toward product-focused regulation is necessary for effective crop improvement\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work underscores the need for regulatory systems to evaluate crop innovations based on their safety and efficacy rather than the technical methods used, advancing the principle of proportionate, science-driven regulation in agricultural biotechnology.\"\n}",
+        "parsed": {
+          "summary": "The study examines regulatory frameworks for plant breeding innovation, emphasizing the mismatch between safety assessments and current regulations that prioritize methods over product outcomes. It identifies constraints from regulatory approaches on innovations like immune receptor transfer and genome editing, advocating for science-based, product-focused evaluation to enable crop improvements without methodological bias.",
+          "key_findings": [
+            "Regulatory frameworks prioritize breeding methods over product safety in plant innovation",
+            "Innovations such as immune receptor transfer and genome editing face regulatory constraints",
+            "A shift toward product-focused regulation is necessary for effective crop improvement"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work underscores the need for regulatory systems to evaluate crop innovations based on their safety and efficacy rather than the technical methods used, advancing the principle of proportionate, science-driven regulation in agricultural biotechnology."
+        },
+        "elapsed_seconds": 29.2241,
+        "input_tokens": 500,
+        "output_tokens": 176,
+        "thoughts_tokens": null,
+        "total_tokens": 676,
+        "model_eval_seconds": 22.1486,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42885386",
+        "title": "Photocatalytic Tandem Reaction for Urea Synthesis From Atmospheric CO2 and N2.",
+        "abstract": "NA: Photocatalytic urea synthesis directly from atmospheric CO2 and N2 offers a sustainable route to bypass the energy-intensive Bosch-Meiser process, yet simultaneously achieving CO2 capture and reduction, N2 activation, and C─N coupling within a single system remains challenging. Herein, we report a two-step tandem platform combining ionic-liquid-modified metal-organic framework (IL@PCN-250-Fe2Co) with a trinuclear copper-based covalent organic framework (HTP-Cu3-imi-COF) for urea photosynthesis from air. The IL@MOF captures atmospheric CO2 and photoreduces it to CO, while HTP-Cu3-imi-COF couples the generated CO with ambient N2 into urea. This synergistic tandem configuration delivers a urea production rate of 259.87 µg·gcat -1·h-1 under air, marking the first demonstration of photocatalytic urea synthesis from atmospheric CO2 and N2. In situ spectroscopic measurements and DFT calculations reveal that the imidazole-functionalized HTP segments act as hole-rich oxidation domains, promoting water oxidation to generate *OH species that oxidize locally enriched N2 to *NO intermediates. Simultaneously, the Cu3 clusters serve as electron-rich centers for CO adsorption and activation, forming *CO that couples with *NO via the critical *OCNO intermediate toward urea formation. This work not only showcases the first photocatalytic urea synthesis from air but also establishes a modular paradigm for cascade catalysts that integrate capture and conversion toward sustainable chemical transformations.",
+        "doi": "10.1002/adma.75407",
+        "doi_url": "https://doi.org/10.1002/adma.75407",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42885386/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a photocatalytic tandem system for direct urea synthesis from atmospheric CO2 and N2, overcoming the energy-intensive Bosch-Meiser process. The IL@MOF captures CO2 and reduces it to CO, while the HTP-Cu3-imi-COF couples CO with N2 into urea. The system achieves a urea production rate of 259.87 µg·gcat⁻¹·h⁻¹ under air, representing the first photocatalytic urea synthesis from atmospheric gases.\",\n  \"key_findings\": [\n    \"IL@MOF captures atmospheric CO2 and photoreduces it to CO\",\n    \"HTP-Cu3-imi-COF couples CO with ambient N2 into urea\",\n    \"The tandem system achieves 259.87 µg·gcat⁻¹·h⁻¹ urea production rate under air\"\n  ],\n  \"study_type\": \"Photocatalytic tandem platform\",\n  \"scientific_significance\": \"This work establishes the first photocatalytic urea synthesis from atmospheric CO2 and N2, demonstrating a modular cascade catalyst design that integrates capture and conversion for sustainable chemical production.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a photocatalytic tandem system for direct urea synthesis from atmospheric CO2 and N2, overcoming the energy-intensive Bosch-Meiser process. The IL@MOF captures CO2 and reduces it to CO, while the HTP-Cu3-imi-COF couples CO with N2 into urea. The system achieves a urea production rate of 259.87 µg·gcat⁻¹·h⁻¹ under air, representing the first photocatalytic urea synthesis from atmospheric gases.",
+          "key_findings": [
+            "IL@MOF captures atmospheric CO2 and photoreduces it to CO",
+            "HTP-Cu3-imi-COF couples CO with ambient N2 into urea",
+            "The tandem system achieves 259.87 µg·gcat⁻¹·h⁻¹ urea production rate under air"
+          ],
+          "study_type": "Photocatalytic tandem platform",
+          "scientific_significance": "This work establishes the first photocatalytic urea synthesis from atmospheric CO2 and N2, demonstrating a modular cascade catalyst design that integrates capture and conversion for sustainable chemical production."
+        },
+        "elapsed_seconds": 50.1018,
+        "input_tokens": 713,
+        "output_tokens": 252,
+        "thoughts_tokens": null,
+        "total_tokens": 965,
+        "model_eval_seconds": 33.8214,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42933246",
+        "title": "Magnesium-loaded anisotropic hydrogel promotes tendon healing via combined immunomodulation and collagen remodeling.",
+        "abstract": "NA: Poor tendon healing remains a challenging clinical problem. An ideal repair scaffold should create a favorable microenvironment for dynamic regeneration, including inflammation control, cell proliferation promotion, revascularization, and collagen remodeling. Herein, a dynamic self-adaptive hydrogel scaffold was developed using non-covalent crosslinking and pre-stretching-induced alignment. This biomimetic scaffold integrates tendon-inspired anisotropic surface topography, excellent mechanical properties, anti-inflammatory capacity, and a bioactive ion release gradient, enabling rapid construction of a favorable regenerative microenvironment. In vitro experiments confirmed that the scaffold significantly reduced TNF-α secretion, inhibited macrophage polarization toward the M1 phenotype, promoted the migration, proliferation, and differentiation of tendon stem cells (TSPCs), and enhanced endothelial cell migration, tube formation, and angiogenic factor expression. Meanwhile, in vivo results further demonstrated that the magnesium ion (Mg2+)-loaded anisotropic scaffold significantly increased the M2 macrophages proportion and IL-10 expression, while markedly reducing tissue adhesion. Moreover, endogenous tendon regeneration was significantly enhanced, as evidenced by activation of the HIF1-α/VEGF pathway, a clearly visible vascular network within the tissue, significantly improved proliferation and differentiation capabilities of TSPCs, abundant and well-aligned collagen expression, and substantially enhanced mechanical properties. By integrating the physiological tendon regeneration processes, this biomimetic multifunctional scaffold offers a promising strategy for accelerating tendon regeneration.",
+        "doi": "10.1016/j.biomaterials.2026.124690",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124690",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42933246/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated a magnesium-loaded anisotropic hydrogel scaffold for tendon healing. The scaffold was designed to provide a regenerative microenvironment through immunomodulation and collagen remodeling. In vitro, it reduced TNF-α secretion, inhibited M1 macrophage polarization, and promoted tendon stem cell activity. In vivo, it increased M2 macro, IL-10, vascularization, collagen alignment, and mechanical strength, indicating enhanced tendon regeneration.\",\n  \"key_findings\": [\n    \"Magnesium-loaded hydrogel reduced TNF-α secretion and inhibited M1 macrophage polarization in vitro\",\n    \"The scaffold increased M2 macrophages and IL-10 expression while reducing tissue adhesion in vivo\",\n    \"Enhanced tendon regeneration with improved collagen alignment, vascularization, and mechanical properties\"\n  ],\n  \"study_type\": \"In vitro and in vivo experiments\",\n  \"scientific_significance\": \"This biomimetic scaffold demonstrates a multifunctional approach to accelerate tendon healing by simultaneously modulating inflammation and promoting structural regeneration.\"\n}",
+        "parsed": {
+          "summary": "This study investigated a magnesium-loaded anisotropic hydrogel scaffold for tendon healing. The scaffold was designed to provide a regenerative microenvironment through immunomodulation and collagen remodeling. In vitro, it reduced TNF-α secretion, inhibited M1 macrophage polarization, and promoted tendon stem cell activity. In vivo, it increased M2 macro, IL-10, vascularization, collagen alignment, and mechanical strength, indicating enhanced tendon regeneration.",
+          "key_findings": [
+            "Magnesium-loaded hydrogel reduced TNF-α secretion and inhibited M1 macrophage polarization in vitro",
+            "The scaffold increased M2 macrophages and IL-10 expression while reducing tissue adhesion in vivo",
+            "Enhanced tendon regeneration with improved collagen alignment, vascularization, and mechanical properties"
+          ],
+          "study_type": "In vitro and in vivo experiments",
+          "scientific_significance": "This biomimetic scaffold demonstrates a multifunctional approach to accelerate tendon healing by simultaneously modulating inflammation and promoting structural regeneration."
+        },
+        "elapsed_seconds": 43.9903,
+        "input_tokens": 676,
+        "output_tokens": 219,
+        "thoughts_tokens": null,
+        "total_tokens": 895,
+        "model_eval_seconds": 29.1163,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956715",
+        "title": "Calorie restriction uncouples mutation rate from lifespan.",
+        "abstract": "NA: In this issue of Cell, Grońska-Pęski et al. examine how calorie restriction (CR) affects DNA mutation rates. While CR lowers the accumulation of mutations, this effect does not scale with the degree of lifespan extension. Their work raises important new questions about how CR impacts the causal mechanisms of aging.",
+        "doi": "10.1016/j.cell.2026.09.038",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.038",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956715/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether calorie restriction (CR) reduces DNA mutation rates and how mutation rate changes relate to lifespan extension. Using a model organism, the authors found CR decreases mutation accumulation but this reduction does not proportionally increase lifespan. The findings suggest CR's impact on aging mechanisms may be more complex than previously thought.\",\n  \"key_findings\": [\n    \"Calorie restriction reduces DNA mutation accumulation\",\n    \"The mutation rate reduction does not scale with lifespan extension\",\n    \"CR's effect on aging mechanisms may involve non-linear relationships\"\n  ],\n  \"study_type\": \"Model organism\",\n  \"scientific_significance\": \"The study reveals that calorie restriction's benefit in extending lifespan does not directly correlate with its reduction in mutation rates, challenging assumptions about the relationship between mutation accumulation and aging.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether calorie restriction (CR) reduces DNA mutation rates and how mutation rate changes relate to lifespan extension. Using a model organism, the authors found CR decreases mutation accumulation but this reduction does not proportionally increase lifespan. The findings suggest CR's impact on aging mechanisms may be more complex than previously thought.",
+          "key_findings": [
+            "Calorie restriction reduces DNA mutation accumulation",
+            "The mutation rate reduction does not scale with lifespan extension",
+            "CR's effect on aging mechanisms may involve non-linear relationships"
+          ],
+          "study_type": "Model organism",
+          "scientific_significance": "The study reveals that calorie restriction's benefit in extending lifespan does not directly correlate with its reduction in mutation rates, challenging assumptions about the relationship between mutation accumulation and aging."
+        },
+        "elapsed_seconds": 24.5408,
+        "input_tokens": 427,
+        "output_tokens": 165,
+        "thoughts_tokens": null,
+        "total_tokens": 592,
+        "model_eval_seconds": 20.4509,
+        "error": null
+      }
+    }
+  ]
+}
