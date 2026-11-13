@@ -38,7 +38,7 @@ The model name, generation settings, sample size, and random seed are editable i
 
 ### Run the benchmark
 
-1. Open Actions → LLM benchmark.
+1. Open Actions → Ollama benchmark.
 2. Select Run workflow.
 3. Keep the default sample size of 12, or enter a different positive integer.
 4. Wait for the job to finish.
@@ -49,9 +49,9 @@ The workflow installs Ollama and downloads the selected model, so the first run 
 
 Each run is saved in a unique folder under data/benchmarks/:
 
-- benchmark.json: sampled paper metadata, prompt, model output, token counts, timings, and errors.
+- benchmark.json: sampled paper metadata, prompt, Ollama output, token counts, timings, and errors.
 - metrics.csv: one row per paper, for easy review or spreadsheet analysis.
-- comparison.md: formatted summaries for manual scientific review.
+- summaries.md: formatted Ollama summaries for manual scientific review.
 
 Ollama runs locally on the GitHub Actions runner, so this workflow does not make paid LLM API calls. GitHub Actions usage limits still apply.
 
