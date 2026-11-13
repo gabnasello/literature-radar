@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       sample_size:
-        description: Number of abstracts to benchmark with both models
+        description: Number of abstracts to summarize with Ollama
         required: false
         default: "12"
         type: string
@@ -46,15 +46,6 @@ jobs:
       - name: Run unit tests
         run: Rscript tests/testthat.R
 
-      - name: Check Gemini API secret
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          if [ -z "$GEMINI_API_KEY" ]; then
-            echo "Missing GEMINI_API_KEY. Add it in Settings > Secrets and variables > Actions."
-            exit 1
-          fi
-
       - name: Install Ollama
         run: |
           curl -fsSL https://ollama.com/install.sh | sh
@@ -75,9 +66,8 @@ jobs:
           OLLAMA_MODEL=$(Rscript -e 'cat(yaml::read_yaml("config/llm.yml")$benchmark$ollama$model)')
           ollama pull "$OLLAMA_MODEL"
 
-      - name: Run paired LLM benchmark
+      - name: Run Ollama benchmark
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           BENCHMARK_SAMPLE_SIZE: ${{ inputs.sample_size }}
           BENCHMARK_SEED: ${{ inputs.seed }}
         run: Rscript scripts/run_benchmark.R
