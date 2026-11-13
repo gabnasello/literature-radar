@@ -41,6 +41,7 @@ call_ollama <- function(prompt, model, base_url, temperature = 0.2,
     model = model,
     messages = list(list(role = "user", content = prompt)),
     stream = FALSE,
+    think = FALSE,
     format = "json",
     options = list(
       temperature = temperature,
@@ -57,6 +58,13 @@ call_ollama <- function(prompt, model, base_url, temperature = 0.2,
   elapsed <- as.numeric(difftime(Sys.time(), started, units = "secs"))
   response_text <- body$message$content
   if (is.null(response_text) || !nzchar(response_text)) {
+    if (!is.null(body$message$thinking) && nzchar(body$message$thinking)) {
+      stop(
+        "Ollama returned a thinking-only response for model ", model,
+        " despite think = false. Check the Ollama version/model template.",
+        call. = FALSE
+      )
+    }
     stop("Ollama returned an empty response for model ", model, call. = FALSE)
   }
   parsed <- parse_summary_response(response_text)
@@ -84,7 +92,9 @@ call_ollama <- function(prompt, model, base_url, temperature = 0.2,
 }
 
 call_gemini <- function(prompt, model, api_key, temperature = 0.2,
-                        max_output_tokens = 800L, timeout_seconds = 240) {
+                        thinking_level = "low", max_output_tokens = 1600L,
+                        timeout_seconds = 120, max_tries = 5L,
+                        max_retry_seconds = 360) {
   if (is.null(api_key) || !nzchar(api_key)) {
     stop("GEMINI_API_KEY is not set. Add it as a GitHub Actions repository secret.", call. = FALSE)
   }
@@ -101,14 +111,20 @@ call_gemini <- function(prompt, model, api_key, temperature = 0.2,
     generationConfig = list(
       temperature = temperature,
       maxOutputTokens = as.integer(max_output_tokens),
-      responseMimeType = "application/json"
+      responseMimeType = "application/json",
+      thinkingConfig = list(thinkingLevel = thinking_level)
     )
   )
   request <- httr2::request(endpoint) |>
     httr2::req_headers("x-goog-api-key" = api_key) |>
     httr2::req_body_json(payload, auto_unbox = TRUE) |>
     httr2::req_timeout(timeout_seconds) |>
-    httr2::req_retry(max_tries = 3)
+    httr2::req_retry(
+      max_tries = as.integer(max_tries),
+      max_seconds = as.numeric(max_retry_seconds),
+      retry_on_failure = TRUE,
+      backoff = function(tries) min(60, 5 * 2^(tries - 1))
+    )
   response <- httr2::req_perform(request)
   body <- httr2::resp_body_json(response, simplifyVector = FALSE)
   elapsed <- as.numeric(difftime(Sys.time(), started, units = "secs"))
@@ -127,6 +143,7 @@ call_gemini <- function(prompt, model, api_key, temperature = 0.2,
   if (!nzchar(response_text)) stop("Gemini returned no text.", call. = FALSE)
 
   parsed <- parse_summary_response(response_text)
+  finish_reason <- body$candidates[[1]]$finishReason
   usage <- body$usageMetadata
   token_value <- function(name) {
     value <- usage[[name]]
@@ -143,7 +160,13 @@ call_gemini <- function(prompt, model, api_key, temperature = 0.2,
     output_tokens = token_value("candidatesTokenCount"),
     thoughts_tokens = token_value("thoughtsTokenCount"),
     total_tokens = token_value("totalTokenCount"),
-    finish_reason = body$candidates[[1]]$finishReason,
-    error = if (parsed$valid_json) NULL else "Response was not valid JSON."
+    finish_reason = finish_reason,
+    error = if (parsed$valid_json) {
+      NULL
+    } else if (identical(finish_reason, "MAX_TOKENS")) {
+      "Gemini reached maxOutputTokens before completing the JSON response."
+    } else {
+      "Response was not valid JSON."
+    }
   )
 }
