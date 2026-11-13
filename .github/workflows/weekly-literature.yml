@@ -32,7 +32,13 @@ jobs:
         uses: r-lib/actions/setup-r@v2
 
       - name: Install R dependencies
-        run: Rscript -e 'install.packages(c("httr2", "jsonlite", "tibble", "dplyr", "stringr", "lubridate", "yaml", "purrr", "xml2", "glue", "cli", "testthat"), repos="https://cloud.r-project.org")'
+        run: |
+          Rscript -e 'install.packages(c("httr2", "jsonlite", "tibble", "dplyr", "stringr", "lubridate", "yaml", "purrr", "xml2", "glue", "cli"), repos="https://cloud.r-project.org")'
+
+      - name: Ensure testthat is installed
+        run: |
+          Rscript -e 'if (!requireNamespace("testthat", quietly = TRUE)) install.packages("testthat", repos = "https://cloud.r-project.org")'
+          Rscript -e 'stopifnot(requireNamespace("testthat", quietly = TRUE))'
 
       - name: Run unit tests
         run: Rscript tests/testthat.R
