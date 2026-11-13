@@ -35,7 +35,7 @@ The benchmark is intentionally separate from weekly retrieval. An LLM/API failur
 
 The prompt requests a concise summary, key findings, study type, relevance to biomaterials and regenerative medicine, and limitations or unknowns. It instructs both models not to infer facts beyond the abstract.
 
-Model names, generation settings, sample size, random seed, and Gemini pricing assumptions are editable in config/llm.yml.
+Model names, generation settings, sample size, random seed, and Gemini pricing assumptions are editable in config/llm.yml. The benchmark disables Qwen3 thinking output for Ollama and uses Gemini's low thinking level with a larger output-token allowance. Gemini calls retry transient 429/503 responses and transport failures with exponential backoff; retry and timeout limits are configurable.
 
 ### Configure the Gemini API key
 
@@ -88,7 +88,7 @@ Install the R dependencies with install.packages, then run:
 ## Roadmap
 
 1. PubMed retrieval, per-journal cursors, immutable JSON reports (complete).
-2. LLM adapters and paired benchmark for Ollama and Gemini (implemented; first benchmark run pending).
+2. LLM adapters and paired benchmark for Ollama and Gemini (implemented; provider fixes committed after the first integration run, successful benchmark pending).
 3. Quarto website and GitHub Pages deployment.
 4. Monthly journal overview, search/filter, quality checks, and optional notifications.
 
