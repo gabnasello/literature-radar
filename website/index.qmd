@@ -6,12 +6,12 @@ title: "Overview"
 
 A date-based archive of new papers from the journals you follow. Each journal has its own update history, and every update remains available even if that journal is no longer monitored.
 
-~~~{r}
+```{r}
 source("../R/site.R")
 site <- load_literature_site_data("..")
-~~~ 
+```
 
-~~~{r, results='asis'}
+```{r, results='asis'}
 stats <- list(
   c(label = "Papers indexed", value = format(site$paper_count, big.mark = ",")),
   c(label = "Journals in archive", value = as.character(length(site$journals))),
@@ -32,13 +32,13 @@ if (nzchar(site$latest_update)) {
     site_html_escape(site_format_timestamp(site$latest_update))
   ))
 }
-~~~
+```
 
 ## Journals
 
 Select a journal to browse its update history. Updates are ordered by the date they were generated, with the newest first. Journals that are no longer monitored remain in the archive.
 
-~~~{r, results='asis'}
+```{r, results='asis'}
 cat('<div class="journal-grid">')
 for (journal in site$journals) {
   latest <- journal$latest_report
@@ -90,4 +90,4 @@ for (journal in site$journals) {
   ))
 }
 cat('</div>')
-~~~
+```

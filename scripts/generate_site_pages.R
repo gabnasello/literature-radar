@@ -20,11 +20,11 @@ write_generated_page <- function(path, title, render_call) {
     paste0("title: ", yaml_title),
     "---",
     "",
-    "~~~{r, results='asis'}",
+    "```{r, results='asis'}",
     "source(\"../R/site.R\")",
     "site <- load_literature_site_data(\"..\")",
     render_call,
-    "~~~",
+    "```",
     ""
   )
   writeLines(content, path, useBytes = TRUE)
