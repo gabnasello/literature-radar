@@ -154,7 +154,10 @@ write_benchmark_markdown <- function(results, run_id, prompt_version, output_pat
         lines <- c(lines, "**Key findings**", "", paste0("- ", findings), "")
       }
 
-      fields <- list("Study type" = "study_type")
+      fields <- list(
+        "Study type" = "study_type",
+        "Scientific significance" = "scientific_significance"
+      )
       for (heading in names(fields)) {
         value <- summary_field(x$parsed, fields[[heading]])
         if (!is.null(value) && nzchar(trimws(value))) {

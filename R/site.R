@@ -369,6 +369,12 @@ site_render_paper_card <- function(article) {
                   site_html_escape(paste(study_type, collapse = "; "))))
     }
 
+    scientific_significance <- summary_values(parsed, "scientific_significance")
+    if (length(scientific_significance)) {
+      cat(sprintf('<p class="detail-line"><strong>Scientific significance:</strong> %s</p>',
+                  site_html_escape(paste(scientific_significance, collapse = " "))))
+    }
+
     if (nzchar(abstract)) {
       cat(sprintf('<details class="abstract-details"><summary>Original abstract</summary><p>%s</p></details>', abstract))
     }

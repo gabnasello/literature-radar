@@ -71,7 +71,10 @@ test_that("site data joins papers, immutable reports, and successful summaries",
       ollama = list(
         status = "ok",
         model = "qwen3:4b",
-        parsed = list(summary = "A generated summary.")
+        parsed = list(
+          summary = "A generated summary.",
+          scientific_significance = "The study adds evidence about the process under investigation."
+        )
       )
     ))
   )
@@ -100,6 +103,8 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   expect_lt(regexpr("A test paper", rendered)[[1]], regexpr("Pending paper", rendered)[[1]])
   expect_lt(regexpr("Pending paper", rendered)[[1]], regexpr("No abstract paper", rendered)[[1]])
   expect_match(rendered, "More details", fixed = TRUE)
+  expect_match(rendered, "Scientific significance", fixed = TRUE)
+  expect_match(rendered, "The study adds evidence about the process under investigation.", fixed = TRUE)
   expect_match(rendered, "AI summary pending", fixed = TRUE)
   expect_false(grepl("Relevance", rendered, fixed = TRUE))
   expect_false(grepl("Limitations", rendered, fixed = TRUE))

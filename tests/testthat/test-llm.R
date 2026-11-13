@@ -65,7 +65,7 @@ test_that("summary Markdown omits empty fields and benchmark diagnostics", {
           summary = "A concise summary.",
           key_findings = list("Finding one", "Finding two"),
           study_type = "Not specified in abstract",
-          relevance_to_biomaterials_and_regenerative_medicine = "Relevant.",
+          scientific_significance = "The study adds evidence to the broader scientific understanding.",
           limitations_or_unknowns = "Not returned."
         ),
         response_text = "",
@@ -87,6 +87,8 @@ test_that("summary Markdown omits empty fields and benchmark diagnostics", {
   report <- paste(readLines(output, warn = FALSE), collapse = "\n")
   expect_match(report, "A concise summary.", fixed = TRUE)
   expect_match(report, "- Finding one", fixed = TRUE)
+  expect_match(report, "**Scientific significance**", fixed = TRUE)
+  expect_match(report, "broader scientific understanding", fixed = TRUE)
   expect_false(grepl("**Relevance**", report, fixed = TRUE))
   expect_false(grepl("OLLAMA", report, fixed = TRUE))
   expect_false(grepl("Status:", report, fixed = TRUE))
