@@ -72,6 +72,7 @@ call_ollama <- function(prompt, model, base_url, temperature = 0.2,
     elapsed_seconds = elapsed,
     input_tokens = if (is.null(body$prompt_eval_count)) NA_real_ else as.numeric(body$prompt_eval_count),
     output_tokens = if (is.null(body$eval_count)) NA_real_ else as.numeric(body$eval_count),
+    thoughts_tokens = NA_real_,
     total_tokens = if (is.null(body$prompt_eval_count) || is.null(body$eval_count)) {
       NA_real_
     } else {
@@ -140,6 +141,7 @@ call_gemini <- function(prompt, model, api_key, temperature = 0.2,
     elapsed_seconds = elapsed,
     input_tokens = token_value("promptTokenCount"),
     output_tokens = token_value("candidatesTokenCount"),
+    thoughts_tokens = token_value("thoughtsTokenCount"),
     total_tokens = token_value("totalTokenCount"),
     finish_reason = body$candidates[[1]]$finishReason,
     error = if (parsed$valid_json) NULL else "Response was not valid JSON."
