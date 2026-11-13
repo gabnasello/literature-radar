@@ -10,6 +10,7 @@ on:
       - "prompts/**"
       - "config/llm.yml"
       - "reports/**"
+      - "tests/testthat/**"
       - ".github/workflows/summarize-papers.yml"
   workflow_run:
     workflows: ["Weekly PubMed retrieval"]
