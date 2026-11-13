@@ -14,8 +14,11 @@ benchmark:
   gemini:
     model: gemini-3.8-flash
     temperature: 0.2
-    max_output_tokens: 800
-    timeout_seconds: 240
+    thinking_level: low
+    max_output_tokens: 1600
+    timeout_seconds: 120
+    max_tries: 5
+    max_retry_seconds: 360
     paid_input_usd_per_million: 0.75
     paid_output_usd_per_million: 3.75
     pricing_effective_until: 2026-12-31
