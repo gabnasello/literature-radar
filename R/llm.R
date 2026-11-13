@@ -1,4 +1,4 @@
-# Shared prompt and LLM provider adapters ---------------------------------
+# Shared prompt and Ollama adapter ---------------------------------------
 
 read_summary_prompt_template <- function(path = file.path(
   project_root(), "prompts", "paper_summary_v1.txt"
@@ -88,97 +88,5 @@ call_ollama <- function(prompt, model, base_url, temperature = 0.2,
     },
     model_eval_seconds = ns_to_seconds(body$eval_duration),
     error = if (parsed$valid_json) NULL else "Response was not valid JSON."
-  )
-}
-
-call_gemini <- function(prompt, model, api_key, temperature = 0.2,
-                        thinking_level = "low", max_output_tokens = 1600L,
-                        timeout_seconds = 120, max_tries = 5L,
-                        max_retry_seconds = 360) {
-  if (is.null(api_key) || !nzchar(api_key)) {
-    stop("GEMINI_API_KEY is not set. Add it as a GitHub Actions repository secret.", call. = FALSE)
-  }
-  started <- Sys.time()
-  endpoint <- paste0(
-    "https://generativelanguage.googleapis.com/v1beta/models/",
-    model, ":generateContent"
-  )
-  payload <- list(
-    contents = list(list(
-      role = "user",
-      parts = list(list(text = prompt))
-    )),
-    generationConfig = list(
-      temperature = temperature,
-      maxOutputTokens = as.integer(max_output_tokens),
-      responseMimeType = "application/json",
-      thinkingConfig = list(thinkingLevel = thinking_level)
-    )
-  )
-  request <- httr2::request(endpoint) |>
-    httr2::req_headers("x-goog-api-key" = api_key) |>
-    httr2::req_body_json(payload, auto_unbox = TRUE) |>
-    httr2::req_timeout(timeout_seconds) |>
-    httr2::req_retry(
-      max_tries = as.integer(max_tries),
-      max_seconds = as.numeric(max_retry_seconds),
-      retry_on_failure = TRUE,
-      backoff = function(tries) min(60, 5 * 2^(tries - 1))
-    ) |>
-    httr2::req_error(body = function(resp) {
-      error_body <- tryCatch(
-        httr2::resp_body_json(resp, simplifyVector = FALSE),
-        error = function(e) NULL
-      )
-      detail <- error_body$error$message
-      if (is.null(detail) || !nzchar(detail)) {
-        detail <- httr2::resp_body_string(resp)
-      }
-      if (is.null(detail) || !nzchar(detail)) return(NULL)
-      paste0("Gemini API response: ", substr(detail, 1, 1000))
-    })
-  response <- httr2::req_perform(request)
-  body <- httr2::resp_body_json(response, simplifyVector = FALSE)
-  elapsed <- as.numeric(difftime(Sys.time(), started, units = "secs"))
-
-  if (is.null(body$candidates) || !length(body$candidates)) {
-    stop("Gemini returned no candidates. Check safety blocks and API response.", call. = FALSE)
-  }
-  parts <- body$candidates[[1]]$content$parts
-  if (is.null(parts) || !length(parts)) {
-    stop("Gemini returned an empty candidate.", call. = FALSE)
-  }
-  text_parts <- vapply(parts, function(part) {
-    if (is.null(part$text)) "" else as.character(part$text)
-  }, character(1))
-  response_text <- paste(text_parts[nzchar(text_parts)], collapse = "\n")
-  if (!nzchar(response_text)) stop("Gemini returned no text.", call. = FALSE)
-
-  parsed <- parse_summary_response(response_text)
-  finish_reason <- body$candidates[[1]]$finishReason
-  usage <- body$usageMetadata
-  token_value <- function(name) {
-    value <- usage[[name]]
-    if (is.null(value)) NA_real_ else as.numeric(value)
-  }
-  list(
-    provider = "gemini",
-    model = model,
-    status = if (parsed$valid_json) "ok" else "invalid_json",
-    response_text = response_text,
-    parsed = parsed$parsed,
-    elapsed_seconds = elapsed,
-    input_tokens = token_value("promptTokenCount"),
-    output_tokens = token_value("candidatesTokenCount"),
-    thoughts_tokens = token_value("thoughtsTokenCount"),
-    total_tokens = token_value("totalTokenCount"),
-    finish_reason = finish_reason,
-    error = if (parsed$valid_json) {
-      NULL
-    } else if (identical(finish_reason, "MAX_TOKENS")) {
-      "Gemini reached maxOutputTokens before completing the JSON response."
-    } else {
-      "Response was not valid JSON."
-    }
   )
 }
