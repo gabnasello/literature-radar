@@ -14,7 +14,7 @@ journals <- site_visible_journals(site$journals)
 cat('<ul class="journal-list">')
 for (journal in journals) {
   latest <- journal$latest_report
-  update_date <- site_format_date(substr(latest$generated_at_utc, 1, 10))
+  update_date <- paste0("Updated ", site_format_date(substr(latest$generated_at_utc, 1, 10)))
   cat(sprintf(
     '<li><a href="journals/%s.html">%s</a><span class="journal-update">%s</span></li>',
     site_html_escape(site_slug(journal$id)),
