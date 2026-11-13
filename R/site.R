@@ -264,13 +264,33 @@ load_literature_site_data <- function(root = ".") {
       id
     }
     enabled <- length(configured_match) > 0L && isTRUE(configured_match[[1]]$enabled)
+    summary_count <- if (length(historical_reports)) {
+      sum(vapply(historical_reports, function(x) {
+        if (is.null(x$summary_count)) 0L else as.integer(x$summary_count)
+      }, integer(1)))
+    } else {
+      0L
+    }
+    summary_times <- if (length(historical_reports)) {
+      vapply(historical_reports, function(x) site_text(x$latest_summary_at), character(1))
+    } else {
+      character()
+    }
+    summary_times <- summary_times[nzchar(summary_times)]
+    latest_summary_at <- if (length(summary_times)) {
+      summary_times[[which.max(vapply(summary_times, site_timestamp_order, numeric(1)))]]
+    } else {
+      ""
+    }
     list(
       id = id,
       name = journal_name,
       enabled = enabled,
       configured = length(configured_match) > 0L,
       reports = historical_reports,
-      latest_report = if (length(historical_reports)) historical_reports[[1]] else NULL
+      latest_report = if (length(historical_reports)) historical_reports[[1]] else NULL,
+      summary_count = as.integer(summary_count),
+      latest_summary_at = latest_summary_at
     )
   })
 
@@ -399,55 +419,27 @@ site_render_paper_card <- function(article) {
   cat("</article>")
 }
 
-site_render_journal_page <- function(site, journal_id) {
-  matches <- Filter(function(x) identical(x$id, journal_id), site$journals)
-  if (!length(matches)) {
-    cat("<p>No update history is available.</p>")
-    return(invisible(NULL))
-  }
-  journal <- matches[[1]]
-  cat(sprintf("<h1>%s</h1>", site_html_escape(journal$name)))
-  if (isTRUE(journal$enabled)) {
-    cat('<p class="journal-status monitoring">Monitoring</p>')
-  } else {
-    cat('<p class="journal-status inactive">Archived</p>')
-  }
+site_visible_journals <- function(journals) {
+  visible <- Filter(function(journal) {
+    !is.null(journal$latest_report) &&
+      !is.null(journal$summary_count) &&
+      as.integer(journal$summary_count) > 0L
+  }, journals)
+  if (length(visible) < 2L) return(visible)
 
-  if (!length(journal$reports)) {
-    cat("<p>No updates yet.</p>")
-    return(invisible(NULL))
-  }
-
-  cat("<h2>Updates</h2>")
-  for (report in journal$reports) {
-    report_slug <- site_slug(report$report_id)
-    update_date <- site_format_date(substr(report$generated_at_utc, 1, 10))
-    window <- paste(site_format_date(report$start_date), "–", site_format_date(report$end_date))
-    summary_progress <- if (report$summarisable_count > 0L) {
-      sprintf("%d/%d summarized", report$summary_count, report$summarisable_count)
-    } else {
-      "No abstracts"
-    }
-    detail <- sprintf("PubMed Create Date: %s · %d papers · %s",
-                      window, report$article_count, summary_progress)
-    cat(sprintf(
-      '<article class="update-card"><h3><a href="../updates/%s.html">Update · %s</a></h3><p class="update-meta">%s</p></article>',
-      site_html_escape(report_slug), site_html_escape(update_date), site_html_escape(detail)
-    ))
-  }
-  invisible(NULL)
+  update_times <- vapply(visible, function(journal) {
+    site_timestamp_order(journal$latest_report$generated_at_utc)
+  }, numeric(1))
+  names <- vapply(visible, function(journal) site_text(journal$name), character(1))
+  visible[order(-update_times, names)]
 }
 
-site_render_update_page <- function(site, report_id) {
-  matches <- Filter(function(x) identical(x$report_id, report_id), site$reports)
-  if (!length(matches)) {
-    cat("<p>This update could not be found.</p>")
-    return(invisible(NULL))
+site_render_report_content <- function(report, show_journal_link = FALSE) {
+  if (isTRUE(show_journal_link)) {
+    cat(sprintf('<p><a href="../journals/%s.html">← %s</a></p>',
+                site_html_escape(site_slug(report$journal_id)),
+                site_html_escape(report$journal_name)))
   }
-  report <- matches[[1]]
-  cat(sprintf("<h1>%s</h1>", site_html_escape(report$journal_name)))
-  cat(sprintf('<p><a href="../journals/%s.html">← Journal updates</a></p>',
-              site_html_escape(site_slug(report$journal_id))))
 
   summary_progress <- if (report$summarisable_count > 0L) {
     sprintf("%d/%d summarized", report$summary_count, report$summarisable_count)
@@ -481,4 +473,49 @@ site_render_update_page <- function(site, report_id) {
     for (article in no_abstract) site_render_paper_card(article)
   }
   invisible(NULL)
+}
+
+site_render_journal_page <- function(site, journal_id) {
+  matches <- Filter(function(x) identical(x$id, journal_id), site$journals)
+  if (!length(matches)) {
+    cat("<p>No update history is available.</p>")
+    return(invisible(NULL))
+  }
+  journal <- matches[[1]]
+  if (!length(journal$reports)) {
+    return(invisible(NULL))
+  }
+
+  # Show the newest report immediately; keep the older report links collapsed.
+  site_render_report_content(journal$reports[[1]])
+
+  older_reports <- if (length(journal$reports) > 1L) journal$reports[-1] else list()
+  if (length(older_reports)) {
+    cat(sprintf(
+      '<details class="older-updates"><summary>Other and older updates (%d)</summary><div class="older-update-list">',
+      length(older_reports)
+    ))
+    for (report in older_reports) {
+      report_slug <- site_slug(report$report_id)
+      update_date <- site_format_date(substr(report$generated_at_utc, 1, 10))
+      window <- paste(site_format_date(report$start_date), "–", site_format_date(report$end_date))
+      detail <- sprintf("PubMed Create Date: %s · %d papers · %d summaries",
+                        window, report$article_count, report$summary_count)
+      cat(sprintf(
+        '<article class="update-card"><h3><a href="../updates/%s.html">%s</a></h3><p class="update-meta">%s</p></article>',
+        site_html_escape(report_slug), site_html_escape(update_date), site_html_escape(detail)
+      ))
+    }
+    cat("</div></details>")
+  }
+  invisible(NULL)
+}
+
+site_render_update_page <- function(site, report_id) {
+  matches <- Filter(function(x) identical(x$report_id, report_id), site$reports)
+  if (!length(matches)) {
+    cat("<p>This update could not be found.</p>")
+    return(invisible(NULL))
+  }
+  site_render_report_content(matches[[1]], show_journal_link = TRUE)
 }
