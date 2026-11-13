@@ -5,7 +5,7 @@ test_that("empty and placeholder summary fields are suppressed", {
   expect_equal(summary_values(list(summary = "A real finding."), "summary"), "A real finding.")
 })
 
-test_that("site data joins paper records, retrieval reports, and successful summaries", {
+test_that("site data joins papers, immutable reports, and successful summaries", {
   root <- tempfile("literature-radar-site-")
   dir.create(file.path(root, "data", "papers"), recursive = TRUE)
   dir.create(file.path(root, "data", "benchmarks", "run-1"), recursive = TRUE)
@@ -71,5 +71,29 @@ test_that("site data joins paper records, retrieval reports, and successful summ
   expect_equal(site$summary_count, 1L)
   expect_equal(site$papers[[1]]$journal_name, "Test Journal")
   expect_equal(site$papers[[1]]$summary$parsed$summary, "A generated summary.")
+  expect_equal(site$reports[[1]]$article_count, 1L)
+  expect_equal(site$reports[[1]]$summary_count, 1L)
+  expect_equal(site$reports[[1]]$articles[[1]]$summary$parsed$summary, "A generated summary.")
   expect_equal(site$journals[[1]]$latest_report$report_id, "test-report")
+  expect_length(site$journals[[1]]$reports, 1L)
+
+  # Removing a journal from the monitoring configuration must not remove its archive.
+  writeLines("journals: []\n", file.path(root, "config", "journals.yml"))
+  archived_site <- load_literature_site_data(root)
+  expect_length(archived_site$journals, 1L)
+  expect_equal(archived_site$journals[[1]]$id, "test-journal")
+  expect_false(archived_site$journals[[1]]$configured)
+  expect_false(archived_site$journals[[1]]$enabled)
+  expect_equal(archived_site$journals[[1]]$latest_report$report_id, "test-report")
+})
+
+test_that("summarization queue excludes only successfully summarized papers", {
+  records <- list(
+    list(pmid = "100", title = "Already done"),
+    list(pmid = "200", title = "Needs summary"),
+    list(pmid = "300", title = "Failed before")
+  )
+  pending <- pending_summarization_articles(records, completed_pmids = "100")
+  expect_equal(vapply(pending, function(x) x$pmid, character(1)), c("200", "300"))
+  expect_length(pending_summarization_articles(list(), character()), 0L)
 })

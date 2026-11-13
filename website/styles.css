@@ -26,7 +26,8 @@ body {
 }
 
 .stat-card,
-.journal-tile {
+.journal-tile,
+.update-card {
   border: 1px solid var(--radar-line);
   border-radius: 12px;
   background: white;
@@ -43,7 +44,8 @@ body {
 .stat-label,
 .last-updated,
 .paper-meta,
-.ai-note {
+.ai-note,
+.update-meta {
   color: var(--radar-muted);
   font-size: 0.9rem;
 }
@@ -54,7 +56,7 @@ body {
 
 .journal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 0.9rem;
   margin: 1rem 0 2rem;
 }
@@ -65,10 +67,46 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.journal-tile h3 a,
+.update-card h3 a {
+  color: var(--radar-accent);
+  text-decoration: none;
+}
+
+.journal-tile h3 a:hover,
+.update-card h3 a:hover {
+  text-decoration: underline;
+}
+
 .journal-tile p {
   color: var(--radar-muted);
   font-size: 0.9rem;
-  min-height: 2.5rem;
+  min-height: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.journal-progress {
+  font-weight: 600;
+}
+
+.journal-status {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  margin: 0.15rem 0 0.7rem;
+}
+
+.journal-status.monitoring {
+  color: #176044;
+  background: #e8f5ee;
+}
+
+.journal-status.inactive {
+  color: #667085;
+  background: #f0f2f5;
 }
 
 .journal-section {
@@ -76,16 +114,18 @@ body {
   scroll-margin-top: 5rem;
 }
 
-.journal-section h2 {
-  border-bottom: 1px solid var(--radar-line);
-  padding-bottom: 0.55rem;
+.update-card {
+  margin: 0.9rem 0;
 }
 
-.paper-count {
-  color: var(--radar-muted);
-  font-size: 0.9rem;
-  font-weight: 400;
-  margin-left: 0.35rem;
+.update-card h3 {
+  font-size: 1.08rem;
+  line-height: 1.45;
+  margin: 0 0 0.45rem;
+}
+
+.update-card p {
+  margin: 0.3rem 0;
 }
 
 .paper-card {
@@ -150,6 +190,16 @@ body {
   margin-bottom: 0.2rem;
 }
 
+.summary-pending,
+.summary-progress {
+  color: #8a5a12;
+  background: #fff8e8;
+  border-left: 3px solid #d9a441;
+  border-radius: 0 6px 6px 0;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.9rem;
+}
+
 .abstract-details {
   margin-top: 0.8rem;
   border-top: 1px solid var(--radar-line);
@@ -170,4 +220,14 @@ body {
 .ai-note {
   font-size: 0.8rem;
   margin: 0.75rem 0 0;
+}
+
+@media (max-width: 576px) {
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card {
+    padding: 0.9rem;
+  }
 }

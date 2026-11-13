@@ -7,6 +7,8 @@ renv/library/
 renv/staging/
 .DS_Store
 
-# Quarto website build output
+# Quarto website build output and generated journal/update pages
 .quarto/
 website/_site/
+website/journals/*.qmd
+website/updates/*.qmd

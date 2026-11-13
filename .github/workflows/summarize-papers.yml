@@ -1,0 +1,106 @@
+name: Automatic paper summaries
+
+on:
+  workflow_run:
+    workflows: ["Weekly PubMed retrieval"]
+    types: [completed]
+  schedule:
+    # Continue processing the backlog in small batches until every abstract is summarized.
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: Number of papers to summarize in this run
+        required: false
+        default: "24"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: literature-radar-summarization
+  cancel-in-progress: false
+
+jobs:
+  summarize:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libuv1-dev
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install and verify R dependencies
+        run: |
+          Rscript -e 'packages <- c("httr2", "jsonlite", "yaml", "testthat"); missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) install.packages(missing, repos = "https://cloud.r-project.org"); missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) stop("Failed to install required R packages: ", paste(missing, collapse = ", "))'
+
+      - name: Run unit tests
+        run: Rscript tests/testthat.R
+
+      - name: Check summarization queue
+        id: queue
+        run: |
+          pending=$(Rscript -e 'for (f in sort(list.files("R", pattern="\\.R$", full.names=TRUE))) source(f); records <- tryCatch(read_benchmark_articles("."), error=function(e) list()); completed <- read_completed_summary_pmids("."); cat(length(pending_summarization_articles(records, completed)))')
+          echo "pending_count=$pending" >> "$GITHUB_OUTPUT"
+          echo "Papers waiting for summaries: $pending"
+
+      - name: Install Ollama
+        if: steps.queue.outputs.pending_count != '0'
+        run: curl -fsSL https://ollama.com/install.sh | sh
+
+      - name: Cache Ollama model
+        if: steps.queue.outputs.pending_count != '0'
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-${{ runner.os }}-${{ hashFiles('config/llm.yml') }}
+          restore-keys: |
+            ollama-${{ runner.os }}-
+
+      - name: Start Ollama and download model
+        if: steps.queue.outputs.pending_count != '0'
+        env:
+          OLLAMA_CONTEXT_LENGTH: "4096"
+          OLLAMA_NUM_PARALLEL: "1"
+        run: |
+          nohup ollama serve > "$RUNNER_TEMP/ollama.log" 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null; then
+              break
+            fi
+            sleep 2
+          done
+          curl -fsS http://127.0.0.1:11434/api/tags >/dev/null
+          OLLAMA_MODEL=$(Rscript -e 'cat(yaml::read_yaml("config/llm.yml")$benchmark$ollama$model)')
+          ollama pull "$OLLAMA_MODEL"
+
+      - name: Summarize next batch
+        if: steps.queue.outputs.pending_count != '0'
+        env:
+          SUMMARIZATION_BATCH_SIZE: ${{ inputs.batch_size || '24' }}
+        run: Rscript scripts/run_summarization.R
+
+      - name: Commit summaries, including partial results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -d data/summaries ]; then git add data/summaries; fi
+          if git diff --cached --quiet; then
+            echo "No new summaries to commit."
+          else
+            git commit -m "chore: add automatic paper summaries $(date -u +%Y-%m-%d)"
+            git push
+          fi

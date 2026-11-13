@@ -4,19 +4,18 @@ title: "Overview"
 
 # Literature Radar
 
-A living overview of new research from selected journals, collected automatically from PubMed.
+A date-based archive of new papers from the journals you follow. Each journal has its own update history, and every update remains available even if that journal is no longer monitored.
 
 ~~~{r}
 source("../R/site.R")
 site <- load_literature_site_data("..")
-enabled_journals <- Filter(function(x) isTRUE(x$enabled), site$journals)
-~~~
+~~~ 
 
 ~~~{r, results='asis'}
 stats <- list(
   c(label = "Papers indexed", value = format(site$paper_count, big.mark = ",")),
-  c(label = "Journals monitored", value = as.character(length(enabled_journals))),
-  c(label = "Retrieval reports", value = as.character(site$report_count)),
+  c(label = "Journals in archive", value = as.character(length(site$journals))),
+  c(label = "Retrieval updates", value = as.character(site$report_count)),
   c(label = "AI summaries", value = as.character(site$summary_count))
 )
 cat('<div class="stats-grid">')
@@ -28,39 +27,67 @@ for (stat in stats) {
 }
 cat('</div>')
 if (nzchar(site$latest_update)) {
-  cat(sprintf('<p class="last-updated">Latest retrieval report: %s</p>', site_html_escape(site$latest_update)))
+  cat(sprintf(
+    '<p class="last-updated">Most recent update: %s</p>',
+    site_html_escape(site_format_timestamp(site$latest_update))
+  ))
 }
 ~~~
 
-## Journal monitoring
+## Journals
 
-The weekly retrieval process prioritizes journals with the oldest successful retrieval history. Three journals are normally processed per run; each journal has its own retrieval cursor.
+Select a journal to browse its update history. Updates are ordered by the date they were generated, with the newest first. Journals that are no longer monitored remain in the archive.
 
 ~~~{r, results='asis'}
 cat('<div class="journal-grid">')
-for (journal in enabled_journals) {
+for (journal in site$journals) {
   latest <- journal$latest_report
   if (is.null(latest)) {
-    report_line <- "No retrieval report yet"
+    update_line <- "No successful update yet"
+    window_line <- ""
+    progress_line <- ""
   } else {
-    report_line <- paste0(
-      "Latest window: ", latest$start_date, " to ", latest$end_date,
-      " · ", latest$new_count, " new papers"
+    update_line <- paste0("Last update: ", site_format_timestamp(latest$generated_at_utc))
+    window_line <- paste0(
+      "PubMed Create Date window: ",
+      site_format_date(latest$start_date), " – ", site_format_date(latest$end_date)
+    )
+    summary_date <- if (nzchar(latest$latest_summary_at)) {
+      site_format_timestamp(latest$latest_summary_at)
+    } else {
+      "Summaries pending"
+    }
+    progress_line <- paste0(
+      latest$article_count, " papers · ",
+      latest$summary_count, " summaries · latest summary: ", summary_date
     )
   }
-  anchor <- gsub("[^a-z0-9-]", "-", tolower(journal$id))
+
+  status <- if (isTRUE(journal$enabled)) {
+    '<span class="journal-status monitoring">Monitoring</span>'
+  } else {
+    '<span class="journal-status inactive">Not currently monitored</span>'
+  }
+  slug <- site_slug(journal$id)
   cat(sprintf(
-    '<article class="journal-tile"><h3>%s</h3><p>%s</p><a href="papers.html#%s">Browse papers</a></article>',
-    site_html_escape(journal$name), site_html_escape(report_line), site_html_escape(anchor)
+    paste0(
+      '<article class="journal-tile">',
+      '<h3><a href="journals/%s.html">%s</a></h3>',
+      '%s',
+      '<p>%s</p>',
+      '<p>%s</p>',
+      '<p class="journal-progress">%s</p>',
+      '<a href="journals/%s.html">View update history →</a>',
+      '</article>'
+    ),
+    site_html_escape(slug),
+    site_html_escape(journal$name),
+    status,
+    site_html_escape(update_line),
+    site_html_escape(window_line),
+    site_html_escape(progress_line),
+    site_html_escape(slug)
   ))
 }
 cat('</div>')
 ~~~
-
-## About the data
-
-- Records are retrieved from **PubMed** using PubMed Create Date, not publication date.
-- Retrieval reports are immutable; overlapping windows prevent missed records without repeating previously indexed PMIDs.
-- AI-generated summaries are available only for papers included in an Ollama summarization run. Other papers are shown with their original abstracts.
-
-Browse the [paper collection](papers.qmd) or inspect the [source repository](https://github.com/gabnasello/literature-radar).

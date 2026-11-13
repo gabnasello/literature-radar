@@ -2,20 +2,15 @@ project:
   type: website
   output-dir: _site
   execute-dir: project
-  render:
-    - index.qmd
-    - papers.qmd
 
 website:
   title: "Literature Radar"
   site-url: "https://gabnasello.github.io/literature-radar/"
-  description: "A continuously updated view of new papers from selected journals, collected through PubMed."
+  description: "A date-based archive of PubMed updates and AI-generated paper summaries from selected journals."
   navbar:
     left:
       - href: index.qmd
-        text: Overview
-      - href: papers.qmd
-        text: Papers
+        text: Journals
     right:
       - icon: github
         href: https://github.com/gabnasello/literature-radar
