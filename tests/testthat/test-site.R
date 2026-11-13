@@ -110,6 +110,34 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   expect_false(grepl("Limitations", rendered, fixed = TRUE))
   expect_equal(site$journals[[1]]$latest_report$report_id, "test-report")
   expect_length(site$journals[[1]]$reports, 1L)
+  expect_equal(site$journals[[1]]$summary_count, 1L)
+  expect_length(site_visible_journals(site$journals), 1L)
+
+  older_report <- list(
+    report_id = "older-report",
+    journal_id = "test-journal",
+    journal_name = "Test Journal",
+    generated_at_utc = "2026-10-01T10:00:00Z",
+    start_date = "2026-09-01",
+    end_date = "2026-10-01",
+    article_count = 0L,
+    summary_count = 0L,
+    summarisable_count = 0L,
+    articles = list()
+  )
+  site_with_history <- site
+  site_with_history$journals[[1]]$reports <- c(
+    site$journals[[1]]$reports,
+    list(older_report)
+  )
+  journal_rendered <- paste(
+    capture.output(site_render_journal_page(site_with_history, "test-journal")),
+    collapse = "\\n"
+  )
+  expect_match(journal_rendered, "A test paper", fixed = TRUE)
+  expect_match(journal_rendered, "Other and older updates (1)", fixed = TRUE)
+  expect_match(journal_rendered, "../updates/older-report.html", fixed = TRUE)
+  expect_false(grepl("<h2>Updates</h2>", journal_rendered, fixed = TRUE))
 
   # Removing a journal from the monitoring configuration must not remove its archive.
   writeLines("journals: []\n", file.path(root, "config", "journals.yml"))
@@ -145,4 +173,27 @@ test_that("publication dates support year-only and tolerate unknown formats", {
   expect_equal(site_format_date("2026-11-13"), "13 Nov 2026")
   expect_equal(site_format_date("2026/11/13"), "13 Nov 2026")
   expect_equal(site_format_date("Spring 2026"), "Spring 2026")
+})
+
+test_that("homepage journal list hides empty journals and sorts by latest update", {
+  journals <- list(
+    list(
+      id = "older", name = "Older Journal", summary_count = 1L,
+      latest_report = list(generated_at_utc = "2026-11-01T10:00:00Z")
+    ),
+    list(
+      id = "empty", name = "Empty Journal", summary_count = 0L,
+      latest_report = list(generated_at_utc = "2026-11-14T10:00:00Z")
+    ),
+    list(
+      id = "newer", name = "Newer Journal", summary_count = 2L,
+      latest_report = list(generated_at_utc = "2026-11-13T10:00:00Z")
+    )
+  )
+
+  visible <- site_visible_journals(journals)
+  expect_equal(
+    vapply(visible, `[[`, character(1), "id"),
+    c("newer", "older")
+  )
 })
