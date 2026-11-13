@@ -1,0 +1,63 @@
+name: Weekly PubMed retrieval
+
+on:
+  workflow_dispatch:
+    inputs:
+      journal_ids:
+        description: 'Optional comma-separated journal IDs (leave blank for automatic selection)'
+        required: false
+        type: string
+  schedule:
+    # Monday 08:15 UTC. GitHub may delay scheduled starts during high load.
+    - cron: '15 8 * * 1'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: literature-radar-retrieval
+  cancel-in-progress: false
+
+jobs:
+  retrieve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install R dependencies
+        run: Rscript -e 'install.packages(c("httr2", "jsonlite", "tibble", "dplyr", "stringr", "lubridate", "yaml", "purrr", "xml2", "glue", "cli", "testthat"), repos="https://cloud.r-project.org")'
+
+      - name: Run unit tests
+        run: Rscript tests/testthat.R
+
+      - name: Retrieve new PubMed records
+        env:
+          NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          JOURNAL_IDS: ${{ inputs.journal_ids }}
+        run: |
+          if [ -n "$JOURNAL_IDS" ]; then
+            IFS=',' read -ra IDS <<< "$JOURNAL_IDS"
+            Rscript scripts/run_retrieval.R "${IDS[@]}"
+          else
+            Rscript scripts/run_retrieval.R
+          fi
+
+      - name: Commit retrieval reports and state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/state data/papers reports
+          if git diff --cached --quiet; then
+            echo "No report or state changes to commit."
+          else
+            git commit -m "chore: add PubMed retrieval reports $(date -u +%Y-%m-%d)"
+            git push
+          fi
