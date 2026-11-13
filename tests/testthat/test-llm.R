@@ -87,7 +87,7 @@ test_that("summary Markdown omits empty fields and benchmark diagnostics", {
   report <- paste(readLines(output, warn = FALSE), collapse = "\n")
   expect_match(report, "A concise summary.", fixed = TRUE)
   expect_match(report, "- Finding one", fixed = TRUE)
-  expect_match(report, "**Relevance**", fixed = TRUE)
+  expect_false(grepl("**Relevance**", report, fixed = TRUE))
   expect_false(grepl("OLLAMA", report, fixed = TRUE))
   expect_false(grepl("Status:", report, fixed = TRUE))
   expect_false(grepl("Elapsed:", report, fixed = TRUE))

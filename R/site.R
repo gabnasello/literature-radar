@@ -30,6 +30,28 @@ summary_values <- function(parsed, field) {
   site_clean_values(parsed[[field]])
 }
 
+site_has_summary <- function(article) {
+  !is.null(article$summary) &&
+    !is.null(article$summary$parsed) &&
+    length(summary_values(article$summary$parsed, "summary")) > 0L
+}
+
+site_summary_preview <- function(x, max_words = 32L) {
+  value <- paste(site_clean_values(x), collapse = " ")
+  if (!nzchar(value)) return("")
+  words <- strsplit(value, "[[:space:]]+")[[1]]
+  if (length(words) <= max_words) return(value)
+  paste0(paste(words[seq_len(max_words)], collapse = " "), "…")
+}
+
+site_sort_report_articles <- function(articles) {
+  if (length(articles) < 2L) return(articles)
+  priority <- vapply(articles, function(article) {
+    if (site_has_summary(article)) 0L else if (site_has_abstract(article)) 1L else 2L
+  }, integer(1))
+  articles[order(priority, seq_along(articles))]
+}
+
 site_html_escape <- function(x) {
   x <- site_text(x)
   x <- gsub("&", "&amp;", x, fixed = TRUE)
@@ -193,10 +215,11 @@ load_literature_site_data <- function(root = ".") {
       )
       articles[[j]]$summary <- latest_summaries[[pmid]]
     }
+    articles <- site_sort_report_articles(articles)
     report_records[[i]]$articles <- articles
     report_records[[i]]$article_count <- length(articles)
     report_records[[i]]$summarisable_count <- sum(vapply(articles, site_has_abstract, logical(1)))
-    report_records[[i]]$summary_count <- sum(vapply(articles, function(x) !is.null(x$summary), logical(1)))
+    report_records[[i]]$summary_count <- sum(vapply(articles, site_has_summary, logical(1)))
     report_records[[i]]$pending_count <- max(
       0L,
       report_records[[i]]$summarisable_count - report_records[[i]]$summary_count
@@ -301,155 +324,102 @@ load_literature_site_data <- function(root = ".") {
 
 site_render_paper_card <- function(article) {
   title <- site_html_escape(site_text(article$title, "Untitled paper"))
-  pmid <- site_html_escape(article$pmid)
   pubmed_url <- site_safe_url(article$pubmed_url)
   doi_url <- site_safe_url(article$doi_url)
-  publication_date <- site_html_escape(site_text(article$publication_date))
+  publication_date <- site_html_escape(site_format_date(article$publication_date))
   authors <- article$authors
   if (is.list(authors)) authors <- unlist(authors, use.names = FALSE)
   authors <- as.character(authors)
   authors <- authors[!is.na(authors) & nzchar(authors)]
-  if (length(authors) > 5L) {
-    authors <- c(authors[1:5], paste0("and ", length(authors) - 5L, " more"))
-  }
-  author_text <- if (length(authors)) paste(authors, collapse = ", ") else ""
+  author_text <- if (!length(authors)) "" else if (length(authors) == 1L) authors[[1]] else paste0(authors[[1]], " et al.")
   abstract <- site_html_escape(site_text(article$abstract))
   summary <- article$summary
 
   cat('<article class="paper-card">')
   if (nzchar(pubmed_url)) {
-    cat(sprintf(
-      '<h3><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h3>',
-      site_html_escape(pubmed_url), title
-    ))
+    cat(sprintf('<h3><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h3>',
+                site_html_escape(pubmed_url), title))
   } else {
     cat(sprintf("<h3>%s</h3>", title))
   }
 
   metadata <- c(
     if (nzchar(author_text)) site_html_escape(author_text) else NULL,
-    if (nzchar(publication_date)) publication_date else NULL,
-    if (nzchar(pmid)) paste0("PMID ", pmid) else NULL
+    if (nzchar(publication_date) && publication_date != "Date unavailable") publication_date else NULL
   )
-  if (length(metadata)) {
-    cat(sprintf('<p class="paper-meta">%s</p>', paste(metadata, collapse = " · ")))
-  }
+  if (length(metadata)) cat(sprintf('<p class="paper-meta">%s</p>', paste(metadata, collapse = " · ")))
 
-  links <- c(
-    if (nzchar(pubmed_url)) sprintf(
-      '<a href="%s" target="_blank" rel="noopener noreferrer">PubMed</a>',
-      site_html_escape(pubmed_url)
-    ) else NULL,
-    if (nzchar(doi_url)) sprintf(
-      '<a href="%s" target="_blank" rel="noopener noreferrer">DOI</a>',
-      site_html_escape(doi_url)
-    ) else NULL
-  )
-  if (length(links)) cat(sprintf('<p class="paper-links">%s</p>', paste(links, collapse = " · ")))
-
-  if (!is.null(summary) && !is.null(summary$parsed)) {
+  if (site_has_summary(article)) {
     parsed <- summary$parsed
-    summary_text <- summary_values(parsed, "summary")
-    if (length(summary_text)) {
-      cat(sprintf(
-        '<div class="ai-summary"><div class="section-label">AI summary</div><p>%s</p></div>',
-        site_html_escape(paste(summary_text, collapse = " "))
-      ))
-    }
+    summary_text <- paste(summary_values(parsed, "summary"), collapse = " ")
+    cat(sprintf('<p class="ai-preview">%s</p>', site_html_escape(site_summary_preview(summary_text))))
+    cat('<details class="paper-details"><summary>More details</summary><div class="paper-expanded">')
+    cat(sprintf('<p class="full-ai-summary">%s</p>', site_html_escape(summary_text)))
+
     findings <- summary_values(parsed, "key_findings")
     if (length(findings)) {
-      cat('<div class="summary-section"><div class="section-label">Key findings</div><ul>')
+      cat('<h4>Key findings</h4><ul class="key-findings">')
       for (finding in findings) cat(sprintf("<li>%s</li>", site_html_escape(finding)))
-      cat("</ul></div>")
+      cat("</ul>")
     }
-    fields <- list(
-      "Study type" = "study_type",
-      "Relevance to biomaterials and regenerative medicine" = "relevance_to_biomaterials_and_regenerative_medicine",
-      "Limitations / unknowns" = "limitations_or_unknowns"
-    )
-    for (heading in names(fields)) {
-      values <- summary_values(parsed, fields[[heading]])
-      if (length(values)) {
-        cat(sprintf(
-          '<div class="summary-section"><div class="section-label">%s</div><p>%s</p></div>',
-          site_html_escape(heading), site_html_escape(paste(values, collapse = "; "))
-        ))
-      }
-    }
-    if (nzchar(abstract)) {
-      cat(sprintf(
-        '<details class="abstract-details"><summary>Original abstract</summary><p>%s</p></details>',
-        abstract
-      ))
-    }
-    summarized_at <- site_format_timestamp(summary$generated_at_utc)
-    cat(sprintf(
-      '<p class="ai-note">AI-generated from the PubMed abstract · %s · Verify important details against the original paper.</p>',
-      site_html_escape(summarized_at)
-    ))
-  } else if (site_has_abstract(article)) {
-    cat('<p class="summary-pending">AI summary pending.</p>')
-    cat(sprintf(
-      '<details class="abstract-details"><summary>Original abstract</summary><p>%s</p></details>',
-      abstract
-    ))
-  } else {
-    cat('<p class="summary-pending">No PubMed abstract is available for summarization.</p>')
-  }
 
+    study_type <- summary_values(parsed, "study_type")
+    if (length(study_type)) {
+      cat(sprintf('<p class="detail-line"><strong>Study design:</strong> %s</p>',
+                  site_html_escape(paste(study_type, collapse = "; "))))
+    }
+
+    if (nzchar(abstract)) {
+      cat(sprintf('<details class="abstract-details"><summary>Original abstract</summary><p>%s</p></details>', abstract))
+    }
+    if (nzchar(doi_url)) {
+      cat(sprintf('<p class="paper-links"><a href="%s" target="_blank" rel="noopener noreferrer">DOI</a></p>',
+                  site_html_escape(doi_url)))
+    }
+    cat("</div></details>")
+  } else if (site_has_abstract(article)) {
+    cat('<p class="summary-status pending">AI summary pending</p>')
+    cat(sprintf('<details class="abstract-details"><summary>Read original abstract</summary><p>%s</p></details>', abstract))
+  } else {
+    cat('<p class="summary-status unavailable">No abstract available</p>')
+  }
   cat("</article>")
 }
 
 site_render_journal_page <- function(site, journal_id) {
   matches <- Filter(function(x) identical(x$id, journal_id), site$journals)
   if (!length(matches)) {
-    cat("<p>This journal has no indexed retrieval history.</p>")
+    cat("<p>No update history is available.</p>")
     return(invisible(NULL))
   }
   journal <- matches[[1]]
   cat(sprintf("<h1>%s</h1>", site_html_escape(journal$name)))
   if (isTRUE(journal$enabled)) {
-    cat("<p class='journal-status monitoring'>Currently monitored</p>")
+    cat('<p class="journal-status monitoring">Monitoring</p>')
   } else {
-    cat("<p class='journal-status inactive'>Not currently monitored. Historical updates remain available.</p>")
+    cat('<p class="journal-status inactive">Archived</p>')
   }
 
   if (!length(journal$reports)) {
-    cat("<p>No successful retrieval update is available yet.</p>")
+    cat("<p>No updates yet.</p>")
     return(invisible(NULL))
   }
 
-  cat("<h2>Update history</h2>")
-  cat("<p>Updates are listed by the date they were generated, newest first. Open an update to see every paper retrieved in that reporting window.</p>")
+  cat("<h2>Updates</h2>")
   for (report in journal$reports) {
     report_slug <- site_slug(report$report_id)
-    generated <- site_format_timestamp(report$generated_at_utc)
+    update_date <- site_format_date(substr(report$generated_at_utc, 1, 10))
     window <- paste(site_format_date(report$start_date), "–", site_format_date(report$end_date))
-    progress <- sprintf("%d of %d papers summarized",
-                        report$summary_count, report$summarisable_count)
-    if (report$summarisable_count == 0L) progress <- "No abstracts available to summarize"
-    summary_date <- if (nzchar(report$latest_summary_at)) {
-      paste0("Latest summary: ", site_format_timestamp(report$latest_summary_at))
+    summary_progress <- if (report$summarisable_count > 0L) {
+      sprintf("%d/%d summarized", report$summary_count, report$summarisable_count)
     } else {
-      "Summaries not generated yet"
+      "No abstracts"
     }
+    detail <- sprintf("PubMed Create Date: %s · %d papers · %s",
+                      window, report$article_count, summary_progress)
     cat(sprintf(
-      paste0(
-        '<article class="update-card">',
-        '<h3><a href="../updates/%s.html">Update · %s</a></h3>',
-        '<p class="paper-meta">Generated %s</p>',
-        '<p>PubMed Create Date window: %s</p>',
-        '<p>%d papers · %s</p>',
-        '<p class="paper-meta">%s</p>',
-        '</article>'
-      ),
-      site_html_escape(report_slug),
-      site_html_escape(site_format_date(substr(report$generated_at_utc, 1, 10))),
-      site_html_escape(generated),
-      site_html_escape(window),
-      report$article_count,
-      site_html_escape(progress),
-      site_html_escape(summary_date)
+      '<article class="update-card"><h3><a href="../updates/%s.html">Update · %s</a></h3><p class="update-meta">%s</p></article>',
+      site_html_escape(report_slug), site_html_escape(update_date), site_html_escape(detail)
     ))
   }
   invisible(NULL)
@@ -463,37 +433,39 @@ site_render_update_page <- function(site, report_id) {
   }
   report <- matches[[1]]
   cat(sprintf("<h1>%s</h1>", site_html_escape(report$journal_name)))
-  cat(sprintf(
-    '<p><a href="../journals/%s.html">Back to %s updates</a></p>',
-    site_html_escape(site_slug(report$journal_id)),
-    site_html_escape(report$journal_name)
-  ))
-  cat(sprintf(
-    '<p class="update-meta">Generated %s</p>',
-    site_html_escape(site_format_timestamp(report$generated_at_utc))
-  ))
-  cat(sprintf(
-    '<p class="update-meta">PubMed Create Date window: %s – %s</p>',
-    site_html_escape(site_format_date(report$start_date)),
-    site_html_escape(site_format_date(report$end_date))
-  ))
-  cat(sprintf(
-    '<p class="update-meta">%d papers · %d of %d with abstracts summarized</p>',
-    report$article_count, report$summary_count, report$summarisable_count
-  ))
-  if (nzchar(report$latest_summary_at)) {
-    cat(sprintf(
-      '<p class="update-meta">Latest summary generated %s</p>',
-      site_html_escape(site_format_timestamp(report$latest_summary_at))
-    ))
+  cat(sprintf('<p><a href="../journals/%s.html">← Journal updates</a></p>',
+              site_html_escape(site_slug(report$journal_id))))
+
+  summary_progress <- if (report$summarisable_count > 0L) {
+    sprintf("%d/%d summarized", report$summary_count, report$summarisable_count)
+  } else {
+    "No abstracts"
   }
-  if (report$pending_count > 0L) {
-    cat(sprintf(
-      '<p class="summary-progress">%d paper summaries are still pending. This page will fill in as the summarization queue progresses.</p>',
-      report$pending_count
-    ))
+  update_meta <- sprintf(
+    "Updated %s · PubMed Create Date %s – %s · %d papers · %s",
+    site_format_date(substr(report$generated_at_utc, 1, 10)),
+    site_format_date(report$start_date), site_format_date(report$end_date),
+    report$article_count, summary_progress
+  )
+  cat(sprintf('<p class="update-meta">%s</p>', site_html_escape(update_meta)))
+
+  articles <- report$articles
+  summarized <- Filter(site_has_summary, articles)
+  awaiting <- Filter(function(article) !site_has_summary(article) && site_has_abstract(article), articles)
+  no_abstract <- Filter(function(article) !site_has_summary(article) && !site_has_abstract(article), articles)
+  mixed <- length(summarized) > 0L && (length(awaiting) + length(no_abstract) > 0L)
+
+  if (length(summarized)) {
+    if (mixed) cat("<h2>AI summaries</h2>")
+    for (article in summarized) site_render_paper_card(article)
   }
-  cat("<hr>")
-  for (article in report$articles) site_render_paper_card(article)
+  if (length(awaiting)) {
+    cat("<h2>Awaiting AI summary</h2>")
+    for (article in awaiting) site_render_paper_card(article)
+  }
+  if (length(no_abstract)) {
+    if (length(awaiting) || mixed || length(summarized)) cat("<h2>No abstract</h2>")
+    for (article in no_abstract) site_render_paper_card(article)
+  }
   invisible(NULL)
 }

@@ -1,72 +1,40 @@
 ---
-title: "Overview"
+title: "Literature Radar"
 ---
 
-# Literature Radar
-
-A date-based archive of new papers from the journals you follow. Each journal has its own update history, and every update remains available even if that journal is no longer monitored.
+A compact archive of new PubMed papers from monitored journals.
 
 ```{r}
 source("../R/site.R")
 site <- load_literature_site_data("..")
 ```
 
-```{r, results='asis'}
-stats <- list(
-  c(label = "Papers indexed", value = format(site$paper_count, big.mark = ",")),
-  c(label = "Journals in archive", value = as.character(length(site$journals))),
-  c(label = "Retrieval updates", value = as.character(site$report_count)),
-  c(label = "AI summaries", value = as.character(site$summary_count))
-)
-cat('<div class="stats-grid">')
-for (stat in stats) {
-  cat(sprintf(
-    '<div class="stat-card"><div class="stat-value">%s</div><div class="stat-label">%s</div></div>',
-    site_html_escape(stat[["value"]]), site_html_escape(stat[["label"]])
-  ))
-}
-cat('</div>')
-if (nzchar(site$latest_update)) {
-  cat(sprintf(
-    '<p class="last-updated">Most recent update: %s</p>',
-    site_html_escape(site_format_timestamp(site$latest_update))
-  ))
-}
-```
-
 ## Journals
-
-Select a journal to browse its update history. Updates are ordered by the date they were generated, with the newest first. Journals that are no longer monitored remain in the archive.
 
 ```{r, results='asis'}
 cat('<div class="journal-grid">')
 for (journal in site$journals) {
   latest <- journal$latest_report
   if (is.null(latest)) {
-    update_line <- "No successful update yet"
-    window_line <- ""
-    progress_line <- ""
+    update_line <- "No updates yet"
+    summary_line <- "No AI summaries yet"
   } else {
-    update_line <- paste0("Last update: ", site_format_timestamp(latest$generated_at_utc))
-    window_line <- paste0(
-      "PubMed Create Date window: ",
-      site_format_date(latest$start_date), " – ", site_format_date(latest$end_date)
+    update_line <- paste0(
+      "Last update: ", site_format_date(substr(latest$generated_at_utc, 1, 10)),
+      " · ", latest$article_count, " papers"
     )
     summary_date <- if (nzchar(latest$latest_summary_at)) {
-      site_format_timestamp(latest$latest_summary_at)
+      site_format_date(substr(latest$latest_summary_at, 1, 10))
     } else {
-      "Summaries pending"
+      "Pending"
     }
-    progress_line <- paste0(
-      latest$article_count, " papers · ",
-      latest$summary_count, " summaries · latest summary: ", summary_date
-    )
+    summary_line <- paste0("Latest AI summary: ", summary_date)
   }
 
   status <- if (isTRUE(journal$enabled)) {
     '<span class="journal-status monitoring">Monitoring</span>'
   } else {
-    '<span class="journal-status inactive">Not currently monitored</span>'
+    '<span class="journal-status inactive">Archived</span>'
   }
   slug <- site_slug(journal$id)
   cat(sprintf(
@@ -76,17 +44,13 @@ for (journal in site$journals) {
       '%s',
       '<p>%s</p>',
       '<p>%s</p>',
-      '<p class="journal-progress">%s</p>',
-      '<a href="journals/%s.html">View update history →</a>',
       '</article>'
     ),
     site_html_escape(slug),
     site_html_escape(journal$name),
     status,
     site_html_escape(update_line),
-    site_html_escape(window_line),
-    site_html_escape(progress_line),
-    site_html_escape(slug)
+    site_html_escape(summary_line)
   ))
 }
 cat('</div>')

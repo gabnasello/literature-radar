@@ -2,7 +2,7 @@ benchmark:
   sample_size: 12
   seed: 20261113
   summarization_batch_size: 24
-  prompt_version: paper_summary_v1
+  prompt_version: paper_summary_v2
 
   ollama:
     model: qwen3:4b

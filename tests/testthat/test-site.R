@@ -22,11 +22,28 @@ test_that("site data joins papers, immutable reports, and successful summaries",
     title = "A test paper",
     abstract = "A test abstract.",
     journal = "Test Journal",
-    publication_date = "2026",
+    authors = list("First Author", "Second Author"),
+    publication_date = "2026-11-01",
     pubmed_url = "https://pubmed.ncbi.nlm.nih.gov/123/"
   )
+  pending_article <- list(
+    pmid = "124",
+    title = "Pending paper",
+    abstract = "An abstract awaiting a summary.",
+    journal = "Test Journal",
+    publication_date = "2026-10-20",
+    pubmed_url = "https://pubmed.ncbi.nlm.nih.gov/124/"
+  )
+  no_abstract_article <- list(
+    pmid = "125",
+    title = "No abstract paper",
+    abstract = "",
+    journal = "Test Journal",
+    publication_date = "2026-10-10",
+    pubmed_url = "https://pubmed.ncbi.nlm.nih.gov/125/"
+  )
   jsonlite::write_json(
-    list(article),
+    list(article, pending_article, no_abstract_article),
     file.path(root, "data", "papers", "papers.json"),
     auto_unbox = TRUE,
     pretty = TRUE
@@ -38,7 +55,7 @@ test_that("site data joins papers, immutable reports, and successful summaries",
     journal = list(id = "test-journal", name = "Test Journal"),
     retrieval_window = list(query_start_inclusive = "2026-10-14", end_inclusive = "2026-11-13"),
     search = list(new_count = 1, fetched_count = 1),
-    articles = list(article)
+    articles = list(pending_article, no_abstract_article, article)
   )
   jsonlite::write_json(
     report,
@@ -71,9 +88,21 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   expect_equal(site$summary_count, 1L)
   expect_equal(site$papers[[1]]$journal_name, "Test Journal")
   expect_equal(site$papers[[1]]$summary$parsed$summary, "A generated summary.")
-  expect_equal(site$reports[[1]]$article_count, 1L)
+  expect_equal(site$reports[[1]]$article_count, 3L)
   expect_equal(site$reports[[1]]$summary_count, 1L)
+  expect_equal(
+    vapply(site$reports[[1]]$articles, function(x) x$pmid, character(1)),
+    c("123", "124", "125")
+  )
   expect_equal(site$reports[[1]]$articles[[1]]$summary$parsed$summary, "A generated summary.")
+
+  rendered <- paste(capture.output(site_render_update_page(site, "test-report")), collapse = "\n")
+  expect_lt(regexpr("A test paper", rendered)[[1]], regexpr("Pending paper", rendered)[[1]])
+  expect_lt(regexpr("Pending paper", rendered)[[1]], regexpr("No abstract paper", rendered)[[1]])
+  expect_match(rendered, "More details", fixed = TRUE)
+  expect_match(rendered, "AI summary pending", fixed = TRUE)
+  expect_false(grepl("Relevance", rendered, fixed = TRUE))
+  expect_false(grepl("Limitations", rendered, fixed = TRUE))
   expect_equal(site$journals[[1]]$latest_report$report_id, "test-report")
   expect_length(site$journals[[1]]$reports, 1L)
 
@@ -85,6 +114,11 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   expect_false(archived_site$journals[[1]]$configured)
   expect_false(archived_site$journals[[1]]$enabled)
   expect_equal(archived_site$journals[[1]]$latest_report$report_id, "test-report")
+})
+
+test_that("summary previews are concise", {
+  expect_equal(site_summary_preview("One two three four five", max_words = 3L), "One two three…")
+  expect_equal(site_summary_preview("One two three", max_words = 3L), "One two three")
 })
 
 test_that("summarization queue excludes only successfully summarized papers", {
