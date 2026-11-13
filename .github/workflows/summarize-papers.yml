@@ -110,5 +110,7 @@ jobs:
             echo "No new summaries to commit."
           else
             git commit -m "chore: add automatic paper summaries $(date -u +%Y-%m-%d)"
-            git push
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
