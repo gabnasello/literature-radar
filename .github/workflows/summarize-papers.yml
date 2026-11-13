@@ -1,6 +1,13 @@
 name: Automatic paper summaries
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "R/summarize.R"
+      - "scripts/run_summarization.R"
+      - "config/llm.yml"
+      - "reports/**"
   workflow_run:
     workflows: ["Weekly PubMed retrieval"]
     types: [completed]
