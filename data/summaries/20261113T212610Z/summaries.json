@@ -1,0 +1,880 @@
+{
+  "schema_version": 1,
+  "run_id": "20261113T212610Z",
+  "generated_at_utc": "2026-11-13 21:45:35 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v2",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific: do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use this schema:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section or generic caveats.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 335,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42876208",
+        "title": "Thickness-Defined Transport Regime Toward Near-Ideal Area-Type Switching.",
+        "abstract": "NA: Area-type memristors are attractive for analog in-memory computing, but their use is often limited by parasitic charge storage, causing readout drift, non-pinched hysteresis, and degraded readout fidelity. We show that near-ideal area-type switching emerges within a tunneling-governed transport regime in ultrathin layers that suppresses charging-related readout artifacts. By varying the thickness in TiN/Ta2O5/Pt in a range of 3-10 nm, we reveal the transition from filamentary switching to near-short-circuit transport with two gradual-switching modes with different readout stability. The 5-6 nm thickness window suppresses non-pinched hysteresis and short-time drift while preserving analog switching, yielding nearly polarity-symmetric hysteresis and readout, clear area scaling, and continuous near-linear conductance modulation. Our analysis indicates that trap-assisted tunneling dominates the stabilized-state response, whereas ionic redistribution governs pristine-state reconstruction and the stability boundaries. A compact model is derived for the 5 nm device which reproduces the quasi-static I-V behavior and the dynamic resistance evolution based on pulse-width-dependent characteristics. The verified model is provided as Verilog-A code enabling simulation in circuit design tools. Our results demonstrate that ultrathin scaling is a regime-defining design rule for near-ideal area-type operation in oxide memristors, implying a fundamental approach to fabricating robust multi-state memristors for in-memory computing applications.",
+        "doi": "10.1002/adma.75393",
+        "doi_url": "https://doi.org/10.1002/adma.75393",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876208/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how ultrathin oxide memristors achieve near-ideal area-type switching by suppressing parasitic charge effects. Using TiN/Ta2O5/Pt layers (3-10 nm), researchers identified a 5-6 nm thickness window where tunneling-dominated transport minimizes readout drift and non-pinched hysteresis while maintaining analog switching. The findings reveal trap-assisted tunneling governs stabilized states, and ionic redistribution affects state reconstruction, enabling robust multi-state memristors for in-memory computing.\",\n  \"key_findings\": [\n    \"Ultrathin TiN/Ta2O5/Pt layers (5-6 nm) suppress non-pinched hysteresis and short-time drift\",\n    \"Trap-assisted tunneling dominates stabilized-state response in near-ideal switching\",\n    \"Ionic redistribution governs pristine-state reconstruction and stability boundaries\"\n  ],\n  \"study_type\": \"Device characterization and modeling\",\n  \"scientific_significance\": \"The study establishes ultrathin scaling as a fundamental design principle for achieving near-ideal area-type memristors, enabling robust multi-state operation with minimal parasitic effects for in-memory computing applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how ultrathin oxide memristors achieve near-ideal area-type switching by suppressing parasitic charge effects. Using TiN/Ta2O5/Pt layers (3-10 nm), researchers identified a 5-6 nm thickness window where tunneling-dominated transport minimizes readout drift and non-pinched hysteresis while maintaining analog switching. The findings reveal trap-assisted tunneling governs stabilized states, and ionic redistribution affects state reconstruction, enabling robust multi-state memristors for in-memory computing.",
+          "key_findings": [
+            "Ultrathin TiN/Ta2O5/Pt layers (5-6 nm) suppress non-pinched hysteresis and short-time drift",
+            "Trap-assisted tunneling dominates stabilized-state response in near-ideal switching",
+            "Ionic redistribution governs pristine-state reconstruction and stability boundaries"
+          ],
+          "study_type": "Device characterization and modeling",
+          "scientific_significance": "The study establishes ultrathin scaling as a fundamental design principle for achieving near-ideal area-type memristors, enabling robust multi-state operation with minimal parasitic effects for in-memory computing applications."
+        },
+        "elapsed_seconds": 65.662,
+        "input_tokens": 679,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 927,
+        "model_eval_seconds": 33.8362,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896418",
+        "title": "Spatial lipidome and transcriptome profiling reveals stratified lipid architecture in human articular cartilage.",
+        "abstract": "NA: Lipids, as a class of endogenous biomaterials, are essential for regulating tissue properties and homeostasis. Articular cartilage is an anisotropic tissue that exhibits spatially organized tissue functions and lipid metabolism, and its microenvironment is sensitive to lipid-mediated regulation. However, the spatial lipid composition and its functional significance in cartilage pathophysiology remain elusive. In this study, we performed spatial lipidomic and transcriptomic analyses on healthy and diseased human articular cartilage. We demonstrate a layer-dependent lipid composition mainly in the extracellular matrix and chondrocyte region, and the stratified lipid architecture aligns with region-specific gene expression and cellular phenotypes. The tissue near the cartilage surfaces is enriched with phospholipids and genes relevant to matrix secretion and lipid transport, whereas the tissue adjacent to subchondral bone, is featured by lyso-phospholipids and genes related to biomineralization. Moreover, we highlight ceramide (CER)'s role in mediating chondrocyte secretion and its potential protective function in early osteoarthritis (OA), suggesting that location-specific lipid diversity may contribute to the regulation of cartilage function. This study not only advances understanding of cartilage pathophysiology, but also provides a material-level blueprint for developing more biomimetic cartilage engineering strategies.",
+        "doi": "10.1016/j.biomaterials.2026.124703",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124703",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896418/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used spatial lipidomics and transcriptomics to investigate lipid composition in human articular cartilage across healthy and diseased states. It revealed layer-dependent lipid distributions, with surface regions enriched in phospholipids and subchondral regions enriched in lyso-phospholipids, correlating with region-specific gene expression. The findings suggest ceramide's role in chondrocyte function and potential protective effects in early osteoarthritis.\",\n  \"key_findings\": [\n    \"Surface cartilage layers show phospholipid enrichment linked to matrix secretion genes\",\n    \"Subchondral regions feature lyso-ph:lipids associated with biomineralization genes\",\n    \"Ceramide mediates chondrocyte secretion and may protect against early osteoarthritis\"\n  ],\n  \"study_type\": \"Spatial lipidomic and transcriptomic analysis\",\n  \"scientific_significance\": \"The study establishes a spatial lipid architecture in cartilage that correlates with functional gene expression, providing a material basis for biomimetic cartilage engineering strategies.\"\n}",
+        "parsed": {
+          "summary": "This study used spatial lipidomics and transcriptomics to investigate lipid composition in human articular cartilage across healthy and diseased states. It revealed layer-dependent lipid distributions, with surface regions enriched in phospholipids and subchondral regions enriched in lyso-phospholipids, correlating with region-specific gene expression. The findings suggest ceramide's role in chondrocyte function and potential protective effects in early osteoarthritis.",
+          "key_findings": [
+            "Surface cartilage layers show phospholipid enrichment linked to matrix secretion genes",
+            "Subchondral regions feature lyso-ph:lipids associated with biomineralization genes",
+            "Ceramide mediates chondrocyte secretion and may protect against early osteoarthritis"
+          ],
+          "study_type": "Spatial lipidomic and transcriptomic analysis",
+          "scientific_significance": "The study establishes a spatial lipid architecture in cartilage that correlates with functional gene expression, providing a material basis for biomimetic cartilage engineering strategies."
+        },
+        "elapsed_seconds": 44.6411,
+        "input_tokens": 650,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 872,
+        "model_eval_seconds": 31.0365,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42906537",
+        "title": "Contrasting demographic impacts of Roman colonization and early medieval migrations in the Iberian Peninsula.",
+        "abstract": "NA: It has been unclear how Roman and later Germanic political control shaped the demography of Iberia and how it differed from other parts of Europe. We report genetic data from 243 ancient individuals dating to 100-800 CE, analyzed alongside 58 previously published individuals. In Roman times, we document an influx of people with ancestry from the Eastern Mediterranean and an influx of North Africans, especially in the center and south. Beginning in the 5th century, Germanic and Alan (Sarmatian) groups assumed political control. Although we identify individuals with Central-Northern European-associated ancestry, including siblings buried ∼725 km apart, the Hispano-Roman population remained continuous in Iberia. These demographic patterns contrast sharply with those in Britain, where major demographic change followed Rome's collapse, and with those in the central Mediterranean, where both periods were associated with profound transformations. Together, these findings highlight regional variation in admixture and continuity across post-Roman Europe.",
+        "doi": "10.1016/j.cell.2026.09.052",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.052",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42906537/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the demographic impacts of Roman colonization and early medieval migrations on the Iberian Peninsula using ancient DNA from 243 individuals spanning 100-80. Genetic analysis reveals significant Eastern Mediterranean and North African ancestry during Roman rule, followed by Germanic and Alan influences post-5th century. The Hispano-Roman population maintained continuity despite political shifts, contrasting with Britain and the central Mediterranean where demographic changes were more pronounced.\",\n  \"key_findings\": [\n    \"Roman period: influx of Eastern Mediterranean and North African ancestry, particularly in central and southern Iberia\",\n    \"Early medieval period: Germanic and Alan (Sarmatian) groups gained political control starting in the 5th century\",\n    \"Hispano-Roman population maintained demographic continuity across Iberia despite political transitions\"\n  ],\n  \"study_type\": \"Ancient DNA analysis\",\n  \"scientific_significance\": \"The findings demonstrate regional variation in demographic continuity and admixture patterns across post-Roman Europe, highlighting how political transitions affected population structure differently than in other parts of Europe.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the demographic impacts of Roman colonization and early medieval migrations on the Iberian Peninsula using ancient DNA from 243 individuals spanning 100-80. Genetic analysis reveals significant Eastern Mediterranean and North African ancestry during Roman rule, followed by Germanic and Alan influences post-5th century. The Hispano-Roman population maintained continuity despite political shifts, contrasting with Britain and the central Mediterranean where demographic changes were more pronounced.",
+          "key_findings": [
+            "Roman period: influx of Eastern Mediterranean and North African ancestry, particularly in central and southern Iberia",
+            "Early medieval period: Germanic and Alan (Sarmatian) groups gained political control starting in the 5th century",
+            "Hispano-Roman population maintained demographic continuity across Iberia despite political transitions"
+          ],
+          "study_type": "Ancient DNA analysis",
+          "scientific_significance": "The findings demonstrate regional variation in demographic continuity and admixture patterns across post-Roman Europe, highlighting how political transitions affected population structure differently than in other parts of Europe."
+        },
+        "elapsed_seconds": 41.6086,
+        "input_tokens": 579,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 807,
+        "model_eval_seconds": 31.1444,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876209",
+        "title": "Solvation-Equilibrium Locking Enables Ultrawide-Temperature Operation of High-Voltage Lithium-Metal Batteries.",
+        "abstract": "NA: High-energy lithium metal batteries are promising for space, polar, deep-sea, and other extreme environments, but their operation is constrained by temperature-sensitive ion transport, Li+ solvation, and interfacial chemistry. A solvation-equilibrium-locked electrolyte (SELE) is reported by combining dimethyl sulfite (DMS), a low-freezing weakly solvating solvent, with Pyr13DFOB (1-methyl-1-propylpyrrolidinium difluoro(oxalato)borate) as an ionic-liquid co-solvent. Cooperative ion-dipole and weak C-H⋯O interactions between DMS and Pyr13 + regulate the free-solvent reservoir, while TFSI- (bis(trifluoromethanesulfonyl)imide) and DFOB- enrich the primary Li+ coordination shell. Variable-temperature 7Li NMR, Raman, and molecular dynamics simulations show that solvent-separated ion pairs, contact ion pairs, and aggregates remain nearly invariant from -60°C to 60°C, unlike the strongly temperature-responsive Pyr13DFOB-free electrolyte. This locked anion-rich solvation structure reduces solvent coordination around Li+, mitigates solvent-derived interfacial decomposition and gas evolution, and promotes LiF- and borate-rich interphases on Li metal and NMC811. Consequently, Li||NMC811 cells deliver discharge capacity at -85°C and operate up to 120°C, while pouch cells remain functional after cooling to -122.9°C. A 6.6 Ah Li||Ni90 pouch cell further achieves 565 Wh kg-1 under lean-electrolyte conditions, establishing solvation-equilibrium locking as a molecular design principle for lithium metal batteries operating over a broad temperature range.",
+        "doi": "10.1002/adma.75409",
+        "doi_url": "https://doi.org/10.1002/adma.75409",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876209/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing high-voltage lithium-metal batteries' temperature resilience by designing an electrolyte with solvation-equilibrium locking. Using dimethyl sulfite and Pyr13DFOB, the researchers created an electrolyte that maintains stable ion solvation structures from -60°C to 60°C, preventing thermal degradation. The resulting batteries operate effectively at extreme temperatures, including -85°C and 120°C, with high energy density under lean conditions.\",\n  \"key_findings\": [\n    \"Solvation-equilibrium-locked electrolyte maintains stable solvent-separated ion pairs and contact ion pairs across a wide temperature range (-60°C to 60°C).\",\n    \"The electrolyte reduces solvent coordination around Li+, minimizing interfacial decomposition and gas evolution at extreme temperatures.\",\n    \"Li||NMC811 cells achieve discharge capacity at -85°C and operate up to 120°C, with pouch cells remaining functional down to -122.9°C.\"\n  ],\n  \"study_type\": \"Electrolyte design with molecular dynamics simulations and in situ NMR/Raman analysis\",\n  \"scientific_significance\": \"This work establishes a molecular design strategy for lithium-metal batteries that enables ultrawide-temperature operation without compromising electrochemical stability, advancing the practical deployment of high-energy batteries in extreme environments.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing high-voltage lithium-metal batteries' temperature resilience by designing an electrolyte with solvation-equilibrium locking. Using dimethyl sulfite and Pyr13DFOB, the researchers created an electrolyte that maintains stable ion solvation structures from -60°C to 60°C, preventing thermal degradation. The resulting batteries operate effectively at extreme temperatures, including -85°C and 120°C, with high energy density under lean conditions.",
+          "key_findings": [
+            "Solvation-equilibrium-locked electrolyte maintains stable solvent-separated ion pairs and contact ion pairs across a wide temperature range (-60°C to 60°C).",
+            "The electrolyte reduces solvent coordination around Li+, minimizing interfacial decomposition and gas evolution at extreme temperatures.",
+            "Li||NMC811 cells achieve discharge capacity at -85°C and operate up to 120°C, with pouch cells remaining functional down to -122.9°C."
+          ],
+          "study_type": "Electrolyte design with molecular dynamics simulations and in situ NMR/Raman analysis",
+          "scientific_significance": "This work establishes a molecular design strategy for lithium-metal batteries that enables ultrawide-temperature operation without compromising electrochemical stability, advancing the practical deployment of high-energy batteries in extreme environments."
+        },
+        "elapsed_seconds": 60.6925,
+        "input_tokens": 771,
+        "output_tokens": 284,
+        "thoughts_tokens": null,
+        "total_tokens": 1055,
+        "model_eval_seconds": 41.7091,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896419",
+        "title": "Genetically engineering mast cells as effectors for targeted cancer cell cytotoxicity.",
+        "abstract": "NA: Type-I hypersensitivity is a mast cell-mediated degranulation process induced by IgE-antigen recognition. Inspired by this highly specific mechanism, we developed a new cell therapy platform by genetically engineering mouse mast cell line MC/9 to overexpress the cytotoxic proteins perforin and granzyme B (PG-MCs) via lentiviral transduction. In the melanoma model utilizing B16 cells expressing membrane-bound OVA, a polarized degranulation of mast cells towards cancer cells was validated upon the recognition of antigens by anti-OVA IgE. PG-MCs could selectively kill cancer cells via IgE-antigen recognition. The IgE-sensitized PG-MCs administered through an intertumoral route delivered perforin 1 (Prf1) and granzyme B (Gmzb) toward target cells to potentiate anti-tumor efficacy. Moreover, we demonstrated the reprogramming effect of tumor microenvironment by PG-MC-induced hypersensitivity, driving an immune remodeling of the tumor milieu, characterized by the increased lymphocyte infiltration. In addition, this mast cell therapy, in combination with 5- fluorouracil (5-Fu), induced a significant inhibition of tumor growth in a B16-OVA mouse model, which is associated with the depletion of myeloid-derived suppressor cells (MDSCs).",
+        "doi": "10.1016/j.biomaterials.2026.124699",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124699",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896419/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered mouse mast cells to express cytotoxic proteins (perforin and granzyme B) for targeted cancer cell killing via IgE-mediated recognition. In a melanoma model, these cells selectively lysed OVA-expressing cancer cells, induced immune remodeling with increased lymphocyte infiltration, and synergistically inhibited tumor growth when combined with 5-fluorouracil, reducing myeloid-derived suppressor cells.\",\n  \"key_findings\": [\n    \"Genetically engineered mast cells overexpress perforin and granzyme B for targeted cancer cell cytotoxicity via IgE-antigen recognition\",\n    \"PG-MCs induced immune remodeling with increased lymphocyte infiltration in the tumor microenvironment\",\n    \"Combination with 5-fluorouracil significantly inhibited tumor growth by depleting myeloid-derived suppressor cells\"\n  ],\n  \"study_type\": \"In vitro and in vivo mouse model\",\n  \"scientific_significance\": \"This work demonstrates a strategy for engineering mast cells as targeted cytotoxic effectors that can modulate the tumor microenvironment through IgE-mediated mechanisms, offering a potential platform for immunotherapy.\"\n}",
+        "parsed": {
+          "summary": "This study engineered mouse mast cells to express cytotoxic proteins (perforin and granzyme B) for targeted cancer cell killing via IgE-mediated recognition. In a melanoma model, these cells selectively lysed OVA-expressing cancer cells, induced immune remodeling with increased lymphocyte infiltration, and synergistically inhibited tumor growth when combined with 5-fluorouracil, reducing myeloid-derived suppressor cells.",
+          "key_findings": [
+            "Genetically engineered mast cells overexpress perforin and granzyme B for targeted cancer cell cytotoxicity via IgE-antigen recognition",
+            "PG-MCs induced immune remodeling with increased lymphocyte infiltration in the tumor microenvironment",
+            "Combination with 5-fluorouracil significantly inhibited tumor growth by depleting myeloid-derived suppressor cells"
+          ],
+          "study_type": "In vitro and in vivo mouse model",
+          "scientific_significance": "This work demonstrates a strategy for engineering mast cells as targeted cytotoxic effectors that can modulate the tumor microenvironment through IgE-mediated mechanisms, offering a potential platform for immunotherapy."
+        },
+        "elapsed_seconds": 47.1206,
+        "input_tokens": 650,
+        "output_tokens": 241,
+        "thoughts_tokens": null,
+        "total_tokens": 891,
+        "model_eval_seconds": 33.52,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42906538",
+        "title": "Proteomic atlas of T cell exhaustion defines proteostatic collapse.",
+        "abstract": "NA: T cell exhaustion limits the success of cancer immunotherapies, yet the proteomic changes underlying this dysfunctional state remain poorly understood. We integrated transcriptomics, quantitative proteomics, turnover proteomics, and ubiquitin proteomics to construct a multi-omic atlas of T cell exhaustion. These studies identified pathways regulated through transcriptional and post-translational mechanisms, including degradative and nondegradative ubiquitin modifications, and uncovered widespread changes in proteostasis, metabolism, and DNA repair. Major shifts were revealed in the ubiquitin-proteasome system, as differential expression of E3 ubiquitin ligases correlates with immunotherapy outcomes. These findings position the collapse of proteostasis as a central, underappreciated feature of T cell exhaustion and reveal opportunities to restore T cell function. We demonstrate that overexpression of the E3 ligase RNF166 enhances T cell persistence in vitro and in vivo. This work defines proteome-turnover dynamics as a critical regulatory layer in progressive T cell dysfunction, with broad implications for advancing cancer immunotherapy through manipulation of E3 ligases.",
+        "doi": "10.1016/j.cell.2026.09.051",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.051",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42906538/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated proteomic changes in T cell exhaustion using multi-omic integration. By combining transcriptomics, quantitative proteomics, turnover proteomics, and ubiquitin proteomics, it identified pathways regulated by transcriptional and post-translational mechanisms, including ubiquitin modifications. Key findings include widespread proteostasis collapse, shifts in the ubiquitin-proteasome system, and E3 ligase RNF1. The results highlight proteostatic collapse as central to T cell exhaustion and suggest targeting E3 ligases to improve immunotherapy outcomes.\",\n  \"key_findings\": [\n    \"Widespread proteostasis collapse in T cell exhaustion\",\n    \"Differential expression of E3 ubiquitin ligases correlates with immunotherapy outcomes\",\n    \"Overexpression of RNF166 enhances T cell persistence in vitro and in vivo\"\n  ],\n  \"study_type\": \"Multi-omic integration of transcriptomics, quantitative proteomics, turnover proteomics, and ubiquitin proteomics\",\n  \"scientific_significance\": \"The study establishes proteostatic collapse as a central mechanism in T cell exhaustion, providing a foundation for targeting E3 ligases to improve cancer immunotherapy efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated proteomic changes in T cell exhaustion using multi-omic integration. By combining transcriptomics, quantitative proteomics, turnover proteomics, and ubiquitin proteomics, it identified pathways regulated by transcriptional and post-translational mechanisms, including ubiquitin modifications. Key findings include widespread proteostasis collapse, shifts in the ubiquitin-proteasome system, and E3 ligase RNF1. The results highlight proteostatic collapse as central to T cell exhaustion and suggest targeting E3 ligases to improve immunotherapy outcomes.",
+          "key_findings": [
+            "Widespread proteostasis collapse in T cell exhaustion",
+            "Differential expression of E3 ubiquitin ligases correlates with immunotherapy outcomes",
+            "Overexpression of RNF166 enhances T cell persistence in vitro and in vivo"
+          ],
+          "study_type": "Multi-omic integration of transcriptomics, quantitative proteomics, turnover proteomics, and ubiquitin proteomics",
+          "scientific_significance": "The study establishes proteostatic collapse as a central mechanism in T cell exhaustion, providing a foundation for targeting E3 ligases to improve cancer immunotherapy efficacy."
+        },
+        "elapsed_seconds": 44.7713,
+        "input_tokens": 589,
+        "output_tokens": 245,
+        "thoughts_tokens": null,
+        "total_tokens": 834,
+        "model_eval_seconds": 33.4402,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876215",
+        "title": "Dual Twisted Interfaces Enable Tunable Second Harmonic Generation in Chemical Vapor Deposition Grown Trilayer MoS2.",
+        "abstract": "NA: Twisted bilayer transition metal dichalcogenides, governed by a single twisted interface, offer a versatile platform for manipulating interlayer coupling and emergent optical behavior. However, despite extensive studies on single twisted interface systems, how multi-interface twisted stacking influences nonlinear optical behavior remains unclear. Here, we address this gap by systematically investigating the nonlinear optical performance of chemical vapor deposition (CVD) grown twisted trilayer MoS2 (TT-MoS2) with multi-interface twisted stacking. We fabricate all nine distinct trilayer MoS2 configurations by CVD. Raman and photoluminescence show that twisted interfaces modulate interlayer coupling, giving rise to stacking-dependent phonon and excitonic responses. Atomic-resolution scanning, transmission electron microscopy, and selected area electron diffraction confirm dual twisted interfaces and a supermoiré lattice. Guided by these structural insights, we examine the second harmonic generation (SHG) response across all nine trilayer configurations. Extending the coherent SH field superposition model to a trilayer system with two independent twisted interfaces, we develop a framework that describes how the dual interfaces govern the SHG intensity and polarization orientation across stacking configurations. Our findings establish TT-MoS2 as a versatile nonlinear platform and open new avenues for understanding and exploiting multi-interface twisted coupling to engineer nonlinear optical responses in van der Waals materials.",
+        "doi": "10.1002/adma.75387",
+        "doi_url": "https://doi.org/10.1002/adma.75387",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876215/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, the researchers analyzed Raman and photoluminescence data to show interface-dependent phonon and excitonic responses. Atomic-resolution imaging confirmed dual twisted interfaces and a supermoiré lattice. They developed a framework linking dual interface geometry to SHG intensity and polarization, demonstrating TT-MoS2's potential for tunable nonlinear optical engineering.\",\n  \"key_findings\": [\n    \"CVD-grown trilayer MoS2 with dual twisted interfaces exhibits stacking-dependent phonon and excitonic responses\",\n    \"Atomic-resolution techniques confirmed dual twisted interfaces and supermoiré lattice formation\",\n    \"A framework linking dual interface geometry to SHG intensity and polarization was established\"\n  ],\n  \"study_type\": \"Chemical vapor deposition (CVD) grown trilayer MoS2 with nine distinct stacking configurations\",\n  \"scientific_significance\": \"This work provides a foundational framework for engineering tunable nonlinear optical responses in van der Waals materials through multi-interface twisted stacking.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, the researchers analyzed Raman and photoluminescence data to show interface-dependent phonon and excitonic responses. Atomic-resolution imaging confirmed dual twisted interfaces and a supermoiré lattice. They developed a framework linking dual interface geometry to SHG intensity and polarization, demonstrating TT-MoS2's potential for tunable nonlinear optical engineering.",
+          "key_findings": [
+            "CVD-grown trilayer MoS2 with dual twisted interfaces exhibits stacking-dependent phonon and excitonic responses",
+            "Atomic-resolution techniques confirmed dual twisted interfaces and supermoiré lattice formation",
+            "A framework linking dual interface geometry to SHG intensity and polarization was established"
+          ],
+          "study_type": "Chemical vapor deposition (CVD) grown trilayer MoS2 with nine distinct stacking configurations",
+          "scientific_significance": "This work provides a foundational framework for engineering tunable nonlinear optical responses in van der Waals materials through multi-interface twisted stacking."
+        },
+        "elapsed_seconds": 46.2902,
+        "input_tokens": 655,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 891,
+        "model_eval_seconds": 32.4486,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896420",
+        "title": "Self-assembly prodrugs for controlled singlet oxygen release and resistance modulation in deep-tumor photodynamic therapy.",
+        "abstract": "NA: Photodynamic therapy (PDT) offers spatiotemporally controlled tumor ablation via photosensitizer-mediated singlet oxygen (1O2) generation, yet its application to deep-seated solid tumors remains fundamentally constrained by limited light penetration and tumor hypoxia. Endoperoxides (EPOs), which reversibly capture and release 1O2, offer a promising strategy to overcome these constraints. Nevertheless, existing EPO-based systems suffer from uncontrolled half-life-dependent 1O2 release and inefficient utilization. Moreover, PDT-induced oxidative stress upregulates inducible nitric oxide synthase (iNOS), leading to nitric oxide (NO) overproduction that quenches 1O2 and promote adaptive resistance. Herein, we report a self-assembly nano-prodrug enabling on-demand 1O2 release while suppressing NO-mediated resistance. An amphiphilic prodrug, L-NARG-SS-Py, comprising a 1O2-storing pyridone moiety and an iNOS inhibitor linked via a glutathione-responsive disulfide bond, co-assembles with protoporphyrin IX to form nano-prodrug (PPIX@L-NARG-SS-Py NPs). Upon irradiation, generated 1O2 is captured and stored as EPO intermediates, followed by glutathione-triggered release in tumor microenvironment. Simultaneously, released iNOS inhibitor suppresses NO production, thereby reducing 1O2 quenching and amplifying oxidative damage. In deep-seated pancreatic tumor models, the nano-prodrug achieves potent tumor suppression with minimal systemic toxicity. This work establishes a biologically amplified, light-independent PDT strategy for overcoming physical and adaptive resistance in deep-tissue phototherapy.",
+        "doi": "10.1016/j.biomaterials.2026.124712",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124712",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896420/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses deep-tumor photodynamic therapy limitations by designing a self-assembling prodrug that stores singlet oxygen and suppresses nitric oxide-mediated resistance. The nano-prodrug co-assembles with protoporphyrin IX, releases singlet oxygen upon light activation, and uses glutathione-responsive disulfide bonds to target tumor microenvironments. It demonstrates potent tumor suppression in pancreatic models with minimal toxicity, offering a strategy to overcome light penetration and hypoxia barriers.\",\n  \"key_findings\": [\n    \"Self-assembling nano-prodrug co-assembles with protoporphyrin IX for targeted singlet oxygen delivery\",\n    \"Glutathione-responsive disulfide bonds enable tumor-specific singlet oxygen release\",\n    \"iNOS inhibition reduces nitric oxide overproduction, enhancing singlet oxygen efficacy\"\n  ],\n  \"study_type\": \"In vivo tumor model\",\n  \"scientific_significance\": \"This approach provides a light-independent mechanism to overcome physical and adaptive resistance barriers in deep-tissue photodynamic therapy by synchronizing singlet oxygen release with tumor microenvironment dynamics.\"\n}",
+        "parsed": {
+          "summary": "This study addresses deep-tumor photodynamic therapy limitations by designing a self-assembling prodrug that stores singlet oxygen and suppresses nitric oxide-mediated resistance. The nano-prodrug co-assembles with protoporphyrin IX, releases singlet oxygen upon light activation, and uses glutathione-responsive disulfide bonds to target tumor microenvironments. It demonstrates potent tumor suppression in pancreatic models with minimal toxicity, offering a strategy to overcome light penetration and hypoxia barriers.",
+          "key_findings": [
+            "Self-assembling nano-prodrug co-assembles with protoporphyrin IX for targeted singlet oxygen delivery",
+            "Glutathione-responsive disulfide bonds enable tumor-specific singlet oxygen release",
+            "iNOS inhibition reduces nitric oxide overproduction, enhancing singlet oxygen efficacy"
+          ],
+          "study_type": "In vivo tumor model",
+          "scientific_significance": "This approach provides a light-independent mechanism to overcome physical and adaptive resistance barriers in deep-tissue photodynamic therapy by synchronizing singlet oxygen release with tumor microenvironment dynamics."
+        },
+        "elapsed_seconds": 49.2139,
+        "input_tokens": 740,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 968,
+        "model_eval_seconds": 31.5341,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42906540",
+        "title": "A bioavailable GPX4 inhibitor for ferroptosis induction in vivo and tumor suppression.",
+        "abstract": "NA: Ferroptosis is implicated in multiple human diseases, but the lack of bioavailable inducers has limited its physiological study and therapeutic translation. Here, we report KY0418, a selective covalent inhibitor of glutathione peroxidase 4 (GPX4) featuring an isourea warhead, with high plasma stability and broad tissue distribution after oral dosing in mice. KY0418 specifically targets GPX4SeCys46 to induce ferroptosis hallmarks in human and mouse cancer cell lines, with greater selectivity than existing inhibitors. In a standardizable acute-liver-injury mouse model, KY0418 triggers ferroptotic ultrastructural changes matching those of established inducers, and systemic administration remodels tissue metabolism and generates hydroxyl radicals detectable by a chemiluminescent probe. Subcutaneous tumors from different cancers exhibited variable responses to KY0418 treatment, from no effect to about 70% growth inhibition, but KY0418 consistently eradicated circulating tumor cells and suppressed metastasis across multiple cancer models. These findings position KY0418 as a tool for advancing in vivo ferroptosis research and its clinical translation.",
+        "doi": "10.1016/j.cell.2026.09.053",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.053",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42906540/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed KY0418, a bioavailable covalent GPX4 inhibitor, to induce ferroptosis in vivo. The compound demonstrated selective targeting of GPX4SeCys46, triggered ferroptotic changes in cancer models, and suppressed metastasis while eradicating circulating tumor cells across multiple cancer types. Its efficacy varied by tumor type but consistently inhibited metastasis.\",\n  \"key_findings\": [\n    \"KY0418 selectively inhibits GPX4SeCys46 to induce ferroptosis in human and mouse cancer cells\",\n    \"KY0418 triggers ferroptotic ultrastructural changes and hydroxyl radical production in vivo\",\n    \"KY0418 consistently eradicates circulating tumor cells and suppresses metastasis across multiple cancer models\"\n  ],\n  \"study_type\": \"In vivo mouse model with acute-liver-injury and tumor models\",\n  \"scientific_significance\": \"KY0418 provides a bioavailable tool for studying ferroptosis in vivo, advancing therapeutic translation of ferroptosis-inducing strategies for cancer.\"\n}",
+        "parsed": {
+          "summary": "This study developed KY0418, a bioavailable covalent GPX4 inhibitor, to induce ferroptosis in vivo. The compound demonstrated selective targeting of GPX4SeCys46, triggered ferroptotic changes in cancer models, and suppressed metastasis while eradicating circulating tumor cells across multiple cancer types. Its efficacy varied by tumor type but consistently inhibited metastasis.",
+          "key_findings": [
+            "KY0418 selectively inhibits GPX4SeCys46 to induce ferroptosis in human and mouse cancer cells",
+            "KY0418 triggers ferroptotic ultrastructural changes and hydroxyl radical production in vivo",
+            "KY0418 consistently eradicates circulating tumor cells and suppresses metastasis across multiple cancer models"
+          ],
+          "study_type": "In vivo mouse model with acute-liver-injury and tumor models",
+          "scientific_significance": "KY0418 provides a bioavailable tool for studying ferroptosis in vivo, advancing therapeutic translation of ferroptosis-inducing strategies for cancer."
+        },
+        "elapsed_seconds": 45.7588,
+        "input_tokens": 626,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 863,
+        "model_eval_seconds": 33.1978,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876332",
+        "title": "Directional Confinement Governed Ion Transport for Efficient Actuation.",
+        "abstract": "NA: Ionic transport kinetics in electrolytes are a key determinant of ionic actuator performance. Conventional random porous electrolytes are constrained by porosity and tortuosity, leading to an intrinsic limitation in ion mobility within the Bruggeman framework. Here, structural anisotropy is introduced to establish a unified framework that analyzes ion transport from random diffusion to directionally confined regimes. To validate this concept, anisotropic electrolytes with oriented channels are fabricated via directional freeze-drying. These structures exhibit pronounced directional dependence, with through-plane ion mobility twice higher than that of the disordered counterparts, leading to significantly enhanced ionic actuator performance and mitigating the inherent trade-off between strain and blocking force. Moreover, the directional confinement effect is observed across multiple polymer systems, highlighting the critical role of structural anisotropy in regulating ion transport and offering a framework for enhancing electrolyte performance through microstructural design. This strategy enables environmentally robust and stable operation of soft electrochemical actuators for grippers and biomimetic robotics.",
+        "doi": "10.1002/adma.75384",
+        "doi_url": "https://doi.org/10.1002/adma.75384",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876332/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how structural anisotropy in electrolytes improves ion transport for ionic actuators. By fabricating anisotropic electrolytes with oriented channels via directional freeze-drying, the researchers achieved twice the through-plane ion mobility compared to disordered electrolytes. This enhanced ion transport led to better actuator performance while balancing strain and blocking force, with effects observed across multiple polymer systems.\",\n  \"key_findings\": [\n    \"Anisotropic electrolytes fabricated via directional freeze-drying exhibit twice the through-plane ion mobility of disordered electrolytes\",\n    \"Directional confinement significantly enhances ionic act. performance by mitigating strain-blocking force trade-offs\",\n    \"The effect is reproducible across multiple polymer systems, underscoring structural anisotropy's role in ion transport regulation\"\n  ],\n  \"study_type\": \"Fabrication of anisotropic electrolytes with oriented channels via directional freeze-drying\",\n  \"scientific_significance\": \"This work establishes structural anisotropy as a critical design principle for optimizing ion transport in electrolytes, advancing the understanding of how microstructural features govern electrochemical actuator performance beyond conventional random porous systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how structural anisotropy in electrolytes improves ion transport for ionic actuators. By fabricating anisotropic electrolytes with oriented channels via directional freeze-drying, the researchers achieved twice the through-plane ion mobility compared to disordered electrolytes. This enhanced ion transport led to better actuator performance while balancing strain and blocking force, with effects observed across multiple polymer systems.",
+          "key_findings": [
+            "Anisotropic electrolytes fabricated via directional freeze-drying exhibit twice the through-plane ion mobility of disordered electrolytes",
+            "Directional confinement significantly enhances ionic act. performance by mitigating strain-blocking force trade-offs",
+            "The effect is reproducible across multiple polymer systems, underscoring structural anisotropy's role in ion transport regulation"
+          ],
+          "study_type": "Fabrication of anisotropic electrolytes with oriented channels via directional freeze-drying",
+          "scientific_significance": "This work establishes structural anisotropy as a critical design principle for optimizing ion transport in electrolytes, advancing the understanding of how microstructural features govern electrochemical actuator performance beyond conventional random porous systems."
+        },
+        "elapsed_seconds": 43.0673,
+        "input_tokens": 574,
+        "output_tokens": 241,
+        "thoughts_tokens": null,
+        "total_tokens": 815,
+        "model_eval_seconds": 32.7575,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896421",
+        "title": "Rare-earth-free magnesium-zinc alloy with controlled biodegradation and biocompatibility for novel biodegradable metallic stent.",
+        "abstract": "NA: Biodegradable magnesium (Mg) alloy stents offer a transient alternative to permanent metallic implants; however, clinically used WE43 contains rare-earth (RE) elements, raising concerns regarding the long-term biosafety of RE-containing degradation products and their potential tissue accumulation. Here, we investigated two RE-free Mg-Zinc (Zn)-based alloys, MZ01 (Mg-1Zn-0.1Ca) and ZM115 (Mg-1Zn-1.5Mn-0.5Sr), and established a mechanistic cascade linking alloy composition and microstructure to electrochemical analyses revealed alloy-dependent differences in grain structure and interfacial corrosion resistance, with MZ01 exhibiting the highest charge-transfer resistance. In a mouse subcutaneous model, MZ01 showed more uniform degradation, smaller and more rapidly resolving hydrogen gas cavities, and a significantly lower microcrack area fraction at Day 56 than WE43 and ZM115, accompanied by attenuated inflammatory and fibrotic responses. In the rabbit iliac arteries, all stents maintained luminal patency without thrombosis through 56 days, while MZ01 exhibited lower neointimal thickness, lower perivascular apoptosis and late inflammation, and enhanced early endothelialization compared with WE43. Preliminary descriptive porcine coronary implantation further demonstrated the technical feasibility and sustained patency of MZ01 over 56 days. Collectively, these findings define a composition-microstructure-corrosion-cellular response-vascular healing axis and identify MZ01 as a RE-free Mg-Zn alloy with controlled biodegradation and favorable biocompatibility, supporting its further development as a biodegradable cardiovascular scaffold.",
+        "doi": "10.1016/j.biomaterials.2026.124691",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124691",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896421/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated RE-free magnesium-zinc alloys for biodegradable stents, comparing MZ01 and ZM115 against WE43. Using electrochemical analyses and in vivo models, it found MZ01 exhibited superior corrosion resistance, uniform degradation, reduced microcracks, and better vascular healing with lower inflammation and neointimal thickness compared to RE-containing stents. The alloy composition directly influenced microstructure and biocompatibility, supporting RE-free stents as viable cardiovascular scaffolds.\",\n  \"key_findings\": [\n    \"MZ01 demonstrated higher charge-transfer resistance and uniform degradation in mice\",\n    \"MZ01 showed reduced microcrack area and attenuated inflammatory responses at Day 56\",\n    \"MZ01 exhibited lower neointimal thickness and enhanced endothelialization in rabbit arteries\"\n  ],\n  \"study_type\": \"In vivo animal models and electrochemical analyses\",\n  \"scientific_significance\": \"This work establishes a composition-microstructure-corrosion-cellular response axis for RE-free magnesium-zinc alloys, providing a pathway to biodegradable stents with controlled degradation and improved biocompatibility for cardiovascular applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigated RE-free magnesium-zinc alloys for biodegradable stents, comparing MZ01 and ZM115 against WE43. Using electrochemical analyses and in vivo models, it found MZ01 exhibited superior corrosion resistance, uniform degradation, reduced microcracks, and better vascular healing with lower inflammation and neointimal thickness compared to RE-containing stents. The alloy composition directly influenced microstructure and biocompatibility, supporting RE-free stents as viable cardiovascular scaffolds.",
+          "key_findings": [
+            "MZ01 demonstrated higher charge-transfer resistance and uniform degradation in mice",
+            "MZ01 showed reduced microcrack area and attenuated inflammatory responses at Day 56",
+            "MZ01 exhibited lower neointimal thickness and enhanced endothelialization in rabbit arteries"
+          ],
+          "study_type": "In vivo animal models and electrochemical analyses",
+          "scientific_significance": "This work establishes a composition-microstructure-corrosion-cellular response axis for RE-free magnesium-zinc alloys, providing a pathway to biodegradable stents with controlled degradation and improved biocompatibility for cardiovascular applications."
+        },
+        "elapsed_seconds": 52.1916,
+        "input_tokens": 745,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 988,
+        "model_eval_seconds": 33.9227,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42906542",
+        "title": "In vivo Gene Writing with engineered retrotransposons.",
+        "abstract": "NA: Efficient integration of gene-length cargos in vivo remains challenging. Non-long terminal repeat (non-LTR) retrotransposons, which naturally mobilize large DNA segments through an RNA intermediate, could potentially address these limitations. Here, we developed a computational pipeline to systematically identify a diverse set of non-LTR retrotransposons. Extensive engineering generated elements capable of the efficient and stable insertion of reporter genes in human cells using RNA templates introduced in trans, which we term Gene Writers. Gene Writers successfully generated CD19 and CD20 chimeric antigen receptor T (CAR-T) cells ex vivo with robust antitumor activity. Lipid nanoparticle-mediated RNA delivery enabled in vivo CAR-T cell generation and stable B cell depletion in a humanized mouse model. Our study delineates a comprehensive framework for the discovery, engineering, and application of non-LTR retrotransposons and demonstrates their utility for gene-sized cargo delivery in vivo, thereby bridging a critical gap in existing gene therapy modalities.",
+        "doi": "10.1016/j.cell.2026.09.054",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.054",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42906542/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates using engineered non-LTR retrotransposons for efficient in vivo gene delivery. The researchers developed Gene Writers that integrate reporter genes and CAR-T cells ex vivo with antitumor activity. In vivo applications in humanized mice showed stable B cell depletion via lipid nanoparticle RNA delivery, demonstrating a framework for gene-sized cargo delivery.\",\n  \"key_findings\": [\n    \"Engineered non-LTR retrotransposons (Gene Writers) enable efficient reporter gene insertion in human cells\",\n    \"Gene Writers generated functional CAR-T cells with robust antitumor activity ex vivo\",\n    \"In vivo CAR-T cell generation and B cell depletion achieved in humanized mice via lipid nanoparticle RNA delivery\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies using humanized mouse models\",\n  \"scientific_significance\": \"This work establishes non-LTR retrotransposons as a viable platform for precise, large-scale gene delivery in vivo, addressing a critical limitation in current gene therapy approaches.\"\n}",
+        "parsed": {
+          "summary": "This study investigates using engineered non-LTR retrotransposons for efficient in vivo gene delivery. The researchers developed Gene Writers that integrate reporter genes and CAR-T cells ex vivo with antitumor activity. In vivo applications in humanized mice showed stable B cell depletion via lipid nanoparticle RNA delivery, demonstrating a framework for gene-sized cargo delivery.",
+          "key_findings": [
+            "Engineered non-LTR retrotransposons (Gene Writers) enable efficient reporter gene insertion in human cells",
+            "Gene Writers generated functional CAR-T cells with robust antitumor activity ex vivo",
+            "In vivo CAR-T cell generation and B cell depletion achieved in humanized mice via lipid nanoparticle RNA delivery"
+          ],
+          "study_type": "In vitro and in vivo studies using humanized mouse models",
+          "scientific_significance": "This work establishes non-LTR retrotransposons as a viable platform for precise, large-scale gene delivery in vivo, addressing a critical limitation in current gene therapy approaches."
+        },
+        "elapsed_seconds": 37.9838,
+        "input_tokens": 568,
+        "output_tokens": 210,
+        "thoughts_tokens": null,
+        "total_tokens": 778,
+        "model_eval_seconds": 27.8987,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876357",
+        "title": "Layered Spin-Crossover Metal-Organic Frameworks for Light-Induced Control of Two-Dimensional Quantum Materials.",
+        "abstract": "NA: Metal-organic frameworks (MOFs) are widely explored for gas separation, catalysis, or energy storage, yet their integration with other electronically functional materials remains largely unexplored. Here, we integrate the layered Hofmann-type spin-crossover (SCO) MOF {FeII(pyS2Et)2[PtII(CN)4]} into electrical nanodevices to control the properties of two-dimensional (2D) quantum materials. Our molecular approach exploits the stimuli-responsive nature of SCO-layered materials as switchable building blocks. We demonstrate selective modulation of the electronic transport in van der Waals heterostructures interfacing SCO with 2D quantum materials (few-layer graphene, magnetic CrSBr, superconducting NbSe2) through the strain induced via thermal and light-induced spin transitions. In graphene, the conductivity is selectively switched by light. In spin-valves based on CrSBr bilayers, the MOF triggers magnetic hysteresis (absent in pristine CrSBr) and enables tunable non-volatile zero-field memory. In NbSe2, light modulates the superconducting critical current and transition temperature. These results establish layered stimuli-responsive SCO MOFs as active molecular control elements for 2D quantum materials, providing a route to strain-mediated control of electronic, magnetic, and superconducting functionalities, and extending MOF-based architectures beyond traditional porous-matter applications toward multifunctional electronics and spintronics.",
+        "doi": "10.1002/adma.75351",
+        "doi_url": "https://doi.org/10.1002/adma.75351",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876357/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the integration of layered spin-crossover metal-organic frameworks (MOFs) with two-dimensional quantum materials to achieve light-induced control over their electronic and magnetic properties. Using thermal and light-triggered spin transitions, the researchers demonstrated selective modulation of conductivity in graphene, magnetic hysteresis in CrSBr bilayers, and superconducting critical current modulation in NbSe2. The findings establish these SCO MOFs as switchable building blocks for strain-mediated control in multifunctional electronics.\",\n  \"key_findings\": [\n    \"Light-induced switching of conductivity in graphene\",\n    \"MOF-triggered magnetic hysteresis in CrSBr bilayers\",\n    \"Light modulation of superconducting critical current in NbSe2\"\n  ],\n  \"study_type\": \"Molecular approach with layered spin-crossover MOFs\",\n  \"scientific_significance\": \"This work demonstrates a molecular strategy for strain-mediated control of electronic, magnetic, and superconducting functionalities in 2D quantum materials using stimuli-responsive spin-crossover frameworks, expanding MOF applications beyond traditional porous systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the integration of layered spin-crossover metal-organic frameworks (MOFs) with two-dimensional quantum materials to achieve light-induced control over their electronic and magnetic properties. Using thermal and light-triggered spin transitions, the researchers demonstrated selective modulation of conductivity in graphene, magnetic hysteresis in CrSBr bilayers, and superconducting critical current modulation in NbSe2. The findings establish these SCO MOFs as switchable building blocks for strain-mediated control in multifunctional electronics.",
+          "key_findings": [
+            "Light-induced switching of conductivity in graphene",
+            "MOF-triggered magnetic hysteresis in CrSBr bilayers",
+            "Light modulation of superconducting critical current in NbSe2"
+          ],
+          "study_type": "Molecular approach with layered spin-crossover MOFs",
+          "scientific_significance": "This work demonstrates a molecular strategy for strain-mediated control of electronic, magnetic, and superconducting functionalities in 2D quantum materials using stimuli-responsive spin-crossover frameworks, expanding MOF applications beyond traditional porous systems."
+        },
+        "elapsed_seconds": 46.3521,
+        "input_tokens": 674,
+        "output_tokens": 227,
+        "thoughts_tokens": null,
+        "total_tokens": 901,
+        "model_eval_seconds": 31.5625,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42901134",
+        "title": "Thermosensitive and tumor-targeted asparaginase fusion protein enables metabolic-immunotherapy for solid tumors.",
+        "abstract": "NA: Metabolic therapies targeting tumor amino acid dependence, represented by asparaginase (ASNase), have shown limited efficacy in solid tumors, owing to poor stability, low penetration, and high immunogenicity. Here, we design a thermosensitive tumor-targeted ASNase fusion protein (ASNase-ELP-LHRH) via AlphaFold2, by integrating elastin-like polypeptide (ELP) and luteinizing hormone-releasing hormone (LHRH), to overcome these drawbacks. ELP drives in situ depot formation, extending half-life to ∼400 h (95-fold increase) and reducing anti-ASNase antibody levels 70-fold. LHRH mediates receptor-dependent tumor targeting and deep penetration. ASNase-ELP-LHRH achieves persistent asparagine (Asn) depletion, counteracting metabolic adaptation to induce nutrient starvation and apoptosis. Mechanistically, the construct blocks metastasis by suppressing epithelial-mesenchymal transition through downregulating Twist1 and upregulating E-cadherin, effectively inhibiting lung metastasis for 25 days in triple-negative breast cancer models. We further observed time-dependent changes in CD8+ T-cell effector-marker expression under Asn deprivation, characterized by dynamic alterations in IFN-γ and granzyme B expression. Combined with anti-PD-L1, this achieves a \"dual boost\" of antitumor immunity, durably inhibiting metastasis for 40 days and extending survival 1.5-fold. The modular ligand-exchangeable platform offers a generalizable strategy for protein optimization and establishes ASNase-ELP-LHRH as a promising metabolic-immunotherapeutic agent for solid tumors, bridging protein engineering, tumor metabolism and cancer immunology.",
+        "doi": "10.1016/j.biomaterials.2026.124711",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124711",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42901134/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered a thermosensitive asparaginase fusion protein (ASNase-ELP-LHRH) to enhance tumor-targeted metabolic therapy. By integrating elastin-like polypeptide (ELP) for prolonged half-life and luteinizing hormone-releasing hormone (LHRH) for tumor-specific delivery, the construct achieved sustained asparagine depletion, inhibited metastasis via epithelial-mesenchymal transition suppression, and synergized with immunotherapy to extend survival in triple-negative breast cancer models.\",\n  \"key_findings\": [\n    \"ELP extension increased asparaginase half-life to ∼400 hours (95-fold) and reduced immunogenicity 70-fold\",\n    \"LHRH-mediated targeting suppressed metastasis by downregulating Twist1 and upregulating E-cadherin\",\n    \"Combination with anti-PD-L1 achieved durable metastasis inhibition for 40 days and 1.5-fold survival extension\"\n  ],\n  \"study_type\": \"In vitro and in vivo models (triple-negative breast cancer)\",\n  \"scientific_significance\": \"This work demonstrates a modular protein engineering strategy to overcome metabolic therapy limitations in solid tumors, enabling synergistic metabolic-immunotherapy for sustained antitumor effects.\"\n}",
+        "parsed": {
+          "summary": "This study engineered a thermosensitive asparaginase fusion protein (ASNase-ELP-LHRH) to enhance tumor-targeted metabolic therapy. By integrating elastin-like polypeptide (ELP) for prolonged half-life and luteinizing hormone-releasing hormone (LHRH) for tumor-specific delivery, the construct achieved sustained asparagine depletion, inhibited metastasis via epithelial-mesenchymal transition suppression, and synergized with immunotherapy to extend survival in triple-negative breast cancer models.",
+          "key_findings": [
+            "ELP extension increased asparaginase half-life to ∼400 hours (95-fold) and reduced immunogenicity 70-fold",
+            "LHRH-mediated targeting suppressed metastasis by downregulating Twist1 and upregulating E-cadherin",
+            "Combination with anti-PD-L1 achieved durable metastasis inhibition for 40 days and 1.5-fold survival extension"
+          ],
+          "study_type": "In vitro and in vivo models (triple-negative breast cancer)",
+          "scientific_significance": "This work demonstrates a modular protein engineering strategy to overcome metabolic therapy limitations in solid tumors, enabling synergistic metabolic-immunotherapy for sustained antitumor effects."
+        },
+        "elapsed_seconds": 56.4458,
+        "input_tokens": 747,
+        "output_tokens": 270,
+        "thoughts_tokens": null,
+        "total_tokens": 1017,
+        "model_eval_seconds": 38.3857,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42913628",
+        "title": "MCT6 is an intestinal Lac-Phe exporter required for metformin-associated weight loss.",
+        "abstract": "NA: Metabolites are increasingly recognized as circulating molecules that regulate physiology, yet the mechanisms that couple local intracellular production to organism-wide action remain poorly defined. Using the anorexigenic metabolite N-lactoyl-phenylalanine (Lac-Phe) as a model system, we identify the orphan transporter MCT6/SLC16A5 as a physiologic intestinal Lac-Phe exporter. This mechanism controls the extent to which intracellularly synthesized Lac-Phe acquires systemic activity. MCT6 transports Lac-Phe in vitro, mediates Lac-Phe efflux in cells, and is required for maintaining normal circulating Lac-Phe levels in vivo, particularly following metformin treatment or high-intensity exercise. High-fat-diet-fed mice with global or intestinal epithelial-specific deletion of MCT6 exhibit resistance to metformin-associated weight loss. Bypassing the transport defect with exogenous Lac-Phe normalizes the body weight phenotype of MCT6-knockout (KO) mice. These data connect MCT6 to Lac-Phe and gut glycolytic flux and underscore the importance of transporter-mediated release in the conversion of an intracellular metabolic state into a circulating metabolite effector.",
+        "doi": "10.1016/j.cell.2026.09.058",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.058",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42913628/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies MCT6 as a key intestinal transporter for the metabolite N-lactoyl-phenylalanine (Lac-Phe), which regulates metformin-induced weight loss. Using genetic knockout models in mice, the research demonstrates that MCT6 is essential for Lac-Phe efflux from the gut, maintaining systemic Lac-Phe levels during metformin treatment. Loss of MCT6 blocks metformin's weight loss effect, while exogenous Lac-Phe rescues this phenotype, highlighting a critical link between gut metabolism and systemic metabolic responses.\",\n  \"key_findings\": [\n    \"MCT6 is an intestinal transporter specifically required for Lac-Phe efflux\",\n    \"MCT6 deletion in mice prevents metformin-induced weight loss\",\n    \"Exogenous Lac-Phe restores body weight in MCT6-knockout mice\"\n  ],\n  \"study_type\": \"Mouse genetic knockout models\",\n  \"scientific_significance\": \"This work establishes a direct mechanism by which an intracellular metabolite is exported via a specific transporter to exert systemic metabolic effects, providing a model for understanding how gut-derived metabolites influence whole-body physiology.\"\n}",
+        "parsed": {
+          "summary": "This study identifies MCT6 as a key intestinal transporter for the metabolite N-lactoyl-phenylalanine (Lac-Phe), which regulates metformin-induced weight loss. Using genetic knockout models in mice, the research demonstrates that MCT6 is essential for Lac-Phe efflux from the gut, maintaining systemic Lac-Phe levels during metformin treatment. Loss of MCT6 blocks metformin's weight loss effect, while exogenous Lac-Phe rescues this phenotype, highlighting a critical link between gut metabolism and systemic metabolic responses.",
+          "key_findings": [
+            "MCT6 is an intestinal transporter specifically required for Lac-Phe efflux",
+            "MCT6 deletion in mice prevents metformin-induced weight loss",
+            "Exogenous Lac-Phe restores body weight in MCT6-knockout mice"
+          ],
+          "study_type": "Mouse genetic knockout models",
+          "scientific_significance": "This work establishes a direct mechanism by which an intracellular metabolite is exported via a specific transporter to exert systemic metabolic effects, providing a model for understanding how gut-derived metabolites influence whole-body physiology."
+        },
+        "elapsed_seconds": 45.7309,
+        "input_tokens": 624,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 867,
+        "model_eval_seconds": 33.0523,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876372",
+        "title": "A Critical Call for Mechanistic Investigations of Metal-Bacteria Interactions.",
+        "abstract": "NA: The antibacterial properties of metals have been recognized for millennia. It is thus well established that this antibacterial response has tremendous importance for bioengineering applications, driving ever-increasing resources for research efforts, especially over the last few decades. What is less appreciated across the thousands of scientific investigations that appear in the literature, however, is the reproducibility crisis stemming from various challenging aspects of this research. In this perspective, we highlight this reproducibility problem, discuss its sources, and suggest solutions towards focused, mechanistic, interdisciplinary investigations. To make these recommendations operational, we provide a source-specific experimental roadmap, identify priority mechanistic questions with concrete investigation pathways, and highlight representative studies that combine causal perturbations, orthogonal measurements, and cross-laboratory validation.",
+        "doi": "10.1002/adma.75378",
+        "doi_url": "https://doi.org/10.1002/adma.75378",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876372/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This perspective article addresses the reproducibility crisis in metal-bacteria interaction research by identifying key sources of inconsistency and proposing a roadmap for mechanistic studies. It emphasizes the need for causal perturbations, orthogonal measurements, and cross-laboratory validation to improve reproducibility in this field.\",\n  \"key_findings\": [\n    \"The reproducibility crisis in metal-bacteria interaction studies stems from methodological inconsistencies\",\n    \"A source-specific experimental roadmap is provided for mechanistic investigations\",\n    \"Cross-laboratory validation and causal perturbations are critical for improving reproducibility\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes a framework for mechanistic investigations in metal-bacteria interactions, advancing the field toward more reproducible and causal understanding of antibacterial metal mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This perspective article addresses the reproducibility crisis in metal-bacteria interaction research by identifying key sources of inconsistency and proposing a roadmap for mechanistic studies. It emphasizes the need for causal perturbations, orthogonal measurements, and cross-laboratory validation to improve reproducibility in this field.",
+          "key_findings": [
+            "The reproducibility crisis in metal-bacteria interaction studies stems from methodological inconsistencies",
+            "A source-specific experimental roadmap is provided for mechanistic investigations",
+            "Cross-laboratory validation and causal perturbations are critical for improving reproducibility"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes a framework for mechanistic investigations in metal-bacteria interactions, advancing the field toward more reproducible and causal understanding of antibacterial metal mechanisms."
+        },
+        "elapsed_seconds": 30.8397,
+        "input_tokens": 522,
+        "output_tokens": 172,
+        "thoughts_tokens": null,
+        "total_tokens": 694,
+        "model_eval_seconds": 22.4797,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42901135",
+        "title": "Engineering biomaterials to improve cytokine therapies for wound healing.",
+        "abstract": "NA: Recombinant cytokines have been used as therapeutics for cancers, autoimmune diseases, and infectious diseases, but their application in wound healing and tissue regeneration remains relatively underdeveloped. Short half-lives, narrow therapeutic windows, and a myriad of adverse effects due to pleiotropy and redundancy have limited their clinical use. Biomaterial-based delivery platforms such as hydrogels, particles, and scaffolds have gained traction as engineering strategies to bridge this translational gap. Despite their popularity in preclinical research, the last FDA approved biomaterial-based cytokine therapeutic, becaplermin, was approved in 1997. Unlike reviews that focus on material design alone, we investigate clinical trials from 2012 to present day and look at the barriers and bottlenecks of translating this technology beyond the bench. This review focuses on release kinetics, design parameters, and practical applications of cytokine-loaded hydrogels, particles, and scaffolds to accelerate wound healing and regenerate functional tissue after soft tissue damage. We offer insights about future directions for preclinical testing and further engineering considerations to aid in their translation to clinical care for patients with soft tissue injuries.",
+        "doi": "10.1016/j.biomaterials.2026.124695",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124695",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42901135/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines barriers to translating biomaterial-based cytokine therapies for wound healing, focusing on release kinetics and design parameters of hydrogels, particles, and scaffolds. It identifies clinical trial challenges since 2.012 and highlights gaps in translating preclinical findings to clinical use despite existing FDA-approved cytokine therapies.\",\n  \"key_findings\": [\n    \"Limited clinical adoption of biomaterial-based cytokine therapies for wound healing despite preclinical advances\",\n    \"Becaplermin remains the only FDA-approved cytokine therapy for wound healing since 1997\",\n    \"Critical gaps exist in translating hydrogel, particle, and scaffold designs to clinical applications\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This review identifies persistent translational barriers in cytokine delivery systems for wound healing, emphasizing the need for optimized release kinetics and design parameters to advance clinical implementation of biomaterial-based therapies.\"\n}",
+        "parsed": {
+          "summary": "This review examines barriers to translating biomaterial-based cytokine therapies for wound healing, focusing on release kinetics and design parameters of hydrogels, particles, and scaffolds. It identifies clinical trial challenges since 2.012 and highlights gaps in translating preclinical findings to clinical use despite existing FDA-approved cytokine therapies.",
+          "key_findings": [
+            "Limited clinical adoption of biomaterial-based cytokine therapies for wound healing despite preclinical advances",
+            "Becaplermin remains the only FDA-approved cytokine therapy for wound healing since 1997",
+            "Critical gaps exist in translating hydrogel, particle, and scaffold designs to clinical applications"
+          ],
+          "study_type": "",
+          "scientific_significance": "This review identifies persistent translational barriers in cytokine delivery systems for wound healing, emphasizing the need for optimized release kinetics and design parameters to advance clinical implementation of biomaterial-based therapies."
+        },
+        "elapsed_seconds": 38.2206,
+        "input_tokens": 603,
+        "output_tokens": 195,
+        "thoughts_tokens": null,
+        "total_tokens": 798,
+        "model_eval_seconds": 26.3578,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42913629",
+        "title": "Metazoan lagging-strand DNA synthesis is distributive.",
+        "abstract": "NA: DNA's anti-parallel structure presents a topological challenge to the replisome, as leading and lagging strands must be synthesized in opposite directions. How lagging-strand synthesis is coordinated with leading-strand synthesis remains unresolved in eukaryotes. To address this question, we directly visualized the dynamics of lagging-strand polymerases Pol α and Pol δ at active replication forks using single-molecule imaging in Xenopus nuclear extracts. Surprisingly, we find that neither Pol α nor Pol δ is stably tethered to the replisome. Instead, lagging-strand synthesis occurs distributively and entails the rapid recruitment of new molecules of Pol α and Pol δ for each Okazaki fragment. Consequently, leading- and lagging-strand synthesis are not intrinsically coupled. We propose that metazoans solve the problem of anti-parallel replication not by actively coordinating leading- and lagging-strand synthesis, but instead simply by recruiting new polymerases to synthesize each Okazaki fragment.",
+        "doi": "10.1016/j.cell.2026.09.060",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.060",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42913629/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how lagging-strand DNA synthesis is coordinated with leading-strand synthesis in eukaryotes using single-molecule imaging in Xenopus extracts. It found that neither Pol α nor Pol δ is stably tethered to the replisome, revealing distributive lagging-strand synthesis where new polymerase molecules are rapidly recruited per Okazaki fragment. This indicates leading- and lagging-strand synthesis are not intrinsically coupled, resolving the topological challenge through dynamic polymerase recruitment.\",\n  \"key_findings\": [\n    \"Lagging-strand synthesis occurs distributively with rapid recruitment of Pol α and Pol δ for each Okazaki fragment\",\n    \"Neither Pol α nor Pol δ is stably tethered to the replisome\",\n    \"Leading- and lagging-strand synthesis are not intrinsically coupled in metazoans\"\n  ],\n  \"study_type\": \"Single-molecule imaging in Xenopus nuclear extracts\",\n  \"scientific_significance\": \"The findings demonstrate that metazoans resolve anti-parallel DNA replication topology through dynamic polymerase recruitment rather than intrinsic coupling of leading- and lagging-strand synthesis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how lagging-strand DNA synthesis is coordinated with leading-strand synthesis in eukaryotes using single-molecule imaging in Xenopus extracts. It found that neither Pol α nor Pol δ is stably tethered to the replisome, revealing distributive lagging-strand synthesis where new polymerase molecules are rapidly recruited per Okazaki fragment. This indicates leading- and lagging-strand synthesis are not intrinsically coupled, resolving the topological challenge through dynamic polymerase recruitment.",
+          "key_findings": [
+            "Lagging-strand synthesis occurs distributively with rapid recruitment of Pol α and Pol δ for each Okazaki fragment",
+            "Neither Pol α nor Pol δ is stably tethered to the replisome",
+            "Leading- and lagging-strand synthesis are not intrinsically coupled in metazoans"
+          ],
+          "study_type": "Single-molecule imaging in Xenopus nuclear extracts",
+          "scientific_significance": "The findings demonstrate that metazoans resolve anti-parallel DNA replication topology through dynamic polymerase recruitment rather than intrinsic coupling of leading- and lagging-strand synthesis."
+        },
+        "elapsed_seconds": 42.0613,
+        "input_tokens": 573,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 816,
+        "model_eval_seconds": 31.7576,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876426",
+        "title": "High-Performance Low Threshold Voltage n-Type OECTs via a Stepwise Cyanation of Quinoxaline-Based Polymeric Semiconductor.",
+        "abstract": "NA: Achieving both low threshold voltage (Vth) and high performance in organic electrochemical transistors (OECTs) is critical for low-power, high-sensitivity bioelectronics, yet simultaneously achieving low Vth and high device performance remains a long-standing challenge. Herein, we propose a stepwise cyanation strategy to modify quinoxaline-based polymeric semiconductors to mitigate this dilemma. Benefiting from the strong electron-withdrawing ability of cyano substituents, QxCN-CNTVT functionalized with cyano groups on both donor and acceptor units exhibits a deep LUMO level of -4.23 eV, one of the deepest among reported n-type ionic-electronic conductors. As a result, OECTs based on QxCN-CNTVT demonstrate excellent comprehensive performance, with a high µC* value of up to 168.89 F cm-1 V-1 s-1 and a low Vth of 0.13 V, while maintaining superior operational stability (retaining ∼80% of the initial current after 10,000 s of continuous operation and 10,000 full switching cycles). Furthermore, QxCN-CNTVT is successfully applied to complementary inverters for efficient amplification of electrooculogram (EOG) and electrocardiogram (ECG) signals, as well as NAND and NOR logic gates for integrated logic functions. This work not only alleviates the widely observed imbalance between performance and Vth in n-type OECTs but also provides a versatile molecular design strategy for next-generation low-power bioelectronic devices.",
+        "doi": "10.1002/adma.75397",
+        "doi_url": "https://doi.org/10.1002/adma.75397",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876426/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of achieving low threshold voltage (Vth) and high performance in n-type organic electrochemical transistors (OECTs) by developing a quinoxaline-based polymeric semiconductor via stepwise cyanation. The modified material QxCN-CNTVT exhibits a deep LUMO level (-4.23 eV), resulting in a low Vth of 0.13 V and high µC* value (168.89 F cm-1 V-1 s-1), with stable operation and successful application in EOG/ECG signal amplification and logic gates.\",\n  \"key_findings\": [\n    \"QxCN-CNTVT achieves a low threshold voltage of 0.13 V and high µC* value of 168.89 F cm-1 V-1 s-1\",\n    \"The material demonstrates superior operational stability, retaining ∼80% of initial current after 10,000 s of continuous operation\",\n    \"QxCN-CNTVT enables efficient amplification of EOG/ECG signals and integrated logic gates\"\n  ],\n  \"study_type\": \"In vitro\",\n  \"scientific_significance\": \"This work provides a molecular design strategy for n-type OECTs that simultaneously achieves low threshold voltage and high performance, advancing the field of low-power bioelectronic devices.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of achieving low threshold voltage (Vth) and high performance in n-type organic electrochemical transistors (OECTs) by developing a quinoxaline-based polymeric semiconductor via stepwise cyanation. The modified material QxCN-CNTVT exhibits a deep LUMO level (-4.23 eV), resulting in a low Vth of 0.13 V and high µC* value (168.89 F cm-1 V-1 s-1), with stable operation and successful application in EOG/ECG signal amplification and logic gates.",
+          "key_findings": [
+            "QxCN-CNTVT achieves a low threshold voltage of 0.13 V and high µC* value of 168.89 F cm-1 V-1 s-1",
+            "The material demonstrates superior operational stability, retaining ∼80% of initial current after 10,000 s of continuous operation",
+            "QxCN-CNTVT enables efficient amplification of EOG/ECG signals and integrated logic gates"
+          ],
+          "study_type": "In vitro",
+          "scientific_significance": "This work provides a molecular design strategy for n-type OECTs that simultaneously achieves low threshold voltage and high performance, advancing the field of low-power bioelectronic devices."
+        },
+        "elapsed_seconds": 56.3269,
+        "input_tokens": 725,
+        "output_tokens": 295,
+        "thoughts_tokens": null,
+        "total_tokens": 1020,
+        "model_eval_seconds": 38.7916,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42901136",
+        "title": "Spontaneous phase separation-driven Janus hydrogel spatiotemporally orchestrates the fibrotic progression for functional tendon regeneration.",
+        "abstract": "NA: Postoperative tendon regeneration hinges on the precise spatiotemporal orchestration of fibrotic progression, aberrant fibrogenesis instead drives pathological adhesion formation and impairs functional recovery. However, current strategies often target isolated aspects of fibrotic progression and rely on complex fabrication procedures. Here, we engineer a Janus hydrogel (SPS-JH) via spontaneous phase separation-driven stratification and photopolymerization of methacrylated hyaluronic acid (HAM) and poly(lactide)-b-poly(propylene glycol)-b-poly(lactide) dimethacrylate (PLD). This innate water/oil demixing yields a Janus architecture in which the outer HAM layer establishes a lubricated anti-adhesion interface, while the inner PLD layer confers durable mechanical reinforcement. Critically, the SPS-JH decodes the temporal hierarchy of tendon repair: the MMP-2-degradable HAM layer releases COX-2 siRNA to silence fibroblast hyperactivation during early inflammation, whereas the PLD matrix sustains niclosamide (NEN) release to polarize macrophages during inflammation and suppress fibrogenesis during proliferation. In rats with Achilles tendon injury, SPS-JH reduces peritendinous adhesions and promotes biomechanically competent, functional tendon regeneration. Transcriptomic analysis reveals coordinated activation of mechanotransduction and tissue remodeling programs accompanied by suppressed fibrogenic signaling. This work establishes a structurally minimalist yet biologically sophisticated paradigm wherein spontaneous phase separation coordinates with the dynamic fibrotic progression to enable functional tendon regeneration.",
+        "doi": "10.1016/j.biomaterials.2026.124714",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124714",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42901136/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how spontaneous phase separation in Janus hydrogels can spatiotemporally orchestrate fibrotic progression for functional tendon regeneration. The researchers engineered a Janus hydrogel (SPS-J. The hydrogel features an outer methacrylated hyaluronic acid layer for anti-adhesion and an inner PLD layer for mechanical reinforcement. It releases COX-2 siRNA early to suppress fibroblast hyperactivation and niclosamide later to polarize macrophages and suppress fibrogenesis. In rat models, it reduced adhesions and promoted functional regeneration with coordinated mechanotransduction and tissue remodeling.\",\n  \"key_findings\": [\n    \"SPS-JH reduces peritendinous adhesions in rat Achilles tendon injury models\",\n    \"SPS-JH releases COX-2 siRNA to silence fibroblast hyperactivation during early inflammation\",\n    \"SPS-JH sustains niclosamide release to polarize macrophages and suppress fibrogenesis during proliferation\"\n  ],\n  \"study_type\": \"In vitro and in vivo rat model study\",\n  \"scientific_significance\": \"This work demonstrates a structurally minimalist hydrogel design that uses spontaneous phase separation to dynamically coordinate fibrotic progression, providing a template for spatiotemporally controlled tissue regeneration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how spontaneous phase separation in Janus hydrogels can spatiotemporally orchestrate fibrotic progression for functional tendon regeneration. The researchers engineered a Janus hydrogel (SPS-J. The hydrogel features an outer methacrylated hyaluronic acid layer for anti-adhesion and an inner PLD layer for mechanical reinforcement. It releases COX-2 siRNA early to suppress fibroblast hyperactivation and niclosamide later to polarize macrophages and suppress fibrogenesis. In rat models, it reduced adhesions and promoted functional regeneration with coordinated mechanotransduction and tissue remodeling.",
+          "key_findings": [
+            "SPS-JH reduces peritendinous adhesions in rat Achilles tendon injury models",
+            "SPS-JH releases COX-2 siRNA to silence fibroblast hyperactivation during early inflammation",
+            "SPS-JH sustains niclosamide release to polarize macrophages and suppress fibrogenesis during proliferation"
+          ],
+          "study_type": "In vitro and in vivo rat model study",
+          "scientific_significance": "This work demonstrates a structurally minimalist hydrogel design that uses spontaneous phase separation to dynamically coordinate fibrotic progression, providing a template for spatiotemporally controlled tissue regeneration."
+        },
+        "elapsed_seconds": 52.9599,
+        "input_tokens": 711,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 986,
+        "model_eval_seconds": 36.3023,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42913630",
+        "title": "Lifestyle-induced regulatory T cell fragility primes adverse events after immune checkpoint blockade.",
+        "abstract": "NA: Immune checkpoint blockade has transformed cancer therapy, but immune-related adverse events (irAEs) remain a major, sometimes fatal, limitation, and the lack of robust preclinical models has hindered mechanistic insight. We present the lifestyle-induced susceptibility to irAEs (LISA) model, in which diet-driven metabolic and microbial alterations recreate human-like susceptibility to anti-PD-1 toxicity. LISA recapitulates multi-organ irAEs with immune infiltration and cytokine production, severity depending on sex, age, treatment modality, and immunotherapy response. Mechanistically, dysbiosis marked by Akkermansia muciniphila enrichment accompanies aberrant immune activation, driving regulatory T cell (Treg) fragility and CD8+ cytotoxic effector populations, both observed in patients with irColitis. Dietary reversal, metabolite supplementation, and blocking interferon (IFN)-γ production or signaling in Tregs restored Treg stability and resolved inflammation. Human-to-mouse fecal microbiome transfer interacts with recipient diet to shape susceptibility. Together, these findings identify dietary, microbial, and immune drivers of irAEs, which can be leveraged to improve immunotherapy responses while minimizing toxicity.",
+        "doi": "10.1016/j.cell.2026.09.055",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.055",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42913630/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how lifestyle factors induce regulatory T cell fragility leading to immune-related adverse events (irAEs) during immune checkpoint blockade. Using a mouse model (LISA) that mimics human susceptibility through diet-driven metabolic and microbial changes, the research demonstrates that dysbiosis, particularly Akkerm. muciniphila enrichment, causes Treg instability and inflammation. Interventions like dietary changes and IFN-γ blockade resolved irAEs, highlighting dietary and microbial factors as modifiable targets to reduce immunotherapy toxicity.\",\n  \"key_findings\": [\n    \"Diet-driven metabolic and microbial alterations in the LISA model recapitulate multi-organ irAEs with immune infiltration and cytokine production.\",\n    \"Akkermansia muciniphila enrichment correlates with regulatory T cell fragility and CD8+ cytotoxic effector expansion.\",\n    \"Interventions including dietary reversal, metabolite supplementation, and IFN-γ blockade restored Treg stability and resolved inflammation.\"\n  ],\n  \"study_type\": \"Mouse model (LISA)\",\n  \"scientific_significance\": \"The study identifies dietary and microbial factors as modifiable targets to mitigate immune-related adverse events during immunotherapy, providing a mechanistic basis for improving therapeutic safety without compromising efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how lifestyle factors induce regulatory T cell fragility leading to immune-related adverse events (irAEs) during immune checkpoint blockade. Using a mouse model (LISA) that mimics human susceptibility through diet-driven metabolic and microbial changes, the research demonstrates that dysbiosis, particularly Akkerm. muciniphila enrichment, causes Treg instability and inflammation. Interventions like dietary changes and IFN-γ blockade resolved irAEs, highlighting dietary and microbial factors as modifiable targets to reduce immunotherapy toxicity.",
+          "key_findings": [
+            "Diet-driven metabolic and microbial alterations in the LISA model recapitulate multi-organ irAEs with immune infiltration and cytokine production.",
+            "Akkermansia muciniphila enrichment correlates with regulatory T cell fragility and CD8+ cytotoxic effector expansion.",
+            "Interventions including dietary reversal, metabolite supplementation, and IFN-γ blockade restored Treg stability and resolved inflammation."
+          ],
+          "study_type": "Mouse model (LISA)",
+          "scientific_significance": "The study identifies dietary and microbial factors as modifiable targets to mitigate immune-related adverse events during immunotherapy, providing a mechanistic basis for improving therapeutic safety without compromising efficacy."
+        },
+        "elapsed_seconds": 47.8497,
+        "input_tokens": 615,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 879,
+        "model_eval_seconds": 35.6262,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876431",
+        "title": "Boundary Guided Liquid-Bridge Adhesion for Robotic Pick-and-Release.",
+        "abstract": "NA: Liquid-bridge-mediated adhesion provides conformal contact with rough surfaces and gentle interaction with fragile microstructures, making it attractive for object manipulation. However, controlling liquid-bridge formation and retraction under non-ideal interfacial conditions remains challenging. Here, we report a switchable liquid-bridge adhesion strategy using a two-tiered stamp with spatially patterned wettability. Boundary-guided pinning confines liquid spreading to form a stable bridge for pickup and guides liquid retraction toward bridge breakup for controlled release. This design converts liquid-bridge adhesion from an uncontrolled capillary phenomenon into a controllable interfacial mechanism. The strategy enables preload-free adhesion switching, tunable adhesion forces, robust manipulation across surfaces with diverse roughness and wettability, and damage-free contact with fragile microstructures. Integrated with a robotic platform, the stamp functions as a liquid-bridge-based robotic end effector for pick-and-place manipulation and robotic placement, providing a route toward ultra-gentle manufacturing and microelectronic assembly.",
+        "doi": "10.1002/adma.75399",
+        "doi_url": "https://doi.org/10.1002/adma.75399",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876431/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a switchable liquid-bridge adhesion mechanism for robotic pick-and-release operations. Using a two-tiered stamp with spatially patterned wettability, the researchers guide liquid spreading and retraction to enable conformal contact with rough surfaces and damage-free manipulation of fragile microstructures. The approach achieves preload-free adhesion switching, tunable forces, and robust performance across varied surface conditions.\",\n  \"key_findings\": [\n    \"Boundary-guided pinning confines liquid spreading to form stable bridges for pickup\",\n    \"Guided liquid retraction enables controlled release without structural damage\",\n    \"The strategy supports robust manipulation across surfaces with diverse roughness and wusing\"\n  ],\n  \"study_type\": \"Experimental\",\n  \"scientific_significance\": \"This work converts liquid-bridge adhesion from an uncontrolled capillary phenomenon into a controllable interfacial mechanism, enabling ultra-gentle robotic manipulation for microelectronic assembly applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a switchable liquid-bridge adhesion mechanism for robotic pick-and-release operations. Using a two-tiered stamp with spatially patterned wettability, the researchers guide liquid spreading and retraction to enable conformal contact with rough surfaces and damage-free manipulation of fragile microstructures. The approach achieves preload-free adhesion switching, tunable forces, and robust performance across varied surface conditions.",
+          "key_findings": [
+            "Boundary-guided pinning confines liquid spreading to form stable bridges for pickup",
+            "Guided liquid retraction enables controlled release without structural damage",
+            "The strategy supports robust manipulation across surfaces with diverse roughness and wusing"
+          ],
+          "study_type": "Experimental",
+          "scientific_significance": "This work converts liquid-bridge adhesion from an uncontrolled capillary phenomenon into a controllable interfacial mechanism, enabling ultra-gentle robotic manipulation for microelectronic assembly applications."
+        },
+        "elapsed_seconds": 37.3169,
+        "input_tokens": 580,
+        "output_tokens": 198,
+        "thoughts_tokens": null,
+        "total_tokens": 778,
+        "model_eval_seconds": 26.7013,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42906521",
+        "title": "Bimetallic biomimetic catalytic STING sensitizer for coordinating innate and adaptive immune responses against biofilm infections.",
+        "abstract": "NA: Implant-related infections remain refractory because bacterial biofilms create a physical barrier and are accompanied by local immune dysfunction. Here, we develop a biomimetic metallo-immunocatalytic nanoplatform by cloaking a pH-responsive manganese-iron layered double hydroxide (MFH) core with an M1 macrophage membrane to form MFHM. This design integrates a structurally coupled Mn-Fe catalytic lattice with a functionally preserved biointerface, enabling infection-targeted delivery, colloidal stability, and microenvironment-responsive ion release. Within the acidic biofilm niche, the electronically coupled MFH core promotes Fe/Mn redox cycling and sustains Fenton-like reactive oxygen species generation, thereby disrupting extracellular polymeric substances, damaging bacterial membranes, and perturbing bacterial metal homeostasis. Concurrently, released Mn2+ and redox-active Fe species act as immunomodulatory cues that enhance cyclic GMP-AMP synthase-stimulator of interferon genes (cGAS-STING) and nuclear factor κB (NF-κB) signaling, promote pro-inflammatory macrophage polarization and phagocytic function, and facilitate dendritic-cell maturation and downstream adaptive immune engagement. In a methicillin-resistant Staphylococcus aureus implant-associated infection model, MFHM markedly reduces bacterial burden, promotes tissue repair, and elicits a coordinated immune response that may support protective adaptive immunity, without apparent treatment-related systemic toxicity. These findings establish a catalytic-immune framework based on a biomimetic bimetallic nanostructure and highlight its potential therapeutic application in recalcitrant biofilm-associated infections.",
+        "doi": "10.1016/j.biomaterials.2026.124710",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124710",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42906521/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a biomimetic bimetallic nanoplatform (MFHM) combining pH-responsive manganese-iron layered double hydroxide with macrophage membrane to target biofilm infections. The platform disrupts bacterial biofilms via redox cycling and reactive oxygen species, while enhancing cGAS-STING and NF-κB signaling to stimulate coordinated innate and adaptive immune responses, reducing bacterial burden in methicillin-resistant Staphylococcus aureus infections without systemic toxicity.\",\n  \"key_findings\": [\n    \"MFHM disrupts bacterial biofilms through Fe/Mn redox cycling and reactive oxygen species generation\",\n    \"MFHM enhances cGAS-ST.ING and NF-κB signaling to promote pro-inflammatory macrophage polarization and phagocytosis\",\n    \"MFHM reduces bacterial burden in methicillin-resistant Staphylococcus aureus implant infections without systemic toxicity\"\n  ],\n  \"study_type\": \"In vitro and in vivo model\",\n  \"scientific_significance\": \"This work establishes a biomimetic catalytic-immune framework for targeting biofilm infections through dual mechanisms of biofilm disruption and immune activation, offering a novel therapeutic strategy for recalcitrant infections.\"\n}",
+        "parsed": {
+          "summary": "This study developed a biomimetic bimetallic nanoplatform (MFHM) combining pH-responsive manganese-iron layered double hydroxide with macrophage membrane to target biofilm infections. The platform disrupts bacterial biofilms via redox cycling and reactive oxygen species, while enhancing cGAS-STING and NF-κB signaling to stimulate coordinated innate and adaptive immune responses, reducing bacterial burden in methicillin-resistant Staphylococcus aureus infections without systemic toxicity.",
+          "key_findings": [
+            "MFHM disrupts bacterial biofilms through Fe/Mn redox cycling and reactive oxygen species generation",
+            "MFHM enhances cGAS-ST.ING and NF-κB signaling to promote pro-inflammatory macrophage polarization and phagocytosis",
+            "MFHM reduces bacterial burden in methicillin-resistant Staphylococcus aureus implant infections without systemic toxicity"
+          ],
+          "study_type": "In vitro and in vivo model",
+          "scientific_significance": "This work establishes a biomimetic catalytic-immune framework for targeting biofilm infections through dual mechanisms of biofilm disruption and immune activation, offering a novel therapeutic strategy for recalcitrant infections."
+        },
+        "elapsed_seconds": 52.5232,
+        "input_tokens": 717,
+        "output_tokens": 254,
+        "thoughts_tokens": null,
+        "total_tokens": 971,
+        "model_eval_seconds": 35.8202,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914977",
+        "title": "Taurine lowers inflammaging by regulating the NLRP3 inflammasome in macrophages.",
+        "abstract": "NA: Whether a decline in taurine drives aging is debated, and despite high millimolar intracellular concentrations, its function as a potential guardian of cytosolic homeostasis is unclear. Here, we show that aging increases circulating taurine concentrations in humans and mice. Further elevating taurine in aged mice enhances health span, engaging anti-inflammatory pathways previously linked to youthfulness, and reduces mortality from sepsis and inflammasome-mediated inflammation, suggesting an enantiostatic response. Mechanistically, diverse NLRP3-specific \"danger signals\" induce taurine efflux from macrophages as a proximal step to activate the inflammasome and the resultant pyroptosis. Taurine restoration in macrophages prevents NLRP3-induced trans-Golgi network disassembly, thereby suppressing NLRP3 inflammasome activation. Conversely, lowering taurine biosynthesis combined with reduced bioavailability in macrophages exacerbated inflammasome activation. In humans, sustained caloric restriction elevates adipose tissue taurine and is accompanied by lower inflammation. Together, we identify taurine as an immunometabolic rheostat that links danger sensing to NLRP3 inflammasome activation, suggesting taurine-based strategies to alleviate inflammaging and inflammasomopathies.",
+        "doi": "10.1016/j.cell.2026.09.061",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.061",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914977/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates taurine's role in aging-related inflammation by examining its impact on NLRP3 inflammasome activation in macrophages. In aged mice, elevated taurine improved health span and reduced mortality from sepsis and inflammasome-mediated inflammation. Mechanistically, taurine efflux from macrophages is triggered by NLRP3 activators, and restoring taurine suppresses inflammasome activation. Human data shows caloric restriction increases adipose taurine and lowers inflammation, suggesting taurine acts as an immunometabolic rheostat to regulate inflammaging.\",\n  \"key_findings\": [\n    \"Elevated taurine in aged mice enhances health span and reduces mortality from sepsis and inflammasome-mediated inflammation\",\n    \"Taurine efflux from macrophages is triggered by NLRP3 activators, leading to inflammasome activation\",\n    \"Restoring taurine in macrophages suppresses NLRP3 inflammasome activation and prevents trans-Golgi network disassembly\"\n  ],\n  \"study_type\": \"In vivo mouse models and human adipose tissue analysis\",\n  \"scientific_significance\": \"This work identifies taurine as a key immunometabolic regulator that suppresses NLRP3 inflammasome activation, providing a mechanistic basis for mitigating age-related inflammation and potential therapeutic strategies for inflammasomopathies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates taurine's role in aging-related inflammation by examining its impact on NLRP3 inflammasome activation in macrophages. In aged mice, elevated taurine improved health span and reduced mortality from sepsis and inflammasome-mediated inflammation. Mechanistically, taurine efflux from macrophages is triggered by NLRP3 activators, and restoring taurine suppresses inflammasome activation. Human data shows caloric restriction increases adipose taurine and lowers inflammation, suggesting taurine acts as an immunometabolic rheostat to regulate inflammaging.",
+          "key_findings": [
+            "Elevated taurine in aged mice enhances health span and reduces mortality from sepsis and inflammasome-mediated inflammation",
+            "Taurine efflux from macrophages is triggered by NLRP3 activators, leading to inflammasome activation",
+            "Restoring taurine in macrophages suppresses NLRP3 inflammasome activation and prevents trans-Golgi network disassembly"
+          ],
+          "study_type": "In vivo mouse models and human adipose tissue analysis",
+          "scientific_significance": "This work identifies taurine as a key immunometabolic regulator that suppresses NLRP3 inflammasome activation, providing a mechanistic basis for mitigating age-related inflammation and potential therapeutic strategies for inflammasomopathies."
+        },
+        "elapsed_seconds": 55.7479,
+        "input_tokens": 649,
+        "output_tokens": 306,
+        "thoughts_tokens": null,
+        "total_tokens": 955,
+        "model_eval_seconds": 42.0223,
+        "error": null
+      }
+    }
+  ]
+}
