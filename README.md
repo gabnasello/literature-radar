@@ -1,85 +1,99 @@
 # Literature Radar
 
-Automated, configurable PubMed monitoring with immutable per-journal retrieval reports. This first milestone retrieves citation metadata and abstracts only; LLM summarization and the Quarto website will be added in later milestones.
+Automated, configurable PubMed monitoring with immutable per-journal retrieval reports and a reproducible LLM comparison workflow.
 
 ## Current design
 
-- **R-first** implementation using NCBI E-utilities.
-- **Weekly GitHub Actions** workflow; manual `workflow_dispatch` is available for testing.
-- **Dynamic round-robin selection**: enabled journals are sorted by oldest successful report, so adding/removing journals requires editing only `config/journals.yml`.
-- **12 example journals enabled initially**, with 3 selected per weekly run. Change `enabled` or `journals_per_run` in the YAML file at any time.
-- **PubMed Create Date (`[crdt]`)** defines the retrieval interval. Publication date is metadata only, so an older paper first indexed this month appears in this month's report.
-- **Per-journal cursor**: each journal has its own last successful retrieval end date.
-- **Overlap + PMID deduplication**: the API query rechecks a small overlap, while PMIDs already included in earlier reports are excluded from the new report.
-- **Immutable reports**: report files are written once under `reports/<journal-id>/`; existing reports are never overwritten.
-- **Cursor safety**: a journal cursor advances only after retrieval, report writing, and persistence succeed.
-- **No same-day duplicate runs**: manually rerunning a journal after it has completed through today's date is a no-op.
-- **PubMed result limit safety**: if an interval exceeds PubMed ESearch's 10,000-UID limit, the interval is recursively split into smaller non-overlapping date ranges.
+- R-first implementation using NCBI E-utilities.
+- Weekly GitHub Actions retrieval; manual workflow dispatch is available for testing.
+- Dynamic journal scheduling based on each journal's oldest successful retrieval cursor.
+- PubMed Create Date (crdt) defines retrieval windows, not publication date.
+- Per-journal cursors, overlap protection, PMID deduplication, and immutable JSON reports.
+- A separate, manual LLM benchmark compares a local Ollama model with the Gemini API using identical abstracts and prompts.
+- The Quarto website will be added in the next milestone.
 
-## First setup
+## Phase 1: PubMed retrieval
 
-1. Add `NCBI_EMAIL` as an Actions secret (recommended by NCBI; optional). An `NCBI_API_KEY` secret is also supported but not required.
-2. Review `config/journals.yml` and verify the ISSNs for your chosen journals.
-3. In Actions → Weekly PubMed retrieval → Run workflow, run the first retrieval. The scheduler selects the 3 enabled journals with the oldest (or missing) report history.
-4. Review the committed files under `reports/`, `data/state/`, and `data/papers/`.
+1. Add NCBI_EMAIL as an Actions secret (recommended by NCBI; optional). NCBI_API_KEY is also supported.
+2. Review config/journals.yml and verify the ISSNs.
+3. In Actions, run Weekly PubMed retrieval.
+4. Review reports/, data/state/, and data/papers/.
 
-## Journal scheduling
+The scheduler selects enabled journals with the oldest successful retrieval history. New journals without history are prioritized. The PubMed Create Date (crdt) field determines when an article enters a retrieval report.
 
-The scheduler is not tied to fixed cohorts. Each run selects up to `settings.journals_per_run` enabled journals with the oldest `last_successful_report_at`. A new journal with no history is prioritized. With 12 evenly monitored journals and 3 selected per week, a complete cycle is approximately four weeks. With fewer or more journals, the cycle adjusts automatically.
+## Phase 2: LLM benchmark
 
-Manual workflow input `journal_ids` can override selection for a one-off test, e.g. `nature-immunology,science-immunology`.
+The benchmark is intentionally separate from weekly retrieval. An LLM/API failure cannot interrupt PubMed collection, and benchmarking only runs when manually requested.
 
-## Retrieval windows and reports
+### Models and prompt
 
-On first run, each selected journal retrieves the prior `initial_backfill_days` (30 by default) through today. Thereafter, each window starts with a configurable overlap before the previous successful end date and ends today. The overlap protects against boundary/indexing timing issues. PMIDs already stored from earlier reports are not repeated in the new report.
+- Local model through Ollama: qwen3:4b, running on the GitHub Actions CPU runner.
+- Gemini API: gemini-3.8-flash.
+- Shared prompt: prompts/paper_summary_v1.txt.
+- Default sample: 12 abstracts, sampled reproducibly and approximately evenly across journals.
+- Both providers receive the exact same prompt and abstract. JSON output mode is enabled for both.
 
-The query uses PubMed Create Date (`[crdt]`), not publication date. Thus, a paper published in September but first added to PubMed in November is included in the November retrieval report. The report month means **when PubMed indexed the citation**, not when the paper was published.
+The prompt requests a concise summary, key findings, study type, relevance to biomaterials and regenerative medicine, and limitations or unknowns. It instructs both models not to infer facts beyond the abstract.
 
-Every successful execution creates a new immutable report, including an empty report if no new PMIDs were found. The global `papers.json` is a deduplicated index; the historical report files are the permanent record. Previous reports are never rewritten.
+Model names, generation settings, sample size, random seed, and Gemini pricing assumptions are editable in config/llm.yml.
 
-If a run fails before the cursor is updated, the next run retries the uncompleted interval. The GitHub workflow commits reports, paper index, and state together only after the script succeeds.
+### Configure the Gemini API key
+
+1. Create an API key in Google AI Studio.
+2. In the GitHub repository, open Settings → Secrets and variables → Actions.
+3. Select New repository secret.
+4. Set the name to GEMINI_API_KEY and paste the key as its value.
+
+Never put the key in a committed file or in workflow inputs. The workflow reads it from the repository secret.
+
+### Run the benchmark
+
+1. Open Actions → LLM benchmark.
+2. Select Run workflow.
+3. Keep the default sample size of 12 for the first comparison, or enter a different positive integer.
+4. Wait for the job to finish.
+
+The first run installs Ollama and downloads the selected model, so it may take several minutes. The local model runs on CPU; its elapsed time is recorded.
+
+### Outputs
+
+Each run is saved in a unique folder under data/benchmarks/:
+
+- benchmark.json: sampled paper metadata, prompt, model outputs, token counts, timings, and errors.
+- metrics.csv: one row per paper and provider, for easy comparison in a spreadsheet.
+- comparison.md: paired summaries for manual scientific review.
+
+The benchmark output records an estimated Gemini paid-tier cost from the token counts and the configured rates. This is an estimate, not an invoice; actual charges depend on the account's free-tier eligibility and billing status. The configured Gemini 3.8 Flash rates are the published introductory standard-tier rates through 31 December 2026 and should be reviewed before 2027.
+
+The benchmark does not automatically decide which model is scientifically better. Review factual accuracy, omitted findings, hallucinations, usefulness, and reading time. Human review is important for scientific reliability.
 
 ## Data layout
 
-```text
-config/journals.yml             journal registry and settings
-data/state/journal_state.json   per-journal successful retrieval cursors
-data/papers/papers.json         deduplicated paper index
-reports/<journal-id>/*.json    immutable retrieval reports
-```
+- config/journals.yml: monitored journal registry and retrieval settings.
+- config/llm.yml: model IDs, sampling, and generation settings.
+- prompts/: versioned prompts shared across providers.
+- data/state/: per-journal successful retrieval cursors.
+- data/papers/: deduplicated paper index.
+- reports/: immutable PubMed retrieval reports.
+- data/benchmarks/: immutable paired LLM benchmark runs.
 
 ## Local development
 
-Install dependencies and run the tests: 
+Install the R dependencies with install.packages, then run:
 
-```r
-install.packages(c("httr2", "jsonlite", "tibble", "dplyr", "stringr",
-                   "lubridate", "yaml", "purrr", "xml2", "glue", "cli", "testthat"))
-Rscript tests/testthat.R
-```
-
-Run the automatically selected journals:
-
-```bash
-Rscript scripts/run_retrieval.R
-```
-
-Or explicitly run a subset:
-
-```bash
-Rscript scripts/run_retrieval.R nature-immunology science-immunology
-```
+- Rscript tests/testthat.R
+- Rscript scripts/run_retrieval.R
+- Rscript scripts/run_benchmark.R (requires a running Ollama server/model and GEMINI_API_KEY)
 
 ## Roadmap
 
-1. PubMed retrieval, per-journal cursors, immutable JSON reports (current milestone).
-2. LLM adapter interface and benchmark harness for Ollama and Gemini 3.
+1. PubMed retrieval, per-journal cursors, immutable JSON reports (complete).
+2. LLM adapters and paired benchmark for Ollama and Gemini (in progress).
 3. Quarto website and GitHub Pages deployment.
-4. Monthly journal overview, search/filter, quality checks and optional notifications.
+4. Monthly journal overview, search/filter, quality checks, and optional notifications.
 
-## Notes
+## Operational notes
 
-- ISSNs should be verified against PubMed. Some titles have print and electronic ISSNs; if a journal does not return expected results, we can extend its config to support multiple ISSNs.
-- NCBI recommends identifying your application and providing a contact email. The workflow supports `NCBI_EMAIL` and `NCBI_API_KEY` repository secrets.
-- GitHub scheduled workflow starts are best-effort and can be delayed during platform load. The per-journal state and dynamic selection make the system tolerant of delays.
-- Do not store API keys in committed files. Later Gemini integration will use a GitHub Actions secret.
+- GitHub scheduled workflow starts are best-effort and can be delayed.
+- Never store API keys in the repository.
+- The LLM benchmark is manual and separate from retrieval to control API use and compute time.
