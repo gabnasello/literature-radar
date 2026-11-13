@@ -5,7 +5,9 @@ on:
     branches: [main]
     paths:
       - "R/summarize.R"
+      - "R/benchmark.R"
       - "scripts/run_summarization.R"
+      - "prompts/**"
       - "config/llm.yml"
       - "reports/**"
       - ".github/workflows/summarize-papers.yml"
