@@ -8,6 +8,7 @@ on:
       - "scripts/run_summarization.R"
       - "config/llm.yml"
       - "reports/**"
+      - ".github/workflows/summarize-papers.yml"
   workflow_run:
     workflows: ["Weekly PubMed retrieval"]
     types: [completed]
