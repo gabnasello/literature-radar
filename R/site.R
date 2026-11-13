@@ -112,6 +112,37 @@ load_literature_site_data <- function(root = ".") {
     }
   }
 
+  config_path <- file.path(root, "config", "journals.yml")
+  config <- if (file.exists(config_path)) yaml::read_yaml(config_path) else list(journals = list())
+  configured <- config$journals
+
+  normalize_journal_name <- function(x) {
+    tolower(gsub("[^a-z0-9]", "", site_text(x)))
+  }
+  resolve_journal <- function(paper, metadata) {
+    id <- site_text(metadata$journal_id)
+    raw_name <- site_text(metadata$journal_name, site_text(paper$journal, "Unknown journal"))
+    if (nzchar(id)) {
+      match <- Filter(function(x) identical(site_text(x$id), id), configured)
+      canonical <- if (length(match)) site_text(match[[1]]$name, raw_name) else raw_name
+      return(list(id = id, name = canonical))
+    }
+    raw_normalized <- normalize_journal_name(raw_name)
+    matches <- Filter(function(x) {
+      configured_name <- normalize_journal_name(x$name)
+      nzchar(configured_name) && startsWith(raw_normalized, configured_name)
+    }, configured)
+    if (length(matches)) {
+      lengths <- vapply(matches, function(x) nchar(normalize_journal_name(x$name)), integer(1))
+      best <- matches[[which.max(lengths)]]
+      return(list(id = site_text(best$id), name = site_text(best$name, raw_name)))
+    }
+    list(
+      id = gsub("[^a-z0-9]+", "-", tolower(raw_name)),
+      name = raw_name
+    )
+  }
+
   # Reports are also a fallback source if the consolidated paper index is absent.
   if (!length(paper_records)) {
     for (path in report_paths) {
@@ -129,9 +160,10 @@ load_literature_site_data <- function(root = ".") {
 
     metadata <- article_metadata[[pmid]]
     if (is.null(metadata)) metadata <- list()
+    journal <- resolve_journal(paper, metadata)
     paper$pmid <- pmid
-    paper$journal_id <- site_text(metadata$journal_id, gsub("[^a-z0-9]+", "-", tolower(site_text(paper$journal))))
-    paper$journal_name <- site_text(metadata$journal_name, site_text(paper$journal, "Unknown journal"))
+    paper$journal_id <- journal$id
+    paper$journal_name <- journal$name
     paper$pubmed_url <- site_text(paper$pubmed_url, paste0("https://pubmed.ncbi.nlm.nih.gov/", pmid, "/"))
     paper$doi_url <- site_text(paper$doi_url)
     paper$retrieval_end_date <- site_text(metadata$retrieval_end_date)
@@ -146,7 +178,7 @@ load_literature_site_data <- function(root = ".") {
       if (!nzchar(year)) "0000" else year
     }, character(1))
     titles <- vapply(papers, function(x) site_text(x$title), character(1))
-    papers <- papers[order(journal_names, years, titles, decreasing = FALSE)]
+    papers <- papers[order(journal_names, -as.integer(years), titles)]
   }
 
   if (length(report_records)) {
@@ -160,8 +192,6 @@ load_literature_site_data <- function(root = ".") {
     if (is.null(latest_by_journal[[id]])) latest_by_journal[[id]] <- report
   }
 
-  config_path <- file.path(root, "config", "journals.yml")
-  config <- if (file.exists(config_path)) yaml::read_yaml(config_path) else list(journals = list())
   configured_journals <- lapply(config$journals, function(journal) {
     id <- site_text(journal$id)
     list(
