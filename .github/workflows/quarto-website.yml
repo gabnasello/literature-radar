@@ -6,6 +6,8 @@ on:
     paths:
       - "website/**"
       - "R/site.R"
+      - "R/benchmark.R"
+      - "tests/testthat/**"
       - "reports/**"
       - "data/papers/**"
       - "data/benchmarks/**"

@@ -92,20 +92,32 @@ safe_ollama_call <- function(prompt, config) {
 benchmark_metrics <- function(results) {
   rows <- lapply(results, function(paper) {
     x <- paper$ollama
+    numeric_value <- function(name) {
+      value <- x[[name]]
+      if (is.null(value) || !length(value) || is.na(value[[1]])) return(NA_real_)
+      as.numeric(value[[1]])
+    }
+    text_value <- function(object, name, default = "") {
+      value <- object[[name]]
+      if (is.null(value) || !length(value) || is.na(value[[1]])) return(default)
+      as.character(value[[1]])
+    }
+
     data.frame(
-      pmid = paper$article$pmid,
-      journal = paper$article$journal_name,
+      pmid = text_value(paper$article, "pmid", NA_character_),
+      journal = text_value(paper$article, "journal_name", ""),
       provider = "ollama",
-      model = x$model,
-      status = x$status,
-      elapsed_seconds = x$elapsed_seconds,
-      input_tokens = x$input_tokens,
-      output_tokens = x$output_tokens,
-      total_tokens = x$total_tokens,
-      error = if (is.null(x$error)) "" else x$error,
+      model = text_value(x, "model", ""),
+      status = text_value(x, "status", "unknown"),
+      elapsed_seconds = numeric_value("elapsed_seconds"),
+      input_tokens = numeric_value("input_tokens"),
+      output_tokens = numeric_value("output_tokens"),
+      total_tokens = numeric_value("total_tokens"),
+      error = text_value(x, "error", ""),
       stringsAsFactors = FALSE
     )
   })
+  if (!length(rows)) return(data.frame())
   do.call(rbind, rows)
 }
 

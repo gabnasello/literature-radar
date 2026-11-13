@@ -78,6 +78,9 @@ test_that("summary Markdown omits empty fields and benchmark diagnostics", {
   expect_equal(nrow(metrics), 1L)
   expect_equal(metrics$provider, "ollama")
   expect_equal(metrics$model, "qwen3:4b")
+  expect_true(is.na(metrics$input_tokens))
+  expect_true(is.na(metrics$output_tokens))
+  expect_true(is.na(metrics$total_tokens))
 
   output <- tempfile(fileext = ".md")
   write_benchmark_markdown(results, "test-run", "paper_summary_v1", output)
