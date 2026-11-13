@@ -1,0 +1,24 @@
+Package: literatureradar
+Title: Automated PubMed Journal Monitoring
+Version: 0.1.0
+Authors@R: person("Literature", "Radar", role = c("aut", "cre"), email = "noreply@example.org")
+Description: Retrieve PubMed records by journal and PubMed creation date, keep
+    per-journal cursors, and publish immutable retrieval reports.
+License: MIT
+Encoding: UTF-8
+Depends: R (>= 4.2.0)
+Imports:
+    httr2,
+    jsonlite,
+    tibble,
+    dplyr,
+    stringr,
+    lubridate,
+    yaml,
+    purrr,
+    xml2,
+    glue,
+    cli
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

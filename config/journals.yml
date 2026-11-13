@@ -1,0 +1,59 @@
+# Edit this file to add, remove, enable, or disable monitored journals.
+# ISSN is preferred because journal titles can be ambiguous in PubMed.
+# Provide the print or electronic ISSN used by the PubMed journal record.
+settings:
+  journals_per_run: 3
+  initial_backfill_days: 30
+  overlap_days: 2
+  pubmed_batch_size: 200
+  email: ""
+
+journals:
+  - id: nature-biomedical-engineering
+    name: Nature Biomedical Engineering
+    issn: "2157-846X"
+    enabled: true
+  - id: nature-immunology
+    name: Nature Immunology
+    issn: "1529-2908"
+    enabled: true
+  - id: science-immunology
+    name: Science Immunology
+    issn: "2470-9468"
+    enabled: true
+  - id: nature
+    name: Nature
+    issn: "0028-0836"
+    enabled: true
+  - id: science
+    name: Science
+    issn: "0036-8075"
+    enabled: true
+  - id: cell
+    name: Cell
+    issn: "0092-8674"
+    enabled: true
+  - id: immunity
+    name: Immunity
+    issn: "1074-7613"
+    enabled: true
+  - id: nature-medicine
+    name: Nature Medicine
+    issn: "1078-8956"
+    enabled: true
+  - id: cell-stem-cell
+    name: Cell Stem Cell
+    issn: "1934-5909"
+    enabled: true
+  - id: advanced-materials
+    name: Advanced Materials
+    issn: "0935-9648"
+    enabled: true
+  - id: biomaterials
+    name: Biomaterials
+    issn: "0142-9612"
+    enabled: true
+  - id: journal-of-clinical-investigation
+    name: Journal of Clinical Investigation
+    issn: "0021-9738"
+    enabled: true
