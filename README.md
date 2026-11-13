@@ -63,7 +63,7 @@ Each run is saved in a unique folder under data/benchmarks/:
 - metrics.csv: one row per paper and provider, for easy comparison in a spreadsheet.
 - comparison.md: paired summaries for manual scientific review.
 
-The benchmark output records an estimated Gemini paid-tier cost from the token counts and the configured rates. This is an estimate, not an invoice; actual charges depend on the account's free-tier eligibility and billing status. The configured Gemini 3.8 Flash rates are the published introductory standard-tier rates through 31 December 2026 and should be reviewed before 2027.
+The benchmark output records an estimated Gemini paid-tier cost from input, output, and reported reasoning-token counts using the configured rates. This is an estimate, not an invoice; actual charges depend on the account's free-tier eligibility and billing status. The configured Gemini 3.8 Flash rates are the published introductory standard-tier rates through 31 December 2026 and should be reviewed before 2027.
 
 The benchmark does not automatically decide which model is scientifically better. Review factual accuracy, omitted findings, hallucinations, usefulness, and reading time. Human review is important for scientific reliability.
 
@@ -88,7 +88,7 @@ Install the R dependencies with install.packages, then run:
 ## Roadmap
 
 1. PubMed retrieval, per-journal cursors, immutable JSON reports (complete).
-2. LLM adapters and paired benchmark for Ollama and Gemini (in progress).
+2. LLM adapters and paired benchmark for Ollama and Gemini (implemented; first benchmark run pending).
 3. Quarto website and GitHub Pages deployment.
 4. Monthly journal overview, search/filter, quality checks, and optional notifications.
 
