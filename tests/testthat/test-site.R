@@ -89,11 +89,14 @@ test_that("site data joins papers, immutable reports, and successful summaries",
 
 test_that("summarization queue excludes only successfully summarized papers", {
   records <- list(
-    list(pmid = "100", title = "Already done"),
-    list(pmid = "200", title = "Needs summary"),
-    list(pmid = "300", title = "Failed before")
+    list(pmid = "100", title = "Already done", journal_id = "a", report_id = "update-a"),
+    list(pmid = "200", title = "Needs summary", journal_id = "a", report_id = "update-a"),
+    list(pmid = "300", title = "Failed before", journal_id = "b", report_id = "update-b"),
+    list(pmid = "400", title = "Another paper", journal_id = "c", report_id = "update-c")
   )
   pending <- pending_summarization_articles(records, completed_pmids = "100")
-  expect_equal(vapply(pending, function(x) x$pmid, character(1)), c("200", "300"))
+  expect_equal(vapply(pending[1:3], function(x) x$report_id, character(1)),
+               c("update-a", "update-b", "update-c"))
+  expect_equal(vapply(pending, function(x) x$pmid, character(1)), c("200", "300", "400"))
   expect_length(pending_summarization_articles(list(), character()), 0L)
 })

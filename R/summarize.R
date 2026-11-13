@@ -23,7 +23,31 @@ read_completed_summary_pmids <- function(root = project_root()) {
 
 pending_summarization_articles <- function(records, completed_pmids = character()) {
   if (!length(records)) return(list())
-  Filter(function(article) !article$pmid %in% completed_pmids, records)
+  pending <- Filter(function(article) !article$pmid %in% completed_pmids, records)
+  if (length(pending) < 2L) return(pending)
+
+  # Round-robin across immutable report windows so one large journal update
+  # does not monopolize the queue while other journal pages remain empty.
+  keys <- vapply(pending, function(article) {
+    journal_id <- if (is.null(article$journal_id)) "" else as.character(article$journal_id)
+    report_id <- if (is.null(article$report_id)) "" else as.character(article$report_id)
+    paste(journal_id, report_id, sep = "::")
+  }, character(1))
+  group_keys <- unique(keys)
+  groups <- lapply(group_keys, function(key) pending[keys == key])
+  names(groups) <- group_keys
+  ordered <- list()
+
+  while (length(groups)) {
+    remaining <- list()
+    for (key in names(groups)) {
+      group <- groups[[key]]
+      ordered[[length(ordered) + 1L]] <- group[[1]]
+      if (length(group) > 1L) remaining[[key]] <- group[-1]
+    }
+    groups <- remaining
+  }
+  ordered
 }
 
 run_paper_summarization <- function(
