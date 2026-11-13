@@ -22,8 +22,9 @@ build_summary_prompt <- function(article, template = NULL) {
 
 parse_summary_response <- function(text) {
   cleaned <- trimws(as.character(text))
-  cleaned <- sub("^\\`{3}[[:alnum:]]*[[:space:]]*", "", cleaned)
-  cleaned <- sub("[[:space:]]*\\`{3}$", "", cleaned)
+  fence <- intToUtf8(96L)
+  cleaned <- sub(paste0("^", fence, "{3}[[:alnum:]]*[[:space:]]*"), "", cleaned)
+  cleaned <- sub(paste0("[[:space:]]*", fence, "{3}$"), "", cleaned)
   parsed <- tryCatch(
     jsonlite::fromJSON(cleaned, simplifyVector = FALSE),
     error = function(e) NULL
