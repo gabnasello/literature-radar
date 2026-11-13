@@ -79,8 +79,11 @@ safe_provider_call <- function(provider, prompt, config, api_key) {
         model = config$model,
         api_key = api_key,
         temperature = config$temperature,
+        thinking_level = config$thinking_level,
         max_output_tokens = config$max_output_tokens,
-        timeout_seconds = config$timeout_seconds
+        timeout_seconds = config$timeout_seconds,
+        max_tries = config$max_tries,
+        max_retry_seconds = config$max_retry_seconds
       )
     }
   }, error = function(e) {
