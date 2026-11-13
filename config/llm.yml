@@ -1,0 +1,21 @@
+benchmark:
+  sample_size: 12
+  seed: 20261113
+  prompt_version: paper_summary_v1
+
+  ollama:
+    model: qwen3:4b
+    base_url: http://127.0.0.1:11434
+    temperature: 0.2
+    num_ctx: 4096
+    num_predict: 800
+    timeout_seconds: 600
+
+  gemini:
+    model: gemini-3.8-flash
+    temperature: 0.2
+    max_output_tokens: 800
+    timeout_seconds: 240
+    paid_input_usd_per_million: 0.75
+    paid_output_usd_per_million: 3.75
+    pricing_effective_until: 2026-12-31
