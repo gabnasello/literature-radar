@@ -2,7 +2,8 @@
 # ISSN is preferred because journal titles can be ambiguous in PubMed.
 # Provide the print or electronic ISSN used by the PubMed journal record.
 settings:
-  journals_per_run: 11
+  journals_per_run: 2
+  initial_full_scan: true
   initial_backfill_days: 30
   overlap_days: 2
   pubmed_batch_size: 200
@@ -40,10 +41,6 @@ journals:
   - id: cell-biomaterials
     name: Cell Biomaterials
     issn: "3050-5623"
-    enabled: true
-  - id: advanced-materials
-    name: Advanced Materials
-    issn: "0935-9648"
     enabled: true
   - id: nature-materials
     name: Nature Materials
