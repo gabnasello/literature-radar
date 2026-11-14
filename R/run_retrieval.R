@@ -16,8 +16,14 @@ run_retrieval <- function(config_path = file.path(project_root(), "config", "jou
     if (length(disabled)) stop("Journal(s) are disabled: ", paste(disabled, collapse = ", "), call. = FALSE)
     selected <- Filter(function(j) j$id %in% journal_ids, active)
   } else {
-    n <- cfg$settings$journals_per_run %||% 3L
-    selected <- select_journals(active, state, n)
+    initial_scan_done <- !is.null(state$.initial_full_scan_completed_at)
+    if (isTRUE(cfg$settings$initial_full_scan) && !initial_scan_done) {
+      message("Initial full scan: selecting all enabled journals.")
+      selected <- active
+    } else {
+      n <- cfg$settings$journals_per_run %||% 3L
+      selected <- select_journals(active, state, n)
+    }
   }
 
   if (!length(selected)) {
@@ -39,5 +45,16 @@ run_retrieval <- function(config_path = file.path(project_root(), "config", "jou
         one$retrieved, one$n, one$report_file))
     }
   }
+
+  # Persist completion only after every enabled journal has a successful cursor.
+  if (isTRUE(cfg$settings$initial_full_scan) &&
+      all(vapply(active, function(j) {
+        entry <- state[[j$id]]
+        !is.null(entry$last_successful_end_date) && nzchar(entry$last_successful_end_date)
+      }, logical(1)))) {
+    state$.initial_full_scan_completed_at <- format(Sys.time(), tz = "UTC", usetz = TRUE)
+    save_state(state)
+  }
+
   invisible(list(selected = names(results), results = results))
 }
