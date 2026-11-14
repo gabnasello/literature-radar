@@ -22,6 +22,17 @@ read_completed_summary_pmids <- function(root = project_root()) {
   unique(completed)
 }
 
+summarization_batch_outcome <- function(successful, failed) {
+  successful <- suppressWarnings(as.integer(successful)[1])
+  failed <- suppressWarnings(as.integer(failed)[1])
+  if (is.na(successful) || is.na(failed) || successful < 0L || failed < 0L) {
+    stop("successful and failed must be non-negative integers.", call. = FALSE)
+  }
+  if (failed == 0L) return("success")
+  if (successful > 0L) return("partial")
+  "failed"
+}
+
 pending_summarization_articles <- function(records, completed_pmids = character()) {
   if (!length(records)) return(list())
   pending <- Filter(function(article) !article$pmid %in% completed_pmids, records)
@@ -96,6 +107,11 @@ run_paper_summarization <- function(
   output_dir <- file.path(root, "data", "summaries", run_id)
   dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
   metrics <- benchmark_metrics(paper_results)
+  successful <- sum(metrics$status == "ok")
+  failed <- nrow(metrics) - successful
+  remaining <- max(0L, length(pending) - successful)
+  outcome <- summarization_batch_outcome(successful, failed)
+
   result <- list(
     schema_version = 1L,
     run_id = run_id,
@@ -105,7 +121,7 @@ run_paper_summarization <- function(
     prompt_template = prompt_template,
     requested_batch_size = batch_size,
     actual_batch_size = length(selected),
-    remaining_after_run = max(0L, length(pending) - length(selected)),
+    remaining_after_run = remaining,
     models = list(ollama = config$ollama$model),
     papers = paper_results
   )
@@ -117,24 +133,35 @@ run_paper_summarization <- function(
     file.path(output_dir, "summaries.md")
   )
 
-  successful <- sum(metrics$status == "ok")
-  failed <- nrow(metrics) - successful
   message("Summarization artifacts written to: ", output_dir)
   message("Successful summaries: ", successful, " / ", nrow(metrics))
-  message("Papers still waiting: ", max(0L, length(pending) - successful))
+  message("Papers still waiting: ", remaining)
 
-  if (failed > 0L) {
+  if (identical(outcome, "failed")) {
     stop(
       failed,
-      " Ollama call(s) failed or returned invalid JSON. Partial results were saved; failed papers will be retried.",
+      " paper(s) failed or returned invalid summaries. Results were saved; the papers remain queued for retry.",
       call. = FALSE
+    )
+  }
+
+  if (identical(outcome, "partial")) {
+    cat(
+      "::warning::",
+      failed,
+      " paper(s) did not pass summary validation. ",
+      successful,
+      " valid summaries were saved; failed papers remain queued for the next scheduled run.\n",
+      sep = ""
     )
   }
 
   invisible(list(
     processed = length(selected),
     successful = successful,
-    remaining = max(0L, length(pending) - successful),
+    failed = failed,
+    outcome = outcome,
+    remaining = remaining,
     output_dir = output_dir
   ))
 }

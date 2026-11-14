@@ -7,7 +7,6 @@ on:
       - "R/summarize.R"
       - "R/llm.R"
       - "R/benchmark.R"
-      - "R/benchmark.R"
       - "scripts/run_summarization.R"
       - "prompts/**"
       - "config/llm.yml"

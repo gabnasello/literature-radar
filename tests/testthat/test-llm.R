@@ -33,6 +33,13 @@ test_that("invalid model JSON is identified", {
   expect_false(response$valid_json)
 })
 
+test_that("partial summarization batches are non-fatal but total failures remain failures", {
+  expect_equal(summarization_batch_outcome(24L, 0L), "success")
+  expect_equal(summarization_batch_outcome(16L, 8L), "partial")
+  expect_equal(summarization_batch_outcome(0L, 24L), "failed")
+  expect_error(summarization_batch_outcome(-1L, 1L))
+})
+
 test_that("summary payloads enforce the requested schema and word count", {
   valid <- list(
     summary = paste(rep("evidence", 45), collapse = " "),
