@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261114T124645Z",
+  "generated_at_utc": "2026-11-14 13:13:46 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 246,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42876215",
+        "title": "Dual Twisted Interfaces Enable Tunable Second Harmonic Generation in Chemical Vapor Deposition Grown Trilayer MoS2.",
+        "abstract": "NA: Twisted bilayer transition metal dichalcogenides, governed by a single twisted interface, offer a versatile platform for manipulating interlayer coupling and emergent optical behavior. However, despite extensive studies on single twisted interface systems, how multi-interface twisted stacking influences nonlinear optical behavior remains unclear. Here, we address this gap by systematically investigating the nonlinear optical performance of chemical vapor deposition (CVD) grown twisted trilayer MoS2 (TT-MoS2) with multi-interface twisted stacking. We fabricate all nine distinct trilayer MoS2 configurations by CVD. Raman and photoluminescence show that twisted interfaces modulate interlayer coupling, giving rise to stacking-dependent phonon and excitonic responses. Atomic-resolution scanning, transmission electron microscopy, and selected area electron diffraction confirm dual twisted interfaces and a supermoiré lattice. Guided by these structural insights, we examine the second harmonic generation (SHG) response across all nine trilayer configurations. Extending the coherent SH field superposition model to a trilayer system with two independent twisted interfaces, we develop a framework that describes how the dual interfaces govern the SHG intensity and polarization orientation across stacking configurations. Our findings establish TT-MoS2 as a versatile nonlinear platform and open new avenues for understanding and exploiting multi-interface twisted coupling to engineer nonlinear optical responses in van der Waals materials.",
+        "doi": "10.1002/adma.75387",
+        "doi_url": "https://doi.org/10.1002/adma.75387",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876215/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework linking interface geometry to SHG intensity and polarization, demonstrating TT-MoS2's potential for tunable nonlinear optical engineering.\",\n  \"key_findings\": [\n    \"Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses\",\n    \"Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure\",\n    \"A framework linking interface geometry to SHG intensity and polarization was established\"\n  ],\n  \"study_type\": \"CVD-grown twisted trilayer MoS2 configurations\",\n  \"scientific_significance\": \"This work provides a foundational understanding of multi-interface twisted coupling in van der Waals materials, enabling precise engineering of nonlinear optical responses through structural design.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework linking interface geometry to SHG intensity and polarization, demonstrating TT-MoS2's potential for tunable nonlinear optical engineering.",
+          "key_findings": [
+            "Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses",
+            "Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure",
+            "A framework linking interface geometry to SHG intensity and polarization was established"
+          ],
+          "study_type": "CVD-grown twisted trilayer MoS2 configurations",
+          "scientific_significance": "This work provides a foundational understanding of multi-interface twisted coupling in van der Waals materials, enabling precise engineering of nonlinear optical responses through structural design."
+        },
+        "elapsed_seconds": 38.3416,
+        "input_tokens": 844,
+        "output_tokens": 227,
+        "thoughts_tokens": null,
+        "total_tokens": 1071,
+        "model_eval_seconds": 33.4107,
+        "error": "summary must contain 45–65 words; received 66.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42901136",
+        "title": "Spontaneous phase separation-driven Janus hydrogel spatiotemporally orchestrates the fibrotic progression for functional tendon regeneration.",
+        "abstract": "NA: Postoperative tendon regeneration hinges on the precise spatiotemporal orchestration of fibrotic progression, aberrant fibrogenesis instead drives pathological adhesion formation and impairs functional recovery. However, current strategies often target isolated aspects of fibrotic progression and rely on complex fabrication procedures. Here, we engineer a Janus hydrogel (SPS-JH) via spontaneous phase separation-driven stratification and photopolymerization of methacrylated hyaluronic acid (HAM) and poly(lactide)-b-poly(propylene glycol)-b-poly(lactide) dimethacrylate (PLD). This innate water/oil demixing yields a Janus architecture in which the outer HAM layer establishes a lubricated anti-adhesion interface, while the inner PLD layer confers durable mechanical reinforcement. Critically, the SPS-JH decodes the temporal hierarchy of tendon repair: the MMP-2-degradable HAM layer releases COX-2 siRNA to silence fibroblast hyperactivation during early inflammation, whereas the PLD matrix sustains niclosamide (NEN) release to polarize macrophages during inflammation and suppress fibrogenesis during proliferation. In rats with Achilles tendon injury, SPS-JH reduces peritendinous adhesions and promotes biomechanically competent, functional tendon regeneration. Transcriptomic analysis reveals coordinated activation of mechanotransduction and tissue remodeling programs accompanied by suppressed fibrogenic signaling. This work establishes a structurally minimalist yet biologically sophisticated paradigm wherein spontaneous phase separation coordinates with the dynamic fibrotic progression to enable functional tendon regeneration.",
+        "doi": "10.1016/j.biomaterials.2026.124714",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124714",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42901136/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how spontaneous phase separation in Janus hydrogels spatiotemporally orchestrates fibrotic progression for functional tendon regeneration. The researchers engineered a Janus hydrogel (SPS-J. The hydrogel's outer hyaluronic acid layer reduces adhesions, while the inner PLD layer provides mechanical strength. It temporally regulates fibroblast activity and macrophage polarization via MMP-2-degradable siRNA and niclosamide release, promoting functional tendon repair in rats.\",\n  \"key_findings\": [\n    \"SPS-JH hydrogel reduces peritendinous adhesions in rat Achilles tendon injuries\",\n    \"The hydrogel's outer hyaluronic acid layer establishes a lubricated anti-adhesion interface\",\n    \"The hydrogel's inner PLD layer sustains niclosamide release to suppress fibrogenesis during proliferation\"\n  ],\n  \"study_type\": \"In vitro and in vivo rat model\",\n  \"scientific_significance\": \"This work demonstrates that spontaneous phase separation can coordinate fibrotic progression dynamics to enable functional tendon regeneration through precise spatiotemporal control of cellular responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how spontaneous phase separation in Janus hydrogels spatiotemporally orchestrates fibrotic progression for functional tendon regeneration. The researchers engineered a Janus hydrogel (SPS-J. The hydrogel's outer hyaluronic acid layer reduces adhesions, while the inner PLD layer provides mechanical strength. It temporally regulates fibroblast activity and macrophage polarization via MMP-2-degradable siRNA and niclosamide release, promoting functional tendon repair in rats.",
+          "key_findings": [
+            "SPS-JH hydrogel reduces peritendinous adhesions in rat Achilles tendon injuries",
+            "The hydrogel's outer hyaluronic acid layer establishes a lubricated anti-adhesion interface",
+            "The hydrogel's inner PLD layer sustains niclosamide release to suppress fibrogenesis during proliferation"
+          ],
+          "study_type": "In vitro and in vivo rat model",
+          "scientific_significance": "This work demonstrates that spontaneous phase separation can coordinate fibrotic progression dynamics to enable functional tendon regeneration through precise spatiotemporal control of cellular responses."
+        },
+        "elapsed_seconds": 51.5821,
+        "input_tokens": 804,
+        "output_tokens": 239,
+        "thoughts_tokens": null,
+        "total_tokens": 1043,
+        "model_eval_seconds": 35.1355,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896552",
+        "title": "A microbiome-bile acid axis mediates protection from chronic liver disease in females.",
+        "abstract": "NA: Sex-based differences in chronic liver disease (CLD) incidence and progression are well documented, yet the mechanistic basis of this sexual disparity remains elusive. Here, leveraging a large-scale metabolomics database comprising 9,254 individuals, we identify the endogenous bile acid, isoursodeoxycholic acid (isoUDCA), as a candidate mediator of female-associated hepatoprotection. We trace the origin of isoUDCA to a bacterial consortium, which is selectively enriched by estrogen through shaping a specialized intestinal microenvironment. Mechanistically, isoUDCA promotes the nuclear accumulation of SREBP2. This upregulates the intracellular transporter STARD4 and its functionally coupled downstream enzyme CYP7B1, thereby facilitating intracellular cholesterol handling and metabolic conversion. Collectively, our findings support a microbiome-bile acid-liver axis that may contribute to sex differences in CLD susceptibility and support further evaluation of isoUDCA as a potential therapeutic intervention.",
+        "doi": "10.1016/j.cell.2026.09.048",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.048",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896552/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the mechanism behind sex-based differences in chronic liver disease (CLD) using metabolomics data from 9,254 individuals. It identifies isoursodeoxycholic acid (isoUDCA) as a bile acid mediator of female hepatoprotection, originating from a bacterial consortium enriched by estrogen. The findings suggest a microbiome-bile acid-liver axis that could explain sex disparities in CL. The study implies isoUDCA's potential as a therapeutic target.\",\n  \"key_findings\": [\n    \"IsoUDCA, an endogenous bile acid, mediates female hepatoprotection in chronic liver disease.\",\n    \"Estrogen selectively enriches a bacterial consortium that produces isoUDCA.\",\n    \"IsoUDCA promotes SREBP2 nuclear accumulation, enhancing cholesterol handling via STARD4 and CYP7B1.\"\n  ],\n  \"study_type\": \"Metabolomics analysis of large-scale human data\",\n  \"scientific_significance\": \"The study establishes a microbiome-bile acid axis that explains sex-based differences in chronic liver disease susceptibility, providing a mechanistic basis for potential sex-specific therapeutic strategies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the mechanism behind sex-based differences in chronic liver disease (CLD) using metabolomics data from 9,254 individuals. It identifies isoursodeoxycholic acid (isoUDCA) as a bile acid mediator of female hepatoprotection, originating from a bacterial consortium enriched by estrogen. The findings suggest a microbiome-bile acid-liver axis that could explain sex disparities in CL. The study implies isoUDCA's potential as a therapeutic target.",
+          "key_findings": [
+            "IsoUDCA, an endogenous bile acid, mediates female hepatoprotection in chronic liver disease.",
+            "Estrogen selectively enriches a bacterial consortium that produces isoUDCA.",
+            "IsoUDCA promotes SREBP2 nuclear accumulation, enhancing cholesterol handling via STARD4 and CYP7B1."
+          ],
+          "study_type": "Metabolomics analysis of large-scale human data",
+          "scientific_significance": "The study establishes a microbiome-bile acid axis that explains sex-based differences in chronic liver disease susceptibility, providing a mechanistic basis for potential sex-specific therapeutic strategies."
+        },
+        "elapsed_seconds": 44.2585,
+        "input_tokens": 661,
+        "output_tokens": 238,
+        "thoughts_tokens": null,
+        "total_tokens": 899,
+        "model_eval_seconds": 33.7163,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876426",
+        "title": "High-Performance Low Threshold Voltage n-Type OECTs via a Stepwise Cyanation of Quinoxaline-Based Polymeric Semiconductor.",
+        "abstract": "NA: Achieving both low threshold voltage (Vth) and high performance in organic electrochemical transistors (OECTs) is critical for low-power, high-sensitivity bioelectronics, yet simultaneously achieving low Vth and high device performance remains a long-standing challenge. Herein, we propose a stepwise cyanation strategy to modify quinoxaline-based polymeric semiconductors to mitigate this dilemma. Benefiting from the strong electron-withdrawing ability of cyano substituents, QxCN-CNTVT functionalized with cyano groups on both donor and acceptor units exhibits a deep LUMO level of -4.23 eV, one of the deepest among reported n-type ionic-electronic conductors. As a result, OECTs based on QxCN-CNTVT demonstrate excellent comprehensive performance, with a high µC* value of up to 168.89 F cm-1 V-1 s-1 and a low Vth of 0.13 V, while maintaining superior operational stability (retaining ∼80% of the initial current after 10,000 s of continuous operation and 10,000 full switching cycles). Furthermore, QxCN-CNTVT is successfully applied to complementary inverters for efficient amplification of electrooculogram (EOG) and electrocardiogram (ECG) signals, as well as NAND and NOR logic gates for integrated logic functions. This work not only alleviates the widely observed imbalance between performance and Vth in n-type OECTs but also provides a versatile molecular design strategy for next-generation low-power bioelectronic devices.",
+        "doi": "10.1002/adma.75397",
+        "doi_url": "https://doi.org/10.1002/adma.75397",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876426/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of achieving low threshold voltage (Vth) and high performance in n-type organic electrochemical transistors (OECTs). Using a stepwise cyanation strategy on quinoxaline-based polymers, researchers developed QxCN-CNTVT with a deep LUMO level (-4.23 eV). The material enabled OECTs with a low Vth of 0.13 V, high µC* value (168.89 F cm-1 V-1 s-1), and stable operation. The device demonstrated practical applications in amplifying electrooculogram and electrocardiogram signals and implementing logic gates.\",\n  \"key_findings\": [\n    \"QxCN-CNTVT exhibits a deep LUMO level of -4.23 eV\",\n    \"OECTs achieve a low threshold voltage of 0.13 V and high µC* value of 168.89 F cm-1 V-1 s-1\",\n    \"The material enables stable operation and practical applications in EOG/ECG signal amplification and logic gates\"\n  ],\n  \"study_type\": \"In vitro synthesis and device testing\",\n  \"scientific_significance\": \"This work provides a molecular design strategy to overcome the performance-threshold voltage trade-off in n-type OECTs, advancing low-power bioelectronic applications.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of achieving low threshold voltage (Vth) and high performance in n-type organic electrochemical transistors (OECTs). Using a stepwise cyanation strategy on quinoxaline-based polymers, researchers developed QxCN-CNTVT with a deep LUMO level (-4.23 eV). The material enabled OECTs with a low Vth of 0.13 V, high µC* value (168.89 F cm-1 V-1 s-1), and stable operation. The device demonstrated practical applications in amplifying electrooculogram and electrocardiogram signals and implementing logic gates.",
+          "key_findings": [
+            "QxCN-CNTVT exhibits a deep LUMO level of -4.23 eV",
+            "OECTs achieve a low threshold voltage of 0.13 V and high µC* value of 168.89 F cm-1 V-1 s-1",
+            "The material enables stable operation and practical applications in EOG/ECG signal amplification and logic gates"
+          ],
+          "study_type": "In vitro synthesis and device testing",
+          "scientific_significance": "This work provides a molecular design strategy to overcome the performance-threshold voltage trade-off in n-type OECTs, advancing low-power bioelectronic applications."
+        },
+        "elapsed_seconds": 48.5134,
+        "input_tokens": 914,
+        "output_tokens": 296,
+        "thoughts_tokens": null,
+        "total_tokens": 1210,
+        "model_eval_seconds": 43.5465,
+        "error": "summary must contain 45–65 words; received 75.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962342",
+        "title": "Piezoelectric electroporation potentiates high-frequency irreversible electroporation for enhanced prostate cancer eradication.",
+        "abstract": "NA: Residual tumor cell persistence remains a critical unresolved barrier limiting focal therapy such as high-frequency irreversible electroporation (H-FIRE) for prostate cancer. In this study, we identified DNA damage repair as the central mechanism governing the reversible survival of residual cells after H-FIRE. By exploiting the transient membrane permeability of these residual cells following H-FIRE, we engineered a piezoelectrically active nanomaterial, BOIS. Exogenous electric pulses generated by H-FIRE enhance tumor membrane permeabilization, thereby facilitating the intracellular delivery of BOIS and promoting its efficient penetration into residual malignant cells. Upon ultrasound activation, BOIS induces surface charge separation and electron migration, producing an intrinsic electric field accompanied by reactive oxygen species (ROS). This dual mechanism cascade simultaneously inflicts endogenous electric field-mediated electroporation damage on both cellular and nuclear membranes and imposes lethal oxidative stress, thereby converting reversibly injured residual cells into an irreversible death trajectory. Consequently, residual tumor cells with damage repair capacity are converted from a reversibly injured state to irreversible lethal damage. Unlike conventional combination therapies, this study pioneered a new therapeutic paradigm in which the focal ablation procedure functions as a nanomaterial delivery mechanism, thereby establishing a self-reinforcing therapeutic loop. This strategy markedly amplified the therapeutic efficacy of H-FIRE and enhanced the eradication of residual tumor cells. Collectively, these findings establish a groundbreaking therapeutic paradigm for eliminating residual disease following focal ablation.",
+        "doi": "10.1016/j.biomaterials.2026.124683",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124683",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962342/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. By identifying DNA damage repair as the key mechanism for reversible cell survival, researchers engineered piezoelectric nanomaterial BOIS. H-FIRE-enhanced membrane permeability allows BOIS delivery to residual cells. Ultrasound activation triggers BOIS to generate electric fields and reactive oxygen species, causing irreversible cell death through dual mechanisms. This approach significantly improves tumor eradication efficacy.\",\n  \"key_findings\": [\n    \"H-FIRE-induced membrane permeability enables efficient BOIS delivery to residual prostate cancer cells\",\n    \"Ultrasound-activated BOIS produces electric fields and reactive oxygen species to induce irreversible cell death\",\n    \"The dual mechanism converts reversibly injured residual cells into irreversible lethal damage\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This approach establishes a self-reinforcing therapeutic loop where focal ablation delivers nanomaterials to enhance residual tumor elimination, offering a novel strategy for improving focal therapy outcomes.\"\n}",
+        "parsed": {
+          "summary": "This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. By identifying DNA damage repair as the key mechanism for reversible cell survival, researchers engineered piezoelectric nanomaterial BOIS. H-FIRE-enhanced membrane permeability allows BOIS delivery to residual cells. Ultrasound activation triggers BOIS to generate electric fields and reactive oxygen species, causing irreversible cell death through dual mechanisms. This approach significantly improves tumor eradication efficacy.",
+          "key_findings": [
+            "H-FIRE-induced membrane permeability enables efficient BOIS delivery to residual prostate cancer cells",
+            "Ultrasound-activated BOIS produces electric fields and reactive oxygen species to induce irreversible cell death",
+            "The dual mechanism converts reversibly injured residual cells into irreversible lethal damage"
+          ],
+          "study_type": "",
+          "scientific_significance": "This approach establishes a self-reinforcing therapeutic loop where focal ablation delivers nanomaterials to enhance residual tumor elimination, offering a novel strategy for improving focal therapy outcomes."
+        },
+        "elapsed_seconds": 36.7307,
+        "input_tokens": 859,
+        "output_tokens": 218,
+        "thoughts_tokens": null,
+        "total_tokens": 1077,
+        "model_eval_seconds": 31.7904,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42913630",
+        "title": "Lifestyle-induced regulatory T cell fragility primes adverse events after immune checkpoint blockade.",
+        "abstract": "NA: Immune checkpoint blockade has transformed cancer therapy, but immune-related adverse events (irAEs) remain a major, sometimes fatal, limitation, and the lack of robust preclinical models has hindered mechanistic insight. We present the lifestyle-induced susceptibility to irAEs (LISA) model, in which diet-driven metabolic and microbial alterations recreate human-like susceptibility to anti-PD-1 toxicity. LISA recapitulates multi-organ irAEs with immune infiltration and cytokine production, severity depending on sex, age, treatment modality, and immunotherapy response. Mechanistically, dysbiosis marked by Akkermansia muciniphila enrichment accompanies aberrant immune activation, driving regulatory T cell (Treg) fragility and CD8+ cytotoxic effector populations, both observed in patients with irColitis. Dietary reversal, metabolite supplementation, and blocking interferon (IFN)-γ production or signaling in Tregs restored Treg stability and resolved inflammation. Human-to-mouse fecal microbiome transfer interacts with recipient diet to shape susceptibility. Together, these findings identify dietary, microbial, and immune drivers of irAEs, which can be leveraged to improve immunotherapy responses while minimizing toxicity.",
+        "doi": "10.1016/j.cell.2026.09.055",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.055",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42913630/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how lifestyle factors influence immune checkpoint blockade toxicity by developing the LISA model. It demonstrates diet-induced metabolic and microbial changes cause regulatory T cell fragility, leading to multi-organ immune-related adverse events. Key factors include sex, age, and immunotherapy response, with interventions like dietary reversal and IFN-γ blockade resolving inflammation.\",\n  \"key_findings\": [\n    \"Diet-driven metabolic and microbial alterations induce regulatory T cell fragility\",\n    \"LISA model recapitulates multi-organ immune-related adverse events with immune infiltration and cytokine production\",\n    \"Dietary reversal and IFN-γ blockade restore regulatory T cell stability and resolve inflammation\"\n  ],\n  \"study_type\": \"Lifestyle-induced susceptibility to irAEs (Lusing the LISA model)\",\n  \"scientific_significance\": \"This work identifies dietary, microbial, and immune mechanisms underlying immune-related adverse events during immunotherapy, providing a preclinical model to mitigate toxicity while enhancing treatment efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how lifestyle factors influence immune checkpoint blockade toxicity by developing the LISA model. It demonstrates diet-induced metabolic and microbial changes cause regulatory T cell fragility, leading to multi-organ immune-related adverse events. Key factors include sex, age, and immunotherapy response, with interventions like dietary reversal and IFN-γ blockade resolving inflammation.",
+          "key_findings": [
+            "Diet-driven metabolic and microbial alterations induce regulatory T cell fragility",
+            "LISA model recapitulates multi-organ immune-related adverse events with immune infiltration and cytokine production",
+            "Dietary reversal and IFN-γ blockade restore regulatory T cell stability and resolve inflammation"
+          ],
+          "study_type": "Lifestyle-induced susceptibility to irAEs (Lusing the LISA model)",
+          "scientific_significance": "This work identifies dietary, microbial, and immune mechanisms underlying immune-related adverse events during immunotherapy, providing a preclinical model to mitigate toxicity while enhancing treatment efficacy."
+        },
+        "elapsed_seconds": 41.8793,
+        "input_tokens": 708,
+        "output_tokens": 207,
+        "thoughts_tokens": null,
+        "total_tokens": 915,
+        "model_eval_seconds": 29.5394,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, suppresses electrode swelling, and improves Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles. The design enables scalable production and high cycling stability in pouch cells.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect expansion stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C\",\n    \"The design reduces electrode thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in pouch cells after 1200 cycles\"\n  ],\n  \"study_type\": \"Material design and synthesis\",\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable structural strategy for practical silicon-carbon anodes, addressing mechanical instability while maintaining electrochemical performance.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, suppresses electrode swelling, and improves Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles. The design enables scalable production and high cycling stability in pouch cells.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect expansion stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C",
+            "The design reduces electrode thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in pouch cells after 1200 cycles"
+          ],
+          "study_type": "Material design and synthesis",
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable structural strategy for practical silicon-carbon anodes, addressing mechanical instability while maintaining electrochemical performance."
+        },
+        "elapsed_seconds": 52.6152,
+        "input_tokens": 897,
+        "output_tokens": 322,
+        "thoughts_tokens": null,
+        "total_tokens": 1219,
+        "model_eval_seconds": 47.642,
+        "error": "summary must contain 45–65 words; received 82.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43008593",
+        "title": "First use of a woven allogeneic vascular graft made of cell-assembled extracellular matrix (CAM) as an arteriovenous shunt in sheep: a pilot study.",
+        "abstract": "NA: Reliable vascular access is vital for patients undergoing hemodialysis. Current arteriovenous shunts (AVS) made of expanded polytetrafluoroethylene (ePTFE) are prone to thrombosis, intimal hyperplasia, and infections. To overcome these limitations, biological Tissue-Engineered Vascular Grafts (TEVGs) were produced by weaving threads made from Cell-Assembled extracellular Matrix (CAM), i.e., extracellular matrix produced by ovine fibroblasts in culture. The woven TEVGs were designed with a 6 mm internal diameter and beveled ends to facilitate use as an AVS. They had a burst pressure (3069 ± 546 mmHg) and a compliance (4.4 ± 0.5%/100 mmHg) closer to those of native blood vessels than ePTFE prostheses. Woven TEVGs were implanted as carotid-jugular AVS in sheep and compared to ePTFE controls in a bilateral model (n = 8 animals). Grafts were easily punctured with 16G hemodialysis needles once at 4 weeks without loss of structural integrity or hemorrhagic complications. Overall TEVGs patency was 100%, while it was 87.5% for ePTFE grafts (n = 8). Histological analysis revealed an inflammatory response that decreased between 4 and 8 weeks. A luminal neotissue was observed at 8 weeks with smooth muscle cells and localized endothelialization. Localized calcification of CAM was observed and appeared to be correlated with high tissue compaction. This proof-of-concept study demonstrates the feasibility of using a completely biological TEVG made from woven CAM as an AVS in an allogeneic large animal model. Future studies are needed to understand and avoid the never-before-observed calcification of the CAM in a large animal model, as well as to determine longer-term outcomes.",
+        "doi": "10.1016/j.biomaterials.2026.124760",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124760",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43008593/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This pilot study evaluated woven allogeneic vascular grafts made from cell-assembled extracellular matrix (CAM) as arteriovenous shunts in sheep. The biological tissue-engineered grafts demonstrated superior patency (100% vs. 87.5% for ePTFE) and reduced thrombosis risk compared to synthetic controls. Histological analysis showed early neotissue formation and endothelialization without significant complications at 8 weeks.\",\n  \"key_findings\": [\n    \"100% patency of CAM grafts versus 87.5% for ePTFE controls at 4 weeks\",\n    \"Histological evidence of neotissue formation with smooth muscle cells and endothelialization by 8 weeks\",\n    \"Localized calcification correlated with high tissue compaction in CAM grafts\"\n  ],\n  \"study_type\": \"Pilot study in sheep\",\n  \"scientific_significance\": \"This work demonstrates the feasibility of biological tissue-engineered vascular grafts using woven cell-assembled extracellular matrix for hemodialysis access, offering a potential alternative to synthetic materials with improved biocompatibility and reduced thrombosis risk.\"\n}",
+        "parsed": {
+          "summary": "This pilot study evaluated woven allogeneic vascular grafts made from cell-assembled extracellular matrix (CAM) as arteriovenous shunts in sheep. The biological tissue-engineered grafts demonstrated superior patency (100% vs. 87.5% for ePTFE) and reduced thrombosis risk compared to synthetic controls. Histological analysis showed early neotissue formation and endothelialization without significant complications at 8 weeks.",
+          "key_findings": [
+            "100% patency of CAM grafts versus 87.5% for ePTFE controls at 4 weeks",
+            "Histological evidence of neotissue formation with smooth muscle cells and endothelialization by 8 weeks",
+            "Localized calcification correlated with high tissue compaction in CAM grafts"
+          ],
+          "study_type": "Pilot study in sheep",
+          "scientific_significance": "This work demonstrates the feasibility of biological tissue-engineered vascular grafts using woven cell-assembled extracellular matrix for hemodialysis access, offering a potential alternative to synthetic materials with improved biocompatibility and reduced thrombosis risk."
+        },
+        "elapsed_seconds": 57.6368,
+        "input_tokens": 919,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 1163,
+        "model_eval_seconds": 35.5191,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914976",
+        "title": "Cell-state-specific metabolic networks govern ferroptosis versus apoptosis in small cell lung cancer.",
+        "abstract": "NA: Cellular heterogeneity and plasticity are hallmarks of cancer that contribute to tumor growth and therapy resistance. Here, we investigated metabolic heterogeneity in small cell lung cancer (SCLC), an aggressive cancer type with considerable plasticity between neuroendocrine (NE) and non-NE cellular states. Through integrated transcriptomic and metabolomic analyses, we identified a universal dependency on exogenous cysteine/cystine (Cys) across all NE/non-NE SCLC cell states. Notably, NE and non-NE cells with low ASCL1 transcription factor levels underwent ferroptosis upon Cys depletion, whereas ASCL1high cells underwent apoptosis while remaining resistant to ferroptosis. This ferroptosis resistance was driven by the direct transcriptional activation of GCH1 by ASCL1, resulting in increased levels of the antioxidants BH4/BH2. Accordingly, combined Cys depletion and inhibition of BH4/BH2 synthesis reduced tumor growth in patient-derived xenografts. These findings demonstrate that metabolic state influences cell-death susceptibility in SCLC and provide a rationale for therapeutic strategies that exploit these metabolic differences.",
+        "doi": "10.1016/j.cell.2026.09.045",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.045",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914976/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated metabolic heterogeneity in small cell lung cancer (SCLC) by analyzing transcriptomic and metabolomic data across neuroendocrine (NE) and non-NE cellular states. It identified a universal dependency on exogenous cysteine/cystine (Cys) and demonstrated that NE cells with low ASCL1 levels undergo ferroptosis upon Cys depletion, while ASCL1high cells undergo apoptosis and resist ferroptosis due to GCH1-mediated BH4/BH2 upregulation. Combined Cys depletion and BH4/BH2 inhibition reduced tumor growth in patient-derived xenografts.\",\n  \"key_findings\": [\n    \"SCLC cells exhibit universal dependency on exogenous cysteine/cystine across neuroendocrine and non-neuroendocrine states\",\n    \"ASCL1low neuroendocrine SCLC cells undergo ferroptosis when cysteine is depleted\",\n    \"ASCL1high SCLC cells resist ferroptosis via GCH1-driven BH4/BH2 upregulation, enabling apoptosis\"\n  ],\n  \"study_type\": \"Integrated transcriptomic and metabolomic analyses\",\n  \"scientific_significance\": \"The findings establish metabolic state as a determinant of cell death susceptibility in SCLC, providing a mechanistic basis for targeting cysteine metabolism to overcome therapy resistance.\"\n}",
+        "parsed": {
+          "summary": "This study investigated metabolic heterogeneity in small cell lung cancer (SCLC) by analyzing transcriptomic and metabolomic data across neuroendocrine (NE) and non-NE cellular states. It identified a universal dependency on exogenous cysteine/cystine (Cys) and demonstrated that NE cells with low ASCL1 levels undergo ferroptosis upon Cys depletion, while ASCL1high cells undergo apoptosis and resist ferroptosis due to GCH1-mediated BH4/BH2 upregulation. Combined Cys depletion and BH4/BH2 inhibition reduced tumor growth in patient-derived xenografts.",
+          "key_findings": [
+            "SCLC cells exhibit universal dependency on exogenous cysteine/cystine across neuroendocrine and non-neuroendocrine states",
+            "ASCL1low neuroendocrine SCLC cells undergo ferroptosis when cysteine is depleted",
+            "ASCL1high SCLC cells resist ferroptosis via GCH1-driven BH4/BH2 upregulation, enabling apoptosis"
+          ],
+          "study_type": "Integrated transcriptomic and metabolomic analyses",
+          "scientific_significance": "The findings establish metabolic state as a determinant of cell death susceptibility in SCLC, providing a mechanistic basis for targeting cysteine metabolism to overcome therapy resistance."
+        },
+        "elapsed_seconds": 47.2981,
+        "input_tokens": 793,
+        "output_tokens": 286,
+        "thoughts_tokens": null,
+        "total_tokens": 1079,
+        "model_eval_seconds": 42.3967,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42902894",
+        "title": "Programmable Structural Color Lifetimes via Activation Energy Engineering for Spatiotemporally Encoded Dynamic Optical Encryption.",
+        "abstract": "NA: Spatiotemporally programmable structural color holds great promise for high-security optical encryption, yet precisely tailoring the lifetime of structural color across a broad temporal range spanning multiple orders of magnitude remains a significant challenge in polymer systems. The lifetime of structural color is intrinsically governed by the segmental relaxation kinetics of the underlying polymer network, which has been largely overlooked in the rational design. Here, we report a dynamic surface grating with programmable structural color lifetime, in which the optical evolution process is precisely encoded by tuning the activation energy through crosslinking density and amplitude control. Driven by segmental relaxation, the grating amplitude gradually decays over time, redistributing diffracted energy back to specular reflection and causing a gradual fading of structural color. By spatially encoding the relaxation activation energy via photomask-assisted UV exposure, the structural color lifetime governed by local amplitude decay kinetics can be independently programmed across different regions, spanning an unprecedented temporal range from 300 s to over 240 days. This strategy enables diverse applications, ranging from stimulus-responsive optical encryption and time-resolved multilevel information encryption to practical cold-chain integrity monitoring, establishing activation energy as a broadly applicable handle for temporal programmability in dynamic optical systems.",
+        "doi": "10.1002/adma.75468",
+        "doi_url": "https://doi.org/10.1002/adma.75468",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42902894/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates programmable structural color lifetimes in polymer systems for dynamic optical encryption. By engineering activation energy through crosslinking density and amplitude control, the research encodes spatiotemporal evolution of structural color. The approach enables independent programming of color lifetime across regions, spanning 300 seconds to over 240 days via segmental relaxation kinetics, with applications in secure optical encryption and cold-chain monitoring.\",\n  \"key_findings\": [\n    \"Programmable structural color lifetime spans 300 seconds to over 240 days\",\n    \"Activation energy engineering via crosslinking density and amplitude control enables spatiotemporal encoding\",\n    \"Segmental relaxation kinetics drive amplitude decay, redistributing diffracted energy to cause structural color fading\"\n  ],\n  \"study_type\": \"Dynamic surface grating with photomask-assisted UV exposure\",\n  \"scientific_significance\": \"This work establishes activation energy as a fundamental handle for temporal programmability in dynamic optical systems, advancing structural color engineering for high-security applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates programmable structural color lifetimes in polymer systems for dynamic optical encryption. By engineering activation energy through crosslinking density and amplitude control, the research encodes spatiotemporal evolution of structural color. The approach enables independent programming of color lifetime across regions, spanning 300 seconds to over 240 days via segmental relaxation kinetics, with applications in secure optical encryption and cold-chain monitoring.",
+          "key_findings": [
+            "Programmable structural color lifetime spans 300 seconds to over 240 days",
+            "Activation energy engineering via crosslinking density and amplitude control enables spatiotemporal encoding",
+            "Segmental relaxation kinetics drive amplitude decay, redistributing diffracted energy to cause structural color fading"
+          ],
+          "study_type": "Dynamic surface grating with photomask-assisted UV exposure",
+          "scientific_significance": "This work establishes activation energy as a fundamental handle for temporal programmability in dynamic optical systems, advancing structural color engineering for high-security applications."
+        },
+        "elapsed_seconds": 37.6367,
+        "input_tokens": 818,
+        "output_tokens": 220,
+        "thoughts_tokens": null,
+        "total_tokens": 1038,
+        "model_eval_seconds": 32.7122,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43008594",
+        "title": "Nose-to-brain delivery of multimodal nanoregulator restores metal-redox homeostasis and protects mitochondrial integrity for triple inhibitions of neuronal death in radiation-induced brain injury.",
+        "abstract": "NA: Radiation-induced brain injury (RIBI) has emerged as a severe complication of cranial radiotherapy, substantially impairing patients' quality of life. Current therapies mainly rely on anti-apoptotic drugs with limited efficacy. Despite advances in understanding neuronal death in RIBI, efficient neuroprotective strategies are still lacking. Herein, we identify that beyond apoptosis, neuronal ferroptosis and cuproptosis are key drivers of RIBI. To simultaneously inhibit all three death pathways, unlike traditional approach based on small-molecular inhibitors and their combinations, we propose an innovative strategy to disrupt the vicious cycle of ROS/Fe3+/Cu2+ overload and mitochondrial dysfunction that co-drive the three cell death modalities. And a therapeutic nanodot (SPDA-SeMet) is facilely engineered by conjugating natural selenomethionine onto small-sized polydopamine nanoparticles. In RIBI mice, therapeutic outcome of SPDA-SeMet significantly outperforms neuroprotective comparator Edaravone/Dexborneol. Mechanistically, negatively-charged surface and ultrasmall size enable rapid mucus penetration and enhanced nose-to-brain delivery, and then SPDA and SeMet modules work together to restore ROS/Fe3+/Cu2+ homeostasis and preserve mitochondrial integrity in neurons via enhanced capacity in Fe3+/Cu2+ chelation, ROS scavenging, mitochondrial colocalization, thereby efficiently inhibiting neuronal apoptosis/ferroptosis/cuproptosis and inflammation. Our findings establish an essential role of neuronal ferroptosis/cuproptosis/apoptosis in RIBI pathogenesis, and provides a therapeutic nanoplatform regulating complex pathological processes for targeted therapy.",
+        "doi": "10.1016/j.biomaterials.2026.124739",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124739",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43008594/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates radiation-induced brain injury (RIBI) by targeting neuronal ferroptosis, cuproptosis, and apoptosis. Using a nose-to-brain delivery nanodot (SPDA-SeMet), the researchers restored metal-redox homeostasis and mitochondrial integrity, significantly outperforming existing therapies. The nanoplatform simultaneously inhibits all three death pathways through enhanced metal chelation and ROS scavenging.\",\n  \"key_findings\": [\n    \"SPDA-SeMet nanodot effectively inhibits neuronal apoptosis, ferroptosis, and cuproptosis in RIBI\",\n    \"Nose-to-brain delivery via ultrasmall size and negative charge enables rapid mucus penetration\",\n    \"Restoration of ROS/Fe3+/Cu2+ homeostasis preserves mitochondrial integrity and reduces inflammation\"\n  ],\n  \"study_type\": \"In vivo mouse model\",\n  \"scientific_significance\": \"This work establishes a multimodal nanoregulator strategy to simultaneously target multiple cell death pathways in radiation-induced brain injury, advancing therapeutic approaches for complex neurodegenerative processes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates radiation-induced brain injury (RIBI) by targeting neuronal ferroptosis, cuproptosis, and apoptosis. Using a nose-to-brain delivery nanodot (SPDA-SeMet), the researchers restored metal-redox homeostasis and mitochondrial integrity, significantly outperforming existing therapies. The nanoplatform simultaneously inhibits all three death pathways through enhanced metal chelation and ROS scavenging.",
+          "key_findings": [
+            "SPDA-SeMet nanodot effectively inhibits neuronal apoptosis, ferroptosis, and cuproptosis in RIBI",
+            "Nose-to-brain delivery via ultrasmall size and negative charge enables rapid mucus penetration",
+            "Restoration of ROS/Fe3+/Cu2+ homeostasis preserves mitochondrial integrity and reduces inflammation"
+          ],
+          "study_type": "In vivo mouse model",
+          "scientific_significance": "This work establishes a multimodal nanoregulator strategy to simultaneously target multiple cell death pathways in radiation-induced brain injury, advancing therapeutic approaches for complex neurodegenerative processes."
+        },
+        "elapsed_seconds": 52.5018,
+        "input_tokens": 833,
+        "output_tokens": 232,
+        "thoughts_tokens": null,
+        "total_tokens": 1065,
+        "model_eval_seconds": 34.217,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42950818",
+        "title": "Multimodal spatial transcriptomics redefines cortical pathology in Huntington's disease.",
+        "abstract": "NA: Huntington's disease (HD) is caused by CAG expansion in the huntingtin gene (HTT), yet how somatic repeat instability and HTT inclusions relate to selective cell loss in the human brain remains unclear. We have developed a multimodal spatial transcriptomics approach that enables the definition of transcriptional programs with subcellular resolution, somatic CAG repeat lengths, and eight other pathology markers, including HTT inclusions, in every cell of intact brain sections. Imaging 428,173 cells in the control and HD cortex revealed the selective vulnerability of layer 5-6 (L5-6) near-projecting (NP) neurons and L6b deep-layer excitatory neurons, which undergo a >50% loss that is closely linked to large somatic repeat expansions (>450 ± 55 CAGs). Intranuclear inclusions were most prevalent at intermediate somatic repeat expansions (250-350 CAGs) and were associated with broader transcriptional changes than somatic repeat expansion alone. These data provide a comprehensive resource and establish a general framework for connecting repeat expansion and protein pathology across diverse cell types.",
+        "doi": "10.1016/j.cell.2026.09.064",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.064",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42950818/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used multimodal spatial transcriptomics to investigate the relationship between CAG repeat expansions, HTT inclusions, and neuronal loss in Huntington's disease. Analysis of 428,1.73 cells revealed layer 5-6 near-projecting neurons and L6b deep-layer excitatory neurons show >50% loss linked to large somatic repeats (>450 CAGs). Intranuclear inclusions peaked at intermediate repeats (250-350 CAGs) and correlated with broader transcriptional changes.\",\n  \"key_findings\": [\n    \"Layer 5-6 near-projecting neurons and L6b deep-layer excitatory neurons undergo >50% loss in Huntington's disease cortex\",\n    \"Large somatic CAG expansions (>450 CAGs) correlate with selective neuronal loss in HD\",\n    \"Intranuclear inclusions are most prevalent at intermediate somatic repeat expansions (250-350 CAGs)\"\n  ],\n  \"study_type\": \"Multimodal spatial transcriptomics\",\n  \"scientific_significance\": \"The study establishes a direct link between somatic CAG repeat expansions, HTT inclusions, and selective neuronal vulnerability in Huntington's disease, providing a framework for understanding pathogenic mechanisms across cell types.\"\n}",
+        "parsed": {
+          "summary": "This study used multimodal spatial transcriptomics to investigate the relationship between CAG repeat expansions, HTT inclusions, and neuronal loss in Huntington's disease. Analysis of 428,1.73 cells revealed layer 5-6 near-projecting neurons and L6b deep-layer excitatory neurons show >50% loss linked to large somatic repeats (>450 CAGs). Intranuclear inclusions peaked at intermediate repeats (250-350 CAGs) and correlated with broader transcriptional changes.",
+          "key_findings": [
+            "Layer 5-6 near-projecting neurons and L6b deep-layer excitatory neurons undergo >50% loss in Huntington's disease cortex",
+            "Large somatic CAG expansions (>450 CAGs) correlate with selective neuronal loss in HD",
+            "Intranuclear inclusions are most prevalent at intermediate somatic repeat expansions (250-350 CAGs)"
+          ],
+          "study_type": "Multimodal spatial transcriptomics",
+          "scientific_significance": "The study establishes a direct link between somatic CAG repeat expansions, HTT inclusions, and selective neuronal vulnerability in Huntington's disease, providing a framework for understanding pathogenic mechanisms across cell types."
+        },
+        "elapsed_seconds": 50.7719,
+        "input_tokens": 701,
+        "output_tokens": 272,
+        "thoughts_tokens": null,
+        "total_tokens": 973,
+        "model_eval_seconds": 38.5938,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904490",
+        "title": "Minimally Invasive In Vivo Fabrication of Multiscale Biohybrid Systems.",
+        "abstract": "NA: Multiscale biohybrid systems integrating living materials with minimally invasive in vivo fabrication offer new opportunities for precise diagnosis, physiological monitoring, and tissue regeneration. This review provides a unified perspective on their design and therapeutic integration, organizing recent advances across multiscale material design, minimally invasive fabrication, spatiotemporal co-engineering, and functional applications. Three emerging principles are identified: multiscale coupling bridges material architectures with cellular and tissue responses; spatiotemporal coordination integrates precise in vivo construction with dynamic material and biological evolution; and sensing-regeneration feedback extends biohybrid systems from passive repair toward responsive therapeutic regulation. Building on these principles, we highlight machine learning-assisted material discovery, multi-site fabrication, and intelligent feedback control as key directions for developing adaptive, closed-loop therapeutic systems. Together, these insights provide design guidance for translating minimally invasive multiscale biohybrid systems toward next-generation patient-centered healthcare.",
+        "doi": "10.1002/adma.75421",
+        "doi_url": "https://doi.org/10.1002/adma.75421",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904490/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines minimally invasive in vivo fabrication of multiscale biohybrid systems for diagnosis, monitoring, and tissue regeneration. It identifies three key principles: multiscale coupling bridges material architecture with biological responses; spatiotemp: coordination integrates precise in vivo construction with dynamic evolution; and sensing-regeneration feedback enables responsive therapeutic regulation. The study highlights machine learning-assisted design and multi-site fabrication as critical pathways toward adaptive, closed-loop healthcare systems.\",\n  \"key_findings\": [\n    \"Multiscale coupling bridges material architecture with cellular and tissue responses\",\n    \"Spatiotemporal coordination integrates precise in vivo construction with dynamic material and biological evolution\",\n    \"Sensing-regeneration feedback extends biohybrid systems from passive repair to responsive therapeutic regulation\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes foundational principles for designing minimally invasive multiscale biohybrid systems that can dynamically interface with biological processes, advancing the field toward responsive, closed-loop therapeutic applications.\"\n}",
+        "parsed": {
+          "summary": "This review examines minimally invasive in vivo fabrication of multiscale biohybrid systems for diagnosis, monitoring, and tissue regeneration. It identifies three key principles: multiscale coupling bridges material architecture with biological responses; spatiotemp: coordination integrates precise in vivo construction with dynamic evolution; and sensing-regeneration feedback enables responsive therapeutic regulation. The study highlights machine learning-assisted design and multi-site fabrication as critical pathways toward adaptive, closed-loop healthcare systems.",
+          "key_findings": [
+            "Multiscale coupling bridges material architecture with cellular and tissue responses",
+            "Spatiotemporal coordination integrates precise in vivo construction with dynamic material and biological evolution",
+            "Sensing-regeneration feedback extends biohybrid systems from passive repair to responsive therapeutic regulation"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes foundational principles for designing minimally invasive multiscale biohybrid systems that can dynamically interface with biological processes, advancing the field toward responsive, closed-loop therapeutic applications."
+        },
+        "elapsed_seconds": 39.1029,
+        "input_tokens": 651,
+        "output_tokens": 209,
+        "thoughts_tokens": null,
+        "total_tokens": 860,
+        "model_eval_seconds": 29.2557,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43014062",
+        "title": "Ultrasound-programmable poly(amino acid) nanocomposite enables synchronized metal ion-cisplatin release to overcome multidrug resistance.",
+        "abstract": "NA: Although immunotherapy has demonstrated remarkable clinical anti-cancer efficacy, chemotherapy remains the most widely used therapeutic modality. Multidrug resistance (MDR) remains a major barrier to platinum-based chemotherapy and is closely associated with insufficient intracellular drug accumulation, elevated antioxidant capacity, and impaired stress responsiveness in cancer cells. Here, an ultrasound (US)-programmable poly(amino acid) nanocomposite, EG-KFc20-KSA/CDDP, is developed to enable synchronized intracellular release of Fe(II) and cisplatin (CDDP) for coordinated chemoresistance reversal. Under US irradiation, EG-KFc20-KSA/CDDP accelerates the release of Fe(II) and CDDP in tumor microenvironments (TMEs), triggering overproduction of intracellular reactive oxygen species (ROS) and amplifying oxidative stress. In CDDP-resistant A549DDP lung caner cells, EG-KFc20-KSA/CDDP elevates ROS levels by 2.7-fold and reduces glutathione (GSH) levels to 31.2% of those in the Control group. Further mechanistic investigation reveals that the robust intracellular oxidative stress and associated mitochondrial damage also enhance autophagic activity, as evidenced by a marked increase in autolysosome formation. EG-KFc20-KSA/CDDP combined with US achieves an 85.3% tumor inhibition rate and prolongs the survival of A549DDP tumor-bearing mice to 61 days in vivo. This study establishes a US-programmable metal ion/chemotherapeutic co-delivery strategy that integrates oxidative stress amplification with chemotherapy and provides a mechanistically supported strategy for overcoming MDR.",
+        "doi": "10.1016/j.biomaterials.2026.124713",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124713",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43014062/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed an ultrasound-programmable poly(amino acid) nanocomposite to synchronize intracellular release of Fe(II) and cisplatin in multidrug-resistant cancer cells. The nanocomposite triggered reactive oxygen species overproduction and mitochondrial damage, enhancing autophagy. In vitro and in vivo results demonstrated significant tumor growth inhibition and prolonged survival in MDR lung cancer models.\",\n  \"key_findings\": [\n    \"EG-KFc20-KSA/CDDP nanocomposite enabled synchronized release of Fe(II) and cisplatin in tumor microenvironments\",\n    \"Treatment elevated intracellular ROS by 2.7-fold and reduced glutathione to 31.2% of control levels\",\n    \"The strategy achieved 85.3% tumor inhibition and extended survival to 61 days in MDR lung cancer mice\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies\",\n  \"scientific_significance\": \"This work provides a mechanistically defined approach to overcome multidrug resistance by synchronizing metal ion and chemotherapy delivery to amplify oxidative stress, offering a novel strategy for enhancing platinum-based cancer therapy efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study developed an ultrasound-programmable poly(amino acid) nanocomposite to synchronize intracellular release of Fe(II) and cisplatin in multidrug-resistant cancer cells. The nanocomposite triggered reactive oxygen species overproduction and mitochondrial damage, enhancing autophagy. In vitro and in vivo results demonstrated significant tumor growth inhibition and prolonged survival in MDR lung cancer models.",
+          "key_findings": [
+            "EG-KFc20-KSA/CDDP nanocomposite enabled synchronized release of Fe(II) and cisplatin in tumor microenvironments",
+            "Treatment elevated intracellular ROS by 2.7-fold and reduced glutathione to 31.2% of control levels",
+            "The strategy achieved 85.3% tumor inhibition and extended survival to 61 days in MDR lung cancer mice"
+          ],
+          "study_type": "In vitro and in vivo studies",
+          "scientific_significance": "This work provides a mechanistically defined approach to overcome multidrug resistance by synchronizing metal ion and chemotherapy delivery to amplify oxidative stress, offering a novel strategy for enhancing platinum-based cancer therapy efficacy."
+        },
+        "elapsed_seconds": 53.4246,
+        "input_tokens": 834,
+        "output_tokens": 241,
+        "thoughts_tokens": null,
+        "total_tokens": 1075,
+        "model_eval_seconds": 35.4294,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956716",
+        "title": "Guardians at the gate: cMAF keeps the brain's vasculature in check.",
+        "abstract": "NA: In this issue of Cell, Brioschi et al. identify cellular musculoaponeurotic fibrosarcoma (cMAF) as a key regulator of brain perivascular macrophages that supports cerebrovascular function through insulin-like growth factor 1 (IGF1) production. This cMAF-IGF1 program is enhanced in Alzheimer's disease (AD), potentially reflecting a protective response that is lost in APOE4 carriers.",
+        "doi": "10.1016/j.cell.2026.09.056",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.056",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956716/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates cMAF's role in regulating brain perivascular macrophages via insulin-like growth factor 1 (IGF1) production, critical for cerebrovascular function. The research demonstrates cMA:IGF1 signaling is heightened in Alzheimer's disease, suggesting a protective mechanism that diminishes in APOE4 carriers, potentially indicating a vulnerability in cerebrovascular health.\",\n  \"key_findings\": [\n    \"cMAF regulates brain perivascular macrophages through IGF1 production\",\n    \"cMAF-IGF1 signaling is elevated in Alzheimer's disease\",\n    \"The protective cMAF-IGF1 response is compromised in APOE4 carriers\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The identification of cMAF as a regulator of cerebrovascular function via perivascular macrophages provides insight into potential protective mechanisms against cerebrovascular decline in neurodegenerative diseases.\"\n}",
+        "parsed": {
+          "summary": "This study investigates cMAF's role in regulating brain perivascular macrophages via insulin-like growth factor 1 (IGF1) production, critical for cerebrovascular function. The research demonstrates cMA:IGF1 signaling is heightened in Alzheimer's disease, suggesting a protective mechanism that diminishes in APOE4 carriers, potentially indicating a vulnerability in cerebrovascular health.",
+          "key_findings": [
+            "cMAF regulates brain perivascular macrophages through IGF1 production",
+            "cMAF-IGF1 signaling is elevated in Alzheimer's disease",
+            "The protective cMAF-IGF1 response is compromised in APOE4 carriers"
+          ],
+          "study_type": "",
+          "scientific_significance": "The identification of cMAF as a regulator of cerebrovascular function via perivascular macrophages provides insight into potential protective mechanisms against cerebrovascular decline in neurodegenerative diseases."
+        },
+        "elapsed_seconds": 34.2297,
+        "input_tokens": 560,
+        "output_tokens": 205,
+        "thoughts_tokens": null,
+        "total_tokens": 765,
+        "model_eval_seconds": 28.2867,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904494",
+        "title": "Pollen-Engraved Dual Porosity Ceramic Beads From Liquid Marbles for Environmental Remediation.",
+        "abstract": "NA: Liquid marbles, renowned for their non-wetting behavior, have been extensively investigated in the fields of controlled delivery, droplet reactors, and biomaterial storage. However, the transition in wetting interactions between the liquid droplet and the coating particles has not been clearly studied, and leveraging this transformation for new applications remains unexplored. Here, we use UV irradiation along with mechanical vibration to switch the wetting state at the liquid marble interface from Cassie-Baxter to Cassie-impregnating during a one-step process that converts liquid marbles into ceramic green bodies. Renewable biowaste pollen is, for the first time, employed to impart both surface patterning and internal porosity together with a photocured polymer, yielding dual-porosity ceramic adsorbents that achieve up to 2.88 times higher pollutant removal efficiency, particularly for heavy metal ions and nanoplastics. Furthermore, different pollen species exhibit distinct pollutant selectivity, underscoring their potential for environmental remediation.",
+        "doi": "10.1002/adma.75433",
+        "doi_url": "https://doi.org/10.1002/adma.75433",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904494/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates using pollen-encapsulated liquid marbles to create dual-porosity ceramic beads for environmental remediation. By UV irradiation and mechanical vibration, the researchers transitioned wetting behavior from Cassie-Baxter to Cassie-impregnating, enabling efficient pollutant capture. The resulting beads achieved up to .288 times higher removal efficiency for heavy metals and nanoplastics compared to conventional methods, with pollen species showing selective pollutant adsorption.\",\n  \"key_findings\": [\n    \"UV irradiation and mechanical vibration switch liquid marble wetting state from Cassie-Baxter to Cassie-impregnating\",\n    \"Pollen-encapsulated ceramic beads achieve 2.88x higher pollutant removal efficiency for heavy metals and nanoplastics\",\n    \"Different pollen species demonstrate distinct selectivity for target pollutants\"\n  ],\n  \"study_type\": \"One-step conversion process using UV irradiation and mechanical vibration\",\n  \"scientific_significance\": \"This work establishes a novel method for creating highly efficient, selective ceramic adsorbents using renewable pollen, advancing environmental remediation technologies through dual-porosity design and tunable pollutant capture.\"\n}",
+        "parsed": {
+          "summary": "This study investigates using pollen-encapsulated liquid marbles to create dual-porosity ceramic beads for environmental remediation. By UV irradiation and mechanical vibration, the researchers transitioned wetting behavior from Cassie-Baxter to Cassie-impregnating, enabling efficient pollutant capture. The resulting beads achieved up to .288 times higher removal efficiency for heavy metals and nanoplastics compared to conventional methods, with pollen species showing selective pollutant adsorption.",
+          "key_findings": [
+            "UV irradiation and mechanical vibration switch liquid marble wetting state from Cassie-Baxter to Cassie-impregnating",
+            "Pollen-encapsulated ceramic beads achieve 2.88x higher pollutant removal efficiency for heavy metals and nanoplastics",
+            "Different pollen species demonstrate distinct selectivity for target pollutants"
+          ],
+          "study_type": "One-step conversion process using UV irradiation and mechanical vibration",
+          "scientific_significance": "This work establishes a novel method for creating highly efficient, selective ceramic adsorbents using renewable pollen, advancing environmental remediation technologies through dual-porosity design and tunable pollutant capture."
+        },
+        "elapsed_seconds": 45.5563,
+        "input_tokens": 673,
+        "output_tokens": 246,
+        "thoughts_tokens": null,
+        "total_tokens": 919,
+        "model_eval_seconds": 34.9785,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019827",
+        "title": "Hydrogel adhesives with phase-transition-regulated tough wet adhesion and gentle removal for hemorrhage treatment and wound closure.",
+        "abstract": "NA: Hydrogel bioadhesives featuring rapid and robust wet adhesion are promising for hemorrhage and wound management. Nevertheless, the tight linkage may lead to secondary injury during surgical operations for subsequent removal. Herein, we develop an advanced hydrogel (PANA) with adequate wet adhesion performance (adhesion strength of 61.2 ± 9 kPa and interfacial toughness of 523 ± 36 J m-2) at body temperature and facile removal properties (adhesion strength of 5.3 ± 2.2 kPa and interfacial toughness of 50 ± 7 J m-2) at 20 °C. The main mechanism is the involvement of N-acryloyl-L-phenylalanine in hydrogel network, which not only realizes interfacial drainage and enhances matrix cohesion owing to the unique coupling structure of carboxylic and phenyl groups but also promotes thermo-triggered phase transition through regulation of hydrogen-bond-mediated hydrophobic aggregation with N-isopropylacrylamide. PANA hydrogel achieves instantaneous hemostatic sealing of diverse injuries in rabbits, and spraying normal saline (20 °C) promotes fast phase separation to enable gentle detachment for the prevention of secondary damage. Combined with cold plasma activation, the hydrogel inhibits bacterial proliferation to accelerate infected skin wound healing. Our work provides a practical solution to address the dilemma of tight wet adhesion and on-demand removal by clinically-used adhesives.",
+        "doi": "10.1016/j.biomaterials.2026.124766",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124766",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019827/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates hydrogel adhesives designed for hemorrhage treatment and wound closure with phase-transition-regulated wet adhesion and removal. The researchers developed a hydrogel (PANA) that exhibits strong wet adhesion (61.2 ± 9 kPa) at body temperature and weak adhesion (5.3 ± 2.2 kPa) at 20 °C for easy detachment. The hydrogel uses N-acryloyl-L-phenylalanine to enable interfacial drainage, matrix cohesion, and thermo-triggered phase transitions. It achieves rapid hemostasis in rabbit injuries and allows gentle removal with cold plasma activation to prevent secondary damage and bacterial growth.\",\n  \"key_findings\": [\n    \"PANA hydrogel demonstrates strong wet adhesion (61.2 ± 9 kPa) at body temperature for effective hemorrhage control\",\n    \"The hydrogel shows weak adhesion (5.3 ± 2.2 kPa) at 20 °C enabling gentle removal without secondary injury\",\n    \"N-acryloyl-L-phenylalanine in the hydrogel network facilitates interfacial drainage, matrix cohesion, and thermo-triggered phase transitions\"\n  ],\n  \"study_type\": \"In vitro and in vivo testing in rabbit models\",\n  \"scientific_significance\": \"This work provides a clinically viable solution for balancing robust wet adhesion with on-demand removal in hemorrhage management, addressing a critical limitation in current surgical adhesives.\"\n}",
+        "parsed": {
+          "summary": "This study investigates hydrogel adhesives designed for hemorrhage treatment and wound closure with phase-transition-regulated wet adhesion and removal. The researchers developed a hydrogel (PANA) that exhibits strong wet adhesion (61.2 ± 9 kPa) at body temperature and weak adhesion (5.3 ± 2.2 kPa) at 20 °C for easy detachment. The hydrogel uses N-acryloyl-L-phenylalanine to enable interfacial drainage, matrix cohesion, and thermo-triggered phase transitions. It achieves rapid hemostasis in rabbit injuries and allows gentle removal with cold plasma activation to prevent secondary damage and bacterial growth.",
+          "key_findings": [
+            "PANA hydrogel demonstrates strong wet adhesion (61.2 ± 9 kPa) at body temperature for effective hemorrhage control",
+            "The hydrogel shows weak adhesion (5.3 ± 2.2 kPa) at 20 °C enabling gentle removal without secondary injury",
+            "N-acryloyl-L-phenylalanine in the hydrogel network facilitates interfacial drainage, matrix cohesion, and thermo-triggered phase transitions"
+          ],
+          "study_type": "In vitro and in vivo testing in rabbit models",
+          "scientific_significance": "This work provides a clinically viable solution for balancing robust wet adhesion with on-demand removal in hemorrhage management, addressing a critical limitation in current surgical adhesives."
+        },
+        "elapsed_seconds": 54.2683,
+        "input_tokens": 903,
+        "output_tokens": 334,
+        "thoughts_tokens": null,
+        "total_tokens": 1237,
+        "model_eval_seconds": 49.2455,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956739",
+        "title": "Genetic coupling of floral rewards and signals underlies pollinator attraction.",
+        "abstract": "NA: Animal pollinators underpin biodiversity and global agriculture, yet the molecular mechanisms that coordinate floral rewards and signals to attract pollinators remain poorly understood. Through phenotyping melon genetic diversity, we identified nectarless1 (nls1), encoding the YABBY-family transcription factor YABBY5 (YAB5), as a central integrator of pollinator-attracting traits. YAB5 interacts with CRABS CLAW (CRC) during nectary initiation to specify nectary identity by repressing alternative floral organ fates. As flowers mature, YAB5 directly activates 4-α-glucanotransferase 2 (DPE2) to promote starch remobilization required for nectar secretion and promotes petal growth and flower opening. In petals, YAB5 directly engages an MYB111-dependent flavonoid pathway that generates UV nectar guides, while indirectly influencing floral volatile emission. Disrupting YAB5, DPE2, or MYB111 reduces pollinator visitation. Together, these findings reveal how a developmental regulator couples organ specification with organ-specific metabolic programs to synchronize floral rewards and signals at anthesis.",
+        "doi": "10.1016/j.cell.2026.10.005",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.005",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956739/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates molecular mechanisms coordinating floral rewards and pollinator attraction in melons. By identifying nectarless1 (nls1), which encodes YABBY5 (YAB5), the research demonstrates YAB5's role in nectary development, starch remobilization for nectar, and UV nectar guide formation via flavonoid pathways. Disruption of these genes reduces pollinator visitation, revealing how a developmental regulator synchronizes reward and signal production.\",\n  \"key_findings\": [\n    \"YAB5 integrates nectary identity specification with starch remobilization for nectar secretion\",\n    \"YAB5 activates DPE2 to promote starch remobilization during nectar production\",\n    \"YAB5 regulates UV nectar guides through MYB111-dependent flavonoid pathways\"\n  ],\n  \"study_type\": \"Genetic analysis of melon diversity\",\n  \"scientific_significance\": \"This work elucidates a conserved molecular mechanism where a single transcription factor coordinates floral organ development with metabolic and signaling pathways to attract pollinators, advancing understanding of plant-pollinator coevolution.\"\n}",
+        "parsed": {
+          "summary": "This study investigates molecular mechanisms coordinating floral rewards and pollinator attraction in melons. By identifying nectarless1 (nls1), which encodes YABBY5 (YAB5), the research demonstrates YAB5's role in nectary development, starch remobilization for nectar, and UV nectar guide formation via flavonoid pathways. Disruption of these genes reduces pollinator visitation, revealing how a developmental regulator synchronizes reward and signal production.",
+          "key_findings": [
+            "YAB5 integrates nectary identity specification with starch remobilization for nectar secretion",
+            "YAB5 activates DPE2 to promote starch remobilization during nectar production",
+            "YAB5 regulates UV nectar guides through MYB111-dependent flavonoid pathways"
+          ],
+          "study_type": "Genetic analysis of melon diversity",
+          "scientific_significance": "This work elucidates a conserved molecular mechanism where a single transcription factor coordinates floral organ development with metabolic and signaling pathways to attract pollinators, advancing understanding of plant-pollinator coevolution."
+        },
+        "elapsed_seconds": 45.7423,
+        "input_tokens": 703,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 940,
+        "model_eval_seconds": 33.6329,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904496",
+        "title": "Functional Group Transposition Enables Antiparallel-Parallel Packing Switching in Dithieno[3,2-b:2',3'-d]pyrrole Self-Assembled Molecules for Efficient Organic Photovoltaics.",
+        "abstract": "NA: Concurrently regulating interfacial and bulk charge dynamics, which requires simultaneous control over indium-tin-oxide (ITO) interfacial properties and active layer morphology, is critical for advancing and integrating organic solar cells (OSCs) and photodetectors (OPDs). However, designing universal hole-transport-layers (HTLs) compatible with diverse photovoltaic platforms remains a fundamental challenge. We propose two regioisomeric acceptor-donor-acceptor type self-assembled molecules (SAMs) with dithienopyrrole (DTP) core. Simply swapping ortho-/para- positions of trifluoromethyl and chlorine on the phenyl termini switches molecular stacking from disordered antiparallel to well-ordered parallel. This programmable assembly benefits to yield uniform HTLs on ITO with homogeneous surface potential, alongside enhanced crystallinity and vertical phase segregation in the PM6:Y6 active layer. Optimized OSCs and OPDs achieve 18.70% power conversion efficiency (PCE) and a shot-noise-limited specific detectivity of 6.52 × 1014 Jones at 805 nm (specific detectivity: 4.26 × 1013 Jones). The versatility of the optimized SAM is validated across state-of-the-art binary/ternary systems (PCE of 20.92% for D18:L8-BO:BTP-eC9 system), even upon scaling up (PCE of 19.1% for PM6:L8-BO:BTP-eC9 system, device area = 0.6 cm2). This work not only elevates DTP as a competitive alternative against carbazole for SAMs, but also establishes functional group transposition as a finely tuned molecular lever that co-engineers interfacial order and active-layer morphology toward high-performance organic optoelectronics.",
+        "doi": "10.1002/adma.75446",
+        "doi_url": "https://doi.org/10.1002/adma.75446",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904496/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how functional group transposition in dithienopyrrole-based self-assembled molecules enables switching between antiparallel and parallel molecular packing. By swapping ortho-/para- positions of trifluoromethyl and chlorine groups, the researchers achieved uniform hole transport layers on ITO with enhanced active layer crystallinity. Optimized organic solar cells reached 18.70% power conversion efficiency, demonstrating improved charge dynamics for high-performance optoelectronics.\",\n  \"key_findings\": [\n    \"Swapping ortho-/para- positions of trifluoromethyl and chlorine on phenyl termini switches molecular stacking from disordered antiparallel to well-ordered parallel\",\n    \"Optimized organic solar cells achieved 18.70% power conversion efficiency with enhanced crystallinity and vertical phase segregation\",\n    \"The SAMs showed versatility across binary/ternary systems, maintaining high efficiency even at scaled-up device areas\"\n  ],\n  \"study_type\": \"Self-assembled molecules (SAMs) with dithienopyrrole (DTP) core\",\n  \"scientific_significance\": \"This work establishes functional group transposition as a precise molecular strategy to co-engineer interfacial order and active-layer morphology, advancing high-efficiency organic photovoltaics and photodetectors.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how functional group transposition in dithienopyrrole-based self-assembled molecules enables switching between antiparallel and parallel molecular packing. By swapping ortho-/para- positions of trifluoromethyl and chlorine groups, the researchers achieved uniform hole transport layers on ITO with enhanced active layer crystallinity. Optimized organic solar cells reached 18.70% power conversion efficiency, demonstrating improved charge dynamics for high-performance optoelectronics.",
+          "key_findings": [
+            "Swapping ortho-/para- positions of trifluoromethyl and chlorine on phenyl termini switches molecular stacking from disordered antiparallel to well-ordered parallel",
+            "Optimized organic solar cells achieved 18.70% power conversion efficiency with enhanced crystallinity and vertical phase segregation",
+            "The SAMs showed versatility across binary/ternary systems, maintaining high efficiency even at scaled-up device areas"
+          ],
+          "study_type": "Self-assembled molecules (SAMs) with dithienopyrrole (DTP) core",
+          "scientific_significance": "This work establishes functional group transposition as a precise molecular strategy to co-engineer interfacial order and active-layer morphology, advancing high-efficiency organic photovoltaics and photodetectors."
+        },
+        "elapsed_seconds": 61.7934,
+        "input_tokens": 896,
+        "output_tokens": 276,
+        "thoughts_tokens": null,
+        "total_tokens": 1172,
+        "model_eval_seconds": 40.906,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42971202",
+        "title": "Industrialization drives convergent microbiome and host physiological shifts in the human metaorganism.",
+        "abstract": "NA: Understanding how industrialization reshapes the human metaorganism requires integrating microbiome ecology with host physiology across globally diverse populations. Here, we generate multivariate data from the Global Microbiome Conservancy cohort, including gut microbiome, immunoglobulin A (IgA) sequencing, host genotyping, diet, lifestyle, and fecal biomarker profiles, to investigate host-microbiome interactions across gradients of industrialization and geography. We show that industrialization is associated with homogenized microbial compositions, reduced microbial diversity, and lower community stability, independent of host confounders. We further show that industrialization is linked to elevated markers of gut stress, increased IgA secretion, and altered patterns of IgA-bacteria interactions. Finally, we show that microbiome-based disease predictors trained on industrialized populations are uninformative in less industrialized cohorts, highlighting limited cross-population transferability. Together, our results reveal coordinated restructuring of the microbial ecosystem and host physiology and emphasize the need for inclusive, globally representative data to improve translational microbiome applications across diverse human populations.",
+        "doi": "10.1016/j.cell.2026.10.016",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.016",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42971202/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates industrialization's impact on the human metaorganism by analyzing gut microbiome, immunoglobulin A, host genotyping, diet, lifestyle, and fecal biomarkers across globally diverse populations. It demonstrates industrialization correlates with homogenized microbial compositions, reduced diversity, lower community stability, elevated gut stress markers, increased IgA secretion, and altered IgA-bacteria interactions. Microbiome disease predictors trained in industrialized groups fail in less industrialized cohorts, indicating limited cross-population transferability of microbiome-based applications.\",\n  \"key_findings\": [\n    \"Industrialization correlates with homogenized microbial compositions\",\n    \"Industrialization is linked to reduced microbial diversity and lower community stability\",\n    \"Microbiome disease predictors trained in industrialized populations are uninformative in less industrialized cohorts\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The findings reveal coordinated restructuring of the microbial ecosystem and host physiology due to industrialization, emphasizing the need for globally representative data to improve microbiome-based translational applications across diverse human populations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates industrialization's impact on the human metaorganism by analyzing gut microbiome, immunoglobulin A, host genotyping, diet, lifestyle, and fecal biomarkers across globally diverse populations. It demonstrates industrialization correlates with homogenized microbial compositions, reduced diversity, lower community stability, elevated gut stress markers, increased IgA secretion, and altered IgA-bacteria interactions. Microbiome disease predictors trained in industrialized groups fail in less industrialized cohorts, indicating limited cross-population transferability of microbiome-based applications.",
+          "key_findings": [
+            "Industrialization correlates with homogenized microbial compositions",
+            "Industrialization is linked to reduced microbial diversity and lower community stability",
+            "Microbiome disease predictors trained in industrialized populations are uninformative in less industrialized cohorts"
+          ],
+          "study_type": "",
+          "scientific_significance": "The findings reveal coordinated restructuring of the microbial ecosystem and host physiology due to industrialization, emphasizing the need for globally representative data to improve microbiome-based translational applications across diverse human populations."
+        },
+        "elapsed_seconds": 37.0961,
+        "input_tokens": 779,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 1004,
+        "model_eval_seconds": 31.8741,
+        "error": "summary must contain 45–65 words; received 69.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904506",
+        "title": "Bridging Biosensing and Hardware-Level Data Security With a Conjugated Radical Polymer.",
+        "abstract": "NA: The integration of biological signal processing with hardware-level data security remains a fundamental challenge in bioelectronic systems, where sensing and data protection are typically implemented as separate functional layers. Here, we present a conjugated radical polymer platform that exhibits stochastic electronic behavior and bioelectronic signal transduction within a single material system. The system displays stochastic resistive switching associated with its complex electronic structure and structural disorder, which enables physical unclonable function characteristics with uniqueness and uniformity approaching the ideal value of 50%. In parallel, the same material exhibits electrochemical signal transduction in an organic electrochemical transistor configuration, allowing highly sensitive dopamine detection with a detection limit of ∼10 pM, and a preferential response over the tested interferents. Systematic analysis indicates that the sensing response is consistent with redox-mediated coupling between dopamine and the radical-containing backbone. By establishing a material-level strategy that links stochastic electronic functionality and bioelectronic sensing, this work provides a pathway toward secure, adaptive, and biointegrated electronic systems.",
+        "doi": "10.1002/adma.75235",
+        "doi_url": "https://doi.org/10.1002/adma.75235",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904506/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of integrating biological signal processing with hardware-level data security in bioelectronic systems. It introduces a conjugated radical polymer that demonstrates stochastic electronic behavior and bioelectronic signal transduction within a single material. The polymer exhibits physical unclonable function characteristics with uniqueness near 50% and enables highly sensitive dopamine detection at 10 pM.\",\n  \"key_findings\": [\n    \"The conjugated radical polymer shows stochastic resistive switching with physical unclusing function characteristics approaching 50% uniqueness\",\n    \"The material enables highly sensitive dopamine detection with a detection limit of ∼10 pM\",\n    \"Sensing response aligns with redox-mediated coupling between dopamine and the radical-containing backbone\"\n  ],\n  \"study_type\": \"Material-based platform\",\n  \"scientific_significance\": \"This work establishes a material-level strategy that links stochastic electronic functionality and bioelectronic sensing, advancing secure, adaptive, and biointegrated electronic systems.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of integrating biological signal processing with hardware-level data security in bioelectronic systems. It introduces a conjugated radical polymer that demonstrates stochastic electronic behavior and bioelectronic signal transduction within a single material. The polymer exhibits physical unclonable function characteristics with uniqueness near 50% and enables highly sensitive dopamine detection at 10 pM.",
+          "key_findings": [
+            "The conjugated radical polymer shows stochastic resistive switching with physical unclusing function characteristics approaching 50% uniqueness",
+            "The material enables highly sensitive dopamine detection with a detection limit of ∼10 pM",
+            "Sensing response aligns with redox-mediated coupling between dopamine and the radical-containing backbone"
+          ],
+          "study_type": "Material-based platform",
+          "scientific_significance": "This work establishes a material-level strategy that links stochastic electronic functionality and bioelectronic sensing, advancing secure, adaptive, and biointegrated electronic systems."
+        },
+        "elapsed_seconds": 40.035,
+        "input_tokens": 673,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 879,
+        "model_eval_seconds": 29.3586,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42971205",
+        "title": "Subsistence transition preceded population turnover in the eastern Colombian Andes.",
+        "abstract": "NA: The Altiplano Cundiboyacense in the eastern Colombian Andes preserves one of the Americas' most continuous archaeological sequences, recording cultural and demographic change. We generated genome-wide data from 212 individuals spanning over 7,000 years, including early-middle and middle Holocene hunter-gatherers, initial late Holocene groups with mixed economies and the earliest isotopic evidence of maize consumption, and increasingly sedentary Herrera and Muisca populations. Individuals predating the Herrera Period form a lineage that persisted for five millennia, structured by drift in small groups without external gene flow. Two individuals dating ∼2,800 years before present (BP) retain autochthonous ancestry while showing isotopic signatures consistent with maize consumption, decoupling subsistence change from population replacement. The emergence of Herrera culture ∼2,200 BP coincided with a sharp genetic break by ∼2,000 BP, which reflects migration by people descended from admixture ∼4,000 BP between groups with Chibchan- and Amazonian-Andean-related ancestries. Herrera and Muisca Period individuals show north-south genetic substructure paralleling archaeological differentiation.",
+        "doi": "10.1016/j.cell.2026.10.010",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.010",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42971205/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study analyzed 212 individuals across 7,000 years in the eastern Colombian Andes using genome-wide data to investigate subsistence transitions and population dynamics. It found that hunter-gatherer lineages persisted for five millennia before maize adoption around 2,800 BP, with genetic continuity persisting despite subsistence change. A population shift occurred ∼2,200 BP, linked to migration from admixed groups with Chibchan-Andean ancestry.\",\n  \"key_findings\": [\n    \"Hunter-gatherer lineages persisted for five millennia without external gene flow\",\n    \"Two individuals from ∼2,800 BP show maize consumption while retaining autochthonous ancestry\",\n    \"Herrera Period emergence coincided with genetic break by ∼2,000 BP, indicating migration from admixed Chibchan-Andean groups\"\n  ],\n  \"study_type\": \"Genome-wide analysis of archaeological samples\",\n  \"scientific_significance\": \"The findings decouple subsistence transition from population replacement in the Andes, demonstrating long-term genetic continuity despite dietary shifts and providing insights into the timing and drivers of cultural change in prehistoric South America.\"\n}",
+        "parsed": {
+          "summary": "This study analyzed 212 individuals across 7,000 years in the eastern Colombian Andes using genome-wide data to investigate subsistence transitions and population dynamics. It found that hunter-gatherer lineages persisted for five millennia before maize adoption around 2,800 BP, with genetic continuity persisting despite subsistence change. A population shift occurred ∼2,200 BP, linked to migration from admixed groups with Chibchan-Andean ancestry.",
+          "key_findings": [
+            "Hunter-gatherer lineages persisted for five millennia without external gene flow",
+            "Two individuals from ∼2,800 BP show maize consumption while retaining autochthonous ancestry",
+            "Herrera Period emergence coincided with genetic break by ∼2,000 BP, indicating migration from admixed Chibchan-Andean groups"
+          ],
+          "study_type": "Genome-wide analysis of archaeological samples",
+          "scientific_significance": "The findings decouple subsistence transition from population replacement in the Andes, demonstrating long-term genetic continuity despite dietary shifts and providing insights into the timing and drivers of cultural change in prehistoric South America."
+        },
+        "elapsed_seconds": 48.1077,
+        "input_tokens": 710,
+        "output_tokens": 253,
+        "thoughts_tokens": null,
+        "total_tokens": 963,
+        "model_eval_seconds": 35.596,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904519",
+        "title": "Supramolecular Adhesives with Tunable Crystallinity for Extreme Environments.",
+        "abstract": "NA: Developing high-performance adhesives capable of withstanding harsh environments-specifically ultralow temperatures, water, acid, base and organic solvents-via low-cost, scalable manufacturing remains a significant challenge. Inspired by the architecture of spider silk, we report a facile strategy to fabricate a solvent-free supramolecular adhesive composed of tannic acid (TA) and poly(ε-caprolactone) (PCL). Integrated theoretical and experimental investigations uncover the critical role of crystallinity modulation in governing adhesion performance. The resulting adhesive achieves an exceptional strength of up to 8.5 MPa at ambient temperature (25°C) and 6.6 MPa at cryogenic temperature (-196°C), outperforming existing commercial hot-melt adhesives. Furthermore, it exhibits remarkable stability in corrosive underwater environments (acidic, alkaline, and saline) and organic solvents. This work not only establishes a novel bioinspired design paradigm for adhesives operating under extreme conditions but also paves the way for the scalable production and practical applications of supramolecular materials.",
+        "doi": "10.1002/adma.75463",
+        "doi_url": "https://doi.org/10.1002/adma.75463",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904519/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates supramolecular adhesives with tunable crystallinity for extreme environments. Using tannic acid and poly(ε-caprolact. The adhesive demonstrates exceptional strength (8.5 MPa at 25°C, 6.6 MPa at -196°C) and stability in corrosive underwater conditions and organic solvents, outperforming commercial hot-melt adhesives. The findings highlight crystallinity's critical role in adhesion performance under harsh conditions.\",\n  \"key_findings\": [\n    \"Adhesive achieves 8.5 MPa at 25°C and 6.6 MPa at -196°C\",\n    \"Stability in corrosive underwater environments (acidic, alkaline, saline) and organic solvents\",\n    \"Crystallinity modulation governs adhesion performance in extreme conditions\"\n  ],\n  \"study_type\": \"Theoretical and experimental investigations\",\n  \"scientific_significance\": \"This work establishes a bioinspired design strategy for supramolecular adhesives that maintain performance across ultralow temperatures, corrosive environments, and organic solvents, advancing materials for extreme-condition applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates supramolecular adhesives with tunable crystallinity for extreme environments. Using tannic acid and poly(ε-caprolact. The adhesive demonstrates exceptional strength (8.5 MPa at 25°C, 6.6 MPa at -196°C) and stability in corrosive underwater conditions and organic solvents, outperforming commercial hot-melt adhesives. The findings highlight crystallinity's critical role in adhesion performance under harsh conditions.",
+          "key_findings": [
+            "Adhesive achieves 8.5 MPa at 25°C and 6.6 MPa at -196°C",
+            "Stability in corrosive underwater environments (acidic, alkaline, saline) and organic solvents",
+            "Crystallinity modulation governs adhesion performance in extreme conditions"
+          ],
+          "study_type": "Theoretical and experimental investigations",
+          "scientific_significance": "This work establishes a bioinspired design strategy for supramolecular adhesives that maintain performance across ultralow temperatures, corrosive environments, and organic solvents, advancing materials for extreme-condition applications."
+        },
+        "elapsed_seconds": 46.3256,
+        "input_tokens": 689,
+        "output_tokens": 246,
+        "thoughts_tokens": null,
+        "total_tokens": 935,
+        "model_eval_seconds": 34.5594,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42982038",
+        "title": "CRISPR mutagenesis of the MYC locus reveals a druggable ultraconserved RNA element.",
+        "abstract": "NA: Noncoding sequences comprise most of the human genome; however, their functional significance remains largely elusive. Using CRISPR tiling mutagenesis with near-PAMless, high-fidelity SpRY-Cas9, we mapped the fitness landscape of an entire human gene, the 10-kb MYC locus, at base-pair resolution. This unbiased interrogation revealed that 67% of functionally essential base pairs are noncoding. Essential noncoding base pairs are under strong constraint in the human population but show limited evolutionary conservation across species. Within this landscape, we identified an ultraconserved noncoding RNA element in the 3' untranslated region (UTR) that promotes perinuclear localization of MYC mRNA and nuclear localization of MYC protein through interaction with hnRNP L. Steric-blocking antisense oligonucleotides (ASOs) targeting this element selectively eliminate diverse MYC-dependent cancer cells and inhibit growth of patient-derived tumor organoids. Together, these findings establish noncoding sequences as major carriers of functional genetic information and identify a therapeutically actionable RNA element whose targeting disrupts MYC-driven cancer.",
+        "doi": "10.1016/j.cell.2026.10.002",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.002",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42982038/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study used CRISPR tiling mutagenesis to map the functional landscape of the 10-kb MYC locus at base-pair resolution. It revealed 67% of essential base pairs are noncoding, with an ultraconserved RNA element in the 3' UTR promoting MYC mRNA perinuclear localization and protein nuclear localization via hnRNP L interaction. Steric-blocking ASOs targeting this element selectively eliminate MYC-dependent cancer cells and inhibit tumor growth in organoids.\",\n  \"key_findings\": [\n    \"67% of functionally essential base pairs in the MYC locus are noncoding\",\n    \"An ultraconserved noncoding RNA element in the MYC 3' UTR regulates MYC mRNA and protein localization via hnRNP L\",\n    \"Steric-blocking antisense oligonucleotides targeting this RNA element selectively kill MYC-dependent cancer cells and inhibit tumor growth in organoids\"\n  ],\n  \"study_type\": \"CRISPR tiling mutagenesis\",\n  \"scientific_significance\": \"This work demonstrates that noncoding sequences carry major functional genetic information and identifies a druggable RNA element targeting MYC-driven cancer pathways.\"\n}",
+        "parsed": {
+          "summary": "This study used CRISPR tiling mutagenesis to map the functional landscape of the 10-kb MYC locus at base-pair resolution. It revealed 67% of essential base pairs are noncoding, with an ultraconserved RNA element in the 3' UTR promoting MYC mRNA perinuclear localization and protein nuclear localization via hnRNP L interaction. Steric-blocking ASOs targeting this element selectively eliminate MYC-dependent cancer cells and inhibit tumor growth in organoids.",
+          "key_findings": [
+            "67% of functionally essential base pairs in the MYC locus are noncoding",
+            "An ultraconserved noncoding RNA element in the MYC 3' UTR regulates MYC mRNA and protein localization via hnRNP L",
+            "Steric-blocking antisense oligonucleotides targeting this RNA element selectively kill MYC-dependent cancer cells and inhibit tumor growth in organoids"
+          ],
+          "study_type": "CRISPR tiling mutagenesis",
+          "scientific_significance": "This work demonstrates that noncoding sequences carry major functional genetic information and identifies a druggable RNA element targeting MYC-driven cancer pathways."
+        },
+        "elapsed_seconds": 40.8119,
+        "input_tokens": 794,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 1045,
+        "model_eval_seconds": 35.8812,
+        "error": "summary must contain 45–65 words; received 66.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    }
+  ]
+}
