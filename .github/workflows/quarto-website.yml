@@ -6,6 +6,7 @@ on:
     paths:
       - "website/**"
       - "R/site.R"
+      - "R/llm.R"
       - "scripts/generate_site_pages.R"
       - "R/benchmark.R"
       - "R/summarize.R"

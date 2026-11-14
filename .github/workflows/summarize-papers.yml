@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "R/summarize.R"
+      - "R/llm.R"
+      - "R/benchmark.R"
       - "R/benchmark.R"
       - "scripts/run_summarization.R"
       - "prompts/**"
