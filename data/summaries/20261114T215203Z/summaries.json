@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261114T215203Z",
+  "generated_at_utc": "2026-11-14 22:18:11 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 231,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42876215",
+        "title": "Dual Twisted Interfaces Enable Tunable Second Harmonic Generation in Chemical Vapor Deposition Grown Trilayer MoS2.",
+        "abstract": "NA: Twisted bilayer transition metal dichalcogenides, governed by a single twisted interface, offer a versatile platform for manipulating interlayer coupling and emergent optical behavior. However, despite extensive studies on single twisted interface systems, how multi-interface twisted stacking influences nonlinear optical behavior remains unclear. Here, we address this gap by systematically investigating the nonlinear optical performance of chemical vapor deposition (CVD) grown twisted trilayer MoS2 (TT-MoS2) with multi-interface twisted stacking. We fabricate all nine distinct trilayer MoS2 configurations by CVD. Raman and photoluminescence show that twisted interfaces modulate interlayer coupling, giving rise to stacking-dependent phonon and excitonic responses. Atomic-resolution scanning, transmission electron microscopy, and selected area electron diffraction confirm dual twisted interfaces and a supermoiré lattice. Guided by these structural insights, we examine the second harmonic generation (SHG) response across all nine trilayer configurations. Extending the coherent SH field superposition model to a trilayer system with two independent twisted interfaces, we develop a framework that describes how the dual interfaces govern the SHG intensity and polarization orientation across stacking configurations. Our findings establish TT-MoS2 as a versatile nonlinear platform and open new avenues for understanding and exploiting multi-interface twisted coupling to engineer nonlinear optical responses in van der Waals materials.",
+        "doi": "10.1002/adma.75387",
+        "doi_url": "https://doi.org/10.1002/adma.75387",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876215/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, the researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution microscopy confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework explaining SHG intensity and polarization orientation across configurations, demonstrating TT-MoS2 as a tunable nonlinear optical platform.\",\n  \"key_findings\": [\n    \"Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses\",\n    \"Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure\",\n    \"A framework linking dual interface geometry to SHG intensity and polarization orientation\"\n  ],\n  \"study_type\": \"CVD-grown twisted trilayer MoS2 configurations\",\n  \"scientific_significance\": \"This work establishes a mechanism for tuning nonlinear optical responses in van der Waals materials through multi-interface twisted stacking, advancing the design of tunable photonic devices.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, the researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution microscopy confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework explaining SHG intensity and polarization orientation across configurations, demonstrating TT-MoS2 as a tunable nonlinear optical platform.",
+          "key_findings": [
+            "Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses",
+            "Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure",
+            "A framework linking dual interface geometry to SHG intensity and polarization orientation"
+          ],
+          "study_type": "CVD-grown twisted trilayer MoS2 configurations",
+          "scientific_significance": "This work establishes a mechanism for tuning nonlinear optical responses in van der Waals materials through multi-interface twisted stacking, advancing the design of tunable photonic devices."
+        },
+        "elapsed_seconds": 35.21,
+        "input_tokens": 844,
+        "output_tokens": 230,
+        "thoughts_tokens": null,
+        "total_tokens": 1074,
+        "model_eval_seconds": 30.2928,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962342",
+        "title": "Piezoelectric electroporation potentiates high-frequency irreversible electroporation for enhanced prostate cancer eradication.",
+        "abstract": "NA: Residual tumor cell persistence remains a critical unresolved barrier limiting focal therapy such as high-frequency irreversible electroporation (H-FIRE) for prostate cancer. In this study, we identified DNA damage repair as the central mechanism governing the reversible survival of residual cells after H-FIRE. By exploiting the transient membrane permeability of these residual cells following H-FIRE, we engineered a piezoelectrically active nanomaterial, BOIS. Exogenous electric pulses generated by H-FIRE enhance tumor membrane permeabilization, thereby facilitating the intracellular delivery of BOIS and promoting its efficient penetration into residual malignant cells. Upon ultrasound activation, BOIS induces surface charge separation and electron migration, producing an intrinsic electric field accompanied by reactive oxygen species (ROS). This dual mechanism cascade simultaneously inflicts endogenous electric field-mediated electroporation damage on both cellular and nuclear membranes and imposes lethal oxidative stress, thereby converting reversibly injured residual cells into an irreversible death trajectory. Consequently, residual tumor cells with damage repair capacity are converted from a reversibly injured state to irreversible lethal damage. Unlike conventional combination therapies, this study pioneered a new therapeutic paradigm in which the focal ablation procedure functions as a nanomaterial delivery mechanism, thereby establishing a self-reinforcing therapeutic loop. This strategy markedly amplified the therapeutic efficacy of H-FIRE and enhanced the eradication of residual tumor cells. Collectively, these findings establish a groundbreaking therapeutic paradigm for eliminating residual disease following focal ablation.",
+        "doi": "10.1016/j.biomaterials.2026.124683",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124683",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962342/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. By identifying DNA damage repair as the key mechanism for reversible cell survival, researchers engineered a piezoelectric nanomaterial (BOIS) that leverages H-FIRE-induced membrane permeability. BOIS, activated by ultrasound, generates an electric field and reactive oxygen species to convert residual cells from reversible to irreversible damage, significantly enhancing tumor eradication without additional external energy input.\",\n  \"key_findings\": [\n    \"BOIS nanomaterial exploits H-FIRE-induced membrane permeability for targeted delivery\",\n    \"Ultrasound activation of BOIS produces dual mechanisms: electric field-mediated membrane damage and oxidative stress\",\n    \"This approach converts residual tumor cells from reversible to irreversible damage, improving eradication efficacy\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes a self-reinforcing therapeutic loop where focal ablation serves as a delivery mechanism for nanomaterials, enabling enhanced tumor eradication through intrinsic dual-action mechanisms without additional external energy input.\"\n}",
+        "parsed": {
+          "summary": "This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. By identifying DNA damage repair as the key mechanism for reversible cell survival, researchers engineered a piezoelectric nanomaterial (BOIS) that leverages H-FIRE-induced membrane permeability. BOIS, activated by ultrasound, generates an electric field and reactive oxygen species to convert residual cells from reversible to irreversible damage, significantly enhancing tumor eradication without additional external energy input.",
+          "key_findings": [
+            "BOIS nanomaterial exploits H-FIRE-induced membrane permeability for targeted delivery",
+            "Ultrasound activation of BOIS produces dual mechanisms: electric field-mediated membrane damage and oxidative stress",
+            "This approach converts residual tumor cells from reversible to irreversible damage, improving eradication efficacy"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes a self-reinforcing therapeutic loop where focal ablation serves as a delivery mechanism for nanomaterials, enabling enhanced tumor eradication through intrinsic dual-action mechanisms without additional external energy input."
+        },
+        "elapsed_seconds": 34.7267,
+        "input_tokens": 859,
+        "output_tokens": 227,
+        "thoughts_tokens": null,
+        "total_tokens": 1086,
+        "model_eval_seconds": 29.4685,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914976",
+        "title": "Cell-state-specific metabolic networks govern ferroptosis versus apoptosis in small cell lung cancer.",
+        "abstract": "NA: Cellular heterogeneity and plasticity are hallmarks of cancer that contribute to tumor growth and therapy resistance. Here, we investigated metabolic heterogeneity in small cell lung cancer (SCLC), an aggressive cancer type with considerable plasticity between neuroendocrine (NE) and non-NE cellular states. Through integrated transcriptomic and metabolomic analyses, we identified a universal dependency on exogenous cysteine/cystine (Cys) across all NE/non-NE SCLC cell states. Notably, NE and non-NE cells with low ASCL1 transcription factor levels underwent ferroptosis upon Cys depletion, whereas ASCL1high cells underwent apoptosis while remaining resistant to ferroptosis. This ferroptosis resistance was driven by the direct transcriptional activation of GCH1 by ASCL1, resulting in increased levels of the antioxidants BH4/BH2. Accordingly, combined Cys depletion and inhibition of BH4/BH2 synthesis reduced tumor growth in patient-derived xenografts. These findings demonstrate that metabolic state influences cell-death susceptibility in SCLC and provide a rationale for therapeutic strategies that exploit these metabolic differences.",
+        "doi": "10.1016/j.cell.2026.09.045",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.045",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914976/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated metabolic heterogeneity in small cell lung cancer (SCLC) by analyzing transcriptomic and metabolomic data across neuroendocrine (NE) and non-NE cellular states. It identified a universal cysteine dependency and demonstrated that NE cells with low ASCL1 undergo ferroptosis upon cysteine depletion, while ASCL1high cells undergo apoptosis and resist ferroptosis due to GCH1-mediated BH4/BH2 upregulation. Combined cysteine depletion and BH4/BH2 inhibition reduced tumor growth in xenografts.\",\n  \"key_findings\": [\n    \"SCLC cells exhibit universal cysteine dependency across neuroendocrine and non-neuroendocrine states\",\n    \"ASCL1low NE cells undergo ferroptosis when cysteine is depleted, whereas ASCL1high cells undergo apoptosis and resist ferroptosis\",\n    \"ASCL1 directly activates GCH1 transcription, increasing BH4/BH2 antioxidants to confer ferroptosis resistance\"\n  ],\n  \"study_type\": \"Integrated transcriptomic and metabolomic analyses\",\n  \"scientific_significance\": \"The findings establish metabolic state as a determinant of cell death susceptibility in SCLC, offering a metabolic target for overcoming therapy resistance.\"\n}",
+        "parsed": {
+          "summary": "This study investigated metabolic heterogeneity in small cell lung cancer (SCLC) by analyzing transcriptomic and metabolomic data across neuroendocrine (NE) and non-NE cellular states. It identified a universal cysteine dependency and demonstrated that NE cells with low ASCL1 undergo ferroptosis upon cysteine depletion, while ASCL1high cells undergo apoptosis and resist ferroptosis due to GCH1-mediated BH4/BH2 upregulation. Combined cysteine depletion and BH4/BH2 inhibition reduced tumor growth in xenografts.",
+          "key_findings": [
+            "SCLC cells exhibit universal cysteine dependency across neuroendocrine and non-neuroendocrine states",
+            "ASCL1low NE cells undergo ferroptosis when cysteine is depleted, whereas ASCL1high cells undergo apoptosis and resist ferroptosis",
+            "ASCL1 directly activates GCH1 transcription, increasing BH4/BH2 antioxidants to confer ferroptosis resistance"
+          ],
+          "study_type": "Integrated transcriptomic and metabolomic analyses",
+          "scientific_significance": "The findings establish metabolic state as a determinant of cell death susceptibility in SCLC, offering a metabolic target for overcoming therapy resistance."
+        },
+        "elapsed_seconds": 39.6173,
+        "input_tokens": 793,
+        "output_tokens": 267,
+        "thoughts_tokens": null,
+        "total_tokens": 1060,
+        "model_eval_seconds": 34.7659,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876426",
+        "title": "High-Performance Low Threshold Voltage n-Type OECTs via a Stepwise Cyanation of Quinoxaline-Based Polymeric Semiconductor.",
+        "abstract": "NA: Achieving both low threshold voltage (Vth) and high performance in organic electrochemical transistors (OECTs) is critical for low-power, high-sensitivity bioelectronics, yet simultaneously achieving low Vth and high device performance remains a long-standing challenge. Herein, we propose a stepwise cyanation strategy to modify quinoxaline-based polymeric semiconductors to mitigate this dilemma. Benefiting from the strong electron-withdrawing ability of cyano substituents, QxCN-CNTVT functionalized with cyano groups on both donor and acceptor units exhibits a deep LUMO level of -4.23 eV, one of the deepest among reported n-type ionic-electronic conductors. As a result, OECTs based on QxCN-CNTVT demonstrate excellent comprehensive performance, with a high µC* value of up to 168.89 F cm-1 V-1 s-1 and a low Vth of 0.13 V, while maintaining superior operational stability (retaining ∼80% of the initial current after 10,000 s of continuous operation and 10,000 full switching cycles). Furthermore, QxCN-CNTVT is successfully applied to complementary inverters for efficient amplification of electrooculogram (EOG) and electrocardiogram (ECG) signals, as well as NAND and NOR logic gates for integrated logic functions. This work not only alleviates the widely observed imbalance between performance and Vth in n-type OECTs but also provides a versatile molecular design strategy for next-generation low-power bioelectronic devices.",
+        "doi": "10.1002/adma.75397",
+        "doi_url": "https://doi.org/10.1002/adma.75397",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876426/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of achieving low threshold voltage (Vth) and high performance in n-type organic electrochemical transistors (OECTs). Using a stepwise cyanation strategy on quinoxaline-based polymers, researchers developed QxCN-CNTVT, which exhibits a deep LUMO level (-4.23 eV), low Vth (0.13 V), high µC* (168.89 F cm-1 V-1 s-1), and stability. The material enables efficient amplification of electrooculogram (EOG) and electrocardiogram (ECG) signals and integrated logic gates.\",\n  \"key_findings\": [\n    \"QxCN-CNTVT achieves a low threshold voltage of 0.13 V\",\n    \"The polymer demonstrates a high µC* value of 168.89 F cm-1 V-1 s-1\",\n    \"QxCN-CNTVT enables efficient EOG and ECG signal amplification and logic gate implementation\"\n  ],\n  \"study_type\": \"Synthetic molecular design\",\n  \"scientific_significance\": \"This work provides a molecular strategy to simultaneously optimize low threshold voltage and high performance in n-type OECTs, advancing low-power bioelectronic applications.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of achieving low threshold voltage (Vth) and high performance in n-type organic electrochemical transistors (OECTs). Using a stepwise cyanation strategy on quinoxaline-based polymers, researchers developed QxCN-CNTVT, which exhibits a deep LUMO level (-4.23 eV), low Vth (0.13 V), high µC* (168.89 F cm-1 V-1 s-1), and stability. The material enables efficient amplification of electrooculogram (EOG) and electrocardiogram (ECG) signals and integrated logic gates.",
+          "key_findings": [
+            "QxCN-CNTVT achieves a low threshold voltage of 0.13 V",
+            "The polymer demonstrates a high µC* value of 168.89 F cm-1 V-1 s-1",
+            "QxCN-CNTVT enables efficient EOG and ECG signal amplification and logic gate implementation"
+          ],
+          "study_type": "Synthetic molecular design",
+          "scientific_significance": "This work provides a molecular strategy to simultaneously optimize low threshold voltage and high performance in n-type OECTs, advancing low-power bioelectronic applications."
+        },
+        "elapsed_seconds": 41.6869,
+        "input_tokens": 914,
+        "output_tokens": 276,
+        "thoughts_tokens": null,
+        "total_tokens": 1190,
+        "model_eval_seconds": 36.3517,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019827",
+        "title": "Hydrogel adhesives with phase-transition-regulated tough wet adhesion and gentle removal for hemorrhage treatment and wound closure.",
+        "abstract": "NA: Hydrogel bioadhesives featuring rapid and robust wet adhesion are promising for hemorrhage and wound management. Nevertheless, the tight linkage may lead to secondary injury during surgical operations for subsequent removal. Herein, we develop an advanced hydrogel (PANA) with adequate wet adhesion performance (adhesion strength of 61.2 ± 9 kPa and interfacial toughness of 523 ± 36 J m-2) at body temperature and facile removal properties (adhesion strength of 5.3 ± 2.2 kPa and interfacial toughness of 50 ± 7 J m-2) at 20 °C. The main mechanism is the involvement of N-acryloyl-L-phenylalanine in hydrogel network, which not only realizes interfacial drainage and enhances matrix cohesion owing to the unique coupling structure of carboxylic and phenyl groups but also promotes thermo-triggered phase transition through regulation of hydrogen-bond-mediated hydrophobic aggregation with N-isopropylacrylamide. PANA hydrogel achieves instantaneous hemostatic sealing of diverse injuries in rabbits, and spraying normal saline (20 °C) promotes fast phase separation to enable gentle detachment for the prevention of secondary damage. Combined with cold plasma activation, the hydrogel inhibits bacterial proliferation to accelerate infected skin wound healing. Our work provides a practical solution to address the dilemma of tight wet adhesion and on-demand removal by clinically-used adhesives.",
+        "doi": "10.1016/j.biomaterials.2026.124766",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124766",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019827/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates hydrogel adhesives designed for hemorrhage treatment and wound closure with phase-transition-regulated wet adhesion and removal. The researchers developed a hydrogel (PANA) exhibiting strong wet adhesion (61.2 ± 9 kPa) at body temperature and weak adhesion (5.3 ± 2.2 kPa) at 20 °C for easy detachment. The hydrogel achieves rapid hemostasis in rabbit injuries and allows gentle removal via phase separation when exposed to cold saline. Combined with cold plasma, it inhibits bacterial growth to accelerate healing. The findings address the challenge of maintaining effective adhesion while enabling safe removal without secondary injury.\",\n  \"key_findings\": [\n    \"PANA hydrogel demonstrates strong wet adhesion (61.2 ± 9 kPa) at body temperature for effective hemorrhage control\",\n    \"The hydrogel exhibits weak adhesion (5.3 ± 2.2 kPa) at 20 °C, enabling gentle removal without secondary damage\",\n    \"Cold plasma activation with PANA inhibits bacterial proliferation, accelerating infected wound healing\"\n  ],\n  \"study_type\": \"In vitro and in vivo testing\",\n  \"scientific_significance\": \"This work provides a clinically relevant solution for hemorrhage management by balancing robust wet adhesion with on-demand removal, reducing the risk of secondary injury during surgical procedures.\"\n}",
+        "parsed": {
+          "summary": "This study investigates hydrogel adhesives designed for hemorrhage treatment and wound closure with phase-transition-regulated wet adhesion and removal. The researchers developed a hydrogel (PANA) exhibiting strong wet adhesion (61.2 ± 9 kPa) at body temperature and weak adhesion (5.3 ± 2.2 kPa) at 20 °C for easy detachment. The hydrogel achieves rapid hemostasis in rabbit injuries and allows gentle removal via phase separation when exposed to cold saline. Combined with cold plasma, it inhibits bacterial growth to accelerate healing. The findings address the challenge of maintaining effective adhesion while enabling safe removal without secondary injury.",
+          "key_findings": [
+            "PANA hydrogel demonstrates strong wet adhesion (61.2 ± 9 kPa) at body temperature for effective hemorrhage control",
+            "The hydrogel exhibits weak adhesion (5.3 ± 2.2 kPa) at 20 °C, enabling gentle removal without secondary damage",
+            "Cold plasma activation with PANA inhibits bacterial proliferation, accelerating infected wound healing"
+          ],
+          "study_type": "In vitro and in vivo testing",
+          "scientific_significance": "This work provides a clinically relevant solution for hemorrhage management by balancing robust wet adhesion with on-demand removal, reducing the risk of secondary injury during surgical procedures."
+        },
+        "elapsed_seconds": 46.7073,
+        "input_tokens": 903,
+        "output_tokens": 313,
+        "thoughts_tokens": null,
+        "total_tokens": 1216,
+        "model_eval_seconds": 41.6988,
+        "error": "summary must contain 45–65 words; received 88.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42971202",
+        "title": "Industrialization drives convergent microbiome and host physiological shifts in the human metaorganism.",
+        "abstract": "NA: Understanding how industrialization reshapes the human metaorganism requires integrating microbiome ecology with host physiology across globally diverse populations. Here, we generate multivariate data from the Global Microbiome Conservancy cohort, including gut microbiome, immunoglobulin A (IgA) sequencing, host genotyping, diet, lifestyle, and fecal biomarker profiles, to investigate host-microbiome interactions across gradients of industrialization and geography. We show that industrialization is associated with homogenized microbial compositions, reduced microbial diversity, and lower community stability, independent of host confounders. We further show that industrialization is linked to elevated markers of gut stress, increased IgA secretion, and altered patterns of IgA-bacteria interactions. Finally, we show that microbiome-based disease predictors trained on industrialized populations are uninformative in less industrialized cohorts, highlighting limited cross-population transferability. Together, our results reveal coordinated restructuring of the microbial ecosystem and host physiology and emphasize the need for inclusive, globally representative data to improve translational microbiome applications across diverse human populations.",
+        "doi": "10.1016/j.cell.2026.10.016",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.016",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42971202/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates industrialization's impact on the human metaorganism by analyzing gut microbiome, immunoglobulin A, host genotyping, diet, lifestyle, and fecal biomarkers across globally diverse populations. It demonstrates industrialization correlates with homogenized microbial compositions, reduced diversity, lower community stability, elevated gut stress markers, increased IgA secretion, and altered IgA-bacteria interactions. Microbiome disease predictors from industrialized groups fail in less industrialized cohorts, indicating limited cross-population applicability.\",\n  \"key_findings\": [\n    \"Industrialization correlates with homogenized microbial compositions\",\n    \"Industrialization is linked to reduced microbial diversity and lower community stability\",\n    \"Microbiome disease predictors trained on industrialized populations are uninformative in less industrialized cohorts\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The findings reveal coordinated restructuring of the microbial ecosystem and host physiology under industrialization, emphasizing the need for globally representative data to improve translational microbiome applications across diverse human populations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates industrialization's impact on the human metaorganism by analyzing gut microbiome, immunoglobulin A, host genotyping, diet, lifestyle, and fecal biomarkers across globally diverse populations. It demonstrates industrialization correlates with homogenized microbial compositions, reduced diversity, lower community stability, elevated gut stress markers, increased IgA secretion, and altered IgA-bacteria interactions. Microbiome disease predictors from industrialized groups fail in less industrialized cohorts, indicating limited cross-population applicability.",
+          "key_findings": [
+            "Industrialization correlates with homogenized microbial compositions",
+            "Industrialization is linked to reduced microbial diversity and lower community stability",
+            "Microbiome disease predictors trained on industrialized populations are uninformative in less industrialized cohorts"
+          ],
+          "study_type": "",
+          "scientific_significance": "The findings reveal coordinated restructuring of the microbial ecosystem and host physiology under industrialization, emphasizing the need for globally representative data to improve translational microbiome applications across diverse human populations."
+        },
+        "elapsed_seconds": 32.7417,
+        "input_tokens": 779,
+        "output_tokens": 217,
+        "thoughts_tokens": null,
+        "total_tokens": 996,
+        "model_eval_seconds": 27.8701,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the research redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles. The approach demonstrates scalability for practical battery applications.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C\",\n    \"The design reduces electrode thickness expansion from 38.4% to 13.1% after 50 cycles and enables 2 Ah NCM811 pouch cells with 80% capacity retention after 1200 cycles\"\n  ],\n  \"study_type\": \"Material design and synthesis\",\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing critical mechanical and electrochemical instability challenges in high-energy lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the research redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles. The approach demonstrates scalability for practical battery applications.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C",
+            "The design reduces electrode thickness expansion from 38.4% to 13.1% after 50 cycles and enables 2 Ah NCM811 pouch cells with 80% capacity retention after 1200 cycles"
+          ],
+          "study_type": "Material design and synthesis",
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing critical mechanical and electrochemical instability challenges in high-energy lithium-ion batteries."
+        },
+        "elapsed_seconds": 49.7928,
+        "input_tokens": 897,
+        "output_tokens": 337,
+        "thoughts_tokens": null,
+        "total_tokens": 1234,
+        "model_eval_seconds": 44.8128,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42982038",
+        "title": "CRISPR mutagenesis of the MYC locus reveals a druggable ultraconserved RNA element.",
+        "abstract": "NA: Noncoding sequences comprise most of the human genome; however, their functional significance remains largely elusive. Using CRISPR tiling mutagenesis with near-PAMless, high-fidelity SpRY-Cas9, we mapped the fitness landscape of an entire human gene, the 10-kb MYC locus, at base-pair resolution. This unbiased interrogation revealed that 67% of functionally essential base pairs are noncoding. Essential noncoding base pairs are under strong constraint in the human population but show limited evolutionary conservation across species. Within this landscape, we identified an ultraconserved noncoding RNA element in the 3' untranslated region (UTR) that promotes perinuclear localization of MYC mRNA and nuclear localization of MYC protein through interaction with hnRNP L. Steric-blocking antisense oligonucleotides (ASOs) targeting this element selectively eliminate diverse MYC-dependent cancer cells and inhibit growth of patient-derived tumor organoids. Together, these findings establish noncoding sequences as major carriers of functional genetic information and identify a therapeutically actionable RNA element whose targeting disrupts MYC-driven cancer.",
+        "doi": "10.1016/j.cell.2026.10.002",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.002",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42982038/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used CRISPR mutagenesis to map functional elements within the MYC gene locus at base-pair resolution. It found 67% of essential base pairs are noncoding, with an ultraconserved RNA element in the 3' UTR critical for MYC protein localization. Targeting this element with ASOs selectively kills cancer cells and inhibits tumor growth, highlighting noncoding sequences as key functional regulators and identifying a druggable target.\",\n  \"key_findings\": [\n    \"67% of functionally essential base pairs in the MYC locus are noncoding\",\n    \"An ultraconserved noncoding RNA element in the MYC 3' UTR promotes perinuclear mRNA localization and nuclear protein localization\",\n    \"Steric-blocking ASOs targeting this RNA element selectively eliminate MYC-dependent cancer cells and inhibit tumor organoid growth\"\n  ],\n  \"study_type\": \"CRISPR tiling mutagenesis\",\n  \"scientific_significance\": \"The study demonstrates that noncoding sequences are major carriers of functional genetic information and identifies a druggable RNA element that disrupts MYC-driven cancer mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study used CRISPR mutagenesis to map functional elements within the MYC gene locus at base-pair resolution. It found 67% of essential base pairs are noncoding, with an ultraconserved RNA element in the 3' UTR critical for MYC protein localization. Targeting this element with ASOs selectively kills cancer cells and inhibits tumor growth, highlighting noncoding sequences as key functional regulators and identifying a druggable target.",
+          "key_findings": [
+            "67% of functionally essential base pairs in the MYC locus are noncoding",
+            "An ultraconserved noncoding RNA element in the MYC 3' UTR promotes perinuclear mRNA localization and nuclear protein localization",
+            "Steric-blocking ASOs targeting this RNA element selectively eliminate MYC-dependent cancer cells and inhibit tumor organoid growth"
+          ],
+          "study_type": "CRISPR tiling mutagenesis",
+          "scientific_significance": "The study demonstrates that noncoding sequences are major carriers of functional genetic information and identifies a druggable RNA element that disrupts MYC-driven cancer mechanisms."
+        },
+        "elapsed_seconds": 41.9398,
+        "input_tokens": 698,
+        "output_tokens": 238,
+        "thoughts_tokens": null,
+        "total_tokens": 936,
+        "model_eval_seconds": 29.9226,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904528",
+        "title": "Nanoarchitectonics With Static-Dynamic Synergistic Interfacial Remediation for Practical Zinc Metal Batteries.",
+        "abstract": "NA: Aqueous zinc metal batteries are promising for large-scale energy storage because of their high safety and low cost, yet their practical deployment remains limited by dendrite growth, parasitic reactions, and the gradual failure of interfacial protection during prolonged cycling. Here, we report a static-dynamic synergistic interfacial remediation strategy in which a preconstructed In/Sb interfacial layer is coupled with a dynamically responsive electrolyte additive to mitigate continuous interfacial degradation. Specifically, a dual-phase In/Sb composite layer (ISZ) is formed on Zn by spontaneous galvanic replacement, providing a compact and chemically stable interface that promotes uniform Zn deposition and suppresses side reactions. Meanwhile, In3+ in the electrolyte dynamically participates in anode-side regulation during cycling, assisting defect-responsive interfacial regeneration. Owing to this synergy, the ISZ-In3+ system delivers both improved initial deposition behavior and sustained interfacial stability during repeated plating/stripping. Symmetric cells operate stably for nearly 6000 h at low areal capacity, for about 500 h under 40 mA cm-2/20 mAh cm-2, and for over 1000 h at an ultrahigh Zn utilization rate of 95%. This strategy is further extended to Br2/Zn batteries, where pouch cells stably operate for nearly 3600 h and 700 h at areal capacities of 12.5 and 25 mAh cm-2, respectively. In addition, a 1 Ah pouch cell delivers stable cycling over 3600 h, and a low-N/P pouch cell (N/P = 1.46) cycles for nearly 1400 h, while a 400 mAh pouch cell achieves a component-level energy density of about 80 Wh kg-1, excluding the electrolyte and pouch packaging. This work provides a practical interfacial design strategy for high-capacity, long-life aqueous Zn batteries.",
+        "doi": "10.1002/adma.75343",
+        "doi_url": "https://doi.org/10.1002/adma.75343",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904528/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a static-dynamic synergistic interfacial remediation strategy to enhance aqueous zinc metal batteries. By forming a dual-phase In/Sb composite layer on Zn and using In3+ in the electrolyte for dynamic regulation, the approach suppresses dendrite growth and parasitic reactions. The system achieves stable cycling for over 6000 hours in symmetric cells and demonstrates high energy density in practical pouch cells.\",\n  \"key_findings\": [\n    \"A dual-phase In/Sb composite layer on Zn suppresses dendrite growth and parasitic reactions\",\n    \"In3+ in the electrolyte dynamically regulates interfacial stability during cycling\",\n    \"The system enables stable cycling for over 6000 hours in symmetric cells and high energy density in practical pouch cells\"\n  ],\n  \"study_type\": \"In vitro electrochemical testing with symmetric and pouch cells\",\n  \"scientific_significance\": \"This strategy provides a practical interfacial design for durable, high-capacity aqueous zinc batteries, addressing key limitations in long-term cycling stability and energy density.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a static-dynamic synergistic interfacial remediation strategy to enhance aqueous zinc metal batteries. By forming a dual-phase In/Sb composite layer on Zn and using In3+ in the electrolyte for dynamic regulation, the approach suppresses dendrite growth and parasitic reactions. The system achieves stable cycling for over 6000 hours in symmetric cells and demonstrates high energy density in practical pouch cells.",
+          "key_findings": [
+            "A dual-phase In/Sb composite layer on Zn suppresses dendrite growth and parasitic reactions",
+            "In3+ in the electrolyte dynamically regulates interfacial stability during cycling",
+            "The system enables stable cycling for over 6000 hours in symmetric cells and high energy density in practical pouch cells"
+          ],
+          "study_type": "In vitro electrochemical testing with symmetric and pouch cells",
+          "scientific_significance": "This strategy provides a practical interfacial design for durable, high-capacity aqueous zinc batteries, addressing key limitations in long-term cycling stability and energy density."
+        },
+        "elapsed_seconds": 51.3717,
+        "input_tokens": 907,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 1135,
+        "model_eval_seconds": 30.0443,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43014307",
+        "title": "The blood-brain barrier imports diverse neuroprotective proteins through pathways impaired early in Alzheimer's disease models.",
+        "abstract": "NA: The blood-brain barrier (BBB) has been defined primarily by what it excludes, yet the scale and function of physiological blood-to-brain protein transport remain largely unknown. Using bioorthogonal proteomics, we find that the healthy BBB samples 191 plasma proteins and permits 92 into the brain parenchyma. Enriched for carrier and metabolic functions, these proteins home to distinct brain cell types, such as apolipoprotein A1 (APOA1) to astrocytes and alpha-1 antitrypsin (SERPINA1) to microglia. This cell-type tropism relies on a BBB-parenchyma receptor hand-off: APOA1 crosses the BBB via SR-B1 and engages astrocytic ATP-binding cassette transporter A1 (ABCA1), a key Alzheimer's risk gene, driving cholesterol efflux that supports synapse integrity. Unlike LPS-induced nonspecific leakage, early-stage 5xFAD mice show selective BBB transport remodeling, with reduced APOA1 and increased SERPINA1 uptake. Hepatic APOA1 overexpression restores APOA1 in the 5xFAD brain, rescuing astrocytic, synaptic, and behavioral deficits. These findings recast the BBB as a selective interface that recruits neuroprotective circulatory proteins for brain health.",
+        "doi": "10.1016/j.cell.2026.10.039",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.039",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43014307/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study used bioorthogonal proteomics to investigate blood-brain barrier protein transport in healthy and Alzheimer's disease models. It found the healthy BBB samples 191 plasma proteins and permits 92 into the brain, enriched for carrier and metabolic functions. These proteins target specific cell types via receptor hand-offs, with APOA1 engaging astrocytic ABCA1 to support synapse integrity. Early Alzheimer's models show reduced APOA1 and increased SERPINA1 uptake, while hepatic APOA1 overexpression rescues deficits in these models.\",\n  \"key_findings\": [\n    \"The healthy blood-brain barrier samples 191 plasma proteins and permits 92 into the brain parenchyma\",\n    \"APOA1 crosses the BBB via SR-B1 and engages astrocytic ABCA1 to support synapse integrity\",\n    \"Early-stage Alzheimer's models exhibit reduced APOA1 and increased SERPINA1 uptake, with hepatic APOA1 overexpression rescuing deficits\"\n  ],\n  \"study_type\": \"Bioorthogonal proteomics\",\n  \"scientific_significance\": \"This work redefines the blood-brain barrier as a selective interface that recruits neuroprotective circulatory proteins to maintain brain health, highlighting a critical pathway for Alzheimer's disease pathogenesis.\"\n}",
+        "parsed": {
+          "summary": "This study used bioorthogonal proteomics to investigate blood-brain barrier protein transport in healthy and Alzheimer's disease models. It found the healthy BBB samples 191 plasma proteins and permits 92 into the brain, enriched for carrier and metabolic functions. These proteins target specific cell types via receptor hand-offs, with APOA1 engaging astrocytic ABCA1 to support synapse integrity. Early Alzheimer's models show reduced APOA1 and increased SERPINA1 uptake, while hepatic APOA1 overexpression rescues deficits in these models.",
+          "key_findings": [
+            "The healthy blood-brain barrier samples 191 plasma proteins and permits 92 into the brain parenchyma",
+            "APOA1 crosses the BBB via SR-B1 and engages astrocytic ABCA1 to support synapse integrity",
+            "Early-stage Alzheimer's models exhibit reduced APOA1 and increased SERPINA1 uptake, with hepatic APOA1 overexpression rescuing deficits"
+          ],
+          "study_type": "Bioorthogonal proteomics",
+          "scientific_significance": "This work redefines the blood-brain barrier as a selective interface that recruits neuroprotective circulatory proteins to maintain brain health, highlighting a critical pathway for Alzheimer's disease pathogenesis."
+        },
+        "elapsed_seconds": 41.3604,
+        "input_tokens": 840,
+        "output_tokens": 276,
+        "thoughts_tokens": null,
+        "total_tokens": 1116,
+        "model_eval_seconds": 36.4159,
+        "error": "summary must contain 45–65 words; received 75.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904536",
+        "title": "Atomic-Level Regulating Layer-by-Layer Zinc Deposition by High-Entropy Single-Atoms Electrolyte Additive.",
+        "abstract": "NA: Aqueous batteries feature intrinsic safety, but how to achieve regular and planar electrodeposits at liquid-solid interfaces has emerged as a fundamental barrier to energy-dense aqueous batteries that use metal anodes. Based on classical crystal growth theory, sluggish metal ion transport during the deposition process will lead to rapid interfacial metal ion depletion, resulting in a sharp increase in interfacial supersaturation and subsequently inducing dendrite growth. Herein, micropore high-entropy single-atoms carbon nanoparticles (CuNiMnCoIr/CNs) were synthesized as a unique electrolyte additive to suppress interfacial Zn2+ concentration polarization and strengthen Zn chemistry at the atomic level. The micropore CuNiMnCoIr/CNs not only provide abundant Zn2+ transport channels but significantly reduce the migration energy barrier of Zn2+ from the bulk electrolyte to electrode interface to promote rapid desolvation kinetics and homogenize Zn2+ flux, thereby effectively alleviating interfacial Zn2+ supersaturation and guiding layer-by-layer Zn deposition. Consequently, trace CuNiMnCoIr/CNs additive delivers a high Zn2+ transference number of 0.89 and enables Zn//Zn cells to cycle stably for over 4000 h at 5 mA cm-2, and 800 h even at 50 mA cm-2, with an outstanding cumulative deposition capacity up to 20 Ah cm-2. Such knowledge may provide new insights to challenge interface chemistry for advanced aqueous metal-ion batteries.",
+        "doi": "10.1002/adma.75467",
+        "doi_url": "https://doi.org/10.1002/adma.75467",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904536/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of achieving uniform zinc deposition in aqueous batteries by introducing micropore high-entropy single-atoms carbon nanoparticles (CuNiMnCoIr/CNs) as an electrolyte additive. The additive suppresses interfacial Zn2+ concentration polarization, enhances Zn2+ transport, and promotes layer-by-layer deposition. It achieves a high Zn2+ transference number of 0.89 and enables stable cycling for over 4000 hours at 5 mA cm-2.\",\n  \"key_findings\": [\n    \"Micropore high-entropy single-atoms carbon nanoparticles (CuNiMnCoIr/CNs) suppress interfacial Zn2+ concentration polarization\",\n    \"The additive enhances Zn2+ transport and desolvation kinetics, reducing migration energy barriers\",\n    \"Achieves a Zn2+ transference number of 0.89 and enables stable cycling beyond 4000 hours at 5 mA cm-2\"\n  ],\n  \"study_type\": \"Electrolyte additive\",\n  \"scientific_significance\": \"This work provides atomic-level insights into mitigating interfacial supersaturation in aqueous zinc batteries, advancing fundamental understanding of metal deposition mechanisms for next-generation energy storage systems.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of achieving uniform zinc deposition in aqueous batteries by introducing micropore high-entropy single-atoms carbon nanoparticles (CuNiMnCoIr/CNs) as an electrolyte additive. The additive suppresses interfacial Zn2+ concentration polarization, enhances Zn2+ transport, and promotes layer-by-layer deposition. It achieves a high Zn2+ transference number of 0.89 and enables stable cycling for over 4000 hours at 5 mA cm-2.",
+          "key_findings": [
+            "Micropore high-entropy single-atoms carbon nanoparticles (CuNiMnCoIr/CNs) suppress interfacial Zn2+ concentration polarization",
+            "The additive enhances Zn2+ transport and desolvation kinetics, reducing migration energy barriers",
+            "Achieves a Zn2+ transference number of 0.89 and enables stable cycling beyond 4000 hours at 5 mA cm-2"
+          ],
+          "study_type": "Electrolyte additive",
+          "scientific_significance": "This work provides atomic-level insights into mitigating interfacial supersaturation in aqueous zinc batteries, advancing fundamental understanding of metal deposition mechanisms for next-generation energy storage systems."
+        },
+        "elapsed_seconds": 52.4601,
+        "input_tokens": 807,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 1078,
+        "model_eval_seconds": 35.8261,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020013",
+        "title": "Mapping primate brain aging across cell types, regions, and sexes.",
+        "abstract": "NA: Aging is the major risk factor for neurodegenerative disease, yet how it affects different cells in the primate brain remains unclear. In this issue of Cell, Yang et al. present a single-nucleus atlas of the aging macaque brain that, together with recent work by Zhang et al., reveals context-dependent aging programs, sex-biased transcriptional aging, and molecular links to Alzheimer's disease.",
+        "doi": "10.1016/j.cell.2026.10.021",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.021",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020013/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how aging impacts distinct cell types, brain regions, and sexes in primates using a single-nucleus atlas of macaque brain tissue. By integrating recent data, it identifies context-dependent aging programs, sex-biased transcriptional aging, and molecular connections to Alzheimer's disease, revealing heterogeneity in aging effects across the primate brain.\",\n  \"key_findings\": [\n    \"Context-dependent aging programs vary across brain regions\",\n    \"Sex-biased transcriptional aging patterns are observed\",\n    \"Molecular links between aging and Alzheimer's disease are identified\"\n  ],\n  \"study_type\": \"Single-nucleus atlas of macaque brain tissue\",\n  \"scientific_significance\": \"The findings provide a comprehensive map of aging effects in the primate brain, highlighting cellular and regional heterogeneity that informs understanding of neurodegenerative disease mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how aging impacts distinct cell types, brain regions, and sexes in primates using a single-nucleus atlas of macaque brain tissue. By integrating recent data, it identifies context-dependent aging programs, sex-biased transcriptional aging, and molecular connections to Alzheimer's disease, revealing heterogeneity in aging effects across the primate brain.",
+          "key_findings": [
+            "Context-dependent aging programs vary across brain regions",
+            "Sex-biased transcriptional aging patterns are observed",
+            "Molecular links between aging and Alzheimer's disease are identified"
+          ],
+          "study_type": "Single-nucleus atlas of macaque brain tissue",
+          "scientific_significance": "The findings provide a comprehensive map of aging effects in the primate brain, highlighting cellular and regional heterogeneity that informs understanding of neurodegenerative disease mechanisms."
+        },
+        "elapsed_seconds": 27.4439,
+        "input_tokens": 641,
+        "output_tokens": 182,
+        "thoughts_tokens": null,
+        "total_tokens": 823,
+        "model_eval_seconds": 22.6789,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904539",
+        "title": "Mechanoactive Biomaterials for Cell-Matrix Mechanotransduction.",
+        "abstract": "NA: Cells and extracellular matrices (ECMs) form mechanically coupled feedback loops in which cells generate forces, remodel their surroundings, and respond to mechanical information returned by the matrix. Conventional biomaterial models have established how passive matrix properties, including stiffness, viscoelasticity, architecture, and ligand presentation, regulate this feedback, but they provide limited control over the dynamic mechanical inputs transmitted through living tissues. Mechanoactive biomaterials address this limitation by converting external or encoded triggers into mechanical inputs with defined timing, magnitude, frequency, and spatial localization. Here, we compare mechanochemical hydrogels, light-responsive matrices, thermoresponsive systems, and optothermal mechanoactuators according to the material response, the mechanical input experienced by cells, spatial, and temporal control, reversibility, cytocompatibility, quantification, and translational constraints. We discuss how these platforms engage integrin-focal adhesion signaling, mechanosensitive ion channels, cytoskeletal and nuclear mechanotransduction, YAP/TAZ activity, and TGF-β activation. We conclude with design principles for selecting reversible or persistent actuation, matching mechanical parameters to receptor and tissue mechanics, and advancing mechanoactive platforms toward predictive in vitro models.",
+        "doi": "10.1002/adma.75449",
+        "doi_url": "https://doi.org/10.1002/adma.75449",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904539/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study compares mechanoactive biomaterials that convert external triggers into controlled mechanical inputs for cell-matrix mechanotransduction. It evaluates hydrogels, light-responsive matrices, thermoresponsive systems, and optothermal actuators based on their mechanical response, cellular input, spatial/temporal control, reversibility, cytocompatibility, and translational feasibility. The findings highlight how these platforms modulate integrin signaling, cytoskeletal dynamics, YAP/TA, and TGF-β pathways to inform design principles for predictive in vitro models.\",\n  \"key_findings\": [\n    \"Mechanoactive biomaterials convert external triggers into mechanical inputs with defined timing, magnitude, and spatial localization\",\n    \"These platforms modulate integrin-focal adhesion signaling, cytoskeletal dynamics, YAP/TAZ activity, and TGF-β activation\",\n    \"Design principles for selecting reversible or persistent actuation and matching mechanical parameters to tissue mechanics are established\"\n  ],\n  \"study_type\": \"Comparative analysis of mechanoactive biomaterial platforms\",\n  \"scientific_significance\": \"This work advances the field by establishing design principles for mechanoactive biomaterials that precisely control mechanical inputs to cells, enabling more accurate in vitro models of cell-matrix mechanotransduction.\"\n}",
+        "parsed": {
+          "summary": "This study compares mechanoactive biomaterials that convert external triggers into controlled mechanical inputs for cell-matrix mechanotransduction. It evaluates hydrogels, light-responsive matrices, thermoresponsive systems, and optothermal actuators based on their mechanical response, cellular input, spatial/temporal control, reversibility, cytocompatibility, and translational feasibility. The findings highlight how these platforms modulate integrin signaling, cytoskeletal dynamics, YAP/TA, and TGF-β pathways to inform design principles for predictive in vitro models.",
+          "key_findings": [
+            "Mechanoactive biomaterials convert external triggers into mechanical inputs with defined timing, magnitude, and spatial localization",
+            "These platforms modulate integrin-focal adhesion signaling, cytoskeletal dynamics, YAP/TAZ activity, and TGF-β activation",
+            "Design principles for selecting reversible or persistent actuation and matching mechanical parameters to tissue mechanics are established"
+          ],
+          "study_type": "Comparative analysis of mechanoactive biomaterial platforms",
+          "scientific_significance": "This work advances the field by establishing design principles for mechanoactive biomaterials that precisely control mechanical inputs to cells, enabling more accurate in vitro models of cell-matrix mechanotransduction."
+        },
+        "elapsed_seconds": 46.7493,
+        "input_tokens": 714,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 982,
+        "model_eval_seconds": 34.1441,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020014",
+        "title": "Deploying liquid intelligence in cancer: Finding answers in our blood.",
+        "abstract": "NA: Liquid biopsies are one of the few noninvasive procedures for probing disease at the molecular level. They represent a scalable solution to cancer detection and monitoring by capturing tumor-derived signals from circulating biomolecules such as proteins, DNA, RNA, and metabolites. However, these signals are often sparse, heterogeneous, and shaped by genetics, demographics, and comorbidities. Recent advances in artificial intelligence, especially with multimodal foundation models, have proven capable of extracting signals from noisy, high-dimensional data. Pretraining on large cohorts and integrating complementary modalities may improve sensitivity for tumor signals in blood, though significant clinical and infrastructural barriers remain. This review synthesizes advances in liquid biopsy technologies and artificial intelligence and examines how their convergence can enable enhanced cancer monitoring.",
+        "doi": "10.1016/j.cell.2026.10.024",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.024",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020014/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines how liquid biopsies and artificial intelligence converge to improve cancer detection and monitoring through blood-based biomarkers. It addresses challenges like signal sparsity and heterogeneity, highlighting AI's role in extracting tumor-derived information from noisy data. The study emphasizes multimodal AI models' potential to enhance sensitivity while acknowledging clinical and infrastructural barriers.\",\n  \"key_findings\": [\n    \"Liquid biopsies capture tumor signals via circulating biomolecules in blood\",\n    \"Multimodal AI models improve sensitivity for tumor detection in noisy data\",\n    \"Clinical and infrastructural barriers limit current implementation of AI-enhanced liquid biusing\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work advances understanding of AI-integrated liquid biopsy approaches for more precise cancer monitoring, demonstrating how multimodal models can overcome signal heterogeneity challenges in blood-based diagnostics.\"\n}",
+        "parsed": {
+          "summary": "This review examines how liquid biopsies and artificial intelligence converge to improve cancer detection and monitoring through blood-based biomarkers. It addresses challenges like signal sparsity and heterogeneity, highlighting AI's role in extracting tumor-derived information from noisy data. The study emphasizes multimodal AI models' potential to enhance sensitivity while acknowledging clinical and infrastructural barriers.",
+          "key_findings": [
+            "Liquid biopsies capture tumor signals via circulating biomolecules in blood",
+            "Multimodal AI models improve sensitivity for tumor detection in noisy data",
+            "Clinical and infrastructural barriers limit current implementation of AI-enhanced liquid biusing"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work advances understanding of AI-integrated liquid biopsy approaches for more precise cancer monitoring, demonstrating how multimodal models can overcome signal heterogeneity challenges in blood-based diagnostics."
+        },
+        "elapsed_seconds": 30.2441,
+        "input_tokens": 613,
+        "output_tokens": 181,
+        "thoughts_tokens": null,
+        "total_tokens": 794,
+        "model_eval_seconds": 22.1172,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904558",
+        "title": "Spontaneous Capture, Enrichment, and SERS Sensing of Polystyrene Micro/Nanoplastics Enabled by Condensed Plasmonic Coacervate Droplets.",
+        "abstract": "NA: Pervasive contamination by micro/nanoplastics (MNPs) poses threats to environmental and human health; however, their sensitive detection is challenged by low concentrations and lack of effective enrichment methods. Herein, we present a plasmonic coacervate platform that spontaneously sequesters polystyrene (PS) MNPs from water while facilitating surface-enhanced Raman scattering (SERS) detection. Coacervate microdroplets, formed through the liquid-liquid phase separation (LLPS) of cationic poly(diallyldimethylammonium chloride) and anionic adenosine triphosphate, exhibit a positive surface charge and a hydrophobic interior, enabling capture of nanoscale or microscale negatively charged PS MNPs with enrichment rates of 99.4% and 91.1%. The co-encapsulation of silver nanoparticles (AgNPs) generates three-dimensional droplet-confined SERS hotspot networks, resulting in an enhancement factor of 2.72 × 109, excellent uniformity, and minimum detectable concentration of 1 and 10 ng/mL for nano- and micro-scale PS, demonstrating strong linear correlations. This platform achieves recoveries ranging from 87% to 108% for PS MNPs spiked into filtered tap and river water and successfully detects PS MNPs released from commercial plastic cups and expanded polystyrene containers under simulated daily use. Our work establishes a simple, rapid, and sensitive strategy that integrates spontaneous analyte sequestration with plasmonic amplification, thus offering a new avenue for monitoring MNPs and assessing the safety of food-contact materials.",
+        "doi": "10.1002/adma.75459",
+        "doi_url": "https://doi.org/10.1002/adma.75459",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904558/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates a plasmonic coacervate platform for detecting polystyrene micro/nanoplastics (MNPs) in water. The platform uses liquid-liquid phase separation to form microdroplets that spontaneously capture and enrich negatively charged PS MNPs with high efficiency. The co-encapsulated silver nanoparticles create SERS hotspots, achieving an enhancement factor of 2.72 × 10^9 and detecting PS at concentrations as low as 1 ng/mL. The method demonstrates strong performance in real-world water samples and food-contact materials.\",\n  \"key_findings\": [\n    \"99.4% enrichment rate for nanoscale PS MNPs\",\n    \"91.1% enrichment rate for microscale PS MNPs\",\n    \"Minimum detectable concentration of 1 ng/mL for nano- and 10 ng/mL for micro-scale PS\"\n  ],\n  \"study_type\": \"Plasmonic coacervate platform with liquid-liquid phase separation\",\n  \"scientific_significance\": \"This work provides a sensitive, rapid method for detecting micro/nanoplastics in environmental and food-contact materials using spontaneous sequestration and plasmonic amplification.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a plasmonic coacervate platform for detecting polystyrene micro/nanoplastics (MNPs) in water. The platform uses liquid-liquid phase separation to form microdroplets that spontaneously capture and enrich negatively charged PS MNPs with high efficiency. The co-encapsulated silver nanoparticles create SERS hotspots, achieving an enhancement factor of 2.72 × 10^9 and detecting PS at concentrations as low as 1 ng/mL. The method demonstrates strong performance in real-world water samples and food-contact materials.",
+          "key_findings": [
+            "99.4% enrichment rate for nanoscale PS MNPs",
+            "91.1% enrichment rate for microscale PS MNPs",
+            "Minimum detectable concentration of 1 ng/mL for nano- and 10 ng/mL for micro-scale PS"
+          ],
+          "study_type": "Plasmonic coacervate platform with liquid-liquid phase separation",
+          "scientific_significance": "This work provides a sensitive, rapid method for detecting micro/nanoplastics in environmental and food-contact materials using spontaneous sequestration and plasmonic amplification."
+        },
+        "elapsed_seconds": 38.4784,
+        "input_tokens": 923,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 1174,
+        "model_eval_seconds": 33.4589,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020016",
+        "title": "Stepping (hi)stones: Charting a single-cell multiomic path toward understanding the human brain.",
+        "abstract": "NA: In this issue of Cell, two single-cell multiomic atlases jointly profile transcription and histone modifications across different regions of the adult human brain, revealing cell-type-specific regulatory landscapes, developmental epigenetic memory, and improved interpretation of neurological variants. These studies establish a framework for understanding human brain cell identity, evolution, and pathology.",
+        "doi": "10.1016/j.cell.2026.10.020",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.020",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020016/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study generated single-cell multiomic maps of adult human brain regions, integrating transcriptional and histone modification data. It identified cell-type-specific regulatory mechanisms, developmental epigenetic memory patterns, and improved interpretation of neurological variants. These findings establish a framework for understanding brain cell identity, evolution, and pathology.\",\n  \"key_findings\": [\n    \"Cell-type-specific regulatory landscapes in adult human brain regions\",\n    \"Developmental epigenetic memory patterns\",\n    \"Enhanced interpretation of neurological variants through multiomic profiling\"\n  ],\n  \"study_type\": \"Single-cell multiomic atlases\",\n  \"scientific_significance\": \"The work provides a comprehensive framework for deciphering human brain cell identity, evolutionary trajectories, and pathological mechanisms through integrated epigenomic and transcriptomic profiling.\"\n}",
+        "parsed": {
+          "summary": "This study generated single-cell multiomic maps of adult human brain regions, integrating transcriptional and histone modification data. It identified cell-type-specific regulatory mechanisms, developmental epigenetic memory patterns, and improved interpretation of neurological variants. These findings establish a framework for understanding brain cell identity, evolution, and pathology.",
+          "key_findings": [
+            "Cell-type-specific regulatory landscapes in adult human brain regions",
+            "Developmental epigenetic memory patterns",
+            "Enhanced interpretation of neurological variants through multiomic profiling"
+          ],
+          "study_type": "Single-cell multiomic atlases",
+          "scientific_significance": "The work provides a comprehensive framework for deciphering human brain cell identity, evolutionary trajectories, and pathological mechanisms through integrated epigenomic and transcriptomic profiling."
+        },
+        "elapsed_seconds": 24.4159,
+        "input_tokens": 624,
+        "output_tokens": 164,
+        "thoughts_tokens": null,
+        "total_tokens": 788,
+        "model_eval_seconds": 19.8671,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904569",
+        "title": "Interface-Mediated Architectural Engineering of Silicon for Solid-State Batteries: Current Status and Future Outlook.",
+        "abstract": "NA: Solid-state lithium batteries promise superior performance and enhanced safety over current lithium-ion batteries. As lithium metal encounters intrinsic challenges, high-capacity silicon anodes have gained increasing attention to satisfy the growing demand for higher energy density and safety. However, the commercialization of such systems is impeded by challenges including large volume variation, poor interfacial contact, sluggish charge transport, inferior performance, and excessive pressure reliance. This review discusses fundamental challenges and interface-mediated architectural engineering strategies. Based on the coupling mode of silicon and solid electrolyte, the developed architectures are classified into three representative categories, with emphasis on their design principles, multiscale construction methodologies, and enhancement mechanisms. In light of the latest advances, this review systematizes the architectural paradigms, and clarifies the synergistic correlations between interfacial compatibility, electron and ion transport, stress relaxation, and side reactions between silicon and solid electrolyte. Scalable manufacturing protocols and sustainable monitoring approaches are then delineated toward practical applications. Finally, the review summarizes the advantages and disadvantages of these classifications and outlines future directions for advancing stable, safe, scalable, and sustainable silicon-based electrode technologies for viable solid-state batteries with enhanced energy density, power capability, durability, and manufacturability at low-pressure operation.",
+        "doi": "10.1002/adma.75453",
+        "doi_url": "https://doi.org/10.1002/adma.75453",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904569/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines interface-mediated architectural engineering strategies for silicon anodes in solid-state batteries to address volume expansion, interfacial instability, and poor conductivity. It categorizes approaches based on silicon-solid electrolyte coupling, emphasizing design principles, multiscale construction, and mechanisms to improve compatibility, transport, stress management, and reaction control. The study identifies scalable pathways for practical silicon-based solid-state batteries with enhanced energy density and safety.\",\n  \"key_findings\": [\n    \"Categorization of silicon-solid electrolyte architectures by coupling mode\",\n    \"Design principles and multiscale construction methodologies for interface stability\",\n    \"Scalable manufacturing protocols for practical silicon anodes in solid:state batteries\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This review establishes a systematic framework for optimizing silicon anodes in solid-state batteries by integrating interfacial engineering with transport and mechanical properties, advancing the field toward practical high-energy-density systems.\"\n}",
+        "parsed": {
+          "summary": "This review examines interface-mediated architectural engineering strategies for silicon anodes in solid-state batteries to address volume expansion, interfacial instability, and poor conductivity. It categorizes approaches based on silicon-solid electrolyte coupling, emphasizing design principles, multiscale construction, and mechanisms to improve compatibility, transport, stress management, and reaction control. The study identifies scalable pathways for practical silicon-based solid-state batteries with enhanced energy density and safety.",
+          "key_findings": [
+            "Categorization of silicon-solid electrolyte architectures by coupling mode",
+            "Design principles and multiscale construction methodologies for interface stability",
+            "Scalable manufacturing protocols for practical silicon anodes in solid:state batteries"
+          ],
+          "study_type": "",
+          "scientific_significance": "This review establishes a systematic framework for optimizing silicon anodes in solid-state batteries by integrating interfacial engineering with transport and mechanical properties, advancing the field toward practical high-energy-density systems."
+        },
+        "elapsed_seconds": 37.4534,
+        "input_tokens": 720,
+        "output_tokens": 197,
+        "thoughts_tokens": null,
+        "total_tokens": 917,
+        "model_eval_seconds": 24.6858,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020017",
+        "title": "Conserved striatal mechanisms underlying ASD.",
+        "abstract": "NA: Autism spectrum disorder (ASD) involves changes in social and stereotypic behaviors regulated by striatal circuitry. Using an innovative cross-species approach, in this issue of Cell, Yuan et al. identify alterations in specific striatal neurons and astrocytes, opening new avenues for investigating cellular and molecular mechanisms underlying striatal dysfunction in ASD.",
+        "doi": "10.1016/j.cell.2026.10.025",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.025",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020017/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates conserved striatal mechanisms in autism spectrum disorder (ASD) using a cross-species approach. Yuan et al. identified alterations in specific striatal neurons and astrocytes, revealing potential cellular and molecular pathways underlying striatal dysfunction in ASD. The findings suggest novel targets for understanding ASD pathophysiology.\",\n  \"key_findings\": [\n    \"Alterations in specific striatal neurons\",\n    \"Alterations in striatal astrocytes\",\n    \"Cross-species identification of striatal changes relevant to ASD\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The study provides evidence for conserved striatal cellular and molecular mechanisms across species that contribute to ASD pathophysiology, advancing understanding of striatal dysfunction in neurodevelopmental disorders.\"\n}",
+        "parsed": {
+          "summary": "This study investigates conserved striatal mechanisms in autism spectrum disorder (ASD) using a cross-species approach. Yuan et al. identified alterations in specific striatal neurons and astrocytes, revealing potential cellular and molecular pathways underlying striatal dysfunction in ASD. The findings suggest novel targets for understanding ASD pathophysiology.",
+          "key_findings": [
+            "Alterations in specific striatal neurons",
+            "Alterations in striatal astrocytes",
+            "Cross-species identification of striatal changes relevant to ASD"
+          ],
+          "study_type": "",
+          "scientific_significance": "The study provides evidence for conserved striatal cellular and molecular mechanisms across species that contribute to ASD pathophysiology, advancing understanding of striatal dysfunction in neurodevelopmental disorders."
+        },
+        "elapsed_seconds": 25.9487,
+        "input_tokens": 646,
+        "output_tokens": 164,
+        "thoughts_tokens": null,
+        "total_tokens": 810,
+        "model_eval_seconds": 19.9831,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904840",
+        "title": "Biomass DNA: An Emerging Building Block for Advanced Materials.",
+        "abstract": "NA: Since the structural discovery of DNA's double helix, it transitioned from a genetic carrier to a cornerstone of programmable nanotechnology and materials science. However, while synthetic DNA with predesigned sequences has dominated DNA-based materials, biomass DNA, naturally derived from bulk biological resources, has emerged as a powerful large-scale engineering material. This review outlines biomass DNA-derived materials and their multifunctional applications, framed as a \"Biomass DNA Tree,\" representing biomass resources as roots, duplexes as stems, and advanced materials as leaves. For example, we examine the transformation of biomass DNA into sophisticated 3D-crosslinked hydrogel matrices for (bio)engineering, and their further processing into recyclable bioplastics, which supports carbon neutrality. Furthermore, we highlight biomass DNA organogels and fibers, as well as its utilization for energy storage, including supercapacitors, batteries, and interphase layers. Beyond these core areas, the review highlights breakthroughs applying DNA as functional materials for catalysis, soft robotics, OLEDs, medical patches, neuromorphic devices, and photoconductors. By addressing challenges and providing perspectives on future opportunities, this review aims to catalyze the next generation of materials science, emphasizing the role of biomass DNA in advancing biopolymer-based applications.",
+        "doi": "10.1002/adma.75438",
+        "doi_url": "https://doi.org/10.1002/adma.75438",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904840/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines biomass DNA's potential as a sustainable material platform, contrasting synthetic DNA with naturally derived resources. It outlines applications in hydrogels, bioplastics, organogels, and energy storage systems, emphasizing carbon neutrality and multifunctional uses. The study identifies biomass DNA as a scalable resource for next-generation biopolymer applications through a 'Biomass DNA Tree' framework.\",\n  \"key_findings\": [\n    \"Biomass DNA enables recyclable bioplastics supporting carbon neutrality\",\n    \"Biomas DNA organogels and fibers facilitate energy storage in supercapacitors and batteries\",\n    \"Biomass DNA applications span catalysis, soft robotics, OLEDs, and medical devices\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This review establishes biomass DNA as a scalable, sustainable platform for multifunctional advanced materials, advancing biopolymer engineering toward carbon-neutral applications.\"\n}",
+        "parsed": {
+          "summary": "This review examines biomass DNA's potential as a sustainable material platform, contrasting synthetic DNA with naturally derived resources. It outlines applications in hydrogels, bioplastics, organogels, and energy storage systems, emphasizing carbon neutrality and multifunctional uses. The study identifies biomass DNA as a scalable resource for next-generation biopolymer applications through a 'Biomass DNA Tree' framework.",
+          "key_findings": [
+            "Biomass DNA enables recyclable bioplastics supporting carbon neutrality",
+            "Biomas DNA organogels and fibers facilitate energy storage in supercapacitors and batteries",
+            "Biomass DNA applications span catalysis, soft robotics, OLEDs, and medical devices"
+          ],
+          "study_type": "",
+          "scientific_significance": "This review establishes biomass DNA as a scalable, sustainable platform for multifunctional advanced materials, advancing biopolymer engineering toward carbon-neutral applications."
+        },
+        "elapsed_seconds": 37.5426,
+        "input_tokens": 720,
+        "output_tokens": 195,
+        "thoughts_tokens": null,
+        "total_tokens": 915,
+        "model_eval_seconds": 24.4923,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020022",
+        "title": "Common variation of cell abundances and gene expression in the human striatum.",
+        "abstract": "NA: The cellular and molecular bases of inter-individual variation in the human brain are not yet understood, particularly beyond the neocortex. Here, we describe cellular and gene-expression variation in the striatum and prefrontal cortex from single-nucleus RNA sequencing (snRNA-seq) analysis of 3.9 million nuclei from 178 adult brain donors. People with more astrocytes, microglia, or oligodendrocyte precursor cells (OPCs) in any one brain region tended to have this property in all gray-matter regions sampled. OPC proportions declined by 40% across ages 30-80 in the cortex and striatum. Age-associated gene-expression changes differed substantially across cell types. Donor age was predicted from RNA-expression patterns with a median absolute error of 6.6 years across cell types. Common genetic variants were associated with the expression of nearly 10,000 genes; these effects were mostly cell-type specific and distinguished striatal from cortical neurons. These open-access data provide a foundation for future studies of human brain variation and vulnerabilities.",
+        "doi": "10.1016/j.cell.2026.10.026",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.026",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020022/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study used single-nucleus RNA sequencing to analyze 3.9 million nuclei from 178 adult human brains, focusing on striatal and prefrontal cortical variation. It found common patterns of astrocyte, microglia, and oligodendrocyte precursor cell abundance across gray matter regions. Age-related gene expression shifts varied by cell type, with donor age predictable from RNA patterns (median error 6.6 years). Genetic variants influenced nearly 10,000 genes, predominantly cell-type specific and distinguishing striatal from cortical neurons.\",\n  \"key_findings\": [\n    \"Common astrocyte, microglia, and oligodendrocyte precursor cell abundance patterns across gray matter regions\",\n    \"Age-related gene expression changes varied by cell type, with donor age predictable from RNA patterns (median error 6.6 years)\",\n    \"Genetic variants associated with nearly 10,000 genes, mostly cell-type specific and distinguishing striatal from cortical neurons\"\n  ],\n  \"study_type\": \"single-nucleus RNA sequencing\",\n  \"scientific_significance\": \"This work establishes a comprehensive atlas of human brain cellular and gene expression variation, providing a foundation for understanding inter-individual differences and their implications for neurological disorders.\"\n}",
+        "parsed": {
+          "summary": "This study used single-nucleus RNA sequencing to analyze 3.9 million nuclei from 178 adult human brains, focusing on striatal and prefrontal cortical variation. It found common patterns of astrocyte, microglia, and oligodendrocyte precursor cell abundance across gray matter regions. Age-related gene expression shifts varied by cell type, with donor age predictable from RNA patterns (median error 6.6 years). Genetic variants influenced nearly 10,000 genes, predominantly cell-type specific and distinguishing striatal from cortical neurons.",
+          "key_findings": [
+            "Common astrocyte, microglia, and oligodendrocyte precursor cell abundance patterns across gray matter regions",
+            "Age-related gene expression changes varied by cell type, with donor age predictable from RNA patterns (median error 6.6 years)",
+            "Genetic variants associated with nearly 10,000 genes, mostly cell-type specific and distinguishing striatal from cortical neurons"
+          ],
+          "study_type": "single-nucleus RNA sequencing",
+          "scientific_significance": "This work establishes a comprehensive atlas of human brain cellular and gene expression variation, providing a foundation for understanding inter-individual differences and their implications for neurological disorders."
+        },
+        "elapsed_seconds": 39.4449,
+        "input_tokens": 784,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1052,
+        "model_eval_seconds": 34.5297,
+        "error": "summary must contain 45–65 words; received 73.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42905050",
+        "title": "Advanced Nanomedicines for Cancer Metabolic Therapy.",
+        "abstract": "NA: Abnormal metabolic reprogramming is a recognized hallmark of cancer, yet the clinical translation of cancer metabolic therapy (CMT) by conventional chemo-drugs remains a great challenge due to their poor drug targetability, short circulation time, and low bioavailability. Nanomedicines, owing to their great feasibility in rational designs, facile fabrication, and excellent biocompatibility, offer a powerful platform to overcome the drawbacks of current clinical drugs and enable precise modulation of cancer metabolism. In this review, we provide a critical overview of recent advances in nanomedicine-based CMT. We first summarize the reprogrammed metabolic landscape of cancer cells and the metabolic crosstalk within the tumor microenvironment. Then, nanomedicine strategies targeting glucose, lipid, amino acid, nucleotide, and carboxylic acid metabolism are summarized and discussed in a comprehensive way, with an emphasis on nanomaterial design principles and regulatory mechanisms. Finally, key challenges and future prospects for clinical translation are discussed, aiming to establish nanomedicine-enabled CMT as a next-generation paradigm for effective and safe cancer treatment.",
+        "doi": "10.1002/adma.75365",
+        "doi_url": "https://doi.org/10.1002/adma.75365",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42905050/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines nanomedicine approaches to cancer metabolic therapy (CMT), addressing challenges like poor drug targetability and short circulation time of conventional therapies. It analyzes reprogrammed cancer metabolism and nanomaterial strategies targeting glucose, lipids, amino acids, nucleotides, and carboxylic acids. The study highlights design principles for precise metabolic modulation and identifies key barriers to clinical translation of CMT.\",\n  \"key_findings\": [\n    \"Nanomedicines overcome limitations of conventional cancer metabolic therapies through improved targetability and circulation time\",\n    \"The review details metabolic reprogramming in cancer cells and tumor microenvironment crosstalk\",\n    \"Nanomaterial strategies target multiple metabolic pathways including glucose, lipids, amino acids, nucleotides, and carboxylic acids\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes nanomedicine as a critical platform for advancing cancer metabolic therapy, providing design principles to precisely modulate tumor metabolism and address translational barriers for next-generation cancer treatments.\"\n}",
+        "parsed": {
+          "summary": "This review examines nanomedicine approaches to cancer metabolic therapy (CMT), addressing challenges like poor drug targetability and short circulation time of conventional therapies. It analyzes reprogrammed cancer metabolism and nanomaterial strategies targeting glucose, lipids, amino acids, nucleotides, and carboxylic acids. The study highlights design principles for precise metabolic modulation and identifies key barriers to clinical translation of CMT.",
+          "key_findings": [
+            "Nanomedicines overcome limitations of conventional cancer metabolic therapies through improved targetability and circulation time",
+            "The review details metabolic reprogramming in cancer cells and tumor microenvironment crosstalk",
+            "Nanomaterial strategies target multiple metabolic pathways including glucose, lipids, amino acids, nucleotides, and carboxylic acids"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes nanomedicine as a critical platform for advancing cancer metabolic therapy, providing design principles to precisely modulate tumor metabolism and address translational barriers for next-generation cancer treatments."
+        },
+        "elapsed_seconds": 38.8952,
+        "input_tokens": 678,
+        "output_tokens": 220,
+        "thoughts_tokens": null,
+        "total_tokens": 898,
+        "model_eval_seconds": 27.662,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020023",
+        "title": "Multimodal single-cell epigenomic and 3D genome atlas of the human basal ganglia.",
+        "abstract": "NA: The basal ganglia (BG) underlie motor control, reward processing, and many neurological and psychiatric disorders, yet cell-type-resolved epigenomic and 3D genome maps of the human BG remain limited. Here, we present a multimodal single-cell atlas of DNA methylation (261,331 nuclei) and 3D chromatin conformation (229,286 nuclei) from eight subregions, harmonized under the BG consensus taxonomy and integrated with matched data across multiple regulatory layers. We identify millions of differentially methylated regions across cell types, enriched for distinct transcription factor motifs, and link them to disease-associated heritability. We characterize the POU6F2+ STR D2 SMYD2-HTR7 spiny projection neuron (SPN) subtype, with concordant signatures across multiple modalities, and reveal region-specific methylation and contact gradients. Integrative gene regulatory networks (GRNs) predict cell-type-resolved enhancer-promoter interactions, nominating candidate regulatory mechanisms for Parkinson's disease (PD) risk variants at SNCA. Finally, multiplexed error-robust fluorescence in situ hybridization (MERFISH) profiling combined with cross-species Patch-seq identifies a neuronal subtype, STR FS PTHLH-PVALB GABA, with electrophysiological differences across the striatal matrix-striosome (MS) boundary.",
+        "doi": "10.1016/j.cell.2026.10.019",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.019",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020023/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study generated multimodal single-cell epigenomic and 3: D genome maps of human basal ganglia across eight subregions. It integrated DNA methylation and chromatin conformation data from over 200,000 nuclei, identifying cell-type-specific differentially methylated regions linked to disease heritability. The research characterized distinct neuronal subtypes, including POU6F2+ spiny projection neurons and STR FS PTHLH-PVALB GABA neurons, with implications for Parkinson's disease mechanisms.\",\n  \"key_findings\": [\n    \"Identification of millions of cell-type-specific differentially methylated regions enriched for distinct transcription factor motifs\",\n    \"Characterization of POU6F2+ spiny projection neurons with concordant multi-modal signatures\",\n    \"Revealing region-specific methylation and contact gradients near Parkinson's disease risk variants\"\n  ],\n  \"study_type\": \"Multimodal single-cell epigenomic and 3D genome atlas\",\n  \"scientific_significance\": \"This work provides the first comprehensive cell-type-resolved epigenomic and 3D genome maps of human basal ganglia, advancing understanding of regulatory mechanisms underlying motor control and neurological disorders.\"\n}",
+        "parsed": {
+          "summary": "This study generated multimodal single-cell epigenomic and 3: D genome maps of human basal ganglia across eight subregions. It integrated DNA methylation and chromatin conformation data from over 200,000 nuclei, identifying cell-type-specific differentially methylated regions linked to disease heritability. The research characterized distinct neuronal subtypes, including POU6F2+ spiny projection neurons and STR FS PTHLH-PVALB GABA neurons, with implications for Parkinson's disease mechanisms.",
+          "key_findings": [
+            "Identification of millions of cell-type-specific differentially methylated regions enriched for distinct transcription factor motifs",
+            "Characterization of POU6F2+ spiny projection neurons with concordant multi-modal signatures",
+            "Revealing region-specific methylation and contact gradients near Parkinson's disease risk variants"
+          ],
+          "study_type": "Multimodal single-cell epigenomic and 3D genome atlas",
+          "scientific_significance": "This work provides the first comprehensive cell-type-resolved epigenomic and 3D genome maps of human basal ganglia, advancing understanding of regulatory mechanisms underlying motor control and neurological disorders."
+        },
+        "elapsed_seconds": 47.3606,
+        "input_tokens": 757,
+        "output_tokens": 252,
+        "thoughts_tokens": null,
+        "total_tokens": 1009,
+        "model_eval_seconds": 32.6575,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42905113",
+        "title": "Strain-Insensitive Conductors for Stretchable Electronics.",
+        "abstract": "NA: Stretchable electronics are rapidly evolving from simple planar configurations to complex, three-dimensional (3D) multifunctional architectures. However, traditional stretchable conductors frequently suffer from severe resistance fluctuations under mechanical deformation. To address this challenge, this review systematically summarizes two core design paradigms for achieving robust strain insensitivity. The first paradigm, corresponding to structurally strain-insensitive conductors, relies on a top-down geometric decoupling strategy that physically dissipates strain through 3D buckling or kirigami structures. The second paradigm, corresponding to intrinsically strain-insensitive conductors, employs a bottom-up network reconstruction strategy that leverages the fluidic adaptability of liquid metals or the dynamic sliding of nanofillers to sustain continuous percolation networks under stress. Beyond these fundamental paradigms, we comprehensively evaluate precise fabrication processes and critical system-level integration challenges, with a particular focus on in-plane modulus mismatch and Z-axis interlayer shear failure. Importantly, this review highlights the indispensable role of strain-insensitive conductors in advanced applications, demonstrating their unique capability to eliminate motion artifacts in bioelectronics, lock resonant frequencies in wireless communications, and ensure thermal safety in high-power actuation platforms. Finally, we outline future trajectories for large-scale industrial manufacturing and long-term in vivo stability, aiming to accelerate the commercialization of technologies within this interdisciplinary field.",
+        "doi": "10.1002/adma.75360",
+        "doi_url": "https://doi.org/10.1002/adma.75360",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42905113/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review addresses resistance fluctuations in stretchable electronics under mechanical deformation by identifying two design paradigms: top-down geometric decoupling (e.g., 3D buckling) and bottom-up network reconstruction (e.g., liquid metals). It evaluates fabrication challenges and system integration, emphasizing strain-insensitive conductors' role in bioelectronics, wireless communications, and thermal safety while highlighting future manufacturing and stability goals.\",\n  \"key_findings\": [\n    \"Structurally strain-insensitive conductors use 3D buckling or kirigami to dissipate strain\",\n    \"Intrinsically strain-insensitive conductors maintain percolation via liquid metals or nanofillers\",\n    \"Strain-insensitive conductors enable motion artifact elimination in bioelectronics and thermal safety in high-power applications\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This review establishes foundational design principles for strain-insensitive conductors, advancing the field of stretchable electronics by resolving critical mechanical stability challenges for real-world applications.\"\n}",
+        "parsed": {
+          "summary": "This review addresses resistance fluctuations in stretchable electronics under mechanical deformation by identifying two design paradigms: top-down geometric decoupling (e.g., 3D buckling) and bottom-up network reconstruction (e.g., liquid metals). It evaluates fabrication challenges and system integration, emphasizing strain-insensitive conductors' role in bioelectronics, wireless communications, and thermal safety while highlighting future manufacturing and stability goals.",
+          "key_findings": [
+            "Structurally strain-insensitive conductors use 3D buckling or kirigami to dissipate strain",
+            "Intrinsically strain-insensitive conductors maintain percolation via liquid metals or nanofillers",
+            "Strain-insensitive conductors enable motion artifact elimination in bioelectronics and thermal safety in high-power applications"
+          ],
+          "study_type": "",
+          "scientific_significance": "This review establishes foundational design principles for strain-insensitive conductors, advancing the field of stretchable electronics by resolving critical mechanical stability challenges for real-world applications."
+        },
+        "elapsed_seconds": 40.8231,
+        "input_tokens": 736,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 950,
+        "model_eval_seconds": 27.3743,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020024",
+        "title": "Single-cell analysis of chromatin state and transcriptome in the human basal ganglia.",
+        "abstract": "NA: The basal ganglia are central to motor control, learning, emotion, and reward processing, and their dysfunction contributes to many neurological and psychiatric disorders. Here, we generated a single-cell multi-omic atlas of histone modifications and transcriptomes across eight basal ganglia regions from neurotypical human donors. This atlas resolved cell-type- and region-specific landscapes of active and repressive candidate cis-regulatory elements and delineated gene regulatory networks underlying cell identity. We found that the combinatorial expression of homeobox transcription factors provides distinctive molecular descriptors of neuronal cell identities in the basal ganglia. Integration with matched MERFISH spatial transcriptomics further uncovered regional heterogeneity in epigenomic and transcriptional programs. Finally, we used this atlas to interpret noncoding risk variants associated with neuropsychiatric disorders and to construct a deep-learning model that predicts gene regulatory activities and variant effects. Together, this work provides a multimodal regulatory framework for understanding human basal ganglia organization, evolution, and disease genetics.",
+        "doi": "10.1016/j.cell.2026.09.008",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.008",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020024/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study generated a single-cell multi-omic atlas of histone modifications and transcriptomes from eight human basal ganglia regions to map cell-type-specific regulatory landscapes. It identified homeobox transcription factors as key molecular descriptors for neuronal identities and revealed regional heterogeneity in epigenomic and transcriptional programs. The atlas also interpreted noncoding risk variants for neuropsychiatric disorders and enabled predictive modeling of gene regulatory activities.\",\n  \"key_findings\": [\n    \"Identification of homeobox transcription factors as distinctive molecular descriptors for neuronal cell identities in the basal ganglia\",\n    \"Regional heterogeneity in epigenomic and transcription:al programs across basal ganglia regions\",\n    \"Application of the atlas to interpret noncoding risk variants associated with neuropsychiatric disorders\"\n  ],\n  \"study_type\": \"Single-cell multi-omic atlas\",\n  \"scientific_significance\": \"This work establishes a comprehensive regulatory framework for understanding human basal ganglia organization, evolution, and disease mechanisms through integrated epigenomic and transcriptomic profiling.\"\n}",
+        "parsed": {
+          "summary": "This study generated a single-cell multi-omic atlas of histone modifications and transcriptomes from eight human basal ganglia regions to map cell-type-specific regulatory landscapes. It identified homeobox transcription factors as key molecular descriptors for neuronal identities and revealed regional heterogeneity in epigenomic and transcriptional programs. The atlas also interpreted noncoding risk variants for neuropsychiatric disorders and enabled predictive modeling of gene regulatory activities.",
+          "key_findings": [
+            "Identification of homeobox transcription factors as distinctive molecular descriptors for neuronal cell identities in the basal ganglia",
+            "Regional heterogeneity in epigenomic and transcription:al programs across basal ganglia regions",
+            "Application of the atlas to interpret noncoding risk variants associated with neuropsychiatric disorders"
+          ],
+          "study_type": "Single-cell multi-omic atlas",
+          "scientific_significance": "This work establishes a comprehensive regulatory framework for understanding human basal ganglia organization, evolution, and disease mechanisms through integrated epigenomic and transcriptomic profiling."
+        },
+        "elapsed_seconds": 36.362,
+        "input_tokens": 663,
+        "output_tokens": 209,
+        "thoughts_tokens": null,
+        "total_tokens": 872,
+        "model_eval_seconds": 25.9713,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
