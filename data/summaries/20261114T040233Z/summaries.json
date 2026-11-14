@@ -1,0 +1,880 @@
+{
+  "schema_version": 1,
+  "run_id": "20261114T040233Z",
+  "generated_at_utc": "2026-11-14 04:21:12 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v2",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific: do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use this schema:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section or generic caveats.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 239,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42894277",
+        "title": "Emerging Lipid Nanoparticle Targeting Strategies for Extrahepatic Delivery of RNA Therapeutics.",
+        "abstract": "NA: Lipid nanoparticles (LNPs) have transformed RNA therapeutics through their high delivery efficiency, scalable manufacturing, and favorable safety profiles, as demonstrated by COVID-19 mRNA vaccines and clinically approved small interfering RNA (siRNA) therapeutics. However, extending RNA delivery beyond the liver to extrahepatic tissues, including the spleen, lungs, lymph nodes, brain, and tumors, remains challenging because of the intrinsic hepatotropism of conventional LNPs and their limited cell-type specificity. Recent advances in lipid chemistry, particle engineering, surface functionalization, protein corona modulation, and route-specific administration have enabled new strategies to redirect LNPs toward specific tissues and cell populations. This review systematically examines these approaches and highlights key determinants of LNP tropism, including formulation composition, surface properties, endogenous protein adsorption, and administration route. We further discuss the clinical translation of extrahepatic LNP delivery, covering clinically validated products, emerging therapeutic candidates, and gaps between preclinical models and human applications. Major challenges include cell-resolved biodistribution, long-term safety, repeated-dose immunogenicity, cross-study comparability, and standardized quantitative assessment. Finally, we explore how high-throughput screening, machine learning, and data-driven design can accelerate the rational optimization of next-generation LNPs. These advances may facilitate precise tissue- and cell-selective RNA delivery, expanding the therapeutic potential of RNA medicines beyond the liver.",
+        "doi": "10.1002/adma.75408",
+        "doi_url": "https://doi.org/10.1002/adma.75408",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42894277/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines strategies to redirect lipid nanoparticles (LNPs) for extrahepatic RNA delivery, addressing challenges like hepatotropism and limited cell specificity. It evaluates formulation chemistry, surface engineering, and administration routes to achieve tissue-specific targeting in organs such as spleen, lungs, and tumors. The study highlights key determinants of LNP tropism and clinical translation pathways while identifying major challenges in biodistribution and safety.\",\n  \"key_findings\": [\n    \"Conventional LNPs exhibit intrinsic hepatotropism limiting extrahepatic RNA delivery\",\n    \"Surface functionalization and lipid chemistry modifications enable tissue-specific LNP targeting\",\n    \"Clinical translation faces challenges including cell-resolved biodistribution and repeated-dose immunogenicity\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work provides a systematic framework for optimizing LNP design to achieve precise extrahep:atic RNA delivery, advancing the therapeutic potential of RNA medicines beyond hepatic applications.\"\n}",
+        "parsed": {
+          "summary": "This review examines strategies to redirect lipid nanoparticles (LNPs) for extrahepatic RNA delivery, addressing challenges like hepatotropism and limited cell specificity. It evaluates formulation chemistry, surface engineering, and administration routes to achieve tissue-specific targeting in organs such as spleen, lungs, and tumors. The study highlights key determinants of LNP tropism and clinical translation pathways while identifying major challenges in biodistribution and safety.",
+          "key_findings": [
+            "Conventional LNPs exhibit intrinsic hepatotropism limiting extrahepatic RNA delivery",
+            "Surface functionalization and lipid chemistry modifications enable tissue-specific LNP targeting",
+            "Clinical translation faces challenges including cell-resolved biodistribution and repeated-dose immunogenicity"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work provides a systematic framework for optimizing LNP design to achieve precise extrahep:atic RNA delivery, advancing the therapeutic potential of RNA medicines beyond hepatic applications."
+        },
+        "elapsed_seconds": 59.5129,
+        "input_tokens": 664,
+        "output_tokens": 205,
+        "thoughts_tokens": null,
+        "total_tokens": 869,
+        "model_eval_seconds": 28.193,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42998621",
+        "title": "Use of a c-Met-targeting aptamer-drug conjugate for efficient therapy in both primary and metastatic uveal melanoma.",
+        "abstract": "NA: Uveal melanoma (UM), the most common primary intraocular malignancy in adults, is associated with a high risk of metastasis, recurrence, and irreversible vision loss. However, current therapeutic options remain limited by insufficient efficacy and poor vision preservation. Building upon the molecular design of SL1-MMAE, a c-Met-targeting aptamer-drug conjugate (ApDC), here we investigate its potential translational application as a targeted therapeutic strategy for both primary and metastatic UM. SL1-MMAE exhibits high binding specificity, rapid cellular internalization, and potent cytotoxicity toward UM cells in vitro. In vivo, SL1-MMAE effectively suppresses tumor growth in both subcutaneous xenograft and liver metastasis models, significantly prolonging survival. Notably, in an orthotopic intraocular UM model, a single intravitreal injection of SL1-MMAE induces robust tumor regression without detectable ocular toxicity at the therapeutic dose. The small molecular size of the ApDC enables superior tumor penetration and reduced retention from non-target ocular tissues. These features are particularly advantageous within the confined intraocular environment, leading to enhanced therapeutic efficacy with improved safety. Compared with the clinically advanced c-Met antibody-drug conjugate (ADC) ABBV-399, the ApDC demonstrates superior antitumor activity and ocular biocompatibility for intraocular UM therapy. Nevertheless, as a preclinical study, further safety, pharmacokinetic and translational studies are warranted to better define the clinical potential of SL1-MMAE. Collectively, these findings establish c-Met-targeting ApDCs as a promising platform for the treatment of both primary and metastatic UM, offering a vision-preserving therapeutic strategy with potent antitumor efficacy and favorable safety profiles.",
+        "doi": "10.1016/j.biomaterials.2026.124736",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124736",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42998621/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study evaluates a c-Met-targeting aptamer-drug conjugate (SL1-MMAE) for treating primary and metastatic uveal melanoma. In vitro and in vivo models demonstrated potent tumor suppression, significant survival prolongation, and robust intraocular tumor regression with minimal ocular toxicity after intravitreal injection. The ApDC's small size enabled superior tumor penetration and reduced off-target effects, showing advantages over clinical ADCs for intraocular delivery.\",\n  \"key_findings\": [\n    \"SL1-Musing the c-Met-targeting aptamer-drug conjugate suppressed tumor growth in subcutaneous and liver metastasis models\",\n    \"A single intravitreal injection of SL1-MMAE induced tumor regression in orthotopic intraocular models without ocular toxicity\",\n    \"The ApDC demonstrated superior antitumor efficacy and ocular biocompatibility compared to the clinical ADC ABBV-399\"\n  ],\n  \"study_type\": \"In vitro and in vivo models\",\n  \"scientific_significance\": \"This work establishes c-Met-targeting aptamer-drug conjugates as a viable platform for vision-preserving therapy in uveal melanoma, leveraging targeted delivery and reduced ocular toxicity for both primary and metastatic disease.\"\n}",
+        "parsed": {
+          "summary": "This study evaluates a c-Met-targeting aptamer-drug conjugate (SL1-MMAE) for treating primary and metastatic uveal melanoma. In vitro and in vivo models demonstrated potent tumor suppression, significant survival prolongation, and robust intraocular tumor regression with minimal ocular toxicity after intravitreal injection. The ApDC's small size enabled superior tumor penetration and reduced off-target effects, showing advantages over clinical ADCs for intraocular delivery.",
+          "key_findings": [
+            "SL1-Musing the c-Met-targeting aptamer-drug conjugate suppressed tumor growth in subcutaneous and liver metastasis models",
+            "A single intravitreal injection of SL1-MMAE induced tumor regression in orthotopic intraocular models without ocular toxicity",
+            "The ApDC demonstrated superior antitumor efficacy and ocular biocompatibility compared to the clinical ADC ABBV-399"
+          ],
+          "study_type": "In vitro and in vivo models",
+          "scientific_significance": "This work establishes c-Met-targeting aptamer-drug conjugates as a viable platform for vision-preserving therapy in uveal melanoma, leveraging targeted delivery and reduced ocular toxicity for both primary and metastatic disease."
+        },
+        "elapsed_seconds": 55.3289,
+        "input_tokens": 750,
+        "output_tokens": 265,
+        "thoughts_tokens": null,
+        "total_tokens": 1015,
+        "model_eval_seconds": 37.2792,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020015",
+        "title": "From the human genome to the human brain cell atlas.",
+        "abstract": "NA: The BRAIN Initiative Cell Atlas Network (BICAN) is establishing an evolving reference for neuroscience by integrating cell identities, anatomy, and multimodal evidence across species. In analogy with the Human Genome Project, the BICAN basal ganglia atlas is a model for a federated reference to advance understanding of brain organization, function, variation, and disease.",
+        "doi": "10.1016/j.cell.2026.10.034",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.034",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020015/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study describes the BICAN's basal ganglia atlas, a collaborative effort to create a reference map integrating cell identities, anatomy, and multimodal data across species. It aims to advance understanding of brain organization, function, variation, and disease through a federated reference model inspired by the Human Genome Project.\",\n  \"key_findings\": [\n    \"Integration of cell identities, anatomy, and multimodal evidence across species\",\n    \"Development of a federated reference model for brain organization and function\",\n    \"Foundation for understanding brain variation and disease mechanisms\"\n  ],\n  \"study_type\": \"Collaborative atlas project\",\n  \"scientific_significance\": \"This work establishes a scalable framework for cross-species brain reference mapping, providing a foundational resource for neuroscience research on brain structure and function.\"\n}",
+        "parsed": {
+          "summary": "This study describes the BICAN's basal ganglia atlas, a collaborative effort to create a reference map integrating cell identities, anatomy, and multimodal data across species. It aims to advance understanding of brain organization, function, variation, and disease through a federated reference model inspired by the Human Genome Project.",
+          "key_findings": [
+            "Integration of cell identities, anatomy, and multimodal evidence across species",
+            "Development of a federated reference model for brain organization and function",
+            "Foundation for understanding brain variation and disease mechanisms"
+          ],
+          "study_type": "Collaborative atlas project",
+          "scientific_significance": "This work establishes a scalable framework for cross-species brain reference mapping, providing a foundational resource for neuroscience research on brain structure and function."
+        },
+        "elapsed_seconds": 25.766,
+        "input_tokens": 437,
+        "output_tokens": 167,
+        "thoughts_tokens": null,
+        "total_tokens": 604,
+        "model_eval_seconds": 21.3133,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42894280",
+        "title": "Synchronic Multilevel Assembly Toward Mesoporous Nanosized Intercalation-Type Framework Anodes for Fast-Charging Sodium-Ion Batteries.",
+        "abstract": "NA: Intercalation-type metal oxides are promising anodes for fast-charging sodium-ion batteries (SIBs). However, viable electrode candidates remain scarce, constituting a major bottleneck and motivating intensive research into diverse structural frameworks. Here, we report a synchronic multilevel assembly strategy for synthesizing mesoporous intercalation-type metal oxide framework anodes. Atomic-scale assembly of cations, combined with in situ formation of conductive carbon networks, enables the synthesis of structurally tunable nanosized sodium titanate and overcomes the challenges of preparing multimetal oxide nanocrystals under high temperatures. The M-Na4Ti5O12/C composite delivers superior rate capability (∼115 mAh g-1 at 10 A g-1) and cycling stability (<0.023% capacity fade per cycle over 1000 cycles at 0.2 A g-1) for sodium storage. Its outstanding kinetics arise from ultrafast Na+ diffusion through interconnected mesoporous channels and low-barrier, nanoscale ion-conduction pathways. A pouch cell delivers a power density of ∼4.7 kW kg-1 and cycles stably for 1200 cycles, outperforming hard carbon at high rates. This work establishes a rational design framework for developing high-rate battery materials.",
+        "doi": "10.1002/adma.75455",
+        "doi_url": "https://doi.org/10.1002/adma.75455",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42894280/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a synchronic multilevel assembly strategy to synthesize mesoporous intercalation-type metal oxide frameworks for fast-charging sodium-ion batteries. By atomic-scale cation assembly and in situ conductive carbon integration, the researchers developed sodium titanate composites with enhanced rate capability (∼115 mAh g⁻¹ at 10 A g⁻¹) and cycling stability (<0.023% fade per 1000 cycles). The findings demonstrate ultrafast sodium diffusion pathways enabling high-rate performance.\",\n  \"key_findings\": [\n    \"Synchronic multilevel assembly enables structurally tunable mesoporous sodium titanate anodes\",\n    \"M-Na4Ti5O12/C composite achieves ∼115 mAh g⁻¹ at 10 A g⁻¹ with minimal capacity fade\",\n    \"Interconnected mesoporous channels facilitate ultrafast Na+ diffusion for high-rate cycling\"\n  ],\n  \"study_type\": \"Synthetic strategy\",\n  \"scientific_significance\": \"This work establishes a rational design framework for developing high-rate sodium-ion battery anodes through structural engineering of mesoporous frameworks.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a synchronic multilevel assembly strategy to synthesize mesoporous intercalation-type metal oxide frameworks for fast-charging sodium-ion batteries. By atomic-scale cation assembly and in situ conductive carbon integration, the researchers developed sodium titanate composites with enhanced rate capability (∼115 mAh g⁻¹ at 10 A g⁻¹) and cycling stability (<0.023% fade per 1000 cycles). The findings demonstrate ultrafast sodium diffusion pathways enabling high-rate performance.",
+          "key_findings": [
+            "Synchronic multilevel assembly enables structurally tunable mesoporous sodium titanate anodes",
+            "M-Na4Ti5O12/C composite achieves ∼115 mAh g⁻¹ at 10 A g⁻¹ with minimal capacity fade",
+            "Interconnected mesoporous channels facilitate ultrafast Na+ diffusion for high-rate cycling"
+          ],
+          "study_type": "Synthetic strategy",
+          "scientific_significance": "This work establishes a rational design framework for developing high-rate sodium-ion battery anodes through structural engineering of mesoporous frameworks."
+        },
+        "elapsed_seconds": 48.0745,
+        "input_tokens": 667,
+        "output_tokens": 247,
+        "thoughts_tokens": null,
+        "total_tokens": 914,
+        "model_eval_seconds": 33.5958,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42998622",
+        "title": "Polysaccharide-confined polyaniline nanocomplexes reprogram pyrimidine metabolism for synergistic photothermal tumor ablation.",
+        "abstract": "NA: Polyaniline (PANI) is a promising near-infrared (NIR) photothermal agent, yet its aggregation propensity and lack of intrinsic metabolic regulatory functions restrict its in vivo antitumor application. To overcome these limitations, we engineered a biocompatible curdlan/fucoidan/polyaniline (CFP) ternary inclusion complex via a nanoconfined in-situ polymerization strategy. Utilizing the hydrophobic helical cavity of curdlan as a nano-reactor effectively regulates PANI chain growth, yielding monodispersed nanorods with superior aqueous dispersion stability. Fucoidan serves a dual role as an efficient dispersant and a potent metabolic modulator implicated in pyrimidine pathway suppression. Mechanistically, CFP enters lung adenocarcinoma cells predominantly via macropinocytosis, accounting for ∼44-47% of total internalization, with clathrin- and caveolae-mediated routes contributing only marginally. Multi-omics profiling reveals that fucoidan preferentially modulates pyrimidine metabolism, with significant down-regulation of the core enzymes TK1, DTYMK, and CDA observed at both transcriptomic and protein levels. This metabolic suppression compromises DNA damage repair capacity, rendering the massive ROS accumulation and severe DNA damage induced by PANI-based photothermal therapy largely irreversible and achieving remarkable synergistic antitumor efficacy. Bioinformatic analysis further links these metabolic genes to T cell exhaustion and immune microenvironment remodeling. In vivo, the CFP + NIR regimen exhibits prominent tumor accumulation, potent growth inhibition, and prolonged survival. Crucially, comprehensive toxicological assessments in immunocompetent mice-including hematological, serum biochemical, and histological analyses-confirm the excellent systemic biosafety of CFP. This work presents a promising strategy coupling natural polysaccharide-mediated metabolic intervention with photothermal ablation for precise tumor therapy.",
+        "doi": "10.1016/j.biomaterials.2026.124754",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124754",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42998622/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered a ternary polysaccharide-polyaniline nanocomplex (CFP) to enhance near-infrared photothermal therapy. The CFP complex, formed via curdlan's hydrophobic cavity, improved polyaniline dispersion and stability while fucoidan suppressed pyrimidine metabolism. Multi-omics analysis showed downregulation of key pyrimidine enzymes, impairing DNA repair and synergistically enhancing tumor ablation with minimal toxicity in mice.\",\n  \"key_findings\": [\n    \"CFP nanocomplexes improve polyaniline dispersion and stability via curdlan's hydrophobic cavity\",\n    \"Fucoidan suppresses pyrimidine metabolism by downregulating TK1, DTYMK, and CDA\",\n    \"Synergistic photothermal tumor ablation with reduced DNA repair capacity and minimal toxicity in mice\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies in immunocompetent mice\",\n  \"scientific_significance\": \"This work demonstrates a strategy for metabolic reprogramming via natural polysaccharides to enhance photothermal therapy efficacy while maintaining systemic biosafety.\"\n}",
+        "parsed": {
+          "summary": "This study engineered a ternary polysaccharide-polyaniline nanocomplex (CFP) to enhance near-infrared photothermal therapy. The CFP complex, formed via curdlan's hydrophobic cavity, improved polyaniline dispersion and stability while fucoidan suppressed pyrimidine metabolism. Multi-omics analysis showed downregulation of key pyrimidine enzymes, impairing DNA repair and synergistically enhancing tumor ablation with minimal toxicity in mice.",
+          "key_findings": [
+            "CFP nanocomplexes improve polyaniline dispersion and stability via curdlan's hydrophobic cavity",
+            "Fucoidan suppresses pyrimidine metabolism by downregulating TK1, DTYMK, and CDA",
+            "Synergistic photothermal tumor ablation with reduced DNA repair capacity and minimal toxicity in mice"
+          ],
+          "study_type": "In vitro and in vivo studies in immunocompetent mice",
+          "scientific_significance": "This work demonstrates a strategy for metabolic reprogramming via natural polysaccharides to enhance photothermal therapy efficacy while maintaining systemic biosafety."
+        },
+        "elapsed_seconds": 52.5784,
+        "input_tokens": 778,
+        "output_tokens": 239,
+        "thoughts_tokens": null,
+        "total_tokens": 1017,
+        "model_eval_seconds": 33.3623,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020016",
+        "title": "Stepping (hi)stones: Charting a single-cell multiomic path toward understanding the human brain.",
+        "abstract": "NA: In this issue of Cell, two single-cell multiomic atlases jointly profile transcription and histone modifications across different regions of the adult human brain, revealing cell-type-specific regulatory landscapes, developmental epigenetic memory, and improved interpretation of neurological variants. These studies establish a framework for understanding human brain cell identity, evolution, and pathology.",
+        "doi": "10.1016/j.cell.2026.10.020",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.020",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020016/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study integrates single-cell multiomic profiling of transcription and histone modifications in adult human brain regions to map cell-type-specific regulatory landscapes, developmental epigenetic memory, and neurological variant interpretation. The research establishes a framework for understanding human brain cell identity, evolution, and pathology.\",\n  \"key_findings\": [\n    \"Cell-type-specific regulatory landscapes identified through transcription and histone modification profiling\",\n    \"Developmental epigenetic memory patterns observed in brain regions\",\n    \"Improved interpretation of neurological variants via multiomic data integration\"\n  ],\n  \"study_type\": \"Single-cell multiomic profiling\",\n  \"scientific_significance\": \"This work provides a foundational framework for understanding human brain cell identity, evolution, and pathology through integrated single-cell multiomic analysis of transcription and hist: modifications.\"\n}",
+        "parsed": {
+          "summary": "This study integrates single-cell multiomic profiling of transcription and histone modifications in adult human brain regions to map cell-type-specific regulatory landscapes, developmental epigenetic memory, and neurological variant interpretation. The research establishes a framework for understanding human brain cell identity, evolution, and pathology.",
+          "key_findings": [
+            "Cell-type-specific regulatory landscapes identified through transcription and histone modification profiling",
+            "Developmental epigenetic memory patterns observed in brain regions",
+            "Improved interpretation of neurological variants via multiomic data integration"
+          ],
+          "study_type": "Single-cell multiomic profiling",
+          "scientific_significance": "This work provides a foundational framework for understanding human brain cell identity, evolution, and pathology through integrated single-cell multiomic analysis of transcription and hist: modifications."
+        },
+        "elapsed_seconds": 26.7921,
+        "input_tokens": 442,
+        "output_tokens": 165,
+        "thoughts_tokens": null,
+        "total_tokens": 607,
+        "model_eval_seconds": 22.1407,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42894281",
+        "title": "Biomimetic Dichalcogenide-Hybrid Nanozymes With Glutathione Peroxidase-Like Activity for Liver Protection.",
+        "abstract": "NA: Glutathione peroxidase (GPX)-mimetic nanozymes are a promising strategy to restore redox homeostasis, but many existing systems rely on metals and remain limited by cytotoxicity, poor selectivity, and susceptibility to catalytic deactivation. Inspired by the active-site chemistry of native GPX, we designed dichalcogenide-hybrid mesoporous silica nanoparticles (MSNs) as inorganic-organic nanozymes with tunable sulfur and selenium environments. Structure-activity analysis showed that GPX-like performance is governed by chalcogen composition, chalcogen density, and spatial proximity of S/Se within the framework, which together regulate reversible disulfide/diselenide redox cycling and substrate access. Among the materials tested, the diselenide-hybrid framework exhibited the highest activity, with improved selectivity and biocompatibility relative to the disulfide-hybrid analogue, and conventional metal-based GPX mimics. Mechanistic studies indicated efficient glutathione-dependent detoxification of peroxides and lipid peroxides through catalytically active chalcogen intermediates. In vivo, the optimized diselenide-hybrid material protected against acetaminophen-induced and rifampicin-induced liver injury, reduced oxidative stress and inflammation, restored antioxidant capacity, and improved survival. It also alleviated steatosis and metabolic dysfunction in metabolic dysfunction-associated steatotic liver disease (MASLD) models. These findings establish dichalcogenide-hybrid frameworks as effective GPX-like nanozymes and a promising platform for the treatment of oxidative stress-associated liver diseases.",
+        "doi": "10.1002/adma.75439",
+        "doi_url": "https://doi.org/10.1002/adma.75439",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42894281/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study designed dichalcogenide-hybrid mesoporous silica nanoparticles as GPX-mimetic nanozymes to address cytotoxicity and selectivity issues in existing systems. Structure-activity analysis revealed that chalcogen composition, density, and spatial proximity govern catalytic activity. The diselenide-hybrid framework showed superior performance in detoxifying peroxides, reducing liver injury in acetaminophen and rifampic as well as MASLD models, and improving survival without significant toxicity.\",\n  \"key_findings\": [\n    \"Diselenide-hybrid mesoporous silica nanoparticles demonstrated highest GPX-like activity among tested materials\",\n    \"The nanozymes effectively detoxified peroxides and reduced oxidative stress in liver injury models\",\n    \"The material improved survival and alleviated steatosis in metabolic dysfunction-associated steatotic liver disease\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies\",\n  \"scientific_significance\": \"This work establishes dichalcogenide-hybrid frameworks as a tunable, non-toxic platform for GPX-mimetic catalysis, advancing strategies for oxidative stress-related liver disease treatment without metal dependency.\"\n}",
+        "parsed": {
+          "summary": "This study designed dichalcogenide-hybrid mesoporous silica nanoparticles as GPX-mimetic nanozymes to address cytotoxicity and selectivity issues in existing systems. Structure-activity analysis revealed that chalcogen composition, density, and spatial proximity govern catalytic activity. The diselenide-hybrid framework showed superior performance in detoxifying peroxides, reducing liver injury in acetaminophen and rifampic as well as MASLD models, and improving survival without significant toxicity.",
+          "key_findings": [
+            "Diselenide-hybrid mesoporous silica nanoparticles demonstrated highest GPX-like activity among tested materials",
+            "The nanozymes effectively detoxified peroxides and reduced oxidative stress in liver injury models",
+            "The material improved survival and alleviated steatosis in metabolic dysfunction-associated steatotic liver disease"
+          ],
+          "study_type": "In vitro and in vivo studies",
+          "scientific_significance": "This work establishes dichalcogenide-hybrid frameworks as a tunable, non-toxic platform for GPX-mimetic catalysis, advancing strategies for oxidative stress-related liver disease treatment without metal dependency."
+        },
+        "elapsed_seconds": 50.3991,
+        "input_tokens": 708,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 951,
+        "model_eval_seconds": 34.314,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43003064",
+        "title": "Energy band tunable piezoelectric nanozyme heterojunction toward cancer synergistic catalytic therapy.",
+        "abstract": "NA: Piezoelectric catalytic therapy (PCT) based on piezoelectric semiconductors provides a new approach for cancer therapy. Various researches have explored the construction of heterojunction structures with nanozymes to strengthen PCT effect via accelerating electron transfer kinetics and synergistic nanozyme catalysis therapy (NCT). However, limited by the fixed energy band structure of nanozymes, the selectable piezoelectric semiconductors and nanozymes with matched energy levels are few. In this work, Cu2+ engineered nanozyme MIL-100 (Fe) was self-assembled on the surface of piezoelectric material BaTiO3 (BTO) to obtain BaTiO3@MIL-100 (Fe, Cu) (BTO@Fe-Cu) nanoparticles (NPs) with flexible heterojunction types, which presented synergetic NCT and PCT effect. Theoretical calculations revealed that Cu2+ introduced a new 3d orbital in the Fe-O structure, which altered the charge transfer pathways and enhanced the dual-enzyme activity of MIL-100 (Fe). Lattice distortion further modulated the valence band gap and transformed the heterostructure from type-Ⅰ to type-S for high electron-hole separation efficiency. BTO@Fe-Cu NPs fundamentally intensified the efficiency of NCT and PCT, which synergistically activated the ferroptosis/cuproptosis pathways. Moreover, scRNA-seq analysis indicated treatment-associated changes in immune-cell composition and transcriptional states. Together with the immunophenotyping results, these findings supported the potential of the piezoelectric nanozyme for the immunosuppressive tumor microenvironment (TME) regulation.",
+        "doi": "10.1016/j.biomaterials.2026.124753",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124753",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43003064/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the design of a piezoelectric nanozyme heterojunction (BaTiO3@MIL-100(Fe,Cu)) to enhance cancer therapy through synergistic piezoelectric catalytic therapy (PCT) and nanozyme catalytic therapy (NCT). By engineering Cu2+ into MIL-100(Fe), the heterojunction achieved flexible energy band tuning, improving electron-hole separation and dual-enzyme activity. The system synergistically activated ferroptosis/cuproptosis pathways and modulated the tumor immune microenvironment.\",\n  \"key_findings\": [\n    \"Cu2+ engineering in MIL-100(Fe) altered charge transfer pathways and enhanced dual-enzyme activity\",\n    \"Lattice distortion modulated the valence band gap, converting heterojunction from type-I to type-S for improved electron-hole separation\",\n    \"The heterojunction synergistically activated ferroptosis/cuproptosis pathways and modulated the immunosuppressive tumor microenvironment\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies\",\n  \"scientific_significance\": \"This work demonstrates a strategy for energy band tunable piezoelectric nanozyme heterojunctions that enhances dual catalytic therapy efficacy and tumor microenvironment modulation through precise electronic structure engineering.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the design of a piezoelectric nanozyme heterojunction (BaTiO3@MIL-100(Fe,Cu)) to enhance cancer therapy through synergistic piezoelectric catalytic therapy (PCT) and nanozyme catalytic therapy (NCT). By engineering Cu2+ into MIL-100(Fe), the heterojunction achieved flexible energy band tuning, improving electron-hole separation and dual-enzyme activity. The system synergistically activated ferroptosis/cuproptosis pathways and modulated the tumor immune microenvironment.",
+          "key_findings": [
+            "Cu2+ engineering in MIL-100(Fe) altered charge transfer pathways and enhanced dual-enzyme activity",
+            "Lattice distortion modulated the valence band gap, converting heterojunction from type-I to type-S for improved electron-hole separation",
+            "The heterojunction synergistically activated ferroptosis/cuproptosis pathways and modulated the immunosuppressive tumor microenvironment"
+          ],
+          "study_type": "In vitro and in vivo studies",
+          "scientific_significance": "This work demonstrates a strategy for energy band tunable piezoelectric nanozyme heterojunctions that enhances dual catalytic therapy efficacy and tumor microenvironment modulation through precise electronic structure engineering."
+        },
+        "elapsed_seconds": 57.1608,
+        "input_tokens": 739,
+        "output_tokens": 281,
+        "thoughts_tokens": null,
+        "total_tokens": 1020,
+        "model_eval_seconds": 39.5261,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020017",
+        "title": "Conserved striatal mechanisms underlying ASD.",
+        "abstract": "NA: Autism spectrum disorder (ASD) involves changes in social and stereotypic behaviors regulated by striatal circuitry. Using an innovative cross-species approach, in this issue of Cell, Yuan et al. identify alterations in specific striatal neurons and astrocytes, opening new avenues for investigating cellular and molecular mechanisms underlying striatal dysfunction in ASD.",
+        "doi": "10.1016/j.cell.2026.10.025",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.025",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020017/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates conserved striatal mechanisms in autism spectrum disorder (ASD) using a cross-species approach. Yuan et al. identified alterations in specific striatal neurons and astrocytes, revealing potential cellular and molecular pathways underlying striatal dysfunction in ASD.\",\n  \"key_findings\": [\n    \"Alterations in specific striatal neurons\",\n    \"Alterations in specific stri: astrocytes\",\n    \"Cross-species identification of striatal changes relevant to ASD\"\n  ],\n  \"study_type\": \"Cross-species approach\",\n  \"scientific_significance\": \"The findings provide conserved cellular and molecular insights into striatal dysfunction mechanisms in ASD, advancing understanding of neurobiological underpinnings of social and stereotypic behaviors.\"\n}",
+        "parsed": {
+          "summary": "This study investigates conserved striatal mechanisms in autism spectrum disorder (ASD) using a cross-species approach. Yuan et al. identified alterations in specific striatal neurons and astrocytes, revealing potential cellular and molecular pathways underlying striatal dysfunction in ASD.",
+          "key_findings": [
+            "Alterations in specific striatal neurons",
+            "Alterations in specific stri: astrocytes",
+            "Cross-species identification of striatal changes relevant to ASD"
+          ],
+          "study_type": "Cross-species approach",
+          "scientific_significance": "The findings provide conserved cellular and molecular insights into striatal dysfunction mechanisms in ASD, advancing understanding of neurobiological underpinnings of social and stereotypic behaviors."
+        },
+        "elapsed_seconds": 24.6324,
+        "input_tokens": 432,
+        "output_tokens": 158,
+        "thoughts_tokens": null,
+        "total_tokens": 590,
+        "model_eval_seconds": 20.2572,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42894284",
+        "title": "Dual Single Atoms Boosting Photocatalytic Upcycling of Raw Polyvinylidene Fluoride Plastic.",
+        "abstract": "NA: Polyvinylidene fluoride (PVDF) is a highly recalcitrant fluorinated polymer that is highly resistant to chemical degradation, making its sustainable recycling and upcycling challenging. Despite its widespread use as a binder in the lithium-ion battery industry, effective strategies for converting PVDF waste into value-added chemicals remain limited. To resolve this, Fe and Cu dual single atoms incorporated on a new two-dimensional material nanosheets (In2P3S9 NSs/Fe-Cu DSAs) were prepared as photocatalysts for direct raw PVDF plastic conversion to high-value chemicals. The best-performing photocatalyst (Fe1.0Cu0.5) achieves a total acetic/formic acid generation of ∼1351.8 µmol g-1. Various in situ characterizations such as atomic force microscopy-kelvin probe force microscopy, x-ray photoelectron spectroscopy, and electron paramagnetic resonance (EPR) demonstrate superior electron extraction from In2P3S9 NSs to Fe and Cu DSAs, after which the electrons are subsequently scavenged by O2 under ambient conditions. Moreover, quenching experiments as well as in situ infrared spectroscopy, and in situ EPR reveal the vital impact of photoexcited electrons and hydroxyl radicals in PVDF upcycling into high-value products. These findings highlight the significant potential of photocatalysis in transforming one of the most resistant plastic wastes (PVDF) into value-added products, providing a sustainable remedy for plastic pollution crisis.",
+        "doi": "10.1002/adma.75436",
+        "doi_url": "https://doi.org/10.1002/adma.75436",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42894284/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the photocatalytic upcycling of recalcitrant polyvinylidene fluoride (PVDF) plastic waste using Fe and Cu dual single atoms on In2P3S9 nanosheets. The researchers synthesized a photocatalyst achieving ∼1351.8 µmol g-. The approach involved in situ characterizations to confirm electron transfer mechanisms. The results demonstrate efficient conversion of raw PVDF to acetic/formic acid via photoexcited electrons and hydroxyl radicals under ambient conditions.\",\n  \"key_findings\": [\n    \"Fe and Cu dual single atoms on In2P3S9 nanosheets enable efficient photocatalytic conversion of raw PVDF plastic\",\n    \"The best-performing catalyst (Fe1.0Cu0.5) generates ∼1351.8 µmol g-1 of acetic/formic acid\",\n    \"In situ characterizations confirm electron transfer from In2P3S9 to Fe/Cu DSAs, with hydroxyl radicals driving PVDF upcycling\"\n  ],\n  \"study_type\": \"Photocatalysis\",\n  \"scientific_significance\": \"This work demonstrates a sustainable pathway for converting highly resistant PVDF plastic waste into high-value chemicals using dual single-atom photocatalysts, addressing a critical challenge in plastic recycling.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the photocatalytic upcycling of recalcitrant polyvinylidene fluoride (PVDF) plastic waste using Fe and Cu dual single atoms on In2P3S9 nanosheets. The researchers synthesized a photocatalyst achieving ∼1351.8 µmol g-. The approach involved in situ characterizations to confirm electron transfer mechanisms. The results demonstrate efficient conversion of raw PVDF to acetic/formic acid via photoexcited electrons and hydroxyl radicals under ambient conditions.",
+          "key_findings": [
+            "Fe and Cu dual single atoms on In2P3S9 nanosheets enable efficient photocatalytic conversion of raw PVDF plastic",
+            "The best-performing catalyst (Fe1.0Cu0.5) generates ∼1351.8 µmol g-1 of acetic/formic acid",
+            "In situ characterizations confirm electron transfer from In2P3S9 to Fe/Cu DSAs, with hydroxyl radicals driving PVDF upcycling"
+          ],
+          "study_type": "Photocatalysis",
+          "scientific_significance": "This work demonstrates a sustainable pathway for converting highly resistant PVDF plastic waste into high-value chemicals using dual single-atom photocatalysts, addressing a critical challenge in plastic recycling."
+        },
+        "elapsed_seconds": 54.7866,
+        "input_tokens": 694,
+        "output_tokens": 281,
+        "thoughts_tokens": null,
+        "total_tokens": 975,
+        "model_eval_seconds": 38.8416,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43003065",
+        "title": "Heptamethine cyanines serve as photocaged Michael electrophiles for spatiotemporal GPX4 inhibition and ferroptosis immunotherapy.",
+        "abstract": "NA: Inhibiting glutathione peroxidase 4 (GPX4) to induce ferroptosis has emerged as a crucial strategy to circumvent drug resistance. However, conventional GPX4 inhibitors, typically α-chloroacetamides, show limitations in the stability and targetability required for drug development. Here we uncover that heptamethine cyanines (Cy7) function as photocaged Michael electrophiles, enabling spatiotemporal GPX4 inhibition and ferroptosis induction with submicromolar to nanomolar potencies against both parental and drug-resistant cancer cells. The strong phototoxicity originates from the optimized electrophilicity window of the photo-uncaged Michael electrophiles, which enables selective alkylation of GPX4 selenocysteine over glutathione (GSH), thereby circumventing cellular GSH detoxification. Furthermore, the structural tunability of Cy7 dyes enables on-demand fabrication of cancer cell-specific GPX4 inhibitors, as exemplified by an enzyme-activatable Cy7 prodrug that selectively killed cancer cells in primary tumors under photoirradiation while eliciting systemic antitumor immunity to suppress distant tumors. This work establishes a new paradigm for GPX4 inhibitor development and repurposes conventional Cy7 imaging scaffolds as anticancer agents.",
+        "doi": "10.1016/j.biomaterials.2026.124757",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124757",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43003065/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates heptamethine cyanines as photocaged Michael electrophiles for targeted GPX4 inhibition and ferroptosis induction. Using photoactivation, the researchers achieved spatiotemporal control over GPX4 inhibition with high potency against cancer cells, including drug-resistant variants. The approach circumvented glutathione detoxification by selectively alkylating GP. The findings demonstrate a novel strategy for cancer immunotherapy via ferroptosis.\",\n  \"key_findings\": [\n    \"Heptamethine cyanines function as photocaged Michael electrophiles enabling spatiotemporal GPX4 inhibition\",\n    \"The photo-uncaged electrophiles selectively alkylate GPX4 selenocysteine over glutathione, bypassing cellular GSH detoxification\",\n    \"Cy7 prodrugs selectively killed cancer cells in tumors under photoirradiation and induced systemic antitumor immunity\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies\",\n  \"scientific_significance\": \"This work establishes a new paradigm for GPX4 inhibitor development by repurposing conventional cyanine dyes as photocaged therapeutics, enabling precise spatiotemporal control over ferroptosis induction and systemic antitumor immunity.\"\n}",
+        "parsed": {
+          "summary": "This study investigates heptamethine cyanines as photocaged Michael electrophiles for targeted GPX4 inhibition and ferroptosis induction. Using photoactivation, the researchers achieved spatiotemporal control over GPX4 inhibition with high potency against cancer cells, including drug-resistant variants. The approach circumvented glutathione detoxification by selectively alkylating GP. The findings demonstrate a novel strategy for cancer immunotherapy via ferroptosis.",
+          "key_findings": [
+            "Heptamethine cyanines function as photocaged Michael electrophiles enabling spatiotemporal GPX4 inhibition",
+            "The photo-uncaged electrophiles selectively alkylate GPX4 selenocysteine over glutathione, bypassing cellular GSH detoxification",
+            "Cy7 prodrugs selectively killed cancer cells in tumors under photoirradiation and induced systemic antitumor immunity"
+          ],
+          "study_type": "In vitro and in vivo studies",
+          "scientific_significance": "This work establishes a new paradigm for GPX4 inhibitor development by repurposing conventional cyanine dyes as photocaged therapeutics, enabling precise spatiotemporal control over ferroptosis induction and systemic antitumor immunity."
+        },
+        "elapsed_seconds": 49.5389,
+        "input_tokens": 662,
+        "output_tokens": 267,
+        "thoughts_tokens": null,
+        "total_tokens": 929,
+        "model_eval_seconds": 34.7747,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020018",
+        "title": "Toward an integrated framework for a human and mammalian brain cell atlas.",
+        "abstract": "NA: The NIH BRAIN Initiative Cell Atlas Network (BICAN) is developing a standardized, integrated reference framework for classifying and studying brain cell types across human, macaque, marmoset, and mouse. We present a cross-species, multimodal atlas of the basal ganglia, a group of subcortical nuclei central to motor control, adaptive behavior, and neurological disease. Built from large-scale single-cell transcriptomic classification and integrated with epigenomic, spatial genomic, multiomic, and developmental datasets, the atlas provides a curated, data-driven taxonomy with standardized nomenclature, extensive phenotypic characterization, and community-informed annotation. Cell types are mapped into species-specific anatomical reference frameworks and linked across species through structural ontologies. Realizing this resource required coordinated standards for tissue acquisition and processing, harmonized donor metadata, anatomical registration, sequencing pipelines, data infrastructure, visualization, mapping tools, and interoperable metadata. The BICAN basal ganglia atlas demonstrates how pipelines and standards can be implemented, validated, and scaled toward a whole-brain human and mammalian cell-type reference.",
+        "doi": "10.1016/j.cell.2026.10.031",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.031",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020018/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"The study developed a cross-species atlas of the basal ganglia using single-cell transcriptomics and integrated multi-omic data to create a standardized framework for classifying brain cell types across human, macaque, marmoset, and mouse. This resource provides a curated taxonomy with phenotypic characterization and species-specific anatomical mapping, demonstrating scalable standards for building a comprehensive mammalian brain cell atlas.\",\n  \"key_findings\": [\n    \"Integrated single-cell transcriptomic classification with epigenomic, spatial genomic, and multiomic datasets\",\n    \"Species-specific anatomical mapping of basal ganglia cell types with cross-species linkage via structural ontologies\",\n    \"Established standardized pipelines for tissue acquisition, data processing, and interoperable metadata to enable whole-brain atlas development\"\n  ],\n  \"study_type\": \"Cross-species multimodal atlas\",\n  \"scientific_significance\": \"This work establishes a scalable framework for standardized, cross-species brain cell classification that advances the development of a comprehensive mammalian brain cell atlas through harmonized data integration and community-informed annotation.\"\n}",
+        "parsed": {
+          "summary": "The study developed a cross-species atlas of the basal ganglia using single-cell transcriptomics and integrated multi-omic data to create a standardized framework for classifying brain cell types across human, macaque, marmoset, and mouse. This resource provides a curated taxonomy with phenotypic characterization and species-specific anatomical mapping, demonstrating scalable standards for building a comprehensive mammalian brain cell atlas.",
+          "key_findings": [
+            "Integrated single-cell transcriptomic classification with epigenomic, spatial genomic, and multiomic datasets",
+            "Species-specific anatomical mapping of basal ganglia cell types with cross-species linkage via structural ontologies",
+            "Established standardized pipelines for tissue acquisition, data processing, and interoperable metadata to enable whole-brain atlas development"
+          ],
+          "study_type": "Cross-species multimodal atlas",
+          "scientific_significance": "This work establishes a scalable framework for standardized, cross-species brain cell classification that advances the development of a comprehensive mammalian brain cell atlas through harmonized data integration and community-informed annotation."
+        },
+        "elapsed_seconds": 39.2087,
+        "input_tokens": 594,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 818,
+        "model_eval_seconds": 28.2248,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42894285",
+        "title": "Robust Sodium-Metal Batteries Through Electrolyte-Mediated Interfacial Regulation: Fundamentals, Design Strategies, and Operando Characterization.",
+        "abstract": "NA: Sodium-metal batteries (SMBs) exhibit high theoretical specific capacity and take advantage of sodium's natural abundance and low cost, showing great promise for broad next-generation energy-storage applications. In this review, we summarize the major practical bottlenecks restricting SMB development. The solid-electrolyte interphase (SEI) serves as a key mediator to overcome these challenges, and its formation mechanisms are systematically outlined. We comprehensively review diverse electrolyte strategies, including solvent engineering, salt chemistry optimization, additive utilization, high-concentration, localized high-concentration, and weakly solvating electrolytes, for modulating Na+ transport and generating mechanically robust, ion-conductive yet electronically insulating SEI layers. We further discuss advanced in-situ/operando characterizations combined with multiscale computational modeling and machine-learning techniques as powerful tools to decipher the dynamic evolution of sodium-metal interfaces. Particular focus is placed on the coupled effects of current density, temperature, electrolyte composition, interfacial layers on sodium nucleation, dendrite growth, dead-sodium formation, and Coulombic efficiency (CE). Finally, future directions for SEI engineering have been outlook toward high-performance, practical sodium-metal batteries.",
+        "doi": "10.1002/adma.202520711",
+        "doi_url": "https://doi.org/10.1002/adma.202520711",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42894285/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines sodium-metal batteries (SMBs), highlighting the critical role of the solid-electrolyte interphase (SEI) in addressing performance bottlenecks. It systematically reviews electrolyte strategies to form mechanically robust, ion-conductive SEI layers and discusses in-situ/operando characterization techniques for understanding interfacial dynamics. Key findings include solvent engineering, salt chemistry optimization, and additive utilization for SEI modulation, with implications for enhancing Coulombic efficiency and mitigating dendrite growth.\",\n  \"key_findings\": [\n    \"Electrolyte strategies like solvent engineering and additive utilization modulate SEI formation for mechanical robustness\",\n    \"In-situ/oper:operando characterization techniques reveal dynamic interfacial evolution during SMB operation\",\n    \"Optimized SEI layers improve Coulombic efficiency and reduce dendrite growth risks\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work provides a comprehensive framework for designing stable sodium-metal batteries by elucidating SEI formation mechanisms and electrolyte engineering strategies, advancing the field toward practical energy storage solutions.\"\n}",
+        "parsed": {
+          "summary": "This review examines sodium-metal batteries (SMBs), highlighting the critical role of the solid-electrolyte interphase (SEI) in addressing performance bottlenecks. It systematically reviews electrolyte strategies to form mechanically robust, ion-conductive SEI layers and discusses in-situ/operando characterization techniques for understanding interfacial dynamics. Key findings include solvent engineering, salt chemistry optimization, and additive utilization for SEI modulation, with implications for enhancing Coulombic efficiency and mitigating dendrite growth.",
+          "key_findings": [
+            "Electrolyte strategies like solvent engineering and additive utilization modulate SEI formation for mechanical robustness",
+            "In-situ/oper:operando characterization techniques reveal dynamic interfacial evolution during SMB operation",
+            "Optimized SEI layers improve Coulombic efficiency and reduce dendrite growth risks"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work provides a comprehensive framework for designing stable sodium-metal batteries by elucidating SEI formation mechanisms and electrolyte engineering strategies, advancing the field toward practical energy storage solutions."
+        },
+        "elapsed_seconds": 42.7573,
+        "input_tokens": 629,
+        "output_tokens": 230,
+        "thoughts_tokens": null,
+        "total_tokens": 859,
+        "model_eval_seconds": 29.8368,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43003066",
+        "title": "Charge-neutralized anti-swelling hydrogels enable mechano-curvature-coupled microphysiological system.",
+        "abstract": "NA: Curvature topography and mechanical stimulation are key biophysical cues in the tissue microenvironment that play critical roles in regulating cell behavior. However, the stable construction of curved structures and the application of dynamic mechanical loading in ultrasoft biomaterials remain challenging, limiting the reconstruction of microenvironments for soft tissues such as the lung. Here, we propose a charge-neutralization anti-swelling hydrogel strategy. By introducing LiCl, Li+ ions electrostatically shield and coordinate with fixed negative charges, thereby suppressing the Donnan effect to inhibit hydrogel swelling and enhance structural stability. The resulting hydrogel exhibits a tunable Young's modulus ranging from 1.12 to 339.79 kPa. Combined with three-dimensional (3D) printing, biomimetic curved structures with curvatures ranging from 10-4 to 4 × 10-2 μm-1 were stably fabricated. Integration with a stretching driver further enabled controllable cyclic stretching (0∼40%), establishing a microphysiological system that couples curvature topography with mechanical cues and recapitulates the physiological and pathological parameters of multiple tissues. Curvature topography and mechanical stimulation significantly influenced tissue phenotypes, including surfactant secretion, proliferation, and migration, as well as drug sensitivity. This work provides a general design strategy for reconstructing complex tissue microenvironments and establishes a more physiologically relevant platform for investigating tissue development, disease mechanisms, and drug responses.",
+        "doi": "10.1016/j.biomaterials.2026.124733",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124733",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43003066/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed charge-neutralized hydrogels using LiCl to suppress swelling and enhance stability, enabling tunable mechanical properties and 3D-printed curved structures. The system integrates curvature topography with mechanical loading to mimic soft tissue microenvironments, demonstrating effects on surfactant secretion, cell proliferation, and drug sensitivity in a microphysiological platform.\",\n  \"key_findings\": [\n    \"Charge-neutralization with LiCl suppresses hydrogel swelling by mitigating the Donnan effect\",\n    \"Hydrogels exhibit tunable Young's modulus (1.12–339.79 kPa) and stable 3D-printed curved structures\",\n    \"Curvature topography and mechanical loading influence tissue-specific phenotypes like surfactant secretion and drug sensitivity\"\n  ],\n  \"study_type\": \"In vitro microphysiological system\",\n  \"scientific_significance\": \"This work establishes a generalizable platform for reconstructing physiologically relevant soft tissue microenvironments by coupling curvature topography with mechanical cues.\"\n}",
+        "parsed": {
+          "summary": "This study developed charge-neutralized hydrogels using LiCl to suppress swelling and enhance stability, enabling tunable mechanical properties and 3D-printed curved structures. The system integrates curvature topography with mechanical loading to mimic soft tissue microenvironments, demonstrating effects on surfactant secretion, cell proliferation, and drug sensitivity in a microphysiological platform.",
+          "key_findings": [
+            "Charge-neutralization with LiCl suppresses hydrogel swelling by mitigating the Donnan effect",
+            "Hydrogels exhibit tunable Young's modulus (1.12–339.79 kPa) and stable 3D-printed curved structures",
+            "Curvature topography and mechanical loading influence tissue-specific phenotypes like surfactant secretion and drug sensitivity"
+          ],
+          "study_type": "In vitro microphysiological system",
+          "scientific_significance": "This work establishes a generalizable platform for reconstructing physiologically relevant soft tissue microenvironments by coupling curvature topography with mechanical cues."
+        },
+        "elapsed_seconds": 42.8122,
+        "input_tokens": 683,
+        "output_tokens": 215,
+        "thoughts_tokens": null,
+        "total_tokens": 898,
+        "model_eval_seconds": 27.5525,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020019",
+        "title": "Cross-species multiomic atlas of the primate basal ganglia.",
+        "abstract": "NA: The basal ganglia (BG) are conserved brain regions essential for motor control, learning, emotion, and cognition and are implicated in neurological and psychiatric disease, yet a unified cross-species taxonomy of BG cell types is lacking. We present a multiomic consensus atlas of 1.8 million nuclei from humans, macaques, and marmosets spanning eight BG structures, integrating gene expression, open chromatin, and spatial profiling. Alignment across species and to mouse and human whole-brain atlases identifies 61 homologous cell types conserved over 76 million years. Dorsal-ventral spatial identity is more conserved than D1/D2 receptor or striosome/matrix identity, and striatum (STR) D2 SMYD2-HTR7 spiny projection neurons have distinct molecular, electrophysiological, and morphological features. Cis-regulatory analysis reveals conserved sequence grammars that encode cell identity and inform viral targeting, and cell-type-resolved mapping localizes psychiatric and neurodegenerative risk to specific BG cell populations. This work provides a foundational resource for BG evolution, function, and disease.",
+        "doi": "10.1016/j.cell.2026.10.012",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.012",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020019/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study created a cross-species multiomic atlas of primate basal ganglia using 1.8 million nuclei from humans, macauses, and marmosets across eight structures. It identified 61 homologous cell types conserved over 76 million years, revealing dorsal-ventral spatial identity as more conserved than receptor or striosome/matrix features. The atlas links psychiatric and neurodegenerative disease risk to specific cell populations and provides tools for viral targeting.\",\n  \"key_findings\": [\n    \"Identification of 61 homologous cell types conserved across 76 million years in primates\",\n    \"Dorsal-ventral spatial identity shows greater conservation than D1/D2 receptor or striosome/matrix identity\",\n    \"Striatum D2 spiny projection neurons have distinct molecular, electrophysiological, and morphological features\"\n  ],\n  \"study_type\": \"Multiomic consensus atlas\",\n  \"scientific_significance\": \"This work establishes a foundational resource for understanding basal ganglia evolution, function, and disease mechanisms across primates by integrating cross-species molecular and spatial data.\"\n}",
+        "parsed": {
+          "summary": "This study created a cross-species multiomic atlas of primate basal ganglia using 1.8 million nuclei from humans, macauses, and marmosets across eight structures. It identified 61 homologous cell types conserved over 76 million years, revealing dorsal-ventral spatial identity as more conserved than receptor or striosome/matrix features. The atlas links psychiatric and neurodegenerative disease risk to specific cell populations and provides tools for viral targeting.",
+          "key_findings": [
+            "Identification of 61 homologous cell types conserved across 76 million years in primates",
+            "Dorsal-ventral spatial identity shows greater conservation than D1/D2 receptor or striosome/matrix identity",
+            "Striatum D2 spiny projection neurons have distinct molecular, electrophysiological, and morphological features"
+          ],
+          "study_type": "Multiomic consensus atlas",
+          "scientific_significance": "This work establishes a foundational resource for understanding basal ganglia evolution, function, and disease mechanisms across primates by integrating cross-species molecular and spatial data."
+        },
+        "elapsed_seconds": 42.9071,
+        "input_tokens": 603,
+        "output_tokens": 241,
+        "thoughts_tokens": null,
+        "total_tokens": 844,
+        "model_eval_seconds": 30.7299,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42894286",
+        "title": "Healable Thermoset Elastomeric Materials for Passive Radiative Cooling.",
+        "abstract": "NA: Passive radiative cooling (PRC) technology with zero-energy uptake is an efficient thermal management strategy for the development of sustainable society. Fabrication of PRC materials with intrinsic extensibility/dimensional stability and efficient healability that can adapt to irregular shapes with prolonged lifetime remains a significant challenge. The present study introduces a design principle for mechanically robust and healable PRC films based on a cross-linked elastomeric network with combined physical interactions and dynamic covalent bonds, which can be readily modulated by inorganic coating and micro-/nano-porous hierarchical architectures while retaining extensibility and healability. Such thermosetting elastomeric PRC films are scalable with strong solar reflectance and long-wave infrared emittance, realizing excellent cooling performance even after physical damage and healing process. It demonstrates excellent roof cooling ability in summer yet efficient ice-sculpture preservation function in winter. The scalable synthesis of thermoset elastomeric PRC films opens up new pathways to realize flexible, stable and healable PRC materials, highly promising for practical applications.",
+        "doi": "10.1002/adma.75417",
+        "doi_url": "https://doi.org/10.1002/adma.75417",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42894286/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the design of healable thermoset elastomeric materials for passive radiative cooling (PRC). By integrating physical interactions and dynamic covalent bonds in a cross-linked network, the researchers created scalable PRC films with strong solar reflectance and long-wave infrared emittance. These materials maintain cooling efficiency after physical damage and healing, demonstrating dual functionality for summer roof cooling and winter ice preservation.\",\n  \"key_findings\": [\n    \"Thermoset elastomeric PRC films exhibit self-healing capabilities after physical damage\",\n    \"The materials maintain efficient cooling performance through both summer roof applications and winter ice preservation\",\n    \"Scalable synthesis enables robust, extensible PRC films with tunable properties via inorganic coating and hierarchical architectures\"\n  ],\n  \"study_type\": \"In vitro synthesis and characterization\",\n  \"scientific_significance\": \"This work advances PRC material design by enabling mechanically robust, healable, and scalable thermoset elastomers that overcome previous limitations in dimensional stability and longevity for practical thermal management applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the design of healable thermoset elastomeric materials for passive radiative cooling (PRC). By integrating physical interactions and dynamic covalent bonds in a cross-linked network, the researchers created scalable PRC films with strong solar reflectance and long-wave infrared emittance. These materials maintain cooling efficiency after physical damage and healing, demonstrating dual functionality for summer roof cooling and winter ice preservation.",
+          "key_findings": [
+            "Thermoset elastomeric PRC films exhibit self-healing capabilities after physical damage",
+            "The materials maintain efficient cooling performance through both summer roof applications and winter ice preservation",
+            "Scalable synthesis enables robust, extensible PRC films with tunable properties via inorganic coating and hierarchical architectures"
+          ],
+          "study_type": "In vitro synthesis and characterization",
+          "scientific_significance": "This work advances PRC material design by enabling mechanically robust, healable, and scalable thermoset elastomers that overcome previous limitations in dimensional stability and longevity for practical thermal management applications."
+        },
+        "elapsed_seconds": 38.819,
+        "input_tokens": 584,
+        "output_tokens": 220,
+        "thoughts_tokens": null,
+        "total_tokens": 804,
+        "model_eval_seconds": 28.1285,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43003067",
+        "title": "Spatial bridges of hierarchical scaffolds orchestrate MSCs/SCs interaction for bone regeneration.",
+        "abstract": "NA: The spatiotemporal distribution of multiple cells and their interactions with extracellular matrix in three-dimensional microenvironments play a critical role in regulating cell behaviors and modulating tissue development and regeneration. Preparation of hierarchical structural scaffolds for multicellular crosstalk in tissue engineering holds great significance. Here, inspired conceptually by the idea of \"magpie bridge\", biomimetic hierarchical multi-channel scaffolds, serving as \"spatial bridges\" to orchestrate multicellular spatiotemporal interactions have been proposed for innervated bone regeneration. Hierarchical multi-channel structures facilitate the mutual migration and energy metabolism activities of mesenchymal stem cells (MSCs) and Schwann cells (SCs), thereby enhancing their specific differentiation. Transcriptomic analysis revealed that MSCs/SCs cross-talk mediated by cytokine-cytokine receptor interactions, including the activation of multiple neurogenesis/osteogenesis-related signaling pathways. In rabbit bone defect model, SCs-laden hierarchical multi-channel scaffolds constructed a neuro-inductive metabolism-activated microenvironment, thereby achieving 3.24-fold increase in bone regeneration and 2.29-fold increase in neuro-vascular networks reconstruction compared to traditional bioceramic scaffolds in the core defects region at 12-week post-surgery, respectively. Therefore, this study introduces an exceptional concept that biomimetic hierarchical scaffolds serve as \"spatial bridges\" for accelerating multicellular spatiotemporal interactions of complex tissue and organ regeneration, opening new avenues for designing next-generation regenerative biomaterials.",
+        "doi": "10.1016/j.biomaterials.2026.124756",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124756",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43003067/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how biomimetic hierarchical scaffolds influence mesenchymal stem cells (MSCs) and Schwann cells (SCs) interactions for bone regeneration. Using a rabbit bone defect model, the researchers designed multi-channel scaffolds that enhanced MSC/SC crosstalk, leading to 3.24-fold increased bone regeneration and 2.29-fold improved neuro-vascular networks compared to traditional scaffolds. The findings highlight the role of spatially organized scaffolds in orchestrating multicellular interactions for tissue repair.\",\n  \"key_findings\": [\n    \"Hierarchical multi-channel scaffolds promoted MSC/SC mutual migration and energy metabolism\",\n    \"Transcriptomic analysis identified cytokine-cytokine receptor-mediated cross-talk activating neurogenesis/osteogenesis pathways\",\n    \"Rabbit model showed 3.24-fold greater bone regeneration and 2.29-fold enhanced neuro-vascular networks with the biomimetic scaffolds\"\n  ],\n  \"study_type\": \"Rabbit bone defect model\",\n  \"scientific_significance\": \"This work demonstrates that spatially structured biomimetic scaffolds can enhance multicellular interactions to accelerate complex tissue regeneration, providing a novel strategy for engineering regenerative biomaterials.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how biomimetic hierarchical scaffolds influence mesenchymal stem cells (MSCs) and Schwann cells (SCs) interactions for bone regeneration. Using a rabbit bone defect model, the researchers designed multi-channel scaffolds that enhanced MSC/SC crosstalk, leading to 3.24-fold increased bone regeneration and 2.29-fold improved neuro-vascular networks compared to traditional scaffolds. The findings highlight the role of spatially organized scaffolds in orchestrating multicellular interactions for tissue repair.",
+          "key_findings": [
+            "Hierarchical multi-channel scaffolds promoted MSC/SC mutual migration and energy metabolism",
+            "Transcriptomic analysis identified cytokine-cytokine receptor-mediated cross-talk activating neurogenesis/osteogenesis pathways",
+            "Rabbit model showed 3.24-fold greater bone regeneration and 2.29-fold enhanced neuro-vascular networks with the biomimetic scaffolds"
+          ],
+          "study_type": "Rabbit bone defect model",
+          "scientific_significance": "This work demonstrates that spatially structured biomimetic scaffolds can enhance multicellular interactions to accelerate complex tissue regeneration, providing a novel strategy for engineering regenerative biomaterials."
+        },
+        "elapsed_seconds": 49.2951,
+        "input_tokens": 687,
+        "output_tokens": 256,
+        "thoughts_tokens": null,
+        "total_tokens": 943,
+        "model_eval_seconds": 33.917,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020020",
+        "title": "Spatial transcriptomics reveals molecular organization of human and nonhuman primate basal ganglia.",
+        "abstract": "NA: The basal ganglia (BG) are interconnected subcortical nuclei with a complex topographical organization that orchestrate goal-directed behaviors and are implicated in neurodegenerative movement disorders. We generated a cellular-resolution spatial transcriptomics atlas of the BG in human, rhesus macaque, and common marmoset, sampling over one million cells in each species. By integrating spatial data with a cross-species consensus single-nucleus RNA sequencing (snRNA-seq) cell-type taxonomy, this atlas reveals principles of molecular organization within and across structures. Extensive spatial sampling across the rostral-caudal axis illuminates complex, yet highly stereotyped, multi-axis gene expression gradients superimposed onto discrete compartments of the striatum. Additionally, we identify core-shell organization of the internal globus pallidus. This unified, cross-species spatial transcriptomics atlas will be a foundational resource for characterizing the molecular and functional organization of the BG and their roles in health and disease.",
+        "doi": "10.1016/j.cell.2026.10.023",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.023",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020020/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study generated a high-resolution spatial transcriptomics atlas of the basal ganglia across human, rhesus macaque, and common marmoset species, integrating it with cross-species single-nucleus RNA sequencing data. The atlas reveals stereotyped multi-axis gene expression gradients and core-shell organization within the internal globus pallidus, providing a foundational resource for understanding basal ganglia molecular organization in health and disease.\",\n  \"key_findings\": [\n    \"Extensive spatial sampling across the rostral-caudal axis reveals stereotyped multi-axis gene expression gradients in the striatum\",\n    \"Identification of core-shell organization within the internal globus pallidus\",\n    \"Cross-species comparison of basal ganglia molecular organization across three primate species\"\n  ],\n  \"study_type\": \"Spatial transcriptomics atlas with cross-species single-nucle: RNA sequencing integration\",\n  \"scientific_significance\": \"This cross-species spatial transcriptomics atlas establishes a unified framework for understanding basal ganglia molecular organization across primates, advancing comparative neuroanatomy and disease mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study generated a high-resolution spatial transcriptomics atlas of the basal ganglia across human, rhesus macaque, and common marmoset species, integrating it with cross-species single-nucleus RNA sequencing data. The atlas reveals stereotyped multi-axis gene expression gradients and core-shell organization within the internal globus pallidus, providing a foundational resource for understanding basal ganglia molecular organization in health and disease.",
+          "key_findings": [
+            "Extensive spatial sampling across the rostral-caudal axis reveals stereotyped multi-axis gene expression gradients in the striatum",
+            "Identification of core-shell organization within the internal globus pallidus",
+            "Cross-species comparison of basal ganglia molecular organization across three primate species"
+          ],
+          "study_type": "Spatial transcriptomics atlas with cross-species single-nucle: RNA sequencing integration",
+          "scientific_significance": "This cross-species spatial transcriptomics atlas establishes a unified framework for understanding basal ganglia molecular organization across primates, advancing comparative neuroanatomy and disease mechanisms."
+        },
+        "elapsed_seconds": 40.7732,
+        "input_tokens": 572,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 798,
+        "model_eval_seconds": 30.5815,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, suppresses electrode swelling, and improves Li+ kinetics. The nitrogen-doped composite achieved 1756.5 mAh g-1 capacity, 868.4 m. Ah g-1 at 3 C, and reduced thickness expansion from 38.4% to 13.1% after 50 cycles, demonstrating scalable performance in 6 kg batches for NCM811 batteries.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doping enhances carbon interlayer spacing and electronic conductivity, improving Li+ insertion/extraction kinetics\",\n    \"The composite achieved 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C with 13.1% thickness expansion after 50 cycles\"\n  ],\n  \"study_type\": \"Material design and synthesis\",\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing mechanical instability in high-energy lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, suppresses electrode swelling, and improves Li+ kinetics. The nitrogen-doped composite achieved 1756.5 mAh g-1 capacity, 868.4 m. Ah g-1 at 3 C, and reduced thickness expansion from 38.4% to 13.1% after 50 cycles, demonstrating scalable performance in 6 kg batches for NCM811 batteries.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doping enhances carbon interlayer spacing and electronic conductivity, improving Li+ insertion/extraction kinetics",
+            "The composite achieved 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C with 13.1% thickness expansion after 50 cycles"
+          ],
+          "study_type": "Material design and synthesis",
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing mechanical instability in high-energy lithium-ion batteries."
+        },
+        "elapsed_seconds": 58.3709,
+        "input_tokens": 708,
+        "output_tokens": 303,
+        "thoughts_tokens": null,
+        "total_tokens": 1011,
+        "model_eval_seconds": 41.8319,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43008591",
+        "title": "FGF2-engineered extracellular vesicles loaded in an ECM-mimetic hydrogel promote wound healing and attenuate scar formation via immunomodulation and enhanced neurovascular responses.",
+        "abstract": "NA: Impaired wound healing in diabetes is primarily driven by persistent inflammation and neurovascular dysfunction, frequently leading to aberrant tissue remodeling and pathological scarring. Extracellular vesicles of adipose-derived mesenchymal stem cells (ADSC-EVs) have therapeutic potential but limited tissue-specific efficacy. Fibroblast growth factor 2 (FGF2) promotes angiogenesis and nerve repair but suffers from a short half-life that limits its clinical application. Given the low endogenous expression of FGF2 in ADSCs and its short half-life in vivo, here, we engineered FGF2-functionalized EVs (EV-FGF2) by lentiviral transduction of ADSCs and incorporated them into a click chemistry-crosslinked recombinant collagen/hyaluronic acid hydrogel (CH/EV-FGF2) to enable sustained release and extracellular matrix-mimetic support. In vitro, EV-FGF2 promoted macrophage polarization toward a reparative M2 phenotype, enhanced angiogenesis and axonal outgrowth. In vivo, the CH/EV-FGF2 hydrogel accelerated wound closure in a diabetic mouse wound model, attenuated early inflammation, increased vascular (CD31) and neuronal (βIII-tubulin/Tuj1) markers, promoted neurovascular-associated responses, and attenuated scar formation in a rabbit ear model. In conclusion, this study developed an engineered EV-FGF2 hydrogel system that addresses multiple pathological aspects of diabetic wounds, offering a promising cell-free therapeutic strategy for tissue repair.",
+        "doi": "10.1016/j.biomaterials.2026.124764",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124764",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43008591/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered FGF2-functionalized adipose-derived mesenchymal stem cell extracellular vesicles (EV-FGF2) within an ECM-mimetic hydrogel to treat diabetic wounds. The approach enhanced macrophage polarization, neurovascular responses, and reduced scarring in animal models by leveraging sustained FGF2 release and hydrogel support. Results showed accelerated wound closure, decreased inflammation, and improved tissue remodeling without cellular components.\",\n  \"key_findings\": [\n    \"EV-FGF2 promoted macrophage polarization toward reparative M2 phenotype in vitro\",\n    \"CH/EV-F:GF2 hydrogel accelerated wound closure and reduced inflammation in diabetic mouse models\",\n    \"The system increased vascular (CD31) and neuronal (βIII-tubulin) markers while attenuating scar formation in rabbit ear models\"\n  ],\n  \"study_type\": \"In vitro and in vivo animal models\",\n  \"scientific_significance\": \"This engineered EV-FGF2 hydrogel system provides a cell-free strategy to simultaneously target inflammation, neurovascular dysfunction, and scar formation in diabetic wounds, advancing tissue repair mechanisms without cellular transplantation.\"\n}",
+        "parsed": {
+          "summary": "This study engineered FGF2-functionalized adipose-derived mesenchymal stem cell extracellular vesicles (EV-FGF2) within an ECM-mimetic hydrogel to treat diabetic wounds. The approach enhanced macrophage polarization, neurovascular responses, and reduced scarring in animal models by leveraging sustained FGF2 release and hydrogel support. Results showed accelerated wound closure, decreased inflammation, and improved tissue remodeling without cellular components.",
+          "key_findings": [
+            "EV-FGF2 promoted macrophage polarization toward reparative M2 phenotype in vitro",
+            "CH/EV-F:GF2 hydrogel accelerated wound closure and reduced inflammation in diabetic mouse models",
+            "The system increased vascular (CD31) and neuronal (βIII-tubulin) markers while attenuating scar formation in rabbit ear models"
+          ],
+          "study_type": "In vitro and in vivo animal models",
+          "scientific_significance": "This engineered EV-FGF2 hydrogel system provides a cell-free strategy to simultaneously target inflammation, neurovascular dysfunction, and scar formation in diabetic wounds, advancing tissue repair mechanisms without cellular transplantation."
+        },
+        "elapsed_seconds": 49.3088,
+        "input_tokens": 702,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 939,
+        "model_eval_seconds": 32.8869,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020021",
+        "title": "Mesoscale molecular architecture of the striatum across cell types and adult aging.",
+        "abstract": "NA: The human striatum governs diverse motor, cognitive, and affective behaviors yet lacks the obvious cytoarchitectural boundaries defining functional territories elsewhere in the brain. Using Slide-tags single-nucleus spatial transcriptomics, we profiled 1.1 million cells across 19 postmortem donors to uncover the striatum's spatial organization. These data revealed a consistent subdivision of the striatum into six zones, each defined by molecularly distinct populations of spiny projection neurons (SPNs) and featuring spatially coordinated neuron-astrocyte interaction networks. To determine their structural relevance, we generated a companion mouse spatial atlas that identified four homologous zones that aligned with territories defined by brain-wide afferent projections. Finally, imputing zonal identities onto a 131-donor single-nucleus RNA sequencing (snRNA-seq) cohort revealed that dorsal zones exhibit the greatest age-related transcriptional change and that the expression differences defining zonation attenuate with age. This resource establishes a conserved mesoscale spatial framework for the mammalian striatum, linking single-cell molecular identity to structural connectomics and aging.",
+        "doi": "10.1016/j.cell.2026.10.029",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.029",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020021/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used Slide-tags single-nucleus spatial transcriptomics to profile 1.1 million cells across 19 human postmortem donors, revealing six molecularly distinct striatal zones with spatially coordinated neuron-astrocyte interactions. A mouse atlas confirmed four homologous zones aligned with brain-wide afferent projections. The research found dorsal striatal zones show the strongest age-related transcriptional changes, with zonal molecular differences diminishing as aging progresses.\",\n  \"key_findings\": [\n    \"Six molecularly distinct striatal zones defined by spiny projection neuron populations\",\n    \"Spatially coordinated neuron-astrocyte interaction networks within each zone\",\n    \"Dorsal striatal zones exhibit the greatest age-related transcriptional changes\"\n  ],\n  \"study_type\": \"Slide-tags single-nucleus spatial transcriptomics\",\n  \"scientific_significance\": \"This work establishes a conserved mesoscale spatial framework for the mammalian striatum, linking single-cell molecular identity to structural connectomics and aging processes.\"\n}",
+        "parsed": {
+          "summary": "This study used Slide-tags single-nucleus spatial transcriptomics to profile 1.1 million cells across 19 human postmortem donors, revealing six molecularly distinct striatal zones with spatially coordinated neuron-astrocyte interactions. A mouse atlas confirmed four homologous zones aligned with brain-wide afferent projections. The research found dorsal striatal zones show the strongest age-related transcriptional changes, with zonal molecular differences diminishing as aging progresses.",
+          "key_findings": [
+            "Six molecularly distinct striatal zones defined by spiny projection neuron populations",
+            "Spatially coordinated neuron-astrocyte interaction networks within each zone",
+            "Dorsal striatal zones exhibit the greatest age-related transcriptional changes"
+          ],
+          "study_type": "Slide-tags single-nucleus spatial transcriptomics",
+          "scientific_significance": "This work establishes a conserved mesoscale spatial framework for the mammalian striatum, linking single-cell molecular identity to structural connectomics and aging processes."
+        },
+        "elapsed_seconds": 40.6451,
+        "input_tokens": 601,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 815,
+        "model_eval_seconds": 28.8833,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "42895191",
+        "title": "Reconstruction of the Electric Double Layer for Long-Lasting Aqueous Manganese Metal Batteries.",
+        "abstract": "NA: Aqueous Mn metal batteries (AMMBs) have emerged as promising candidates for stationary energy storage owing to the natural abundance of Mn, their operational safety, and their high energy density. However, the high chemical reactivity of the Mn metal anode induces a severe hydrogen evolution reaction (HER), resulting in poor cycling reversibility. Fundamentally, HER is a parasitic cathodic reaction competing with Mn electrodeposition and may accompany Mn corrosion. Its kinetics are influenced by the interfacial water environment within the electric double layer (EDL). In this study, we propose a strategy for reconstructing the EDL by adding n-decyltrimethylammonium bromide (10-DTAB), a surfactant with a relatively high lowest unoccupied molecular orbital (LUMO), to the electrolyte to stabilize the Mn anode. The high LUMO energy level enhances its reduction stability, thus preventing continuous decomposition during cycling and enabling sustained interfacial protection. Consequently, the Mn anode exhibits a markedly enhanced Coulombic efficiency of 93%. This study demonstrates a durable EDL regulation paradigm based on high-LUMO additives, offering new insights into stabilizing Mn metal anodes and advancing AMMBs toward practical applications.",
+        "doi": "10.1002/adma.75431",
+        "doi_url": "https://doi.org/10.1002/adma.75431",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895191/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates strategies to enhance aqueous manganese metal battery (AMMB) cycling stability by addressing hydrogen evolution reaction (HER) at the Mn anode. Using n-decyltrimethylammonium bromide (10-DTAB) as a surfactant with high LUMO energy, the researchers reconstructed the electric double layer to improve interfacial stability. The approach achieved a 93% Coulombic efficiency, indicating reduced HER and better cycling reversibility for AMMBs.\",\n  \"key_findings\": [\n    \"10-DTAB surfactant addition stabilized the Mn anode interface by reconstructing the electric double layer\",\n    \"High LUMO energy of 1.0-DTAB enhanced reduction stability, preventing continuous decomposition\",\n    \"The strategy achieved 93% Coulombic efficiency, significantly improving cycling reversibility\"\n  ],\n  \"study_type\": \"In vitro electrochemical study\",\n  \"scientific_significance\": \"This work establishes a general paradigm for stabilizing reactive metal anodes in aqueous batteries through electric double layer engineering, providing a foundational approach for durable manganese-based energy storage systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates strategies to enhance aqueous manganese metal battery (AMMB) cycling stability by addressing hydrogen evolution reaction (HER) at the Mn anode. Using n-decyltrimethylammonium bromide (10-DTAB) as a surfactant with high LUMO energy, the researchers reconstructed the electric double layer to improve interfacial stability. The approach achieved a 93% Coulombic efficiency, indicating reduced HER and better cycling reversibility for AMMBs.",
+          "key_findings": [
+            "10-DTAB surfactant addition stabilized the Mn anode interface by reconstructing the electric double layer",
+            "High LUMO energy of 1.0-DTAB enhanced reduction stability, preventing continuous decomposition",
+            "The strategy achieved 93% Coulombic efficiency, significantly improving cycling reversibility"
+          ],
+          "study_type": "In vitro electrochemical study",
+          "scientific_significance": "This work establishes a general paradigm for stabilizing reactive metal anodes in aqueous batteries through electric double layer engineering, providing a foundational approach for durable manganese-based energy storage systems."
+        },
+        "elapsed_seconds": 45.3308,
+        "input_tokens": 629,
+        "output_tokens": 238,
+        "thoughts_tokens": null,
+        "total_tokens": 867,
+        "model_eval_seconds": 32.4016,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43008592",
+        "title": "Bio-orthogonally functionalized biomimetic nanoreactors suppress lung cancer stem-like cells by triggering a self-amplifying endoplasmic reticulum-mitochondria stress loop.",
+        "abstract": "NA: The compensatory signal transmission between the endoplasmic reticulum (ER) and mitochondria maintains the survival of lung cancer stem cells (LCSCs). This study designed a bio-orthogonally functionalized biomimetic nanoreactor to dissociate this protective crosstalk and induce a self-amplifying stress feedback loop. By integrating an N-cadherin-targeting aptamer with tumor membrane masking technology, this nanoreactor achieves enhanced specificity for LCSCs targeting. The nanoreactor is loaded with the photosensitizer TAPP and bortezomib (BTZ). Upon laser irradiation, TAPP generates reactive oxygen species (ROS) locally, rapidly collapsing the mitochondrial membrane potential and inducing oxidative injury. Concurrently, BTZ inhibits the proteasome, blocking the degradation of ubiquitinated proteins and triggering acute ER stress, which promotes Ca2+ release into mitochondria and further exacerbates mitochondrial damage. In turn, damaged mitochondria release mitochondrial DNA (mtDNA), aggravating ER dysfunction and establishing a self-amplifying vicious cycle between the ER and mitochondria that progressively escalates cellular damage. Additionally, treatment was accompanied by reduced STAT3 phosphorylation and decreased expression of stemness-associated markers, alongside ER-mitochondrial dysfunction and enhanced cytotoxicity in stem-like cells.",
+        "doi": "10.1016/j.biomaterials.2026.124752",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124752",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43008592/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether bio-orthogonally functionalized biomimetic nanoreactors could suppress lung cancer stem-like cells (LCSCs) by disrupting ER-mitochondria crosstalk. Using an N-cadherin-targeting aptamer and tumor membrane masking, the nanoreactor delivered TAPP and bortez. Laser activation induced ROS, mitochondrial damage, and ER stress, triggering a self-amplifying stress loop that reduced LCSC survival via STAT3 inhibition and stemness markers. The approach demonstrates a targeted mechanism for LCSC elimination.\",\n  \"key_findings\": [\n    \"Laser-activated nanoreactors delivered TAPP and bortezomib to induce ROS and mitochondrial damage\",\n    \"ER stress from bortezomib triggered Ca2+ release into mitochondria, exacerbating dysfunction\",\n    \"The self-amplifying ER-mitochondria stress loop reduced LCSC survival via STAT3 inhibition and stemness marker downregulation\"\n  ],\n  \"study_type\": \"In vitro nanoreactor-based intervention\",\n  \"scientific_significance\": \"This work establishes a targeted strategy for disrupting protective ER-mitochondria crosstalk in LCSCs, providing a mechanism for selective elimination through self-amplifying stress induction.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether bio-orthogonally functionalized biomimetic nanoreactors could suppress lung cancer stem-like cells (LCSCs) by disrupting ER-mitochondria crosstalk. Using an N-cadherin-targeting aptamer and tumor membrane masking, the nanoreactor delivered TAPP and bortez. Laser activation induced ROS, mitochondrial damage, and ER stress, triggering a self-amplifying stress loop that reduced LCSC survival via STAT3 inhibition and stemness markers. The approach demonstrates a targeted mechanism for LCSC elimination.",
+          "key_findings": [
+            "Laser-activated nanoreactors delivered TAPP and bortezomib to induce ROS and mitochondrial damage",
+            "ER stress from bortezomib triggered Ca2+ release into mitochondria, exacerbating dysfunction",
+            "The self-amplifying ER-mitochondria stress loop reduced LCSC survival via STAT3 inhibition and stemness marker downregulation"
+          ],
+          "study_type": "In vitro nanoreactor-based intervention",
+          "scientific_significance": "This work establishes a targeted strategy for disrupting protective ER-mitochondria crosstalk in LCSCs, providing a mechanism for selective elimination through self-amplifying stress induction."
+        },
+        "elapsed_seconds": 51.1201,
+        "input_tokens": 667,
+        "output_tokens": 266,
+        "thoughts_tokens": null,
+        "total_tokens": 933,
+        "model_eval_seconds": 36.4118,
+        "error": null
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020022",
+        "title": "Common variation of cell abundances and gene expression in the human striatum.",
+        "abstract": "NA: The cellular and molecular bases of inter-individual variation in the human brain are not yet understood, particularly beyond the neocortex. Here, we describe cellular and gene-expression variation in the striatum and prefrontal cortex from single-nucleus RNA sequencing (snRNA-seq) analysis of 3.9 million nuclei from 178 adult brain donors. People with more astrocytes, microglia, or oligodendrocyte precursor cells (OPCs) in any one brain region tended to have this property in all gray-matter regions sampled. OPC proportions declined by 40% across ages 30-80 in the cortex and striatum. Age-associated gene-expression changes differed substantially across cell types. Donor age was predicted from RNA-expression patterns with a median absolute error of 6.6 years across cell types. Common genetic variants were associated with the expression of nearly 10,000 genes; these effects were mostly cell-type specific and distinguished striatal from cortical neurons. These open-access data provide a foundation for future studies of human brain variation and vulnerabilities.",
+        "doi": "10.1016/j.cell.2026.10.026",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.026",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020022/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used single-nucleus RNA sequencing on 3.9 million nuclei from 178 adults to investigate inter-individual variation in the human striatum and prefrontal cortex. It found that astrocyte, microglia, and OPC proportions were consistently higher in brains with more of these cell types across gray matter regions, OPCs declined with age, and age could be predicted from gene expression with a median error of 6.6 years. The data also revealed cell-type-specific genetic variants influencing gene expression.\",\n  \"key_findings\": [\n    \"Astrocyte, microglia, and oligodendrocyte precursor cell proportions were consistently elevated across gray matter regions in brains with higher counts in one region\",\n    \"Oligodendrocyte precursor cell proportions decreased by 40% between ages 30-80 in both cortex and striatum\",\n    \"Donor age could be predicted from RNA expression patterns with a median absolute error of 6.6 years across cell types\"\n  ],\n  \"study_type\": \"Single-nucleus RNA sequencing\",\n  \"scientific_significance\": \"This work establishes a comprehensive atlas of cell-type-specific genetic variation and gene expression patterns in human striatum and prefrontal cortex, providing a foundational resource for understanding brain development, aging, and disease susceptibility.\"\n}",
+        "parsed": {
+          "summary": "This study used single-nucleus RNA sequencing on 3.9 million nuclei from 178 adults to investigate inter-individual variation in the human striatum and prefrontal cortex. It found that astrocyte, microglia, and OPC proportions were consistently higher in brains with more of these cell types across gray matter regions, OPCs declined with age, and age could be predicted from gene expression with a median error of 6.6 years. The data also revealed cell-type-specific genetic variants influencing gene expression.",
+          "key_findings": [
+            "Astrocyte, microglia, and oligodendrocyte precursor cell proportions were consistently elevated across gray matter regions in brains with higher counts in one region",
+            "Oligodendrocyte precursor cell proportions decreased by 40% between ages 30-80 in both cortex and striatum",
+            "Donor age could be predicted from RNA expression patterns with a median absolute error of 6.6 years across cell types"
+          ],
+          "study_type": "Single-nucleus RNA sequencing",
+          "scientific_significance": "This work establishes a comprehensive atlas of cell-type-specific genetic variation and gene expression patterns in human striatum and prefrontal cortex, providing a foundational resource for understanding brain development, aging, and disease susceptibility."
+        },
+        "elapsed_seconds": 49.8297,
+        "input_tokens": 595,
+        "output_tokens": 282,
+        "thoughts_tokens": null,
+        "total_tokens": 877,
+        "model_eval_seconds": 38.062,
+        "error": null
+      }
+    }
+  ]
+}
