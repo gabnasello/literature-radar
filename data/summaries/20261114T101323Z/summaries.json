@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261114T101323Z",
+  "generated_at_utc": "2026-11-14 10:34:45 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 291,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42870537",
+        "title": "Nonlinear Electro-Optic Visible Photonic Circuits for Solid-State Quantum Defects.",
+        "abstract": "NA: Integrated visible photonic engines for solid-state quantum defects provide a foundation for scalable quantum networks. While miniaturization is advancing, active manipulation remains limited by the difficulty of achieving simultaneous milliwatt-scale visible light generation and high-contrast modulation. Despite extensive efforts, the concurrent chip-scale realization of nonlinear frequency conversion and fast temporal gating for high-fidelity quantum control has remained elusive. Here, we demonstrate a monolithic thin-film lithium niobate (TFLN) platform integrating periodically poled frequency conversion with GHz-bandwidth electro-optic (EO) switching. The device delivers off-chip green-light power exceeding 1 mW with an extinction ratio (ER) of 42.2 dB, enabling coherent spin control and time-resolved lifetime measurements of individual nitrogen-vacancy (NV) centers in diamond through nanosecond gating. System performance is validated through pulsed optically detected magnetic resonance (ODMR), Rabi oscillations, and Ramsey interference, supported by time-tagged photon counting with nanosecond resolution. By unifying sufficient nonlinear light generation with high-speed active manipulation, this platform establishes a scalable framework for the realization of high-rate quantum communication nodes.",
+        "doi": "10.1002/adma.75321",
+        "doi_url": "https://doi.org/10.1002/adma.75321",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42870537/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a monolithic thin-film lithium niobate platform integrating nonlinear frequency conversion and high-speed electro-optic switching for quantum defect manipulation. The approach combines periodically poled frequency conversion with GHz-bandwidth electro-opt. switching to generate milliwatt-scale green light with 42.2 dB extinction ratio. Results enable coherent spin control and time-resolved lifetime measurements of nitrogen-vacancy centers via nanosecond gating, demonstrating a scalable framework for quantum communication nodes.\",\n  \"key_findings\": [\n    \"Monolithic thin-film lithium niobate platform integrates nonlinear frequency conversion and GHz-bandwidth electro-optic switching\",\n    \"Device delivers over 1 mW green-light power with 42.2 dB extinction ratio\",\n    \"Enables coherent spin control and time-resolved lifetime measurements of nitrogen-vacancy centers\"\n  ],\n  \"study_type\": \"Monolithic thin-film lithium niobate platform with integrated nonlinear frequency conversion and electro-optic switching\",\n  \"scientific_significance\": \"This work establishes a scalable platform for high-rate quantum communication nodes by unifying milliwatt-scale visible light generation with high-speed active manipulation of solid-state quantum defects.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a monolithic thin-film lithium niobate platform integrating nonlinear frequency conversion and high-speed electro-optic switching for quantum defect manipulation. The approach combines periodically poled frequency conversion with GHz-bandwidth electro-opt. switching to generate milliwatt-scale green light with 42.2 dB extinction ratio. Results enable coherent spin control and time-resolved lifetime measurements of nitrogen-vacancy centers via nanosecond gating, demonstrating a scalable framework for quantum communication nodes.",
+          "key_findings": [
+            "Monolithic thin-film lithium niobate platform integrates nonlinear frequency conversion and GHz-bandwidth electro-optic switching",
+            "Device delivers over 1 mW green-light power with 42.2 dB extinction ratio",
+            "Enables coherent spin control and time-resolved lifetime measurements of nitrogen-vacancy centers"
+          ],
+          "study_type": "Monolithic thin-film lithium niobate platform with integrated nonlinear frequency conversion and electro-optic switching",
+          "scientific_significance": "This work establishes a scalable platform for high-rate quantum communication nodes by unifying milliwatt-scale visible light generation with high-speed active manipulation of solid-state quantum defects."
+        },
+        "elapsed_seconds": 66.7414,
+        "input_tokens": 708,
+        "output_tokens": 247,
+        "thoughts_tokens": null,
+        "total_tokens": 955,
+        "model_eval_seconds": 33.9112,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42874513",
+        "title": "Biomimetic electroactive nano-heterojunction for vascularized bone regeneration in large segmental load-bearing bone defects via temporal regulation of endogenous functional ions.",
+        "abstract": "NA: The repair and functional reconstruction of large segmental bone defects in load-bearing regions are extremely difficult, mainly because the body's capacity to recruit endogenous functional ions such as Ca2+, Cu2+, and Mg2+ to facilitate mineralization and vascularization is compromised. Herein, inspired by the bioelectric field-mediated ion regulation in native bone, a biomimetic carbon fiber reinforced polyetherketoneketone (CF/PEEK) scaffold incorporated with a bio-heterojunction was fabricated via 3D printing, liquid-phase chemistry and hydrothermal treatment. The heterojunction composed of 2D nano-MXene and in-situ ZnS quantum dots enriches functional ions on the scaffold surface through an endogenous electric field, thereby remarkably improving its bioactivity. In vitro cell experiments demonstrated that the CF/PEEK biomimetic scaffold promotes cells' osteogenic and angiogenic differentiation through the epidermal growth factor receptor (EGFR)-mediated phosphatidylinositol 3-kinase (PI3K)/protein kinase B (Akt) signaling pathway. In vivo investigations via non-load-bearing lacunar and load-bearing segmental bone defect models verified that the CF/PEEK biomimetic scaffold possesses superior bone and vascular regeneration capacity, enabling rapid vascularized bone regeneration under complex stress conditions through a bone-vessel coupling mechanism. This work offers a novel strategy for repairing load-bearing large segmental bone defects and new insights into designing bioelectric field-guided biomimetic materials.",
+        "doi": "10.1016/j.biomaterials.2026.124681",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124681",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42874513/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a biomimetic CF/PEEK scaffold with a nano-heterojunction to enhance vascularized bone regeneration in large segmental load-bearing defects. The scaffold utilizes endogenous electric fields to regulate functional ions (Ca2+, Cu2+, Mg2+), improving osteogenic and angiogenic differentiation via EGFR-PI3K/Akt signaling. In vivo results show superior bone and vascular repair under mechanical stress, enabling rapid vascularized regeneration in complex load-bearing conditions.\",\n  \"key_findings\": [\n    \"The biomimetic scaffold enhances vascularized bone regeneration in large segment. segmental load-bearing bone defects through endogenous ion regulation.\",\n    \"The scaffold promotes osteogenic and angiogenic differentiation via EGFR-PI3K/Akt signaling pathway.\",\n    \"In vivo models confirm superior bone and vascular repair capacity under mechanical stress conditions.\"\n  ],\n  \"study_type\": \"In vivo and in vitro studies\",\n  \"scientific_significance\": \"This work provides a novel strategy for repairing load-bearing large segmental bone defects using bioelectric field-guided biomimetic materials, advancing understanding of ion-mediated vascularized bone regeneration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a biomimetic CF/PEEK scaffold with a nano-heterojunction to enhance vascularized bone regeneration in large segmental load-bearing defects. The scaffold utilizes endogenous electric fields to regulate functional ions (Ca2+, Cu2+, Mg2+), improving osteogenic and angiogenic differentiation via EGFR-PI3K/Akt signaling. In vivo results show superior bone and vascular repair under mechanical stress, enabling rapid vascularized regeneration in complex load-bearing conditions.",
+          "key_findings": [
+            "The biomimetic scaffold enhances vascularized bone regeneration in large segment. segmental load-bearing bone defects through endogenous ion regulation.",
+            "The scaffold promotes osteogenic and angiogenic differentiation via EGFR-PI3K/Akt signaling pathway.",
+            "In vivo models confirm superior bone and vascular repair capacity under mechanical stress conditions."
+          ],
+          "study_type": "In vivo and in vitro studies",
+          "scientific_significance": "This work provides a novel strategy for repairing load-bearing large segmental bone defects using bioelectric field-guided biomimetic materials, advancing understanding of ion-mediated vascularized bone regeneration."
+        },
+        "elapsed_seconds": 49.0143,
+        "input_tokens": 786,
+        "output_tokens": 238,
+        "thoughts_tokens": null,
+        "total_tokens": 1024,
+        "model_eval_seconds": 33.2176,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42874590",
+        "title": "A pseudoenzyme sensor of trehalose-6-phosphate directly represses the metabolic integrator SnRK1 in plants.",
+        "abstract": "NA: Trehalose-6-phosphate (T6P) is a central metabolic signal linking sugar availability to plant growth, carbon utilization, and productivity, yet its sensing and signaling mechanisms remain elusive. Using chemical biology and functional approaches, we identify the noncatalytic pseudoenzyme Class-II T6P synthase (TPS-II) as a T6P sensor in Arabidopsis. In the apo state, TPS-II dimerizes to form an autoinhibitory inter-subunit interaction. T6P binding to the N-terminal TPS-like domain triggers a conformational change that releases the C-terminal domain, enabling interaction with the central metabolic integrator SNF1-related protein kinase 1 (SnRK1) to repress its kinase activity. Loss of TPS-II genes activates catabolic and stress-responsive programs while suppressing anabolic gene expression, consistent with constitutive SnRK1 activity. Conservation of this T6P-TPS-II-SnRK1 signaling axis throughout the plant kingdom highlights its fundamental role in coupling carbon availability to metabolic homeostasis. These findings resolve a long-standing question in sugar signaling and provide a framework for improving crop carbon-use efficiency.",
+        "doi": "10.1016/j.cell.2026.09.016",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.016",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42874590/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies a pseudoenzyme T6P synthase (TPS-II) as a direct sensor of trehalose-6-phosphate (T6P) in plants. T6P binding induces conformational changes that repress SnRK1, a key metabolic regulator. Loss of TPS-II activates stress responses and catabolic pathways, indicating T6P's role in balancing carbon metabolism. The mechanism is conserved across plants, revealing a fundamental pathway for carbon availability signaling.\",\n  \"key_findings\": [\n    \"TPS-II acts as a T6P sensor by undergoing conformational changes upon T6P binding\",\n    \"T6P binding represses SnRK1 kinase activity to regulate metabolic pathways\",\n    \"TPS-II loss activates stress responses and suppresses anabolic gene expression\"\n  ],\n  \"study_type\": \"Functional and chemical biology approaches\",\n  \"scientific_significance\": \"This work elucidates a conserved mechanism for coupling carbon availability to metabolic homeostasis in plants, resolving longstanding questions about sugar signaling.\"\n}",
+        "parsed": {
+          "summary": "This study identifies a pseudoenzyme T6P synthase (TPS-II) as a direct sensor of trehalose-6-phosphate (T6P) in plants. T6P binding induces conformational changes that repress SnRK1, a key metabolic regulator. Loss of TPS-II activates stress responses and catabolic pathways, indicating T6P's role in balancing carbon metabolism. The mechanism is conserved across plants, revealing a fundamental pathway for carbon availability signaling.",
+          "key_findings": [
+            "TPS-II acts as a T6P sensor by undergoing conformational changes upon T6P binding",
+            "T6P binding represses SnRK1 kinase activity to regulate metabolic pathways",
+            "TPS-II loss activates stress responses and suppresses anabolic gene expression"
+          ],
+          "study_type": "Functional and chemical biology approaches",
+          "scientific_significance": "This work elucidates a conserved mechanism for coupling carbon availability to metabolic homeostasis in plants, resolving longstanding questions about sugar signaling."
+        },
+        "elapsed_seconds": 43.0763,
+        "input_tokens": 714,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 936,
+        "model_eval_seconds": 30.5712,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42870538",
+        "title": "A Universal Spin-Polarization-Engineered Antibonding-Orbital Modulation Paradigm for Accelerating Reaction Kinetics in Ultrahigh-Rate Sodium-Ion Batteries.",
+        "abstract": "NA: Conversion-type anode materials hold great promise for sodium-ion batteries (SIBs), yet their practical rate performance is fundamentally constrained by sluggish reaction kinetics beyond mass-transport limitations. Despite notable advances in accelerating ion/electron transport, intrinsically reducing the large reaction kinetic barrier and activation energy associated with robust metal-chalcogen (M─S) bonds remains a long-standing challenge. In this study, we propose a universal spin-polarization-engineered (SPE) antibonding-orbital modulation paradigm to fundamentally regulate M─S bond strength and enable ultrahigh-rate sodium storage. As a proof of concept, magnetic manganese heteroatom doping into heterojunctions enhances the saturation magnetization by ∼210%, inducing a spin-state transition from low-spin to high-spin configurations, which increases the electron occupation of antibonding orbitals formed between metal eg orbitals and chalcogen p orbitals, and thereby regulates M─S bond strength. Benefiting from this spin-engineered electronic reconstruction, Mn-FeS2/CoS2 anode delivers an ultrahigh-rate capability of 300 mA h g-1 at 120 A g-1, together with exceptional long-term durability (∼100% retention over 13 000 cycles at 100 A g-1), ranking among the best record. The generality of this strategy is further validated by extending SPE modulation to other magnetic dopants. Moreover, the industrial-level pouch cell is assembled to demonstrate the practical potential of this strategy.",
+        "doi": "10.1002/adma.75302",
+        "doi_url": "https://doi.org/10.1002/adma.75302",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42870538/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the kinetic limitations in conversion-type sodium-ion battery anodes by introducing a spin-polarization-engineered antibonding-orbital modulation approach. Magnetic doping induces spin-state transitions that enhance electron occupation in antibonding orbitals, strengthening metal-chalcogen bonds. The Mn-FeS2/CoS2 anode achieves ultrahigh-rate performance (300 mA h g-1 at 120 A g-1) and exceptional cycling stability (100% retention after 13,000 cycles).\",\n  \"key_findings\": [\n    \"Magnetic manganese doping triggers a spin-state transition from low-spin to high-spin configurations\",\n    \"Enhanced electron occupation in antibonding orbitals strengthens metal-chalcogen bonds\",\n    \"Mn-FeS2/CoS2 anode demonstrates ultrahigh-rate capability (300 mA h g-1 at 120 A g-1) and 100% retention over 13,000 cycles\"\n  ],\n  \"study_type\": \"Proof of concept with magnetic heteroatom doping\",\n  \"scientific_significance\": \"This work establishes a universal strategy for accelerating reaction kinetics in conversion-type anodes by manipulating spin states to regulate bond strength, offering a pathway to overcome intrinsic kinetic barriers in sodium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the kinetic limitations in conversion-type sodium-ion battery anodes by introducing a spin-polarization-engineered antibonding-orbital modulation approach. Magnetic doping induces spin-state transitions that enhance electron occupation in antibonding orbitals, strengthening metal-chalcogen bonds. The Mn-FeS2/CoS2 anode achieves ultrahigh-rate performance (300 mA h g-1 at 120 A g-1) and exceptional cycling stability (100% retention after 13,000 cycles).",
+          "key_findings": [
+            "Magnetic manganese doping triggers a spin-state transition from low-spin to high-spin configurations",
+            "Enhanced electron occupation in antibonding orbitals strengthens metal-chalcogen bonds",
+            "Mn-FeS2/CoS2 anode demonstrates ultrahigh-rate capability (300 mA h g-1 at 120 A g-1) and 100% retention over 13,000 cycles"
+          ],
+          "study_type": "Proof of concept with magnetic heteroatom doping",
+          "scientific_significance": "This work establishes a universal strategy for accelerating reaction kinetics in conversion-type anodes by manipulating spin states to regulate bond strength, offering a pathway to overcome intrinsic kinetic barriers in sodium-ion batteries."
+        },
+        "elapsed_seconds": 57.1205,
+        "input_tokens": 806,
+        "output_tokens": 285,
+        "thoughts_tokens": null,
+        "total_tokens": 1091,
+        "model_eval_seconds": 40.7326,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42874514",
+        "title": "A self-assembled hydrophobic polymer tagged nanoplatform for membrane protein degradation and immunomodulatory drug delivery.",
+        "abstract": "NA: Targeted protein degradation (TPD) has emerged as a powerful strategy for eliminating disease-driving proteins, yet its broader application remains constrained by limited target specificity and the lack of integrated therapeutic delivery functions. Here, we report Tri@N, a multimodal polymeric nanoplatform that extends hydrophobic polymer-based TPD to membrane-associated targets while simultaneously enabling immunomodulatory drug delivery. Tri@N is engineered to remain stable during systemic circulation but undergo intracellular disassembly in response to elevated GSH levels. This disassembly exposes hydrophobic polymer segments that function as a hydrophobic polymer tag, promoting EGFR destabilization and degradation through both proteasomal and autophagy-lysosomal pathways. In parallel, Tri@N releases niclosamide (NIC), which suppresses the STAT3/PD-L1 signaling axis. In colorectal cancer models, Tri@N achieved coordinated EGFR degradation and PD-L1 downregulation, resulting in enhanced CD8+ T cell-mediated antitumor immunity and robust tumor suppression in vivo. These findings establish Tri@N as a dual-functional polymeric nanoplatform that integrates hydrophobic polymer tagging-mediated degradation of a membrane protein with therapeutic payload delivery, providing a versatile strategy for multimodal cancer therapy.",
+        "doi": "10.1016/j.biomaterials.2026.124667",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124667",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42874514/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a self-assembled hydrophobic polymer nanoplatform (Tri@N) for targeted membrane protein degradation and immunomodulatory drug delivery. The platform utilizes intracellular GSH-triggered disassembly to expose hydrophobic tags that degrade EGFR via proteasomal and autophagy-lysosomal pathways while releasing niclosamide to inhibit STAT3/PD-L1 signaling. In colorectal cancer models, Tri@N enhanced CD8+ T cell activity and tumor suppression through coordinated EGFR degradation and PD-L1 downregulation.\",\n  \"key_findings\": [\n    \"Tri@N degrades EGFR via proteasomal and autophagy-lysosomal pathways using hydrophobic polymer tags\",\n    \"Niclosamide release suppresses STAT3/PD-L1 signaling to modulate immune responses\",\n    \"Tri@N achieves tumor suppression in colorectal cancer models through enhanced CD8+ T cell activity\"\n  ],\n  \"study_type\": \"In vitro and in vivo colorectal cancer models\",\n  \"scientific_significance\": \"This work demonstrates a dual-functional nanoplatform that integrates targeted protein degradation with immunomodulatory drug delivery, advancing strategies for multimodal cancer therapy through coordinated membrane protein clearance and immune activation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a self-assembled hydrophobic polymer nanoplatform (Tri@N) for targeted membrane protein degradation and immunomodulatory drug delivery. The platform utilizes intracellular GSH-triggered disassembly to expose hydrophobic tags that degrade EGFR via proteasomal and autophagy-lysosomal pathways while releasing niclosamide to inhibit STAT3/PD-L1 signaling. In colorectal cancer models, Tri@N enhanced CD8+ T cell activity and tumor suppression through coordinated EGFR degradation and PD-L1 downregulation.",
+          "key_findings": [
+            "Tri@N degrades EGFR via proteasomal and autophagy-lysosomal pathways using hydrophobic polymer tags",
+            "Niclosamide release suppresses STAT3/PD-L1 signaling to modulate immune responses",
+            "Tri@N achieves tumor suppression in colorectal cancer models through enhanced CD8+ T cell activity"
+          ],
+          "study_type": "In vitro and in vivo colorectal cancer models",
+          "scientific_significance": "This work demonstrates a dual-functional nanoplatform that integrates targeted protein degradation with immunomodulatory drug delivery, advancing strategies for multimodal cancer therapy through coordinated membrane protein clearance and immune activation."
+        },
+        "elapsed_seconds": 49.5132,
+        "input_tokens": 728,
+        "output_tokens": 261,
+        "thoughts_tokens": null,
+        "total_tokens": 989,
+        "model_eval_seconds": 36.4484,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880228",
+        "title": "Milking the niche: Microbial control of neonatal hematopoiesis.",
+        "abstract": "NA: In this issue of Cell, Howard et al. reveal how the milk glycoprotein osteopontin shapes the neonatal microbiome to regulate hematopoiesis, promoting dendritic cell development and protection from severe respiratory infection. These findings uncover a maternal milk-microbiota pathway linking early-life nutrition to immune development and long-term disease susceptibility.",
+        "doi": "10.1016/j.cell.2026.09.010",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.010",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880228/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how maternal milk glycoprotein osteopontin regulates neonatal hematopoiesis by shaping the microbiome. The research demonstrates osteopontin's role in promoting dendritic cell development and reducing severe respiratory infections through a maternal milk-microbiota pathway. These findings link early nutrition to immune development and long-term disease susceptibility.\",\n  \"key_findings\": [\n    \"Osteop:promotes dendritic cell development\",\n    \"Osteopontin shapes neonatal microbiome to regulate hematopoiesis\",\n    \"Osteopontin reduces severe respiratory infections via maternal milk-microbiota pathway\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes a maternal milk-microbiota pathway that connects early nutrition with immune development and long-term disease susceptibility, providing mechanistic insight into how neonatal hematopoiesis is influenced by early-life microbial exposure.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how maternal milk glycoprotein osteopontin regulates neonatal hematopoiesis by shaping the microbiome. The research demonstrates osteopontin's role in promoting dendritic cell development and reducing severe respiratory infections through a maternal milk-microbiota pathway. These findings link early nutrition to immune development and long-term disease susceptibility.",
+          "key_findings": [
+            "Osteop:promotes dendritic cell development",
+            "Osteopontin shapes neonatal microbiome to regulate hematopoiesis",
+            "Osteopontin reduces severe respiratory infections via maternal milk-microbiota pathway"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes a maternal milk-microbiota pathway that connects early nutrition with immune development and long-term disease susceptibility, providing mechanistic insight into how neonatal hematopoiesis is influenced by early-life microbial exposure."
+        },
+        "elapsed_seconds": 30.6399,
+        "input_tokens": 534,
+        "output_tokens": 196,
+        "thoughts_tokens": null,
+        "total_tokens": 730,
+        "model_eval_seconds": 25.9685,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42870553",
+        "title": "Turning Nd-Fe-B Swarf Into High-Value Bulk Feedstocks via Sustainable Hydrogen Plasma: From Rare-Earth Oxides to Metals and Hydrides.",
+        "abstract": "NA: Rare-earth permanent magnets (REPMs) are crucial for electric vehicles, wind turbines, and other high-efficiency electric motor systems. However, their production is energy-intensive, and global recycling rates are below 0.2%. Machining swarf is the main industrial waste from REPMs production. Despite its high rare-earth elements (REEs) content (∼20 wt.%), it has received limited attention for sustainable recycling. We introduce hydrogen plasma reduction (HPR) as a new environmentally friendly method to recover REEs from REPM swarf. By tuning the hydrogen content and treatment time, we achieve phase separation into metallic Fe and a Nd2O3-rich rare-earth fraction, providing a concentrated intermediate for subsequent REPM production. The process also enables direct rare-earth hydride formation, confirming the plasma-assisted partial rare-earth metallization in the molten state. This procedure turns REPM swarf into separated, high-value, high-purity feedstock in a single, acid-free step. Against the ∼70 kg CO2-eq kg-1 footprint of conventional REPM production, this recycling route offers a pathway toward substantially lower-emission magnet production while reducing reliance on primary REE supply.",
+        "doi": "10.1002/adma.75385",
+        "doi_url": "https://doi.org/10.1002/adma.75385",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42870553/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates sustainable recycling of rare-earth permanent magnet (REPM) machining swarf using hydrogen plasma reduction (HPR). The approach involves tuning hydrogen content and treatment time to separate metallic iron and a Nd2O3-rich rare-earth fraction, enabling direct rare-earth hydride formation. The process achieves high-purity feedstock without acid use, reducing CO2 emissions by up to 70 kg CO2-eq per kg compared to conventional REPM production.\",\n  \"key_findings\": [\n    \"Hydrogen plasma reduction separates metallic iron and Nd2:O3-rich rare-earth fractions from REPM swarf\",\n    \"The method enables direct rare-earth hydride formation in molten state\",\n    \"The process reduces CO2 emissions by up to 70 kg CO2-eq per kg of REPM compared to conventional production\"\n  ],\n  \"study_type\": \"Hydrogen plasma reduction (HPR) process\",\n  \"scientific_significance\": \"This work provides a scalable pathway for sustainable rare-earth recycling, significantly lowering the carbon footprint of permanent magnet production while enhancing resource efficiency without chemical reagents.\"\n}",
+        "parsed": {
+          "summary": "This study investigates sustainable recycling of rare-earth permanent magnet (REPM) machining swarf using hydrogen plasma reduction (HPR). The approach involves tuning hydrogen content and treatment time to separate metallic iron and a Nd2O3-rich rare-earth fraction, enabling direct rare-earth hydride formation. The process achieves high-purity feedstock without acid use, reducing CO2 emissions by up to 70 kg CO2-eq per kg compared to conventional REPM production.",
+          "key_findings": [
+            "Hydrogen plasma reduction separates metallic iron and Nd2:O3-rich rare-earth fractions from REPM swarf",
+            "The method enables direct rare-earth hydride formation in molten state",
+            "The process reduces CO2 emissions by up to 70 kg CO2-eq per kg of REPM compared to conventional production"
+          ],
+          "study_type": "Hydrogen plasma reduction (HPR) process",
+          "scientific_significance": "This work provides a scalable pathway for sustainable rare-earth recycling, significantly lowering the carbon footprint of permanent magnet production while enhancing resource efficiency without chemical reagents."
+        },
+        "elapsed_seconds": 45.7543,
+        "input_tokens": 731,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 968,
+        "model_eval_seconds": 32.5938,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880080",
+        "title": "Mechanisms underlying biomaterial-regulated macrophage polarization in bone tissue engineering: From interface sensing to immune microenvironment remodeling.",
+        "abstract": "NA: Traditional biomaterials commonly trigger a foreign body reaction after implantation, leading to fibrous encapsulation and poor osseointegration. Advances in osteoimmunology have enabled contemporary tissue engineering to redefine biomaterials as active modulators of the osteoimmune microenvironment rather than as passive scaffolds. At the core of this reconceptualization is the targeted control of macrophage polarization to establish an immune environment conducive to bone repair. The plasticity of macrophages reflects the dynamic balance between the M1 pro-inflammatory and M2 pro-regenerative states; this plasticity ultimately determines regenerative outcomes. This review offers a conceptual four-dimensional regulatory framework that extends from extracellular interface sensing to intracellular genome remodeling and progresses from material properties and signaling cascade stratification to mitochondrial reprogramming and non-coding RNA (ncRNA) networks. Within this framework, material interfaces function as platforms for activating, transducing, and integrating bioactive signals. These signals can be externally modulated to reshape intracellular metabolic organization and sustain mitochondrial function. At a finer regulatory tier, ncRNAs modulate signaling pathways to achieve the precise post-transcriptional regulation of gene expression. Central to this model is a bidirectional, spatiotemporally dynamic feedback loop linking intrinsic cellular machinery with extrinsic material systems. Linking material design parameters to dynamic biological responses lays a conceptual foundation for the development of biomaterials capable of the adaptive and programmable regulation of the osteoimmune microenvironment. Future research may focus on the precise temporal control of M1/M2 phenotypic switching and the coordinated presentation of multiple signals, thereby advancing the development of next-generation immunomodulatory biomaterials for bone repair.",
+        "doi": "10.1016/j.biomaterials.2026.124698",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124698",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880080/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review investigates how biomaterials regulate macrophage polarization in bone tissue engineering by integrating interface sensing with immune microenvironment remodeling. It proposes a four-dimensional framework linking material properties to intracellular mechanisms like mitochondrial reprogramming and ncRNA networks. The study emphasizes bidirectional feedback loops between material systems and cellular responses to achieve osteoimmune balance, highlighting potential for programmable biomaterials in bone repair.\",\n  \"key_findings\": [\n    \"Material interfaces activate and integrate bioactive signals to influence macrophage polarization states\",\n    \"Intracellular mechanisms including mitochondrial reprogramming and ncRNA networks modulate immune responses\",\n    \"Bidirectional feedback loops between material systems and cellular machinery enable adaptive immune microenvironment remodeling\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes a conceptual framework for designing biomaterials that dynamically regulate osteoimmune responses, advancing the field toward programmable immune modulation for enhanced bone regeneration.\"\n}",
+        "parsed": {
+          "summary": "This review investigates how biomaterials regulate macrophage polarization in bone tissue engineering by integrating interface sensing with immune microenvironment remodeling. It proposes a four-dimensional framework linking material properties to intracellular mechanisms like mitochondrial reprogramming and ncRNA networks. The study emphasizes bidirectional feedback loops between material systems and cellular responses to achieve osteoimmune balance, highlighting potential for programmable biomaterials in bone repair.",
+          "key_findings": [
+            "Material interfaces activate and integrate bioactive signals to influence macrophage polarization states",
+            "Intracellular mechanisms including mitochondrial reprogramming and ncRNA networks modulate immune responses",
+            "Bidirectional feedback loops between material systems and cellular machinery enable adaptive immune microenvironment remodeling"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes a conceptual framework for designing biomaterials that dynamically regulate osteoimmune responses, advancing the field toward programmable immune modulation for enhanced bone regeneration."
+        },
+        "elapsed_seconds": 44.6346,
+        "input_tokens": 818,
+        "output_tokens": 198,
+        "thoughts_tokens": null,
+        "total_tokens": 1016,
+        "model_eval_seconds": 27.3845,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880229",
+        "title": "Cellular scaling laws in the mammalian brain.",
+        "abstract": "NA: Recent whole-brain cell atlases have uncovered a consistent cytoarchitectural feature: the greatest diversity of discrete neuronal cell types resides not in the regions with the most neurons (e.g., the cortex and cerebellum) but rather in deep subcortical structures like the hypothalamus and brain stem. We propose that this discrepancy reflects a fundamental algorithmic division in the vertebrate brain between a \"learning subsystem\" and a \"steering subsystem.\" The learning subsystem (cortex, striatum, and cerebellum) scales via the replication of repetitive modules to maximize computational capacity, analogous to scaling up parameters in machine learning models. By contrast, the steering subsystem (hypothalamus, pallidum, and brainstem) scales via diversification of bespoke cell types to encode innate drives and reflexes, functioning as a high-dimensional biological \"reward function.\" This framework explains the divergence in how evolution has influenced these subsystems and offers a unified lens for understanding brain architecture and the etiology of brain disease; furthermore, it may inform model designs for artificial intelligence.",
+        "doi": "10.1016/j.cell.2026.08.044",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.08.044",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880229/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates why deep subcortical brain regions, such as the hypothalamus and brainstem, exhibit greater neuronal diversity than cortical areas despite having fewer neurons. Using whole-brain cell atlases, it proposes a dual subsystem model: a 'learning subsystem' (cortex, striatum, cerebellum) scales through repetitive module replication, while a 'steering subsystem' (hypothalamus, pallidum, brainstem) diversifies cell types for innate behaviors. This framework explains evolutionary divergence in brain architecture and potential implications for neurobiology and AI model design.\",\n  \"key_findings\": [\n    \"Deep subcortical structures have higher neuronal diversity than cortical regions despite lower neuron counts\",\n    \"Learning subsystem scales via repetitive module replication to maximize computational capacity\",\n    \"Steering subsystem diversifies cell types to encode innate drives and reflexes\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This framework provides a unified explanation for evolutionary divergence in brain architecture and offers insights into neurobiological mechanisms underlying brain disease and artificial intelligence model design.\"\n}",
+        "parsed": {
+          "summary": "This study investigates why deep subcortical brain regions, such as the hypothalamus and brainstem, exhibit greater neuronal diversity than cortical areas despite having fewer neurons. Using whole-brain cell atlases, it proposes a dual subsystem model: a 'learning subsystem' (cortex, striatum, cerebellum) scales through repetitive module replication, while a 'steering subsystem' (hypothalamus, pallidum, brainstem) diversifies cell types for innate behaviors. This framework explains evolutionary divergence in brain architecture and potential implications for neurobiology and AI model design.",
+          "key_findings": [
+            "Deep subcortical structures have higher neuronal diversity than cortical regions despite lower neuron counts",
+            "Learning subsystem scales via repetitive module replication to maximize computational capacity",
+            "Steering subsystem diversifies cell types to encode innate drives and reflexes"
+          ],
+          "study_type": "",
+          "scientific_significance": "This framework provides a unified explanation for evolutionary divergence in brain architecture and offers insights into neurobiological mechanisms underlying brain disease and artificial intelligence model design."
+        },
+        "elapsed_seconds": 36.5394,
+        "input_tokens": 770,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 998,
+        "model_eval_seconds": 31.6936,
+        "error": "summary must contain 45–65 words; received 76.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42870679",
+        "title": "An Ultrarobust Dual-Modal Neural Fiber With In-Sensor Computing.",
+        "abstract": "NA: Touch behavior constitutes the most direct physical manifestation of human intentions, meaning that intention decoding requires human-machine interfaces to simultaneously sense touch position and pressure. Conventional systems, however, rely on physically stacked discrete sensors and von Neumann architectures, causing data redundancy and impaired wearability. Here, we present an in-sensor-computing dual-modal neural fiber (ID neural fiber) that overcomes this fundamental limitation. The ID neural fiber achieves an unprecedented position resolution of < 5 mm and a pressure detection limit of 0.6 N, combined with exceptional robustness-sustaining 300 times load-bearing capacity and exhibiting < 8% performance fluctuation under bending. Coupled with flexibility, waterproofing, and reconfigurability, the ID neural fiber can be seamlessly integrated into textiles for reliable operation in harsh environments, including underwater robotic control. Crucially, the ID neural fiber enables in-sensor computing that dramatically increases the information density and allows synchronized feature fusion through programmable logic gates, enabling efficient real-time intention recognition. To capture touch habits, an intelligent system with the ID neural fiber achieves a remarkable identification accuracy of 98.21%. This work establishes a new material-architecture paradigm that unifies ultrarobustness, dual-modality, and in-sensor computing, setting the stage for next-generation wearable human-machine interfaces with both comfort and intelligence.",
+        "doi": "10.1002/adma.75412",
+        "doi_url": "https://doi.org/10.1002/adma.75412",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42870679/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a dual-modal neural fiber that integrates touch sensing and in-sensor computing to improve human-machine interfaces. The researchers developed an ultrarobust material capable of detecting position (<5 mm) and pressure (0.6 N) with high reliability under bending and load. The fiber achieves 98.21% accuracy in intention recognition through synchronized feature fusion, demonstrating significant potential for next-generation wearable interfaces.\",\n  \"key_findings\": [\n    \"Unprecedented position resolution of <5 mm and pressure detection limit of 0.6 N\",\n    \"300 times load-bearing capacity with <8% performance fluctuation under bending\",\n    \"98.21% accuracy in intention recognition via in-sensor computing\"\n  ],\n  \"study_type\": \"In-sensor computing dual-modal neural fiber\",\n  \"scientific_significance\": \"This work establishes a unified material-architecture paradigm for ultrarobust, dual-modal sensing with in-sensor computing, advancing wearable human-machine interfaces through enhanced information density and real-time feature fusion.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a dual-modal neural fiber that integrates touch sensing and in-sensor computing to improve human-machine interfaces. The researchers developed an ultrarobust material capable of detecting position (<5 mm) and pressure (0.6 N) with high reliability under bending and load. The fiber achieves 98.21% accuracy in intention recognition through synchronized feature fusion, demonstrating significant potential for next-generation wearable interfaces.",
+          "key_findings": [
+            "Unprecedented position resolution of <5 mm and pressure detection limit of 0.6 N",
+            "300 times load-bearing capacity with <8% performance fluctuation under bending",
+            "98.21% accuracy in intention recognition via in-sensor computing"
+          ],
+          "study_type": "In-sensor computing dual-modal neural fiber",
+          "scientific_significance": "This work establishes a unified material-architecture paradigm for ultrarobust, dual-modal sensing with in-sensor computing, advancing wearable human-machine interfaces through enhanced information density and real-time feature fusion."
+        },
+        "elapsed_seconds": 44.7654,
+        "input_tokens": 744,
+        "output_tokens": 220,
+        "thoughts_tokens": null,
+        "total_tokens": 964,
+        "model_eval_seconds": 31.133,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880081",
+        "title": "Dynamic tensile conditioning of mesenchymal stem cell-laden auxetic scaffolds for enhanced YAP-dependent miR-30 enrichment in extracellular vesicles for pulmonary fibrosis therapy.",
+        "abstract": "NA: Mesenchymal stem cell-derived extracellular vesicles are promising for treating pulmonary fibrosis. However, the generation of extracellular vesicles (EVs) bearing potent, specific therapeutic cargo remains a significant clinical challenge. This study aims to demonstrate how a material-instructive strategy can be utilized to engineer cargo-specific EVs by precisely mimicking the physiological breathing motion of the lung microenvironment. A dynamic culture system was developed by combining a photo-crosslinkable lung decellularized extracellular matrix with an auxetic scaffold. Mesenchymal stem cells (MSCs) were cultured on these scaffolds under dynamic stretching. The dynamically conditioned EVs (dEVs) were then collected, and their therapeutic mechanisms and efficacy were evaluated both in vitro and in vivo using bleomycin-treated human pulmonary fibroblasts and a bleomycin-induced rat pulmonary fibrosis model, respectively. Dynamic stretching on auxetic scaffolds enhanced MSC mechanotransduction, as indicated by the upregulation and nuclear accumulation of YAP. This mechanical activation drove a YAP-dependent biogenesis pathway, leading to the selective enrichment of miR-30 in dEVs. In vivo administration of dEVs effectively restored lung architecture and attenuated collagen deposition. Mechanistically, dEV-derived miR-30 exerted dual therapeutic effects by directly inhibiting myofibroblast activation and promoting the macrophage phenotype switch from pro-inflammatory M1 to anti-inflammatory M2. Furthermore, the EVs successfully restored mitochondrial homeostasis in damaged cells, thereby supporting tissue repair. EVs engineered with miR-30 mimics fully recapitulated the potent therapeutic effects of dEVs, significantly outperforming miR-100. This study successfully established an auxetic dECM scaffold-based mechanogenetic platform to engineer cargo-specific EVs. The findings indicate that mechanical priming optimizes EV therapeutic efficacy, highlighting the YAP/miR-30 axis and mitochondrial restoration as key targets for alleviating pulmonary fibrosis.",
+        "doi": "10.1016/j.biomaterials.2026.124705",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124705",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880081/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how dynamic tensile stretching of mesenchymal stem cell-laden auxetic scaffolds enhances YAP-dependent miR-30 enrichment in extracellular vesicles for pulmonary fibrosis therapy. Using a photo-crosslinkable lung decellularized matrix with auxetic scaffolds, MSCs were subjected to cyclic stretching mimicking lung motion. The resulting dynamically conditioned EVs significantly reduced fibrosis markers in vivo and exhibited dual mechanisms: inhibiting myofibroblast activation and promoting macrophage polarization via miR-30.\",\n  \"key_findings\": [\n    \"Dynamic tensile stretching on auxetic scaffolds increased YAP nuclear accumulation and miR-30 enrichment in MSC-derived EVs\",\n    \"dEVs suppressed myofibroblast activation and induced M2 macrophage polarization through miR-30\",\n    \"dEVs restored mitochondrial function and attenuated collagen deposition in bleomycin-induced pulmonary fibrosis\"\n  ],\n  \"study_type\": \"In vitro and in vivo model using photo-crosslinkable lung decellularized extracellular matrix with auxetic scaffolds\",\n  \"scientific_significance\": \"This work establishes mechanical priming as a strategy to engineer EVs with specific therapeutic cargo for pulmonary fibrosis, highlighting the YAP/miR-30 axis and mitochondrial restoration as critical targets for tissue repair.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how dynamic tensile stretching of mesenchymal stem cell-laden auxetic scaffolds enhances YAP-dependent miR-30 enrichment in extracellular vesicles for pulmonary fibrosis therapy. Using a photo-crosslinkable lung decellularized matrix with auxetic scaffolds, MSCs were subjected to cyclic stretching mimicking lung motion. The resulting dynamically conditioned EVs significantly reduced fibrosis markers in vivo and exhibited dual mechanisms: inhibiting myofibroblast activation and promoting macrophage polarization via miR-30.",
+          "key_findings": [
+            "Dynamic tensile stretching on auxetic scaffolds increased YAP nuclear accumulation and miR-30 enrichment in MSC-derived EVs",
+            "dEVs suppressed myofibroblast activation and induced M2 macrophage polarization through miR-30",
+            "dEVs restored mitochondrial function and attenuated collagen deposition in bleomycin-induced pulmonary fibrosis"
+          ],
+          "study_type": "In vitro and in vivo model using photo-crosslinkable lung decellularized extracellular matrix with auxetic scaffolds",
+          "scientific_significance": "This work establishes mechanical priming as a strategy to engineer EVs with specific therapeutic cargo for pulmonary fibrosis, highlighting the YAP/miR-30 axis and mitochondrial restoration as critical targets for tissue repair."
+        },
+        "elapsed_seconds": 47.4392,
+        "input_tokens": 996,
+        "output_tokens": 285,
+        "thoughts_tokens": null,
+        "total_tokens": 1281,
+        "model_eval_seconds": 42.3928,
+        "error": "summary must contain 45–65 words; received 66.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880230",
+        "title": "Charting the silent variation within us.",
+        "abstract": "NA: Every cell in the human body carries its own genome, shaped by mutations acquired over a lifetime, yet this vast somatic variation has been nearly impossible to measure. The SMaHT Network now delivers benchmarked tools and the first body-wide map of somatic mosaicism, establishing a baseline of \"normal\" against which its roles in development, aging, and disease can finally be tested.",
+        "doi": "10.1016/j.cell.2026.09.046",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.046",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880230/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of measuring somatic genomic variation across human cells. Using the SMaHT Network's tools, it generated the first comprehensive body-wide map of somatic mosaicism. The findings establish a baseline 'normal' variation profile, enabling future research into how this variation influences development, aging, and disease processes.\",\n  \"key_findings\": [\n    \"First comprehensive body-wide map of somatic mosaicism\",\n    \"Establishment of a baseline 'normal' somatic variation profile\",\n    \"Foundation for studying somatic variation's role in development, aging, and disease\"\n  ],\n  \"study_type\": \"SMaHT Network benchmarked tools\",\n  \"scientific_significance\": \"This work provides the first systematic framework for quantifying and understanding human somatic genomic diversity, enabling precise investigations into its functional impacts across biological processes.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of measuring somatic genomic variation across human cells. Using the SMaHT Network's tools, it generated the first comprehensive body-wide map of somatic mosaicism. The findings establish a baseline 'normal' variation profile, enabling future research into how this variation influences development, aging, and disease processes.",
+          "key_findings": [
+            "First comprehensive body-wide map of somatic mosaicism",
+            "Establishment of a baseline 'normal' somatic variation profile",
+            "Foundation for studying somatic variation's role in development, aging, and disease"
+          ],
+          "study_type": "SMaHT Network benchmarked tools",
+          "scientific_significance": "This work provides the first systematic framework for quantifying and understanding human somatic genomic diversity, enabling precise investigations into its functional impacts across biological processes."
+        },
+        "elapsed_seconds": 28.5622,
+        "input_tokens": 534,
+        "output_tokens": 180,
+        "thoughts_tokens": null,
+        "total_tokens": 714,
+        "model_eval_seconds": 23.859,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42870680",
+        "title": "Pathway Engineering Enables Durable Iridium-Free Acidic Water Oxidation.",
+        "abstract": "NA: The pursuit of noble metal-free alternatives to iridium for the acidic oxygen evolution reaction (OER) is critically impeded by a pervasive activity-stability trade-off, wherein non-precious metals undergo rapid oxidative dissolution under operating potentials. Here, we report a lutetium-stabilized cobalt oxide catalyst (Lu0.08Co2.92O4) designed through site-specific electronic modulation, achieving a synergistic enhancement of both activity and stability in acidic OER for proton exchange membrane water electrolyzers (PEMWEs). Operando spectroscopies combined with theoretical simulations reveal that Lu incorporation introduces robust Lu-O bonds and induces charge redistribution that strengthens Co-O covalency and suppresses Co2+ dissolution, which is critical for improved OER durability, and simultaneously optimizes the Co-Co distance to favor direct O-O radical coupling with a reduced energy barrier. Leveraging these structural advantages, a practical PEMWE employing Lu0.08Co2.92O4 delivers an industrially relevant current density of 1000 mA cm-2 at 1.837 V. Separately, it maintains stable operation for over 900 h under a stepwise current density from 200 to 500 mA cm-2, highlighting its potential for sustainable hydrogen production.",
+        "doi": "10.1002/adma.75413",
+        "doi_url": "https://doi.org/10.1002/adma.75413",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42870680/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates overcoming the activity-stability trade-off in iridium-free acidic oxygen evolution reactions (OER) by engineering lutetium-stabilized cobalt oxide catalysts. Using site-specific electronic modulation, the catalyst achieves enhanced OER activity and stability in proton exchange membrane water electrolyzers. Operando spectroscopy and simulations show Lu incorporation strengthens Co-O bonds and suppresses dissolution, enabling durable operation at industrially relevant current densities and extended stability beyond 900 hours.\",\n  \"key_findings\": [\n    \"Lu0.08Co2.92O4 catalyst achieves 1000 mA cm-2 current density at 1.837 V in acidic OER\",\n    \"Lu incorporation suppresses Co2+ dissolution through strengthened Co-O covalency and robust Lu-O bonds\",\n    \"The catalyst maintains stable operation for over 900 hours under stepwise current density changes\"\n  ],\n  \"study_type\": \"Operando spectroscopy and theoretical simulations\",\n  \"scientific_significance\": \"This work provides a structural strategy to simultaneously enhance activity and durability in acidic OER catalysts, addressing a fundamental challenge in sustainable hydrogen production without noble metals.\"\n}",
+        "parsed": {
+          "summary": "This study investigates overcoming the activity-stability trade-off in iridium-free acidic oxygen evolution reactions (OER) by engineering lutetium-stabilized cobalt oxide catalysts. Using site-specific electronic modulation, the catalyst achieves enhanced OER activity and stability in proton exchange membrane water electrolyzers. Operando spectroscopy and simulations show Lu incorporation strengthens Co-O bonds and suppresses dissolution, enabling durable operation at industrially relevant current densities and extended stability beyond 900 hours.",
+          "key_findings": [
+            "Lu0.08Co2.92O4 catalyst achieves 1000 mA cm-2 current density at 1.837 V in acidic OER",
+            "Lu incorporation suppresses Co2+ dissolution through strengthened Co-O covalency and robust Lu-O bonds",
+            "The catalyst maintains stable operation for over 900 hours under stepwise current density changes"
+          ],
+          "study_type": "Operando spectroscopy and theoretical simulations",
+          "scientific_significance": "This work provides a structural strategy to simultaneously enhance activity and durability in acidic OER catalysts, addressing a fundamental challenge in sustainable hydrogen production without noble metals."
+        },
+        "elapsed_seconds": 47.6108,
+        "input_tokens": 739,
+        "output_tokens": 250,
+        "thoughts_tokens": null,
+        "total_tokens": 989,
+        "model_eval_seconds": 34.1954,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880082",
+        "title": "Regulating the iron-ROS cycle via electronic structure-engineered nanoregulators for Parkinson's disease therapy.",
+        "abstract": "NA: Iron-driven reactive oxygen species (ROS) amplification forms a self-sustaining pathological cycle in Parkinson's disease (PD), yet remains difficult to therapeutically interrupt due to the lack of strategies that coordinate metal homeostasis and redox regulation. Here, we report an electronic-structure-engineered nanoregulatory strategy that regulates the iron-ROS cycle rather than passively scavenging ROS. Nitrogen-doped, herbal-derived carbon dots (CD) were rationally constructed to establish a conjugated electronic framework, in which heteroatom-induced electron delocalization defined redox-active sites and governed the coupling between iron chelation and catalytic ROS regulation. This structure-electronic state-function relationship enabled programmable disruption of the iron-ROS feedback loop at its source. Functionally, the nanoregulators achieved low-density lipoprotein receptor-related protein 1 (LRP1)-mediated brain delivery, exhibited efficient central nervous system exposure, and underwent brain clearance via the cerebrospinal fluid pathway. At the cellular level, they restored mitochondrial function, suppressed ferroptosis-associated lipid peroxidation, and reprogramed stress-related pathways toward neuronal survival. Transcriptomic analysis further revealed coordinated regulation of redox, metabolic, and inflammatory networks. In Parkinsonian mice, this strategy reduced iron deposition, preserved dopaminergic neurons, and improved motor function. Integration with levodopa further enabled sustained, disease-modifying neuroprotection.",
+        "doi": "10.1016/j.biomaterials.2026.124694",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124694",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880082/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a nanoregulatory strategy to disrupt the iron-ROS cycle in Parkinson's disease by engineering nitrogen-doped carbon dots with electronic properties that enable iron chelation and ROS regulation. The nanoregulators achieved brain delivery, reduced iron deposition, preserved dopaminergic neurons, and improved motor function in Parkinsonian mice, demonstrating disease-modifying effects.\",\n  \"key_findings\": [\n    \"Nitrogen-doped carbon dots engineered to regulate iron-ROS cycle via electronic structure\",\n    \"LRP1-mediated brain delivery and cerebrospinal fluid clearance of nanoregulators\",\n    \"Reduced iron deposition, preserved dopaminergic neurons, and improved motor function in Parkinsonian mice\"\n  ],\n  \"study_type\": \"In vitro and in vivo studies\",\n  \"scientific_significance\": \"This approach provides a targeted mechanism for interrupting iron-:ROS pathological cycles in Parkinson's disease, offering a novel therapeutic strategy that addresses root causes rather than symptom management.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a nanoregulatory strategy to disrupt the iron-ROS cycle in Parkinson's disease by engineering nitrogen-doped carbon dots with electronic properties that enable iron chelation and ROS regulation. The nanoregulators achieved brain delivery, reduced iron deposition, preserved dopaminergic neurons, and improved motor function in Parkinsonian mice, demonstrating disease-modifying effects.",
+          "key_findings": [
+            "Nitrogen-doped carbon dots engineered to regulate iron-ROS cycle via electronic structure",
+            "LRP1-mediated brain delivery and cerebrospinal fluid clearance of nanoregulators",
+            "Reduced iron deposition, preserved dopaminergic neurons, and improved motor function in Parkinsonian mice"
+          ],
+          "study_type": "In vitro and in vivo studies",
+          "scientific_significance": "This approach provides a targeted mechanism for interrupting iron-:ROS pathological cycles in Parkinson's disease, offering a novel therapeutic strategy that addresses root causes rather than symptom management."
+        },
+        "elapsed_seconds": 43.0865,
+        "input_tokens": 765,
+        "output_tokens": 207,
+        "thoughts_tokens": null,
+        "total_tokens": 972,
+        "model_eval_seconds": 28.2214,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880231",
+        "title": "Comprehensive benchmarking of somatic mutation detection by the SMaHT Network.",
+        "abstract": "NA: Somatic mosaicism is increasingly recognized as a fundamental feature of human biology, yet the detection of somatic mutations remains challenging. The Somatic Mosaicism across Human Tissues (SMaHT) Network conducted large-scale benchmarking experiments involving cell lines and donor tissues to evaluate sequencing technologies, experimental approaches, and computational methods for detecting different types of somatic mutations, generating community resources with >1,000× short-read and 100-400× long-read data for nine analyzed samples. We determined effective strategies for utilizing short- and long-read sequencing for mutation detection and demonstrated that using donor-specific and pangenome-inferred diploid assemblies improved calling, extending mutation catalogs to challenging genomic regions. We benchmarked six duplex technologies and showed that single-cell sequencing resolves cell-type-specific mutational patterns and heterogeneity. Our results indicate that bulk, single-cell, and duplex analyses are complementary and that leveraging all three provides comprehensive characterization of mosaicism within tissues. Together, these findings provide the scientific and clinical communities with a roadmap for accurate genome-wide somatic mutation analysis.",
+        "doi": "10.1016/j.cell.2026.09.037",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.037",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880231/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study benchmarks somatic mutation detection methods using the SMaHT Network. It evaluates sequencing technologies, computational approaches, and experimental designs across cell lines and donor tissues, generating >1,00.000× short-read and 100-400× long-read data. Key findings include improved mutation calling with donor-specific and pangenome-inferred diploid assemblies, single-cell sequencing resolving cell-type-specific heterogeneity, and the complementary utility of bulk, single-cell, and duplex analyses for comprehensive mosaicism characterization.\",\n  \"key_findings\": [\n    \"Donor-specific and pangenome-inferred diploid assemblies enhance mutation calling accuracy\",\n    \"Single-cell sequencing identifies cell-type-specific mutational heterogeneity\",\n    \"Bulk, single-cell, and duplex analyses collectively provide comprehensive mosaicism characterization\"\n  ],\n  \"study_type\": \"Benchmarking experiments with cell lines and donor tissues\",\n  \"scientific_significance\": \"This work establishes standardized methodologies for accurate somatic mutation detection across diverse genomic regions, advancing the clinical and research applications of mosaicism analysis in human biology.\"\n}",
+        "parsed": {
+          "summary": "This study benchmarks somatic mutation detection methods using the SMaHT Network. It evaluates sequencing technologies, computational approaches, and experimental designs across cell lines and donor tissues, generating >1,00.000× short-read and 100-400× long-read data. Key findings include improved mutation calling with donor-specific and pangenome-inferred diploid assemblies, single-cell sequencing resolving cell-type-specific heterogeneity, and the complementary utility of bulk, single-cell, and duplex analyses for comprehensive mosaicism characterization.",
+          "key_findings": [
+            "Donor-specific and pangenome-inferred diploid assemblies enhance mutation calling accuracy",
+            "Single-cell sequencing identifies cell-type-specific mutational heterogeneity",
+            "Bulk, single-cell, and duplex analyses collectively provide comprehensive mosaicism characterization"
+          ],
+          "study_type": "Benchmarking experiments with cell lines and donor tissues",
+          "scientific_significance": "This work establishes standardized methodologies for accurate somatic mutation detection across diverse genomic regions, advancing the clinical and research applications of mosaicism analysis in human biology."
+        },
+        "elapsed_seconds": 42.0364,
+        "input_tokens": 683,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 914,
+        "model_eval_seconds": 31.0503,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42872304",
+        "title": "Magnetic-Field-Annealing-Induced Short-Range Order in High-Entropy Alloys for Enhanced Electromagnetic Response.",
+        "abstract": "NA: The growing demand for microwave absorbers in 5G/6G technologies motivates processing routes that balance matching thickness, attenuation, and temperature response. Here, magnetic field annealing (MFA) is investigated in rGO-supported FeCoNi, FeCoNiCr, and FeCoNiCrCu compositionally complex alloys at 0, 0.5, and 0.95 T. Among the investigated FeCoNiCr samples, the 0.5 T sample exhibits a favorable combination of dielectric and magnetic responses. Reflection loss yields a minimum of -72.30 dB at 1.59 mm, and a maximum effective absorption bandwidth of 4.40 GHz. At 85°C, the maximum bandwidth is 4.08 GHz, corresponding to 92.7% retention of temperature-specific maxima. Local microscopy, field-associated atomistic modeling, and fixed-composition electronic-structure calculations support an interpretation of the electromagnetic response in terms of Co-centered chemical correlations. Finally, flexible antennas and strain sensors based on this composite demonstrate stable wearable responses, validating this SRO strategy from atomic design to device integration.",
+        "doi": "10.1002/adma.75400",
+        "doi_url": "https://doi.org/10.1002/adma.75400",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42872304/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates magnetic-field-annealing (MFA) in high-entropy alloys to optimize microwave absorbers for 5G/6G applications. By applying MFA at 0.5 T to FeCoNiCr composites, researchers achieved a reflection loss minimum of -72.30 dB at .59 mm and a 4.40 GHz absorption bandwidth. The material retained 92.7% of its bandwidth at 85°C, indicating robust thermal stability. Atomic-scale analysis linked this response to Co-centered short-range order.\",\n  \"key_findings\": [\n    \"MFA at 0.5 T in FeCoNiCr alloys achieved a reflection loss minimum of -72.30 dB at 1.59 mm\",\n    \"Maximum effective absorption bandwidth of 4.40 GHz at room temperature, retaining 92.7% of bandwidth at 85°C\",\n    \"Co-centered short-range order explains the electromagnetic response through atomic-scale mechanisms\"\n  ],\n  \"study_type\": \"Magnetic field annealing (MFA) of high-entropy alloys\",\n  \"scientific_significance\": \"This work establishes magnetic-field-annealing as a strategy to engineer short-range order in high-entropy alloys, enhancing microwave absorption properties while maintaining thermal stability for next-generation communication technologies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates magnetic-field-annealing (MFA) in high-entropy alloys to optimize microwave absorbers for 5G/6G applications. By applying MFA at 0.5 T to FeCoNiCr composites, researchers achieved a reflection loss minimum of -72.30 dB at .59 mm and a 4.40 GHz absorption bandwidth. The material retained 92.7% of its bandwidth at 85°C, indicating robust thermal stability. Atomic-scale analysis linked this response to Co-centered short-range order.",
+          "key_findings": [
+            "MFA at 0.5 T in FeCoNiCr alloys achieved a reflection loss minimum of -72.30 dB at 1.59 mm",
+            "Maximum effective absorption bandwidth of 4.40 GHz at room temperature, retaining 92.7% of bandwidth at 85°C",
+            "Co-centered short-range order explains the electromagnetic response through atomic-scale mechanisms"
+          ],
+          "study_type": "Magnetic field annealing (MFA) of high-entropy alloys",
+          "scientific_significance": "This work establishes magnetic-field-annealing as a strategy to engineer short-range order in high-entropy alloys, enhancing microwave absorption properties while maintaining thermal stability for next-generation communication technologies."
+        },
+        "elapsed_seconds": 51.1536,
+        "input_tokens": 715,
+        "output_tokens": 282,
+        "thoughts_tokens": null,
+        "total_tokens": 997,
+        "model_eval_seconds": 38.2821,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880083",
+        "title": "Ultrasound-triggered spinal cord-mimetic electroactive hydrogel enables localized bioelectrical modulation and promotes spinal cord injury repair through JNK-mediated autophagy.",
+        "abstract": "NA: Spinal cord injury (SCI) creates a hostile microenvironment that severely limits neural regeneration and functional recovery. Although bioelectrical modulation has emerged as a promising strategy for SCI repair, existing biomaterials generally provide either passive electrical conduction or stimulus-responsive electrical generation, but rarely integrate both properties within a mechanically compliant scaffold suitable for spinal cord repair. Here, we developed an injectable, remotely activatable electroactive hydrogel (SMT) by integrating conductive MXene nanosheets into a silk fibroin/tannic acid matrix, endowing the scaffold with tissue-matched mechanics, continuous electrical conductivity, and stimulus-responsive electrical output. Upon ultrasound activation, SMT generated localized bioelectrical cues within the lesion site. At the cellular level, SMT exhibited intrinsic antioxidant and anti-inflammatory effects that were further enhanced by ultrasound activation, while SMT + US promoted autophagic flux through Ca2+-dependent JNK signaling. In a rat model of SCI, the ultrasound-activated hydrogel promoted neural tissue repair and remyelination, attenuated reactive gliosis, and improved functional recovery. Collectively, this study presents a remotely activatable electroactive hydrogel for SCI repair and provides a promising strategy for dynamic bioelectrical regulation during SCI repair.",
+        "doi": "10.1016/j.biomaterials.2026.124685",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124685",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880083/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates an ultrasound-triggered electroactive hydrogel for spinal cord injury repair. The hydrogel integrates conductive MXene nanosheets into a silk fibroin/tannic acid matrix, enabling tissue-matched mechanics, electrical conductivity, and stimulus-responsive output. Upon ultrasound activation, it promotes autophagy via JNK signaling, reduces inflammation, enhances remyelination, and improves functional recovery in rat models.\",\n  \"key_findings\": [\n    \"Ultrasound activation of the hydrogel generates localized bioelectrical cues at the injury site\",\n    \"The hydrogel enhances autophagic flux through Ca2+-dependent JNK signaling\",\n    \"SMT + ultrasound treatment improved neural repair, remyelination, and functional outcomes in SCI rats\"\n  ],\n  \"study_type\": \"Rat model of spinal cord injury\",\n  \"scientific_significance\": \"This work demonstrates a remotely activatable biomaterial that integrates dynamic bioelectrical modulation with mechanical support for spinal cord repair, advancing strategies for targeted neural regeneration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates an ultrasound-triggered electroactive hydrogel for spinal cord injury repair. The hydrogel integrates conductive MXene nanosheets into a silk fibroin/tannic acid matrix, enabling tissue-matched mechanics, electrical conductivity, and stimulus-responsive output. Upon ultrasound activation, it promotes autophagy via JNK signaling, reduces inflammation, enhances remyelination, and improves functional recovery in rat models.",
+          "key_findings": [
+            "Ultrasound activation of the hydrogel generates localized bioelectrical cues at the injury site",
+            "The hydrogel enhances autophagic flux through Ca2+-dependent JNK signaling",
+            "SMT + ultrasound treatment improved neural repair, remyelination, and functional outcomes in SCI rats"
+          ],
+          "study_type": "Rat model of spinal cord injury",
+          "scientific_significance": "This work demonstrates a remotely activatable biomaterial that integrates dynamic bioelectrical modulation with mechanical support for spinal cord repair, advancing strategies for targeted neural regeneration."
+        },
+        "elapsed_seconds": 42.7308,
+        "input_tokens": 738,
+        "output_tokens": 216,
+        "thoughts_tokens": null,
+        "total_tokens": 954,
+        "model_eval_seconds": 29.3222,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880232",
+        "title": "Somatic epimutations cap genetic determinism in the human diploid chromatin epigenome.",
+        "abstract": "NA: Diploid human cells contain two non-identical genomes, and differences in their regulation underlie human development and disease. We present Fiber-seq inferred regulatory elements (FIRE) and show that FIRE provides a more comprehensive and quantitative snapshot of the accessible chromatin landscape across the 6 Gbp diploid human genome, overcoming previously unrecognized biases in existing regulatory element catalogs. FIRE enables comprehensive detection of haplotype-selective chromatin accessibility (HSCA), exposing imprinted elements lacking underlying parent-of-origin differences in DNA methylation and gene regulatory modules that permit genes to escape X chromosome inactivation. We uncover that the human leukocyte antigen (HLA) locus harbors the most HSCA in immune cells, where we resolve specific transcription factor (TF) binding events disrupted by disease-associated variants. Finally, we demonstrate that the regulatory landscape of a cell is littered with autosomal somatic chromatin epimutations that are propagated by clonal expansions to create mitotically stable and non-genetically deterministic chromatin alterations.",
+        "doi": "10.1016/j.cell.2026.09.034",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.034",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880232/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how somatic epimutations influence chromatin accessibility in diploid human cells. Using Fiber-seq inferred regulatory elements (FIRE), the researchers mapped accessible chromatin across the 6 Gbp genome, identifying haplotype-selective chromatin accessibility (HSCA). They found HSCA at the HLA locus in immune cells, disrupted transcription factor binding near disease variants, and autosomal somatic epimutations that propagate clonally to create mitotically stable chromatin alterations beyond genetic determinism.\",\n  \"key_findings\": [\n    \"FIRE provides a comprehensive quantitative map of accessible chromatin across the diploid human genome\",\n    \"Haplotype-selective chromatin accessibility (HSCA) was detected at the HLA locus in immune cells\",\n    \"Autosomal somatic chromatin epimutations propagate clonally to create mitotically stable non-genetically deterministic alterations\"\n  ],\n  \"study_type\": \"Fiber-seq inferred regulatory elements (FIRE)\",\n  \"scientific_significance\": \"This work demonstrates that somatic epimutations can create mitotically stable chromatin alterations independent of genetic determinism, revealing a layer of epigenetic regulation that contributes to cellular diversity and disease susceptibility.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how somatic epimutations influence chromatin accessibility in diploid human cells. Using Fiber-seq inferred regulatory elements (FIRE), the researchers mapped accessible chromatin across the 6 Gbp genome, identifying haplotype-selective chromatin accessibility (HSCA). They found HSCA at the HLA locus in immune cells, disrupted transcription factor binding near disease variants, and autosomal somatic epimutations that propagate clonally to create mitotically stable chromatin alterations beyond genetic determinism.",
+          "key_findings": [
+            "FIRE provides a comprehensive quantitative map of accessible chromatin across the diploid human genome",
+            "Haplotype-selective chromatin accessibility (HSCA) was detected at the HLA locus in immune cells",
+            "Autosomal somatic chromatin epimutations propagate clonally to create mitotically stable non-genetically deterministic alterations"
+          ],
+          "study_type": "Fiber-seq inferred regulatory elements (FIRE)",
+          "scientific_significance": "This work demonstrates that somatic epimutations can create mitotically stable chromatin alterations independent of genetic determinism, revealing a layer of epigenetic regulation that contributes to cellular diversity and disease susceptibility."
+        },
+        "elapsed_seconds": 41.1203,
+        "input_tokens": 771,
+        "output_tokens": 262,
+        "thoughts_tokens": null,
+        "total_tokens": 1033,
+        "model_eval_seconds": 36.2258,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42872308",
+        "title": "All-In-One Integration of Inherently Flame-Retardant, UV-Resistant, and Antibacterial Polymer by a Biguanide Unit.",
+        "abstract": "NA: The increasing fire accidents, excessive UV exposure, and health threats posed by bacterial infections urgently require advanced polymer materials integrating multiple safety protections. In this study, we propose an ultra-efficient strategy to achieve the all-in-one integration of inherently flame-retardant, UV-resistant, and antibacterial polymer materials through a single biguanide unit. The key lies in the unique triple protection mechanism exerted by the biguanide unit: high-temperature char-formation for flame retardance, n→π* transition absorption for UV-resistance, and disruption of the negatively charged bacterial surface for antibacteria. As a result, the biguanide-containing polymer material achieves the best UL-94 V-0 flame-retardant rating with excellent self-extinguishing properties, ≥99.3% ultra-high shielding rate for UV light, and ≥99.0% remarkable antibacterial rate. Importantly, the biguanide unit is chemically bonded to the polymer main chain, which not only avoids the health risks and performance degradation caused by the additive migration, but also exhibits outstanding heat resistance, thermal stability, and easy processability. This work simultaneously achieves triple functional integration of polymer materials through a single biguanide unit, realizing previously unattainable multiple safety protections against dangerous fires, harmful UV, and widely-existed bacteria.",
+        "doi": "10.1002/adma.75371",
+        "doi_url": "https://doi.org/10.1002/adma.75371",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42872308/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses urgent needs for polymer materials that integrate flame retardancy, UV resistance, and antibacterial properties. Using a single biguanide unit chemically bonded to the polymer chain, the researchers achieved UL-94 V-0 flame retardancy, ≥99.3% UV shielding, and ≥99.0% antibacterial efficacy. The approach provides a unified strategy for triple protection without additive migration risks.\",\n  \"key_findings\": [\n    \"UL-94 V-0 flame retardancy\",\n    \"≥99.3% UV light shielding\",\n    \"≥99.0% antibacterial activity\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work demonstrates a single molecular unit enabling simultaneous integration of three critical safety properties in polymers, advancing materials design for multi-threat protection without traditional additive limitations.\"\n}",
+        "parsed": {
+          "summary": "This study addresses urgent needs for polymer materials that integrate flame retardancy, UV resistance, and antibacterial properties. Using a single biguanide unit chemically bonded to the polymer chain, the researchers achieved UL-94 V-0 flame retardancy, ≥99.3% UV shielding, and ≥99.0% antibacterial efficacy. The approach provides a unified strategy for triple protection without additive migration risks.",
+          "key_findings": [
+            "UL-94 V-0 flame retardancy",
+            "≥99.3% UV light shielding",
+            "≥99.0% antibacterial activity"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work demonstrates a single molecular unit enabling simultaneous integration of three critical safety properties in polymers, advancing materials design for multi-threat protection without traditional additive limitations."
+        },
+        "elapsed_seconds": 30.0836,
+        "input_tokens": 843,
+        "output_tokens": 183,
+        "thoughts_tokens": null,
+        "total_tokens": 1026,
+        "model_eval_seconds": 25.1438,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42887231",
+        "title": "Catalytic MXene implant interfaces reprogram radiation-induced foreign body response to prevent capsular contracture.",
+        "abstract": "NA: Radiotherapy markedly exacerbates foreign body response (FBR) to silicone implants, driving capsular fibrosis and contracture, yet actionable interfacial mechanisms remain insufficiently defined. Here, we engineer an implant-centered Ti3C2Tx MXene-modified PDMS coating (APM) to modulate the redox microenvironment at the tissue-implant interface to reprogram radiotherapy-induced FBR. Oxygen plasma activation and 3-aminopropyltriethoxysilane (APTES) silanization enable covalent anchoring of single-layer MXene nanosheets onto PDMS, yielding a conformal APM film with enhanced hydrophilicity, preserved layered MXene architecture, enzyme-mimicking ROS-scavenging activity, and excellent cytocompatibility. Transcriptomic profiling guides the study, revealing the coordinated downregulation of inflammatory and extracellular matrix remodeling pathways. Mechanistically, interfacial redox regulation dampens NF-κB signaling and reduces endothelial ICAM-1 expression, thereby limiting monocyte adhesion and downstream inflammatory amplification. A tri-culture endothelial-macrophage-fibroblast model further demonstrates that MXene interfaces disrupt pro-inflammatory crosstalk and inhibit myofibroblast activation. In a murine peri-implant irradiation model, APM-coated implants preserve a CD31+/ICAM-1-low microvasculature, reduce peri-implant pro-inflammatory macrophage accumulation, and significantly decrease capsular thickness and collagen deposition. Collectively, these findings demonstrate that MXene-based catalytic coatings can disrupt the positive feedback loop between radiation injury and fibrotic capsule formation, offering a mechanistically grounded strategy to mitigate implant-associated fibrosis.",
+        "doi": "10.1016/j.biomaterials.2026.124689",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124689",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42887231/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how catalytic MXene coatings can reprogram radiation-induced foreign body response to prevent capsular contracture in silicone implants. Using a murine irradiation model, researchers engineered Ti3C2Tx MXene-modified PDMS (APM) to modulate interfacial redox activity. Results showed reduced inflammation, lower collagen deposition, and preserved microvasculature in irradiated implants compared to controls.\",\n  \"key_findings\": [\n    \"APM-coated implants preserved CD31+/ICAM-1-low microvasculature in irradiated tissue\",\n    \"Significant reduction in peri-implant pro-inflammatory macrophage accumulation\",\n    \"Decreased capsular thickness and collagen deposition in irradiated implants\"\n  ],\n  \"study_type\": \"Murine peri-implant irradiation model\",\n  \"scientific_significance\": \"MXene-based catalytic coatings provide a mechanistic strategy to disrupt radiation-fibrosis crosstalk, offering a potential solution for radiation-exposed implant complications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how catalytic MXene coatings can reprogram radiation-induced foreign body response to prevent capsular contracture in silicone implants. Using a murine irradiation model, researchers engineered Ti3C2Tx MXene-modified PDMS (APM) to modulate interfacial redox activity. Results showed reduced inflammation, lower collagen deposition, and preserved microvasculature in irradiated implants compared to controls.",
+          "key_findings": [
+            "APM-coated implants preserved CD31+/ICAM-1-low microvasculature in irradiated tissue",
+            "Significant reduction in peri-implant pro-inflammatory macrophage accumulation",
+            "Decreased capsular thickness and collagen deposition in irradiated implants"
+          ],
+          "study_type": "Murine peri-implant irradiation model",
+          "scientific_significance": "MXene-based catalytic coatings provide a mechanistic strategy to disrupt radiation-fibrosis crosstalk, offering a potential solution for radiation-exposed implant complications."
+        },
+        "elapsed_seconds": 47.2441,
+        "input_tokens": 824,
+        "output_tokens": 215,
+        "thoughts_tokens": null,
+        "total_tokens": 1039,
+        "model_eval_seconds": 29.6255,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880233",
+        "title": "A telomere-to-telomere map of somatic mutation burden and functional impact in a cancer.",
+        "abstract": "NA: Cancer genomes harbor extensive somatic genetic and epigenetic variation, yet large portions of the genome remain inaccessible to conventional reference-based analyses. Here, we demonstrate that pairing a near-telomere-to-telomere (near-T2T) diploid assembly of a donor with deep short- and long-read sequencing of their melanoma reveals that 16% of somatic variants localize to sequences absent from GRCh38, with satellite repeats acting as hotspots for UV-associated mutagenesis. Centromere kinetochore binding domains emerge as focal sites of chromosome arm aneuploidy breakpoints and somatic genetic variation, features we further demonstrate are also present in non-cancerous tissues. By contrast, extensive epigenetic remodeling of kinetochore binding domains appears specific to oncogenesis. Single-molecule telomere analyses reconstruct the cycle of telomere erosion and telomerase-mediated extension during tumor evolution, while haplotype-resolved chromatin maps reveal widespread somatic epimutations impacting regulatory elements. Together, these findings define previously inaccessible dimensions of somatic variation and establish a framework for telomere-to-telomere studies of human mosaicism.",
+        "doi": "10.1016/j.cell.2026.09.033",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.033",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880233/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates somatic mutation patterns in cancer genomes using near-telomere-to-telomere sequencing. It identifies 16% of somatic variants in regions absent from standard references, with satellite repeats as UV-induced mutation hotspots. Centromere kinetochore regions show aneuploidy breakpoints and genetic variation, while epigenetic changes are cancer-specific. The research reveals telomere dynamics and epimutations during tumor evolution, providing a framework for studying human mosaicism.\",\n  \"key_findings\": [\n    \"16% of somatic variants localize to sequences absent from GRCh38\",\n    \"Satellite repeats act as hotspots for UV-associated mutagenesis\",\n    \"Centromere kinetochore regions are focal sites of aneuploidy breakpoints and somatic genetic variation\"\n  ],\n  \"study_type\": \"near-telomere-to-telomere diploid assembly with deep sequencing\",\n  \"scientific_significance\": \"The study establishes a comprehensive framework for analyzing previously inaccessible genomic regions in human mosaicism, advancing understanding of somatic variation mechanisms in cancer and non-cancerous tissues.\"\n}",
+        "parsed": {
+          "summary": "This study investigates somatic mutation patterns in cancer genomes using near-telomere-to-telomere sequencing. It identifies 16% of somatic variants in regions absent from standard references, with satellite repeats as UV-induced mutation hotspots. Centromere kinetochore regions show aneuploidy breakpoints and genetic variation, while epigenetic changes are cancer-specific. The research reveals telomere dynamics and epimutations during tumor evolution, providing a framework for studying human mosaicism.",
+          "key_findings": [
+            "16% of somatic variants localize to sequences absent from GRCh38",
+            "Satellite repeats act as hotspots for UV-associated mutagenesis",
+            "Centromere kinetochore regions are focal sites of aneuploidy breakpoints and somatic genetic variation"
+          ],
+          "study_type": "near-telomere-to-telomere diploid assembly with deep sequencing",
+          "scientific_significance": "The study establishes a comprehensive framework for analyzing previously inaccessible genomic regions in human mosaicism, advancing understanding of somatic variation mechanisms in cancer and non-cancerous tissues."
+        },
+        "elapsed_seconds": 46.2689,
+        "input_tokens": 712,
+        "output_tokens": 245,
+        "thoughts_tokens": null,
+        "total_tokens": 957,
+        "model_eval_seconds": 33.48,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42872315",
+        "title": "Ordered Crystallographic Orientation of Dion-Jacobson 2D Perovskites for Ultrastable Solar Cells.",
+        "abstract": "NA: Dion-Jacobson (DJ) 2D perovskites show great potential in stability but do not meet theoretical expectations for photovoltaics due to the random crystallographic orientation in films. We herein report ordered crystallographic orientation of the DJ 2D perovskite, achieved by modifying the intermediate-phase film with a Ruddlesden-Popper (RP) phase 2D perovskite based on the two-step processing method. The introduction of the RP 2D perovskite lowers the energy barrier for the transition from the intermediate phase to the 2D perovskite phase with the ordered alignment, and this strategy is applicable to various organic diammoniums-based DJ 2D perovskites. Solar cells with oriented DJ 2D perovskite films achieve an efficiency of 21.1% (19.05% for 1 cm2 devices) and exhibit outstanding stability by retaining 98.1% of initial efficiency after 2000 h of maximum power point tracking at 65°C under continuous 1-sun illumination (ISOS-L-2 protocol) and 98.7% after 2500 h testing at a relative humidity of 85%.",
+        "doi": "10.1002/adma.75388",
+        "doi_url": "https://doi.org/10.1002/adma.75388",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42872315/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates achieving ordered crystallographic orientation in Dion-Jacobson 2D perovskites to enhance solar cell stability. Using a two-step processing method with Ruddlesden-Popper phase 2D perovskites, the researchers created oriented films that improved photovoltaic efficiency to 21.1% and maintained 98.1% efficiency after 2000 hours at 65°C under continuous illumination.\",\n  \"key_findings\": [\n    \"Ordered crystallographic orientation of Dion-Jacobson 2D perovskites via Ruddlesden-Popper phase modification\",\n    \"Solar cells achieved 21.1% efficiency with 98.1% retention after 2000 hours at 65°C under ISOS-L-2 conditions\",\n    \"The strategy is applicable across various organic diammonium-based Dion-Jacobson 2D perovskites\"\n  ],\n  \"study_type\": \"Two-step processing method with Ruddlesden-Popper phase 2D perovskites\",\n  \"scientific_significance\": \"This work demonstrates a method to achieve oriented crystallographic alignment in Dion-Jacobson 2D perovskites, addressing a critical stability challenge in high-efficiency photovoltaic devices.\"\n}",
+        "parsed": {
+          "summary": "This study investigates achieving ordered crystallographic orientation in Dion-Jacobson 2D perovskites to enhance solar cell stability. Using a two-step processing method with Ruddlesden-Popper phase 2D perovskites, the researchers created oriented films that improved photovoltaic efficiency to 21.1% and maintained 98.1% efficiency after 2000 hours at 65°C under continuous illumination.",
+          "key_findings": [
+            "Ordered crystallographic orientation of Dion-Jacobson 2D perovskites via Ruddlesden-Popper phase modification",
+            "Solar cells achieved 21.1% efficiency with 98.1% retention after 2000 hours at 65°C under ISOS-L-2 conditions",
+            "The strategy is applicable across various organic diammonium-based Dion-Jacobson 2D perovskites"
+          ],
+          "study_type": "Two-step processing method with Ruddlesden-Popper phase 2D perovskites",
+          "scientific_significance": "This work demonstrates a method to achieve oriented crystallographic alignment in Dion-Jacobson 2D perovskites, addressing a critical stability challenge in high-efficiency photovoltaic devices."
+        },
+        "elapsed_seconds": 51.0974,
+        "input_tokens": 735,
+        "output_tokens": 272,
+        "thoughts_tokens": null,
+        "total_tokens": 1007,
+        "model_eval_seconds": 37.832,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42887232",
+        "title": "Blood-transforming coating enables hemostasis and vascularized bone re-generation via bioactive gelation.",
+        "abstract": "NA: Conventional bone repair materials often treat blood as an obstacle through physical isolation or passive hemostasis, overlooking its physiological role in the regenerative cascade. Here, we propose a \"Blood-Transforming Coating\" concept and engineer a functionalized microsphere system (GM/TCP@PEG). The NHS ester-coated microspheres rapidly crosslink with amino-rich blood components to form a robust hydrogel while covalently anchoring to tissue surfaces, transforming blood into a synergistic component that enhances material function. Structural characterization confirmed the core-shell architecture. In in-vitro experiments, the clotting time of GM/TCP@PEG was 15.43 s. Its clotting efficiency index was 4.79-fold that of uncoated microspheres and 15.8-fold that of commercial Yunnan Baiyao (YM). The clot mass was 1.63-fold higher than uncoated microspheres and 2.35-fold higher than commercial Yunnan Baiyao (YM). The shear strength measured on porcine skin reached 25.35 kPa, which was 5.39-fold that of the control group. The blood-derived hydrogel enabled sustained release of VEGF, PDGF-BB, and TGF-β1, promoting endothelial cell migration and tube formation. In vivo, GM/TCP@PEG microspheres achieved rapid hemostasis in rat liver, tail, and porcine liver/spleen hemorrhage models, and significantly enhanced bone regeneration via early vascularization in a rat critical-sized calvarial defect model. This blood-transforming strategy achieves synergistic hemostasis, adhesion, and pro-repair functions, provide a strategy with application prospects for tissue repair in complex hemorrhagic environments.",
+        "doi": "10.1016/j.biomaterials.2026.124670",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124670",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42887232/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a blood-transforming coating strategy to enhance hemostasis and vascularized bone regeneration. The engineered GM/TCP@PEG microspheres crosslink with blood components to form a hydrogel, improving clotting efficiency, shear strength, and vascularization. In vivo, it achieved rapid hemostasis and accelerated bone repair in hemorrhagic models.\",\n  \"key_findings\": [\n    \"GM/TCP@PEG microspheres crosslink with blood to form a hydrogel enhancing hemostasis\",\n    \"The coating significantly improved clotting efficiency and shear strength compared to controls\",\n    \"In vivo, it enabled rapid hemostasis and accelerated bone regeneration in hemorrhagic models\"\n  ],\n  \"study_type\": \"In vitro and in vivo experiments with animal models\",\n  \"scientific_significance\": \"This approach transforms blood from a barrier to a functional component, providing a novel mechanism for hemostasis and tissue regeneration in hemorrhagic environments.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a blood-transforming coating strategy to enhance hemostasis and vascularized bone regeneration. The engineered GM/TCP@PEG microspheres crosslink with blood components to form a hydrogel, improving clotting efficiency, shear strength, and vascularization. In vivo, it achieved rapid hemostasis and accelerated bone repair in hemorrhagic models.",
+          "key_findings": [
+            "GM/TCP@PEG microspheres crosslink with blood to form a hydrogel enhancing hemostasis",
+            "The coating significantly improved clotting efficiency and shear strength compared to controls",
+            "In vivo, it enabled rapid hemostasis and accelerated bone regeneration in hemorrhagic models"
+          ],
+          "study_type": "In vitro and in vivo experiments with animal models",
+          "scientific_significance": "This approach transforms blood from a barrier to a functional component, providing a novel mechanism for hemostasis and tissue regeneration in hemorrhagic environments."
+        },
+        "elapsed_seconds": 46.0138,
+        "input_tokens": 845,
+        "output_tokens": 199,
+        "thoughts_tokens": null,
+        "total_tokens": 1044,
+        "model_eval_seconds": 27.5653,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42880234",
+        "title": "Spatiotemporal co-transcriptomics uncovers coordinated rhizobia-legume stress programs supporting nitrogen fixation in Medicago.",
+        "abstract": "NA: Rhizobial nitrogen fixation in legume nodules requires precise spatial and temporal coordination between host and bacterial gene expression. Here, we applied spatial enhanced resolution omics sequencing (Stereo-seq) to profile Medicago nodules across five developmental stages, generating a co-transcriptomic atlas of nodule development. Using a mixed-probe capture strategy, we simultaneously detected host and rhizobial transcripts within the same tissue sections, enabling analysis of host-microbe transcriptional coordination during symbiosis. We identified dynamic changes in host cell composition and developmental trajectories and uncovered two transcription factors, MtERF82 and MtDOF53, required for maintenance of the indeterminate nodule meristem. Rhizobial and host genes exhibited stage- and zone-specific expression patterns along the nodule apex-to-base axis. Notably, reactive oxygen species (ROS)-associated stress responses in both host cells and rhizobia were linked to symbiotic nitrogen fixation. Functional analyses further showed that MtERF71 and MtCBF1 promote nitrogen fixation by regulating ROS homeostasis and activating key symbiotic genes, highlighting stress signaling as an integral component of mutualistic symbiosis.",
+        "doi": "10.1016/j.cell.2026.07.033",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.07.033",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42880234/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used spatial transcriptomics to analyze Medicago nodules across developmental stages, revealing coordinated host-rhizobial gene expression patterns. It identified two transcription factors essential for nodule meristem maintenance and linked ROS stress responses to nitrogen fixation. The findings demonstrate how stress signaling integrates symbiotic nitrogen fixation with host-microbe coordination.\",\n  \"key_findings\": [\n    \"Two transcription factors (MtERF82 and MtDOF5:53) maintain indeterminate nodule meristem\",\n    \"Stage- and zone-specific expression of host and rhizobial genes along nodule axes\",\n    \"ROS stress responses in host and rhizobia are critical for nitrogen fixation\"\n  ],\n  \"study_type\": \"spatial transcriptomics\",\n  \"scientific_significance\": \"This work establishes a spatiotemporal framework for understanding host-microbe coordination in nitrogen fixation, highlighting stress signaling as a conserved mechanism for symbiotic nitrogen fixation.\"\n}",
+        "parsed": {
+          "summary": "This study used spatial transcriptomics to analyze Medicago nodules across developmental stages, revealing coordinated host-rhizobial gene expression patterns. It identified two transcription factors essential for nodule meristem maintenance and linked ROS stress responses to nitrogen fixation. The findings demonstrate how stress signaling integrates symbiotic nitrogen fixation with host-microbe coordination.",
+          "key_findings": [
+            "Two transcription factors (MtERF82 and MtDOF5:53) maintain indeterminate nodule meristem",
+            "Stage- and zone-specific expression of host and rhizobial genes along nodule axes",
+            "ROS stress responses in host and rhizobia are critical for nitrogen fixation"
+          ],
+          "study_type": "spatial transcriptomics",
+          "scientific_significance": "This work establishes a spatiotemporal framework for understanding host-microbe coordination in nitrogen fixation, highlighting stress signaling as a conserved mechanism for symbiotic nitrogen fixation."
+        },
+        "elapsed_seconds": 40.5484,
+        "input_tokens": 712,
+        "output_tokens": 203,
+        "thoughts_tokens": null,
+        "total_tokens": 915,
+        "model_eval_seconds": 28.0636,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
