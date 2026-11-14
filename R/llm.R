@@ -32,6 +32,64 @@ parse_summary_response <- function(text) {
   list(valid_json = !is.null(parsed) && is.list(parsed), parsed = parsed, cleaned_text = cleaned)
 }
 
+validate_summary_payload <- function(parsed, min_words = 45L, max_words = 65L) {
+  errors <- character()
+  required <- c("summary", "key_findings", "study_type", "scientific_significance")
+
+  if (!is.list(parsed) || is.null(names(parsed))) {
+    return(list(valid = FALSE, errors = "The response must be a JSON object."))
+  }
+
+  missing <- setdiff(required, names(parsed))
+  unexpected <- setdiff(names(parsed), required)
+  if (length(missing)) {
+    errors <- c(errors, paste("Missing fields:", paste(missing, collapse = ", ")))
+  }
+  if (length(unexpected)) {
+    errors <- c(errors, paste(
+      "Unexpected fields (the schema must not add relevance or limitations sections):",
+      paste(unexpected, collapse = ", ")
+    ))
+  }
+
+  scalar_string <- function(value) {
+    is.character(value) && length(value) == 1L && !is.na(value)
+  }
+
+  summary <- parsed$summary
+  if (!scalar_string(summary) || !nzchar(trimws(summary))) {
+    errors <- c(errors, "summary must be a non-empty string.")
+  } else {
+    word_count <- length(strsplit(trimws(summary), "[[:space:]]+")[[1]])
+    if (word_count < min_words || word_count > max_words) {
+      errors <- c(errors, sprintf(
+        "summary must contain %d–%d words; received %d.",
+        min_words, max_words, word_count
+      ))
+    }
+  }
+
+  findings <- parsed$key_findings
+  if (!(is.list(findings) || is.character(findings))) {
+    errors <- c(errors, "key_findings must be an array of strings.")
+  } else {
+    if (length(findings) > 3L) {
+      errors <- c(errors, "key_findings must contain no more than three items.")
+    }
+    if (length(findings) && any(!vapply(findings, scalar_string, logical(1)))) {
+      errors <- c(errors, "Every key_findings item must be a string.")
+    }
+  }
+
+  for (field in c("study_type", "scientific_significance")) {
+    if (!scalar_string(parsed[[field]])) {
+      errors <- c(errors, paste0(field, " must be a string (use an empty string when unavailable)."))
+    }
+  }
+
+  list(valid = length(errors) == 0L, errors = errors)
+}
+
 call_ollama <- function(prompt, model, base_url, temperature = 0.2,
                         num_ctx = 4096L, num_predict = 800L,
                         timeout_seconds = 600) {

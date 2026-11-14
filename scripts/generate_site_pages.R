@@ -1,4 +1,5 @@
 source("R/site.R")
+source("R/llm.R")
 
 root <- "."
 website_dir <- file.path(root, "website")
@@ -22,6 +23,7 @@ write_generated_page <- function(path, title, render_call) {
     "",
     "```{r, results='asis'}",
     "source(\"../R/site.R\")",
+    "source(\"../R/llm.R\")",
     "site <- load_literature_site_data(\"..\")",
     render_call,
     "```",

@@ -72,7 +72,9 @@ test_that("site data joins papers, immutable reports, and successful summaries",
         status = "ok",
         model = "qwen3:4b",
         parsed = list(
-          summary = "A generated summary.",
+          summary = paste(rep("evidence", 45), collapse = " "),
+          key_findings = list("A reported finding."),
+          study_type = "Experimental study",
           scientific_significance = "The study adds evidence about the process under investigation."
         )
       )
@@ -90,14 +92,14 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   expect_equal(site$report_count, 1L)
   expect_equal(site$summary_count, 1L)
   expect_equal(site$papers[[1]]$journal_name, "Test Journal")
-  expect_equal(site$papers[[1]]$summary$parsed$summary, "A generated summary.")
+  expect_equal(site$papers[[1]]$summary$parsed$summary, paste(rep("evidence", 45), collapse = " "))
   expect_equal(site$reports[[1]]$article_count, 3L)
   expect_equal(site$reports[[1]]$summary_count, 1L)
   expect_equal(
     vapply(site$reports[[1]]$articles, function(x) x$pmid, character(1)),
     c("123", "124", "125")
   )
-  expect_equal(site$reports[[1]]$articles[[1]]$summary$parsed$summary, "A generated summary.")
+  expect_equal(site$reports[[1]]$articles[[1]]$summary$parsed$summary, paste(rep("evidence", 45), collapse = " "))
 
   rendered <- paste(capture.output(site_render_update_page(site, "test-report")), collapse = "\n")
   expect_lt(regexpr("A test paper", rendered)[[1]], regexpr("Pending paper", rendered)[[1]])
@@ -105,12 +107,15 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   expect_match(rendered, "More details", fixed = TRUE)
   expect_match(rendered, "Scientific significance", fixed = TRUE)
   expect_match(rendered, "The study adds evidence about the process under investigation.", fixed = TRUE)
+  expect_match(rendered, "A reported finding.", fixed = TRUE)
+  expect_match(rendered, "Study design:", fixed = TRUE)
   expect_match(rendered, "AI summary pending", fixed = TRUE)
   expect_false(grepl("Relevance", rendered, fixed = TRUE))
   expect_false(grepl("Limitations", rendered, fixed = TRUE))
   expect_equal(site$journals[[1]]$latest_report$report_id, "test-report")
   expect_length(site$journals[[1]]$reports, 1L)
   expect_equal(site$journals[[1]]$summary_count, 1L)
+  expect_equal(site$journals[[1]]$latest_summary_at, "2026-11-13T11:00:00Z")
   expect_length(site_visible_journals(site$journals), 1L)
 
   older_report <- list(
@@ -175,18 +180,21 @@ test_that("publication dates support year-only and tolerate unknown formats", {
   expect_equal(site_format_date("Spring 2026"), "Spring 2026")
 })
 
-test_that("homepage journal list hides empty journals and sorts by latest update", {
+test_that("homepage lists each journal update with its latest summary date", {
   journals <- list(
     list(
       id = "older", name = "Older Journal", summary_count = 1L,
+      latest_summary_at = "2026-11-01T11:00:00Z",
       latest_report = list(generated_at_utc = "2026-11-01T10:00:00Z")
     ),
     list(
       id = "empty", name = "Empty Journal", summary_count = 0L,
+      latest_summary_at = "",
       latest_report = list(generated_at_utc = "2026-11-14T10:00:00Z")
     ),
     list(
       id = "newer", name = "Newer Journal", summary_count = 2L,
+      latest_summary_at = "2026-11-14T09:00:00Z",
       latest_report = list(generated_at_utc = "2026-11-13T10:00:00Z")
     )
   )
@@ -194,6 +202,13 @@ test_that("homepage journal list hides empty journals and sorts by latest update
   visible <- site_visible_journals(journals)
   expect_equal(
     vapply(visible, `[[`, character(1), "id"),
-    c("newer", "older")
+    c("empty", "newer", "older")
   )
+
+  rendered <- site_render_homepage_journal_list(journals)
+  expect_match(rendered, "Last update 14 Nov 2026", fixed = TRUE)
+  expect_match(rendered, "Latest summary 14 Nov 2026", fixed = TRUE)
+  expect_match(rendered, "Latest summary not yet available", fixed = TRUE)
+  expect_match(rendered, 'href="journals/newer.html"', fixed = TRUE)
+  expect_equal(lengths(regmatches(rendered, gregexpr("<li>", rendered, fixed = TRUE))), 3L)
 })

@@ -61,32 +61,73 @@ sample_benchmark_articles <- function(records, sample_size = 12L, seed = 2026111
   records[selected]
 }
 
-safe_ollama_call <- function(prompt, config) {
-  tryCatch(
-    call_ollama(
-      prompt = prompt,
-      model = config$model,
-      base_url = config$base_url,
-      temperature = config$temperature,
-      num_ctx = config$num_ctx,
-      num_predict = config$num_predict,
-      timeout_seconds = config$timeout_seconds
-    ),
-    error = function(e) {
-      list(
-        provider = "ollama",
+safe_ollama_call <- function(prompt, config, max_attempts = 2L) {
+  max_attempts <- suppressWarnings(as.integer(max_attempts)[1])
+  if (is.na(max_attempts) || max_attempts < 1L) {
+    stop("max_attempts must be a positive integer.", call. = FALSE)
+  }
+
+  attempt_prompt <- prompt
+  result <- NULL
+  for (attempt in seq_len(max_attempts)) {
+    result <- tryCatch(
+      call_ollama(
+        prompt = attempt_prompt,
         model = config$model,
-        status = "error",
-        response_text = "",
-        parsed = NULL,
-        elapsed_seconds = NA_real_,
-        input_tokens = NA_real_,
-        output_tokens = NA_real_,
-        total_tokens = NA_real_,
-        error = conditionMessage(e)
+        base_url = config$base_url,
+        temperature = config$temperature,
+        num_ctx = config$num_ctx,
+        num_predict = config$num_predict,
+        timeout_seconds = config$timeout_seconds
+      ),
+      error = function(e) {
+        list(
+          provider = "ollama",
+          model = config$model,
+          status = "error",
+          response_text = "",
+          parsed = NULL,
+          elapsed_seconds = NA_real_,
+          input_tokens = NA_real_,
+          output_tokens = NA_real_,
+          total_tokens = NA_real_,
+          error = conditionMessage(e)
+        )
+      }
+    )
+
+    validation <- if (identical(result$status, "ok")) {
+      validate_summary_payload(result$parsed)
+    } else {
+      list(valid = FALSE, errors = if (is.null(result$error)) "The model response was invalid." else result$error)
+    }
+
+    if (isTRUE(validation$valid)) {
+      result$quality_check <- "passed"
+      result$attempts <- attempt
+      return(result)
+    }
+
+    result$quality_check <- "failed"
+    result$attempts <- attempt
+    result$error <- paste(validation$errors, collapse = "; ")
+    if (attempt < max_attempts) {
+      attempt_prompt <- paste(
+        prompt,
+        "",
+        "QUALITY-CONTROL RETRY:",
+        "Your previous response did not pass validation for these reasons:",
+        paste0("- ", validation$errors, collapse = "\n"),
+        "Return a corrected JSON object using exactly the four requested fields.",
+        "The summary must contain 45–65 words. Proofread every field for spelling errors, malformed words, fragments, duplicated phrases, and punctuation mistakes.",
+        "Do not add a relevance assessment, limitations, caveats, or any other fields.",
+        sep = "\n"
       )
     }
-  )
+  }
+
+  if (identical(result$status, "ok")) result$status <- "invalid_summary"
+  result
 }
 
 benchmark_metrics <- function(results) {
@@ -143,7 +184,7 @@ write_benchmark_markdown <- function(results, run_id, prompt_version, output_pat
     lines <- c(lines, "")
 
     x <- paper$ollama
-    if (!is.null(x$parsed)) {
+    if (identical(x$status, "ok") && !is.null(x$parsed)) {
       summary <- summary_field(x$parsed, "summary", x$response_text)
       if (!is.null(summary) && nzchar(trimws(summary))) {
         lines <- c(lines, "**Summary**", "", summary, "")

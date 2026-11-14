@@ -13,7 +13,8 @@ read_completed_summary_pmids <- function(root = project_root()) {
       pmid <- if (is.null(paper$article$pmid)) "" else as.character(paper$article$pmid)
       output <- paper$ollama
       if (nzchar(pmid) && !is.null(output) &&
-          identical(as.character(output$status), "ok") && !is.null(output$parsed)) {
+          identical(as.character(output$status), "ok") && !is.null(output$parsed) &&
+          isTRUE(validate_summary_payload(output$parsed)$valid)) {
         completed <- c(completed, pmid)
       }
     }

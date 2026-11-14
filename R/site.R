@@ -142,7 +142,8 @@ site_read_summary_files <- function(root) {
       output <- paper$ollama
       if (!nzchar(pmid) || is.null(output) ||
           !identical(site_text(output$status), "ok") ||
-          is.null(output$parsed)) next
+          is.null(output$parsed) ||
+          !isTRUE(validate_summary_payload(output$parsed)$valid)) next
 
       previous <- latest[[pmid]]
       if (is.null(previous) ||
@@ -420,10 +421,10 @@ site_render_paper_card <- function(article) {
 }
 
 site_visible_journals <- function(journals) {
+  # List every journal with an update, even when its newest papers are still
+  # awaiting summaries or older summaries fail the current quality checks.
   visible <- Filter(function(journal) {
-    !is.null(journal$latest_report) &&
-      !is.null(journal$summary_count) &&
-      as.integer(journal$summary_count) > 0L
+    !is.null(journal$latest_report)
   }, journals)
   if (length(visible) < 2L) return(visible)
 
@@ -432,6 +433,37 @@ site_visible_journals <- function(journals) {
   }, numeric(1))
   names <- vapply(visible, function(journal) site_text(journal$name), character(1))
   visible[order(-update_times, names)]
+}
+
+site_render_homepage_journal_list <- function(journals) {
+  visible <- site_visible_journals(journals)
+  if (!length(visible)) {
+    return('<p class="empty-journal-list">No journal updates yet.</p>')
+  }
+
+  items <- vapply(visible, function(journal) {
+    latest <- journal$latest_report
+    update_at <- site_text(latest$generated_at_utc)
+    update_date <- site_format_date(substr(update_at, 1, 10))
+    summary_at <- site_text(journal$latest_summary_at)
+    summary_date <- if (nzchar(summary_at)) {
+      site_format_date(substr(summary_at, 1, 10))
+    } else {
+      "not yet available"
+    }
+    metadata <- paste0(
+      "Last update ", update_date,
+      " · Latest summary ", summary_date
+    )
+    sprintf(
+      '<li><a href="journals/%s.html">%s</a><span class="journal-update">%s</span></li>',
+      site_html_escape(site_slug(journal$id)),
+      site_html_escape(journal$name),
+      site_html_escape(metadata)
+    )
+  }, character(1))
+
+  paste0('<ul class="journal-list">', paste(items, collapse = ""), '</ul>')
 }
 
 site_render_report_content <- function(report, show_journal_link = FALSE) {

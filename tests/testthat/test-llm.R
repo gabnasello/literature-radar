@@ -33,6 +33,28 @@ test_that("invalid model JSON is identified", {
   expect_false(response$valid_json)
 })
 
+test_that("summary payloads enforce the requested schema and word count", {
+  valid <- list(
+    summary = paste(rep("evidence", 45), collapse = " "),
+    key_findings = list("Finding one", "Finding two"),
+    study_type = "Experimental study",
+    scientific_significance = "The findings add evidence to scientific understanding."
+  )
+  expect_true(validate_summary_payload(valid)$valid)
+
+  too_short <- valid
+  too_short$summary <- "This summary is too short."
+  expect_false(validate_summary_payload(too_short)$valid)
+
+  with_limitations <- valid
+  with_limitations$limitations <- "A separate limitations section."
+  expect_false(validate_summary_payload(with_limitations)$valid)
+
+  too_many_findings <- valid
+  too_many_findings$key_findings <- list("One", "Two", "Three", "Four")
+  expect_false(validate_summary_payload(too_many_findings)$valid)
+})
+
 test_that("benchmark sampling is reproducible and balanced across journals", {
   records <- list(
     list(pmid = "1", journal_id = "a"),
