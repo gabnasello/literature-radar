@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "report_id": "cell-biomaterials__20261016__20261115",
+  "generated_at_utc": "2026-11-15 12:37:27 UTC",
+  "journal": {
+    "id": "cell-biomaterials",
+    "name": "Cell Biomaterials",
+    "issn": "3050-5623",
+    "enabled": true
+  },
+  "retrieval_window": {
+    "field": "PubMed Create Date (crdt)",
+    "query_start_inclusive": "2026-10-16",
+    "new_records_start": "2026-10-16",
+    "end_inclusive": "2026-11-15",
+    "previous_successful_end_date": null,
+    "overlap_days": 2
+  },
+  "search": {
+    "term": "\"3050-5623\"[ISSN] AND (2026/10/16[crdt] : 2026/11/15[crdt])",
+    "total_count": 4,
+    "fetched_count": 4,
+    "overlap_or_previously_seen_count": 0,
+    "new_count": 4
+  },
+  "articles": [
+    {
+      "pmid": "42991865",
+      "title": "Viscoelastic Niches Shape γδ T Cell Phenotype and Effector Function.",
+      "abstract": "NA: γδ T-cells, which are enriched in epithelial tissues, have been used in cancer therapy because of their capacity for rapid, MHC-independent cytotoxicity. However, current paradigms largely overlook the role of tissue mechanical cues in regulating γδ T-cell function. Here, we investigated how matrix viscoelasticity modulates γδ T-cell migration, differentiation state, phenotype, and function, using a tunable collagen-based gel system. Slow-relaxing matrices preserved a less differentiated phenotype, reduced migration, and increased FAS and PD-1 expression. Despite increased PD-1 expression, these cells remained functional, demonstrated by high levels of TNF-α and IFN-γ relative to PD-1-negative cells. Proteomic analysis revealed that γδ T-cells respond to changes in viscoelasticity through actin remodeling and shifts in metabolic machinery. Functionally, cells encapsulated in slow-relaxing gels showed improved control of tumor growth in an aggressive HCT116 tumor model. Together, these findings establish matrix viscoelasticity as an important regulator of post-thymic γδ T-cell differentiation and function.",
+      "doi": "10.1016/j.celbio.2026.100614",
+      "doi_url": "https://doi.org/10.1016/j.celbio.2026.100614",
+      "journal": "Cell biomaterials",
+      "journal_issn": "3050-5623",
+      "authors": [
+        "Favour Omafuvwe Obuseh",
+        "Michelle Chang",
+        "Joshua M Price",
+        "Kyle Ruark",
+        "Tania To",
+        "Leah Lourenco",
+        "Bogdan Budnik",
+        "David J Mooney"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42991865/"
+    },
+    {
+      "pmid": "42979563",
+      "title": "miRNA delivery via nanowires restores functional responses in aged T cells.",
+      "abstract": "NA: Aging reshapes CD8+ T cell immunity by depleting naive populations, narrowing repertoire diversity, and promoting dysfunctional states, thereby weakening responses to infection or vaccination. This study presents a polyethyleneimine (PEI)-functionalized silicon nanowire platform for high-viability, non-viral delivery of single or multiplexed microRNAs (miRNAs) into resting aged CD8+ T cells. Nanowires enable transient modulation of transcriptional programs governing T cell activation, metabolism, proliferation, and differentiation. Delivering a single miRNA influences early activation and differentiation stages, while multiplexed miRNA delivery leads to a broader boost in activation responses, effector functions, metabolic health, and cell proliferation. In vivo, ex vivo-treated aged CD8+ T cells exhibit enhanced early effector priming following antigen exposure. Similarly, in aged human CD8+ T cells, multiplexed miRNA enhances activation and cytotoxic responses and sustains an effector-primed state during early activation and expansion. This method consistently improves function across donors aged from healthy individuals to those with current or past cancer.",
+      "doi": "10.1016/j.celbio.2026.100514",
+      "doi_url": "https://doi.org/10.1016/j.celbio.2026.100514",
+      "journal": "Cell biomaterials",
+      "journal_issn": "3050-5623",
+      "authors": [
+        "Zhonghao Dai",
+        "Shaylyn Grier",
+        "Zhe Zhong",
+        "Ameya Dravid",
+        "Joscelyn Mejías",
+        "Jean L Koff",
+        "Andrés J García",
+        "Ankur Singh"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42979563/"
+    },
+    {
+      "pmid": "42979529",
+      "title": "A 4D Bio-Kirigami Strategy for Engineering Complex Tissue Curvatures.",
+      "abstract": "NA: Native tissues exhibit intricate curvatures essential for their function yet recapitulating structural complexity and dynamic morphogenesis remains challenging. Here, we present a cytocompatible bio-Kirigami system that enables programmable transformation of cell-laden hydrogels into complex three-dimensional tissue constructs. The system consists of (1) a photocrosslinked hydrogel with tunable degradation and swelling behavior to drive shape transformation and (2) a rigid hydrogel frame to provide structural support. Spatial patterning encodes localized swelling differentials via sequential photolithography, enabling controlled deformation and diverse morphing behaviors. Stem cell-laden bio-Kirigami constructs underwent programmed shape transformation and developed into tissue-like structures with complex curvatures under tissue-specific culture conditions. Importantly, the engineered tissue constructs retained their structural integrity and shape after removal of the supporting frame. This bio-Kirigami strategy provides a versatile approach for engineering dynamically transformable tissue constructs that recapitulate the complex geometries of native tissues.",
+      "doi": "10.1016/j.celbio.2026.100613",
+      "doi_url": "https://doi.org/10.1016/j.celbio.2026.100613",
+      "journal": "Cell biomaterials",
+      "journal_issn": "3050-5623",
+      "authors": [
+        "Kaelyn L Gasvoda",
+        "Aixiang Ding",
+        "Zhangli Peng",
+        "Alexandria Sterenberg",
+        "Oju Jeon",
+        "Eben Alsberg"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42979529/"
+    },
+    {
+      "pmid": "42909956",
+      "title": "A long-acting injectable nanoparticle-hydrogel depot enables sustained IGF-1 delivery to reverse chronic denervation.",
+      "abstract": "NA: Chronic denervation following peripheral nerve injury leads to progressive muscle atrophy and Schwann cell dysfunction that severely limit functional recovery, yet no therapies effectively sustain trophic support over the prolonged regenerative period. Here, we develop a long-acting injectable (LAI) biomaterial platform that enables sustained local delivery of insulin-like growth factor-1 (IGF-1). The system encapsulates IGF-1 in poly(ethylene glycol)-b-polycaprolactone nanoparticles and embeds nanoparticles within an injectable nanofiber-hydrogel composite, enabling six-week local IGF-1 delivery with preserved bioactivity and tissue retention. In a rat chronic denervation model with delayed nerve repair, the IGF-1 LAI increased grip strength by 29.1%, myelinated axon counts by 186.2%, and myofiber cross-sectional area by 88.4%. In a non-human primate model, repeated six-week dosing maintained intramuscular IGF-1 levels and improved functional recovery by 57.0%, accompanied by reduced fibrosis and increased reinnervation. These findings establish a translational biomaterial strategy for sustained protein delivery and disease-modifying treatment of chronic denervation.",
+      "doi": "10.1016/j.celbio.2026.100594",
+      "doi_url": "https://doi.org/10.1016/j.celbio.2026.100594",
+      "journal": "Cell biomaterials",
+      "journal_issn": "3050-5623",
+      "authors": [
+        "Yicheng Zhang",
+        "Thomas G W Harris",
+        "Christopher J Erb",
+        "Chenhu Qiu",
+        "Karim A Sarhane",
+        "Philip Hanwright",
+        "Benjamin R Slavin",
+        "Zhi-Cheng Yao",
+        "Jiayuan Kong",
+        "Erica B Lee",
+        "Nicholas von Guionneau",
+        "Jeffrey Khong",
+        "Rachana Suresh",
+        "Dany Y Matar",
+        "Alexander J Tinana",
+        "Moonhyung Lee",
+        "Marcos Iglesias",
+        "Connor Glass",
+        "Nicholas Hricz",
+        "Sai Pinni",
+        "Matthew Generoso",
+        "Visakha Suresh",
+        "Aysel Cetinkaya-Fisgin",
+        "Eric K Hutchinson",
+        "Jessica Izzi",
+        "Kara Segna",
+        "Sashank Reddy",
+        "Ahmet Höke",
+        "Hai-Quan Mao",
+        "Sami H Tuffaha"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42909956/"
+    }
+  ]
+}

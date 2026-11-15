@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "report_id": "cell__20261112__20261115",
+  "generated_at_utc": "2026-11-15 12:37:23 UTC",
+  "journal": {
+    "id": "cell",
+    "name": "Cell",
+    "issn": "0092-8674",
+    "enabled": true
+  },
+  "retrieval_window": {
+    "field": "PubMed Create Date (crdt)",
+    "query_start_inclusive": "2026-11-12",
+    "new_records_start": "2026-11-14",
+    "end_inclusive": "2026-11-15",
+    "previous_successful_end_date": "2026-11-13",
+    "overlap_days": 2
+  },
+  "search": {
+    "term": "\"0092-8674\"[ISSN] AND (2026/11/12[crdt] : 2026/11/15[crdt])",
+    "total_count": 24,
+    "fetched_count": 24,
+    "overlap_or_previously_seen_count": 24,
+    "new_count": 0
+  },
+  "articles": []
+}
