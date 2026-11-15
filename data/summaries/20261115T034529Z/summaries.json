@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261115T034529Z",
+  "generated_at_utc": "2026-11-15 03:58:58 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 215,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42876215",
+        "title": "Dual Twisted Interfaces Enable Tunable Second Harmonic Generation in Chemical Vapor Deposition Grown Trilayer MoS2.",
+        "abstract": "NA: Twisted bilayer transition metal dichalcogenides, governed by a single twisted interface, offer a versatile platform for manipulating interlayer coupling and emergent optical behavior. However, despite extensive studies on single twisted interface systems, how multi-interface twisted stacking influences nonlinear optical behavior remains unclear. Here, we address this gap by systematically investigating the nonlinear optical performance of chemical vapor deposition (CVD) grown twisted trilayer MoS2 (TT-MoS2) with multi-interface twisted stacking. We fabricate all nine distinct trilayer MoS2 configurations by CVD. Raman and photoluminescence show that twisted interfaces modulate interlayer coupling, giving rise to stacking-dependent phonon and excitonic responses. Atomic-resolution scanning, transmission electron microscopy, and selected area electron diffraction confirm dual twisted interfaces and a supermoiré lattice. Guided by these structural insights, we examine the second harmonic generation (SHG) response across all nine trilayer configurations. Extending the coherent SH field superposition model to a trilayer system with two independent twisted interfaces, we develop a framework that describes how the dual interfaces govern the SHG intensity and polarization orientation across stacking configurations. Our findings establish TT-MoS2 as a versatile nonlinear platform and open new avenues for understanding and exploiting multi-interface twisted coupling to engineer nonlinear optical responses in van der Waals materials.",
+        "doi": "10.1002/adma.75387",
+        "doi_url": "https://doi.org/10.1002/adma.75387",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876215/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, the researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution microscopy confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework linking interface geometry to SHG intensity and polarization, demonstrating TT-MoS2's potential as a tunable nonlinear optical platform.\",\n  \"key_findings\": [\n    \"Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses\",\n    \"Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure\",\n    \"A framework linking interface geometry to SHG intensity and polarization was established\"\n  ],\n  \"study_type\": \"CVD-grown twisted trilayer MoS2 configurations\",\n  \"scientific_significance\": \"This work provides a foundational understanding of multi-interface twisted stacking effects on nonlinear optical responses in 2D materials, enabling precise engineering of second harmonic generation in van der Waals heterostructures.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, the researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution microscopy confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework linking interface geometry to SHG intensity and polarization, demonstrating TT-MoS2's potential as a tunable nonlinear optical platform.",
+          "key_findings": [
+            "Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses",
+            "Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure",
+            "A framework linking interface geometry to SHG intensity and polarization was established"
+          ],
+          "study_type": "CVD-grown twisted trilayer MoS2 configurations",
+          "scientific_significance": "This work provides a foundational understanding of multi-interface twisted stacking effects on nonlinear optical responses in 2D materials, enabling precise engineering of second harmonic generation in van der Waals heterostructures."
+        },
+        "elapsed_seconds": 19.458,
+        "input_tokens": 844,
+        "output_tokens": 238,
+        "thoughts_tokens": null,
+        "total_tokens": 1082,
+        "model_eval_seconds": 17.6706,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962342",
+        "title": "Piezoelectric electroporation potentiates high-frequency irreversible electroporation for enhanced prostate cancer eradication.",
+        "abstract": "NA: Residual tumor cell persistence remains a critical unresolved barrier limiting focal therapy such as high-frequency irreversible electroporation (H-FIRE) for prostate cancer. In this study, we identified DNA damage repair as the central mechanism governing the reversible survival of residual cells after H-FIRE. By exploiting the transient membrane permeability of these residual cells following H-FIRE, we engineered a piezoelectrically active nanomaterial, BOIS. Exogenous electric pulses generated by H-FIRE enhance tumor membrane permeabilization, thereby facilitating the intracellular delivery of BOIS and promoting its efficient penetration into residual malignant cells. Upon ultrasound activation, BOIS induces surface charge separation and electron migration, producing an intrinsic electric field accompanied by reactive oxygen species (ROS). This dual mechanism cascade simultaneously inflicts endogenous electric field-mediated electroporation damage on both cellular and nuclear membranes and imposes lethal oxidative stress, thereby converting reversibly injured residual cells into an irreversible death trajectory. Consequently, residual tumor cells with damage repair capacity are converted from a reversibly injured state to irreversible lethal damage. Unlike conventional combination therapies, this study pioneered a new therapeutic paradigm in which the focal ablation procedure functions as a nanomaterial delivery mechanism, thereby establishing a self-reinforcing therapeutic loop. This strategy markedly amplified the therapeutic efficacy of H-FIRE and enhanced the eradication of residual tumor cells. Collectively, these findings establish a groundbreaking therapeutic paradigm for eliminating residual disease following focal ablation.",
+        "doi": "10.1016/j.biomaterials.2026.124683",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124683",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962342/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. It identified DNA damage repair as the key mechanism allowing reversible survival of residual cells. The researchers engineered a piezoelectric nanomaterial (BOIS) that, when activated by ultrasound, generates an electric field and reactive oxygen species to convert these cells from reversible to irreversible damage, significantly enhancing tumor eradication without additional external energy sources.\",\n  \"key_findings\": [\n    \"BOIS nanomaterial induces surface charge separation and electron migration upon ultrasound activation\",\n    \"The dual mechanism of electric field-mediated membrane damage and oxidative stress converts residual cells to irreversible death\",\n    \"This approach integrates focal ablation with nanomaterial delivery, creating a self-reinforcing therapeutic loop for enhanced tumor eradication\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes a novel therapeutic paradigm where focal ablation serves as a delivery mechanism for nanomaterials, enabling targeted elimination of residual tumor cells through intrinsic electric field and oxidative stress mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. It identified DNA damage repair as the key mechanism allowing reversible survival of residual cells. The researchers engineered a piezoelectric nanomaterial (BOIS) that, when activated by ultrasound, generates an electric field and reactive oxygen species to convert these cells from reversible to irreversible damage, significantly enhancing tumor eradication without additional external energy sources.",
+          "key_findings": [
+            "BOIS nanomaterial induces surface charge separation and electron migration upon ultrasound activation",
+            "The dual mechanism of electric field-mediated membrane damage and oxidative stress converts residual cells to irreversible death",
+            "This approach integrates focal ablation with nanomaterial delivery, creating a self-reinforcing therapeutic loop for enhanced tumor eradication"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes a novel therapeutic paradigm where focal ablation serves as a delivery mechanism for nanomaterials, enabling targeted elimination of residual tumor cells through intrinsic electric field and oxidative stress mechanisms."
+        },
+        "elapsed_seconds": 18.4334,
+        "input_tokens": 859,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 1083,
+        "model_eval_seconds": 16.7333,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914976",
+        "title": "Cell-state-specific metabolic networks govern ferroptosis versus apoptosis in small cell lung cancer.",
+        "abstract": "NA: Cellular heterogeneity and plasticity are hallmarks of cancer that contribute to tumor growth and therapy resistance. Here, we investigated metabolic heterogeneity in small cell lung cancer (SCLC), an aggressive cancer type with considerable plasticity between neuroendocrine (NE) and non-NE cellular states. Through integrated transcriptomic and metabolomic analyses, we identified a universal dependency on exogenous cysteine/cystine (Cys) across all NE/non-NE SCLC cell states. Notably, NE and non-NE cells with low ASCL1 transcription factor levels underwent ferroptosis upon Cys depletion, whereas ASCL1high cells underwent apoptosis while remaining resistant to ferroptosis. This ferroptosis resistance was driven by the direct transcriptional activation of GCH1 by ASCL1, resulting in increased levels of the antioxidants BH4/BH2. Accordingly, combined Cys depletion and inhibition of BH4/BH2 synthesis reduced tumor growth in patient-derived xenografts. These findings demonstrate that metabolic state influences cell-death susceptibility in SCLC and provide a rationale for therapeutic strategies that exploit these metabolic differences.",
+        "doi": "10.1016/j.cell.2026.09.045",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.045",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914976/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated metabolic heterogeneity in small cell lung cancer (SCLC) by analyzing transcriptomic and metabolomic data across neuroendocrine (NE) and non-NE cellular states. It identified a universal dependency on exogenous cysteine/cystine (Cys) and revealed that NE cells with low ASCL1 levels undergo ferroptosis upon Cys depletion, while ASCL1high cells undergo apoptosis and resist ferroptosis due to GCH1-mediated BH4/BH2 upregulation. Combined Cys depletion and BH4/BH2 inhibition reduced tumor growth in patient-derived xenografts.\",\n  \"key_findings\": [\n    \"SCLC cells exhibit universal dependency on exogenous cysteine/cystine across neuroendocrine and non-neuroendocrine states\",\n    \"ASCL1low neuroendocrine cells undergo ferroptosis when cysteine is depleted, whereas ASCL1high cells undergo apoptosis and resist ferroptosis\",\n    \"ASCL1 directly activates GCH1 transcription, increasing BH4/BH2 antioxidants to confer ferroptosis resistance\"\n  ],\n  \"study_type\": \"Integrated transcriptomic and metabolomic analyses\",\n  \"scientific_significance\": \"The findings establish metabolic state as a determinant of cell death susceptibility in SCLC, providing a mechanistic basis for targeting cysteine metabolism to overcome therapy resistance.\"\n}",
+        "parsed": {
+          "summary": "This study investigated metabolic heterogeneity in small cell lung cancer (SCLC) by analyzing transcriptomic and metabolomic data across neuroendocrine (NE) and non-NE cellular states. It identified a universal dependency on exogenous cysteine/cystine (Cys) and revealed that NE cells with low ASCL1 levels undergo ferroptosis upon Cys depletion, while ASCL1high cells undergo apoptosis and resist ferroptosis due to GCH1-mediated BH4/BH2 upregulation. Combined Cys depletion and BH4/BH2 inhibition reduced tumor growth in patient-derived xenografts.",
+          "key_findings": [
+            "SCLC cells exhibit universal dependency on exogenous cysteine/cystine across neuroendocrine and non-neuroendocrine states",
+            "ASCL1low neuroendocrine cells undergo ferroptosis when cysteine is depleted, whereas ASCL1high cells undergo apoptosis and resist ferroptosis",
+            "ASCL1 directly activates GCH1 transcription, increasing BH4/BH2 antioxidants to confer ferroptosis resistance"
+          ],
+          "study_type": "Integrated transcriptomic and metabolomic analyses",
+          "scientific_significance": "The findings establish metabolic state as a determinant of cell death susceptibility in SCLC, providing a mechanistic basis for targeting cysteine metabolism to overcome therapy resistance."
+        },
+        "elapsed_seconds": 23.8589,
+        "input_tokens": 793,
+        "output_tokens": 293,
+        "thoughts_tokens": null,
+        "total_tokens": 1086,
+        "model_eval_seconds": 22.1315,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42876426",
+        "title": "High-Performance Low Threshold Voltage n-Type OECTs via a Stepwise Cyanation of Quinoxaline-Based Polymeric Semiconductor.",
+        "abstract": "NA: Achieving both low threshold voltage (Vth) and high performance in organic electrochemical transistors (OECTs) is critical for low-power, high-sensitivity bioelectronics, yet simultaneously achieving low Vth and high device performance remains a long-standing challenge. Herein, we propose a stepwise cyanation strategy to modify quinoxaline-based polymeric semiconductors to mitigate this dilemma. Benefiting from the strong electron-withdrawing ability of cyano substituents, QxCN-CNTVT functionalized with cyano groups on both donor and acceptor units exhibits a deep LUMO level of -4.23 eV, one of the deepest among reported n-type ionic-electronic conductors. As a result, OECTs based on QxCN-CNTVT demonstrate excellent comprehensive performance, with a high µC* value of up to 168.89 F cm-1 V-1 s-1 and a low Vth of 0.13 V, while maintaining superior operational stability (retaining ∼80% of the initial current after 10,000 s of continuous operation and 10,000 full switching cycles). Furthermore, QxCN-CNTVT is successfully applied to complementary inverters for efficient amplification of electrooculogram (EOG) and electrocardiogram (ECG) signals, as well as NAND and NOR logic gates for integrated logic functions. This work not only alleviates the widely observed imbalance between performance and Vth in n-type OECTs but also provides a versatile molecular design strategy for next-generation low-power bioelectronic devices.",
+        "doi": "10.1002/adma.75397",
+        "doi_url": "https://doi.org/10.1002/adma.75397",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876426/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of achieving low threshold voltage (Vth) and high performance in n-type organic electrochemical transistors (OECTs) by developing a quinoxaline-based polymer via stepwise cyanation. The modified polymer QxCN-CNTVT exhibits a deep LUMO level (-4.23 eV), enabling low Vth (0.13 V) and high µC* (168.89 F cm-1 V-1 s-1) with stable operation. It demonstrates applications in EOG/ECG signal amplification and logic gates.\",\n  \"key_findings\": [\n    \"QxCN-CNTVT polymer achieves a low threshold voltage of 0.13 V\",\n    \"The polymer exhibits a high µC* value of 168.89 F cm-1 V-1 s-1\",\n    \"The material demonstrates operational stability with 80% current retention after 10,000 s\"\n  ],\n  \"study_type\": \"Synthetic polymer design\",\n  \"scientific_significance\": \"This work establishes a molecular strategy for n-type OECTs that simultaneously achieves low threshold voltage and high performance, advancing low-power bioelectronic applications.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of achieving low threshold voltage (Vth) and high performance in n-type organic electrochemical transistors (OECTs) by developing a quinoxaline-based polymer via stepwise cyanation. The modified polymer QxCN-CNTVT exhibits a deep LUMO level (-4.23 eV), enabling low Vth (0.13 V) and high µC* (168.89 F cm-1 V-1 s-1) with stable operation. It demonstrates applications in EOG/ECG signal amplification and logic gates.",
+          "key_findings": [
+            "QxCN-CNTVT polymer achieves a low threshold voltage of 0.13 V",
+            "The polymer exhibits a high µC* value of 168.89 F cm-1 V-1 s-1",
+            "The material demonstrates operational stability with 80% current retention after 10,000 s"
+          ],
+          "study_type": "Synthetic polymer design",
+          "scientific_significance": "This work establishes a molecular strategy for n-type OECTs that simultaneously achieves low threshold voltage and high performance, advancing low-power bioelectronic applications."
+        },
+        "elapsed_seconds": 26.2745,
+        "input_tokens": 818,
+        "output_tokens": 265,
+        "thoughts_tokens": null,
+        "total_tokens": 1083,
+        "model_eval_seconds": 20.1388,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019827",
+        "title": "Hydrogel adhesives with phase-transition-regulated tough wet adhesion and gentle removal for hemorrhage treatment and wound closure.",
+        "abstract": "NA: Hydrogel bioadhesives featuring rapid and robust wet adhesion are promising for hemorrhage and wound management. Nevertheless, the tight linkage may lead to secondary injury during surgical operations for subsequent removal. Herein, we develop an advanced hydrogel (PANA) with adequate wet adhesion performance (adhesion strength of 61.2 ± 9 kPa and interfacial toughness of 523 ± 36 J m-2) at body temperature and facile removal properties (adhesion strength of 5.3 ± 2.2 kPa and interfacial toughness of 50 ± 7 J m-2) at 20 °C. The main mechanism is the involvement of N-acryloyl-L-phenylalanine in hydrogel network, which not only realizes interfacial drainage and enhances matrix cohesion owing to the unique coupling structure of carboxylic and phenyl groups but also promotes thermo-triggered phase transition through regulation of hydrogen-bond-mediated hydrophobic aggregation with N-isopropylacrylamide. PANA hydrogel achieves instantaneous hemostatic sealing of diverse injuries in rabbits, and spraying normal saline (20 °C) promotes fast phase separation to enable gentle detachment for the prevention of secondary damage. Combined with cold plasma activation, the hydrogel inhibits bacterial proliferation to accelerate infected skin wound healing. Our work provides a practical solution to address the dilemma of tight wet adhesion and on-demand removal by clinically-used adhesives.",
+        "doi": "10.1016/j.biomaterials.2026.124766",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124766",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019827/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a hydrogel adhesive (PANA) that exhibits strong wet adhesion (61.2 ± 9 kPa) at body temperature for hemorrhage control while enabling gentle removal at 20 °C (5.3 ± 2.2 kPa). The hydrogel's N-acryloyl-L-phenylalanine structure facilitates interfacial drainage, matrix cohesion, and thermo-triggered phase transitions. It achieves rapid hemostasis in rabbit wounds and allows non-invasive detachment with cold plasma activation to prevent secondary injury and bacterial growth.\",\n  \"key_findings\": [\n    \"PANA hydrogel demonstrates strong wet adhesion (61.2 ± 9 kPa) at body temperature for effective hemorrhage control\",\n    \"The hydrogel enables gentle removal at 20 °C (5.3 ± 2.2 kPa) via thermo-triggered phase separation\",\n    \"Cold plasma activation with PANA inhibits bacterial proliferation to accelerate infected wound healing\"\n  ],\n  \"study_type\": \"In vitro and in vivo testing in rabbit models\",\n  \"scientific_significance\": \"This work provides a clinically viable strategy to balance robust wet adhesion with on-demand removal, addressing a critical challenge in hemorrhage management without causing secondary tissue damage during adhesive detachment.\"\n}",
+        "parsed": {
+          "summary": "This study developed a hydrogel adhesive (PANA) that exhibits strong wet adhesion (61.2 ± 9 kPa) at body temperature for hemorrhage control while enabling gentle removal at 20 °C (5.3 ± 2.2 kPa). The hydrogel's N-acryloyl-L-phenylalanine structure facilitates interfacial drainage, matrix cohesion, and thermo-triggered phase transitions. It achieves rapid hemostasis in rabbit wounds and allows non-invasive detachment with cold plasma activation to prevent secondary injury and bacterial growth.",
+          "key_findings": [
+            "PANA hydrogel demonstrates strong wet adhesion (61.2 ± 9 kPa) at body temperature for effective hemorrhage control",
+            "The hydrogel enables gentle removal at 20 °C (5.3 ± 2.2 kPa) via thermo-triggered phase separation",
+            "Cold plasma activation with PANA inhibits bacterial proliferation to accelerate infected wound healing"
+          ],
+          "study_type": "In vitro and in vivo testing in rabbit models",
+          "scientific_significance": "This work provides a clinically viable strategy to balance robust wet adhesion with on-demand removal, addressing a critical challenge in hemorrhage management without causing secondary tissue damage during adhesive detachment."
+        },
+        "elapsed_seconds": 29.7305,
+        "input_tokens": 807,
+        "output_tokens": 295,
+        "thoughts_tokens": null,
+        "total_tokens": 1102,
+        "model_eval_seconds": 23.6289,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43014307",
+        "title": "The blood-brain barrier imports diverse neuroprotective proteins through pathways impaired early in Alzheimer's disease models.",
+        "abstract": "NA: The blood-brain barrier (BBB) has been defined primarily by what it excludes, yet the scale and function of physiological blood-to-brain protein transport remain largely unknown. Using bioorthogonal proteomics, we find that the healthy BBB samples 191 plasma proteins and permits 92 into the brain parenchyma. Enriched for carrier and metabolic functions, these proteins home to distinct brain cell types, such as apolipoprotein A1 (APOA1) to astrocytes and alpha-1 antitrypsin (SERPINA1) to microglia. This cell-type tropism relies on a BBB-parenchyma receptor hand-off: APOA1 crosses the BBB via SR-B1 and engages astrocytic ATP-binding cassette transporter A1 (ABCA1), a key Alzheimer's risk gene, driving cholesterol efflux that supports synapse integrity. Unlike LPS-induced nonspecific leakage, early-stage 5xFAD mice show selective BBB transport remodeling, with reduced APOA1 and increased SERPINA1 uptake. Hepatic APOA1 overexpression restores APOA1 in the 5xFAD brain, rescuing astrocytic, synaptic, and behavioral deficits. These findings recast the BBB as a selective interface that recruits neuroprotective circulatory proteins for brain health.",
+        "doi": "10.1016/j.cell.2026.10.039",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.039",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43014307/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study used bioorthogonal proteomics to investigate blood-brain barrier protein transport in health and early Alzheimer's disease models. It identified 191 plasma proteins excluded and 92 imported into the brain, enriched for carrier and metabolic functions. These proteins exhibit cell-type specificity, with APOA1 targeting astrocytes and SERPINA1 engaging microglia via receptor hand-offs involving ABCA1, an Alzheimer's risk gene. Early-stage 5xFAD mice showed reduced APOA1 and increased SERPINA1 uptake, while hepatic APOA1 overexpression rescued synaptic and behavioral deficits.\",\n  \"key_findings\": [\n    \"The healthy blood-brain barrier samples 191 plasma proteins and permits 92 into the brain parenchyma\",\n    \"APOA1 crosses the BBB via SR-B1 and engages astrocytic ABCA1, a key Alzheimer's risk gene\",\n    \"Hepatic APOA1 overexpression rescues synaptic and behavioral deficits in early Alzheimer's disease models\"\n  ],\n  \"study_type\": \"Bioorthogonal proteomics\",\n  \"scientific_significance\": \"This work redefines the blood-brain barrier as a selective interface that recruits neuroprotective circulatory proteins to maintain brain health, highlighting ABCA1's role in synaptic integrity during early Alzheimer's disease.\"\n}",
+        "parsed": {
+          "summary": "This study used bioorthogonal proteomics to investigate blood-brain barrier protein transport in health and early Alzheimer's disease models. It identified 191 plasma proteins excluded and 92 imported into the brain, enriched for carrier and metabolic functions. These proteins exhibit cell-type specificity, with APOA1 targeting astrocytes and SERPINA1 engaging microglia via receptor hand-offs involving ABCA1, an Alzheimer's risk gene. Early-stage 5xFAD mice showed reduced APOA1 and increased SERPINA1 uptake, while hepatic APOA1 overexpression rescued synaptic and behavioral deficits.",
+          "key_findings": [
+            "The healthy blood-brain barrier samples 191 plasma proteins and permits 92 into the brain parenchyma",
+            "APOA1 crosses the BBB via SR-B1 and engages astrocytic ABCA1, a key Alzheimer's risk gene",
+            "Hepatic APOA1 overexpression rescues synaptic and behavioral deficits in early Alzheimer's disease models"
+          ],
+          "study_type": "Bioorthogonal proteomics",
+          "scientific_significance": "This work redefines the blood-brain barrier as a selective interface that recruits neuroprotective circulatory proteins to maintain brain health, highlighting ABCA1's role in synaptic integrity during early Alzheimer's disease."
+        },
+        "elapsed_seconds": 24.7488,
+        "input_tokens": 840,
+        "output_tokens": 283,
+        "thoughts_tokens": null,
+        "total_tokens": 1123,
+        "model_eval_seconds": 22.8955,
+        "error": "summary must contain 45–65 words; received 77.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. The researchers engineered heteroatom-doped carbon hosts with abundant closed nanopores to redirect expansion stress inward, suppress electrode swelling, and enhance Li+ kinetics. The nitrogen-doped composite achieved 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, reducing thickness expansion from 38.4% to 13.1% after 50 cycles. The approach demonstrates scalable stress regulation for practical silicon-carbon anodes.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect expansion stress inward to suppress electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C\",\n    \"The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles for NCM811 cells\"\n  ],\n  \"study_type\": \"Material design and engineering\",\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable strategy for developing practical silicon-carbon anodes with minimal mechanical degradation and enhanced cycling stability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. The researchers engineered heteroatom-doped carbon hosts with abundant closed nanopores to redirect expansion stress inward, suppress electrode swelling, and enhance Li+ kinetics. The nitrogen-doped composite achieved 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, reducing thickness expansion from 38.4% to 13.1% after 50 cycles. The approach demonstrates scalable stress regulation for practical silicon-carbon anodes.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect expansion stress inward to suppress electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C",
+            "The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles for NCM811 cells"
+          ],
+          "study_type": "Material design and engineering",
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable strategy for developing practical silicon-carbon anodes with minimal mechanical degradation and enhanced cycling stability."
+        },
+        "elapsed_seconds": 28.0936,
+        "input_tokens": 897,
+        "output_tokens": 324,
+        "thoughts_tokens": null,
+        "total_tokens": 1221,
+        "model_eval_seconds": 26.292,
+        "error": "summary must contain 45–65 words; received 80.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020022",
+        "title": "Common variation of cell abundances and gene expression in the human striatum.",
+        "abstract": "NA: The cellular and molecular bases of inter-individual variation in the human brain are not yet understood, particularly beyond the neocortex. Here, we describe cellular and gene-expression variation in the striatum and prefrontal cortex from single-nucleus RNA sequencing (snRNA-seq) analysis of 3.9 million nuclei from 178 adult brain donors. People with more astrocytes, microglia, or oligodendrocyte precursor cells (OPCs) in any one brain region tended to have this property in all gray-matter regions sampled. OPC proportions declined by 40% across ages 30-80 in the cortex and striatum. Age-associated gene-expression changes differed substantially across cell types. Donor age was predicted from RNA-expression patterns with a median absolute error of 6.6 years across cell types. Common genetic variants were associated with the expression of nearly 10,000 genes; these effects were mostly cell-type specific and distinguished striatal from cortical neurons. These open-access data provide a foundation for future studies of human brain variation and vulnerabilities.",
+        "doi": "10.1016/j.cell.2026.10.026",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.026",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020022/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated inter-individual variation in human striatum using single-nucleus RNA sequencing across 3.9 million nuclei from 178 donors. It found common cellular and gene-expression patterns across gray matter regions, with astrocytes, microglia, and OPCs correlating across regions. OPCs declined 40% with age, and age prediction had a median error of 6.6 years. Genetic variants influenced nearly 10,000 genes in a cell-type-specific manner, distinguishing striatal from cortical neurons.\",\n  \"key_findings\": [\n    \"Astrocytes, microglia, and oligodendrocyte precursor cells correlated across gray-matter regions\",\n    \"Oligodendrocyte precursor cell proportions decreased by 40% between ages 30-80\",\n    \"Genetic variants associated with expression of nearly 10,000 genes in a cell-type-specific manner\"\n  ],\n  \"study_type\": \"single-nucleus RNA sequencing\",\n  \"scientific_significance\": \"The findings establish a cell-type-specific genetic basis for human brain variation, providing a resource for understanding neurodevelopmental and age-related vulnerabilities.\"\n}",
+        "parsed": {
+          "summary": "This study investigated inter-individual variation in human striatum using single-nucleus RNA sequencing across 3.9 million nuclei from 178 donors. It found common cellular and gene-expression patterns across gray matter regions, with astrocytes, microglia, and OPCs correlating across regions. OPCs declined 40% with age, and age prediction had a median error of 6.6 years. Genetic variants influenced nearly 10,000 genes in a cell-type-specific manner, distinguishing striatal from cortical neurons.",
+          "key_findings": [
+            "Astrocytes, microglia, and oligodendrocyte precursor cells correlated across gray-matter regions",
+            "Oligodendrocyte precursor cell proportions decreased by 40% between ages 30-80",
+            "Genetic variants associated with expression of nearly 10,000 genes in a cell-type-specific manner"
+          ],
+          "study_type": "single-nucleus RNA sequencing",
+          "scientific_significance": "The findings establish a cell-type-specific genetic basis for human brain variation, providing a resource for understanding neurodevelopmental and age-related vulnerabilities."
+        },
+        "elapsed_seconds": 22.6101,
+        "input_tokens": 784,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 1039,
+        "model_eval_seconds": 20.7973,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904558",
+        "title": "Spontaneous Capture, Enrichment, and SERS Sensing of Polystyrene Micro/Nanoplastics Enabled by Condensed Plasmonic Coacervate Droplets.",
+        "abstract": "NA: Pervasive contamination by micro/nanoplastics (MNPs) poses threats to environmental and human health; however, their sensitive detection is challenged by low concentrations and lack of effective enrichment methods. Herein, we present a plasmonic coacervate platform that spontaneously sequesters polystyrene (PS) MNPs from water while facilitating surface-enhanced Raman scattering (SERS) detection. Coacervate microdroplets, formed through the liquid-liquid phase separation (LLPS) of cationic poly(diallyldimethylammonium chloride) and anionic adenosine triphosphate, exhibit a positive surface charge and a hydrophobic interior, enabling capture of nanoscale or microscale negatively charged PS MNPs with enrichment rates of 99.4% and 91.1%. The co-encapsulation of silver nanoparticles (AgNPs) generates three-dimensional droplet-confined SERS hotspot networks, resulting in an enhancement factor of 2.72 × 109, excellent uniformity, and minimum detectable concentration of 1 and 10 ng/mL for nano- and micro-scale PS, demonstrating strong linear correlations. This platform achieves recoveries ranging from 87% to 108% for PS MNPs spiked into filtered tap and river water and successfully detects PS MNPs released from commercial plastic cups and expanded polystyrene containers under simulated daily use. Our work establishes a simple, rapid, and sensitive strategy that integrates spontaneous analyte sequestration with plasmonic amplification, thus offering a new avenue for monitoring MNPs and assessing the safety of food-contact materials.",
+        "doi": "10.1002/adma.75459",
+        "doi_url": "https://doi.org/10.1002/adma.75459",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904558/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates a plasmonic coacervate platform for detecting polystyrene micro/nanoplastics (MNPs) in water. The platform uses liquid-liquid phase separation to form charged droplets that spontaneously capture PS MNPs with high enrichment rates (99.4% for nano, 91.1% for micro). It integrates silver nanoparticles to create SERS hotspots, achieving an enhancement factor of 2.72 × 10^9 and detecting PS at 1–10 ng/mL. The method demonstrates strong performance in real-world water samples and food-contact materials.\",\n  \"key_findings\": [\n    \"Spontaneous capture of polystyrene MNPs with 99.4% enrichment for nano-scale and 91.1% for micro-scale\",\n    \"SERS enhancement factor of 2.72 × 10^9 enabling detection at 1–10 ng/mL\",\n    \"87–108% recovery rates in spiked tap and river water, and detection of PS from plastic cups and containers\"\n  ],\n  \"study_type\": \"Plasmonic coacervate platform\",\n  \"scientific_significance\": \"This approach provides a sensitive, rapid method for detecting micro/nanoplastics in environmental and food-contact materials using spontaneous sequestration and plasmonic amplification.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a plasmonic coacervate platform for detecting polystyrene micro/nanoplastics (MNPs) in water. The platform uses liquid-liquid phase separation to form charged droplets that spontaneously capture PS MNPs with high enrichment rates (99.4% for nano, 91.1% for micro). It integrates silver nanoparticles to create SERS hotspots, achieving an enhancement factor of 2.72 × 10^9 and detecting PS at 1–10 ng/mL. The method demonstrates strong performance in real-world water samples and food-contact materials.",
+          "key_findings": [
+            "Spontaneous capture of polystyrene MNPs with 99.4% enrichment for nano-scale and 91.1% for micro-scale",
+            "SERS enhancement factor of 2.72 × 10^9 enabling detection at 1–10 ng/mL",
+            "87–108% recovery rates in spiked tap and river water, and detection of PS from plastic cups and containers"
+          ],
+          "study_type": "Plasmonic coacervate platform",
+          "scientific_significance": "This approach provides a sensitive, rapid method for detecting micro/nanoplastics in environmental and food-contact materials using spontaneous sequestration and plasmonic amplification."
+        },
+        "elapsed_seconds": 24.3246,
+        "input_tokens": 923,
+        "output_tokens": 289,
+        "thoughts_tokens": null,
+        "total_tokens": 1212,
+        "model_eval_seconds": 22.4999,
+        "error": "summary must contain 45–65 words; received 73.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020025",
+        "title": "Multiscale spatial atlas of human basal ganglia cell types and communities.",
+        "abstract": "NA: The human basal ganglia comprise functionally varied nuclei, but their cell-type composition and spatial organization have not been comprehensively resolved. We generated a multi-region, subcellular-resolution spatial transcriptomic atlas by integrating multiplexed error-robust fluorescence in situ hybridization (MERFISH)+ and spatiotemporal enhanced-resolution omics sequencing (Stereo-seq) across four neurotypical donors. The datasets profiled ∼7.9 million cells across the caudate, putamen, nucleus accumbens, and globus pallidus, resolving 60 transcriptionally distinct cell types. We identify region-selective molecular and spatial diversification of spiny projection neurons and non-neuronal populations. Subcellular RNA localization captures somatic size and projection-inferred signatures, reflecting direct- and indirect-pathway topology. Cellular community analyses reveal astrocyte and oligodendrocyte subclusters enriched at striosome-matrix borders, while primate-expanded interneurons are confined to matrix territories. Cross-species comparisons reveal conserved and species-specialized organization, including orthologous striosome-matrix architecture and conserved dorsolateral-to-ventromedial transcriptional gradients. Together, this multi-centimeter-scale human basal ganglia atlas links cell types, spatial architecture, and subcellular transcript topography across scales.",
+        "doi": "10.1016/j.cell.2026.09.027",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.027",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020025/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study generated a high-resolution spatial transcriptomic atlas of human basal ganglia using MERFISH and Stereo-seq across four donors. It resolved 60 transcriptionally distinct cell types across four nuclei, identifying region-specific molecular and spatial diversification of spiny neurons and non-neuronal populations. The atlas reveals conserved striosome-matrix architecture and transcriptional gradients across species, providing a comprehensive map of cell types and their spatial organization.\",\n  \"key_findings\": [\n    \"Resolved 60 transcriptionally distinct cell types across four basal ganglia nuclei\",\n    \"Identified region-selective molecular and spatial diversification of spiny projection neurons\",\n    \"Revealed conserved striosome-matrix architecture and transcriptional gradients across species\"\n  ],\n  \"study_type\": \"Multi-region, subcellular-resolution spatial transcriptomic atlas\",\n  \"scientific_significance\": \"This atlas provides the first high-resolution mapping of human basal ganglia cell types and their spatial organization across multiple scales, advancing understanding of basal ganglia structure-function relationships and evolutionary conservation.\"\n}",
+        "parsed": {
+          "summary": "This study generated a high-resolution spatial transcriptomic atlas of human basal ganglia using MERFISH and Stereo-seq across four donors. It resolved 60 transcriptionally distinct cell types across four nuclei, identifying region-specific molecular and spatial diversification of spiny neurons and non-neuronal populations. The atlas reveals conserved striosome-matrix architecture and transcriptional gradients across species, providing a comprehensive map of cell types and their spatial organization.",
+          "key_findings": [
+            "Resolved 60 transcriptionally distinct cell types across four basal ganglia nuclei",
+            "Identified region-selective molecular and spatial diversification of spiny projection neurons",
+            "Revealed conserved striosome-matrix architecture and transcriptional gradients across species"
+          ],
+          "study_type": "Multi-region, subcellular-resolution spatial transcriptomic atlas",
+          "scientific_significance": "This atlas provides the first high-resolution mapping of human basal ganglia cell types and their spatial organization across multiple scales, advancing understanding of basal ganglia structure-function relationships and evolutionary conservation."
+        },
+        "elapsed_seconds": 22.3969,
+        "input_tokens": 738,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 960,
+        "model_eval_seconds": 17.4511,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42908187",
+        "title": "Biodegradable Capacitive-Coupling Bioelectronics for Wireless Electrical Stimulation and Longitudinal Electrophysiological Monitoring of Peripheral Nerve Regeneration.",
+        "abstract": "NA: Electrical stimulation accelerates peripheral nerve regeneration, yet current strategies are limited by wired interfaces, percutaneous leads, nondegradable components, and poor capacity for dynamic functional monitoring within the same subject. Here, we report biodegradable capacitive-coupling bioelectronics (CCB), an implantable platform integrating wireless electrical stimulation, regenerative guidance, and longitudinal electrophysiological monitoring. The CCB comprises biodegradable molybdenum electrodes, Mo-wire interconnects, and a textile-reinforced electroactive bioelectronic nerve guidance conduit (Bio-NGC). Capacitive coupling between external and implanted electrodes enables battery-free wireless delivery of electrical cues to regenerating nerves, while the same architecture allows repeated recording of regenerated compound nerve action potentials (CNAPs). In a rat sciatic nerve defect model, CCB-mediated stimulation enhances Schwann cell (SC) activation, mitochondrial bioenergetics, axonal regeneration, remyelination, angiogenesis, and motor recovery, with multiple outcomes approaching those of autograft repair. Mechanistic analyses revealed coordinated neurovascular remodeling, pro-regenerative immune modulation, calcium-related signaling, AMPK-associated energy metabolism, and neurotrophic factor expression. Importantly, CCB-enabled monitoring captured regeneration trajectories in the same animal without repeated nerve exposure, showing temporal trends consistent with conventional wired electrophysiology. This work establishes a biodegradable therapeutic-monitoring bioelectronic platform and advances peripheral nerve repair from passive conductive scaffolds toward intelligent implantable bioelectronics.",
+        "doi": "10.1002/adma.75437",
+        "doi_url": "https://doi.org/10.1002/adma.75437",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42908187/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates biodegradable capacitive-coupling bioelectronics (CCB) for wireless electrical stimulation and longitudinal electrophysiological monitoring during peripheral nerve regeneration. The CCB platform integrates biodegradable molybdenum electrodes, Mo-wire interconnects, and a textile-reinforced nerve guidance conduit. It enables battery-free wireless stimulation and repeated recording of compound nerve action potentials in a rat sciatic nerve defect model, enhancing Schwann cell activity, axonal regeneration, and motor recovery without repeated nerve exposure.\",\n  \"key_findings\": [\n    \"CCB delivers wireless electrical stimulation and longitudinal electrophysiological monitoring in the same animal without repeated nerve exposure\",\n    \"CCB enhances Schwann cell activation, axonal regeneration, remyelination, and motor recovery in rat sciatic nerve defects\",\n    \"Mechanistic analyses show coordinated neurovascular remodeling and pro-regenerative immune modulation\"\n  ],\n  \"study_type\": \"Rat sciatic nerve defect model\",\n  \"scientific_significance\": \"This work advances peripheral nerve repair from passive conductive scaffolds to intelligent, biodegradable bioelectronics capable of simultaneous therapeutic stimulation and functional monitoring.\"\n}",
+        "parsed": {
+          "summary": "This study investigates biodegradable capacitive-coupling bioelectronics (CCB) for wireless electrical stimulation and longitudinal electrophysiological monitoring during peripheral nerve regeneration. The CCB platform integrates biodegradable molybdenum electrodes, Mo-wire interconnects, and a textile-reinforced nerve guidance conduit. It enables battery-free wireless stimulation and repeated recording of compound nerve action potentials in a rat sciatic nerve defect model, enhancing Schwann cell activity, axonal regeneration, and motor recovery without repeated nerve exposure.",
+          "key_findings": [
+            "CCB delivers wireless electrical stimulation and longitudinal electrophysiological monitoring in the same animal without repeated nerve exposure",
+            "CCB enhances Schwann cell activation, axonal regeneration, remyelination, and motor recovery in rat sciatic nerve defects",
+            "Mechanistic analyses show coordinated neurovascular remodeling and pro-regenerative immune modulation"
+          ],
+          "study_type": "Rat sciatic nerve defect model",
+          "scientific_significance": "This work advances peripheral nerve repair from passive conductive scaffolds to intelligent, biodegradable bioelectronics capable of simultaneous therapeutic stimulation and functional monitoring."
+        },
+        "elapsed_seconds": 21.3825,
+        "input_tokens": 884,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 1128,
+        "model_eval_seconds": 19.5571,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020026",
+        "title": "Single-cell multimodal atlas reveals regulatory programs in the human brain.",
+        "abstract": "NA: Direct measurement of chromatin states together with transcription is essential for understanding how cell-type-specific regulatory programs are established and maintained in the adult human brain. Here, we present a large-scale single-cell multimodal atlas by jointly profiling the transcriptome with active (H3K27ac) or repressive (H3K27me3) histone modifications across 18 adult brain regions. We targeted over 750,000 nuclei spanning 160 cell types and integrated these data with chromatin accessibility, DNA methylation, 3D genome architecture, and spatial transcriptomes. This framework resolved chromatin states for over 500,000 candidate regulatory elements, identified enhancer-gene links and regulatory programs, revealed Polycomb-associated ultra-long-range contacts, and uncovered brainwide epigenomic heterogeneity. We further developed a sequence-to-function model to predict cell-type-specific effects of candidate neurological disease variants. Finally, comparative analyses across species reveal conservation in active regulatory programs but divergence in repressive programs. Together, this study provides a comprehensive epigenomic reference for interpreting regulatory principles and epigenetic memory underlying human brain organization and disease.",
+        "doi": "10.1016/j.cell.2026.08.012",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.08.012",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020026/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study generated a single-cell multimodal atlas profiling transcriptomes with active and repressive histone marks across 18 human brain regions. It integrated chromatin accessibility, DNA methylation, 3D genome architecture, and spatial transcriptomes to resolve regulatory elements and identify cell-type-specific enhancer-gene links. The framework revealed polycomb-associated ultra-long-range contacts and brainwide epigenomic heterogeneity, offering insights into regulatory programs underlying brain organization and disease.\",\n  \"key_findings\": [\n    \"Identification of over 500,000 candidate regulatory elements with cell-type-specific chromatin states\",\n    \"Revealed polycomb-associated ultra-long-range chromatin contacts in the human brain\",\n    \"Demonstrated conservation of active regulatory programs across species but divergence in repressive programs\"\n  ],\n  \"study_type\": \"Single-cell multimodal atlas\",\n  \"scientific_significance\": \"This work establishes a comprehensive epigenomic reference for understanding cell-type-specific regulatory mechanisms in the human brain, providing foundational insights into epigenetic memory and disease mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study generated a single-cell multimodal atlas profiling transcriptomes with active and repressive histone marks across 18 human brain regions. It integrated chromatin accessibility, DNA methylation, 3D genome architecture, and spatial transcriptomes to resolve regulatory elements and identify cell-type-specific enhancer-gene links. The framework revealed polycomb-associated ultra-long-range contacts and brainwide epigenomic heterogeneity, offering insights into regulatory programs underlying brain organization and disease.",
+          "key_findings": [
+            "Identification of over 500,000 candidate regulatory elements with cell-type-specific chromatin states",
+            "Revealed polycomb-associated ultra-long-range chromatin contacts in the human brain",
+            "Demonstrated conservation of active regulatory programs across species but divergence in repressive programs"
+          ],
+          "study_type": "Single-cell multimodal atlas",
+          "scientific_significance": "This work establishes a comprehensive epigenomic reference for understanding cell-type-specific regulatory mechanisms in the human brain, providing foundational insights into epigenetic memory and disease mechanisms."
+        },
+        "elapsed_seconds": 21.3013,
+        "input_tokens": 699,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 923,
+        "model_eval_seconds": 16.8927,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42908197",
+        "title": "Magneto-Propelled Micromotors for Integrated Capture and Catalytic Upcycling of Micro/Nanoplastics.",
+        "abstract": "NA: The pervasive accumulation and recalcitrance of micro/nanoplastics in ecosystems pose severe environmental and health challenges, demanding innovative solutions that integrate remediation with resource recovery. In this study, we report magnetically driven Au nanoparticles/helical-Mn/N-doped carbon nanotubes (AMNC) micromotors engineered for the integrated capture, time-resolved monitoring, and catalytic upcycling of polystyrene (PS) micro/nanoplastics. The AMNC micromotors achieve near-complete degradation of PS, producing valuable benzoic acid with a yield of approximately 60%. The dynamic motion of micromotors under a magnetic field enables active enrichment of micro/nanoplastics, while the electromagnetic \"hot spots\" at the Au-micromotor interface enable sensitive, in situ surface-enhanced Raman scattering (SERS) tracking with a detection limit of 0.17 µg/mL. Mechanistic studies reveal that N-doping and manganese carbide species synergistically enhance peroxymonosulfate activation and electron transfer, with density functional theory calculations identifying the SO4 •‒-mediated attack on the PS backbone as the rate-determining step. The system demonstrates robust performance across diverse water matrices and under scale-up conditions, with a machine learning model (R2 = 1.0) accurately predicting degradation efficiency. Techno-economic analysis confirms the economic viability of the process and a significantly reduced environmental footprint. This intelligent platform integrates pollution control with value-added conversion for sustainable plastic waste management.",
+        "doi": "10.1002/adma.75458",
+        "doi_url": "https://doi.org/10.1002/adma.75458",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42908197/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates magnetically driven micromotors for capturing and catalytically degrading polystyrene micro/nanoplastics. The AMNC micromotors, using Au nanoparticles and helical-Mn/N-doped carbon nan. nanotubes, achieve near-complete degradation of PS with 60% yield of benzoic acid. The system enables real-time tracking via SERS and demonstrates robust performance in diverse water matrices and scale-up conditions.\",\n  \"key_findings\": [\n    \"AMNC micromotors degrade polystyrene micro/nanoplastics with 60% yield of benzoic acid\",\n    \"Magnetic field-driven motion enriches micro/nanoplastics while enabling SERS tracking at 0.17 µg/mL detection limit\",\n    \"N-doping and manganese carbide synergistically enhance peroxymonosulfate activation for PS degradation\"\n  ],\n  \"study_type\": \"Magnetic field-driven micromotors\",\n  \"scientific_significance\": \"This work provides a scalable platform for converting plastic waste into valuable chemicals while simultaneously monitoring degradation, advancing sustainable plastic waste management strategies.\"\n  }",
+        "parsed": {
+          "summary": "This study investigates magnetically driven micromotors for capturing and catalytically degrading polystyrene micro/nanoplastics. The AMNC micromotors, using Au nanoparticles and helical-Mn/N-doped carbon nan. nanotubes, achieve near-complete degradation of PS with 60% yield of benzoic acid. The system enables real-time tracking via SERS and demonstrates robust performance in diverse water matrices and scale-up conditions.",
+          "key_findings": [
+            "AMNC micromotors degrade polystyrene micro/nanoplastics with 60% yield of benzoic acid",
+            "Magnetic field-driven motion enriches micro/nanoplastics while enabling SERS tracking at 0.17 µg/mL detection limit",
+            "N-doping and manganese carbide synergistically enhance peroxymonosulfate activation for PS degradation"
+          ],
+          "study_type": "Magnetic field-driven micromotors",
+          "scientific_significance": "This work provides a scalable platform for converting plastic waste into valuable chemicals while simultaneously monitoring degradation, advancing sustainable plastic waste management strategies."
+        },
+        "elapsed_seconds": 24.9901,
+        "input_tokens": 789,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 1033,
+        "model_eval_seconds": 19.1215,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020027",
+        "title": "Spatial and regulatory organization of cell identity across the primate subcortex.",
+        "abstract": "NA: Mammalian brain cell identity is shaped by intrinsic factors and external context. We present a spatially resolved transcriptomic and gene regulatory atlas of cell types across all subcortical regions in a primate, the common marmoset. Dense sampling and cross-species integration revealed spatially precise neuronal assemblies, including ones in complex midbrain and diencephalic structures. Chromatin accessibility and transcriptional identity are spatially tuned within and across subcortical structures; spatial gradients within hippocampal subfields are orchestrated by graded transcription factors acting through graded enhancers. The primate-expanded thalamic γ-aminobutyric acid (GABAergic) population shares transcriptional and regulatory syntax with conserved midbrain populations, reflecting an evolutionary adaptation compared with rodents. Similar regional expression across cell types can arise by distinct regulatory architectures, as observed in telencephalic astrocytes and neurons. Conversely, distant cell types can share regulatory programs despite divergent identities: striatal GABAergic spiny projection neurons and telencephalic glutamatergic neurons share a postsynaptic regulatory program despite divergent lineages, regions, and neurotransmitter identities.",
+        "doi": "10.1016/j.cell.2026.10.007",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.007",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020027/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study maps cell identity in primate subcortical regions using spatial transcriptomics and regulatory analysis in common marmosets. It identifies spatially precise neuronal assemblies, shows chromatin accessibility and transcriptional identity are spatially tuned, and reveals evolutionary adaptations like expanded thalamic GABAergic populations. The findings highlight regulatory mechanisms enabling similar programs across divergent cell types.\",\n  \"key_findings\": [\n    \"Spatially precise neuronal assemblies in complex midbrain and dusing structures\",\n    \"Chromatin accessibility and transcriptional identity are spatially tuned within subcortical regions\",\n    \"Primate thalamic GABAergic populations share regulatory syntax with midbrain populations, indicating evolutionary adaptation\"\n  ],\n  \"study_type\": \"Spatial transcriptomic and gene regulatory atlas\",\n  \"scientific_significance\": \"The work provides a foundational spatial regulatory framework for understanding primate brain cell identity evolution and functional diversity across subcortical regions.\"\n}",
+        "parsed": {
+          "summary": "This study maps cell identity in primate subcortical regions using spatial transcriptomics and regulatory analysis in common marmosets. It identifies spatially precise neuronal assemblies, shows chromatin accessibility and transcriptional identity are spatially tuned, and reveals evolutionary adaptations like expanded thalamic GABAergic populations. The findings highlight regulatory mechanisms enabling similar programs across divergent cell types.",
+          "key_findings": [
+            "Spatially precise neuronal assemblies in complex midbrain and dusing structures",
+            "Chromatin accessibility and transcriptional identity are spatially tuned within subcortical regions",
+            "Primate thalamic GABAergic populations share regulatory syntax with midbrain populations, indicating evolutionary adaptation"
+          ],
+          "study_type": "Spatial transcriptomic and gene regulatory atlas",
+          "scientific_significance": "The work provides a foundational spatial regulatory framework for understanding primate brain cell identity evolution and functional diversity across subcortical regions."
+        },
+        "elapsed_seconds": 19.6807,
+        "input_tokens": 700,
+        "output_tokens": 200,
+        "thoughts_tokens": null,
+        "total_tokens": 900,
+        "model_eval_seconds": 15.2049,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42908200",
+        "title": "High-Entropy Materials as a Design Paradigm for Low-Temperature Sodium-Ion Batteries.",
+        "abstract": "NA: Low-temperature (LT) operation remains a major barrier to the practical deployment of sodium-ion batteries (SIBs) because reduced thermal activation magnifies coupled limitations in bulk Na+ transport, phase stability, and interfacial kinetics, resulting in strong polarization growth, rapid capacity loss, and poor rate capability. Conventional optimization approaches based on incremental compositional tuning target a single bottleneck at a time and therefore struggle under sub-zero conditions, where transport and interphase evolution become tightly intertwined. High-entropy materials (HEMs) offer a distinct design paradigm in which configurational disorder is used as a controllable variable to reshape thermodynamics and kinetics, stabilize vulnerable frameworks, and broaden the distribution of accessible Na+ migration pathways. In this review, we analyze how entropy engineering influences LT performance across cathodes, anodes, electrolytes, and interfaces, emphasizing mechanistic links between realized disorder, transport activation penalties, and the accumulation of interfacial resistance in the solid-electrolyte interphase and cathode-electrolyte interphase. We synthesize quantitative descriptors and minimum reporting metrics that enable meaningful comparison across studies, and we highlight a unifying entropy-percolation framework connecting bulk ionic conduction with solvation/desolvation and interphase transport in liquid systems. We conclude by outlining key trade-offs, manufacturability constraints, and research directions required to translate high-entropy strategies into robust LT-SIB operation.",
+        "doi": "10.1002/adma.75441",
+        "doi_url": "https://doi.org/10.1002/adma.75441",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42908200/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review investigates how high-entropy materials (HEMs) address low-temperature limitations in sodium-ion batteries (SIBs). By engineering configurational disorder, HEMs reshape thermodynamics and kinetics to stabilize frameworks and enhance Na+ transport pathways. The study identifies critical links between entropy, interfacial resistance, and performance degradation at sub-zero temperatures, providing quantitative metrics for cross-study comparison and a unified framework for understanding ionic conduction mechanisms in SIBs.\",\n  \"key_findings\": [\n    \"HEMs improve low-temperature stability by stabilizing vulnerable frameworks through configurational disorder\",\n    \"Entropy engineering reduces interfacial resistance and polarization growth in S. I. B. s\",\n    \"A unified framework connects bulk ionic conduction with interphase transport mechanisms in sodium-ion batteries\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes high-entropy materials as a versatile design strategy to overcome fundamental thermodynamic and kinetic barriers in low-temperature sodium-ion batteries, advancing the field toward practical cold-weather applications.\"\n}",
+        "parsed": {
+          "summary": "This review investigates how high-entropy materials (HEMs) address low-temperature limitations in sodium-ion batteries (SIBs). By engineering configurational disorder, HEMs reshape thermodynamics and kinetics to stabilize frameworks and enhance Na+ transport pathways. The study identifies critical links between entropy, interfacial resistance, and performance degradation at sub-zero temperatures, providing quantitative metrics for cross-study comparison and a unified framework for understanding ionic conduction mechanisms in SIBs.",
+          "key_findings": [
+            "HEMs improve low-temperature stability by stabilizing vulnerable frameworks through configurational disorder",
+            "Entropy engineering reduces interfacial resistance and polarization growth in S. I. B. s",
+            "A unified framework connects bulk ionic conduction with interphase transport mechanisms in sodium-ion batteries"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes high-entropy materials as a versatile design strategy to overcome fundamental thermodynamic and kinetic barriers in low-temperature sodium-ion batteries, advancing the field toward practical cold-weather applications."
+        },
+        "elapsed_seconds": 22.4943,
+        "input_tokens": 754,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 978,
+        "model_eval_seconds": 17.3084,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020028",
+        "title": "Morphoelectric diversity and specialization of primate striatal neuron types.",
+        "abstract": "NA: The basal ganglia are evolutionarily ancient subcortical nuclei that form interconnected loops with the neocortex and limbic system to regulate movement, learning, habit formation, emotion, and motivation. Their dysfunction contributes to major neurological and psychiatric disorders, yet most cellular-level insights derive from rodent studies, leaving knowledge gaps in humans and translationally relevant primate species. To address this, we generated multimodal Patch-seq data linking transcriptomic identity with morphological and electrophysiological properties in the macaque striatum-the input nucleus of the basal ganglia. We found underappreciated diversity among spiny projection neurons (SPNs), including non-canonical types, and variation aligned with functional gradients. Interneurons also exhibited spatial variation and even greater morphoelectric diversity, highlighting their functional modularity. Despite broad evolutionary conservation, we identified primate-specific features and key differences from rodent striatal neurons. By integrating molecular classification with cellular properties that shape network function, our findings provide insights into the functional organization of the primate striatum.",
+        "doi": "10.1016/j.cell.2026.10.028",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.028",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020028/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated morphoelectric diversity in macaque striatal neurons using multimodal Patch-seq data. It characterized transcriptomic, morphological, and electrophysiological properties of spiny projection neurons and interneurons. Results revealed non-canonical SPN types, functional gradients, and greater morphoelectric diversity in interneurons compared to SPNs. These findings highlight primate-specific features and evolutionary conservation in basal ganglia circuitry.\",\n  \"key_findings\": [\n    \"Non-canonical spiny projection neuron types identified in macaque striatum\",\n    \"Functional gradients in morphoelectric properties align with neuronal specialization\",\n    \"Interneurons exhibit greater morphoelectric diversity than spiny projection neurons\"\n  ],\n  \"study_type\": \"Multimodal Patch-seq data\",\n  \"scientific_significance\": \"The study provides critical insights into primate striatal cellular heterogeneity, bridging molecular classification with functional network properties to advance understanding of basal ganglia circuitry across species.\"\n}",
+        "parsed": {
+          "summary": "This study investigated morphoelectric diversity in macaque striatal neurons using multimodal Patch-seq data. It characterized transcriptomic, morphological, and electrophysiological properties of spiny projection neurons and interneurons. Results revealed non-canonical SPN types, functional gradients, and greater morphoelectric diversity in interneurons compared to SPNs. These findings highlight primate-specific features and evolutionary conservation in basal ganglia circuitry.",
+          "key_findings": [
+            "Non-canonical spiny projection neuron types identified in macaque striatum",
+            "Functional gradients in morphoelectric properties align with neuronal specialization",
+            "Interneurons exhibit greater morphoelectric diversity than spiny projection neurons"
+          ],
+          "study_type": "Multimodal Patch-seq data",
+          "scientific_significance": "The study provides critical insights into primate striatal cellular heterogeneity, bridging molecular classification with functional network properties to advance understanding of basal ganglia circuitry across species."
+        },
+        "elapsed_seconds": 19.9247,
+        "input_tokens": 674,
+        "output_tokens": 209,
+        "thoughts_tokens": null,
+        "total_tokens": 883,
+        "model_eval_seconds": 16.1699,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42908260",
+        "title": "Industry-Scalable Interfacial Design for Stabilizing PET-Cu Current Collectors.",
+        "abstract": "NA: Metallized plastic copper (Cu) current collectors (CCs), featuring a sandwich structure with polymer film-typically polyethylene terephthalate (PET)-as substrate and conductive Cu layers on both sides, offer a lighter and cheaper alternative to conventional Cu CC for lithium-ion batteries (LIBs). However, the instability of PET substrate in commercial carbonate electrolytes leads to Cu||PET interfacial degradation and capacity fading, particularly under high-temperature operation. Here, we report an industry-scalable interfacial engineering strategy to stabilize PET substrate by depositing an Al2O3 layer onto the PET substrate surface via roll-to-roll physical evaporation (winding speed: 720 m min-1, substrate width: 2.5 m). The conformal Al2O3 coating acts as a robust physical barrier that effectively suppresses electrolyte-induced PET substrate decomposition and maintains Cu||PET interfacial integrity during long-term cycling. The as-resulting Al2O3-coated PET-Cu CC (PET@Al2O3-Cu CC) enables 3-Ah graphite//LiNi0.5Co0.2Mn0.3O2 pouch cells an 86% capacity retention after 1000 cycles at 45°C-comparable with the cells with commercial Cu CC (86%) and markedly superior to those using PET-Cu CC (58%). This work establishes a low-cost and industry-scalable solution for stabilizing metallized plastic CCs, paving the way toward cost-efficient and high-energy LIBs.",
+        "doi": "10.1002/adma.75466",
+        "doi_url": "https://doi.org/10.1002/adma.75466",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42908260/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates stabilizing PET substrates in metallized copper current collectors for lithium-ion batteries using industry-scalable interfacial engineering. By depositing a conformal Al2O3 layer via roll-to-roll physical evaporation, the researchers suppressed PET decomposition in carbonate electrolytes. The Al2O3-coated PET-Cu current collectors achieved 86% capacity retention after 1000 cycles at 45°C, matching commercial Cu current collectors and outperforming uncoated PET-Cu counterparts.\",\n  \"key_findings\": [\n    \"Al2O3 coating via roll-to-roll physical evaporation stabilizes PET substrate in carbonate electrolytes\",\n    \"PET@Al2O3-Cu current collectors retain 86% capacity after 1000 cycles at 45°C\",\n    \"The coating outperforms uncoated PET-Cu current collectors by 28 percentage points in capacity retention\"\n  ],\n  \"study_type\": \"Roll-to-roll physical evaporation\",\n  \"scientific_significance\": \"This work provides a scalable method to enhance the stability of polymer-based current collectors in lithium-ion batteries, addressing a critical barrier to cost-effective high-energy-density battery systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates stabilizing PET substrates in metallized copper current collectors for lithium-ion batteries using industry-scalable interfacial engineering. By depositing a conformal Al2O3 layer via roll-to-roll physical evaporation, the researchers suppressed PET decomposition in carbonate electrolytes. The Al2O3-coated PET-Cu current collectors achieved 86% capacity retention after 1000 cycles at 45°C, matching commercial Cu current collectors and outperforming uncoated PET-Cu counterparts.",
+          "key_findings": [
+            "Al2O3 coating via roll-to-roll physical evaporation stabilizes PET substrate in carbonate electrolytes",
+            "PET@Al2O3-Cu current collectors retain 86% capacity after 1000 cycles at 45°C",
+            "The coating outperforms uncoated PET-Cu current collectors by 28 percentage points in capacity retention"
+          ],
+          "study_type": "Roll-to-roll physical evaporation",
+          "scientific_significance": "This work provides a scalable method to enhance the stability of polymer-based current collectors in lithium-ion batteries, addressing a critical barrier to cost-effective high-energy-density battery systems."
+        },
+        "elapsed_seconds": 25.8242,
+        "input_tokens": 789,
+        "output_tokens": 253,
+        "thoughts_tokens": null,
+        "total_tokens": 1042,
+        "model_eval_seconds": 19.9494,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020029",
+        "title": "Circuit-aligned specialization of human basal ganglia astrocytes.",
+        "abstract": "NA: Astrocytes shape synapses and circuits, yet their diversity within the human basal ganglia remains poorly defined. Integrating single-nucleus transcriptomic and epigenomic profiling with spatial transcriptomics, we identify three anatomically organized astrocyte subgroups-striatal gray matter (GM), extra-striatal GM, and white matter (WM)-distinguished by neurotransmitter transporter expression and synapse-associated programs that reflect afferent input. These molecular distinctions generalize brain-wide, separating telencephalic from non-telencephalic astrocytes, with LHX2 marking telencephalic astrocyte identity across species. Within the striatum (STR), dorsal and ventral populations align with distinct microcircuits; a ventral population maps to the nucleus accumbens mediodorsal shell alongside specialized neuronal subtypes, a pattern conserved in nonhuman primates. A deep learning sequence model identifies subgroup-specific enhancer codes and recovers established transcription factor motif logic from published enhancer-AAV datasets, providing a foundation for targeted viral vector design. These findings define intersecting axes of human astrocyte specialization and offer a framework for cell-type-specific dissection of basal ganglia circuits.",
+        "doi": "10.1016/j.cell.2026.09.041",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.041",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020029/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated human basal ganglia astrocyte diversity using single-nucleus transcriptomics, epigenomics, and spatial profiling. It identified three anatomically distinct astrocyte subgroups with unique neurotransmitter transporter expression and synapse-associated programs. These subgroups align with specific microcircuits, including ventral populations mapping to the nucleus accumbens. The findings provide a framework for cell-type-specific basal ganglia circuit dissection.\",\n  \"key_findings\": [\n    \"Three anatomically organized astro: striatal gray matter, extra-striatal gray matter, and white matter astrocyte subgroups\",\n    \"Ventral astrocyte populations correlate with nucleus accumbens mediodorsal shell microcircuits\",\n    \"LHX2 marks telencephalic astrocyte identity across species, generalizing brain-wide astrocyte specialization\"\n  ],\n  \"study_type\": \"Single-nucleus transcriptomic and epigenomic profiling with spatial transcriptomics\",\n  \"scientific_significance\": \"The study establishes molecular and spatial criteria for human basal ganglia astrocyte subtypes, advancing understanding of astrocyte specialization in circuit-level brain organization.\"\n}",
+        "parsed": {
+          "summary": "This study investigated human basal ganglia astrocyte diversity using single-nucleus transcriptomics, epigenomics, and spatial profiling. It identified three anatomically distinct astrocyte subgroups with unique neurotransmitter transporter expression and synapse-associated programs. These subgroups align with specific microcircuits, including ventral populations mapping to the nucleus accumbens. The findings provide a framework for cell-type-specific basal ganglia circuit dissection.",
+          "key_findings": [
+            "Three anatomically organized astro: striatal gray matter, extra-striatal gray matter, and white matter astrocyte subgroups",
+            "Ventral astrocyte populations correlate with nucleus accumbens mediodorsal shell microcircuits",
+            "LHX2 marks telencephalic astrocyte identity across species, generalizing brain-wide astrocyte specialization"
+          ],
+          "study_type": "Single-nucleus transcriptomic and epigenomic profiling with spatial transcriptomics",
+          "scientific_significance": "The study establishes molecular and spatial criteria for human basal ganglia astrocyte subtypes, advancing understanding of astrocyte specialization in circuit-level brain organization."
+        },
+        "elapsed_seconds": 23.0073,
+        "input_tokens": 704,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 947,
+        "model_eval_seconds": 18.7228,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42908261",
+        "title": "Sub-nm2 Ferroelectric Domains via Charged 180° Walls in ZrO2.",
+        "abstract": "NA: Flat phonon bands in fluorite ferroelectrics ( HfO2 or ZrO2 ) shrink polar domains laterally to an irreducible half-unit-cell width ( ∼ 0.27 nm) within which the vertical arrangement of dipoles is expected to remain uniform. Here, we report on the direct observation of nonuniform and nearly discrete vertical arrangements of dipoles in ZrO2 thin films consisting of closely spaced head-to-head (HH) and tail-to-tail (TT) charged 180 ∘ walls, each exhibiting a distinct bulk-like structure. These charged domain walls (CDWs) further compress the irreducibly narrow, laterally stacked domains vertically to a thickness of ∼ 1-2.75 nm, yielding in-plane domains with sub- nm2 footprints-among the smallest ever reported for any ferroelectric material. The HH and TT walls form due to their flat longitudinal optical (LO) polar bands, and the former are electrostatically stabilized by bound-charge compensation via interstitial oxygen atoms, which act as natural structural defects at the HH walls. Moreover, these walls are predicted to be conducting and to exhibit ultralow propagation barriers, with HH walls (1.6 meV) being far more mobile than TT walls (22.3 meV), indicating strong potential for low-voltage, domain-wall-based nanoelectronics.",
+        "doi": "10.1002/adma.75144",
+        "doi_url": "https://doi.org/10.1002/adma.75144",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42908261/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the lateral and vertical compression of ferroelectric domains in ZrO2 thin films. Using direct observation, researchers identified charged 180° walls (HH and TT) that create sub-nm2 domain footprints. The HH walls exhibit electrostatic stabilization via interstitial oxygen, enabling ultralow domain wall mobility (1.6 meV) compared to TT walls (2.23 meV), suggesting potential for low-voltage nanoelectronics applications.\",\n  \"key_findings\": [\n    \"Charged 180° walls in ZrO2 thin films achieve sub-nm2 domain footprints\",\n    \"HH walls are electrostatically stabilized by interstitial oxygen atoms\",\n    \"HH walls exhibit significantly lower mobility (1.6 meV) than TT walls (22.3 meV)\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work demonstrates the smallest known ferroelectric domain footprints and reveals mechanisms for ultrafast, low-energy domain wall motion in engineered ferroelectrics, advancing nanoscale device design principles.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the lateral and vertical compression of ferroelectric domains in ZrO2 thin films. Using direct observation, researchers identified charged 180° walls (HH and TT) that create sub-nm2 domain footprints. The HH walls exhibit electrostatic stabilization via interstitial oxygen, enabling ultralow domain wall mobility (1.6 meV) compared to TT walls (2.23 meV), suggesting potential for low-voltage nanoelectronics applications.",
+          "key_findings": [
+            "Charged 180° walls in ZrO2 thin films achieve sub-nm2 domain footprints",
+            "HH walls are electrostatically stabilized by interstitial oxygen atoms",
+            "HH walls exhibit significantly lower mobility (1.6 meV) than TT walls (22.3 meV)"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work demonstrates the smallest known ferroelectric domain footprints and reveals mechanisms for ultrafast, low-energy domain wall motion in engineered ferroelectrics, advancing nanoscale device design principles."
+        },
+        "elapsed_seconds": 23.5442,
+        "input_tokens": 763,
+        "output_tokens": 235,
+        "thoughts_tokens": null,
+        "total_tokens": 998,
+        "model_eval_seconds": 18.2186,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020030",
+        "title": "Disruption of cell-type-specific molecular programs of striatal spiny projection neurons in autism.",
+        "abstract": "NA: Rare genetic variants contribute substantially to autism spectrum disorder (ASD), yet the regulatory logic of vulnerable subcortical cells is poorly understood. In a 16p11.2 deletion mouse model, lineage tracing across five brain regions revealed prominent striatal changes. In the human putamen from ASD and neurotypical donors, single-nucleus multi-omics showed transcriptional alterations concentrated in D1 striosome spiny projection neurons (SPNs), affecting synaptic and energy metabolism genes, with altered synapse-supporting programs in astrocytes. Gene regulatory network analysis integrating chromatin accessibility and expression identified EGR1 and EGR3 as key regulators of these programs, with reduced activity in D1 striosome SPNs. Deleting EGR1 or EGR3 in human striatal organoids produced partially overlapping transcriptional changes. These findings establish the striatum as a site of molecular convergence in ASD and provide a multi-omic resource for dissecting subcortical mechanisms.",
+        "doi": "10.1016/j.cell.2026.10.027",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.027",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020030/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated molecular disruptions in striatal spiny projection neurons (SPNs) in autism using a 16p11.2 deletion mouse model and human putamen multi-omics. It identified transcriptional alterations in D1 striosome SPNs affecting synaptic and metabolic genes, with EGR1/EGR3 as key regulators. The findings highlight striatal molecular convergence in ASD and offer a resource for subcortical mechanisms.\",\n  \"key_findings\": [\n    \"Transcriptional alterations in D1 striosome spiny projection neurons affect synaptic and metabolic genes\",\n    \"EGR1 and EGR3 are key regulators of disrupted molecular programs in D1 striosome SPNs\",\n    \"Striatal molecular convergence in autism spectrum disorder\"\n  ],\n  \"study_type\": \"16p11.2 deletion mouse model and human putamen single-nucleus multi-omics\",\n  \"scientific_significance\": \"The study identifies striatal molecular convergence in autism, providing a multi-omic resource to dissect subcortical mechanisms underlying neurodevelopmental disorders.\"\n}",
+        "parsed": {
+          "summary": "This study investigated molecular disruptions in striatal spiny projection neurons (SPNs) in autism using a 16p11.2 deletion mouse model and human putamen multi-omics. It identified transcriptional alterations in D1 striosome SPNs affecting synaptic and metabolic genes, with EGR1/EGR3 as key regulators. The findings highlight striatal molecular convergence in ASD and offer a resource for subcortical mechanisms.",
+          "key_findings": [
+            "Transcriptional alterations in D1 striosome spiny projection neurons affect synaptic and metabolic genes",
+            "EGR1 and EGR3 are key regulators of disrupted molecular programs in D1 striosome SPNs",
+            "Striatal molecular convergence in autism spectrum disorder"
+          ],
+          "study_type": "16p11.2 deletion mouse model and human putamen single-nucleus multi-omics",
+          "scientific_significance": "The study identifies striatal molecular convergence in autism, providing a multi-omic resource to dissect subcortical mechanisms underlying neurodevelopmental disorders."
+        },
+        "elapsed_seconds": 21.062,
+        "input_tokens": 664,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 890,
+        "model_eval_seconds": 17.3706,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42908355",
+        "title": "Optically Tunable Chiral Magnetic States and Exchange Engineering via Charge-Transfer Excitation in a van der Waals Antiferromagnet CrPS4.",
+        "abstract": "NA: Controlling magnetism with light in two-dimensional van der Waals magnets could enable ultrafast, energy-efficient spintronics. However, selectively writing distinct magnetic phases, such as chiral magnetic states (e.g., spin spirals and skyrmions) for memory and collinear states for logic, within a single material remains an outstanding challenge. Here, we demonstrate deterministic, photon-energy-selective writing of magnetic order in the air-stable antiferromagnet chromium thiophosphate ( CrPS4 ). Its ligand-to-metal charge transfer gap serves as an intrinsic switching threshold: excitation below this gap drives d - d transitions to stabilize chiral magnetic states due to a spin-spiral phase, while excitation above activates a photo-doping mechanism that renormalizes magnetic exchange and induces a collinear phase. These optically defined states are distinguished through polarization-resolved magneto-optical spectroscopy and probed via a proximal monolayer tungsten diselenide ( WSe2 ). By establishing optical selectivity in a single material, our work provides a reconfigurable platform for opto-spintronic circuits where memory and logic functions can be dynamically toggled with light.",
+        "doi": "10.1002/adma.75391",
+        "doi_url": "https://doi.org/10.1002/adma.75391",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42908355/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates optically tunable chiral magnetic states in CrPS4, a van der Waals antiferromagnet. Using photon-energy-selective excitation, the researchers stabilized chiral magnetic states below a ligand-to-metal charge transfer gap and collinear states above it. The approach leverages charge-transfer excitation to switch magnetic phases, with results confirmed via magneto-optical spectroscopy and WSe2 probing. This enables light-controlled reconfiguration of spintronic functions.\",\n  \"key_findings\": [\n    \"Photon-energy-selective excitation stabilizes chiral magnetic states below the ligand-to:metal charge transfer gap in CrPS4\",\n    \"Excitation above the gap induces collinear magnetic states via photo-doping\",\n    \"Optical switching of magnetic phases is distinguished using polarization-resolved magneto-optical spectroscopy\"\n  ],\n  \"study_type\": \"Optical excitation in CrPS4\",\n  \"scientific_significance\": \"This work establishes a single-material platform for light-controlled magnetic state switching, enabling dynamic reconfiguration of spintronic functions without external magnetic fields.\"\n}",
+        "parsed": {
+          "summary": "This study investigates optically tunable chiral magnetic states in CrPS4, a van der Waals antiferromagnet. Using photon-energy-selective excitation, the researchers stabilized chiral magnetic states below a ligand-to-metal charge transfer gap and collinear states above it. The approach leverages charge-transfer excitation to switch magnetic phases, with results confirmed via magneto-optical spectroscopy and WSe2 probing. This enables light-controlled reconfiguration of spintronic functions.",
+          "key_findings": [
+            "Photon-energy-selective excitation stabilizes chiral magnetic states below the ligand-to:metal charge transfer gap in CrPS4",
+            "Excitation above the gap induces collinear magnetic states via photo-doping",
+            "Optical switching of magnetic phases is distinguished using polarization-resolved magneto-optical spectroscopy"
+          ],
+          "study_type": "Optical excitation in CrPS4",
+          "scientific_significance": "This work establishes a single-material platform for light-controlled magnetic state switching, enabling dynamic reconfiguration of spintronic functions without external magnetic fields."
+        },
+        "elapsed_seconds": 23.0216,
+        "input_tokens": 720,
+        "output_tokens": 232,
+        "thoughts_tokens": null,
+        "total_tokens": 952,
+        "model_eval_seconds": 18.4014,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020031",
+        "title": "A single-cell and spatial 3D multi-omic atlas of developing human basal ganglia.",
+        "abstract": "NA: Human basal ganglia (BG) neurons and inhibitory interneurons originate in the ganglionic eminences (GEs), transient structures in the ventral prenatal brain. This study delineates the specification and maturation of GEs and GE-derived neurons using single-nucleus methyl-3C sequencing (snm3C-seq), spatial transcriptomics, and single-molecule chromatin + RNA imaging, and we found heterogeneous temporal progression across GE subregions. Spiny projection neurons (SPNs), the principal cells of the BG, acquire distinct subtypes through synchronized 3D-epigenomic remodeling, in contrast to the asynchronous maturation of other neuron types. Oligodendrocyte differentiation involves a transient short-range chromatin state during infancy, showing that the short-range and long-range chromatin conformations previously linked to terminal glial and neuronal fates can also be transient. The temporal cortex matured epigenomically faster than other cortical regions during this period. Lastly, SPNs were enriched in genetic risk for neuropsychiatric disease. Our study extends findings on unique 3D-epigenomic dynamics during human brain development.",
+        "doi": "10.1016/j.cell.2026.10.008",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.008",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020031/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used single-nucleus methyl-3C sequencing, spatial transcriptomics, and single-molecule chromatin imaging to map the specification and maturation of human basal ganglia progenitor regions. It revealed heterogeneous temporal progression across ganglionic eminences, with spiny projection neurons undergoing synchronized 3D-epigenomic remodeling while other neurons matured asynchronously. Oligodendrocyte differentiation involved transient short-range chromatin states, and SPNs showed enrichment for neuropsychiatric disease genetic risk factors.\",\n  \"key_findings\": [\n    \"Spiny projection neurons undergo synchronized 3:3D-epigenomic remodeling during basal ganglia maturation\",\n    \"Oligodendrocyte differentiation involves transient short-range chromatin states during infancy\",\n    \"Spiny projection neurons are enriched for genetic risk factors of neuropsychiatric diseases\"\n  ],\n  \"study_type\": \"Single-nucleus methyl-3C sequencing, spatial transcriptomics, and single-molecule chromatin imaging\",\n  \"scientific_significance\": \"This work provides a comprehensive 3D-epigenomic atlas of human basal ganglia development, revealing synchronized maturation dynamics of key neuronal subtypes with implications for understanding neurodevelopmental disease mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study used single-nucleus methyl-3C sequencing, spatial transcriptomics, and single-molecule chromatin imaging to map the specification and maturation of human basal ganglia progenitor regions. It revealed heterogeneous temporal progression across ganglionic eminences, with spiny projection neurons undergoing synchronized 3D-epigenomic remodeling while other neurons matured asynchronously. Oligodendrocyte differentiation involved transient short-range chromatin states, and SPNs showed enrichment for neuropsychiatric disease genetic risk factors.",
+          "key_findings": [
+            "Spiny projection neurons undergo synchronized 3:3D-epigenomic remodeling during basal ganglia maturation",
+            "Oligodendrocyte differentiation involves transient short-range chromatin states during infancy",
+            "Spiny projection neurons are enriched for genetic risk factors of neuropsychiatric diseases"
+          ],
+          "study_type": "Single-nucleus methyl-3C sequencing, spatial transcriptomics, and single-molecule chromatin imaging",
+          "scientific_significance": "This work provides a comprehensive 3D-epigenomic atlas of human basal ganglia development, revealing synchronized maturation dynamics of key neuronal subtypes with implications for understanding neurodevelopmental disease mechanisms."
+        },
+        "elapsed_seconds": 25.0639,
+        "input_tokens": 702,
+        "output_tokens": 260,
+        "thoughts_tokens": null,
+        "total_tokens": 962,
+        "model_eval_seconds": 20.6921,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42908362",
+        "title": "In Situ Constructed Pore-Chain Interlocked Networks in Polyimide-Covalent Organic Framework Nanocomposites Enable Ultralow k Dielectrics for High-Fidelity Signal Transmission.",
+        "abstract": "NA: The ultralow k porous polymer dielectrics have been widely explored for Integrated circuit (IC) interconnects, 5G/6G communications, and wearable devices. However, disordered pore structures and poor interfacial adhesion remain a major challenge, thus making it difficult to decouple the k-tanδ trade-off. Here, we employ hollow covalent organic frameworks (H-TD-COF) as multifunctional molecular anchoring nodes to construct robust pore-chain interlocked networks in polyimide nanofibrous films. The amino-functionalized COF shells participate in the in situ growth of polyimide (PI) chains, thus enabling interlocked interfaces that fundamentally restrict segmental mobility and suppress dipolar relaxation. Subsequent electrospinning technique allows anchored chains to be stretched along the fiber axis and immobilizes them within an oriented fibrous architecture. This simultaneously disrupts long-range charge migration pathways while preserving stress-transfer and heat-dissipation continuity. The resulting PI-g-COF(4) nanocomposites with 4 wt% H-TD-COF loading achieve an ultralow dielectric constant of 1.50 and dielectric loss of 0.001 at 1 kHz, with highly stable dielectric properties up to 250°C. Notably, device-level measurements further reveal a signal-to-noise-and-distortion ratio (SINAD) of 22.30 dB under 200 MHz crosstalk interference, showing a 52.2% improvement over commercial polyimide. This work lays solid foundations for nanoscale interfacial regulation in porous polymer nanocomposites towards ultralow k dielectrics.",
+        "doi": "10.1002/adma.75481",
+        "doi_url": "https://doi.org/10.1002/adma.75481",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42908362/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates ultralow k dielectrics for high-frequency applications by constructing pore-chain interlocked networks in polyimide-covalent organic framework nanocomposites. Using hollow covalent organic frameworks as molecular anchors, the researchers achieved a dielectric constant of 1.50 and loss of 0.001 at 1 kHz with stable performance up to 250°C. The approach simultaneously suppresses dipolar relaxation and maintains thermal/mechanical integrity, enabling superior signal transmission.\",\n  \"key_findings\": [\n    \"Ultralow dielectric constant of 1.50 and loss of 0.001 at 1 kHz\",\n    \"Stable dielectric properties up to 250°C\",\n    \"52.2% improvement in signal-to-noise-and-distortion ratio over commercial polyimide\"\n  ],\n  \"study_type\": \"Electrospinning with in situ polymerization\",\n  \"scientific_significance\": \"This work establishes a novel strategy for nanoscale interfacial engineering in porous polymer nanocomposites to achieve ultralow k dielectrics without compromising thermal or mechanical stability, advancing high-frequency signal transmission technologies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates ultralow k dielectrics for high-frequency applications by constructing pore-chain interlocked networks in polyimide-covalent organic framework nanocomposites. Using hollow covalent organic frameworks as molecular anchors, the researchers achieved a dielectric constant of 1.50 and loss of 0.001 at 1 kHz with stable performance up to 250°C. The approach simultaneously suppresses dipolar relaxation and maintains thermal/mechanical integrity, enabling superior signal transmission.",
+          "key_findings": [
+            "Ultralow dielectric constant of 1.50 and loss of 0.001 at 1 kHz",
+            "Stable dielectric properties up to 250°C",
+            "52.2% improvement in signal-to-noise-and-distortion ratio over commercial polyimide"
+          ],
+          "study_type": "Electrospinning with in situ polymerization",
+          "scientific_significance": "This work establishes a novel strategy for nanoscale interfacial engineering in porous polymer nanocomposites to achieve ultralow k dielectrics without compromising thermal or mechanical stability, advancing high-frequency signal transmission technologies."
+        },
+        "elapsed_seconds": 25.7901,
+        "input_tokens": 840,
+        "output_tokens": 253,
+        "thoughts_tokens": null,
+        "total_tokens": 1093,
+        "model_eval_seconds": 19.213,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020032",
+        "title": "Single-cell, multi-region profiling of the macaque brain across the lifespan.",
+        "abstract": "NA: Brain aging is a complex process with profound health and societal consequences. However, the molecular and cellular pathways that govern its progression, and inter- and intra-individual variation, remain poorly defined. We present a transcriptomic atlas of 5.3 million cells from 582 samples spanning 11 brain regions of 55 rhesus macaques (aged 0.5-21 years). We identify age-depleted and vulnerable neuronal populations and subtle, age-associated compositional differences in glia-detectable only at single-cell resolution. We chart convergent and divergent age-associated molecular signatures across regions and cell types, which include sex-specific signatures that could underlie biases in neurological disorders. These signatures overlap those of Alzheimer's disease (AD), which suggests that aging and AD share molecular roots that emerge at different ages and in region- and sex-specific windows of vulnerability. This work provides a temporal, regional, and sex-stratified atlas of the aging primate brain, offering insights into cell-type-specific vulnerabilities and regional heterogeneity with translational human relevance.",
+        "doi": "10.1016/j.cell.2026.09.014",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.014",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020032/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study generated a transcriptomic atlas of 5.3 million cells from 582 rhesus macaque brain samples across 11 regions and ages 0.5-21 years. It identified age-depleted neuronal populations, sex-specific molecular signatures, and glial compositional shifts detectable only at single-cell resolution. The findings reveal shared molecular pathways with Alzheimer's disease, suggesting aging and neurodegenerative disorders share early developmental roots with region- and sex-specific vulnerabilities.\",\n  \"key_findings\": [\n    \"Identification of age-depleted neuronal populations\",\n    \"Detection of sex-specific molecular signatures across brain regions\",\n    \"Glial compositional shifts detectable only at single-cell resolution\"\n  ],\n  \"study_type\": \"Transcriptomic atlas of macaque brain samples\",\n  \"scientific_significance\": \"This work establishes a temporal, regional, and sex-stratified molecular framework for primate brain aging, revealing shared molecular pathways with Alzheimer's disease that emerge at distinct developmental windows.\"\n}",
+        "parsed": {
+          "summary": "This study generated a transcriptomic atlas of 5.3 million cells from 582 rhesus macaque brain samples across 11 regions and ages 0.5-21 years. It identified age-depleted neuronal populations, sex-specific molecular signatures, and glial compositional shifts detectable only at single-cell resolution. The findings reveal shared molecular pathways with Alzheimer's disease, suggesting aging and neurodegenerative disorders share early developmental roots with region- and sex-specific vulnerabilities.",
+          "key_findings": [
+            "Identification of age-depleted neuronal populations",
+            "Detection of sex-specific molecular signatures across brain regions",
+            "Glial compositional shifts detectable only at single-cell resolution"
+          ],
+          "study_type": "Transcriptomic atlas of macaque brain samples",
+          "scientific_significance": "This work establishes a temporal, regional, and sex-stratified molecular framework for primate brain aging, revealing shared molecular pathways with Alzheimer's disease that emerge at distinct developmental windows."
+        },
+        "elapsed_seconds": 17.8263,
+        "input_tokens": 777,
+        "output_tokens": 213,
+        "thoughts_tokens": null,
+        "total_tokens": 990,
+        "model_eval_seconds": 16.0436,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    }
+  ]
+}
