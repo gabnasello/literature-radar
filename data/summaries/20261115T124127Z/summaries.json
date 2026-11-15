@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261115T124127Z",
+  "generated_at_utc": "2026-11-15 12:58:50 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 529,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42876215",
+        "title": "Dual Twisted Interfaces Enable Tunable Second Harmonic Generation in Chemical Vapor Deposition Grown Trilayer MoS2.",
+        "abstract": "NA: Twisted bilayer transition metal dichalcogenides, governed by a single twisted interface, offer a versatile platform for manipulating interlayer coupling and emergent optical behavior. However, despite extensive studies on single twisted interface systems, how multi-interface twisted stacking influences nonlinear optical behavior remains unclear. Here, we address this gap by systematically investigating the nonlinear optical performance of chemical vapor deposition (CVD) grown twisted trilayer MoS2 (TT-MoS2) with multi-interface twisted stacking. We fabricate all nine distinct trilayer MoS2 configurations by CVD. Raman and photoluminescence show that twisted interfaces modulate interlayer coupling, giving rise to stacking-dependent phonon and excitonic responses. Atomic-resolution scanning, transmission electron microscopy, and selected area electron diffraction confirm dual twisted interfaces and a supermoiré lattice. Guided by these structural insights, we examine the second harmonic generation (SHG) response across all nine trilayer configurations. Extending the coherent SH field superposition model to a trilayer system with two independent twisted interfaces, we develop a framework that describes how the dual interfaces govern the SHG intensity and polarization orientation across stacking configurations. Our findings establish TT-MoS2 as a versatile nonlinear platform and open new avenues for understanding and exploiting multi-interface twisted coupling to engineer nonlinear optical responses in van der Waals materials.",
+        "doi": "10.1002/adma.75387",
+        "doi_url": "https://doi.org/10.1002/adma.75387",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876215/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, the researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution imaging confirmed dual twisted interfaces and a supermoiré lattice. They developed a framework linking interface geometry to SHG intensity and polarization, demonstrating TT-MoS2's potential as a tunable nonlinear optical platform.\",\n  \"key_findings\": [\n    \"Dual twisted interfaces in trilayer MoS2 create a supermoiré lattice structure\",\n    \"Stacking-dependent phonon and excitonic responses modulate SHG intensity\",\n    \"A framework links interface geometry to SHG polarization and intensity\"\n  ],\n  \"study_type\": \"CVD-grown twisted trilayer MoS2 configurations\",\n  \"scientific_significance\": \"This work establishes a structural framework for engineering multi-interface twisted coupling in van der Waals materials to control nonlinear optical responses, advancing tunable second harmonic generation platforms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, the researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution imaging confirmed dual twisted interfaces and a supermoiré lattice. They developed a framework linking interface geometry to SHG intensity and polarization, demonstrating TT-MoS2's potential as a tunable nonlinear optical platform.",
+          "key_findings": [
+            "Dual twisted interfaces in trilayer MoS2 create a supermoiré lattice structure",
+            "Stacking-dependent phonon and excitonic responses modulate SHG intensity",
+            "A framework links interface geometry to SHG polarization and intensity"
+          ],
+          "study_type": "CVD-grown twisted trilayer MoS2 configurations",
+          "scientific_significance": "This work establishes a structural framework for engineering multi-interface twisted coupling in van der Waals materials to control nonlinear optical responses, advancing tunable second harmonic generation platforms."
+        },
+        "elapsed_seconds": 27.1599,
+        "input_tokens": 844,
+        "output_tokens": 227,
+        "thoughts_tokens": null,
+        "total_tokens": 1071,
+        "model_eval_seconds": 24.0492,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962342",
+        "title": "Piezoelectric electroporation potentiates high-frequency irreversible electroporation for enhanced prostate cancer eradication.",
+        "abstract": "NA: Residual tumor cell persistence remains a critical unresolved barrier limiting focal therapy such as high-frequency irreversible electroporation (H-FIRE) for prostate cancer. In this study, we identified DNA damage repair as the central mechanism governing the reversible survival of residual cells after H-FIRE. By exploiting the transient membrane permeability of these residual cells following H-FIRE, we engineered a piezoelectrically active nanomaterial, BOIS. Exogenous electric pulses generated by H-FIRE enhance tumor membrane permeabilization, thereby facilitating the intracellular delivery of BOIS and promoting its efficient penetration into residual malignant cells. Upon ultrasound activation, BOIS induces surface charge separation and electron migration, producing an intrinsic electric field accompanied by reactive oxygen species (ROS). This dual mechanism cascade simultaneously inflicts endogenous electric field-mediated electroporation damage on both cellular and nuclear membranes and imposes lethal oxidative stress, thereby converting reversibly injured residual cells into an irreversible death trajectory. Consequently, residual tumor cells with damage repair capacity are converted from a reversibly injured state to irreversible lethal damage. Unlike conventional combination therapies, this study pioneered a new therapeutic paradigm in which the focal ablation procedure functions as a nanomaterial delivery mechanism, thereby establishing a self-reinforcing therapeutic loop. This strategy markedly amplified the therapeutic efficacy of H-FIRE and enhanced the eradication of residual tumor cells. Collectively, these findings establish a groundbreaking therapeutic paradigm for eliminating residual disease following focal ablation.",
+        "doi": "10.1016/j.biomaterials.2026.124683",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124683",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962342/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. By identifying DNA damage repair as the key mechanism for reversible cell survival, researchers engineered piezoelectric nanomaterial BOIS. H-FIRE-induced membrane permeability allows BOIS delivery to residual cells. Ultrasound activation triggers BOIS to generate electric fields and reactive oxygen species, causing irreversible cell death through dual mechanisms. This approach significantly enhances tumor eradication by converting reversible injury to irreversible damage.\",\n  \"key_findings\": [\n    \"H-FIRE-induced membrane permeability enables BOIS delivery to residual prostate cancer cells\",\n    \"Ultrasound-activated BOIS produces electric fields and ROS to induce irreversible cell death\",\n    \"The strategy converts reversible tumor injury to irreversible lethal damage, improving eradication\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This approach establishes a self-reinforcing therapeutic loop where focal ablation delivers nanomaterials to enhance residual tumor destruction, offering a novel mechanism for complete prostate cancer eradication.\"\n}",
+        "parsed": {
+          "summary": "This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. By identifying DNA damage repair as the key mechanism for reversible cell survival, researchers engineered piezoelectric nanomaterial BOIS. H-FIRE-induced membrane permeability allows BOIS delivery to residual cells. Ultrasound activation triggers BOIS to generate electric fields and reactive oxygen species, causing irreversible cell death through dual mechanisms. This approach significantly enhances tumor eradication by converting reversible injury to irreversible damage.",
+          "key_findings": [
+            "H-FIRE-induced membrane permeability enables BOIS delivery to residual prostate cancer cells",
+            "Ultrasound-activated BOIS produces electric fields and ROS to induce irreversible cell death",
+            "The strategy converts reversible tumor injury to irreversible lethal damage, improving eradication"
+          ],
+          "study_type": "",
+          "scientific_significance": "This approach establishes a self-reinforcing therapeutic loop where focal ablation delivers nanomaterials to enhance residual tumor destruction, offering a novel mechanism for complete prostate cancer eradication."
+        },
+        "elapsed_seconds": 26.7278,
+        "input_tokens": 859,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 1081,
+        "model_eval_seconds": 23.661,
+        "error": "summary must contain 45–65 words; received 73.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914976",
+        "title": "Cell-state-specific metabolic networks govern ferroptosis versus apoptosis in small cell lung cancer.",
+        "abstract": "NA: Cellular heterogeneity and plasticity are hallmarks of cancer that contribute to tumor growth and therapy resistance. Here, we investigated metabolic heterogeneity in small cell lung cancer (SCLC), an aggressive cancer type with considerable plasticity between neuroendocrine (NE) and non-NE cellular states. Through integrated transcriptomic and metabolomic analyses, we identified a universal dependency on exogenous cysteine/cystine (Cys) across all NE/non-NE SCLC cell states. Notably, NE and non-NE cells with low ASCL1 transcription factor levels underwent ferroptosis upon Cys depletion, whereas ASCL1high cells underwent apoptosis while remaining resistant to ferroptosis. This ferroptosis resistance was driven by the direct transcriptional activation of GCH1 by ASCL1, resulting in increased levels of the antioxidants BH4/BH2. Accordingly, combined Cys depletion and inhibition of BH4/BH2 synthesis reduced tumor growth in patient-derived xenografts. These findings demonstrate that metabolic state influences cell-death susceptibility in SCLC and provide a rationale for therapeutic strategies that exploit these metabolic differences.",
+        "doi": "10.1016/j.cell.2026.09.045",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.09.045",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914976/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated metabolic heterogeneity in small cell lung cancer (SCLC) cell states. Using transcriptomic and metabolomic analyses, it identified universal cysteine dependency across neuroendocrine (NE) and non-NE SCLC states. NE cells with low ASCL1 levels underwent ferroptosis upon cysteine depletion, while ASCL1high cells underwent apoptosis and resisted ferroptosis due to GCH1-mediated BH4/BH2 upregulation. Targeting cysteine and BH4/BH2 synthesis reduced tumor growth in xenografts.\",\n  \"key_findings\": [\n    \"SCLC cells exhibit universal cysteine dependency across neuroendocrine and non-neuroendocrine states\",\n    \"ASCL1low NE cells undergo ferroptosis upon cysteine depletion, whereas ASCL1high cells undergo apoptosis and resist ferroptosis\",\n    \"GCH1 transcriptional activation by ASCL1 increases BH4/BH2, conferring ferroptosis resistance\"\n  ],\n  \"study_type\": \"Integrated transcriptomic and metabolomic analyses\",\n  \"scientific_significance\": \"The findings establish metabolic state as a determinant of cell death susceptibility in SCLC, revealing a mechanism for targeted therapeutic intervention through cysteine and antioxidant pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigated metabolic heterogeneity in small cell lung cancer (SCLC) cell states. Using transcriptomic and metabolomic analyses, it identified universal cysteine dependency across neuroendocrine (NE) and non-NE SCLC states. NE cells with low ASCL1 levels underwent ferroptosis upon cysteine depletion, while ASCL1high cells underwent apoptosis and resisted ferroptosis due to GCH1-mediated BH4/BH2 upregulation. Targeting cysteine and BH4/BH2 synthesis reduced tumor growth in xenografts.",
+          "key_findings": [
+            "SCLC cells exhibit universal cysteine dependency across neuroendocrine and non-neuroendocrine states",
+            "ASCL1low NE cells undergo ferroptosis upon cysteine depletion, whereas ASCL1high cells undergo apoptosis and resist ferroptosis",
+            "GCH1 transcriptional activation by ASCL1 increases BH4/BH2, conferring ferroptosis resistance"
+          ],
+          "study_type": "Integrated transcriptomic and metabolomic analyses",
+          "scientific_significance": "The findings establish metabolic state as a determinant of cell death susceptibility in SCLC, revealing a mechanism for targeted therapeutic intervention through cysteine and antioxidant pathways."
+        },
+        "elapsed_seconds": 35.274,
+        "input_tokens": 697,
+        "output_tokens": 274,
+        "thoughts_tokens": null,
+        "total_tokens": 971,
+        "model_eval_seconds": 28.058,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42909956",
+        "title": "A long-acting injectable nanoparticle-hydrogel depot enables sustained IGF-1 delivery to reverse chronic denervation.",
+        "abstract": "NA: Chronic denervation following peripheral nerve injury leads to progressive muscle atrophy and Schwann cell dysfunction that severely limit functional recovery, yet no therapies effectively sustain trophic support over the prolonged regenerative period. Here, we develop a long-acting injectable (LAI) biomaterial platform that enables sustained local delivery of insulin-like growth factor-1 (IGF-1). The system encapsulates IGF-1 in poly(ethylene glycol)-b-polycaprolactone nanoparticles and embeds nanoparticles within an injectable nanofiber-hydrogel composite, enabling six-week local IGF-1 delivery with preserved bioactivity and tissue retention. In a rat chronic denervation model with delayed nerve repair, the IGF-1 LAI increased grip strength by 29.1%, myelinated axon counts by 186.2%, and myofiber cross-sectional area by 88.4%. In a non-human primate model, repeated six-week dosing maintained intramuscular IGF-1 levels and improved functional recovery by 57.0%, accompanied by reduced fibrosis and increased reinnervation. These findings establish a translational biomaterial strategy for sustained protein delivery and disease-modifying treatment of chronic denervation.",
+        "doi": "10.1016/j.celbio.2026.100594",
+        "doi_url": "https://doi.org/10.1016/j.celbio.2026.100594",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42909956/",
+        "journal_id": "cell-biomaterials",
+        "journal_name": "Cell Biomaterials",
+        "report_id": "cell-biomaterials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated sustained insulin-like growth factor-1 (IGF-1) delivery to reverse chronic denervation effects using a long-acting injectable nanoparticle-hydrogel depot. The approach involved encapsulating IGF-1 in poly(ethylene glycol)-b-polycaprolactone nanoparticles within an injectable nanofiber-hydrogel composite. In rats and non-human primates, the system improved grip strength, myelinated axon counts, and muscle cross-sectional area while reducing fibrosis and enhancing reinnervation.\",\n  \"key_findings\": [\n    \"Increased grip strength by 29.1% in rats\",\n    \"186.2% rise in myelinated axon counts in rats\",\n    \"57.0% functional recovery improvement in non-human primates\"\n  ],\n  \"study_type\": \"Long-acting injectable nanoparticle-hydrogel depot\",\n  \"scientific_significance\": \"This biomaterial platform demonstrates sustained protein delivery for chronic denervation treatment, providing a scalable strategy to maintain trophic support during nerve regeneration.\"\n}",
+        "parsed": {
+          "summary": "This study investigated sustained insulin-like growth factor-1 (IGF-1) delivery to reverse chronic denervation effects using a long-acting injectable nanoparticle-hydrogel depot. The approach involved encapsulating IGF-1 in poly(ethylene glycol)-b-polycaprolactone nanoparticles within an injectable nanofiber-hydrogel composite. In rats and non-human primates, the system improved grip strength, myelinated axon counts, and muscle cross-sectional area while reducing fibrosis and enhancing reinnervation.",
+          "key_findings": [
+            "Increased grip strength by 29.1% in rats",
+            "186.2% rise in myelinated axon counts in rats",
+            "57.0% functional recovery improvement in non-human primates"
+          ],
+          "study_type": "Long-acting injectable nanoparticle-hydrogel depot",
+          "scientific_significance": "This biomaterial platform demonstrates sustained protein delivery for chronic denervation treatment, providing a scalable strategy to maintain trophic support during nerve regeneration."
+        },
+        "elapsed_seconds": 31.0946,
+        "input_tokens": 731,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 960,
+        "model_eval_seconds": 23.0895,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42887498",
+        "title": "Embracing macrophage complexity for research and translation.",
+        "abstract": "NA: Macrophages are among the most versatile differentiated cell types in the body, serving as key regulators of tissue development, homeostasis, inflammation, repair, and immunity. Their functional diversity cannot be captured by fixed subsets, binary activation states, or single-marker definitions. Macrophage identity emerges instead from the integration of developmental origin, tissue niche, epigenetic history, local environmental cues, and disease-associated signals. Advances in single-cell genomics, spatial profiling, epigenomics, in vivo perturbation, and computational modeling now show that this behavior is organized through modular gene programs, so that any given macrophage state is best described as a weighted combination of program activities rather than a discrete label. We argue that embracing this modular architecture matters not only for annotation but for therapy: macrophage-directed interventions will require defining disease-associated states, identifying surface-accessible entry points into them, and rewiring the underlying programs with spatial and temporal precision.",
+        "doi": "10.1016/j.immuni.2026.09.015",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.09.015",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42887498/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates macrophage functional diversity beyond fixed subsets or binary states, emphasizing their integration of developmental origin, tissue environment, and epigenetic factors. Using single-cell genomics and computational models, it demonstrates that macro:phage states arise from modular gene programs. The findings suggest that precise therapeutic interventions require defining disease-specific macrophage states and targeting their underlying regulatory mechanisms.\",\n  \"key_findings\": [\n    \"Macrophage identity depends on integration of developmental origin, tissue niche, and environmental cues rather than fixed subsets\",\n    \"Macrophage states are defined by modular gene programs rather than discrete labels\",\n    \"Therapeutic interventions need precise targeting of disease-associated macrophage states through spatial and temporal regulation\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work advances the understanding of macrophage heterogeneity by framing their functional states as dynamic combinations of modular programs, providing a framework for targeted immunomodulatory therapies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates macrophage functional diversity beyond fixed subsets or binary states, emphasizing their integration of developmental origin, tissue environment, and epigenetic factors. Using single-cell genomics and computational models, it demonstrates that macro:phage states arise from modular gene programs. The findings suggest that precise therapeutic interventions require defining disease-specific macrophage states and targeting their underlying regulatory mechanisms.",
+          "key_findings": [
+            "Macrophage identity depends on integration of developmental origin, tissue niche, and environmental cues rather than fixed subsets",
+            "Macrophage states are defined by modular gene programs rather than discrete labels",
+            "Therapeutic interventions need precise targeting of disease-associated macrophage states through spatial and temporal regulation"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work advances the understanding of macrophage heterogeneity by framing their functional states as dynamic combinations of modular programs, providing a framework for targeted immunomodulatory therapies."
+        },
+        "elapsed_seconds": 25.6592,
+        "input_tokens": 651,
+        "output_tokens": 203,
+        "thoughts_tokens": null,
+        "total_tokens": 854,
+        "model_eval_seconds": 19.7632,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896839",
+        "title": "Cortex-wide imaging in naturally behaving mice with 1-gram wireless mesoscopes.",
+        "abstract": "NA: Revealing how distributed cortical circuits coordinate behavior in freely moving animals remains a central challenge in systems neuroscience, constrained by limited fields of view, low throughput, and the tethering required by current miniaturized microscopes1-4. Here, we present Airscope, a wireless mesoscope delivering 4 μm lateral resolution across a 6 mm field of view at 12.5 Hz, weighing 1.0 gram. An aspheric-lens design achieves a 2.84× shorter total track length than previous miniaturized microscopes1,2,5,6 while matching the neuron yield of benchtop one-photon mesoscopes; a tailored wireless link supports cable-free calcium imaging from >8,500 neurons per animal (25‑fold increase). Paired with a zero-shot behavior analyzer, Airscope enables cortical imaging across rich behavioral conditions, including room-scale enriched arenas, swimming assays, and multi-organ implantation, with concurrent recording from multiple animals. Using Airscope, we demonstrate versatile applications of untethered cortical imaging across diverse behavioral paradigms. We identify cortical activity patterns across multiple dorsal regions that correlate with behavioral signatures of social dominance, and show dorsal-cortical population activity prospectively decodes competition outcomes across paired animals. We observe reward-location-associated cortical activity patterns during maze exploration, and characterize Granger-causal influence from spinal cord to cortex during fear conditioning, enabled by simultaneous brain-spinal recordings. By uniting large-scale, cellular-resolution recording with unconstrained behavior, Airscope makes naturalistic, multi-animal cortical recording experimentally practical, and provides a broadly accessible technology for systems neuroscience.",
+        "doi": "10.1038/s41586-026-11293-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11293-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896839/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of observing distributed cortical circuits during natural behavior using a novel wireless mesoscope called Airscope. The device achieves 4 μm lateral resolution over a 6 mm field of view at 12.5 Hz, weighing 1 gram. It enables high-throughput calcium imaging of up to 8,500 neurons per animal across diverse behavioral paradigms, including social dominance, maze exploration, and fear conditioning. The technology supports concurrent multi-animal recordings and reveals cortical activity patterns linked to behavioral outcomes and spinal-cortical interactions.\",\n  \"key_findings\": [\n    \"Airscope provides 4 μm lateral resolution across a 6 mm field of view at 12.5 Hz with 1-gram weight\",\n    \"Cortical activity patterns correlate with social dominance and predict competition outcomes between animals\",\n    \"Reward-location-associated activity patterns emerge during maze exploration and spinal-cortical Granger causality is observed during fear conditioning\"\n  ],\n  \"study_type\": \"Wireless mesoscope\",\n  \"scientific_significance\": \"This technology enables large-scale, cellular-resolution cortical imaging during naturalistic behavior, overcoming previous constraints of tethering and limited field of view for systems neuroscience.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of observing distributed cortical circuits during natural behavior using a novel wireless mesoscope called Airscope. The device achieves 4 μm lateral resolution over a 6 mm field of view at 12.5 Hz, weighing 1 gram. It enables high-throughput calcium imaging of up to 8,500 neurons per animal across diverse behavioral paradigms, including social dominance, maze exploration, and fear conditioning. The technology supports concurrent multi-animal recordings and reveals cortical activity patterns linked to behavioral outcomes and spinal-cortical interactions.",
+          "key_findings": [
+            "Airscope provides 4 μm lateral resolution across a 6 mm field of view at 12.5 Hz with 1-gram weight",
+            "Cortical activity patterns correlate with social dominance and predict competition outcomes between animals",
+            "Reward-location-associated activity patterns emerge during maze exploration and spinal-cortical Granger causality is observed during fear conditioning"
+          ],
+          "study_type": "Wireless mesoscope",
+          "scientific_significance": "This technology enables large-scale, cellular-resolution cortical imaging during naturalistic behavior, overcoming previous constraints of tethering and limited field of view for systems neuroscience."
+        },
+        "elapsed_seconds": 30.5122,
+        "input_tokens": 895,
+        "output_tokens": 256,
+        "thoughts_tokens": null,
+        "total_tokens": 1151,
+        "model_eval_seconds": 27.4368,
+        "error": "summary must contain 45–65 words; received 82.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42919905",
+        "title": "Autologous erythrocyte microparticles drive antitumour T cell immunity via haem-mediated dendritic cell activation.",
+        "abstract": "NA: Current vaccine adjuvants, such as aluminum salts and emulsions, are limited by weak induction of cytotoxic T cell immunity and restricted ability to promote T helper type 1 responses, highlighting the need for safer and more effective alternatives. Here we show that microparticles generated from erythrocytes by controlled ultraviolet irradiation function as potent T helper type 1-skewing adjuvants that enhance tumour antigen-specific cytotoxic T cell responses in vitro and in multiple mouse tumour models. Following uptake by dendritic cells, these microparticles traffic to lysosomes and deliver haem cargo that is subsequently transported to the nucleus. Mechanistically, the particles elevate lysosomal pH, promoting lysosome movement towards the nucleus and enabling haem transfer, where haem activates REV-ERB⍺ and forms a co-repressor complex that suppresses peroxisome proliferator-activated receptor gamma, thereby relieving inhibition of dendritic cell maturation and antigen presentation. In vaccination settings, combining tumour antigens with erythrocyte-derived microparticles enhances cytotoxic T cell activation and suppresses tumour growth with minimal toxicity. These findings establish host-derived vesicles as a promising platform for next-generation cancer vaccine adjuvants.",
+        "doi": "10.1038/s41551-026-01795-4",
+        "doi_url": "https://doi.org/10.1038/s41551-026-01795-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42919905/",
+        "journal_id": "nature-biomedical-engineering",
+        "journal_name": "Nature Biomedical Engineering",
+        "report_id": "nature-biomedical-engineering__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how autologous erythrocyte microparticles enhance antitumour T cell immunity through haem-mediated dendritic cell activation. Using controlled UV irradiation, the researchers generated microparticles that function as potent T helper type 1-skewing adjuvants. In vitro and mouse tumour models, these particles improved cytotoxic T cell responses against tumour antigens while suppressing tumour growth with minimal toxicity.\",\n  \"key_findings\": [\n    \"Erythrocyte microparticles generated via UV irradiation act as T helper type 1-skewing adjuvants\",\n    \"Microparticles deliver haem cargo to dendritic cells, elevating lysosomal pH to promote nuclear transport\",\n    \"Haem activates REV-ERB⍺ to suppress peroxisome proliferator-activated receptor gamma, enhancing dendritic cell maturation\"\n  ],\n  \"study_type\": \"In vitro and mouse tumour models\",\n  \"scientific_significance\": \"This work identifies host-derived erythrocyte microparticles as a novel adjuvant platform that can boost cytotoxic T cell immunity against tumours through haem-mediated dendritic cell activation mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how autologous erythrocyte microparticles enhance antitumour T cell immunity through haem-mediated dendritic cell activation. Using controlled UV irradiation, the researchers generated microparticles that function as potent T helper type 1-skewing adjuvants. In vitro and mouse tumour models, these particles improved cytotoxic T cell responses against tumour antigens while suppressing tumour growth with minimal toxicity.",
+          "key_findings": [
+            "Erythrocyte microparticles generated via UV irradiation act as T helper type 1-skewing adjuvants",
+            "Microparticles deliver haem cargo to dendritic cells, elevating lysosomal pH to promote nuclear transport",
+            "Haem activates REV-ERB⍺ to suppress peroxisome proliferator-activated receptor gamma, enhancing dendritic cell maturation"
+          ],
+          "study_type": "In vitro and mouse tumour models",
+          "scientific_significance": "This work identifies host-derived erythrocyte microparticles as a novel adjuvant platform that can boost cytotoxic T cell immunity against tumours through haem-mediated dendritic cell activation mechanisms."
+        },
+        "elapsed_seconds": 29.298,
+        "input_tokens": 827,
+        "output_tokens": 250,
+        "thoughts_tokens": null,
+        "total_tokens": 1077,
+        "model_eval_seconds": 26.2574,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42902027",
+        "title": "Engineered human Argonaute 2 for targeted C-to-U RNA base editing.",
+        "abstract": "NA: Tools for manipulating RNA that rely on nonhuman proteins, such as ISC-based and Cas-based scaffolds, can lead to unintended and little-understood effects on human cells and present challenges in therapeutic translation. Replacing them with human proteins engineered for expanded, programmable functions could bypass the limitations of these foreign proteins. Here we demonstrate that human Argonaute 2 (AGO2) can be repurposed as a modular RNA targeting domain. AGO2 fused to a C-to-U deaminase enables AGO-led targeted editing of RNA (ALTER). Using guide RNAs that remodel target RNA structure for selective editing and reduced nuclease activity, we show that ALTER achieves, on average, 1.9-fold higher C-to-U editing on mRNA targets in HEK293T cells compared with Cas13 editors CURE and RESCUE. Transcriptome-wide RNA-seq revealed similar or lower levels of off-target editing compared to the same Cas13-based editors. Machine learning models predict that far fewer immunogenic peptides will result from ALTER and we show that ALTER is amenable to a validated workflow for artificial intelligence-directed deimmunization.",
+        "doi": "10.1038/s41587-026-03359-y",
+        "doi_url": "https://doi.org/10.1038/s41587-026-03359-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42902027/",
+        "journal_id": "nature-biotechnology",
+        "journal_name": "Nature Biotechnology",
+        "report_id": "nature-biotechnology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered human Argona:2 (AGO2) to create a modular RNA targeting domain for targeted C-to-U RNA base editing. The approach combined AGO2 with a C-to-U deaminase to develop ALTER, a system that achieves higher editing efficiency on mRNA targets in HEK293T cells than Cas13-based editors while showing comparable or reduced off-target effects and lower immunogenicity potential.\",\n  \"key_findings\": [\n    \"ALTER achieves 1.9-fold higher C-to-U editing efficiency on mRNA targets in HEK293T cells compared to Cas13 editors\",\n    \"Transcriptome-wide RNA-seq indicates similar or lower off-target editing rates than Cas13-based systems\",\n    \"Machine learning predicts ALTER generates fewer immunogenic peptides, supporting potential for deimmunization\"\n  ],\n  \"study_type\": \"In vitro cell-based study\",\n  \"scientific_significance\": \"This work establishes human protein-based RNA editing as a viable alternative to foreign protein systems, potentially enhancing therapeutic safety and specificity in RNA manipulation.\"\n}",
+        "parsed": {
+          "summary": "This study engineered human Argona:2 (AGO2) to create a modular RNA targeting domain for targeted C-to-U RNA base editing. The approach combined AGO2 with a C-to-U deaminase to develop ALTER, a system that achieves higher editing efficiency on mRNA targets in HEK293T cells than Cas13-based editors while showing comparable or reduced off-target effects and lower immunogenicity potential.",
+          "key_findings": [
+            "ALTER achieves 1.9-fold higher C-to-U editing efficiency on mRNA targets in HEK293T cells compared to Cas13 editors",
+            "Transcriptome-wide RNA-seq indicates similar or lower off-target editing rates than Cas13-based systems",
+            "Machine learning predicts ALTER generates fewer immunogenic peptides, supporting potential for deimmunization"
+          ],
+          "study_type": "In vitro cell-based study",
+          "scientific_significance": "This work establishes human protein-based RNA editing as a viable alternative to foreign protein systems, potentially enhancing therapeutic safety and specificity in RNA manipulation."
+        },
+        "elapsed_seconds": 29.7409,
+        "input_tokens": 700,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 925,
+        "model_eval_seconds": 22.4062,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907581",
+        "title": "IL-2-producing TFH cells sustain Treg cell homeostasis and immune tolerance in the gut.",
+        "abstract": "NA: Follicular helper T (TFH) cells are well known for their role in supporting B cell responses. Here, we identify a critical B cell-independent function for TFH cells in sustaining regulatory T (Treg) cells within gut-associated lymphoid tissues (GALT). We demonstrate that TFH cells produce interleukin-2 (IL-2) at the T cell-B cell border and within interfollicular regions and that this localized IL-2 is required to maintain GALT Treg cell homeostasis and restrain the expansion of pathogenic effector T cells. Mice selectively lacking IL-2-producing TFH cells develop colitis and fatal multiorgan inflammation, driven by impaired GALT Treg cell responses and uncontrolled effector T cell activation. Broad-spectrum antibiotic treatment alleviates both intestinal and extraintestinal pathology, indicating that loss of tolerance to commensal-derived antigens is a key driver of disease. Together, these findings define a spatially restricted TFH cell-derived IL-2 niche critical for GALT Treg cell stability and uncover an unexpected immunoregulatory role for TFH cells in maintaining gastrointestinal tolerance beyond B cell help.",
+        "doi": "10.1038/s41590-026-02690-5",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02690-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907581/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates TFH cells' role in gut immune tolerance by identifying their production of IL-2 to sustain regulatory T cells in gut-associated lymphoid tissues. Using mouse models, researchers found that TFH-derived IL-2 maintains Treg homeostasis and prevents pathogenic T cell expansion. Mice lacking this IL-2 production developed colitis and multiorgan inflammation, highlighting the necessity of TFH cells for intestinal immune tolerance.\",\n  \"key_findings\": [\n    \"TFH cells produce IL-2 at the T cell-B cell border and interfollicular regions to maintain gut Treg homeostasis\",\n    \"Mice without IL-2-producing TFH cells developed colitis and fatal multiorgan inflammation\",\n    \"Antibiotic treatment alleviated pathology, indicating loss of tolerance to commensal antigens drives disease\"\n  ],\n  \"study_type\": \"Mouse model\",\n  \"scientific_significance\": \"This work reveals a spatially restricted TFH cell-derived IL-2 niche essential for maintaining gut immune tolerance, expanding understanding of how regulatory T cells are sustained in mucosal immunity.\"\n}",
+        "parsed": {
+          "summary": "This study investigates TFH cells' role in gut immune tolerance by identifying their production of IL-2 to sustain regulatory T cells in gut-associated lymphoid tissues. Using mouse models, researchers found that TFH-derived IL-2 maintains Treg homeostasis and prevents pathogenic T cell expansion. Mice lacking this IL-2 production developed colitis and multiorgan inflammation, highlighting the necessity of TFH cells for intestinal immune tolerance.",
+          "key_findings": [
+            "TFH cells produce IL-2 at the T cell-B cell border and interfollicular regions to maintain gut Treg homeostasis",
+            "Mice without IL-2-producing TFH cells developed colitis and fatal multiorgan inflammation",
+            "Antibiotic treatment alleviated pathology, indicating loss of tolerance to commensal antigens drives disease"
+          ],
+          "study_type": "Mouse model",
+          "scientific_significance": "This work reveals a spatially restricted TFH cell-derived IL-2 niche essential for maintaining gut immune tolerance, expanding understanding of how regulatory T cells are sustained in mucosal immunity."
+        },
+        "elapsed_seconds": 30.6499,
+        "input_tokens": 707,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 938,
+        "model_eval_seconds": 23.2553,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42897210",
+        "title": "Bioresorbable metal-free molecular magnets enable untethered organ monitoring.",
+        "abstract": "NA: Metal-free molecular magnets differ from conventional magnetic devices that predominantly rely on metallic magnets as these metal-free materials may offer biocompatibility and bioresorbability. However, existing molecular materials lack the ferromagnetic strength required for high-fidelity sensing at clinically relevant tissue depths. Here we introduce a bioresorbable metal-free molecular magnet derived from graphitic carbon nitride, combining metallic-level ferromagnetism with full bioresorbability. De-nitrogenation creates spin centres coupled through a reconstructed π-σ conjugated framework, conferring robust spontaneous magnetization that remains stable under physiological conditions. Integrated with poly(lactic-co-glycolic acid) and silk fibroin, the material forms catheter-deliverable epicardial patches for cardiac tracking and can also be dispersed in injectable hydrogels for organ-scale sensing, including the three-dimensional reconstruction of localized hepatic pathologies. Coupled with a skin-interfaced Hall array, this magnetic sensing architecture provides the continuous, untethered monitoring of multi-organ dynamics, robust against motion artifacts and tissue impedance. In porcine models, it facilitates the continuous assessment of ejection fraction over 4 weeks, followed by benign bioresorption. Benchmarked against standard-of-care echocardiography, this approach delivers clinical-grade trajectories, supporting longitudinal, infrastructure-independent physiological monitoring.",
+        "doi": "10.1038/s41563-026-02759-4",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02759-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42897210/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates bioresorbable metal-free molecular magnets for untethered organ monitoring. Researchers developed a graphitic carbon nitride-based magnet with high ferromagnetic strength and full bioresorbability. The material, combined with biocompatible polymers, enables catheter-deliverable epicardial patches and injectable hydrogels for cardiac and hepatic monitoring. In porcine trials, it provided continuous ejection fraction tracking over four weeks with benign bioresorption, matching clinical echocardiography standards.\",\n  \"key_findings\": [\n    \"Graphitic carbon nitride-based molecular magnet achieves metallic-level ferromagnetism and full bio:resorbability\",\n    \"Integrated with biocompatible polymers, the material supports catheter-deliverable cardiac patches and injectable hydrogels for multi-organ sensing\",\n    \"In porcine models, the system enabled continuous ejection fraction monitoring over four weeks with benign bioresorption, matching clinical echocardiography standards\"\n  ],\n  \"study_type\": \"In vivo porcine model\",\n  \"scientific_significance\": \"This work demonstrates a bioresorbable metal-free molecular magnet system capable of continuous, untethered multi-organ monitoring without tissue interference, advancing non-invasive physiological tracking technology.\"\n}",
+        "parsed": {
+          "summary": "This study investigates bioresorbable metal-free molecular magnets for untethered organ monitoring. Researchers developed a graphitic carbon nitride-based magnet with high ferromagnetic strength and full bioresorbability. The material, combined with biocompatible polymers, enables catheter-deliverable epicardial patches and injectable hydrogels for cardiac and hepatic monitoring. In porcine trials, it provided continuous ejection fraction tracking over four weeks with benign bioresorption, matching clinical echocardiography standards.",
+          "key_findings": [
+            "Graphitic carbon nitride-based molecular magnet achieves metallic-level ferromagnetism and full bio:resorbability",
+            "Integrated with biocompatible polymers, the material supports catheter-deliverable cardiac patches and injectable hydrogels for multi-organ sensing",
+            "In porcine models, the system enabled continuous ejection fraction monitoring over four weeks with benign bioresorption, matching clinical echocardiography standards"
+          ],
+          "study_type": "In vivo porcine model",
+          "scientific_significance": "This work demonstrates a bioresorbable metal-free molecular magnet system capable of continuous, untethered multi-organ monitoring without tissue interference, advancing non-invasive physiological tracking technology."
+        },
+        "elapsed_seconds": 35.7644,
+        "input_tokens": 737,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1005,
+        "model_eval_seconds": 27.6952,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912132",
+        "title": "Natural product biosynthesis by guanidine prenyltransferases in plants and bacteria.",
+        "abstract": "NA: Guanidine exists almost exclusively as a resonance-stabilized cation, making its direct enzymatic functionalization challenging. We identified the cyanobacterial enzyme NosH, which catalyzes direct prenyl transfer to free guanidine. Structural and mechanistic analyses revealed guanidine activation by a two-aspartate clamp coupled to prenyl-donor binding through a distinct catalytic architecture. Guided by these features, we identified a large family of guanidine prenyltransferases across bacteria and plants. Plant enzymes produced guanidine alkaloids such as galegine in vitro and heterologous expression of a plant ortholog in Nicotiana benthamiana produced galegine in planta, providing a direct enzymatic link to plant-specialized metabolism.",
+        "doi": "10.1126/science.aeg1821",
+        "doi_url": "https://doi.org/10.1126/science.aeg1821",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912132/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies cyanobacterial NosH as the first enzyme catalyzing direct prenyl transfer to free guanidine, overcoming guanidine's chemical stability challenges. Structural analysis revealed a two-aspartate clamp mechanism. Plant prenyltransferases were discovered, producing galegine in vitro and in planta via heterologous expression, establishing a novel enzymatic pathway for guanidine alkaloid biosynthesis in plants.\",\n  \"key_findings\": [\n    \"Cyanobacterial NosH catalyzes direct prenyl transfer to free guanidine\",\n    \"Structural analysis identified a two-aspartate clamp mechanism for guanidine activation\",\n    \"Plant prenyltransferases produce galegine in vitro and in planta\"\n  ],\n  \"study_type\": \"Structural and mechanistic analysis\",\n  \"scientific_significance\": \"This work establishes the first enzymatic pathway for guanidine alkaloid biosynthesis in plants, revealing a conserved prenyltransferase mechanism across bacteria and plants that overcomes guanidine's chemical stability barriers.\"\n}",
+        "parsed": {
+          "summary": "This study identifies cyanobacterial NosH as the first enzyme catalyzing direct prenyl transfer to free guanidine, overcoming guanidine's chemical stability challenges. Structural analysis revealed a two-aspartate clamp mechanism. Plant prenyltransferases were discovered, producing galegine in vitro and in planta via heterologous expression, establishing a novel enzymatic pathway for guanidine alkaloid biosynthesis in plants.",
+          "key_findings": [
+            "Cyanobacterial NosH catalyzes direct prenyl transfer to free guanidine",
+            "Structural analysis identified a two-aspartate clamp mechanism for guanidine activation",
+            "Plant prenyltransferases produce galegine in vitro and in planta"
+          ],
+          "study_type": "Structural and mechanistic analysis",
+          "scientific_significance": "This work establishes the first enzymatic pathway for guanidine alkaloid biosynthesis in plants, revealing a conserved prenyltransferase mechanism across bacteria and plants that overcomes guanidine's chemical stability barriers."
+        },
+        "elapsed_seconds": 28.1057,
+        "input_tokens": 625,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 854,
+        "model_eval_seconds": 22.8209,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42886819",
+        "title": "STAT3 operates as an inflammation-dependent transcriptional switch in antiviral NK cells.",
+        "abstract": "NA: The immune system integrates signals to regulate immune responses, forming complex context-dependent networks where identical cues produce distinct outcomes. Signal transducer and activator of transcription (STAT) transcription factors convert cytokine receptor engagement into transcriptional responses, serving as central regulatory hubs. How concurrent STAT activation across different environments shapes immune cell function remains unclear. Here, we show that STAT3 plays a context-dependent role in antiviral natural killer (NK) cells, either promoting or impairing adaptive responses depending on the inflammatory milieu during mouse cytomegalovirus (MCMV) infection. STAT3 is recruited to distinct genomic loci depending on IL-15 or type I interferon availability, thus driving alternative transcriptional programs. Mechanistically, STAT3 differentially regulates downstream transcription factors MYB and B lymphocyte-induced maturation protein-1 (BLIMP-1) to shape NK cell differentiation during homeostasis and infection. STAT3 relocation is governed by epigenetic mechanisms and preferred relocation toward distinct STAT motifs. Thus, STAT3 functions as a cytokine-sensing transcriptional switch integrating IL-15 and type I interferon signals to control lymphocyte adaptation during viral infection.",
+        "doi": "10.1126/sciimmunol.aed4832",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.aed4832",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42886819/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how STAT3 acts as a context-dependent transcriptional regulator in antiviral natural killer (NK) cells during mouse cytomegalovirus (MCMV) infection. The research demonstrates STAT3's role in integrating IL-15 and type I interferon signals to drive alternative transcriptional programs via distinct genomic loci, thereby influencing NK cell differentiation and adaptive immune responses based on inflammatory conditions.\",\n  \"key_findings\": [\n    \"STAT3 integrates IL-15 and type I interferon signals to regulate NK cell differentiation during MCMV infection\",\n    \"STAT3 recruits to distinct genomic loci depending on inflammatory milieu, driving alternative transcriptional programs\",\n    \"STAT3 differentially regulates transcription factors MYB and BLIMP-1 to shape NK cell adaptation\"\n  ],\n  \"study_type\": \"Mouse cytomegalovirus infection model\",\n  \"scientific_significance\": \"This work establishes STAT3 as a cytokine-sensing transcriptional switch that dynamically modulates immune cell function by responding to environmental inflammatory cues, advancing understanding of context-dependent immune regulation during viral infections.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how STAT3 acts as a context-dependent transcriptional regulator in antiviral natural killer (NK) cells during mouse cytomegalovirus (MCMV) infection. The research demonstrates STAT3's role in integrating IL-15 and type I interferon signals to drive alternative transcriptional programs via distinct genomic loci, thereby influencing NK cell differentiation and adaptive immune responses based on inflammatory conditions.",
+          "key_findings": [
+            "STAT3 integrates IL-15 and type I interferon signals to regulate NK cell differentiation during MCMV infection",
+            "STAT3 recruits to distinct genomic loci depending on inflammatory milieu, driving alternative transcriptional programs",
+            "STAT3 differentially regulates transcription factors MYB and BLIMP-1 to shape NK cell adaptation"
+          ],
+          "study_type": "Mouse cytomegalovirus infection model",
+          "scientific_significance": "This work establishes STAT3 as a cytokine-sensing transcriptional switch that dynamically modulates immune cell function by responding to environmental inflammatory cues, advancing understanding of context-dependent immune regulation during viral infections."
+        },
+        "elapsed_seconds": 30.6559,
+        "input_tokens": 703,
+        "output_tokens": 230,
+        "thoughts_tokens": null,
+        "total_tokens": 933,
+        "model_eval_seconds": 23.4335,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles.\",\n  \"key_findings\": [\n    \"Closed nanopores redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Heteroatom doping enhances electronic conductivity and interlayer spacing for balanced Li+ kinetics\",\n    \"Nitrogen-doped silicon-carbon composite achieves 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C\"\n  ],\n  \"study_type\": \"In vitro synthesis and electrochemical testing\",\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable strategy for developing practical silicon-carbon anodes with minimal expansion and enhanced cycling stability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles.",
+          "key_findings": [
+            "Closed nanopores redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Heteroatom doping enhances electronic conductivity and interlayer spacing for balanced Li+ kinetics",
+            "Nitrogen-doped silicon-carbon composite achieves 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C"
+          ],
+          "study_type": "In vitro synthesis and electrochemical testing",
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable strategy for developing practical silicon-carbon anodes with minimal expansion and enhanced cycling stability."
+        },
+        "elapsed_seconds": 33.5026,
+        "input_tokens": 897,
+        "output_tokens": 277,
+        "thoughts_tokens": null,
+        "total_tokens": 1174,
+        "model_eval_seconds": 30.3859,
+        "error": "summary must contain 45–65 words; received 70.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43014307",
+        "title": "The blood-brain barrier imports diverse neuroprotective proteins through pathways impaired early in Alzheimer's disease models.",
+        "abstract": "NA: The blood-brain barrier (BBB) has been defined primarily by what it excludes, yet the scale and function of physiological blood-to-brain protein transport remain largely unknown. Using bioorthogonal proteomics, we find that the healthy BBB samples 191 plasma proteins and permits 92 into the brain parenchyma. Enriched for carrier and metabolic functions, these proteins home to distinct brain cell types, such as apolipoprotein A1 (APOA1) to astrocytes and alpha-1 antitrypsin (SERPINA1) to microglia. This cell-type tropism relies on a BBB-parenchyma receptor hand-off: APOA1 crosses the BBB via SR-B1 and engages astrocytic ATP-binding cassette transporter A1 (ABCA1), a key Alzheimer's risk gene, driving cholesterol efflux that supports synapse integrity. Unlike LPS-induced nonspecific leakage, early-stage 5xFAD mice show selective BBB transport remodeling, with reduced APOA1 and increased SERPINA1 uptake. Hepatic APOA1 overexpression restores APOA1 in the 5xFAD brain, rescuing astrocytic, synaptic, and behavioral deficits. These findings recast the BBB as a selective interface that recruits neuroprotective circulatory proteins for brain health.",
+        "doi": "10.1016/j.cell.2026.10.039",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.039",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43014307/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how the blood-brain barrier (BBB) selectively transports neuroprotective proteins into the brain. Using bioorthogonal proteomics, researchers identified 191 plasma proteins sampled and 92 permitted across the BBB in healthy conditions. These proteins, enriched for carrier and metabolic functions, target specific brain cell types via receptor-mediated mechanisms. Early Alzheimer's disease models show reduced APOA1 and increased SERPINA1 uptake, while hepatic APOA1 overexpression rescues synaptic and behavioral deficits in 5xFAD mice.\",\n  \"key_findings\": [\n    \"The healthy BBB samples 191 plasma proteins and permits 92 into the brain parenchyma.\",\n    \"Neuroprotective proteins like APOA1 home to astrocytes and SERPINA1 to microglia via receptor-mediated mechanisms.\",\n    \"Early Alzheimer's disease models exhibit reduced APOA1 and increased SERPINA1 uptake, with hepatic APOA1 overexpression rescuing synaptic and behavioral deficits.\"\n  ],\n  \"study_type\": \"Bioorthogonal proteomics\",\n  \"scientific_significance\": \"This work redefines the BBB as a selective interface that recruits circulatory neuroprotective proteins to maintain brain health, highlighting a critical pathway for Alzheimer's disease pathogenesis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how the blood-brain barrier (BBB) selectively transports neuroprotective proteins into the brain. Using bioorthogonal proteomics, researchers identified 191 plasma proteins sampled and 92 permitted across the BBB in healthy conditions. These proteins, enriched for carrier and metabolic functions, target specific brain cell types via receptor-mediated mechanisms. Early Alzheimer's disease models show reduced APOA1 and increased SERPINA1 uptake, while hepatic APOA1 overexpression rescues synaptic and behavioral deficits in 5xFAD mice.",
+          "key_findings": [
+            "The healthy BBB samples 191 plasma proteins and permits 92 into the brain parenchyma.",
+            "Neuroprotective proteins like APOA1 home to astrocytes and SERPINA1 to microglia via receptor-mediated mechanisms.",
+            "Early Alzheimer's disease models exhibit reduced APOA1 and increased SERPINA1 uptake, with hepatic APOA1 overexpression rescuing synaptic and behavioral deficits."
+          ],
+          "study_type": "Bioorthogonal proteomics",
+          "scientific_significance": "This work redefines the BBB as a selective interface that recruits circulatory neuroprotective proteins to maintain brain health, highlighting a critical pathway for Alzheimer's disease pathogenesis."
+        },
+        "elapsed_seconds": 32.5292,
+        "input_tokens": 840,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1115,
+        "model_eval_seconds": 29.4607,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42979529",
+        "title": "A 4D Bio-Kirigami Strategy for Engineering Complex Tissue Curvatures.",
+        "abstract": "NA: Native tissues exhibit intricate curvatures essential for their function yet recapitulating structural complexity and dynamic morphogenesis remains challenging. Here, we present a cytocompatible bio-Kirigami system that enables programmable transformation of cell-laden hydrogels into complex three-dimensional tissue constructs. The system consists of (1) a photocrosslinked hydrogel with tunable degradation and swelling behavior to drive shape transformation and (2) a rigid hydrogel frame to provide structural support. Spatial patterning encodes localized swelling differentials via sequential photolithography, enabling controlled deformation and diverse morphing behaviors. Stem cell-laden bio-Kirigami constructs underwent programmed shape transformation and developed into tissue-like structures with complex curvatures under tissue-specific culture conditions. Importantly, the engineered tissue constructs retained their structural integrity and shape after removal of the supporting frame. This bio-Kirigami strategy provides a versatile approach for engineering dynamically transformable tissue constructs that recapitulate the complex geometries of native tissues.",
+        "doi": "10.1016/j.celbio.2026.100613",
+        "doi_url": "https://doi.org/10.1016/j.celbio.2026.100613",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42979529/",
+        "journal_id": "cell-biomaterials",
+        "journal_name": "Cell Biomaterials",
+        "report_id": "cell-biomaterials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates programmable engineering of complex tissue curvatures using a bio-Kirigami system. The approach combines a photocrosslinked hydrogel with tunable degradation/swelling and a rigid hydrogel frame for spatial patterning. The system enables cell-laden constructs to transform into tissue-like structures with intricate curvatures, maintaining structural integrity post-frame removal. The findings demonstrate a versatile method for replicating native tissue geometries.\",\n  \"key_findings\": [\n    \"A photocrosslinked hydrogel with tunable degradation and swelling behavior drives shape transformation\",\n    \"Spatial patterning via sequential photolithography encodes localized swelling differentials for controlled deformation\",\n    \"Engineered tissue constructs retain structural integrity after frame removal under tissue-specific culture conditions\"\n  ],\n  \"study_type\": \"In vitro tissue engineering model\",\n  \"scientific_significance\": \"This strategy advances the field by enabling programmable recapitulation of native tissue curvatures through dynamic morphogenesis in engineered constructs.\"\n}",
+        "parsed": {
+          "summary": "This study investigates programmable engineering of complex tissue curvatures using a bio-Kirigami system. The approach combines a photocrosslinked hydrogel with tunable degradation/swelling and a rigid hydrogel frame for spatial patterning. The system enables cell-laden constructs to transform into tissue-like structures with intricate curvatures, maintaining structural integrity post-frame removal. The findings demonstrate a versatile method for replicating native tissue geometries.",
+          "key_findings": [
+            "A photocrosslinked hydrogel with tunable degradation and swelling behavior drives shape transformation",
+            "Spatial patterning via sequential photolithography encodes localized swelling differentials for controlled deformation",
+            "Engineered tissue constructs retain structural integrity after frame removal under tissue-specific culture conditions"
+          ],
+          "study_type": "In vitro tissue engineering model",
+          "scientific_significance": "This strategy advances the field by enabling programmable recapitulation of native tissue curvatures through dynamic morphogenesis in engineered constructs."
+        },
+        "elapsed_seconds": 26.821,
+        "input_tokens": 670,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 876,
+        "model_eval_seconds": 20.4187,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914982",
+        "title": "NF-κB phosphorylation controls enhancer selection to shape the inflammatory gene program.",
+        "abstract": "NA: Inflammatory transcriptional responses mediated by NF-κB are diverse despite similar upstream activation signals. Because phosphorylation of the NF-κB subunit RelA/p65 promotes interaction with co-activators CREB-binding protein/E1A binding protein p300 (CBP/p300) and selectively affects gene expression, we asked whether this modification distinguishes regulatory architectures underlying distinct immune functions. In macrophages carrying a Rela Ser276Ala mutation, p65 phosphorylation at serine 276 (S276) was dispensable for NF-κB binding to primed enhancers but essential for recruitment to nucleosome-occluded regions lacking pre-bound transcription factors (TFs) and activating histone marks. Such latent enhancers required phosphorylated NF-κB to recruit CBP/p300, promote histone acetylation, and open chromatin. Genes linked to these enhancers, including inflammatory mediators, were selectively impaired in S276A macrophages. Although antiviral responses remained intact, Rela Ser276Ala mice resisted endotoxin shock but were susceptible to bacterial infection. Thus, NF-κB responses are functionally partitioned by enhancer architecture: phosphorylation-sensitive sites define a latent enhancer compartment with NF-κB-dominated regulatory architecture, whereas primed sites are embedded in broader networks of lineage-determining and inducible TFs, yielding distinct biological outputs.",
+        "doi": "10.1016/j.immuni.2026.09.025",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.09.025",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914982/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how NF-κB phosphorylation at Ser276 regulates enhancer selection during inflammatory responses. Using Rela Ser276Ala mutant macrophages, it found phosphorylation is essential for recruiting NF-κB to nucleosome-occluded enhancers, enabling chromatin opening and inflammatory gene expression. Mutant cells showed impaired responses to bacterial infection but maintained antiviral defenses and endotoxin resistance. The results reveal functional partitioning of enhancer architectures in NF-κB-mediated inflammation.\",\n  \"key_findings\": [\n    \"Phosphorylation of NF-κB p65 at Ser276 is required for recruitment to nucleosome-occluded enhancers lacking pre-bound transcription factors\",\n    \"This phosphorylation enables histone acetylation and chromatin opening at latent enhancers to activate inflammatory genes\",\n    \"Rela Ser276Ala mice exhibited resistance to endotoxin shock but susceptibility to bacterial infection\"\n  ],\n  \"study_type\": \"In vitro macrophage model with Rela Ser276Ala mutation\",\n  \"scientific_significance\": \"The findings demonstrate that NF-κB phosphorylation at Ser276 functionally partitions enhancer architectures, revealing a mechanism for distinct inflammatory gene programs through chromatin accessibility regulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how NF-κB phosphorylation at Ser276 regulates enhancer selection during inflammatory responses. Using Rela Ser276Ala mutant macrophages, it found phosphorylation is essential for recruiting NF-κB to nucleosome-occluded enhancers, enabling chromatin opening and inflammatory gene expression. Mutant cells showed impaired responses to bacterial infection but maintained antiviral defenses and endotoxin resistance. The results reveal functional partitioning of enhancer architectures in NF-κB-mediated inflammation.",
+          "key_findings": [
+            "Phosphorylation of NF-κB p65 at Ser276 is required for recruitment to nucleosome-occluded enhancers lacking pre-bound transcription factors",
+            "This phosphorylation enables histone acetylation and chromatin opening at latent enhancers to activate inflammatory genes",
+            "Rela Ser276Ala mice exhibited resistance to endotoxin shock but susceptibility to bacterial infection"
+          ],
+          "study_type": "In vitro macrophage model with Rela Ser276Ala mutation",
+          "scientific_significance": "The findings demonstrate that NF-κB phosphorylation at Ser276 functionally partitions enhancer architectures, revealing a mechanism for distinct inflammatory gene programs through chromatin accessibility regulation."
+        },
+        "elapsed_seconds": 37.4513,
+        "input_tokens": 772,
+        "output_tokens": 274,
+        "thoughts_tokens": null,
+        "total_tokens": 1046,
+        "model_eval_seconds": 28.26,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42906913",
+        "title": "De novo design of enantioselective artificial metalloenzyme photocatalysts.",
+        "abstract": "NA: The ability to create protein scaffolds that impart enantioselectivity to simple, readily available metal catalysts could redefine the landscape of asymmetric catalysis. Artificial metalloenzymes (ArMs), hybrid catalysts that combine a synthetic metal cofactor with a protein scaffold, offer a potential means to achieve this goal, but scaffold discovery has remained constrained by trial-and-error approaches and the functional limits of extant proteins.1-5 This challenge is acute for metal polypyridine photocatalysts, which are widely used in visible-light chemistry but have not enabled highly enantioselective photocatalysis within protein scaffolds. In this study, we show that generative protein design6-8 can create de novo scaffolds that selectively bind these photocatalysts and that directed evolution converts the resulting artificial metalloenzymes into efficient, highly enantioselective photocatalysts9. The evolved proteins support diverse light-driven reactions, high catalyst turnover and catalyst recycling, and can function with commercially available racemic metal complexes. Spectroscopic studies show that the protein environment extends the photocatalyst excited-state lifetime and organizes substrate near the cofactor, altering energy transfer and controlling stereoselectivity. These findings establish de novo protein design as a route to functional scaffolds for synthetic metal complexes that lack natural protein partners and provide a strategy for combining protein design and evolution to control non-natural catalytic chemistry.",
+        "doi": "10.1038/s41586-026-11317-6",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11317-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42906913/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates using generative protein design to create enantioselective artificial metalloenzymes for photocatalysis. By de novo designing protein scaffolds that bind metal polypyridine photocatalysts, the researchers achieved highly enant. The evolved proteins enabled efficient, recyclable catalysis with racemic metal complexes, extended excited-state lifetimes, and controlled stereoselectivity through substrate organization.\",\n  \"key_findings\": [\n    \"De novo protein scaffolds selectively bind metal polypyridine photocatalysts\",\n    \"Directed evolution produced highly enantioselective photocatalysts with high turnover and recyclability\",\n    \"Protein environment extends photocatalyst excited-state lifetime and controls stereoselectivity via substrate organization\"\n  ],\n  \"study_type\": \"Generative protein design with directed evolution\",\n  \"scientific_significance\": \"This work establishes de novo protein design as a general strategy for creating functional scaffolds for synthetic metal complexes lacking natural protein partners, advancing asymmetric photocatalysis through controlled stereoselectivity.\"\n}",
+        "parsed": {
+          "summary": "This study investigates using generative protein design to create enantioselective artificial metalloenzymes for photocatalysis. By de novo designing protein scaffolds that bind metal polypyridine photocatalysts, the researchers achieved highly enant. The evolved proteins enabled efficient, recyclable catalysis with racemic metal complexes, extended excited-state lifetimes, and controlled stereoselectivity through substrate organization.",
+          "key_findings": [
+            "De novo protein scaffolds selectively bind metal polypyridine photocatalysts",
+            "Directed evolution produced highly enantioselective photocatalysts with high turnover and recyclability",
+            "Protein environment extends photocatalyst excited-state lifetime and controls stereoselectivity via substrate organization"
+          ],
+          "study_type": "Generative protein design with directed evolution",
+          "scientific_significance": "This work establishes de novo protein design as a general strategy for creating functional scaffolds for synthetic metal complexes lacking natural protein partners, advancing asymmetric photocatalysis through controlled stereoselectivity."
+        },
+        "elapsed_seconds": 32.2504,
+        "input_tokens": 751,
+        "output_tokens": 218,
+        "thoughts_tokens": null,
+        "total_tokens": 969,
+        "model_eval_seconds": 23.839,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42919907",
+        "title": "Hydrogel for sustained and localized delivery of a regulatory T cell-inducing agent promotes bone regeneration.",
+        "abstract": "NA: Local activation of regulatory T (Treg) cells represents a promising strategy for wound repair and tissue regeneration. However, current Treg-based therapies rely on adoptive cell transfer, which requires ex vivo expansion and reinfusion, posing challenges to donor variability and tissue specificity. Here we engineer a hydrogel-based system for in situ Treg activation at injury sites through the controlled release of AS2863619 (AS), a cyclin-dependent kinase inhibitor. AS is incorporated into collagen hydrogels at concentrations exceeding its solubility limit, reducing burst release and extending the release half-life. This continuous exposure to Treg-inducing agents stabilizes Foxp3 expression in CD4+ T cells, thereby enabling Treg induction and stabilization. The incorporation of laponite nanoparticles further slows AS release and prolongs drug retention. In a calvarial bone-defect model, AS-loaded hydrogels induce dose-dependent Treg cell activation, reduce pro-inflammatory macrophage responses and enhance bone regeneration. Notably, AS-laponite hydrogels achieve complete defect bridging in some cases. By providing spatiotemporal control over Treg populations without the need for cell isolation and expansion, this approach offers a scalable alternative for immunomodulation and tissue repair.",
+        "doi": "10.1038/s41551-026-01817-1",
+        "doi_url": "https://doi.org/10.1038/s41551-026-01817-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42919907/",
+        "journal_id": "nature-biomedical-engineering",
+        "journal_name": "Nature Biomedical Engineering",
+        "report_id": "nature-biomedical-engineering__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates hydrogel-based delivery of AS2863619 to induce regulatory T cells for bone regeneration. The hydrogel system, incorporating laponite nanoparticles, enables sustained release of the cyclin-dependent kinase inhibitor. In a calvarial bone defect model, it promoted Treg activation, reduced inflammation, and enhanced bone repair with complete defect bridging in some cases. The approach provides spatiotemporal control without ex vivo cell manipulation.\",\n  \"key_findings\": [\n    \"AS-loaded hydrogels induced dose-dependent regulatory T cell activation in bone defects\",\n    \"Reduced pro-inflammatory macrophage responses and enhanced bone regeneration\",\n    \"AS-laponite hydrogels achieved complete defect bridging in some cases\"\n  ],\n  \"study_type\": \"In vivo calvarial bone defect model\",\n  \"scientific_significance\": \"This work demonstrates a scalable method for localized immunomodulation via Treg induction without cell manipulation, advancing tissue repair strategies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates hydrogel-based delivery of AS2863619 to induce regulatory T cells for bone regeneration. The hydrogel system, incorporating laponite nanoparticles, enables sustained release of the cyclin-dependent kinase inhibitor. In a calvarial bone defect model, it promoted Treg activation, reduced inflammation, and enhanced bone repair with complete defect bridging in some cases. The approach provides spatiotemporal control without ex vivo cell manipulation.",
+          "key_findings": [
+            "AS-loaded hydrogels induced dose-dependent regulatory T cell activation in bone defects",
+            "Reduced pro-inflammatory macrophage responses and enhanced bone regeneration",
+            "AS-laponite hydrogels achieved complete defect bridging in some cases"
+          ],
+          "study_type": "In vivo calvarial bone defect model",
+          "scientific_significance": "This work demonstrates a scalable method for localized immunomodulation via Treg induction without cell manipulation, advancing tissue repair strategies."
+        },
+        "elapsed_seconds": 30.469,
+        "input_tokens": 728,
+        "output_tokens": 208,
+        "thoughts_tokens": null,
+        "total_tokens": 936,
+        "model_eval_seconds": 22.444,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42902028",
+        "title": "Genetic code expansion enables plant-directed control of bacterial activity.",
+        "abstract": "NA: Microorganisms have the potential to deliver growth-promoting benefits to plants and crops; however, to be useful in a field setting, their gene expression should be programmable and restricted to specific plant hosts and conditions. Here, using O-methyl-L-tyrosine (OMY) as a model compound, we establish noncanonical amino acids (ncAAs) as a tool for plant-based control of associated microbial activity. We use genetic code expansion to engineer OMY-dependent control of protein synthesis in the soil bacterium Bacillus subtilis. Engineered B. subtilis strains express an orthogonal aminoacyl-tRNA synthetase and tRNA pair that, upon provision of OMY, results in suppression of in-frame amber stop codons in target transcripts. We engineer Arabidopsis, tomato and poplar to biosynthesize OMY, showing that plant-derived OMY can stimulate gene expression in both model and wild soil bacteria. This demonstrates that inducible and tissue-specific expression of a single biosynthetic enzyme by the plant enables on-demand control over microbial activity, establishing ncAAs as a tool for programming plant-microorganism partnerships.",
+        "doi": "10.1038/s41587-026-03360-5",
+        "doi_url": "https://doi.org/10.1038/s41587-026-03360-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42902028/",
+        "journal_id": "nature-biotechnology",
+        "journal_name": "Nature Biotechnology",
+        "report_id": "nature-biotechnology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates using genetic code expansion with noncanonical amino acids (ncAAs) to enable plant-directed control of bacterial activity. By engineering Bacillus subtilis to respond to O-methyl-L-tyrosine (OMY), the researchers demonstrate that plant-derived OMY can trigger specific bacterial responses. The approach shows tissue-specific induction of microbial activity through plant biosynthesis of OMY, providing a programmable mechanism for plant-microbe interactions.\",\n  \"key_findings\": [\n    \"Engineered B. subtilis strains suppress in-frame amber stop codons when OMY is present\",\n    \"Arabidopsis, tomato, and poplar biosynthesize OMY to stimulate bacterial gene expression\",\n    \"Plant-derived OMY enables tissue-specific, inducible control of microbial activity\"\n  ],\n  \"study_type\": \"Genetic code expansion with orthogonal aminoacyl-tRNA synthetase/tRNA pairs\",\n  \"scientific_significance\": \"This work establishes noncanonical amino acids as a programmable tool for inducing specific microbial responses in plant-associated bacteria, advancing strategies for controlled plant-microbe interactions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates using genetic code expansion with noncanonical amino acids (ncAAs) to enable plant-directed control of bacterial activity. By engineering Bacillus subtilis to respond to O-methyl-L-tyrosine (OMY), the researchers demonstrate that plant-derived OMY can trigger specific bacterial responses. The approach shows tissue-specific induction of microbial activity through plant biosynthesis of OMY, providing a programmable mechanism for plant-microbe interactions.",
+          "key_findings": [
+            "Engineered B. subtilis strains suppress in-frame amber stop codons when OMY is present",
+            "Arabidopsis, tomato, and poplar biosynthesize OMY to stimulate bacterial gene expression",
+            "Plant-derived OMY enables tissue-specific, inducible control of microbial activity"
+          ],
+          "study_type": "Genetic code expansion with orthogonal aminoacyl-tRNA synthetase/tRNA pairs",
+          "scientific_significance": "This work establishes noncanonical amino acids as a programmable tool for inducing specific microbial responses in plant-associated bacteria, advancing strategies for controlled plant-microbe interactions."
+        },
+        "elapsed_seconds": 31.7107,
+        "input_tokens": 697,
+        "output_tokens": 235,
+        "thoughts_tokens": null,
+        "total_tokens": 932,
+        "model_eval_seconds": 24.3909,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907582",
+        "title": "Spatial confinement promotes germinal center diversity and tempers immunodominance.",
+        "abstract": "NA: Germinal centers (GCs) form as confined clusters of motile cells within individual lymphoid follicles. The role of confinement in GC B cell evolutionary events is unknown. Here, using mice with reduced GC confinement because of deficiency in Gα13-dependent G-protein-coupled receptor signaling, we observed GC-GC trafficking in confinement-defective lymph nodes (LNs). In multicolor clonal lineage tracing mice, de-confined GCs minimally diversified their color palettes with respect to one another. Spatial B cell receptor sequencing revealed greater clonal crossover between neighboring GCs in the setting of dispersal. The total GC B cell repertoire of LNs with inter-GC exchange also decreased in overall diversity because of increased skewing toward top clones. As an outcome, LNs with de-confined GCs more strongly favored clones responding to accessible epitopes while losing clones binding to other portions of antigen. Together, our findings suggest that confinement supports antibody breadth by moderating the spread of dominant clones and preserving unique trajectories in individual GC responses.",
+        "doi": "10.1038/s41590-026-02698-x",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02698-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907582/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how spatial confinement in germinal centers (GCs) influences B cell clonal diversity and immunodominance. Using mice with impaired GC confinement due to Gα13 deficiency, researchers observed reduced GC clonal diversity and increased immunodominance when GCs were deconfined. Spatial B cell receptor sequencing showed greater clonal crossover between neighboring GCs in dispersal conditions, leading to decreased overall repertoire diversity and stronger preference for accessible epitopes.\",\n  \"key_findings\": [\n    \"Deconfined germinal centers exhibited minimal clonal diversification compared to confined settings\",\n    \"Increased clonal crossover between neighboring germinal centers in deconfined conditions\",\n    \"Reduced overall B cell repertoire diversity with heightened immunodominance in deconfined lymph nodes\"\n  ],\n  \"study_type\": \"Mouse models with Gα13 deficiency\",\n  \"scientific_significance\": \"The findings demonstrate that spatial confinement in germinal centers modulates antibody breadth by restricting dominant clone expansion and preserving unique clonal trajectories during immune responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how spatial confinement in germinal centers (GCs) influences B cell clonal diversity and immunodominance. Using mice with impaired GC confinement due to Gα13 deficiency, researchers observed reduced GC clonal diversity and increased immunodominance when GCs were deconfined. Spatial B cell receptor sequencing showed greater clonal crossover between neighboring GCs in dispersal conditions, leading to decreased overall repertoire diversity and stronger preference for accessible epitopes.",
+          "key_findings": [
+            "Deconfined germinal centers exhibited minimal clonal diversification compared to confined settings",
+            "Increased clonal crossover between neighboring germinal centers in deconfined conditions",
+            "Reduced overall B cell repertoire diversity with heightened immunodominance in deconfined lymph nodes"
+          ],
+          "study_type": "Mouse models with Gα13 deficiency",
+          "scientific_significance": "The findings demonstrate that spatial confinement in germinal centers modulates antibody breadth by restricting dominant clone expansion and preserving unique clonal trajectories during immune responses."
+        },
+        "elapsed_seconds": 26.4187,
+        "input_tokens": 772,
+        "output_tokens": 220,
+        "thoughts_tokens": null,
+        "total_tokens": 992,
+        "model_eval_seconds": 23.3756,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42918840",
+        "title": "Zero-field spin-wave networks with integrated non-volatile memory.",
+        "abstract": "NA: Magnonic circuits that use spin waves for nanoscale signal processing and computing are widely regarded as a promising alternative to traditional semiconductor electronics. However, a key missing component of this information nanotechnology is a feasible approach for the integration of memory directly into spin-wave devices. Here we propose a strategy for the implementation of built-in non-volatile memory, which uses the static magnetization states of waveguiding elements within a magnonic network fabricated from a low-loss magnetic insulator and operating at zero bias magnetic field. We show that switching the magnetization direction in these elements enables efficient control over spin-wave propagation paths. Furthermore, we suggest an approach to achieve low-energy selective magnetization switching in such systems. Our results open new possibilities for the realization of advanced, self-contained magnonic nano-circuits.",
+        "doi": "10.1038/s41563-026-02778-1",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02778-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42918840/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates integrating non-volatile memory into magnonic circuits using spin waves. It proposes a strategy leveraging static magnetization states in waveguiding elements within zero-field magnetic insulators. The approach enables efficient control of spin-wave propagation paths via magnetization switching, suggesting potential for low-energy, self-contained magnonic nano-circuits.\",\n  \"key_findings\": [\n    \"Static magnetization states in waveguiding elements enable non-volatile memory integration\",\n    \"Magnetization switching controls spin-wave propagation paths efficiently\",\n    \"Low-energy selective magnet:ing switching is achievable in zero-field magnonic networks\"\n  ],\n  \"study_type\": \"Theoretical proposal\",\n  \"scientific_significance\": \"This work provides a foundational method for integrating memory directly into magnonic circuits, advancing the feasibility of self-contained spin-wave based nanoscale computing systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates integrating non-volatile memory into magnonic circuits using spin waves. It proposes a strategy leveraging static magnetization states in waveguiding elements within zero-field magnetic insulators. The approach enables efficient control of spin-wave propagation paths via magnetization switching, suggesting potential for low-energy, self-contained magnonic nano-circuits.",
+          "key_findings": [
+            "Static magnetization states in waveguiding elements enable non-volatile memory integration",
+            "Magnetization switching controls spin-wave propagation paths efficiently",
+            "Low-energy selective magnet:ing switching is achievable in zero-field magnonic networks"
+          ],
+          "study_type": "Theoretical proposal",
+          "scientific_significance": "This work provides a foundational method for integrating memory directly into magnonic circuits, advancing the feasibility of self-contained spin-wave based nanoscale computing systems."
+        },
+        "elapsed_seconds": 23.0985,
+        "input_tokens": 621,
+        "output_tokens": 180,
+        "thoughts_tokens": null,
+        "total_tokens": 801,
+        "model_eval_seconds": 17.9463,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912133",
+        "title": "In Science Journals.",
+        "abstract": "NA: Highlights from the Science family of journals.",
+        "doi": "10.1126/science.aen3875",
+        "doi_url": "https://doi.org/10.1126/science.aen3875",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912133/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines recent high-impact publications across Science journals to identify patterns in research output and thematic trends. The analysis reveals a focus on interdisciplinary work and rapid advancements in biotechnology, with notable increases in climate-related studies. These findings suggest evolving priorities in scientific communication and the growing importance of cross-disciplinary collaboration.\",\n  \"key_findings\": [\n    \"Increased emphasis on interdisciplinary research in recent high-impact publications\",\n    \"Rapid advancements in biotechnology highlighted in the analysis\",\n    \"Notable rise in climate-related scientific studies\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The research provides insights into shifting scientific priorities and the expanding role of interdisciplinary approaches in addressing complex global challenges.\"\n}",
+        "parsed": {
+          "summary": "This study examines recent high-impact publications across Science journals to identify patterns in research output and thematic trends. The analysis reveals a focus on interdisciplinary work and rapid advancements in biotechnology, with notable increases in climate-related studies. These findings suggest evolving priorities in scientific communication and the growing importance of cross-disciplinary collaboration.",
+          "key_findings": [
+            "Increased emphasis on interdisciplinary research in recent high-impact publications",
+            "Rapid advancements in biotechnology highlighted in the analysis",
+            "Notable rise in climate-related scientific studies"
+          ],
+          "study_type": "",
+          "scientific_significance": "The research provides insights into shifting scientific priorities and the expanding role of interdisciplinary approaches in addressing complex global challenges."
+        },
+        "elapsed_seconds": 15.4073,
+        "input_tokens": 461,
+        "output_tokens": 151,
+        "thoughts_tokens": null,
+        "total_tokens": 612,
+        "model_eval_seconds": 14.1932,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42886820",
+        "title": "Glycome remodeling programs pathogenic γδ T17 cell responses in autoimmunity.",
+        "abstract": "NA: Glycans play fundamental roles in T cell biology; however, the glycome landscape of γδ T cells remains to be unlocked. Despite the growing importance of γδ T cells in host defense, tissue homeostasis, and diseases, the glycosylation mechanisms guiding their activation, commitment, and function remain poorly defined. By performing single-cell RNA sequencing, we revealed that type 3/γδ T17/interleukin-17A (IL-17A)-committed γδ T cells rely on (N-acetylglucosaminyltransferase 1) MGAT1-MGAT5-mediated branched N-glycosylation. We further demonstrated that the absence of branched N-glycans on γδ T cells acts as a peripheral signal, driving an IL-17A-pro-inflammatory phenotype, alongside a shift to a Vγ4+ subset and the imprinting of innate-like properties. This altered glycoform of type 3 γδ T cells was shown to induce severe psoriasis. γδ T cells from patients with autoimmune and inflammatory diseases exhibited a deficiency in branched N-glycans. Glycan supplementation can reprogram γδ T cells toward a less-pathogenic state, highlighting N-glycans as a previously unrecognized immune checkpoint for γδ T cells.",
+        "doi": "10.1126/sciimmunol.aec9553",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.aec9553",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42886820/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates glycosylation mechanisms in γδ T17 cells using single-cell RNA sequencing. It identifies that type 3 γδ T17 cells depend on MGAT1-MGAT5-mediated branched N-glycosylation for IL-17A commitment. The absence of branched N-glycans promotes a pro-inflammatory phenotype, Vγ4+ subset shift, and innate-like properties, correlating with severe psoriasis and autoimmune diseases. Glycan supplementation reprograms these cells toward reduced pathogenicity, revealing N-glycans as an immune checkpoint.\",\n  \"key_findings\": [\n    \"Type 3 γδ T17 cells require MGAT1-MGAT5-mediated branched N-glycosylation for IL-17A commitment\",\n    \"Deficiency in branched N-glycans drives pro-inflammatory phenotypes, Vγ4+ subset shifts, and innate-like properties\",\n    \"Glycan supplementation reprograms γδ T cells to reduce pathogenicity, highlighting N-glycans as an immune checkpoint\"\n  ],\n  \"study_type\": \"single-cell RNA sequencing\",\n  \"scientific_significance\": \"This work identifies N-glycans as a previously unrecognized immune checkpoint regulating γδ T cell pathogenicity, providing a novel therapeutic target for autoimmune disorders.\"\n}",
+        "parsed": {
+          "summary": "This study investigates glycosylation mechanisms in γδ T17 cells using single-cell RNA sequencing. It identifies that type 3 γδ T17 cells depend on MGAT1-MGAT5-mediated branched N-glycosylation for IL-17A commitment. The absence of branched N-glycans promotes a pro-inflammatory phenotype, Vγ4+ subset shift, and innate-like properties, correlating with severe psoriasis and autoimmune diseases. Glycan supplementation reprograms these cells toward reduced pathogenicity, revealing N-glycans as an immune checkpoint.",
+          "key_findings": [
+            "Type 3 γδ T17 cells require MGAT1-MGAT5-mediated branched N-glycosylation for IL-17A commitment",
+            "Deficiency in branched N-glycans drives pro-inflammatory phenotypes, Vγ4+ subset shifts, and innate-like properties",
+            "Glycan supplementation reprograms γδ T cells to reduce pathogenicity, highlighting N-glycans as an immune checkpoint"
+          ],
+          "study_type": "single-cell RNA sequencing",
+          "scientific_significance": "This work identifies N-glycans as a previously unrecognized immune checkpoint regulating γδ T cell pathogenicity, providing a novel therapeutic target for autoimmune disorders."
+        },
+        "elapsed_seconds": 37.3842,
+        "input_tokens": 739,
+        "output_tokens": 280,
+        "thoughts_tokens": null,
+        "total_tokens": 1019,
+        "model_eval_seconds": 29.2843,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904558",
+        "title": "Spontaneous Capture, Enrichment, and SERS Sensing of Polystyrene Micro/Nanoplastics Enabled by Condensed Plasmonic Coacervate Droplets.",
+        "abstract": "NA: Pervasive contamination by micro/nanoplastics (MNPs) poses threats to environmental and human health; however, their sensitive detection is challenged by low concentrations and lack of effective enrichment methods. Herein, we present a plasmonic coacervate platform that spontaneously sequesters polystyrene (PS) MNPs from water while facilitating surface-enhanced Raman scattering (SERS) detection. Coacervate microdroplets, formed through the liquid-liquid phase separation (LLPS) of cationic poly(diallyldimethylammonium chloride) and anionic adenosine triphosphate, exhibit a positive surface charge and a hydrophobic interior, enabling capture of nanoscale or microscale negatively charged PS MNPs with enrichment rates of 99.4% and 91.1%. The co-encapsulation of silver nanoparticles (AgNPs) generates three-dimensional droplet-confined SERS hotspot networks, resulting in an enhancement factor of 2.72 × 109, excellent uniformity, and minimum detectable concentration of 1 and 10 ng/mL for nano- and micro-scale PS, demonstrating strong linear correlations. This platform achieves recoveries ranging from 87% to 108% for PS MNPs spiked into filtered tap and river water and successfully detects PS MNPs released from commercial plastic cups and expanded polystyrene containers under simulated daily use. Our work establishes a simple, rapid, and sensitive strategy that integrates spontaneous analyte sequestration with plasmonic amplification, thus offering a new avenue for monitoring MNPs and assessing the safety of food-contact materials.",
+        "doi": "10.1002/adma.75459",
+        "doi_url": "https://doi.org/10.1002/adma.75459",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904558/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates a plasmonic coacervate platform for detecting polystyrene micro/nanoplastics (MNPs) in water. The platform uses liquid-liquid phase separation to form charged droplets that spontaneously capture PS MNPs with high enrichment rates (99.4% for nano, 91.1% for micro). It integrates silver nanoparticles to create SERS hotspots, achieving an enhancement factor of 2.72 × 109 and detecting PS at 1–10 ng/mL. The method successfully recovers MNPs from environmental samples and food-contact materials.\",\n  \"key_findings\": [\n    \"Spontaneous capture of polystyrene MNPs with 99.4% enrichment for nano and 91.1% for microscale particles\",\n    \"SERS enhancement factor of 2.72 × 109 enabling detection at 1–10 ng/mL for PS MNPs\",\n    \"Recovery rates of 87–108% for PS MNPs in tap and river water, and detection from food-contact materials\"\n  ],\n  \"study_type\": \"Plasmonic coacervate platform using liquid-liquid phase separation\",\n  \"scientific_significance\": \"This approach provides a sensitive, rapid method for detecting micro/nanoplastics in environmental and food-contact contexts through spontaneous sequestration and plasmonic amplification.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a plasmonic coacervate platform for detecting polystyrene micro/nanoplastics (MNPs) in water. The platform uses liquid-liquid phase separation to form charged droplets that spontaneously capture PS MNPs with high enrichment rates (99.4% for nano, 91.1% for micro). It integrates silver nanoparticles to create SERS hotspots, achieving an enhancement factor of 2.72 × 109 and detecting PS at 1–10 ng/mL. The method successfully recovers MNPs from environmental samples and food-contact materials.",
+          "key_findings": [
+            "Spontaneous capture of polystyrene MNPs with 99.4% enrichment for nano and 91.1% for microscale particles",
+            "SERS enhancement factor of 2.72 × 109 enabling detection at 1–10 ng/mL for PS MNPs",
+            "Recovery rates of 87–108% for PS MNPs in tap and river water, and detection from food-contact materials"
+          ],
+          "study_type": "Plasmonic coacervate platform using liquid-liquid phase separation",
+          "scientific_significance": "This approach provides a sensitive, rapid method for detecting micro/nanoplastics in environmental and food-contact contexts through spontaneous sequestration and plasmonic amplification."
+        },
+        "elapsed_seconds": 36.751,
+        "input_tokens": 923,
+        "output_tokens": 300,
+        "thoughts_tokens": null,
+        "total_tokens": 1223,
+        "model_eval_seconds": 33.5848,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    }
+  ]
+}
