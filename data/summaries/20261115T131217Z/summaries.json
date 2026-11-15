@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261115T131217Z",
+  "generated_at_utc": "2026-11-15 13:31:39 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 513,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42876215",
+        "title": "Dual Twisted Interfaces Enable Tunable Second Harmonic Generation in Chemical Vapor Deposition Grown Trilayer MoS2.",
+        "abstract": "NA: Twisted bilayer transition metal dichalcogenides, governed by a single twisted interface, offer a versatile platform for manipulating interlayer coupling and emergent optical behavior. However, despite extensive studies on single twisted interface systems, how multi-interface twisted stacking influences nonlinear optical behavior remains unclear. Here, we address this gap by systematically investigating the nonlinear optical performance of chemical vapor deposition (CVD) grown twisted trilayer MoS2 (TT-MoS2) with multi-interface twisted stacking. We fabricate all nine distinct trilayer MoS2 configurations by CVD. Raman and photoluminescence show that twisted interfaces modulate interlayer coupling, giving rise to stacking-dependent phonon and excitonic responses. Atomic-resolution scanning, transmission electron microscopy, and selected area electron diffraction confirm dual twisted interfaces and a supermoiré lattice. Guided by these structural insights, we examine the second harmonic generation (SHG) response across all nine trilayer configurations. Extending the coherent SH field superposition model to a trilayer system with two independent twisted interfaces, we develop a framework that describes how the dual interfaces govern the SHG intensity and polarization orientation across stacking configurations. Our findings establish TT-MoS2 as a versatile nonlinear platform and open new avenues for understanding and exploiting multi-interface twisted coupling to engineer nonlinear optical responses in van der Waals materials.",
+        "doi": "10.1002/adma.75387",
+        "doi_url": "https://doi.org/10.1002/adma.75387",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876215/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, researchers measured Raman and photoluminescence responses to identify stacking-dependent phonon and excitonic behaviors. Atomic-resolution microscopy confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework predicting SHG intensity and polarization based on interface geometry, demonstrating TT-MoS2's potential for tunable nonlinear optical engineering.\",\n  \"key_findings\": [\n    \"CVD-grown trilayer MoS2 with dual twisted interfaces exhibits stacking-dependent phonon and excitonic responses\",\n    \"Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure\",\n    \"A framework linking interface geometry to SHG intensity and polarization was established\"\n  ],\n  \"study_type\": \"CVD-grown twisted trilayer MoS2 configurations\",\n  \"scientific_significance\": \"This work provides a foundational understanding of multi-interface twisted stacking effects on nonlinear optical responses in 2D materials, enabling precise engineering of second harmonic generation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacking configurations, researchers measured Raman and photoluminescence responses to identify stacking-dependent phonon and excitonic behaviors. Atomic-resolution microscopy confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework predicting SHG intensity and polarization based on interface geometry, demonstrating TT-MoS2's potential for tunable nonlinear optical engineering.",
+          "key_findings": [
+            "CVD-grown trilayer MoS2 with dual twisted interfaces exhibits stacking-dependent phonon and excitonic responses",
+            "Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure",
+            "A framework linking interface geometry to SHG intensity and polarization was established"
+          ],
+          "study_type": "CVD-grown twisted trilayer MoS2 configurations",
+          "scientific_significance": "This work provides a foundational understanding of multi-interface twisted stacking effects on nonlinear optical responses in 2D materials, enabling precise engineering of second harmonic generation."
+        },
+        "elapsed_seconds": 28.7304,
+        "input_tokens": 844,
+        "output_tokens": 233,
+        "thoughts_tokens": null,
+        "total_tokens": 1077,
+        "model_eval_seconds": 25.6592,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962342",
+        "title": "Piezoelectric electroporation potentiates high-frequency irreversible electroporation for enhanced prostate cancer eradication.",
+        "abstract": "NA: Residual tumor cell persistence remains a critical unresolved barrier limiting focal therapy such as high-frequency irreversible electroporation (H-FIRE) for prostate cancer. In this study, we identified DNA damage repair as the central mechanism governing the reversible survival of residual cells after H-FIRE. By exploiting the transient membrane permeability of these residual cells following H-FIRE, we engineered a piezoelectrically active nanomaterial, BOIS. Exogenous electric pulses generated by H-FIRE enhance tumor membrane permeabilization, thereby facilitating the intracellular delivery of BOIS and promoting its efficient penetration into residual malignant cells. Upon ultrasound activation, BOIS induces surface charge separation and electron migration, producing an intrinsic electric field accompanied by reactive oxygen species (ROS). This dual mechanism cascade simultaneously inflicts endogenous electric field-mediated electroporation damage on both cellular and nuclear membranes and imposes lethal oxidative stress, thereby converting reversibly injured residual cells into an irreversible death trajectory. Consequently, residual tumor cells with damage repair capacity are converted from a reversibly injured state to irreversible lethal damage. Unlike conventional combination therapies, this study pioneered a new therapeutic paradigm in which the focal ablation procedure functions as a nanomaterial delivery mechanism, thereby establishing a self-reinforcing therapeutic loop. This strategy markedly amplified the therapeutic efficacy of H-FIRE and enhanced the eradication of residual tumor cells. Collectively, these findings establish a groundbreaking therapeutic paradigm for eliminating residual disease following focal ablation.",
+        "doi": "10.1016/j.biomaterials.2026.124683",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124683",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962342/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. By identifying DNA damage repair as the key mechanism for reversible cell survival, researchers engineered piezoelectric nanomaterial BOIS. H-FIRE-induced membrane permeabilization enables BOIS delivery to residual cells. Ultrasound activation triggers BOIS to generate electric fields and reactive oxygen species, causing irreversible cell death through dual mechanisms. This approach significantly enhances tumor eradication by converting reversible injury to irreversible damage.\",\n  \"key_findings\": [\n    \"H-FIRE-induced membrane permeabilization facilitates BOIS delivery to residual prostate cancer cells\",\n    \"Ultrasound-activated BOIS generates electric fields and reactive oxygen species to induce irreversible cell death\",\n    \"The dual mechanism converts reversible tumor injury to irreversible lethal damage, enhancing eradication\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes a self-reinforcing therapeutic loop where focal ablation delivers nanomaterials to eliminate residual disease, offering a novel strategy for complete tumor eradication post-focal therapy.\"\n}",
+        "parsed": {
+          "summary": "This study addresses residual tumor persistence after high-frequency irreversible electroporation (H-FIRE) for prostate cancer. By identifying DNA damage repair as the key mechanism for reversible cell survival, researchers engineered piezoelectric nanomaterial BOIS. H-FIRE-induced membrane permeabilization enables BOIS delivery to residual cells. Ultrasound activation triggers BOIS to generate electric fields and reactive oxygen species, causing irreversible cell death through dual mechanisms. This approach significantly enhances tumor eradication by converting reversible injury to irreversible damage.",
+          "key_findings": [
+            "H-FIRE-induced membrane permeabilization facilitates BOIS delivery to residual prostate cancer cells",
+            "Ultrasound-activated BOIS generates electric fields and reactive oxygen species to induce irreversible cell death",
+            "The dual mechanism converts reversible tumor injury to irreversible lethal damage, enhancing eradication"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes a self-reinforcing therapeutic loop where focal ablation delivers nanomaterials to eliminate residual disease, offering a novel strategy for complete tumor eradication post-focal therapy."
+        },
+        "elapsed_seconds": 28.3555,
+        "input_tokens": 859,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 1088,
+        "model_eval_seconds": 25.284,
+        "error": "summary must contain 45–65 words; received 73.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43014307",
+        "title": "The blood-brain barrier imports diverse neuroprotective proteins through pathways impaired early in Alzheimer's disease models.",
+        "abstract": "NA: The blood-brain barrier (BBB) has been defined primarily by what it excludes, yet the scale and function of physiological blood-to-brain protein transport remain largely unknown. Using bioorthogonal proteomics, we find that the healthy BBB samples 191 plasma proteins and permits 92 into the brain parenchyma. Enriched for carrier and metabolic functions, these proteins home to distinct brain cell types, such as apolipoprotein A1 (APOA1) to astrocytes and alpha-1 antitrypsin (SERPINA1) to microglia. This cell-type tropism relies on a BBB-parenchyma receptor hand-off: APOA1 crosses the BBB via SR-B1 and engages astrocytic ATP-binding cassette transporter A1 (ABCA1), a key Alzheimer's risk gene, driving cholesterol efflux that supports synapse integrity. Unlike LPS-induced nonspecific leakage, early-stage 5xFAD mice show selective BBB transport remodeling, with reduced APOA1 and increased SERPINA1 uptake. Hepatic APOA1 overexpression restores APOA1 in the 5xFAD brain, rescuing astrocytic, synaptic, and behavioral deficits. These findings recast the BBB as a selective interface that recruits neuroprotective circulatory proteins for brain health.",
+        "doi": "10.1016/j.cell.2026.10.039",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.039",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43014307/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how the blood-brain barrier (BBB) selectively transports neuroprotective proteins into the brain. Using bioorthogonal proteomics, researchers identified 191 plasma proteins sampled and 92 transported across the healthy BBB. These proteins, enriched for carrier and metabolic functions, target specific brain cells like astrocytes and microglia via receptor-mediated mechanisms involving APOA1 and ABCA1. Early Alzheimer's disease models show altered transport, with reduced APOA1 and increased SERPINA1 uptake, while hepatic APOA1 overexpression rescues synaptic and behavioral deficits in these models.\",\n  \"key_findings\": [\n    \"The healthy BBB samples 191 plasma proteins and permits 92 into the brain parenchyma.\",\n    \"APOA1 crosses the BBB via SR-B1 and engages astrocytic ABCA1, a key Alzheimer's risk gene, driving cholesterol efflux for synapse integrity.\",\n    \"Early-stage 5xFAD Alzheimer's models exhibit reduced APOA1 and increased SERPINA1 uptake, reversible by hepatic APOA1 overexpression.\"\n  ],\n  \"study_type\": \"Bioorthogonal proteomics\",\n  \"scientific_significance\": \"This work redefines the BBB as a selective interface that recruits neuroprotective circulatory proteins to maintain brain health, highlighting critical pathways for neuroprotection in early Alzheimer's disease.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how the blood-brain barrier (BBB) selectively transports neuroprotective proteins into the brain. Using bioorthogonal proteomics, researchers identified 191 plasma proteins sampled and 92 transported across the healthy BBB. These proteins, enriched for carrier and metabolic functions, target specific brain cells like astrocytes and microglia via receptor-mediated mechanisms involving APOA1 and ABCA1. Early Alzheimer's disease models show altered transport, with reduced APOA1 and increased SERPINA1 uptake, while hepatic APOA1 overexpression rescues synaptic and behavioral deficits in these models.",
+          "key_findings": [
+            "The healthy BBB samples 191 plasma proteins and permits 92 into the brain parenchyma.",
+            "APOA1 crosses the BBB via SR-B1 and engages astrocytic ABCA1, a key Alzheimer's risk gene, driving cholesterol efflux for synapse integrity.",
+            "Early-stage 5xFAD Alzheimer's models exhibit reduced APOA1 and increased SERPINA1 uptake, reversible by hepatic APOA1 overexpression."
+          ],
+          "study_type": "Bioorthogonal proteomics",
+          "scientific_significance": "This work redefines the BBB as a selective interface that recruits neuroprotective circulatory proteins to maintain brain health, highlighting critical pathways for neuroprotection in early Alzheimer's disease."
+        },
+        "elapsed_seconds": 35.9549,
+        "input_tokens": 840,
+        "output_tokens": 297,
+        "thoughts_tokens": null,
+        "total_tokens": 1137,
+        "model_eval_seconds": 32.8879,
+        "error": "summary must contain 45–65 words; received 80.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42979563",
+        "title": "miRNA delivery via nanowires restores functional responses in aged T cells.",
+        "abstract": "NA: Aging reshapes CD8+ T cell immunity by depleting naive populations, narrowing repertoire diversity, and promoting dysfunctional states, thereby weakening responses to infection or vaccination. This study presents a polyethyleneimine (PEI)-functionalized silicon nanowire platform for high-viability, non-viral delivery of single or multiplexed microRNAs (miRNAs) into resting aged CD8+ T cells. Nanowires enable transient modulation of transcriptional programs governing T cell activation, metabolism, proliferation, and differentiation. Delivering a single miRNA influences early activation and differentiation stages, while multiplexed miRNA delivery leads to a broader boost in activation responses, effector functions, metabolic health, and cell proliferation. In vivo, ex vivo-treated aged CD8+ T cells exhibit enhanced early effector priming following antigen exposure. Similarly, in aged human CD8+ T cells, multiplexed miRNA enhances activation and cytotoxic responses and sustains an effector-primed state during early activation and expansion. This method consistently improves function across donors aged from healthy individuals to those with current or past cancer.",
+        "doi": "10.1016/j.celbio.2026.100514",
+        "doi_url": "https://doi.org/10.1016/j.celbio.2026.100514",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42979563/",
+        "journal_id": "cell-biomaterials",
+        "journal_name": "Cell Biomaterials",
+        "report_id": "cell-biomaterials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates restoring functional responses in aged CD8+ T cells using miRNA delivery via PEI-functionalized silicon nanowires. The approach involves transient modulation of transcriptional programs to enhance activation, proliferation, and differentiation. Results show single miRNA delivery improves early activation, while multiplexed delivery boosts effector functions, metabolic health, and sustained effector priming in aged human and murine cells.\",\n  \"key_findings\": [\n    \"Single miRNA delivery enhances early T cell activation and differentiation in aged populations\",\n    \"Multiplexed miRNA delivery significantly improves effector functions, metabolic health, and proliferation in aged CD8+ T cells\",\n    \"The nanowire platform maintains functional efficacy across diverse aged human donors, including cancer patients\"\n  ],\n  \"study_type\": \"In vitro and in vivo delivery platform\",\n  \"scientific_significance\": \"This work demonstrates a targeted strategy to reverse age-related T cell dysfunction through precise miRNA modulation, offering a potential pathway for enhancing immune responses in aging populations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates restoring functional responses in aged CD8+ T cells using miRNA delivery via PEI-functionalized silicon nanowires. The approach involves transient modulation of transcriptional programs to enhance activation, proliferation, and differentiation. Results show single miRNA delivery improves early activation, while multiplexed delivery boosts effector functions, metabolic health, and sustained effector priming in aged human and murine cells.",
+          "key_findings": [
+            "Single miRNA delivery enhances early T cell activation and differentiation in aged populations",
+            "Multiplexed miRNA delivery significantly improves effector functions, metabolic health, and proliferation in aged CD8+ T cells",
+            "The nanowire platform maintains functional efficacy across diverse aged human donors, including cancer patients"
+          ],
+          "study_type": "In vitro and in vivo delivery platform",
+          "scientific_significance": "This work demonstrates a targeted strategy to reverse age-related T cell dysfunction through precise miRNA modulation, offering a potential pathway for enhancing immune responses in aging populations."
+        },
+        "elapsed_seconds": 29.5292,
+        "input_tokens": 692,
+        "output_tokens": 215,
+        "thoughts_tokens": null,
+        "total_tokens": 907,
+        "model_eval_seconds": 22.4223,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42933394",
+        "title": "Human brain cellular xenografts in neuroimmunology and beyond.",
+        "abstract": "NA: Human brain cellular xenograft (HBCX) models are emerging as a platform to study human brain physiology and pathology in vivo. HBCXs involve transplanting human pluripotent stem cell-derived neurons, glia, or organoids into immunodeficient mice to model human disease. These models have revealed human-specific cellular and molecular phenotypes, developmental trajectories, and disease mechanisms that would otherwise be inaccessible in traditional in vitro systems and animal models. They also provide a scalable, genetically editable framework for functional genomics studies, drug testing, and biomarker discovery. Given the pronounced species differences in microglia and other tissue-resident brain macrophages and their central involvement in neurodegenerative disease, these models also provide an in vivo platform to interrogate human neuroimmunology. In selected settings, they may help guide future cell-based therapeutic strategies. This review provides an overview of the current applications, discusses the challenges and limitations, and highlights future avenues of HBCXs in neuroimmunology and translational research.",
+        "doi": "10.1016/j.immuni.2026.09.024",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.09.024",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42933394/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines human brain cellular xenograft (HBCX) models as in vivo platforms for studying human brain physiology and pathology. The models transplant human pluripotent stem cell-derived cells into immunodeficient mice, revealing human-specific phenotypes, disease mechanisms, and enabling functional genomics, drug testing, and biomarker discovery. They address species differences in neuroimmunology, particularly microglia-related pathways.\",\n  \"key_findings\": [\n    \"HBCXs enable in vivo study of human brain-specific cellular and molecular phenotypes\",\n    \"These models reveal human disease mechanisms inaccessible in traditional systems\",\n    \"HBC: models provide a scalable platform for functional genomics and drug testing\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"HBCX models advance neuroimmunology by providing an in vivo system to study human-specific cellular interactions and disease mechanisms, overcoming limitations of in vitro and animal models.\"\n}",
+        "parsed": {
+          "summary": "This review examines human brain cellular xenograft (HBCX) models as in vivo platforms for studying human brain physiology and pathology. The models transplant human pluripotent stem cell-derived cells into immunodeficient mice, revealing human-specific phenotypes, disease mechanisms, and enabling functional genomics, drug testing, and biomarker discovery. They address species differences in neuroimmunology, particularly microglia-related pathways.",
+          "key_findings": [
+            "HBCXs enable in vivo study of human brain-specific cellular and molecular phenotypes",
+            "These models reveal human disease mechanisms inaccessible in traditional systems",
+            "HBC: models provide a scalable platform for functional genomics and drug testing"
+          ],
+          "study_type": "",
+          "scientific_significance": "HBCX models advance neuroimmunology by providing an in vivo system to study human-specific cellular interactions and disease mechanisms, overcoming limitations of in vitro and animal models."
+        },
+        "elapsed_seconds": 26.8944,
+        "input_tokens": 673,
+        "output_tokens": 199,
+        "thoughts_tokens": null,
+        "total_tokens": 872,
+        "model_eval_seconds": 20.5475,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896839",
+        "title": "Cortex-wide imaging in naturally behaving mice with 1-gram wireless mesoscopes.",
+        "abstract": "NA: Revealing how distributed cortical circuits coordinate behavior in freely moving animals remains a central challenge in systems neuroscience, constrained by limited fields of view, low throughput, and the tethering required by current miniaturized microscopes1-4. Here, we present Airscope, a wireless mesoscope delivering 4 μm lateral resolution across a 6 mm field of view at 12.5 Hz, weighing 1.0 gram. An aspheric-lens design achieves a 2.84× shorter total track length than previous miniaturized microscopes1,2,5,6 while matching the neuron yield of benchtop one-photon mesoscopes; a tailored wireless link supports cable-free calcium imaging from >8,500 neurons per animal (25‑fold increase). Paired with a zero-shot behavior analyzer, Airscope enables cortical imaging across rich behavioral conditions, including room-scale enriched arenas, swimming assays, and multi-organ implantation, with concurrent recording from multiple animals. Using Airscope, we demonstrate versatile applications of untethered cortical imaging across diverse behavioral paradigms. We identify cortical activity patterns across multiple dorsal regions that correlate with behavioral signatures of social dominance, and show dorsal-cortical population activity prospectively decodes competition outcomes across paired animals. We observe reward-location-associated cortical activity patterns during maze exploration, and characterize Granger-causal influence from spinal cord to cortex during fear conditioning, enabled by simultaneous brain-spinal recordings. By uniting large-scale, cellular-resolution recording with unconstrained behavior, Airscope makes naturalistic, multi-animal cortical recording experimentally practical, and provides a broadly accessible technology for systems neuroscience.",
+        "doi": "10.1038/s41586-026-11293-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11293-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896839/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of observing distributed cortical circuits during natural behavior using a novel 1-gram wireless mesoscope called Airscope. It achieves 4 μm lateral resolution over a 6 mm field of view at 12.5 Hz, enabling high-throughput calcium imaging of up to 8,500 neurons per animal without tethering. The technology supports multi-animal recordings across diverse behavioral paradigms and reveals cortical activity patterns linked to social dominance, competition outcomes, and reward location during maze exploration.\",\n  \"key_findings\": [\n    \"Airscope enables wireless, high-resolution cortical imaging of up to 8,500 neurons per animal without tethering\",\n    \"Cortical activity patterns correlate with social dominance and competition outcomes between animals\",\n    \"Reward-location-associated cortical activity patterns are observed during maze exploration\"\n  ],\n  \"study_type\": \"Wireless mesoscope\",\n  \"scientific_significance\": \"This technology bridges large-scale cortical recording with unconstrained natural behavior, advancing systems neuroscience by enabling multi-animal, high-resolution imaging across complex behavioral contexts.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of observing distributed cortical circuits during natural behavior using a novel 1-gram wireless mesoscope called Airscope. It achieves 4 μm lateral resolution over a 6 mm field of view at 12.5 Hz, enabling high-throughput calcium imaging of up to 8,500 neurons per animal without tethering. The technology supports multi-animal recordings across diverse behavioral paradigms and reveals cortical activity patterns linked to social dominance, competition outcomes, and reward location during maze exploration.",
+          "key_findings": [
+            "Airscope enables wireless, high-resolution cortical imaging of up to 8,500 neurons per animal without tethering",
+            "Cortical activity patterns correlate with social dominance and competition outcomes between animals",
+            "Reward-location-associated cortical activity patterns are observed during maze exploration"
+          ],
+          "study_type": "Wireless mesoscope",
+          "scientific_significance": "This technology bridges large-scale cortical recording with unconstrained natural behavior, advancing systems neuroscience by enabling multi-animal, high-resolution imaging across complex behavioral contexts."
+        },
+        "elapsed_seconds": 28.642,
+        "input_tokens": 895,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 1124,
+        "model_eval_seconds": 25.5221,
+        "error": "summary must contain 45–65 words; received 76.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42919908",
+        "title": "Gradient-driven microfluidic framework for the screening of ratiometric drug combinations towards precision oncology in paediatric leukaemia.",
+        "abstract": "NA: Improving outcomes for high-risk acute lymphoblastic leukaemia (ALL) patients requires increasingly personalized treatment strategies that leverage molecular and omics-based assays as well as functional screens. However, to date, only a few of these approaches are clinically actionable and easily adopted in clinical settings. To that end, we report a combination drug screening assay (GradientScreen) that correlates with clinical outcomes using standard paediatric ALL treatment protocols. This assay uses a microfluidic device to generate overlapping drug gradients and implements an analysis framework that characterizes drug synergy and efficacy in a ratiometric manner. Using partial least squares regression, we show that our combination response metrics correlate with both minimal residual disease (MRD) following initiation of treatment and later clinical end-points. Here, we further demonstrate that this system could be used to evaluate response to experimental therapeutic regimens in patients who did not respond to standard treatment. This assay can serve as a research-enabling tool for the field, with potential to integrate into clinical pathology workflows to identify difficult-to-treat ALL patients and screen for alternative treatment strategies at diagnosis.",
+        "doi": "10.1038/s41551-026-01818-0",
+        "doi_url": "https://doi.org/10.1038/s41551-026-01818-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42919908/",
+        "journal_id": "nature-biomedical-engineering",
+        "journal_name": "Nature Biomedical Engineering",
+        "report_id": "nature-biomedical-engineering__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a microfluidic-based GradientScreen assay to evaluate ratiometric drug combinations in high-risk paediatric acute lymphob. The approach generated overlapping drug gradients and correlated response metrics with minimal residual disease and clinical outcomes. The system shows potential for identifying treatment-resistant cases and guiding alternative therapies in standard ALL protocols.\",\n  \"key_findings\": [\n    \"GradientScreen correlates combination response metrics with minimal residual disease post-treatment\",\n    \"The assay predicts clinical outcomes using standard paediatric ALL treatment protocols\",\n    \"It enables screening for alternative therapies in treatment-resistant cases\"\n  ],\n  \"study_type\": \"Microfluidic combination drug screening assay\",\n  \"scientific_significance\": \"This work provides a clinically translatable framework for precision oncology in paediatric leukaemia by linking functional drug response metrics to molecular markers and clinical outcomes.\"\n}",
+        "parsed": {
+          "summary": "This study developed a microfluidic-based GradientScreen assay to evaluate ratiometric drug combinations in high-risk paediatric acute lymphob. The approach generated overlapping drug gradients and correlated response metrics with minimal residual disease and clinical outcomes. The system shows potential for identifying treatment-resistant cases and guiding alternative therapies in standard ALL protocols.",
+          "key_findings": [
+            "GradientScreen correlates combination response metrics with minimal residual disease post-treatment",
+            "The assay predicts clinical outcomes using standard paediatric ALL treatment protocols",
+            "It enables screening for alternative therapies in treatment-resistant cases"
+          ],
+          "study_type": "Microfluidic combination drug screening assay",
+          "scientific_significance": "This work provides a clinically translatable framework for precision oncology in paediatric leukaemia by linking functional drug response metrics to molecular markers and clinical outcomes."
+        },
+        "elapsed_seconds": 21.9614,
+        "input_tokens": 784,
+        "output_tokens": 176,
+        "thoughts_tokens": null,
+        "total_tokens": 960,
+        "model_eval_seconds": 19.0736,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907533",
+        "title": "Deep dynamical models of single-cell multiomic velocities predict loss-of-function and rescue perturbations in B cells.",
+        "abstract": "NA: Here we present DynaVelo, a generative neural ordinary differential equation model that learns the joint dynamics of gene expression and transcription factor (TF) motif activity from single-cell multiome data. DynaVelo learns a functional form of the vector field, such that the model can be perturbed in silico and not only used to draw trajectories. We show that DynaVelo recovers the bifurcating in vivo dynamics of wild-type murine germinal center (GC) B cells and reveals how these dynamics change under heterozygous loss of epigenetic regulators Arid1a and Ctcf. In silico perturbation yields dynamic and cell-state-specific gene regulatory networks (GRNs) that recover known TF-to-gene edges in the wild-type GC GRN and predicts those that are disrupted in mutants. Perturbing Arid1aHet GCs in silico identified Ctcf, Stat3 and Bcl6 as rescue targets for Arid1a loss. In vivo experiments in double-heterozygous mice confirmed rescue of the Arid1aHet dark-zone phenotype in all three cases, and multiome profiling of Arid1aHet;CtcfHet GCs validated the predicted shift toward wild-type dynamics.",
+        "doi": "10.1038/s41587-026-03348-1",
+        "doi_url": "https://doi.org/10.1038/s41587-026-03348-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907533/",
+        "journal_id": "nature-biotechnology",
+        "journal_name": "Nature Biotechnology",
+        "report_id": "nature-biotechnology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed DynaVelo, a generative neural ordinary differential equation model to predict single-cell multiomic dynamics in B cells. The model integrates gene expression and transcription factor activity from multiome data, enabling in silico perturbation to simulate loss-of-function and rescue effects. It identified Ctcf, Stat3, and Bcl6 as rescue targets for Arid1a heterozygous deficiency, validated by in vivo experiments in double-heterozygous mice.\",\n  \"key_findings\": [\n    \"DynaVelo predicts cell-state-specific gene regulatory networks disrupted in Arid1a heterozygous B cells\",\n    \"In silico perturbation of Arid1aHet GCs identified Ctcf, Stat3, and Bcl6 as rescue targets\",\n    \"In vivo validation confirmed rescue of dark-zone phenotypes in Arid1aHet;CtcfHet mice\"\n  ],\n  \"study_type\": \"Generative neural ordinary differential equation model\",\n  \"scientific_significance\": \"This work establishes a framework for predicting functional perturbation effects in single-cell multiomic dynamics, advancing computational modeling of immune cell differentiation and disease mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study developed DynaVelo, a generative neural ordinary differential equation model to predict single-cell multiomic dynamics in B cells. The model integrates gene expression and transcription factor activity from multiome data, enabling in silico perturbation to simulate loss-of-function and rescue effects. It identified Ctcf, Stat3, and Bcl6 as rescue targets for Arid1a heterozygous deficiency, validated by in vivo experiments in double-heterozygous mice.",
+          "key_findings": [
+            "DynaVelo predicts cell-state-specific gene regulatory networks disrupted in Arid1a heterozygous B cells",
+            "In silico perturbation of Arid1aHet GCs identified Ctcf, Stat3, and Bcl6 as rescue targets",
+            "In vivo validation confirmed rescue of dark-zone phenotypes in Arid1aHet;CtcfHet mice"
+          ],
+          "study_type": "Generative neural ordinary differential equation model",
+          "scientific_significance": "This work establishes a framework for predicting functional perturbation effects in single-cell multiomic dynamics, advancing computational modeling of immune cell differentiation and disease mechanisms."
+        },
+        "elapsed_seconds": 34.7456,
+        "input_tokens": 728,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 972,
+        "model_eval_seconds": 26.6259,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907582",
+        "title": "Spatial confinement promotes germinal center diversity and tempers immunodominance.",
+        "abstract": "NA: Germinal centers (GCs) form as confined clusters of motile cells within individual lymphoid follicles. The role of confinement in GC B cell evolutionary events is unknown. Here, using mice with reduced GC confinement because of deficiency in Gα13-dependent G-protein-coupled receptor signaling, we observed GC-GC trafficking in confinement-defective lymph nodes (LNs). In multicolor clonal lineage tracing mice, de-confined GCs minimally diversified their color palettes with respect to one another. Spatial B cell receptor sequencing revealed greater clonal crossover between neighboring GCs in the setting of dispersal. The total GC B cell repertoire of LNs with inter-GC exchange also decreased in overall diversity because of increased skewing toward top clones. As an outcome, LNs with de-confined GCs more strongly favored clones responding to accessible epitopes while losing clones binding to other portions of antigen. Together, our findings suggest that confinement supports antibody breadth by moderating the spread of dominant clones and preserving unique trajectories in individual GC responses.",
+        "doi": "10.1038/s41590-026-02698-x",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02698-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907582/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how spatial confinement in germinal centers (GCs) influences B cell clonal diversity and immunodominance. Using mice with impaired GC confinement due to Gα13 deficiency, researchers observed reduced clonal diversification and increased clonal crossover between GCs. De-confined GCs exhibited decreased repertoire diversity and stronger immunodominance toward accessible epitopes, indicating confinement's role in maintaining antibody breadth through restricted clone spread.\",\n  \"key_findings\": [\n    \"De-confined GCs showed minimal clonal diversification compared to confined GCs\",\n    \"Increased clonal crossover between neighboring GCs in confinement-defective lymph nodes\",\n    \"De-confined GCs exhibited reduced repertoire diversity with heightened immunodominance toward accessible epitopes\"\n  ],\n  \"study_type\": \"Mouse models with Gα13 deficiency\",\n  \"scientific_significance\": \"The findings demonstrate that spatial confinement in germinal centers moderates immunodominance and preserves antibody breadth by limiting dominant clone spread, providing mechanistic insight into how B cell responses achieve diverse antibody responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how spatial confinement in germinal centers (GCs) influences B cell clonal diversity and immunodominance. Using mice with impaired GC confinement due to Gα13 deficiency, researchers observed reduced clonal diversification and increased clonal crossover between GCs. De-confined GCs exhibited decreased repertoire diversity and stronger immunodominance toward accessible epitopes, indicating confinement's role in maintaining antibody breadth through restricted clone spread.",
+          "key_findings": [
+            "De-confined GCs showed minimal clonal diversification compared to confined GCs",
+            "Increased clonal crossover between neighboring GCs in confinement-defective lymph nodes",
+            "De-confined GCs exhibited reduced repertoire diversity with heightened immunodominance toward accessible epitopes"
+          ],
+          "study_type": "Mouse models with Gα13 deficiency",
+          "scientific_significance": "The findings demonstrate that spatial confinement in germinal centers moderates immunodominance and preserves antibody breadth by limiting dominant clone spread, providing mechanistic insight into how B cell responses achieve diverse antibody responses."
+        },
+        "elapsed_seconds": 30.2389,
+        "input_tokens": 676,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 902,
+        "model_eval_seconds": 23.6948,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42946763",
+        "title": "Direct imaging elucidates ionic memory in two-dimensional nanochannels.",
+        "abstract": "NA: Nanofluidic memristors promise brain-inspired information processing with ions, yet their microscopic origin remains debated. So far, ionic memory has been attributed to ion-specific interactions, dynamic wetting, chemical reactions or mechanical deformations, yet typically without direct experimental evidence. Here, by combining operando interferometric imaging with electrokinetic measurements, we directly visualize voltage-induced blistering of the confining walls of two-dimensional (2D) nanochannels as the key origin of memristive hysteresis. We identify two distinct classes of blisters: unidirectional, driven by electrostatic forces on surface charges, and bidirectional, arising from osmotic pressure due to concentration polarization. This mechanistic framework explains device evolution and device-to-device variability, and reframes stochastic blistering as a functional design element. Our results constitute a direct proof of electromechanical coupling as a robust pathway to ionic memory in 2D nanochannels and open routes towards high-performance ionic memristors and electrically actuated nanofluidic valves.",
+        "doi": "10.1038/s41563-026-02775-4",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02775-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42946763/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the microscopic origin of ionic memory in two-dimensional nanochannels using operando interferometric imaging and electrokinetic measurements. It directly visualizes voltage-induced blistering of confining walls as the cause of memristive hysteresis, identifying unidirectional blisters from electrostatic forces and bidirectional blusing from osmotic pressure. The findings provide a mechanistic framework for device behavior and variability.\",\n  \"key_findings\": [\n    \"Direct visualization of voltage-induced blistering in 2D nanochannels as the origin of memristive hysteresis\",\n    \"Identification of unidirectional blisters driven by electrostatic forces on surface charges\",\n    \"Bidirectional blisters resulting from osmotic pressure due to concentration polarization\"\n  ],\n  \"study_type\": \"Operando interferometric imaging with electrokinetic measurements\",\n  \"scientific_significance\": \"This work establishes electromechanical coupling as a direct mechanism for ionic memory in 2D nanochannels, advancing understanding of nanofluidic memristors and enabling more precise design of ionic-based computing systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the microscopic origin of ionic memory in two-dimensional nanochannels using operando interferometric imaging and electrokinetic measurements. It directly visualizes voltage-induced blistering of confining walls as the cause of memristive hysteresis, identifying unidirectional blisters from electrostatic forces and bidirectional blusing from osmotic pressure. The findings provide a mechanistic framework for device behavior and variability.",
+          "key_findings": [
+            "Direct visualization of voltage-induced blistering in 2D nanochannels as the origin of memristive hysteresis",
+            "Identification of unidirectional blisters driven by electrostatic forces on surface charges",
+            "Bidirectional blisters resulting from osmotic pressure due to concentration polarization"
+          ],
+          "study_type": "Operando interferometric imaging with electrokinetic measurements",
+          "scientific_significance": "This work establishes electromechanical coupling as a direct mechanism for ionic memory in 2D nanochannels, advancing understanding of nanofluidic memristors and enabling more precise design of ionic-based computing systems."
+        },
+        "elapsed_seconds": 32.0219,
+        "input_tokens": 679,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 915,
+        "model_eval_seconds": 25.3678,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912134",
+        "title": "Late Holocene reexpansion of the Laurentide Ice Sheet.",
+        "abstract": "NA: During interglaciations, the Laurentide Ice Sheet (LIS), which is the largest of the Pleistocene ice sheets, retreats to Arctic Canada, where it achieves a minimum configuration. The reexpansion of the LIS following this minimum marks the start of the next glaciation. Here, we show that the last remaining remnant of the most recent LIS, Barnes Ice Cap (Baffin Island, Canada), achieved its minimum interglacial dimensions after ~3.6 thousand years ago, before reexpanding ~2000 years ago, marking the onset of the next glaciation. The new LIS reached maximum dimensions in ~1960 CE, after which anthropogenic summer warming resulted in a negative mass balance, ice margin recession, and the termination of the next glaciation. The demise of the next glaciation, despite the ongoing decline in summer insolation, illustrates the influence of anomalous greenhouse gas forcing on climate.",
+        "doi": "10.1126/science.aed3379",
+        "doi_url": "https://doi.org/10.1126/science.aed3379",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912134/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the Late Holocene reexpansion of the Laurentide Ice Sheet (LIS) using ice core and geological evidence. It demonstrates that the LIS reexpanded ~2000 years ago after a minimum configuration established ~3.6 thousand years ago, marking the start of the next glaciation. The ice sheet reached maximum extent by ~1960 CE, subsequently retreating due to anthropogenic warming, ending the glaciation.\",\n  \"key_findings\": [\n    \"The LIS achieved its minimum interglial dimensions ~3.6 thousand years ago\",\n    \"Reexpansion occurred ~2000 years ago, initiating the next glaciation\",\n    \"Maximum LIS extent reached ~1960 CE before anthropogenic-driven retreat\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The findings highlight how anthropogenic climate change can terminate glacial cycles by accelerating ice sheet retreat, providing evidence for greenhouse gas forcing's role in overriding natural climate cycles.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the Late Holocene reexpansion of the Laurentide Ice Sheet (LIS) using ice core and geological evidence. It demonstrates that the LIS reexpanded ~2000 years ago after a minimum configuration established ~3.6 thousand years ago, marking the start of the next glaciation. The ice sheet reached maximum extent by ~1960 CE, subsequently retreating due to anthropogenic warming, ending the glaciation.",
+          "key_findings": [
+            "The LIS achieved its minimum interglial dimensions ~3.6 thousand years ago",
+            "Reexpansion occurred ~2000 years ago, initiating the next glaciation",
+            "Maximum LIS extent reached ~1960 CE before anthropogenic-driven retreat"
+          ],
+          "study_type": "",
+          "scientific_significance": "The findings highlight how anthropogenic climate change can terminate glacial cycles by accelerating ice sheet retreat, providing evidence for greenhouse gas forcing's role in overriding natural climate cycles."
+        },
+        "elapsed_seconds": 28.586,
+        "input_tokens": 653,
+        "output_tokens": 211,
+        "thoughts_tokens": null,
+        "total_tokens": 864,
+        "model_eval_seconds": 22.4166,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42913022",
+        "title": "ILC2-derived IL-9 promotes eosinophil-mediated antitumor activity.",
+        "abstract": "NA: Innate lymphoid cells (ILCs) regulate tissue immunity, yet their roles in tumor control remain incompletely understood. Here, we combined analyses of human sequencing datasets with genetic ablation mouse models and adoptive transfer experiments to identify that glucocorticoid-induced tumor necrosis factor receptor (GITR) engagement on tumor-infiltrating group 2 ILCs (ILC2s) induced activating transcription factor 3 (ATF3) and robust interleukin-9 (IL-9) production, exceeding the modest coinduction of IL-5 and IL-13. ILC2-derived IL-9 promoted intratumoral eosinophil accumulation by enhancing survival, tissue retention, and cytotoxicity through tumor-induced IL-9 receptor expression. Eosinophil ablation abolished GITR-mediated tumor control, whereas adoptive eosinophil transfer restored it. This IL-9-eosinophil pathway suppressed tumor growth in the absence of adaptive lymphocytes. In human datasets, IL-9 and eosinophil signatures were associated with favorable prognosis in melanoma and lung adenocarcinoma. These findings define an innate pathway linking ILC2s to eosinophil-mediated tumor immunity and support GITR agonism as a therapeutic strategy.",
+        "doi": "10.1126/sciimmunol.adz0989",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.adz0989",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42913022/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how group 2 innate lymphoid cells (ILC2s) influence tumor immunity via interleukin-9 (IL-9). Using human genomic data and mouse models, researchers found ILC2-derived IL-9 enhances eosinophil survival, retention, and cytotoxicity within tumors, promoting antitumor activity independent of adaptive immunity. Eosinophil depletion reversed tumor control, while eosinophil transfer restored it. The pathway was linked to improved outcomes in melanoma and lung cancer.\",\n  \"key_findings\": [\n    \"ILC2-derived IL-9 increases eosinophil survival and cytotoxicity in tumors\",\n    \"Eosinophil ablation abolished GITR-mediated tumor control\",\n    \"IL-9 and eosinophil signatures correlate with favorable prognosis in melanoma and lung adenocarcinoma\"\n  ],\n  \"study_type\": \"Genetic ablation mouse models and adoptive transfer experiments\",\n  \"scientific_significance\": \"This work identifies an innate immune pathway where ILC2s drive eosinophil-mediated tumor suppression, providing a mechanistic basis for targeting GITR to enhance antitumor immunity without adaptive lymphocyte involvement.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how group 2 innate lymphoid cells (ILC2s) influence tumor immunity via interleukin-9 (IL-9). Using human genomic data and mouse models, researchers found ILC2-derived IL-9 enhances eosinophil survival, retention, and cytotoxicity within tumors, promoting antitumor activity independent of adaptive immunity. Eosinophil depletion reversed tumor control, while eosinophil transfer restored it. The pathway was linked to improved outcomes in melanoma and lung cancer.",
+          "key_findings": [
+            "ILC2-derived IL-9 increases eosinophil survival and cytotoxicity in tumors",
+            "Eosinophil ablation abolished GITR-mediated tumor control",
+            "IL-9 and eosinophil signatures correlate with favorable prognosis in melanoma and lung adenocarcinoma"
+          ],
+          "study_type": "Genetic ablation mouse models and adoptive transfer experiments",
+          "scientific_significance": "This work identifies an innate immune pathway where ILC2s drive eosinophil-mediated tumor suppression, providing a mechanistic basis for targeting GITR to enhance antitumor immunity without adaptive lymphocyte involvement."
+        },
+        "elapsed_seconds": 34.8401,
+        "input_tokens": 722,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 970,
+        "model_eval_seconds": 26.8575,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency\",\n    \"The design reduces electrode expansion from 38.4% to 13.1% after 50 cycles and enables 2 Ah NCM811 pouch cells with 80% capacity retention after 1200 cycles\"\n  ],\n  \"study_type\": \"In vitro engineering of silicon-carbon composites with heteroatom-doped carbon hosts\",\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable strategy for developing practical silicon-carbon anodes with minimal expansion and enhanced cycling stability in lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency",
+            "The design reduces electrode expansion from 38.4% to 13.1% after 50 cycles and enables 2 Ah NCM811 pouch cells with 80% capacity retention after 1200 cycles"
+          ],
+          "study_type": "In vitro engineering of silicon-carbon composites with heteroatom-doped carbon hosts",
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable strategy for developing practical silicon-carbon anodes with minimal expansion and enhanced cycling stability in lithium-ion batteries."
+        },
+        "elapsed_seconds": 40.9787,
+        "input_tokens": 897,
+        "output_tokens": 329,
+        "thoughts_tokens": null,
+        "total_tokens": 1226,
+        "model_eval_seconds": 37.8288,
+        "error": "summary must contain 45–65 words; received 70.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020022",
+        "title": "Common variation of cell abundances and gene expression in the human striatum.",
+        "abstract": "NA: The cellular and molecular bases of inter-individual variation in the human brain are not yet understood, particularly beyond the neocortex. Here, we describe cellular and gene-expression variation in the striatum and prefrontal cortex from single-nucleus RNA sequencing (snRNA-seq) analysis of 3.9 million nuclei from 178 adult brain donors. People with more astrocytes, microglia, or oligodendrocyte precursor cells (OPCs) in any one brain region tended to have this property in all gray-matter regions sampled. OPC proportions declined by 40% across ages 30-80 in the cortex and striatum. Age-associated gene-expression changes differed substantially across cell types. Donor age was predicted from RNA-expression patterns with a median absolute error of 6.6 years across cell types. Common genetic variants were associated with the expression of nearly 10,000 genes; these effects were mostly cell-type specific and distinguished striatal from cortical neurons. These open-access data provide a foundation for future studies of human brain variation and vulnerabilities.",
+        "doi": "10.1016/j.cell.2026.10.026",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.026",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020022/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated inter-individual variation in human striatum using single-nucleus RNA sequencing across 3.9 million nuclei from 178 donors. It found common patterns of astrocyte, microglia, and oligodendrocyte precursor cell abundance across gray matter regions. Age-related gene expression changes varied by cell type, with donor age predictable from RNA patterns (median error 6.6 years). Genetic variants influenced nearly 10,000 genes, predominantly cell-type specific and distinguishing striatal from cortical neurons.\",\n  \"key_findings\": [\n    \"Common astrocyte, microglia, and oligodendrocyte precursor cell abundance patterns across gray matter regions\",\n    \"Age-associated gene expression changes differed by cell type, with donor age predictable from RNA patterns (median error 6.6 years)\",\n    \"Genetic variants associated with nearly 10,000 genes, mostly cell-type specific and distinguishing striatal from cortical neurons\"\n  ],\n  \"study_type\": \"single-nucleus RNA sequencing\",\n  \"scientific_significance\": \"This work establishes a foundational resource for understanding human brain cellular and genetic variation, enabling future research on brain vulnerabilities and inter-individual differences.\"\n}",
+        "parsed": {
+          "summary": "This study investigated inter-individual variation in human striatum using single-nucleus RNA sequencing across 3.9 million nuclei from 178 donors. It found common patterns of astrocyte, microglia, and oligodendrocyte precursor cell abundance across gray matter regions. Age-related gene expression changes varied by cell type, with donor age predictable from RNA patterns (median error 6.6 years). Genetic variants influenced nearly 10,000 genes, predominantly cell-type specific and distinguishing striatal from cortical neurons.",
+          "key_findings": [
+            "Common astrocyte, microglia, and oligodendrocyte precursor cell abundance patterns across gray matter regions",
+            "Age-associated gene expression changes differed by cell type, with donor age predictable from RNA patterns (median error 6.6 years)",
+            "Genetic variants associated with nearly 10,000 genes, mostly cell-type specific and distinguishing striatal from cortical neurons"
+          ],
+          "study_type": "single-nucleus RNA sequencing",
+          "scientific_significance": "This work establishes a foundational resource for understanding human brain cellular and genetic variation, enabling future research on brain vulnerabilities and inter-individual differences."
+        },
+        "elapsed_seconds": 31.1972,
+        "input_tokens": 784,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 1043,
+        "model_eval_seconds": 28.1607,
+        "error": "summary must contain 45–65 words; received 69.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42991865",
+        "title": "Viscoelastic Niches Shape γδ T Cell Phenotype and Effector Function.",
+        "abstract": "NA: γδ T-cells, which are enriched in epithelial tissues, have been used in cancer therapy because of their capacity for rapid, MHC-independent cytotoxicity. However, current paradigms largely overlook the role of tissue mechanical cues in regulating γδ T-cell function. Here, we investigated how matrix viscoelasticity modulates γδ T-cell migration, differentiation state, phenotype, and function, using a tunable collagen-based gel system. Slow-relaxing matrices preserved a less differentiated phenotype, reduced migration, and increased FAS and PD-1 expression. Despite increased PD-1 expression, these cells remained functional, demonstrated by high levels of TNF-α and IFN-γ relative to PD-1-negative cells. Proteomic analysis revealed that γδ T-cells respond to changes in viscoelasticity through actin remodeling and shifts in metabolic machinery. Functionally, cells encapsulated in slow-relaxing gels showed improved control of tumor growth in an aggressive HCT116 tumor model. Together, these findings establish matrix viscoelasticity as an important regulator of post-thymic γδ T-cell differentiation and function.",
+        "doi": "10.1016/j.celbio.2026.100614",
+        "doi_url": "https://doi.org/10.1016/j.celbio.2026.100614",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42991865/",
+        "journal_id": "cell-biomaterials",
+        "journal_name": "Cell Biomaterials",
+        "report_id": "cell-biomaterials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how matrix viscoelasticity influences γδ T-cell phenotype and function. Using tunable collagen gels, researchers found slow-relaxing matrices preserved less differentiated states, reduced migration, and increased FAS/PD-1 expression while maintaining TNF-α and IFN-γ production. These cells also demonstrated improved tumor control in HCT116 models, highlighting viscoelastic cues as critical regulators of γδ T-cell differentiation.\",\n  \"key_findings\": [\n    \"Slow-relaxing matrices preserved less differentiated γδ T-cell phenotypes\",\n    \"Increased FAS and PD-1 expression with reduced migration\",\n    \"Enhanced tumor control in HCT116 models despite elevated PD-1\"\n  ],\n  \"study_type\": \"Tunable collagen gel system\",\n  \"scientific_significance\": \"The findings establish matrix viscoelasticity as a key regulator of post-thymic γδ T-cell differentiation and function, revealing mechanical cues as critical factors in immune cell behavior.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how matrix viscoelasticity influences γδ T-cell phenotype and function. Using tunable collagen gels, researchers found slow-relaxing matrices preserved less differentiated states, reduced migration, and increased FAS/PD-1 expression while maintaining TNF-α and IFN-γ production. These cells also demonstrated improved tumor control in HCT116 models, highlighting viscoelastic cues as critical regulators of γδ T-cell differentiation.",
+          "key_findings": [
+            "Slow-relaxing matrices preserved less differentiated γδ T-cell phenotypes",
+            "Increased FAS and PD-1 expression with reduced migration",
+            "Enhanced tumor control in HCT116 models despite elevated PD-1"
+          ],
+          "study_type": "Tunable collagen gel system",
+          "scientific_significance": "The findings establish matrix viscoelasticity as a key regulator of post-thymic γδ T-cell differentiation and function, revealing mechanical cues as critical factors in immune cell behavior."
+        },
+        "elapsed_seconds": 29.9979,
+        "input_tokens": 702,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 916,
+        "model_eval_seconds": 22.5536,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42933395",
+        "title": "A microbiome-reactive TMIGD2hi Th17 subset is spatially enriched at the intestinal epithelium and expanded in inflammatory bowel disease.",
+        "abstract": "NA: Subsets of intestinal CD4+ T cells directly recognize commensal bacteria and coordinate tolerance versus protective immunity. Our limited understanding of CD4+ T cell specificities and corresponding functional phenotypes has created a barrier to deciphering the mechanisms of mucosal homeostasis and inflammation mediated by the adaptive immune system. To address this, we leveraged an immunodominant Bacteroidetes epitope in SusC to perform single-cell profiling of the SusC-specific and total CD4+ T cell landscapes in intestinal tissues of patients with inflammatory bowel disease (IBD). By analyzing phenotypes and T cell receptor specificities in parallel, we uncovered phenotypic diversification of T helper 17 (Th17) cells in IBD and identified an epithelial-localized, SusC-reactive Th17 subset that is BACH2lo, GZMAhi, and expresses the costimulatory receptor TMIGD2. Together, our results highlight the utility of tracking commensal-specific T cell responses to define specialized subsets of Th17 cells associated with loss of tolerance to the microbiome.",
+        "doi": "10.1016/j.immuni.2026.09.026",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.09.026",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42933395/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated SusC-reactive Th17 subsets in inflammatory bowel disease (IBD) patients using single-cell profiling. Researchers identified a TMIGD2hi Th1.7 subset spatially enriched at the intestinal epithelium, characterized by BACH2lo and GZMAhi. The subset expands in IBD, indicating a microbiome-reactive mechanism linked to loss of tolerance.\",\n  \"key_findings\": [\n    \"A TMIGD2hi Th17 subset is spatially enriched at the intestinal epithelium\",\n    \"The subset is BACH2lo and GZMAhi\",\n    \"The subset expands in inflammatory bowel disease\"\n  ],\n  \"study_type\": \"single-cell profiling\",\n  \"scientific_significance\": \"This work identifies a microbiome-reactive Th17 subset that provides mechanistic insight into how commensal-specific T cell responses contribute to mucosal inflammation in IBD.\"\n}",
+        "parsed": {
+          "summary": "This study investigated SusC-reactive Th17 subsets in inflammatory bowel disease (IBD) patients using single-cell profiling. Researchers identified a TMIGD2hi Th1.7 subset spatially enriched at the intestinal epithelium, characterized by BACH2lo and GZMAhi. The subset expands in IBD, indicating a microbiome-reactive mechanism linked to loss of tolerance.",
+          "key_findings": [
+            "A TMIGD2hi Th17 subset is spatially enriched at the intestinal epithelium",
+            "The subset is BACH2lo and GZMAhi",
+            "The subset expands in inflammatory bowel disease"
+          ],
+          "study_type": "single-cell profiling",
+          "scientific_significance": "This work identifies a microbiome-reactive Th17 subset that provides mechanistic insight into how commensal-specific T cell responses contribute to mucosal inflammation in IBD."
+        },
+        "elapsed_seconds": 28.1755,
+        "input_tokens": 704,
+        "output_tokens": 197,
+        "thoughts_tokens": null,
+        "total_tokens": 901,
+        "model_eval_seconds": 20.825,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907497",
+        "title": "Functional architecture of the human insula.",
+        "abstract": "NA: The insular cortex has a central role in pain1,2, interoception3,4 and feelings5,6, yet its functional architecture and causal electrophysiological relationships among its subregions remain poorly understood. Here we combine intracranial electrical stimulation and task-based electroencephalography recordings with connectivity mapping within a cytoarchitectonic atlas of the human insula7-10 in 87 participants implanted with intracranial electrodes, and identify a quadripartite functional architecture comprising four distinct regions: (1) a dorsal-posterior region encoding somatotopically organized nociceptive/thermoceptive and somatosensory signals; (2) a ventral-posterior region with access to somatic information across multiple body parts; (3) a mid-anterior region associated with visceral sensations and anxiety states; and (4) an anterior-polar region, largely silent to direct stimulation, yet showing robust activation during salience detection and change of action mode. Critically, this anterior region, with its strong connections with the prefrontal cortex, including the anterior cingulate cortex, exerts strong and direct influence over other insular regions, while receiving less-strong indirect inputs from them, revealing an electrophysiological pathway for cognitive modulation of pain and bodily perception. Together, these findings define a functional architecture of the human insula that links cytoarchitecture to directed and asymmetric electrophysiological interactions, with mechanistic implications for cognitive modulation of pain and interoceptive experience.",
+        "doi": "10.1038/s41586-026-11175-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11175-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907497/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the functional architecture of the human insula using intracranial electrical stimulation and electroencephalography in 87 participants. It identifies four distinct regions: a dorsal-posterior region processing nociceptive/thermoceptive signals, a ventral-posterior region integrating somatic information, a mid-anterior region linked to visceral sensations and anxiety, and an anterior-polar region involved in salience detection. The anterior region shows strong connections with the prefrontal cortex, enabling cognitive modulation of pain and bodily perception.\",\n  \"key_findings\": [\n    \"The insula has four distinct functional regions: dorsal-posterior for nociceptive/thermoceptive signals, ventral-posterior for somatic integration, mid-anterior for visceral sensations and anxiety, and anterior-polar for salience detection.\",\n    \"The anterior-polar region exhibits strong prefrontal connections and influences other insular regions, enabling cognitive modulation of pain and bodily perception.\",\n    \"This architecture links cytoarchitecture to asymmetric electrophysiological interactions, providing mechanistic insights into cognitive modulation of interoception.\"\n  ],\n  \"study_type\": \"Intracranial electrical stimulation and electroencephalography\",\n  \"scientific_significance\": \"This work defines a functional architecture of the human insula that connects cytoarchitecture to directed electrophysiological interactions, advancing understanding of how cognition modulates pain and bodily perception.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the functional architecture of the human insula using intracranial electrical stimulation and electroencephalography in 87 participants. It identifies four distinct regions: a dorsal-posterior region processing nociceptive/thermoceptive signals, a ventral-posterior region integrating somatic information, a mid-anterior region linked to visceral sensations and anxiety, and an anterior-polar region involved in salience detection. The anterior region shows strong connections with the prefrontal cortex, enabling cognitive modulation of pain and bodily perception.",
+          "key_findings": [
+            "The insula has four distinct functional regions: dorsal-posterior for nociceptive/thermoceptive signals, ventral-posterior for somatic integration, mid-anterior for visceral sensations and anxiety, and anterior-polar for salience detection.",
+            "The anterior-polar region exhibits strong prefrontal connections and influences other insular regions, enabling cognitive modulation of pain and bodily perception.",
+            "This architecture links cytoarchitecture to asymmetric electrophysiological interactions, providing mechanistic insights into cognitive modulation of interoception."
+          ],
+          "study_type": "Intracranial electrical stimulation and electroencephalography",
+          "scientific_significance": "This work defines a functional architecture of the human insula that connects cytoarchitecture to directed electrophysiological interactions, advancing understanding of how cognition modulates pain and bodily perception."
+        },
+        "elapsed_seconds": 36.5746,
+        "input_tokens": 863,
+        "output_tokens": 296,
+        "thoughts_tokens": null,
+        "total_tokens": 1159,
+        "model_eval_seconds": 33.4298,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42946753",
+        "title": "Cartilage-binding coacervate with therapeutic payload delivery and biomimetic lubrication alleviates osteoarthritis by reducing joint friction and inflammation.",
+        "abstract": "NA: Healthy articular cartilage maintains ultralow friction through the lipid/hyaluronic acid/lubricin complex lubrication layer, in which the zwitterionic lipids mediate lubrication and the hyaluronic acid and lubricin anchor to cartilage matrix. However, in osteoarthritis this lubrication system is progressively degraded, leading to increased cartilage wear and joint dysfunction. Therefore, early and lubrication-based intervention is urgently needed. Here we present biomimetic polyzwitterionic coacervates (pZCOs) that recapitulate both the lubrication and cartilage-binding functionalities of the natural boundary lubrication layer. pZCOs exhibit strong binding affinity to fibronectin, establish a stable and ultralow-friction lubrication layer on the cartilage surface, facilitate the sustained release of anti-inflammatory drugs, and preserve the viability and anti-inflammatory paracrine secretion of encapsulated mesenchymal stem cells. In both rat and mini-pig models of osteoarthritis, intra-articular administration of drug/MSC-laden pZCOs effectively reduces cartilage degradation, suppresses inflammation and promotes cartilage integrity, outperforming clinical hyaluronic acid lubricants in lubrication performance, in vivo retention and therapeutic efficacy. These findings highlight the translational potential of engineered biomimetic coacervates as next-generation joint lubricants for integrated management of osteoarthritis.",
+        "doi": "10.1038/s41551-026-01819-z",
+        "doi_url": "https://doi.org/10.1038/s41551-026-01819-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42946753/",
+        "journal_id": "nature-biomedical-engineering",
+        "journal_name": "Nature Biomedical Engineering",
+        "report_id": "nature-biomedical-engineering__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates biomimetic polyzwitterionic coacervates (pZCOs) for osteoarthritis treatment by replicating natural cartilage lubrication. The approach involves intra-articular delivery of pZCOs loaded with anti-inflammatory drugs and mesenchymal stem cells. Results show reduced cartilage degradation, suppressed inflammation, and improved joint function in animal models, outperforming clinical hyaluronic acid lubricants in lubrication, retention, and therapeutic efficacy.\",\n  \"key_findings\": [\n    \"pZCOs replicate natural cartilage lubrication with ultralow friction\",\n    \"Intra-articular pZCOs reduce cartilage degradation and inflammation in osteoarthritis models\",\n    \"pZCOs outperform clinical hyaluronic acid lubricants in lubrication performance and therapeutic efficacy\"\n  ],\n  \"study_type\": \"In vivo animal models\",\n  \"scientific_significance\": \"Engineered biomimetic coacervates represent a novel strategy for integrated osteoarthritis management through dual lubrication and therapeutic payload delivery.\"\n}",
+        "parsed": {
+          "summary": "This study investigates biomimetic polyzwitterionic coacervates (pZCOs) for osteoarthritis treatment by replicating natural cartilage lubrication. The approach involves intra-articular delivery of pZCOs loaded with anti-inflammatory drugs and mesenchymal stem cells. Results show reduced cartilage degradation, suppressed inflammation, and improved joint function in animal models, outperforming clinical hyaluronic acid lubricants in lubrication, retention, and therapeutic efficacy.",
+          "key_findings": [
+            "pZCOs replicate natural cartilage lubrication with ultralow friction",
+            "Intra-articular pZCOs reduce cartilage degradation and inflammation in osteoarthritis models",
+            "pZCOs outperform clinical hyaluronic acid lubricants in lubrication performance and therapeutic efficacy"
+          ],
+          "study_type": "In vivo animal models",
+          "scientific_significance": "Engineered biomimetic coacervates represent a novel strategy for integrated osteoarthritis management through dual lubrication and therapeutic payload delivery."
+        },
+        "elapsed_seconds": 34.053,
+        "input_tokens": 773,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 1001,
+        "model_eval_seconds": 24.7226,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907534",
+        "title": "Recordanelles for transcriptome-wide single-cell RNA recording in human cells.",
+        "abstract": "NA: Transcriptomic measurement technologies provide powerful approaches to understand biology but are limited to providing either a high-resolution snapshot at a moment in time or a low-resolution history of transcription constrained to a few genes over a narrow time range. Here, we introduce the 'recordanelle', a single-component synthetic organelle capable of recording the transcriptome in human cells. Recordanelles are composed of a mitochondrial membrane anchor, a condensate assembler and a poly(A)-binding protein. We demonstrate that the recordanelle can be engineered to recruit engineered RNAs or a sampling of up to 90% of all endogenous mRNAs and protect them over several days. We further show that transient and dynamic transcriptional responses resulting from inducible promoters or interferon signaling are preserved throughout time within the recordanelle at the single-cell level. This work provides a nondisruptive and unbiased transcriptome-wide single-cell RNA recording technology to enable a deeper understanding of biology.",
+        "doi": "10.1038/s41587-026-03327-6",
+        "doi_url": "https://doi.org/10.1038/s41587-026-03327-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907534/",
+        "journal_id": "nature-biotechnology",
+        "journal_name": "Nature Biotechnology",
+        "report_id": "nature-biotechnology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study introduces recordanelles, a single-component synthetic organelle for transcriptome-wide single-cell RNA recording in human cells. The technology uses a mitochondrial membrane anchor, condensate assembler, and poly(A)-binding protein to capture and protect mRNAs over days. It preserves transient transcriptional responses from inducible promoters or interferon signaling at the single-cell level, enabling long-term unbiased transcriptome tracking without disrupting cellular processes.\",\n  \"key_findings\": [\n    \"Recordanelles capture up to 90% of endogenous mRNAs in human cells\",\n    \"The system preserves transient transcriptional responses from induc. promoters or interferon signaling over days\",\n    \"Recordanelles enable nondisruptive, transcriptome-wide single-cell RNA recording without bias\"\n  ],\n  \"study_type\": \"Synthetic organelle\",\n  \"scientific_significance\": \"This technology provides a method for long-term, unbiased transcriptome tracking at the single-cell level, advancing the ability to study dynamic biological processes without disrupting cellular function.\"\n}",
+        "parsed": {
+          "summary": "This study introduces recordanelles, a single-component synthetic organelle for transcriptome-wide single-cell RNA recording in human cells. The technology uses a mitochondrial membrane anchor, condensate assembler, and poly(A)-binding protein to capture and protect mRNAs over days. It preserves transient transcriptional responses from inducible promoters or interferon signaling at the single-cell level, enabling long-term unbiased transcriptome tracking without disrupting cellular processes.",
+          "key_findings": [
+            "Recordanelles capture up to 90% of endogenous mRNAs in human cells",
+            "The system preserves transient transcriptional responses from induc. promoters or interferon signaling over days",
+            "Recordanelles enable nondisruptive, transcriptome-wide single-cell RNA recording without bias"
+          ],
+          "study_type": "Synthetic organelle",
+          "scientific_significance": "This technology provides a method for long-term, unbiased transcriptome tracking at the single-cell level, advancing the ability to study dynamic biological processes without disrupting cellular function."
+        },
+        "elapsed_seconds": 28.6722,
+        "input_tokens": 659,
+        "output_tokens": 220,
+        "thoughts_tokens": null,
+        "total_tokens": 879,
+        "model_eval_seconds": 22.5993,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907583",
+        "title": "A single-cell atlas of human neutrophils reveals neutrophil heterogeneity across health and disease.",
+        "abstract": "NA: Neutrophils, the most abundant leukocytes in human blood, have multifaceted roles in health and disease. Here we assembled a single-cell atlas of human neutrophils (SCAHN) by integrating transcriptome data from 1 million human neutrophils from 781 samples and 43 independent datasets. Using SCAHN, we identified multiple neutrophil subsets with distinct functions across tissues and robust changes in gene expression and subset proportions in infection, cancer, immune suppression and sex differences at single-cell resolution. Cross-species reference mapping of mouse and nonhuman primate neutrophils onto SCAHN revealed both conserved and species-specific features. Using 17,023 bulk blood transcriptome profiles from 40 datasets, we found that neutrophil-specific signatures predicted mortality in acutely ill patients at presentation, were associated with cancer diagnosis and survival, and correlated with metabolic dysfunction and long-term all-cause mortality. Our study highlights how neutrophil biology can improve immune risk stratification and develop effective diagnostic and therapeutic strategies.",
+        "doi": "10.1038/s41590-026-02671-8",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02671-8",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907583/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study integrated transcriptome data from 1 million human neutrophils across 781 samples to create a single-cell atlas (SCAHN). It identified tissue-specific neutrophil subsets with distinct functions and gene expression changes in infections, cancer, immune suppression, and sex differences. The atlas also revealed neutrophil signatures predicting mortality in acute illness, cancer outcomes, and metabolic dysfunction.\",\n  \"key_findings\": [\n    \"Identification of multiple tissue-specific neutrophil subsets with distinct functions\",\n    \"Robust gene expression changes in neutrophils during infection, cancer, immune suppression, and sex differences\",\n    \"Neutrophil-specific signatures predicting mortality in acute illness, cancer diagnosis, and metabolic dysfunction\"\n  ],\n  \"study_type\": \"Single-cell transcriptomic atlas\",\n  \"scientific_significance\": \"This atlas provides a comprehensive reference for neutrophil heterogeneity across health and disease, enabling improved risk stratification and therapeutic targeting in immune-related conditions.\"\n}",
+        "parsed": {
+          "summary": "This study integrated transcriptome data from 1 million human neutrophils across 781 samples to create a single-cell atlas (SCAHN). It identified tissue-specific neutrophil subsets with distinct functions and gene expression changes in infections, cancer, immune suppression, and sex differences. The atlas also revealed neutrophil signatures predicting mortality in acute illness, cancer outcomes, and metabolic dysfunction.",
+          "key_findings": [
+            "Identification of multiple tissue-specific neutrophil subsets with distinct functions",
+            "Robust gene expression changes in neutrophils during infection, cancer, immune suppression, and sex differences",
+            "Neutrophil-specific signatures predicting mortality in acute illness, cancer diagnosis, and metabolic dysfunction"
+          ],
+          "study_type": "Single-cell transcriptomic atlas",
+          "scientific_significance": "This atlas provides a comprehensive reference for neutrophil heterogeneity across health and disease, enabling improved risk stratification and therapeutic targeting in immune-related conditions."
+        },
+        "elapsed_seconds": 27.7445,
+        "input_tokens": 686,
+        "output_tokens": 204,
+        "thoughts_tokens": null,
+        "total_tokens": 890,
+        "model_eval_seconds": 20.9364,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42946764",
+        "title": "III-nitride-based in-sensor computing enabled by interfacial polarization effects.",
+        "abstract": "NA: In-sensor computing enables real-time and intelligent analysis with superior energy efficiency. However, existing oxide-based or 2D-ferroelectric-based in-sensor computing devices suffer from severe response loss and challenges in large-scale fabrication. Here a III-nitride-based in-sensing computing device is proposed by exploiting its intrinsic polarization effects in their heterostructures. The polarization-induced spatial separation of photogenerated carriers and the defect-free nature of bipolar polarization interfaces effectively avoid carrier recombination losses, enabling high light sensitivity level of nanowatt per square centimetre, responsivity level of 106 A W-1 and on/off ratio level of 105 in the sensor-memristor mode. Additionally, controlled applied bias allows the sensor-memristor to transform into a high-speed detector. These results establish a viable design principle that utilizes interfacial-electrostatics-induced photocarrier spatial separation and asymmetric-barriers-modulated carrier transport to realize in-sensor computing. Moreover, the high-temperature resistance of III-nitrides allows the device to maintain high performance at temperatures up to 300 °C. This approach aligns with industrial-scale III-nitride manufacturing and complementary metal-oxide-semiconductor integration, probably advancing the feasibility of in-sensor computing architectures.",
+        "doi": "10.1038/s41563-026-02780-7",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02780-7",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42946764/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates III-nitride-based in-sensor computing by leveraging interfacial polarization effects to overcome response loss and fabrication challenges in oxide or 2D-ferroelectric systems. The device achieves nanowatt-level sensitivity, 10^6 A/W responsivity, and 10^5 on/off ratios in sensor-memristor mode, with high-temperature stability up to 300°C. These properties enable efficient real-time intelligent analysis with minimal energy consumption.\",\n  \"key_findings\": [\n    \"III-nitride heterostructures exhibit defect-free bipolar polarization interfaces that prevent carrier recombination\",\n    \"The device achieves nanowatt-level sensitivity and 10^6 A/W responsivity in sensor-memristor mode\",\n    \"High-temperature stability up to 300°C supports industrial-scale manufacturing and integration\"\n  ],\n  \"study_type\": \"Device development\",\n  \"scientific_significance\": \"This work establishes a design principle for interfacial-electrostatics-induced photocarrier separation and asymmetric-barriers-modulated transport, enabling energy-efficient in-sensor computing with robust thermal stability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates III-nitride-based in-sensor computing by leveraging interfacial polarization effects to overcome response loss and fabrication challenges in oxide or 2D-ferroelectric systems. The device achieves nanowatt-level sensitivity, 10^6 A/W responsivity, and 10^5 on/off ratios in sensor-memristor mode, with high-temperature stability up to 300°C. These properties enable efficient real-time intelligent analysis with minimal energy consumption.",
+          "key_findings": [
+            "III-nitride heterostructures exhibit defect-free bipolar polarization interfaces that prevent carrier recombination",
+            "The device achieves nanowatt-level sensitivity and 10^6 A/W responsivity in sensor-memristor mode",
+            "High-temperature stability up to 300°C supports industrial-scale manufacturing and integration"
+          ],
+          "study_type": "Device development",
+          "scientific_significance": "This work establishes a design principle for interfacial-electrostatics-induced photocarrier separation and asymmetric-barriers-modulated transport, enabling energy-efficient in-sensor computing with robust thermal stability."
+        },
+        "elapsed_seconds": 33.3552,
+        "input_tokens": 733,
+        "output_tokens": 241,
+        "thoughts_tokens": null,
+        "total_tokens": 974,
+        "model_eval_seconds": 25.2167,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912135",
+        "title": "Fired biologist wins $6 million in defamation lawsuit.",
+        "abstract": "NA: A jury ruled in favor of David Sabatini, dismissing accuser's claims of sexual harassment, retaliation.",
+        "doi": "10.1126/science.aen4286",
+        "doi_url": "https://doi.org/10.1126/science.aen4286",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912135/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated a legal dispute involving David Sabatini, a biologist who won a $6 million defamation lawsuit against an accuser alleging sexual harassment and retaliation. The jury ruled in favor of Sabatini, dismissing the claims of misconduct. The outcome highlights the legal resolution of a high-profile case without confirming the alleged harassment or retaliation.\",\n  \"key_findings\": [\n    \"A jury found David Sabatini liable for defamation claims\",\n    \"The accuser's allegations of sexual harassment and retaliation were dismissed\",\n    \"The lawsuit resulted in a $6 million financial award\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This legal outcome provides insight into the resolution of high-profile harassment claims within scientific institutions but does not contribute directly to scientific understanding.\"\n}",
+        "parsed": {
+          "summary": "This study investigated a legal dispute involving David Sabatini, a biologist who won a $6 million defamation lawsuit against an accuser alleging sexual harassment and retaliation. The jury ruled in favor of Sabatini, dismissing the claims of misconduct. The outcome highlights the legal resolution of a high-profile case without confirming the alleged harassment or retaliation.",
+          "key_findings": [
+            "A jury found David Sabatini liable for defamation claims",
+            "The accuser's allegations of sexual harassment and retaliation were dismissed",
+            "The lawsuit resulted in a $6 million financial award"
+          ],
+          "study_type": "",
+          "scientific_significance": "This legal outcome provides insight into the resolution of high-profile harassment claims within scientific institutions but does not contribute directly to scientific understanding."
+        },
+        "elapsed_seconds": 19.3211,
+        "input_tokens": 576,
+        "output_tokens": 164,
+        "thoughts_tokens": null,
+        "total_tokens": 740,
+        "model_eval_seconds": 16.3773,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42913023",
+        "title": "An autonomous macrophage-nociceptor mechanosensory relay drives chronic visceral pain.",
+        "abstract": "NA: Visceral pain in ulcerative colitis is conventionally attributed to inflammatory cascades, though whether immune cells directly transduce mechanical cues into nociceptive signals remains unclear. Here, we show that the mechanosensitive channel Piezo1 in tissue-resident CX3CR1+ macrophages directly drives colitis-associated visceral hypersensitivity. Piezo1 triggered calcium influx and nuclear factor κB nuclear translocation that occupied the Ngf promoter to induce nerve growth factor (NGF) synthesis. This macrophage-derived NGF remodeled and sensitized the peripheral terminals of TRPV1+ nociceptive afferents in neuroimmune units. Using a minimally inflammatory intracolonic zymosan model, we found that this Piezo1-NGF-TrkA axis functions as a direct mechanosensory relay largely independent of cytokine cascades. Genetic deletion of Piezo1 or Ngf in resident macrophages, or Ntrk1 in TRPV1+ neurons, abolished visceral hyperalgesia in both inflammatory and noninflammatory models. These findings reveal tissue-resident macrophages as autonomous mechanical sensors that establish a direct, parallel pain transmission pathway to sensory nerves during disease.",
+        "doi": "10.1126/sciimmunol.aeb3809",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.aeb3809",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42913023/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether immune cells directly transduce mechanical cues into nociceptive signals during ulcerative colitis. Using a minimally inflammatory zymosan model, researchers identified Piezo1 in CX3CR1+ macrophages as a mechanosensitive channel that triggers NGF synthesis via calcium influx and NF-κB nuclear translocation. This macrophage-derived NGF sensitizes TRPV1+ nociceptors, establishing a direct mechanosensory relay independent of cytokine cascades. Genetic ablation of Piezo1, Ngf, or Ntrk1 abolished visceral hyperalgesia in colitis models.\",\n  \"key_findings\": [\n    \"Piezo1 in CX3CR1+ macrophages directly transduces mechanical cues into nociceptive signals during colitis\",\n    \"Piezo1 activation induces NGF synthesis through calcium influx and NF-κB nuclear translocation\",\n    \"Genetic deletion of Piezo1, Ngf, or Ntrk1 abolishes visceral hyperalgesia in colitis models\"\n  ],\n  \"study_type\": \"Intracolonic zymosan model\",\n  \"scientific_significance\": \"This work identifies tissue-resident macrophages as autonomous mechanical sensors that establish a direct, parallel pain transmission pathway to sensory nerves during inflammatory conditions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether immune cells directly transduce mechanical cues into nociceptive signals during ulcerative colitis. Using a minimally inflammatory zymosan model, researchers identified Piezo1 in CX3CR1+ macrophages as a mechanosensitive channel that triggers NGF synthesis via calcium influx and NF-κB nuclear translocation. This macrophage-derived NGF sensitizes TRPV1+ nociceptors, establishing a direct mechanosensory relay independent of cytokine cascades. Genetic ablation of Piezo1, Ngf, or Ntrk1 abolished visceral hyperalgesia in colitis models.",
+          "key_findings": [
+            "Piezo1 in CX3CR1+ macrophages directly transduces mechanical cues into nociceptive signals during colitis",
+            "Piezo1 activation induces NGF synthesis through calcium influx and NF-κB nuclear translocation",
+            "Genetic deletion of Piezo1, Ngf, or Ntrk1 abolishes visceral hyperalgesia in colitis models"
+          ],
+          "study_type": "Intracolonic zymosan model",
+          "scientific_significance": "This work identifies tissue-resident macrophages as autonomous mechanical sensors that establish a direct, parallel pain transmission pathway to sensory nerves during inflammatory conditions."
+        },
+        "elapsed_seconds": 33.6988,
+        "input_tokens": 813,
+        "output_tokens": 281,
+        "thoughts_tokens": null,
+        "total_tokens": 1094,
+        "model_eval_seconds": 30.6204,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42904558",
+        "title": "Spontaneous Capture, Enrichment, and SERS Sensing of Polystyrene Micro/Nanoplastics Enabled by Condensed Plasmonic Coacervate Droplets.",
+        "abstract": "NA: Pervasive contamination by micro/nanoplastics (MNPs) poses threats to environmental and human health; however, their sensitive detection is challenged by low concentrations and lack of effective enrichment methods. Herein, we present a plasmonic coacervate platform that spontaneously sequesters polystyrene (PS) MNPs from water while facilitating surface-enhanced Raman scattering (SERS) detection. Coacervate microdroplets, formed through the liquid-liquid phase separation (LLPS) of cationic poly(diallyldimethylammonium chloride) and anionic adenosine triphosphate, exhibit a positive surface charge and a hydrophobic interior, enabling capture of nanoscale or microscale negatively charged PS MNPs with enrichment rates of 99.4% and 91.1%. The co-encapsulation of silver nanoparticles (AgNPs) generates three-dimensional droplet-confined SERS hotspot networks, resulting in an enhancement factor of 2.72 × 109, excellent uniformity, and minimum detectable concentration of 1 and 10 ng/mL for nano- and micro-scale PS, demonstrating strong linear correlations. This platform achieves recoveries ranging from 87% to 108% for PS MNPs spiked into filtered tap and river water and successfully detects PS MNPs released from commercial plastic cups and expanded polystyrene containers under simulated daily use. Our work establishes a simple, rapid, and sensitive strategy that integrates spontaneous analyte sequestration with plasmonic amplification, thus offering a new avenue for monitoring MNPs and assessing the safety of food-contact materials.",
+        "doi": "10.1002/adma.75459",
+        "doi_url": "https://doi.org/10.1002/adma.75459",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42904558/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a plasmonic coacervate platform for detecting polystyrene micro/nanoplastics (MNPs) in water. The platform uses liquid-liquid phase separation to form charged droplets that spontaneously capture PS MNPs with high enrichment rates. It integrates silver nanoparticles to create SERS hotspots, achieving detection limits of 1–10 ng/mL and high recovery rates in environmental samples.\",\n  \"key_findings\": [\n    \"99.4% enrichment rate for nanoscale PS MNPs\",\n    \"91.1% enrichment rate for microscale PS MNPs\",\n    \"SERS enhancement factor of 2.72 × 109 with detection limits of 1–10 ng/mL\"\n  ],\n  \"study_type\": \"Plasmonic coacervate platform\",\n  \"scientific_significance\": \"This approach provides a sensitive, rapid method for detecting environmental micro/nanoplastics using spontaneous sequestration and plasmonic amplification, advancing strategies for monitoring plastic pollution in water systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a plasmonic coacervate platform for detecting polystyrene micro/nanoplastics (MNPs) in water. The platform uses liquid-liquid phase separation to form charged droplets that spontaneously capture PS MNPs with high enrichment rates. It integrates silver nanoparticles to create SERS hotspots, achieving detection limits of 1–10 ng/mL and high recovery rates in environmental samples.",
+          "key_findings": [
+            "99.4% enrichment rate for nanoscale PS MNPs",
+            "91.1% enrichment rate for microscale PS MNPs",
+            "SERS enhancement factor of 2.72 × 109 with detection limits of 1–10 ng/mL"
+          ],
+          "study_type": "Plasmonic coacervate platform",
+          "scientific_significance": "This approach provides a sensitive, rapid method for detecting environmental micro/nanoplastics using spontaneous sequestration and plasmonic amplification, advancing strategies for monitoring plastic pollution in water systems."
+        },
+        "elapsed_seconds": 35.2879,
+        "input_tokens": 827,
+        "output_tokens": 223,
+        "thoughts_tokens": null,
+        "total_tokens": 1050,
+        "model_eval_seconds": 24.4927,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
