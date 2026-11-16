@@ -44,10 +44,12 @@ test_that("summary payloads enforce the requested schema and word count", {
   valid <- list(
     summary = paste(rep("evidence", 45), collapse = " "),
     key_findings = list("Finding one", "Finding two"),
-    study_type = "Experimental study",
     scientific_significance = "The findings add evidence to scientific understanding."
   )
   expect_true(validate_summary_payload(valid)$valid)
+  legacy <- valid
+  legacy$study_type <- "Experimental study"
+  expect_true(validate_summary_payload(legacy)$valid)
 
   too_short <- valid
   too_short$summary <- "This summary is too short."
