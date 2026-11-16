@@ -406,12 +406,6 @@ site_render_paper_card <- function(article) {
       cat("</ul>")
     }
 
-    study_type <- summary_values(parsed, "study_type")
-    if (length(study_type)) {
-      cat(sprintf('<p class="detail-line"><strong>Study design:</strong> %s</p>',
-                  site_html_escape(paste(study_type, collapse = "; "))))
-    }
-
     scientific_significance <- summary_values(parsed, "scientific_significance")
     if (length(scientific_significance)) {
       cat(sprintf('<p class="detail-line"><strong>Scientific significance:</strong> %s</p>',
