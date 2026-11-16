@@ -2,6 +2,12 @@ project:
   type: website
   output-dir: _site
   execute-dir: project
+  resources:
+    - manifest.webmanifest
+    - service-worker.js
+    - pwa.js
+    - images/logo.svg
+    - images/icon.svg
 
 website:
   title: "Literature Radar"
@@ -26,13 +32,6 @@ format:
     include-after-body: pwa-install.html
     toc: false
     smooth-scroll: true
-
-resources:
-  - manifest.webmanifest
-  - service-worker.js
-  - pwa.js
-  - images/logo.svg
-  - images/icon.svg
 
 execute:
   echo: false
