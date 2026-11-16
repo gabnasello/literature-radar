@@ -108,7 +108,7 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   expect_match(rendered, "Scientific significance", fixed = TRUE)
   expect_match(rendered, "The study adds evidence about the process under investigation.", fixed = TRUE)
   expect_match(rendered, "A reported finding.", fixed = TRUE)
-  expect_match(rendered, "Study design:", fixed = TRUE)
+  expect_false(grepl("Study design:", rendered, fixed = TRUE))
   expect_match(rendered, "AI summary pending", fixed = TRUE)
   expect_false(grepl("Relevance", rendered, fixed = TRUE))
   expect_false(grepl("Limitations", rendered, fixed = TRUE))
