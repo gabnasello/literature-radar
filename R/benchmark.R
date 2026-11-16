@@ -2,9 +2,11 @@
 
 article_is_summarizable <- function(article) {
   abstract <- trimws(if (is.null(article$abstract)) "" else as.character(article$abstract))
-  # PubMed records with an "NA:" abstract label are Science news/editorial
-  # snippets rather than research abstracts. Do not generate synthetic summaries.
-  if (!nzchar(abstract) || grepl("^NA\\s*:", abstract, ignore.case = TRUE)) return(FALSE)
+  # PubMed prefixes many genuine abstracts with "NA:". Exclude only
+  # genuinely absent abstracts and known non-research digest records.
+  title <- trimws(if (is.null(article$title)) "" else as.character(article$title))
+  if (!nzchar(abstract) || toupper(abstract) %in% c("NA", "N/A", "NONE")) return(FALSE)
+  if (grepl("^In Other Journals\\.?$", title, ignore.case = TRUE)) return(FALSE)
   types <- article$publication_types
   if (is.null(types)) types <- character()
   types <- tolower(trimws(unlist(types, use.names = FALSE)))
