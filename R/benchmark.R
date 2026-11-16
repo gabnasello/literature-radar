@@ -1,5 +1,20 @@
 # Reproducible single-provider benchmark using local Ollama ----------------
 
+article_is_summarizable <- function(article) {
+  abstract <- trimws(if (is.null(article$abstract)) "" else as.character(article$abstract))
+  # PubMed records with an "NA:" abstract label are Science news/editorial
+  # snippets rather than research abstracts. Do not generate synthetic summaries.
+  if (!nzchar(abstract) || grepl("^NA\\s*:", abstract, ignore.case = TRUE)) return(FALSE)
+  types <- article$publication_types
+  if (is.null(types)) types <- character()
+  types <- tolower(trimws(unlist(types, use.names = FALSE)))
+  excluded <- c("editorial", "news", "comment", "published erratum",
+    "retracted publication", "expression of concern", "interview",
+    "biography", "obituary", "personal narrative", "directory",
+    "bibliography", "legal case")
+  !any(types %in% excluded)
+}
+
 read_benchmark_articles <- function(root = project_root()) {
   report_dir <- file.path(root, "reports")
   paths <- sort(list.files(report_dir, pattern = "\\.json$", recursive = TRUE, full.names = TRUE))
@@ -14,11 +29,12 @@ read_benchmark_articles <- function(root = project_root()) {
     for (article in report$articles) {
       pmid <- if (is.null(article$pmid)) "" else as.character(article$pmid)
       abstract <- if (is.null(article$abstract)) "" else as.character(article$abstract)
-      if (!nzchar(pmid) || !nzchar(trimws(abstract)) || trimws(abstract) %in% c("NA", "N/A")) next
+      if (!nzchar(pmid) || !article_is_summarizable(article)) next
       records[[length(records) + 1L]] <- list(
         pmid = pmid,
         title = if (is.null(article$title)) "" else as.character(article$title),
         abstract = abstract,
+        publication_types = if (is.null(article$publication_types)) list() else article$publication_types,
         doi = if (is.null(article$doi)) "" else as.character(article$doi),
         doi_url = if (is.null(article$doi_url)) "" else as.character(article$doi_url),
         pubmed_url = if (is.null(article$pubmed_url)) "" else as.character(article$pubmed_url),
