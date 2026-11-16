@@ -32,7 +32,9 @@ summary_values <- function(parsed, field) {
 
 site_is_summarizable <- function(article) {
   abstract <- trimws(site_text(article$abstract))
-  if (!nzchar(abstract) || grepl("^NA\\s*:", abstract, ignore.case = TRUE)) return(FALSE)
+  title <- trimws(site_text(article$title))
+  if (!nzchar(abstract) || toupper(abstract) %in% c("NA", "N/A", "NONE")) return(FALSE)
+  if (grepl("^In Other Journals\\.?$", title, ignore.case = TRUE)) return(FALSE)
   types <- tolower(trimws(unlist(article$publication_types, use.names = FALSE)))
   excluded <- c("editorial", "news", "comment", "published erratum",
     "retracted publication", "expression of concern", "interview",
