@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261116T034604Z",
+  "generated_at_utc": "2026-11-16 04:00:24 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 479,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42876215",
+        "title": "Dual Twisted Interfaces Enable Tunable Second Harmonic Generation in Chemical Vapor Deposition Grown Trilayer MoS2.",
+        "abstract": "NA: Twisted bilayer transition metal dichalcogenides, governed by a single twisted interface, offer a versatile platform for manipulating interlayer coupling and emergent optical behavior. However, despite extensive studies on single twisted interface systems, how multi-interface twisted stacking influences nonlinear optical behavior remains unclear. Here, we address this gap by systematically investigating the nonlinear optical performance of chemical vapor deposition (CVD) grown twisted trilayer MoS2 (TT-MoS2) with multi-interface twisted stacking. We fabricate all nine distinct trilayer MoS2 configurations by CVD. Raman and photoluminescence show that twisted interfaces modulate interlayer coupling, giving rise to stacking-dependent phonon and excitonic responses. Atomic-resolution scanning, transmission electron microscopy, and selected area electron diffraction confirm dual twisted interfaces and a supermoiré lattice. Guided by these structural insights, we examine the second harmonic generation (SHG) response across all nine trilayer configurations. Extending the coherent SH field superposition model to a trilayer system with two independent twisted interfaces, we develop a framework that describes how the dual interfaces govern the SHG intensity and polarization orientation across stacking configurations. Our findings establish TT-MoS2 as a versatile nonlinear platform and open new avenues for understanding and exploiting multi-interface twisted coupling to engineer nonlinear optical responses in van der Waals materials.",
+        "doi": "10.1002/adma.75387",
+        "doi_url": "https://doi.org/10.1002/adma.75387",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876215/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacked configurations, the researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution imaging confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework explaining SHG intensity and polarization orientation across configurations, demonstrating TT-MoS2's potential as a tunable nonlinear optical platform.\",\n  \"key_findings\": [\n    \"Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses\",\n    \"Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure\",\n    \"A framework links dual interface geometry to SHG intensity and polarization orientation\"\n  ],\n  \"study_type\": \"CVD-grown twisted trilayer MoS2 configurations\",\n  \"scientific_significance\": \"This work establishes a structural model for tuning nonlinear optical responses in multi-interface twisted van der Waals materials through dual interface engineering.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct stacked configurations, the researchers analyzed Raman and photoluminescence data to identify stacking-dependent phonon and excitonic responses. Atomic-resolution imaging confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework explaining SHG intensity and polarization orientation across configurations, demonstrating TT-MoS2's potential as a tunable nonlinear optical platform.",
+          "key_findings": [
+            "Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses",
+            "Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure",
+            "A framework links dual interface geometry to SHG intensity and polarization orientation"
+          ],
+          "study_type": "CVD-grown twisted trilayer MoS2 configurations",
+          "scientific_significance": "This work establishes a structural model for tuning nonlinear optical responses in multi-interface twisted van der Waals materials through dual interface engineering."
+        },
+        "elapsed_seconds": 18.2996,
+        "input_tokens": 844,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 1069,
+        "model_eval_seconds": 16.6053,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962342",
+        "title": "Piezoelectric electroporation potentiates high-frequency irreversible electroporation for enhanced prostate cancer eradication.",
+        "abstract": "NA: Residual tumor cell persistence remains a critical unresolved barrier limiting focal therapy such as high-frequency irreversible electroporation (H-FIRE) for prostate cancer. In this study, we identified DNA damage repair as the central mechanism governing the reversible survival of residual cells after H-FIRE. By exploiting the transient membrane permeability of these residual cells following H-FIRE, we engineered a piezoelectrically active nanomaterial, BOIS. Exogenous electric pulses generated by H-FIRE enhance tumor membrane permeabilization, thereby facilitating the intracellular delivery of BOIS and promoting its efficient penetration into residual malignant cells. Upon ultrasound activation, BOIS induces surface charge separation and electron migration, producing an intrinsic electric field accompanied by reactive oxygen species (ROS). This dual mechanism cascade simultaneously inflicts endogenous electric field-mediated electroporation damage on both cellular and nuclear membranes and imposes lethal oxidative stress, thereby converting reversibly injured residual cells into an irreversible death trajectory. Consequently, residual tumor cells with damage repair capacity are converted from a reversibly injured state to irreversible lethal damage. Unlike conventional combination therapies, this study pioneered a new therapeutic paradigm in which the focal ablation procedure functions as a nanomaterial delivery mechanism, thereby establishing a self-reinforcing therapeutic loop. This strategy markedly amplified the therapeutic efficacy of H-FIRE and enhanced the eradication of residual tumor cells. Collectively, these findings establish a groundbreaking therapeutic paradigm for eliminating residual disease following focal ablation.",
+        "doi": "10.1016/j.biomaterials.2026.124683",
+        "doi_url": "https://doi.org/10.1016/j.biomaterials.2026.124683",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962342/",
+        "journal_id": "biomaterials",
+        "journal_name": "Biomaterials",
+        "report_id": "biomaterials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether piezoelectric electroporation can enhance high-frequency irreversible electroporation (H-FIRE) for prostate cancer treatment. Residual tumor cells after H-FIRE were targeted using a piezoelectric nanomaterial (BOIS) that delivers electric pulses and reactive oxygen species (ROS) to induce irreversible damage. The approach exploits DNA damage repair mechanisms to convert reversible injury into lethal outcomes, significantly improving tumor eradication without additional external energy sources.\",\n  \"key_findings\": [\n    \"BOIS nanomaterial delivers electric pulses and ROS to residual prostate cancer cells post-H-FIRE\",\n    \"The dual mechanism of electroporation and oxidative stress converts reversible injury to irreversible cell death\",\n    \"This strategy enhances H-FIRE efficacy by eliminating residual tumor cells without external energy input\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work establishes a self-reinforcing therapeutic loop where focal ablation serves as a delivery mechanism for nanomaterials, enabling targeted elimination of residual tumor cells through intrinsic electric field and oxidative stress mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether piezoelectric electroporation can enhance high-frequency irreversible electroporation (H-FIRE) for prostate cancer treatment. Residual tumor cells after H-FIRE were targeted using a piezoelectric nanomaterial (BOIS) that delivers electric pulses and reactive oxygen species (ROS) to induce irreversible damage. The approach exploits DNA damage repair mechanisms to convert reversible injury into lethal outcomes, significantly improving tumor eradication without additional external energy sources.",
+          "key_findings": [
+            "BOIS nanomaterial delivers electric pulses and ROS to residual prostate cancer cells post-H-FIRE",
+            "The dual mechanism of electroporation and oxidative stress converts reversible injury to irreversible cell death",
+            "This strategy enhances H-FIRE efficacy by eliminating residual tumor cells without external energy input"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work establishes a self-reinforcing therapeutic loop where focal ablation serves as a delivery mechanism for nanomaterials, enabling targeted elimination of residual tumor cells through intrinsic electric field and oxidative stress mechanisms."
+        },
+        "elapsed_seconds": 18.4862,
+        "input_tokens": 859,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 1085,
+        "model_eval_seconds": 16.7704,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei to construct a comprehensive atlas of regulatory elements. It combined histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization to define 100+ cell subclasses and chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict enhancers than accessibility alone, while H3K27me3 and H3K9me3 define repressive states. The resource enables deep learning models for predicting epigenomic features and gene expression from DNA sequences.\",\n  \"key_findings\": [\n    \"Integration of four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome data across 2.5 million nuclei\",\n    \"Identification of 100+ brain cell subclasses and chromatin states covering 81% of the genome\",\n    \"Active chromatin states marked by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone\"\n  ],\n  \"study_type\": \"Single-cell epigenomic profiling\",\n  \"scientific_significance\": \"This atlas provides a unified framework for annotating brain regulatory elements and interpreting non-coding disease variants through multimodal epigenomic integration.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei to construct a comprehensive atlas of regulatory elements. It combined histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization to define 100+ cell subclasses and chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict enhancers than accessibility alone, while H3K27me3 and H3K9me3 define repressive states. The resource enables deep learning models for predicting epigenomic features and gene expression from DNA sequences.",
+          "key_findings": [
+            "Integration of four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome data across 2.5 million nuclei",
+            "Identification of 100+ brain cell subclasses and chromatin states covering 81% of the genome",
+            "Active chromatin states marked by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone"
+          ],
+          "study_type": "Single-cell epigenomic profiling",
+          "scientific_significance": "This atlas provides a unified framework for annotating brain regulatory elements and interpreting non-coding disease variants through multimodal epigenomic integration."
+        },
+        "elapsed_seconds": 22.1809,
+        "input_tokens": 780,
+        "output_tokens": 277,
+        "thoughts_tokens": null,
+        "total_tokens": 1057,
+        "model_eval_seconds": 20.4702,
+        "error": "summary must contain 45–65 words; received 82.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956746",
+        "title": "Growth factor VEGF-B sustains intestinal Tfh cell stemness to restrict Taurinivorans outgrowth and microbiota-driven obesity.",
+        "abstract": "NA: Autocrine signaling through vascular endothelial growth factor receptor-1 (VEGFR-1) reprograms T cell metabolism upon TCR stimulation. We found that mice bearing conditional deletion of Flt1 (encoding VEGFR-1) in T cells developed spontaneous obesity with advancing age. Analyses of lymphoid and metabolic tissues identified a VEGFR-1+ T follicular helper (Tfh) population in Peyer's patches and mesenteric lymph nodes. Flt1 deletion impaired Tfh fitness and reduced secretory IgA in the gut, resulting in unrestricted expansion of the pathobiont Taurinivorans. Taurinivorans overgrowth depleted host taurine, which drove obesity via suppressed adipocyte lipolysis and thermogenesis. Mechanistically, a VEGFR-1-AKT signaling axis promoted Tfh cell stemness by limiting p53-mediated senescence. This Tfh-microbiota-obesity pathway was also observed in diet-induced obese mice and in humans. Oral administration of IgA reduced Taurinivorans and alleviated adiposity, highlighting the therapeutic potential of this axis. Tfh cell senescence impairs IgA production, disrupting gut microbial homeostasis, with consequences to host metabolic disease.",
+        "doi": "10.1016/j.immuni.2026.10.004",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.004",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956746/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how vascular endothelial growth factor receptor-1 (VEGFR-1) signaling maintains intestinal T follicular helper (Tfh) cell stemness to control pathobiont expansion and obesity. Conditional Flt1 deletion in T cells caused age-dependent obesity due to Taurinivorans overgrowth, which depleted host taurine and impaired adipocyte function. VEGFR-1-AKT signaling reduced Tfh senescence, preserving IgA production and gut microbiota balance.\",\n  \"key_findings\": [\n    \"Flt1 deletion in T cells led to age-dependent obesity via Taurinivorans overgrowth\",\n    \"Taurinivorans depletion of host taurine suppressed adipocyte lipolysis and thermogenesis\",\n    \"VEGFR-1-AKT signaling maintained Tfh stemness by inhibiting p53-mediated senescence\"\n  ],\n  \"study_type\": \"Conditional Flt1 deletion in T cells\",\n  \"scientific_significance\": \"This work establishes a VEGFR-1-dependent Tfh-microbiota axis that regulates host metabolism through IgA-mediated pathobiont control, providing a mechanistic link between immune cell senescence and metabolic disease.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how vascular endothelial growth factor receptor-1 (VEGFR-1) signaling maintains intestinal T follicular helper (Tfh) cell stemness to control pathobiont expansion and obesity. Conditional Flt1 deletion in T cells caused age-dependent obesity due to Taurinivorans overgrowth, which depleted host taurine and impaired adipocyte function. VEGFR-1-AKT signaling reduced Tfh senescence, preserving IgA production and gut microbiota balance.",
+          "key_findings": [
+            "Flt1 deletion in T cells led to age-dependent obesity via Taurinivorans overgrowth",
+            "Taurinivorans depletion of host taurine suppressed adipocyte lipolysis and thermogenesis",
+            "VEGFR-1-AKT signaling maintained Tfh stemness by inhibiting p53-mediated senescence"
+          ],
+          "study_type": "Conditional Flt1 deletion in T cells",
+          "scientific_significance": "This work establishes a VEGFR-1-dependent Tfh-microbiota axis that regulates host metabolism through IgA-mediated pathobiont control, providing a mechanistic link between immune cell senescence and metabolic disease."
+        },
+        "elapsed_seconds": 23.2265,
+        "input_tokens": 736,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 995,
+        "model_eval_seconds": 18.7406,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42896839",
+        "title": "Cortex-wide imaging in naturally behaving mice with 1-gram wireless mesoscopes.",
+        "abstract": "NA: Revealing how distributed cortical circuits coordinate behavior in freely moving animals remains a central challenge in systems neuroscience, constrained by limited fields of view, low throughput, and the tethering required by current miniaturized microscopes1-4. Here, we present Airscope, a wireless mesoscope delivering 4 μm lateral resolution across a 6 mm field of view at 12.5 Hz, weighing 1.0 gram. An aspheric-lens design achieves a 2.84× shorter total track length than previous miniaturized microscopes1,2,5,6 while matching the neuron yield of benchtop one-photon mesoscopes; a tailored wireless link supports cable-free calcium imaging from >8,500 neurons per animal (25‑fold increase). Paired with a zero-shot behavior analyzer, Airscope enables cortical imaging across rich behavioral conditions, including room-scale enriched arenas, swimming assays, and multi-organ implantation, with concurrent recording from multiple animals. Using Airscope, we demonstrate versatile applications of untethered cortical imaging across diverse behavioral paradigms. We identify cortical activity patterns across multiple dorsal regions that correlate with behavioral signatures of social dominance, and show dorsal-cortical population activity prospectively decodes competition outcomes across paired animals. We observe reward-location-associated cortical activity patterns during maze exploration, and characterize Granger-causal influence from spinal cord to cortex during fear conditioning, enabled by simultaneous brain-spinal recordings. By uniting large-scale, cellular-resolution recording with unconstrained behavior, Airscope makes naturalistic, multi-animal cortical recording experimentally practical, and provides a broadly accessible technology for systems neuroscience.",
+        "doi": "10.1038/s41586-026-11293-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11293-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42896839/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of observing distributed cortical circuits during natural behavior by introducing Airscope, a 1-gram wireless mesoscope with 4 μm lateral resolution and 12.5 Hz imaging. It enables high-throughput calcium imaging of >8,500 neurons across multiple animals in diverse behavioral contexts, including social dominance, maze exploration, and fear conditioning. The technology demonstrates cortical activity patterns correlating with behavioral outcomes and spinal-cortical interactions.\",\n  \"key_findings\": [\n    \"Airscope achieves 4 μm lateral resolution across a 6 mm field of view at 12.5 Hz with 1.0 gram weight\",\n    \"Cortical activity patterns correlate with social dominance and competition outcomes\",\n    \"Spinal-cortical Granger-causal influences are observed during fear conditioning\"\n  ],\n  \"study_type\": \"Wireless mesoscope-based imaging\",\n  \"scientific_significance\": \"This technology enables large-scale, cellular-resolution cortical imaging during naturalistic behavior, advancing systems neuroscience by facilitating multi-animal studies across complex behavioral paradigms without tethering constraints.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of observing distributed cortical circuits during natural behavior by introducing Airscope, a 1-gram wireless mesoscope with 4 μm lateral resolution and 12.5 Hz imaging. It enables high-throughput calcium imaging of >8,500 neurons across multiple animals in diverse behavioral contexts, including social dominance, maze exploration, and fear conditioning. The technology demonstrates cortical activity patterns correlating with behavioral outcomes and spinal-cortical interactions.",
+          "key_findings": [
+            "Airscope achieves 4 μm lateral resolution across a 6 mm field of view at 12.5 Hz with 1.0 gram weight",
+            "Cortical activity patterns correlate with social dominance and competition outcomes",
+            "Spinal-cortical Granger-causal influences are observed during fear conditioning"
+          ],
+          "study_type": "Wireless mesoscope-based imaging",
+          "scientific_significance": "This technology enables large-scale, cellular-resolution cortical imaging during naturalistic behavior, advancing systems neuroscience by facilitating multi-animal studies across complex behavioral paradigms without tethering constraints."
+        },
+        "elapsed_seconds": 19.18,
+        "input_tokens": 895,
+        "output_tokens": 233,
+        "thoughts_tokens": null,
+        "total_tokens": 1128,
+        "model_eval_seconds": 17.3878,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42972028",
+        "title": "Re-timing mortality risk through individualized modelling of lifespan trajectories.",
+        "abstract": "NA: There is an urgent global need for affordable, large-scale health screening to enhance preventive care in the ageing population. Using low-cost, non-invasive retinal photographs and leveraging large foundation models, we developed a deep learning-based biomarker, Retinal Mortality Equivalent (RetiME), that directly mapped retinal features to individual mortality risk. Trained on a European cohort and externally validated across three independent external cohorts spanning Southeast Asia, Eurasia and North America, RetiME showed robust associations with all-cause and cause-specific mortality and predicted the incidence of a wide range of systemic and ocular diseases. Crucially, beyond static risk estimation, RetiME re-timed mortality risk by reconstructing personalized lifespan trajectories that were associated with observed mortality outcomes (for example, age of death). Clustering of these trajectories revealed distinct mortality patterns, spanning cancer-predominant, cardiometabolic and neurodegenerative risks, reflecting diverse ageing pathways captured by RetiME. Interpretability analyses showed that RetiME captures diverse biological and retinal features underlying mortality risk. Genome-wide analyses further identified genetic loci associated with RetiME. Collectively, these findings support further evaluation of retinal imaging and trajectory modelling as one component of a comprehensive assessment of mortality risk.",
+        "doi": "10.1038/s41551-026-01822-4",
+        "doi_url": "https://doi.org/10.1038/s41551-026-01822-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42972028/",
+        "journal_id": "nature-biomedical-engineering",
+        "journal_name": "Nature Biomedical Engineering",
+        "report_id": "nature-biomedical-engineering__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a deep learning biomarker, Retinal Mortality Equivalent (RetiME), using retinal photographs to predict individual mortality risk and reconstruct personalized lifespan trajectories. RetiME, validated across global cohorts, identified distinct mortality patterns linked to cancer, cardiometabolic, and neurodegenerative risks, offering a scalable method for aging-related health screening.\",\n  \"key_findings\": [\n    \"RetiME accurately predicts all-cause and cause-specific mortality using retinal features\",\n    \"RetiME re-times mortality risk by reconstructing individualized lifespan trajectories\",\n    \"Clustering revealed distinct mortality patterns associated with cancer, cardiometabolic, and neurodegenerative risks\"\n  ],\n  \"study_type\": \"Deep learning model trained on retinal images with external validation\",\n  \"scientific_significance\": \"RetiME provides a scalable, non-invasive method to model individual mortality risk trajectories, advancing precision aging interventions through retinal imaging.\"\n}",
+        "parsed": {
+          "summary": "This study developed a deep learning biomarker, Retinal Mortality Equivalent (RetiME), using retinal photographs to predict individual mortality risk and reconstruct personalized lifespan trajectories. RetiME, validated across global cohorts, identified distinct mortality patterns linked to cancer, cardiometabolic, and neurodegenerative risks, offering a scalable method for aging-related health screening.",
+          "key_findings": [
+            "RetiME accurately predicts all-cause and cause-specific mortality using retinal features",
+            "RetiME re-times mortality risk by reconstructing individualized lifespan trajectories",
+            "Clustering revealed distinct mortality patterns associated with cancer, cardiometabolic, and neurodegenerative risks"
+          ],
+          "study_type": "Deep learning model trained on retinal images with external validation",
+          "scientific_significance": "RetiME provides a scalable, non-invasive method to model individual mortality risk trajectories, advancing precision aging interventions through retinal imaging."
+        },
+        "elapsed_seconds": 18.8966,
+        "input_tokens": 718,
+        "output_tokens": 201,
+        "thoughts_tokens": null,
+        "total_tokens": 919,
+        "model_eval_seconds": 14.4148,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42995243",
+        "title": "Cas12a-based combinatorial knockout screens define the genetic architecture of the DNA damage response.",
+        "abstract": "NA: To elucidate the genetic architecture of the DNA damage response (DDR) network, we conduct unbiased genetic interaction screens using Cas12a. We disrupt 233 DDR genes frequently mutated in cancer and other genetic diseases, either individually or in pairwise combinations, enabling us to assess the phenotypic effects induced by the loss of DDR gene pairs under unperturbed cell growth conditions. We identify high-confidence positive and negative gene-gene interactions, along with connections between previously unlinked DDR pathways. Among the identified genetic interactions, we uncover synthetic lethal interactions between genes encoding the translesion polymerase REV1-Pol ζ complex and the MCM8-MCM9-HROB DNA helicase complex, between Fanconi anemia genes and various mitotic DNA repair genes, as well as between genes encoding the DNA translocase SMARCAL1 and components of the FANCM complex, suggesting opportunities for targeted treatments in tumors carrying mutations in these genes. Collectively, our genetic map of the DDR network identifies synthetic lethal and buffering interactions with therapeutic potential.",
+        "doi": "10.1038/s41587-026-03339-2",
+        "doi_url": "https://doi.org/10.1038/s41587-026-03339-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42995243/",
+        "journal_id": "nature-biotechnology",
+        "journal_name": "Nature Biotechnology",
+        "report_id": "nature-biotechnology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used Cas12a-based combinatorial knockout screens to investigate genetic interactions within the DNA damage response (DDR) network. By disrupting 233 DDR genes individually or in pairs, researchers identified high-confidence synthetic lethal interactions, including those between REV1-Pol ζ, MCM8-MCM9-HROB, Fanconi anusing genes, and SMARCAL1-FANCM components. These findings reveal therapeutic opportunities for tumors with specific DDR mutations.\",\n  \"key_findings\": [\n    \"Synthetic lethal interactions between REV1-Pol ζ and MCM8-MCM9-HROB complexes\",\n    \"Genetic links between Fanconi anemia genes and mitotic DNA repair genes\",\n    \"Synthetic lethality involving SMARCAL1 and FANCM complex components\"\n  ],\n  \"study_type\": \"Unbiased genetic interaction screens using Cas12a\",\n  \"scientific_significance\": \"The study provides a comprehensive genetic map of DDR network interactions, highlighting synthetic lethal relationships that could inform targeted therapies for tumors with specific DDR mutations.\"\n}",
+        "parsed": {
+          "summary": "This study used Cas12a-based combinatorial knockout screens to investigate genetic interactions within the DNA damage response (DDR) network. By disrupting 233 DDR genes individually or in pairs, researchers identified high-confidence synthetic lethal interactions, including those between REV1-Pol ζ, MCM8-MCM9-HROB, Fanconi anusing genes, and SMARCAL1-FANCM components. These findings reveal therapeutic opportunities for tumors with specific DDR mutations.",
+          "key_findings": [
+            "Synthetic lethal interactions between REV1-Pol ζ and MCM8-MCM9-HROB complexes",
+            "Genetic links between Fanconi anemia genes and mitotic DNA repair genes",
+            "Synthetic lethality involving SMARCAL1 and FANCM complex components"
+          ],
+          "study_type": "Unbiased genetic interaction screens using Cas12a",
+          "scientific_significance": "The study provides a comprehensive genetic map of DDR network interactions, highlighting synthetic lethal relationships that could inform targeted therapies for tumors with specific DDR mutations."
+        },
+        "elapsed_seconds": 19.9678,
+        "input_tokens": 684,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 910,
+        "model_eval_seconds": 16.195,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42934291",
+        "title": "The maternal-fetal interface is an early hematopoietic niche enriched in distinct erythro-myeloid progenitors.",
+        "abstract": "NA: Embryonic hematopoiesis is thought to occur exclusively in the extraembryonic yolk sac before hematopoietic stem cells (HSCs) arise in the aorta-gonad-mesonephros region. Here we identify a previously unrecognized hematopoietic site at the maternal-fetal interface in mice, termed MIXER (Maternally Interfaced eXtraEmbRyonic) tissue, which develops contemporaneously with the yolk sac and exhibits robust hematopoietic activity. MIXER contains abundant hematopoietic precursors, including classical CSF1R+ erythro-myeloid progenitors and a unique embryonic CD4+CSF1R- Erythro-Myeloid PRogenitOR (eEMPROR) population. Lineage-tracing experiments demonstrate that eEMPROR cells contribute to select macrophage subpopulations during fetal development, primarily in the perivascular space. Notably, early human placental villi, before HSC emergence, also harbor CD4+ nucleated erythrocytes, indicating a conserved hematopoietic role for the maternal-fetal interface. These findings establish MIXER as an anatomically distinct niche for embryonic hematopoiesis and expand the developmental map of blood cell emergence in mammals.",
+        "doi": "10.1038/s41590-026-02683-4",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02683-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42934291/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies a novel hematopoietic niche at the maternal-fetal interface in mice, termed MIXER, which develops alongside the yolk sac. It contains erythro-myeloid progenitors, including CSF1R+ cells and a unique eEMPROR population. Lineage tracing shows eEMPROR contributes to fetal macrophages. Human placental villi also show CD4+ nucleated erythrocytes, suggesting conserved hematopoietic activity at this interface early in development.\",\n  \"key_findings\": [\n    \"MIXER tissue is an early hematopoietic site at the maternal-fetal interface in mice\",\n    \"MIXER contains CSF1R+ erythro-myeloid progenitors and eEMPROR cells\",\n    \"eEMPROR contributes to fetal macrophage subpopulations and human placental villi harbor CD4+ nucleated erythrocytes\"\n  ],\n  \"study_type\": \"Mouse embryonic model\",\n  \"scientific_significance\": \"This discovery reveals a conserved maternal-fetal interface as an early hematopoietic niche, expanding the understanding of blood cell origins in mammalian development.\"\n}",
+        "parsed": {
+          "summary": "This study identifies a novel hematopoietic niche at the maternal-fetal interface in mice, termed MIXER, which develops alongside the yolk sac. It contains erythro-myeloid progenitors, including CSF1R+ cells and a unique eEMPROR population. Lineage tracing shows eEMPROR contributes to fetal macrophages. Human placental villi also show CD4+ nucleated erythrocytes, suggesting conserved hematopoietic activity at this interface early in development.",
+          "key_findings": [
+            "MIXER tissue is an early hematopoietic site at the maternal-fetal interface in mice",
+            "MIXER contains CSF1R+ erythro-myeloid progenitors and eEMPROR cells",
+            "eEMPROR contributes to fetal macrophage subpopulations and human placental villi harbor CD4+ nucleated erythrocytes"
+          ],
+          "study_type": "Mouse embryonic model",
+          "scientific_significance": "This discovery reveals a conserved maternal-fetal interface as an early hematopoietic niche, expanding the understanding of blood cell origins in mammalian development."
+        },
+        "elapsed_seconds": 20.2426,
+        "input_tokens": 839,
+        "output_tokens": 250,
+        "thoughts_tokens": null,
+        "total_tokens": 1089,
+        "model_eval_seconds": 18.5675,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957886",
+        "title": "Topological control of polaritonic flatbands in anisotropic van der Waals metasurfaces.",
+        "abstract": "NA: Anisotropic van der Waals materials exhibit direction-dependent optical and electronic properties, enabling tailored directional light-matter interactions. Rhenium disulfide (ReS2) stands out among them for its strong in-plane anisotropy and thickness-independent direct-bandgap excitons. These excitons can hybridize with light to form exciton-polaritons, rendering ReS2 a compelling material for nanophotonic integration. Metasurfaces are arrays of subwavelength resonators and can support ultrasharp quasi-bound states in the continuum resonances. Topological transformations of their band structure can give rise to flatbands, which host dispersionless states with quenched kinetic energy and vanishing group velocity. Here we show that structuring ReS2 into a resonant metasurface reshapes its photonic band topology, splitting the integer topological charge of the quasi-bound states in the continuum into two half-integer polarization singularities and driving the formation of directional far-field flatbands. Tuned into resonance with the linearly polarized excitonic transitions of ReS2, these flatband states hybridize into distinct directionally polarized exciton-polaritons. This points towards a scalable route to polarization-resolved quantum emitters, flatband-enhanced nonlinear optics and low-threshold polariton devices.",
+        "doi": "10.1038/s41563-026-02776-3",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02776-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957886/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how anisotropic van der Waals materials, specifically rhenium disulfide (ReS2), can be engineered into metasurfaces to control photonic band topology. The researchers reshaped ReS2's band structure to split topological charges into half-integer polarization singularities, creating directional flatbands. These flatbands hybridize with ReS2's excitonic transitions to form polarized exciton-polaritons, enabling polarization-resolved quantum emitters and low-threshold polariton devices.\",\n  \"key_findings\": [\n    \"Structuring ReS2 into a resonant metasurface splits integer topological charges into half-integer polarization singularities\",\n    \"The engineered flatbands hybridize with ReS2's linearly polarized excitonic transitions to form directionally polarized exciton-polaritons\",\n    \"This approach enables scalable polarization-resolved quantum emitters and flatband-enhanced nonlinear optics\"\n  ],\n  \"study_type\": \"Metasurface\",\n  \"scientific_significance\": \"This work demonstrates a pathway to manipulate photonic band topology in 2D materials for directional light-matter interactions, advancing the design of polariton-based nanophotonic devices with tailored polarization properties.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how anisotropic van der Waals materials, specifically rhenium disulfide (ReS2), can be engineered into metasurfaces to control photonic band topology. The researchers reshaped ReS2's band structure to split topological charges into half-integer polarization singularities, creating directional flatbands. These flatbands hybridize with ReS2's excitonic transitions to form polarized exciton-polaritons, enabling polarization-resolved quantum emitters and low-threshold polariton devices.",
+          "key_findings": [
+            "Structuring ReS2 into a resonant metasurface splits integer topological charges into half-integer polarization singularities",
+            "The engineered flatbands hybridize with ReS2's linearly polarized excitonic transitions to form directionally polarized exciton-polaritons",
+            "This approach enables scalable polarization-resolved quantum emitters and flatband-enhanced nonlinear optics"
+          ],
+          "study_type": "Metasurface",
+          "scientific_significance": "This work demonstrates a pathway to manipulate photonic band topology in 2D materials for directional light-matter interactions, advancing the design of polariton-based nanophotonic devices with tailored polarization properties."
+        },
+        "elapsed_seconds": 20.8996,
+        "input_tokens": 835,
+        "output_tokens": 261,
+        "thoughts_tokens": null,
+        "total_tokens": 1096,
+        "model_eval_seconds": 19.2087,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912141",
+        "title": "The AI debate is missing half the system.",
+        "abstract": "NA: Last month, leading executives of artificial intelligence (AI) companies warned the United Nations Security Council about the risks of losing human control over this rapidly advancing technology. Their recommendations focused heavily on safeguards, evaluation, and governance of AI models and systems, largely overlooking the risks that arise from the interactions of AI with people and institutions. AI safety needs to be addressed at the level of the human-AI system, not the AI model alone.",
+        "doi": "10.1126/science.aen2722",
+        "doi_url": "https://doi.org/10.1126/science.aen2722",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912141/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This commentary critiques the current AI safety discourse by highlighting that leading AI executives' recommendations emphasize AI model governance while neglecting human-AI system interactions. The study identifies a critical oversight requiring risk mitigation strategies to address the interplay between AI and human institutions, not just technical model specifications.\",\n  \"key_findings\": [\n    \"Existing AI safety recommendations prioritize AI model safeguards over human-AI system interactions\",\n    \"The oversight risks overlooking risks from AI interactions with people and institutions\",\n    \"Effective AI safety requires addressing human-AI system dynamics, not isolated model governance\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This critique advances understanding of AI safety by demonstrating that multidimensional risk mitigation must encompass human-AI system interactions, not solely technical model specifications.\"\n}",
+        "parsed": {
+          "summary": "This commentary critiques the current AI safety discourse by highlighting that leading AI executives' recommendations emphasize AI model governance while neglecting human-AI system interactions. The study identifies a critical oversight requiring risk mitigation strategies to address the interplay between AI and human institutions, not just technical model specifications.",
+          "key_findings": [
+            "Existing AI safety recommendations prioritize AI model safeguards over human-AI system interactions",
+            "The oversight risks overlooking risks from AI interactions with people and institutions",
+            "Effective AI safety requires addressing human-AI system dynamics, not isolated model governance"
+          ],
+          "study_type": "",
+          "scientific_significance": "This critique advances understanding of AI safety by demonstrating that multidimensional risk mitigation must encompass human-AI system interactions, not solely technical model specifications."
+        },
+        "elapsed_seconds": 16.7041,
+        "input_tokens": 848,
+        "output_tokens": 164,
+        "thoughts_tokens": null,
+        "total_tokens": 1012,
+        "model_eval_seconds": 11.9145,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42913023",
+        "title": "An autonomous macrophage-nociceptor mechanosensory relay drives chronic visceral pain.",
+        "abstract": "NA: Visceral pain in ulcerative colitis is conventionally attributed to inflammatory cascades, though whether immune cells directly transduce mechanical cues into nociceptive signals remains unclear. Here, we show that the mechanosensitive channel Piezo1 in tissue-resident CX3CR1+ macrophages directly drives colitis-associated visceral hypersensitivity. Piezo1 triggered calcium influx and nuclear factor κB nuclear translocation that occupied the Ngf promoter to induce nerve growth factor (NGF) synthesis. This macrophage-derived NGF remodeled and sensitized the peripheral terminals of TRPV1+ nociceptive afferents in neuroimmune units. Using a minimally inflammatory intracolonic zymosan model, we found that this Piezo1-NGF-TrkA axis functions as a direct mechanosensory relay largely independent of cytokine cascades. Genetic deletion of Piezo1 or Ngf in resident macrophages, or Ntrk1 in TRPV1+ neurons, abolished visceral hyperalgesia in both inflammatory and noninflammatory models. These findings reveal tissue-resident macrophages as autonomous mechanical sensors that establish a direct, parallel pain transmission pathway to sensory nerves during disease.",
+        "doi": "10.1126/sciimmunol.aeb3809",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.aeb3809",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42913023/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether immune cells directly transduce mechanical cues into nociceptive signals during ulcerative colitis. Using a minimally inflammatory zymosan model, researchers identified Piezo1 in CX3CR1+ macrophages as a mechanosensor that triggers NGF synthesis via calcium influx and NF-κB nuclear translocation. This macrophage-derived NGF sensitizes TRPV1+ nociceptors, establishing a direct mechanosensory relay independent of cytokine cascades, which reduces visceral hyperalgesia when genetically disrupted.\",\n  \"key_findings\": [\n    \"Piezo1 in CX3CR1+ macrophages directly transduces mechanical cues into nociceptive signals during colitis\",\n    \"Piezo1 activation induces NGF synthesis through calcium influx and NF-κB nuclear translocation\",\n    \"Genetic disruption of Piezo1, Ngf, or Ntrk1 abolishes visceral hyperalgesia in colitis models\"\n  ],\n  \"study_type\": \"minimally inflammatory intracolonic zymosan model\",\n  \"scientific_significance\": \"This work identifies a direct mechanosensory pathway from tissue-resident macrophages to nociceptors that operates independently of inflammatory cytokines, providing a novel mechanism for visceral pain in colitis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether immune cells directly transduce mechanical cues into nociceptive signals during ulcerative colitis. Using a minimally inflammatory zymosan model, researchers identified Piezo1 in CX3CR1+ macrophages as a mechanosensor that triggers NGF synthesis via calcium influx and NF-κB nuclear translocation. This macrophage-derived NGF sensitizes TRPV1+ nociceptors, establishing a direct mechanosensory relay independent of cytokine cascades, which reduces visceral hyperalgesia when genetically disrupted.",
+          "key_findings": [
+            "Piezo1 in CX3CR1+ macrophages directly transduces mechanical cues into nociceptive signals during colitis",
+            "Piezo1 activation induces NGF synthesis through calcium influx and NF-κB nuclear translocation",
+            "Genetic disruption of Piezo1, Ngf, or Ntrk1 abolishes visceral hyperalgesia in colitis models"
+          ],
+          "study_type": "minimally inflammatory intracolonic zymosan model",
+          "scientific_significance": "This work identifies a direct mechanosensory pathway from tissue-resident macrophages to nociceptors that operates independently of inflammatory cytokines, providing a novel mechanism for visceral pain in colitis."
+        },
+        "elapsed_seconds": 24.6001,
+        "input_tokens": 717,
+        "output_tokens": 279,
+        "thoughts_tokens": null,
+        "total_tokens": 996,
+        "model_eval_seconds": 20.2356,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. This design enables scalable production and stable cycling in high-energy batteries.\",\n  \"key_findings\": [\n    \"Closed nanopores redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity\",\n    \"The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles\"\n  ],\n  \"study_type\": \"Material design and synthesis\",\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable strategy for developing practical silicon-carbon anodes with minimal expansion and enhanced cycling stability in lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. This design enables scalable production and stable cycling in high-energy batteries.",
+          "key_findings": [
+            "Closed nanopores redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity",
+            "The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles"
+          ],
+          "study_type": "Material design and synthesis",
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable strategy for developing practical silicon-carbon anodes with minimal expansion and enhanced cycling stability in lithium-ion batteries."
+        },
+        "elapsed_seconds": 21.89,
+        "input_tokens": 897,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1165,
+        "model_eval_seconds": 20.1621,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020034",
+        "title": "Harmonized brain ontology and 3D atlases for human, macaque, and marmoset basal ganglia.",
+        "abstract": "NA: A major goal of the BRAIN Initiative Cell Atlas Network (BICAN) is to create a suite of foundational reference cell atlases and associated standards for human and nonhuman primate brains. Central to this goal is the creation of cross-species-harmonized cellular taxonomies and structural parcellations with formal ontologies that can be mapped onto 3D reference frameworks, bridging neuroimaging and cellular and histological resolutions. We describe an iterative approach, focused initially on the basal ganglia, to co-create structural and cellular ontologies for human, macaque, and marmoset brains and to map and refine structural parcellations into neuroimaging-based common coordinate frameworks. We create a Harmonized Ontology of Mammalian Brain Anatomy (HOMBA) to meet these needs. These references provide the framework for documenting and mapping all experimental sampling in BICAN, allowing analyses of cellular and molecular variation as a function of topographic position and enabling comparisons of cellular, molecular, and neuroimaging-based functional variation across species.",
+        "doi": "10.1016/j.cell.2026.10.033",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.033",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020034/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a cross-species harmonized ontology and 3: atlases for human, macaque, and marmoset basal ganglia to support the BRAIN Initiative Cell Atlas Network. It created the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA) to standardize structural parcellations and enable species-specific cellular mapping within neuroimaging frameworks, facilitating comparative analyses across species.\",\n  \"key_findings\": [\n    \"Established HOMBA as a cross-species harmonized ontology for basal ganglia structures\",\n    \"Generated 3D atlases for human, macaque, and marmoset basal ganglia\",\n    \"Provided standardized frameworks for mapping cellular and molecular variations across species\"\n  ],\n  \"study_type\": \"Iterative approach for co-creating ontologies and atlases\",\n  \"scientific_significance\": \"This work establishes a foundational framework for cross-species neuroanatomical standardization, enabling comparative studies of cellular and molecular variations across mammalian species using unified neuroimaging coordinates.\"\n}",
+        "parsed": {
+          "summary": "This study developed a cross-species harmonized ontology and 3: atlases for human, macaque, and marmoset basal ganglia to support the BRAIN Initiative Cell Atlas Network. It created the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA) to standardize structural parcellations and enable species-specific cellular mapping within neuroimaging frameworks, facilitating comparative analyses across species.",
+          "key_findings": [
+            "Established HOMBA as a cross-species harmonized ontology for basal ganglia structures",
+            "Generated 3D atlases for human, macaque, and marmoset basal ganglia",
+            "Provided standardized frameworks for mapping cellular and molecular variations across species"
+          ],
+          "study_type": "Iterative approach for co-creating ontologies and atlases",
+          "scientific_significance": "This work establishes a foundational framework for cross-species neuroanatomical standardization, enabling comparative studies of cellular and molecular variations across mammalian species using unified neuroimaging coordinates."
+        },
+        "elapsed_seconds": 19.7753,
+        "input_tokens": 686,
+        "output_tokens": 221,
+        "thoughts_tokens": null,
+        "total_tokens": 907,
+        "model_eval_seconds": 15.9189,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962666",
+        "title": "Mitochondrial DNA abundance is a determinant of immunogenic cell death in cancer.",
+        "abstract": "NA: Cells experiencing mitochondrial stress can undergo apoptosis or cell death that triggers innate immune activation. We examined the mechanisms determining these distinct outcomes in cancer. Abundant mitochondrial DNA (mtDNA) and high expression of the cGAS-STING pathway were features of KRAS-mutant cancers. In a pharmacological screen, MEK inhibitor (MEKi) effectively induced mtDNA release into the cytosol in KRAS-mutant cancer cells. However, MEKi also induced PRKN-mediated mitophagy, which limited mtDNA release by eliminating damaged mitochondria. Inhibition of mitophagy sustained mtDNA efflux and amplified cGAS-STING signaling. Mechanistically, PRKN-mediated mitophagy restrained mitochondrial outer membrane permeabilization (MOMP) to limit mtDNA efflux. The balance between mtDNA and cytochrome c (cyt.c) release defined two immunologically distinct outcomes: immunogenic cell death (ICD) and apoptosis. In preclinical models, combined inhibition of MEK and mitophagy induced robust dendritic cell (DC) activation and promoted CD8+ T cell-mediated antitumor immunity. Consistently, PRKN expression negatively correlated with immune infiltration in human cancers. Collectively, these findings provide a rationale for combination strategies targeting mitochondrial dynamics to augment antitumor immunity.",
+        "doi": "10.1016/j.immuni.2026.10.002",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.002",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962666/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how mitochondrial DNA (mtDNA) abundance influences immunogenic cell death (ICD) in cancer. Using KRAS-mutant cancer models, it demonstrates that MEK inhibitors induce mtDNA release but are counteracted by PRKN-mediated mitophagy. Inhibiting mitophagy enhances mtDNA efflux, amplifying cGAS-STING signaling and promoting CD8+ T cell responses. The balance between mt:cytochrome c release dictates ICD versus apoptosis outcomes, with clinical relevance in human tumors.\",\n  \"key_findings\": [\n    \"MEK inhibitors induce mtDNA release in KRAS-mutant cancer cells but are limited by PRKN-mediated mitophagy\",\n    \"Inhibiting mitophagy increases mtDNA efflux, enhancing cGAS-STING signaling and CD8+ T cell activation\",\n    \"PRKN expression negatively correlates with immune infiltration in human cancers\"\n  ],\n  \"study_type\": \"Preclinical models with pharmacological screening\",\n  \"scientific_significance\": \"The findings establish a mechanistic link between mitochondrial dynamics, mtDNA release, and immunogenic cell death, providing a targetable pathway to enhance antitumor immunity through dual inhibition of mitochondrial stress pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how mitochondrial DNA (mtDNA) abundance influences immunogenic cell death (ICD) in cancer. Using KRAS-mutant cancer models, it demonstrates that MEK inhibitors induce mtDNA release but are counteracted by PRKN-mediated mitophagy. Inhibiting mitophagy enhances mtDNA efflux, amplifying cGAS-STING signaling and promoting CD8+ T cell responses. The balance between mt:cytochrome c release dictates ICD versus apoptosis outcomes, with clinical relevance in human tumors.",
+          "key_findings": [
+            "MEK inhibitors induce mtDNA release in KRAS-mutant cancer cells but are limited by PRKN-mediated mitophagy",
+            "Inhibiting mitophagy increases mtDNA efflux, enhancing cGAS-STING signaling and CD8+ T cell activation",
+            "PRKN expression negatively correlates with immune infiltration in human cancers"
+          ],
+          "study_type": "Preclinical models with pharmacological screening",
+          "scientific_significance": "The findings establish a mechanistic link between mitochondrial dynamics, mtDNA release, and immunogenic cell death, providing a targetable pathway to enhance antitumor immunity through dual inhibition of mitochondrial stress pathways."
+        },
+        "elapsed_seconds": 24.316,
+        "input_tokens": 732,
+        "output_tokens": 256,
+        "thoughts_tokens": null,
+        "total_tokens": 988,
+        "model_eval_seconds": 19.7757,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907497",
+        "title": "Functional architecture of the human insula.",
+        "abstract": "NA: The insular cortex has a central role in pain1,2, interoception3,4 and feelings5,6, yet its functional architecture and causal electrophysiological relationships among its subregions remain poorly understood. Here we combine intracranial electrical stimulation and task-based electroencephalography recordings with connectivity mapping within a cytoarchitectonic atlas of the human insula7-10 in 87 participants implanted with intracranial electrodes, and identify a quadripartite functional architecture comprising four distinct regions: (1) a dorsal-posterior region encoding somatotopically organized nociceptive/thermoceptive and somatosensory signals; (2) a ventral-posterior region with access to somatic information across multiple body parts; (3) a mid-anterior region associated with visceral sensations and anxiety states; and (4) an anterior-polar region, largely silent to direct stimulation, yet showing robust activation during salience detection and change of action mode. Critically, this anterior region, with its strong connections with the prefrontal cortex, including the anterior cingulate cortex, exerts strong and direct influence over other insular regions, while receiving less-strong indirect inputs from them, revealing an electrophysiological pathway for cognitive modulation of pain and bodily perception. Together, these findings define a functional architecture of the human insula that links cytoarchitecture to directed and asymmetric electrophysiological interactions, with mechanistic implications for cognitive modulation of pain and interoceptive experience.",
+        "doi": "10.1038/s41586-026-11175-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11175-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907497/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies a quadripartite functional architecture of the human insula using intracranial electrical stimulation and electroencephalography in 87 participants. It defines four regions: dorsal-posterior for nociceptive/thermoceptive signals, ventral-posterior for somatic information, mid-anterior for visceral sensations and anxiety, and anterior-polar for salience detection. The anterior region shows strong connections with the prefrontal cortex, enabling cognitive modulation of pain and bodily perception.\",\n  \"key_findings\": [\n    \"The insula has four distinct functional regions: dorsal-posterior encoding nociceptive/thermoceptive signals, ventral-posterior processing somatic information across body parts, mid-anterior linked to visceral sensations and anxiety, and anterior-polar involved in salience detection.\",\n    \"The anterior-polar region exhibits strong connections with the prefrontal cortex, including the anterior cingulate cortex, exerting direct influence over other insular regions.\",\n    \"This architecture links cytoarchitecture to asymmetric electrophysiological interactions, providing mechanistic insights into cognitive modulation of pain and interoception.\"\n  ],\n  \"study_type\": \"Intracranial electrical stimulation and electroencephalography\",\n  \"scientific_significance\": \"This work establishes a functional framework for the human insula that connects cytoarchitectonic organization with directed electrophysiological pathways, advancing understanding of how cognition modulates pain and bodily perception.\"\n}",
+        "parsed": {
+          "summary": "This study identifies a quadripartite functional architecture of the human insula using intracranial electrical stimulation and electroencephalography in 87 participants. It defines four regions: dorsal-posterior for nociceptive/thermoceptive signals, ventral-posterior for somatic information, mid-anterior for visceral sensations and anxiety, and anterior-polar for salience detection. The anterior region shows strong connections with the prefrontal cortex, enabling cognitive modulation of pain and bodily perception.",
+          "key_findings": [
+            "The insula has four distinct functional regions: dorsal-posterior encoding nociceptive/thermoceptive signals, ventral-posterior processing somatic information across body parts, mid-anterior linked to visceral sensations and anxiety, and anterior-polar involved in salience detection.",
+            "The anterior-polar region exhibits strong connections with the prefrontal cortex, including the anterior cingulate cortex, exerting direct influence over other insular regions.",
+            "This architecture links cytoarchitecture to asymmetric electrophysiological interactions, providing mechanistic insights into cognitive modulation of pain and interoception."
+          ],
+          "study_type": "Intracranial electrical stimulation and electroencephalography",
+          "scientific_significance": "This work establishes a functional framework for the human insula that connects cytoarchitectonic organization with directed electrophysiological pathways, advancing understanding of how cognition modulates pain and bodily perception."
+        },
+        "elapsed_seconds": 27.4747,
+        "input_tokens": 863,
+        "output_tokens": 305,
+        "thoughts_tokens": null,
+        "total_tokens": 1168,
+        "model_eval_seconds": 25.7147,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42977739",
+        "title": "Non-invasive oral magnetoelectric vagus nerve neuromodulation for Parkinson's disease therapy.",
+        "abstract": "NA: Vagus nerve stimulation has shown promising neuroprotective and anti-inflammatory effects in progressive neurodegenerative disorders such as Parkinson's disease. However, its invasive nature introduces procedural and device-related risks. Here we introduce a magnetoelectric particulate system for oral delivery and non-invasive vagus nerve stimulation through the gut. The system comprises a magneto-responsive nickel ferrite core and a piezoelectric barium titanate shell, conjugated with capsaicin to specifically target TRPV1 receptors, ensuring effective adherence to the stomach lining after oral administration. Upon magnetic field stimulation, the particles generate electrical pulses that activate vagal afferent fibres, engaging the nucleus tractus solitarius in the brainstem via the gut-brain axis. This activation enhances norepinephrine production in the locus coeruleus and dopamine synthesis in the substantia nigra. Vagal efferent activation triggers the cholinergic anti-inflammatory pathway, mitigating both neuroinflammation and systemic inflammation. This non-invasive approach demonstrates potential for alleviating motor symptoms and non-motor anxiety in Parkinson's disease, offering valuable insights into its mechanisms and clinical applications.",
+        "doi": "10.1038/s41551-026-01829-x",
+        "doi_url": "https://doi.org/10.1038/s41551-026-01829-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42977739/",
+        "journal_id": "nature-biomedical-engineering",
+        "journal_name": "Nature Biomedical Engineering",
+        "report_id": "nature-biomedical-engineering__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates non-invasive vagus nerve stimulation for Parkinson's disease using an oral magnetoelectric particulate system. The system delivers magnetic field-induced electrical pulses to activate vagal afferents, engaging the brainstem and modulating dopamine and norepinephrine pathways. It reduces neuroinflammation via the cholinergic anti-inflammatory pathway, potentially alleviating motor and non-motor symptoms.\",\n  \"key_findings\": [\n    \"Oral delivery of magnetoeusing nickel ferrite core and barium titanate shell particles targets TRPV1 receptors for stomach adherence\",\n    \"Magnetic field stimulation generates electrical pulses activating vagal afferents and the nucleus tractus solitarius\",\n    \"Vagal activation enhances dopamine synthesis in substantia nigra and norepinephrine in locus coeruleus while reducing neuroinflammation\"\n  ],\n  \"study_type\": \"In vitro and in vivo models\",\n  \"scientific_significance\": \"This approach provides a non-invasive method to modulate Parkinson's disease pathology through gut-brain axis interactions, offering a potential therapeutic strategy without surgical intervention.\"\n}",
+        "parsed": {
+          "summary": "This study investigates non-invasive vagus nerve stimulation for Parkinson's disease using an oral magnetoelectric particulate system. The system delivers magnetic field-induced electrical pulses to activate vagal afferents, engaging the brainstem and modulating dopamine and norepinephrine pathways. It reduces neuroinflammation via the cholinergic anti-inflammatory pathway, potentially alleviating motor and non-motor symptoms.",
+          "key_findings": [
+            "Oral delivery of magnetoeusing nickel ferrite core and barium titanate shell particles targets TRPV1 receptors for stomach adherence",
+            "Magnetic field stimulation generates electrical pulses activating vagal afferents and the nucleus tractus solitarius",
+            "Vagal activation enhances dopamine synthesis in substantia nigra and norepinephrine in locus coeruleus while reducing neuroinflammation"
+          ],
+          "study_type": "In vitro and in vivo models",
+          "scientific_significance": "This approach provides a non-invasive method to modulate Parkinson's disease pathology through gut-brain axis interactions, offering a potential therapeutic strategy without surgical intervention."
+        },
+        "elapsed_seconds": 21.6269,
+        "input_tokens": 706,
+        "output_tokens": 233,
+        "thoughts_tokens": null,
+        "total_tokens": 939,
+        "model_eval_seconds": 17.4336,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43009580",
+        "title": "Cellular agriculture for sustainable and programmable foods.",
+        "abstract": "NA: Cellular agriculture promises to reduce the environmental burden and inefficiencies of food systems. The question is no longer whether precision fermentation and cultivated meat production can produce alternative proteins and other food components, but whether they can attain the cost, scale and quality required for broad adoption. We examine cellular agriculture through the interrelated lenses of enabling technologies, food function and manufacturing economics. The field is approaching an inflection point where biological technology development is less important for commercial success than achieving scalable, affordable manufacturing. Key challenges include how products and their functional attributes are designed and how production processes are configured. For precision fermentation, the most compelling opportunities lie in functional approaches to improve taste, nutritional quality, health benefits and formulation rather than in direct imitation of existing foods or ingredients. For cultivated meat production, impact will come first from hybrid and ingredient-based products that capture specific values of cellular ingredients while avoiding the costs of full tissue mimicry.",
+        "doi": "10.1038/s41587-026-03364-1",
+        "doi_url": "https://doi.org/10.1038/s41587-026-03364-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43009580/",
+        "journal_id": "nature-biotechnology",
+        "journal_name": "Nature Biotechnology",
+        "report_id": "nature-biotechnology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether cellular agriculture technologies can achieve cost-effective, scalable production for sustainable food systems. It evaluates enabling technologies, food functionality, and economic viability, emphasizing that manufacturing scalability and affordability are now more critical than further biological innovation for broad adoption.\",\n  \"key_findings\": [\n    \"Precision fermentation benefits most from functional improvements in taste, nutrition, and health rather than direct food imitation\",\n    \"Cultivated meat production's impact will initially come from hybrid products that avoid full tissue mimicry costs\",\n    \"Manufacturing scalability and cost efficiency are more pivotal for commercial success than continued biological technology development\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The findings underscore that achieving scalable, affordable manufacturing processes is essential for cellular agriculture to transition from technological feasibility to widespread adoption in sustainable food systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether cellular agriculture technologies can achieve cost-effective, scalable production for sustainable food systems. It evaluates enabling technologies, food functionality, and economic viability, emphasizing that manufacturing scalability and affordability are now more critical than further biological innovation for broad adoption.",
+          "key_findings": [
+            "Precision fermentation benefits most from functional improvements in taste, nutrition, and health rather than direct food imitation",
+            "Cultivated meat production's impact will initially come from hybrid products that avoid full tissue mimicry costs",
+            "Manufacturing scalability and cost efficiency are more pivotal for commercial success than continued biological technology development"
+          ],
+          "study_type": "",
+          "scientific_significance": "The findings underscore that achieving scalable, affordable manufacturing processes is essential for cellular agriculture to transition from technological feasibility to widespread adoption in sustainable food systems."
+        },
+        "elapsed_seconds": 15.8764,
+        "input_tokens": 805,
+        "output_tokens": 172,
+        "thoughts_tokens": null,
+        "total_tokens": 977,
+        "model_eval_seconds": 13.0645,
+        "error": "summary must contain 45–65 words; received 42.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42934292",
+        "title": "A CD4-lineage erythro-myeloid progenitor within the adult bone marrow defines an alternative pathway for macrophage generation.",
+        "abstract": "NA: Tissue-resident macrophages originate from distinct developmental sources, but their adult replenishment is thought to depend exclusively on circulating monocytes. Here we identify a previously unrecognized CD4-lineage erythro-myeloid progenitor (EMPROR) in the adult bone marrow that provides an alternative pathway for macrophage generation. EMPROR cells are phenotypically and transcriptionally distinct from hematopoietic stem cells, common myeloid progenitors and monocyte precursors, lacking Csf1r and Ccr2 while expressing Cd4 and Kit. Single-cell RNA sequencing, RNA velocity analysis and lineage assays reveal macrophage, neutrophil, megakaryocytic and erythroid potential. EMPROR cells generate perivascular and tumor-associated macrophages independently of CCR2-mediated monocyte recruitment and contribute to erythroid and granulocytic lineages under inflammatory and neoplastic conditions. Transcriptomic comparisons position EMPROR cells closest to embryonic erythro-myeloid progenitors, indicating the persistence of an embryonic-like program in adult bone marrow. These findings reveal an alternative pathway of adult myelopoiesis that sustains macrophage diversity beyond the classical monocyte lineage.",
+        "doi": "10.1038/s41590-026-02686-1",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02686-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42934292/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies a novel CD4-lineage erythro-myeloid progenitor (EMPROR) in adult bone marrow that generates macrophages independently of monocytes. Using single-cell RNA sequencing and lineage tracing, EMPROR cells exhibit erythroid, myeloid, and neutrophil potential while lacking Csf1r and Ccr2. The findings reveal an embryonic-like program sustaining macrophage diversity through an alternative myelopoietic pathway.\",\n  \"key_findings\": [\n    \"EMPROR cells generate perivascular and tumor-associated macrophages without monocyte recruitment\",\n    \"EMPROR cells express Cd4 and Kit but lack Csf1r and Ccr2\",\n    \"Transcriptomic data shows EMPROR cells share features with embryonic erythro-myeloid progenitors\"\n  ],\n  \"study_type\": \"Single-cell RNA sequencing and lineage assays\",\n  \"scientific_significance\": \"The discovery of an embryonic-like erythro-myeloid progenitor in adult bone marrow reveals a previously unrecognized pathway for macrophage generation, expanding understanding of myelopoiesis beyond monocyte-dependent mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study identifies a novel CD4-lineage erythro-myeloid progenitor (EMPROR) in adult bone marrow that generates macrophages independently of monocytes. Using single-cell RNA sequencing and lineage tracing, EMPROR cells exhibit erythroid, myeloid, and neutrophil potential while lacking Csf1r and Ccr2. The findings reveal an embryonic-like program sustaining macrophage diversity through an alternative myelopoietic pathway.",
+          "key_findings": [
+            "EMPROR cells generate perivascular and tumor-associated macrophages without monocyte recruitment",
+            "EMPROR cells express Cd4 and Kit but lack Csf1r and Ccr2",
+            "Transcriptomic data shows EMPROR cells share features with embryonic erythro-myeloid progenitors"
+          ],
+          "study_type": "Single-cell RNA sequencing and lineage assays",
+          "scientific_significance": "The discovery of an embryonic-like erythro-myeloid progenitor in adult bone marrow reveals a previously unrecognized pathway for macrophage generation, expanding understanding of myelopoiesis beyond monocyte-dependent mechanisms."
+        },
+        "elapsed_seconds": 22.7463,
+        "input_tokens": 727,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 971,
+        "model_eval_seconds": 18.2233,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42972073",
+        "title": "Process-intrinsic cellular network for sustained strength-ductility across temperatures in a 3D-printed multi-principal-element alloy.",
+        "abstract": "NA: Laser-based additive manufacturing (LAM) provides a transformative route for fabricating Cr-Fe-Co-Ni-Al-Ti-based multi-principal element alloys (MPEAs). These alloys typically rely on L12 precipitate strengthening and thus require post-processing; however, such treatments rarely ensure stable mechanical performance over a wide temperature range. Here we designed a (CrFeCo)48Ni34Al7Ti5V5Ta1 MPEA with a self-assembled body-centred cubic/L21 precipitate cellular network formed intrinsically during LAM. Slip transfer and back-stress hardening across Kurdjumov-Sachs and Nishiyama-Wassermann interfaces and a weakly temperature-dependent stacking fault energy stabilize the dislocation-mediated deformation from 77 to 873 K. Consequently, the MPEA maintains a yield strength above 1 GPa and a uniform elongation of approximately 20% over a wide temperature range, indicating relatively stable tensile performance. This process-intrinsic pathway circumvents the need for post-treatment and reveals interface-mediated plasticity mechanisms. Our findings demonstrate that interface coherency engineering provides a foundation for designing strong yet ductile alloys with reduced temperature sensitivity via LAM.",
+        "doi": "10.1038/s41563-026-02792-3",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02792-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42972073/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates a process-intrinsic cellular network in a 3D-printed Cr-Fe-Co-Ni-Al-Ti-based multi-principal element alloy (MPEA) to achieve sustained strength-ductility across temperatures. Using laser-based additive manufacturing, the researchers designed a (CrFeCo)48Ni34Al7Ti5V5Ta1 MPEA with a self-assembled body-centred cubic/L21 precipitate network. This network enables slip transfer and back-stress hardening across specific interfaces, stabilizing deformation from 77 to 873 K. The alloy maintains yield strength above 1 GPa and uniform elongation of ~20% over this temperature range, demonstrating stable mechanical performance without post-processing.\",\n  \"key_findings\": [\n    \"A self-assembled body-centred cubic/L21 precipitate cellular network forms intrinsically during laser-based additive manufacturing.\",\n    \"Slip transfer and back-stress hardening across Kurdjumov-Sachs and Nishiyama-Wassermann interfaces stabilize deformation from 77 to 873 K.\",\n    \"The alloy maintains yield strength >1 GPa and uniform elongation of ~20% across a wide temperature range without post-processing.\"\n  ],\n  \"study_type\": \"Laser-based additive manufacturing\",\n  \"scientific_significance\": \"This work establishes interface-mediated plasticity mechanisms as a pathway to design strong, ductile alloys with reduced temperature sensitivity through process-intrinsic cellular networks in additive manufacturing.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a process-intrinsic cellular network in a 3D-printed Cr-Fe-Co-Ni-Al-Ti-based multi-principal element alloy (MPEA) to achieve sustained strength-ductility across temperatures. Using laser-based additive manufacturing, the researchers designed a (CrFeCo)48Ni34Al7Ti5V5Ta1 MPEA with a self-assembled body-centred cubic/L21 precipitate network. This network enables slip transfer and back-stress hardening across specific interfaces, stabilizing deformation from 77 to 873 K. The alloy maintains yield strength above 1 GPa and uniform elongation of ~20% over this temperature range, demonstrating stable mechanical performance without post-processing.",
+          "key_findings": [
+            "A self-assembled body-centred cubic/L21 precipitate cellular network forms intrinsically during laser-based additive manufacturing.",
+            "Slip transfer and back-stress hardening across Kurdjumov-Sachs and Nishiyama-Wassermann interfaces stabilize deformation from 77 to 873 K.",
+            "The alloy maintains yield strength >1 GPa and uniform elongation of ~20% across a wide temperature range without post-processing."
+          ],
+          "study_type": "Laser-based additive manufacturing",
+          "scientific_significance": "This work establishes interface-mediated plasticity mechanisms as a pathway to design strong, ductile alloys with reduced temperature sensitivity through process-intrinsic cellular networks in additive manufacturing."
+        },
+        "elapsed_seconds": 26.6664,
+        "input_tokens": 828,
+        "output_tokens": 324,
+        "thoughts_tokens": null,
+        "total_tokens": 1152,
+        "model_eval_seconds": 24.9508,
+        "error": "summary must contain 45–65 words; received 79.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912142",
+        "title": "Decoupled self-assembled monolayer and perovskite deposition for efficient flexible solar modules.",
+        "abstract": "NA: The power conversion efficiency (PCE) and stability of flexible perovskite solar modules (PSMs) are less than those of their rigid devices because surface hydroxyls desorption on flexible substrates, which disrupts self-assembled monolayer (SAM) anchoring and perovskite crystallization. We developed a decoupled SAM-perovskite codeposition strategy that accelerates SAM anchoring by reducing the SAM-perovskite interaction and ameliorates perovskite crystallization. The certified PCE with phenethylammonium iodide as the passivation molecule was 20.2% on PSMs with device areas of 750 cm2. With 1,3-diaminopropane dihydroiodide as the passivator, the PCE of 22.0% for a device area of 14.55 cm2 decreased by 8% after 1044 hours under maximum power point tracking at 85°C and 65% relative humidity. The devices pass all sequences of an international commercialization assessment standard for flexible portable PSMs.",
+        "doi": "10.1126/science.aef9745",
+        "doi_url": "https://doi.org/10.1126/science.aef9745",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912142/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the lower power conversion efficiency (PCE) and stability of flexible perovskite solar modules (PSMs) compared to rigid devices, attributed to surface hydroxyls disrupting self-assembled monolayer (SAM) anchoring. The researchers developed a decoupled SAM-perovskite codeposition strategy to accelerate SAM anchoring and improve perovskite crystallization. Certified PCE reached 20.2% on 750 cm² PSMs using phenethylammonium iodide, while a 22.0% PCE device (14.55 cm²) with 1,3-diaminopropane dihydroiodide showed 8% degradation after 1044 hours under 85°C and 65% RH.\",\n  \"key_findings\": [\n    \"Decoupled SAM-perovskite codeposition strategy enhances SAM anchoring and perovskite crystallization\",\n    \"20.2% certified PCE achieved on 750 cm² flexible PSMs using phenethylammonium iodide\",\n    \"22.0% PCE device (14.55 cm²) retained 80% efficiency after 1044 hours at 85°C and 65% RH\"\n  ],\n  \"study_type\": \"Decoupled SAM-perovskite codeposition strategy\",\n  \"scientific_significance\": \"This work demonstrates a method to overcome hydroxyl-induced instability in flexible perovskite solar cells, enabling higher efficiency and stability for commercial portable applications.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the lower power conversion efficiency (PCE) and stability of flexible perovskite solar modules (PSMs) compared to rigid devices, attributed to surface hydroxyls disrupting self-assembled monolayer (SAM) anchoring. The researchers developed a decoupled SAM-perovskite codeposition strategy to accelerate SAM anchoring and improve perovskite crystallization. Certified PCE reached 20.2% on 750 cm² PSMs using phenethylammonium iodide, while a 22.0% PCE device (14.55 cm²) with 1,3-diaminopropane dihydroiodide showed 8% degradation after 1044 hours under 85°C and 65% RH.",
+          "key_findings": [
+            "Decoupled SAM-perovskite codeposition strategy enhances SAM anchoring and perovskite crystallization",
+            "20.2% certified PCE achieved on 750 cm² flexible PSMs using phenethylammonium iodide",
+            "22.0% PCE device (14.55 cm²) retained 80% efficiency after 1044 hours at 85°C and 65% RH"
+          ],
+          "study_type": "Decoupled SAM-perovskite codeposition strategy",
+          "scientific_significance": "This work demonstrates a method to overcome hydroxyl-induced instability in flexible perovskite solar cells, enabling higher efficiency and stability for commercial portable applications."
+        },
+        "elapsed_seconds": 27.0207,
+        "input_tokens": 802,
+        "output_tokens": 340,
+        "thoughts_tokens": null,
+        "total_tokens": 1142,
+        "model_eval_seconds": 25.2943,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42962053",
+        "title": "Antibodies to distinct epitopes on MPXV enveloped virion provide additive and complete protection.",
+        "abstract": "NA: The continuing evolution of monkeypox virus (MPXV) clades capable of sustained human-to-human transmission poses an escalating global health risk, yet no effective therapy exists for poxvirus infection. Here, we investigate a panel of human monoclonal antibodies (mAbs), derived from an antibody library, which targets A35 and B6 antigens located on the extracellular enveloped virion (EV). Four high-affinity mAbs target the central groove of the A35 dimer, whereas one targets a previously unidentified epitope on the A35 protruding loop. Three other mAbs recognize distinct, previously unmapped epitopes on the multidomain B6 antigen. Those epitopes are conserved across most orthopoxviruses. A combination of an anti-A35 and an anti-B6 antibody provides additive and complete protection from both morbidity and mortality in a lethal VACV mouse model, challenging the previous assumption that targeting both the EV and mature virion (MV) forms is required for full protection. These studies uncover critical information for next-generation therapeutics and vaccines against emerging MPXV as well as other Orthopoxvirus threats.",
+        "doi": "10.1126/sciimmunol.aee7011",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.aee7011",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42962053/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study evaluated human monoclonal antibodies targeting distinct MPXV epitopes to assess protective efficacy. Using a lethal vaccinia virus mouse model, researchers found that combining an anti-A35 and anti-B6 antibody provides additive and complete protection against morbidity and mortality, challenging prior assumptions about required epitope targeting for poxvirus immunity.\",\n  \"key_findings\": [\n    \"Combination of anti-A3.5 and anti-B6 antibodies confers additive and complete protection in a lethal vaccinia mouse model\",\n    \"Antibodies target conserved epitopes on MPXV's extracellular enveloped virion and B6 antigen\",\n    \"The findings challenge previous assumptions that dual targeting of extracellular and mature virion forms is necessary for full protection\"\n  ],\n  \"study_type\": \"In vivo mouse model with lethal vaccinia virus challenge\",\n  \"scientific_significance\": \"This work demonstrates that targeting conserved MPXV epitopes with a single antibody combination can achieve complete protection, providing a foundation for broad-spectrum orthopoxvirus therapeutics and vaccines.\"\n}",
+        "parsed": {
+          "summary": "This study evaluated human monoclonal antibodies targeting distinct MPXV epitopes to assess protective efficacy. Using a lethal vaccinia virus mouse model, researchers found that combining an anti-A35 and anti-B6 antibody provides additive and complete protection against morbidity and mortality, challenging prior assumptions about required epitope targeting for poxvirus immunity.",
+          "key_findings": [
+            "Combination of anti-A3.5 and anti-B6 antibodies confers additive and complete protection in a lethal vaccinia mouse model",
+            "Antibodies target conserved epitopes on MPXV's extracellular enveloped virion and B6 antigen",
+            "The findings challenge previous assumptions that dual targeting of extracellular and mature virion forms is necessary for full protection"
+          ],
+          "study_type": "In vivo mouse model with lethal vaccinia virus challenge",
+          "scientific_significance": "This work demonstrates that targeting conserved MPXV epitopes with a single antibody combination can achieve complete protection, providing a foundation for broad-spectrum orthopoxvirus therapeutics and vaccines."
+        },
+        "elapsed_seconds": 20.7314,
+        "input_tokens": 709,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 937,
+        "model_eval_seconds": 16.4664,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42908370",
+        "title": "Design of Bridging-Oxygen-Modulated Fe-Ni Dual-Atom Sites With Multifaceted Stabilization for Durable Cathode Catalysis in Rechargeable Zinc-Air Batteries.",
+        "abstract": "NA: Rechargeable zinc-air batteries (RZABs) require durable bifunctional oxygen electrocatalysts. However, the long-term stability of metal-nitrogen-carbon atomic-site catalysts (M-N-Cs) remains challenged by electrochemical corrosion and reactive oxygen species (ROS)-induced damage arising from multiple degradation pathways, which collectively demand comprehensive solutions due to the \"buckets effect\" of instabilities. Herein, we develop a robust FeNi-N-C dual-atom catalyst (DAC) featuring a bridging µ2-O electron modulator for long-life RZAB catalysis, retaining 80% of its initial energy efficiency after 2800 h. Theoretical simulations and experimental evidence support multifaceted stabilization of the N/O-coordinated vicinal Fe-Ni configuration. The µ2-O bridge improves intrinsic structural stability, decreases electron density on adjacent metal and N atoms to mitigate N-site protonation and intermediate-induced metal stripping, and promotes an O─O cleavage pathway that suppresses H2O2/ROS accumulation. These findings provide a coordination-engineering strategy for designing durable M-N-C catalysts for long-life RZABs.",
+        "doi": "10.1002/adma.75470",
+        "doi_url": "https://doi.org/10.1002/adma.75470",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42908370/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the durability challenge in rechargeable zinc-air batteries by designing a Fe-Ni dual-atom catalyst with bridging oxygen modulation. The catalyst retains 80% of initial energy efficiency after 2800 hours through multifaceted stabilization mechanisms, including reduced electron density on metal and nitrogen sites, suppressed ROS accumulation, and enhanced O-O cleavage pathways.\",\n  \"key_findings\": [\n    \"Fe-Ni dual-atom catalyst retains 80% initial energy efficiency after 2800 hours of operation\",\n    \"Bridging oxygen modulates electron density to mitigate N-site protonation and metal stripping\",\n    \"Enhanced O-O cleavage pathway suppresses H2O2 and ROS accumulation\"\n  ],\n  \"study_type\": \"Theoretical simulations and experimental evidence\",\n  \"scientific_significance\": \"This work establishes a coordination-engineering strategy for designing durable metal-nitrogen-carbon catalysts in zinc-air batteries, addressing critical stability issues through oxygen-mediated stabilization of dual-atom sites.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the durability challenge in rechargeable zinc-air batteries by designing a Fe-Ni dual-atom catalyst with bridging oxygen modulation. The catalyst retains 80% of initial energy efficiency after 2800 hours through multifaceted stabilization mechanisms, including reduced electron density on metal and nitrogen sites, suppressed ROS accumulation, and enhanced O-O cleavage pathways.",
+          "key_findings": [
+            "Fe-Ni dual-atom catalyst retains 80% initial energy efficiency after 2800 hours of operation",
+            "Bridging oxygen modulates electron density to mitigate N-site protonation and metal stripping",
+            "Enhanced O-O cleavage pathway suppresses H2O2 and ROS accumulation"
+          ],
+          "study_type": "Theoretical simulations and experimental evidence",
+          "scientific_significance": "This work establishes a coordination-engineering strategy for designing durable metal-nitrogen-carbon catalysts in zinc-air batteries, addressing critical stability issues through oxygen-mediated stabilization of dual-atom sites."
+        },
+        "elapsed_seconds": 20.096,
+        "input_tokens": 728,
+        "output_tokens": 216,
+        "thoughts_tokens": null,
+        "total_tokens": 944,
+        "model_eval_seconds": 15.5977,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020052",
+        "title": "Sub-second dopamine reinforcement shapes juvenile social play.",
+        "abstract": "NA: Juvenile social play is critical for neurodevelopment, yet the neural mechanisms organizing moment-to-moment interactions remain elusive. Using social behavior sequencing (Social-seq)-an occlusion-robust 3D pose estimation and unsupervised clustering pipeline-we found that nucleus accumbens (NAc) dopamine was tightly coupled to sub-second social syllables during naturalistic interactions. In wild-type juveniles, males exhibited a sharper dopaminergic contrast between proactive play and forced submission than females did, consistent with sex-divergent play strategies. In Shank3-deficient autism models, this process was fundamentally corrupted: proactive play-evoked dopamine responses were abolished in males and significantly sign-inverted in females, with male-specific enhancements during non-social behaviors, driving social play deficits. A multi-agent reinforcement learning model parameterized by disrupted, play-related dopaminergic reinforcement values recapitulated mutant phenotypes. Closed-loop optogenetic stimulation of ventral tegmental area (VTA)-NAc dopamine projections, time-locked to proactive play, restored reciprocal play in Shank3-deficient rats. Sub-second dopaminergic reinforcement thus orchestrates naturalistic social behavior, providing a behaviorally contingent interventional framework for neurodevelopmental disorders.",
+        "doi": "10.1016/j.cell.2026.10.040",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.040",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020052/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated dopamine's role in juvenile social play using naturalistic interactions. By applying social behavior sequencing, researchers identified nucleus accumbens dopamine coupling with sub-second social syllables. Findings revealed sex-divergent play strategies and disrupted dopamine signaling in Shank3-deficient autism models, with optogenetic stimulation restoring play behavior. The results highlight dopamine's critical role in orchestrating social interactions during development.\",\n  \"key_findings\": [\n    \"Nucleus acc: dopamine tightly coupled to sub-second social syllables during naturalistic interactions\",\n    \"Sex-divergent dopaminergic contrast between proactive play and forced submission in wild-type juveniles\",\n    \"Abolished proactive play-evoked dopamine responses in Shank3-deficient males, with sign-inverted responses in females\"\n  ],\n  \"study_type\": \"Social behavior sequencing (Social-seq) analysis\",\n  \"scientific_significance\": \"This work establishes sub-second dopamine reinforcement as a fundamental mechanism governing naturalistic social behavior, offering a potential intervention framework for neurodevelopmental disorders through targeted dopaminergic modulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated dopamine's role in juvenile social play using naturalistic interactions. By applying social behavior sequencing, researchers identified nucleus accumbens dopamine coupling with sub-second social syllables. Findings revealed sex-divergent play strategies and disrupted dopamine signaling in Shank3-deficient autism models, with optogenetic stimulation restoring play behavior. The results highlight dopamine's critical role in orchestrating social interactions during development.",
+          "key_findings": [
+            "Nucleus acc: dopamine tightly coupled to sub-second social syllables during naturalistic interactions",
+            "Sex-divergent dopaminergic contrast between proactive play and forced submission in wild-type juveniles",
+            "Abolished proactive play-evoked dopamine responses in Shank3-deficient males, with sign-inverted responses in females"
+          ],
+          "study_type": "Social behavior sequencing (Social-seq) analysis",
+          "scientific_significance": "This work establishes sub-second dopamine reinforcement as a fundamental mechanism governing naturalistic social behavior, offering a potential intervention framework for neurodevelopmental disorders through targeted dopaminergic modulation."
+        },
+        "elapsed_seconds": 20.3452,
+        "input_tokens": 702,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 926,
+        "model_eval_seconds": 16.1447,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42982037",
+        "title": "Tumor-to-dendritic cell reprogramming induces immunogenic lymphoid structures across cancers.",
+        "abstract": "NA: Tertiary lymphoid structures (TLSs) in tumors are associated with improved responses to immunotherapy. Here, we examined the impact of type 1 conventional dendritic cells (cDC1s) in TLS formation. Reprogrammed tumor cells into cDC1-like cells remodeled the tumor microenvironment and induced immunogenic TLSs (imgTLSs) across melanoma, colon, bladder, breast, and pancreatic cancer models with distinct genetic backgrounds. cDC1-like cells activated lymphotoxin, TNF, and interferon programs and engaged early with T cells through MHC class I and CD40 signaling to induce imgTLSs containing BCL6+ germinal centers, independently of endogenous cDC1s. Intratumoral positioning shaped distinct cDC1-like cell states, with DC-LAMP+ CCR7+ migratory cDC1s nucleating niches enriched in CD4+, CD8+ T cells, and B cells in mouse and human tumors. ImgTLSs sustained B and T cell responses and promoted systemic immunity through expansion of shared clonotypes in distant, untreated tumors. Our findings outline the spatial organization, signaling programs and interactions of cDC1-like cells that initiate intratumoral lymphoid structures and establish cellular reprogramming as a strategy toward overcoming resistance to immunotherapy.",
+        "doi": "10.1016/j.immuni.2026.10.006",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.006",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42982037/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how tumor cells reprogrammed into conventional dendritic cell type 1 (cDC1)-like cells induce immunogenic lymphoid structures within tumors across multiple cancer types. The research demonstrates that these reprogrammed cells remodel the tumor microenvironment, activate immune signaling pathways, and form germinal centers, leading to systemic anti-tumor immunity without requiring endogenous cDC1s. The findings highlight a potential mechanism for overcoming immunotherapy resistance.\",\n  \"key_findings\": [\n    \"Reprogrammed tumor cells into cDC1-like cells induced immunogenic lymphoid structures across five cancer models\",\n    \"cDC1-like cells activated lymphotoxin, TN: TNF, and interferon programs to engage T cells via MHC class I and CD40 signaling\",\n    \"ImgTLSs promoted systemic immunity through expansion of shared T and B cell clonotypes in distant tumors\"\n  ],\n  \"study_type\": \"Preclinical mouse and human tumor models\",\n  \"scientific_significance\": \"The study establishes cDC1-like cell reprogramming as a universal mechanism for initiating intratumoral lymphoid structures that can overcome immunotherapy resistance across diverse cancer types.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how tumor cells reprogrammed into conventional dendritic cell type 1 (cDC1)-like cells induce immunogenic lymphoid structures within tumors across multiple cancer types. The research demonstrates that these reprogrammed cells remodel the tumor microenvironment, activate immune signaling pathways, and form germinal centers, leading to systemic anti-tumor immunity without requiring endogenous cDC1s. The findings highlight a potential mechanism for overcoming immunotherapy resistance.",
+          "key_findings": [
+            "Reprogrammed tumor cells into cDC1-like cells induced immunogenic lymphoid structures across five cancer models",
+            "cDC1-like cells activated lymphotoxin, TN: TNF, and interferon programs to engage T cells via MHC class I and CD40 signaling",
+            "ImgTLSs promoted systemic immunity through expansion of shared T and B cell clonotypes in distant tumors"
+          ],
+          "study_type": "Preclinical mouse and human tumor models",
+          "scientific_significance": "The study establishes cDC1-like cell reprogramming as a universal mechanism for initiating intratumoral lymphoid structures that can overcome immunotherapy resistance across diverse cancer types."
+        },
+        "elapsed_seconds": 22.4768,
+        "input_tokens": 733,
+        "output_tokens": 246,
+        "thoughts_tokens": null,
+        "total_tokens": 979,
+        "model_eval_seconds": 17.8469,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
