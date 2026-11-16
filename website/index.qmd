@@ -2,13 +2,13 @@
 title: ""
 ---
 
-<div class="home-hero">
-  <img class="hero-logo" src="images/logo.svg" alt="" />
-  <div class="hero-copy">
-    <h1>Literature <span>Radar</span></h1>
-    <p>Stay up to date with the latest scientific literature</p>
-  </div>
-</div>
+::: {.home-hero}
+![Literature Radar logo](images/logo.svg){.hero-logo}
+
+# Literature <span>Radar</span>
+
+Stay up to date with the latest scientific literature
+:::
 
 ```{r}
 source("../R/site.R")
@@ -18,12 +18,11 @@ site <- load_literature_site_data("..")
 
 ::: {.home-layout}
 ::: {.journal-section}
-<div class="section-heading">
-  <div>
-    <h2>Journals</h2>
-    <p>Latest updates from your selected journals</p>
-  </div>
-</div>
+::: {.section-heading}
+## Journals
+
+Latest updates from your selected journals
+:::
 
 ```{r, results='asis'}
 cat(site_render_homepage_journal_list(site$journals))
@@ -32,16 +31,30 @@ cat(site_render_homepage_journal_list(site$journals))
 
 ::: {.install-panel}
 <div class="install-icon" aria-hidden="true">↓</div>
-<h3>Install Literature Radar</h3>
-<p>Add it to your device for quick access, just like an app.</p>
-<div class="install-options">
-  <div class="install-option"><span class="option-icon">🌐</span><span>Install as an app in Chrome or Edge</span></div>
-  <div class="install-option"><span class="option-icon">▶</span><span>Install on Android</span></div>
-  <div class="install-option"><span class="option-icon">▣</span><span>Add to iPhone or iPad home screen</span></div>
-  <div class="install-option"><span class="option-icon">▱</span><span>Install on Windows, macOS or Linux</span></div>
-</div>
-<a class="btn btn-primary install-cta" href="#install-app">Install app</a>
+
+### Install Literature Radar
+
+Add it to your device for quick access, just like an app.
+
+::: {.install-options}
+::: {.install-option}
+🌐  Install as an app in Chrome or Edge
+:::
+::: {.install-option}
+▶  Install on Android
+:::
+::: {.install-option}
+▣  Add to iPhone or iPad home screen
+:::
+::: {.install-option}
+▱  Install on Windows, macOS or Linux
 :::
 :::
 
-<p class="home-tagline">Research. Summarised. At your fingertips.</p>
+[Install app](#install-app){.btn .btn-primary .install-cta}
+:::
+:::
+
+::: {.home-tagline}
+Research. Summarised. At your fingertips.
+:::
