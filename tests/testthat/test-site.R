@@ -104,10 +104,14 @@ test_that("site data joins papers, immutable reports, and successful summaries",
   rendered <- paste(capture.output(site_render_update_page(site, "test-report")), collapse = "\n")
   expect_lt(regexpr("A test paper", rendered)[[1]], regexpr("Pending paper", rendered)[[1]])
   expect_lt(regexpr("Pending paper", rendered)[[1]], regexpr("No abstract paper", rendered)[[1]])
-  expect_match(rendered, "More details", fixed = TRUE)
-  expect_match(rendered, "Scientific significance", fixed = TRUE)
+  expect_match(rendered, "Show more", fixed = TRUE)
   expect_match(rendered, "The study adds evidence about the process under investigation.", fixed = TRUE)
   expect_match(rendered, "A reported finding.", fixed = TRUE)
+  expect_match(rendered, "full-ai-summary", fixed = TRUE)
+  expect_lt(regexpr("The study adds evidence about the process under investigation.", rendered)[[1]],
+            regexpr("Show more", rendered)[[1]])
+  expect_lt(regexpr("Show more", rendered)[[1]],
+            regexpr("evidence evidence evidence", rendered)[[1]])
   expect_false(grepl("Study design:", rendered, fixed = TRUE))
   expect_match(rendered, "AI summary pending", fixed = TRUE)
   expect_false(grepl("Relevance", rendered, fixed = TRUE))
