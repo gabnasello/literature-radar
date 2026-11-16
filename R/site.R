@@ -30,8 +30,19 @@ summary_values <- function(parsed, field) {
   site_clean_values(parsed[[field]])
 }
 
+site_is_summarizable <- function(article) {
+  abstract <- trimws(site_text(article$abstract))
+  if (!nzchar(abstract) || grepl("^NA\\s*:", abstract, ignore.case = TRUE)) return(FALSE)
+  types <- tolower(trimws(unlist(article$publication_types, use.names = FALSE)))
+  excluded <- c("editorial", "news", "comment", "published erratum",
+    "retracted publication", "expression of concern", "interview",
+    "biography", "obituary", "personal narrative", "directory",
+    "bibliography", "legal case")
+  !any(types %in% excluded)
+}
+
 site_has_summary <- function(article) {
-  !is.null(article$summary) &&
+  site_is_summarizable(article) && !is.null(article$summary) &&
     !is.null(article$summary$parsed) &&
     length(summary_values(article$summary$parsed, "summary")) > 0L
 }
@@ -47,7 +58,7 @@ site_summary_preview <- function(x, max_words = 32L) {
 site_sort_report_articles <- function(articles) {
   if (length(articles) < 2L) return(articles)
   priority <- vapply(articles, function(article) {
-    if (site_has_summary(article)) 0L else if (site_has_abstract(article)) 1L else 2L
+    if (site_has_summary(article)) 0L else if (site_is_summarizable(article)) 1L else 2L
   }, integer(1))
   articles[order(priority, seq_along(articles))]
 }
@@ -411,10 +422,10 @@ site_render_paper_card <- function(article) {
                   site_html_escape(doi_url)))
     }
     cat("</div></details>")
-  } else if (site_has_abstract(article)) {
+  } else if (site_is_summarizable(article) && site_has_abstract(article)) {
     cat('<p class="summary-status pending">AI summary pending</p>')
     cat(sprintf('<details class="abstract-details"><summary>Read original abstract</summary><p>%s</p></details>', abstract))
-  } else {
+  } else if (site_is_summarizable(article)) {
     cat('<p class="summary-status unavailable">No abstract available</p>')
   }
   cat("</article>")
