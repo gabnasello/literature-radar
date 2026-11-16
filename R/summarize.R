@@ -79,7 +79,8 @@ run_paper_summarization <- function(
 
   articles <- read_benchmark_articles(root)
   completed <- read_completed_summary_pmids(root)
-  pending <- pending_summarization_articles(articles, completed)
+  eligible <- Filter(article_is_summarizable, articles)
+  pending <- pending_summarization_articles(eligible, completed)
   if (!length(pending)) {
     message("No papers are waiting for an AI summary.")
     return(invisible(list(processed = 0L, remaining = 0L, output_dir = NULL)))
