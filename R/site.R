@@ -237,7 +237,9 @@ load_literature_site_data <- function(root = ".") {
     articles <- site_sort_report_articles(articles)
     report_records[[i]]$articles <- articles
     report_records[[i]]$article_count <- length(articles)
-    report_records[[i]]$summarisable_count <- sum(vapply(articles, site_has_abstract, logical(1)))
+    report_records[[i]]$summarisable_count <- sum(vapply(articles, function(article) {
+      site_is_summarizable(article) && site_has_abstract(article)
+    }, logical(1)))
     report_records[[i]]$summary_count <- sum(vapply(articles, site_has_summary, logical(1)))
     report_records[[i]]$pending_count <- max(
       0L,
