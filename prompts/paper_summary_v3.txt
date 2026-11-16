@@ -8,7 +8,6 @@ Return exactly one valid JSON object. Do not use Markdown fences or add commenta
   "key_findings": [
     "Up to three concise, concrete findings reported in the abstract."
   ],
-  "study_type": "The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.",
   "scientific_significance": "One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string."
 }
 
@@ -17,7 +16,7 @@ Rules:
 - Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.
 - Preserve uncertainty and avoid overstating causality.
 - Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.
-- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.
+- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.
 - If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.
 - Use plain, precise scientific language and avoid repetition.
 - Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.
