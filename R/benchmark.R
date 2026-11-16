@@ -44,7 +44,7 @@ read_benchmark_articles <- function(root = project_root()) {
       )
     }
   }
-  if (!length(records)) stop("No articles with abstracts were found in retrieval reports.", call. = FALSE)
+  if (!length(records)) return(list())
 
   pmids <- vapply(records, function(x) x$pmid, character(1))
   records <- records[!duplicated(pmids)]
