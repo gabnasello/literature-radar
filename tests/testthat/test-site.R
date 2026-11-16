@@ -180,20 +180,20 @@ test_that("publication dates support year-only and tolerate unknown formats", {
   expect_equal(site_format_date("Spring 2026"), "Spring 2026")
 })
 
-test_that("homepage lists each journal update with its latest summary date", {
+test_that("homepage lists only enabled journals and shows only their update dates", {
   journals <- list(
     list(
-      id = "older", name = "Older Journal", summary_count = 1L,
+      id = "older", name = "Older Journal", enabled = TRUE, summary_count = 1L,
       latest_summary_at = "2026-11-01T11:00:00Z",
       latest_report = list(generated_at_utc = "2026-11-01T10:00:00Z")
     ),
     list(
-      id = "empty", name = "Empty Journal", summary_count = 0L,
+      id = "empty", name = "Empty Journal", enabled = TRUE, summary_count = 0L,
       latest_summary_at = "",
       latest_report = list(generated_at_utc = "2026-11-14T10:00:00Z")
     ),
     list(
-      id = "newer", name = "Newer Journal", summary_count = 2L,
+      id = "newer", name = "Newer Journal", enabled = TRUE, summary_count = 2L,
       latest_summary_at = "2026-11-14T09:00:00Z",
       latest_report = list(generated_at_utc = "2026-11-13T10:00:00Z")
     )
@@ -207,8 +207,8 @@ test_that("homepage lists each journal update with its latest summary date", {
 
   rendered <- site_render_homepage_journal_list(journals)
   expect_match(rendered, "Last update 14 Nov 2026", fixed = TRUE)
-  expect_match(rendered, "Latest summary 14 Nov 2026", fixed = TRUE)
-  expect_match(rendered, "Latest summary not yet available", fixed = TRUE)
+  expect_false(grepl("Latest summary", rendered, fixed = TRUE))
+  expect_false(grepl("Latest summary", rendered, fixed = TRUE))
   expect_match(rendered, 'href="journals/newer.html"', fixed = TRUE)
   expect_equal(lengths(regmatches(rendered, gregexpr("<li>", rendered, fixed = TRUE))), 3L)
 })
