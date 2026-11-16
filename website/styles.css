@@ -192,3 +192,46 @@ h2 {
     font-size: 0.8rem;
   }
 }
+
+
+/* Installable app controls */
+.pwa-install {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1030;
+}
+
+.pwa-install button {
+  border-radius: 999px;
+  box-shadow: 0 3px 14px rgba(16, 42, 67, 0.2);
+}
+
+.pwa-help {
+  width: min( min(92vw, 26rem), 26rem);
+  border: 1px solid var(--radar-line);
+  border-radius: 14px;
+  padding: 1.4rem;
+  color: var(--radar-ink);
+  box-shadow: 0 12px 40px rgba(16, 42, 67, 0.2);
+}
+
+.pwa-help::backdrop {
+  background: rgba(16, 42, 67, 0.42);
+}
+
+.pwa-help h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.65rem;
+}
+
+.pwa-help p {
+  line-height: 1.55;
+  margin: 0 0 1rem;
+}
+
+@media (display-mode: standalone) {
+  .pwa-install {
+    display: none;
+  }
+}
