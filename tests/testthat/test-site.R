@@ -212,3 +212,34 @@ test_that("homepage lists only enabled journals and shows only their update date
   expect_match(rendered, 'href="journals/newer.html"', fixed = TRUE)
   expect_equal(lengths(regmatches(rendered, gregexpr("<li>", rendered, fixed = TRUE))), 3L)
 })
+
+test_that("news-labelled and editorial records are not summarized and appear after research papers", {
+  news <- list(
+    pmid = "news-1", title = "A news item",
+    abstract = "NA: A short editorial-style description."
+  )
+  editorial <- list(
+    pmid = "editorial-1", title = "An editorial",
+    abstract = "This is editorial prose rather than a research abstract.",
+    publication_types = list("Editorial")
+  )
+  research <- list(
+    pmid = "research-1", title = "A research paper",
+    abstract = "A structured research abstract with methods and results."
+  )
+  expect_false(article_is_summarizable(news))
+  expect_false(article_is_summarizable(editorial))
+  expect_true(article_is_summarizable(research))
+  expect_false(site_is_summarizable(news))
+  expect_false(site_is_summarizable(editorial))
+  expect_true(site_is_summarizable(research))
+
+  news$summary <- list(parsed = list(summary = paste(rep("generic", 45), collapse = " ")))
+  research$summary <- list(parsed = list(summary = paste(rep("research", 45), collapse = " ")))
+  ordered <- site_sort_report_articles(list(news, editorial, research))
+  expect_equal(vapply(ordered, function(x) x$pmid, character(1)),
+               c("research-1", "news-1", "editorial-1"))
+  rendered <- paste(capture.output(site_render_paper_card(news)), collapse = "")
+  expect_match(rendered, "No AI summary for this item", fixed = TRUE)
+  expect_false(grepl("generic", rendered, fixed = TRUE))
+})
