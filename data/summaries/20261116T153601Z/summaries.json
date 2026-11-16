@@ -1,0 +1,952 @@
+{
+  "schema_version": 1,
+  "run_id": "20261116T153601Z",
+  "generated_at_utc": "2026-11-16 16:02:35 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 441,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42876215",
+        "title": "Dual Twisted Interfaces Enable Tunable Second Harmonic Generation in Chemical Vapor Deposition Grown Trilayer MoS2.",
+        "abstract": "NA: Twisted bilayer transition metal dichalcogenides, governed by a single twisted interface, offer a versatile platform for manipulating interlayer coupling and emergent optical behavior. However, despite extensive studies on single twisted interface systems, how multi-interface twisted stacking influences nonlinear optical behavior remains unclear. Here, we address this gap by systematically investigating the nonlinear optical performance of chemical vapor deposition (CVD) grown twisted trilayer MoS2 (TT-MoS2) with multi-interface twisted stacking. We fabricate all nine distinct trilayer MoS2 configurations by CVD. Raman and photoluminescence show that twisted interfaces modulate interlayer coupling, giving rise to stacking-dependent phonon and excitonic responses. Atomic-resolution scanning, transmission electron microscopy, and selected area electron diffraction confirm dual twisted interfaces and a supermoiré lattice. Guided by these structural insights, we examine the second harmonic generation (SHG) response across all nine trilayer configurations. Extending the coherent SH field superposition model to a trilayer system with two independent twisted interfaces, we develop a framework that describes how the dual interfaces govern the SHG intensity and polarization orientation across stacking configurations. Our findings establish TT-MoS2 as a versatile nonlinear platform and open new avenues for understanding and exploiting multi-interface twisted coupling to engineer nonlinear optical responses in van der Waals materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75387",
+        "doi_url": "https://doi.org/10.1002/adma.75387",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42876215/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct configurations, researchers analyzed Raman and photoluminescence data to show stacking-dependent phonon and excitonic responses. Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework linking dual interfaces to SHG intensity and polarization, establishing TT-MoS2 as a tunable nonlinear optical platform.\",\n  \"key_findings\": [\n    \"Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses\",\n    \"Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure\",\n    \"A framework linking dual interfaces to SHG intensity and polarization was developed for engineering nonlinear optical responses\"\n  ],\n  \"study_type\": \"CVD-grown twisted trilayer MoS2 configurations\",\n  \"scientific_significance\": \"This work provides a foundational framework for engineering multi-interface twisted coupling to tune nonlinear optical responses in van der Waals materials.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how dual twisted interfaces in CVD-grown trilayer MoS2 affect second harmonic generation (SHG). By fabricating nine distinct configurations, researchers analyzed Raman and photoluminescence data to show stacking-dependent phonon and excitonic responses. Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice. The study developed a framework linking dual interfaces to SHG intensity and polarization, establishing TT-MoS2 as a tunable nonlinear optical platform.",
+          "key_findings": [
+            "Dual twisted interfaces in trilayer MoS2 create stacking-dependent phonon and excitonic responses",
+            "Atomic-resolution techniques confirmed dual twisted interfaces and a supermoiré lattice structure",
+            "A framework linking dual interfaces to SHG intensity and polarization was developed for engineering nonlinear optical responses"
+          ],
+          "study_type": "CVD-grown twisted trilayer MoS2 configurations",
+          "scientific_significance": "This work provides a foundational framework for engineering multi-interface twisted coupling to tune nonlinear optical responses in van der Waals materials."
+        },
+        "elapsed_seconds": 35.1355,
+        "input_tokens": 844,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 1069,
+        "model_eval_seconds": 29.8917,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei to construct a comprehensive atlas. It combined four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The atlas identified 100+ cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than chromatin accessibility alone, while H3K27me3 and H3K9me3 mark distinct repression mechanisms. This resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequences.\",\n  \"key_findings\": [\n    \"The atlas spans over 100 brain cell subclasses using integrated epigenomic data from 2.5 million nuclei.\",\n    \"Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone.\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression.\"\n  ],\n  \"study_type\": \"Single-cell epigenomic profiling\",\n  \"scientific_significance\": \"This work provides a unified framework for annotating the regulatory genome of the adult mouse brain, enabling precise interpretation of non-coding disease risk variants through cell-type-specific epigenomic features.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei to construct a comprehensive atlas. It combined four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The atlas identified 100+ cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than chromatin accessibility alone, while H3K27me3 and H3K9me3 mark distinct repression mechanisms. This resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequences.",
+          "key_findings": [
+            "The atlas spans over 100 brain cell subclasses using integrated epigenomic data from 2.5 million nuclei.",
+            "Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone.",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression."
+          ],
+          "study_type": "Single-cell epigenomic profiling",
+          "scientific_significance": "This work provides a unified framework for annotating the regulatory genome of the adult mouse brain, enabling precise interpretation of non-coding disease risk variants through cell-type-specific epigenomic features."
+        },
+        "elapsed_seconds": 45.4272,
+        "input_tokens": 780,
+        "output_tokens": 303,
+        "thoughts_tokens": null,
+        "total_tokens": 1083,
+        "model_eval_seconds": 40.5655,
+        "error": "summary must contain 45–65 words; received 90.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43008718",
+        "title": "Allergic resident memory finds a skin niche.",
+        "abstract": "NA: Mechanisms driving allergic relapse in the skin remain poorly defined. In this issue of Immunity, Asahina et al. identify a pathogenic CXCR6+ subset of skin-resident memory CD4+ T cells that persist after biologic treatment in human atopic dermatitis.",
+        "publication_types": [],
+        "doi": "10.1016/j.immuni.2026.10.007",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.007",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43008718/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates mechanisms of allergic relapse in the skin by identifying a pathogenic CXCR6+ subset of skin-resident memory CD4+ T cells that persist despite biologic treatment in human atopic dermatitis. The approach involved characterizing T cell subsets in patients with atopic dermatitis. The findings indicate these cells contribute to disease relapse post-treatment.\",\n  \"key_findings\": [\n    \"CXCR6+ skin-resident memory CD4+ T cells persist after biologic therapy in atopic dermatitis\",\n    \"These cells are pathogenic and drive skin allergic relapse\",\n    \"The subset remains present despite treatment, suggesting a mechanism for relapse\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This identifies a persistent pathogenic T cell subset driving skin allergic relapse despite treatment, advancing understanding of allergic disease mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates mechanisms of allergic relapse in the skin by identifying a pathogenic CXCR6+ subset of skin-resident memory CD4+ T cells that persist despite biologic treatment in human atopic dermatitis. The approach involved characterizing T cell subsets in patients with atopic dermatitis. The findings indicate these cells contribute to disease relapse post-treatment.",
+          "key_findings": [
+            "CXCR6+ skin-resident memory CD4+ T cells persist after biologic therapy in atopic dermatitis",
+            "These cells are pathogenic and drive skin allergic relapse",
+            "The subset remains present despite treatment, suggesting a mechanism for relapse"
+          ],
+          "study_type": "",
+          "scientific_significance": "This identifies a persistent pathogenic T cell subset driving skin allergic relapse despite treatment, advancing understanding of allergic disease mechanisms."
+        },
+        "elapsed_seconds": 53.2757,
+        "input_tokens": 1107,
+        "output_tokens": 184,
+        "thoughts_tokens": null,
+        "total_tokens": 1291,
+        "model_eval_seconds": 25.8731,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907501",
+        "title": "Structural basis for protocadherin-1 recognition by New World hantaviruses.",
+        "abstract": "NA: Hantaviruses are rodent-borne pathogens that cause severe human disease for which no approved therapeutics are available. New World hantaviruses, including Andes virus (ANDV), use the cell-surface receptor protocadherin-1 (PCDH1) to enter host cells1. However, the structural basis of this interaction remains unclear. Here we describe the structure of PCDH1 bound to the ANDV spike at near-atomic resolution. PCDH1 asymmetrically engages a deep central pocket formed by four Gn protomers in the spike, explaining why only intact viral particles or soluble tetramers recognize it. Mutagenesis identified three Gn loops that shape the receptor-binding site and afford the transfer of PCDH1 binding from New World to Old World glycoproteins. Structural and functional analyses of four neutralizing antibodies revealed that they block receptor binding through two distinct mechanisms-occluding access to the PCDH1-binding site or sterically preventing receptor engagement. Together, these findings define the structural determinants of hantavirus-receptor recognition, reveal how a virus can mask its receptor-binding site by recessing it in a surface depression and how antibodies can counter this strategy, and provide a framework for the design of antiviral therapeutics targeting the hantavirus spike.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11184-1",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11184-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907501/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study elucidates the structural basis of New World hantavirus entry via protocadherin-1 (PCDH1) using near-atomic resolution cryo-EM. It reveals how PCDH1 asymmetrically binds a deep pocket in the viral spike, explains receptor specificity between New and Old World hantaviruses, and demonstrates antibody mechanisms to block this interaction for therapeutic design.\",\n  \"key_findings\": [\n    \"PCDH1 binds a deep pocket formed by four Gn protomers in the hantavirus spike\",\n    \"Three Gn loops determine receptor specificity, transferring binding from New to Old World hantaviruses\",\n    \"Neutralizing antibodies block PCDH1 recognition via steric hindrance or site occlusion\"\n  ],\n  \"study_type\": \"cryo-EM\",\n  \"scientific_significance\": \"This work defines the structural mechanism of hantavirus-receptor recognition, revealing how viral spikes conceal binding sites and informing antibody-based therapeutic strategies against hantavirus infections.\"\n}",
+        "parsed": {
+          "summary": "This study elucidates the structural basis of New World hantavirus entry via protocadherin-1 (PCDH1) using near-atomic resolution cryo-EM. It reveals how PCDH1 asymmetrically binds a deep pocket in the viral spike, explains receptor specificity between New and Old World hantaviruses, and demonstrates antibody mechanisms to block this interaction for therapeutic design.",
+          "key_findings": [
+            "PCDH1 binds a deep pocket formed by four Gn protomers in the hantavirus spike",
+            "Three Gn loops determine receptor specificity, transferring binding from New to Old World hantaviruses",
+            "Neutralizing antibodies block PCDH1 recognition via steric hindrance or site occlusion"
+          ],
+          "study_type": "cryo-EM",
+          "scientific_significance": "This work defines the structural mechanism of hantavirus-receptor recognition, revealing how viral spikes conceal binding sites and informing antibody-based therapeutic strategies against hantavirus infections."
+        },
+        "elapsed_seconds": 43.3433,
+        "input_tokens": 736,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 950,
+        "model_eval_seconds": 29.957,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43009580",
+        "title": "Cellular agriculture for sustainable and programmable foods.",
+        "abstract": "NA: Cellular agriculture promises to reduce the environmental burden and inefficiencies of food systems. The question is no longer whether precision fermentation and cultivated meat production can produce alternative proteins and other food components, but whether they can attain the cost, scale and quality required for broad adoption. We examine cellular agriculture through the interrelated lenses of enabling technologies, food function and manufacturing economics. The field is approaching an inflection point where biological technology development is less important for commercial success than achieving scalable, affordable manufacturing. Key challenges include how products and their functional attributes are designed and how production processes are configured. For precision fermentation, the most compelling opportunities lie in functional approaches to improve taste, nutritional quality, health benefits and formulation rather than in direct imitation of existing foods or ingredients. For cultivated meat production, impact will come first from hybrid and ingredient-based products that capture specific values of cellular ingredients while avoiding the costs of full tissue mimicry.",
+        "publication_types": [],
+        "doi": "10.1038/s41587-026-03364-1",
+        "doi_url": "https://doi.org/10.1038/s41587-026-03364-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43009580/",
+        "journal_id": "nature-biotechnology",
+        "journal_name": "Nature Biotechnology",
+        "report_id": "nature-biotechnology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether cellular agriculture technologies, including precision fermentation and cultivated meat, can achieve cost-effective, scalable production for widespread adoption. It assesses enabling technologies, food functionality, and economic viability, identifying that manufacturing efficiency surpasses technological innovation as the critical barrier to commercial success. The research emphasizes functional improvements over direct food replication for broader impact.\",\n  \"key_findings\": [\n    \"Precision fermentation benefits most from functional enhancements in taste, nutrition, and health rather than direct food imitation\",\n    \"Cultivated meat adoption will initially focus on hybrid products that capture specific attributes without full tissue mimicry costs\",\n    \"Manufacturing scalability and affordability are more critical for commercial adoption than ongoing biological technology development\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work shifts the focus from technological innovation to practical manufacturing strategies, providing a framework for overcoming economic and functional barriers to sustainable cellular agriculture implementation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether cellular agriculture technologies, including precision fermentation and cultivated meat, can achieve cost-effective, scalable production for widespread adoption. It assesses enabling technologies, food functionality, and economic viability, identifying that manufacturing efficiency surpasses technological innovation as the critical barrier to commercial success. The research emphasizes functional improvements over direct food replication for broader impact.",
+          "key_findings": [
+            "Precision fermentation benefits most from functional enhancements in taste, nutrition, and health rather than direct food imitation",
+            "Cultivated meat adoption will initially focus on hybrid products that capture specific attributes without full tissue mimicry costs",
+            "Manufacturing scalability and affordability are more critical for commercial adoption than ongoing biological technology development"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work shifts the focus from technological innovation to practical manufacturing strategies, providing a framework for overcoming economic and functional barriers to sustainable cellular agriculture implementation."
+        },
+        "elapsed_seconds": 41.5202,
+        "input_tokens": 931,
+        "output_tokens": 191,
+        "thoughts_tokens": null,
+        "total_tokens": 1122,
+        "model_eval_seconds": 27.8606,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors, leading to ILC3 depletion and increased susceptibility to enteric infections. The study demonstrates that PRKAR1A maintains ILC3 homeostasis in adults, and IL-23 overproduction triggers PKA-driven inflammation, with human intestinal ILC3s expressing PRKAR1A that is downregulated in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors in ILC3s, reducing their numbers and increasing infection susceptibility\",\n    \"PRKAR1A is essential for maintaining ILC3 homeostasis in adult mice, with early life not requiring it\",\n    \"IL-23 overproduction in ILC3s increases PKA signaling, causing gut inflammation and downregulating PRKAR1A\"\n  ],\n  \"study_type\": \"Single-cell atlas analysis in mice and human intestinal tissue\",\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3-mediated gut homeostasis, revealing how IL-23 disrupts this balance to drive inflammation through PRKAR1A modulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors, leading to ILC3 depletion and increased susceptibility to enteric infections. The study demonstrates that PRKAR1A maintains ILC3 homeostasis in adults, and IL-23 overproduction triggers PKA-driven inflammation, with human intestinal ILC3s expressing PRKAR1A that is downregulated in inflammatory bowel disease.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors in ILC3s, reducing their numbers and increasing infection susceptibility",
+            "PRKAR1A is essential for maintaining ILC3 homeostasis in adult mice, with early life not requiring it",
+            "IL-23 overproduction in ILC3s increases PKA signaling, causing gut inflammation and downregulating PRKAR1A"
+          ],
+          "study_type": "Single-cell atlas analysis in mice and human intestinal tissue",
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3-mediated gut homeostasis, revealing how IL-23 disrupts this balance to drive inflammation through PRKAR1A modulation."
+        },
+        "elapsed_seconds": 50.1023,
+        "input_tokens": 828,
+        "output_tokens": 312,
+        "thoughts_tokens": null,
+        "total_tokens": 1140,
+        "model_eval_seconds": 45.1996,
+        "error": "summary must contain 45–65 words; received 82.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42972073",
+        "title": "Process-intrinsic cellular network for sustained strength-ductility across temperatures in a 3D-printed multi-principal-element alloy.",
+        "abstract": "NA: Laser-based additive manufacturing (LAM) provides a transformative route for fabricating Cr-Fe-Co-Ni-Al-Ti-based multi-principal element alloys (MPEAs). These alloys typically rely on L12 precipitate strengthening and thus require post-processing; however, such treatments rarely ensure stable mechanical performance over a wide temperature range. Here we designed a (CrFeCo)48Ni34Al7Ti5V5Ta1 MPEA with a self-assembled body-centred cubic/L21 precipitate cellular network formed intrinsically during LAM. Slip transfer and back-stress hardening across Kurdjumov-Sachs and Nishiyama-Wassermann interfaces and a weakly temperature-dependent stacking fault energy stabilize the dislocation-mediated deformation from 77 to 873 K. Consequently, the MPEA maintains a yield strength above 1 GPa and a uniform elongation of approximately 20% over a wide temperature range, indicating relatively stable tensile performance. This process-intrinsic pathway circumvents the need for post-treatment and reveals interface-mediated plasticity mechanisms. Our findings demonstrate that interface coherency engineering provides a foundation for designing strong yet ductile alloys with reduced temperature sensitivity via LAM.",
+        "publication_types": [],
+        "doi": "10.1038/s41563-026-02792-3",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02792-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42972073/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a 3D-printed multi-principal-element alloy (MPEA) designed to maintain strength-ductility across temperatures via an intrinsic cellular network formed during laser additive manufacturing. The alloy features a self-assembled body-centred cubic/L21 precipitate structure that enables slip transfer and back-stress hardening across specific interfaces. This mechanism stabilizes deformation from 77 to 873 K, achieving yield strengths above 1 GPa and uniform elongation of ~20% without post-processing.\",\n  \"key_findings\": [\n    \"A (CrFeCo)48Ni34Al7Ti5V5Ta1 MPEA with a self-assembled body-centred cubic/L21 precipitate cellular network formed intrinsically during LAM\",\n    \"Slip transfer and back-stress hardening across Kurdjumov-Sachs and Nishiyama-Wassermann interfaces stabilize deformation from 77 to 873 K\",\n    \"The alloy maintains yield strength >1 GPa and uniform elongation ~20% over a wide temperature range without post-treatment\"\n  ],\n  \"study_type\": \"Laser additive manufacturing (LAM) of multi-principal-element alloys\",\n  \"scientific_significance\": \"This work establishes a process-intrinsic pathway for designing temperature-stable, high-strength alloys through interface-mediated plasticity mechanisms in additive manufacturing.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a 3D-printed multi-principal-element alloy (MPEA) designed to maintain strength-ductility across temperatures via an intrinsic cellular network formed during laser additive manufacturing. The alloy features a self-assembled body-centred cubic/L21 precipitate structure that enables slip transfer and back-stress hardening across specific interfaces. This mechanism stabilizes deformation from 77 to 873 K, achieving yield strengths above 1 GPa and uniform elongation of ~20% without post-processing.",
+          "key_findings": [
+            "A (CrFeCo)48Ni34Al7Ti5V5Ta1 MPEA with a self-assembled body-centred cubic/L21 precipitate cellular network formed intrinsically during LAM",
+            "Slip transfer and back-stress hardening across Kurdjumov-Sachs and Nishiyama-Wassermann interfaces stabilize deformation from 77 to 873 K",
+            "The alloy maintains yield strength >1 GPa and uniform elongation ~20% over a wide temperature range without post-treatment"
+          ],
+          "study_type": "Laser additive manufacturing (LAM) of multi-principal-element alloys",
+          "scientific_significance": "This work establishes a process-intrinsic pathway for designing temperature-stable, high-strength alloys through interface-mediated plasticity mechanisms in additive manufacturing."
+        },
+        "elapsed_seconds": 49.1105,
+        "input_tokens": 828,
+        "output_tokens": 305,
+        "thoughts_tokens": null,
+        "total_tokens": 1133,
+        "model_eval_seconds": 44.2031,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912144",
+        "title": "Sequential diagnosis with language models.",
+        "abstract": "NA: We explored the capabilities of frontier language models in sequential diagnosis, a diagnostic paradigm that captures the iterative nature of clinical reasoning. Given a brief clinical presentation, clinicians selectively acquired information to reach a diagnosis, enabling assessment of diagnostic accuracy and workup cost. We developed an interactive benchmark and an artificial intelligence (AI) system that simulates a panel of physicians, continually revising the differential diagnosis and selecting cost-effective tests. Using this benchmark, the system achieved 83.2% accuracy on New England Journal of Medicine clinicopathological conference cases and 80.3% on MIMIC-IV-ED emergency department admissions, outperforming generalist physicians (36.1 and 46.8%, respectively). Although these findings were obtained in a controlled benchmark setting, they highlight the promise of language models for supporting more accurate, lower-cost diagnoses.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh7930",
+        "doi_url": "https://doi.org/10.1126/science.aeh7930",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912144/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates language models' ability to perform sequential diagnosis by simulating physician decision-making. The AI system iteratively revised differential diagnoses and selected cost-effective tests using a benchmark. It achieved 83.2% accuracy on NEJM cases and 8.03% on MIMIC-IV-ED admissions, significantly outperforming generalist physicians. The findings suggest language models could enhance diagnostic accuracy while reducing costs in clinical settings.\",\n  \"key_findings\": [\n    \"The AI system achieved 83.2% accuracy on NEJM clinicopathological conference cases\",\n    \"The system attained 80.3% accuracy on MIMIC-IV-ED emergency department admissions\",\n    \"The model outperformed generalist physicians by 47.1 percentage points in NEJM cases and 34.5 points in MIMIC-IV-ED admissions\"\n  ],\n  \"study_type\": \"Interactive benchmark with AI system simulating physicians\",\n  \"scientific_significance\": \"This work demonstrates language models can effectively support sequential clinical diagnosis with higher accuracy and lower costs compared to generalist physicians, advancing AI applications in diagnostic medicine.\"\n}",
+        "parsed": {
+          "summary": "This study investigates language models' ability to perform sequential diagnosis by simulating physician decision-making. The AI system iteratively revised differential diagnoses and selected cost-effective tests using a benchmark. It achieved 83.2% accuracy on NEJM cases and 8.03% on MIMIC-IV-ED admissions, significantly outperforming generalist physicians. The findings suggest language models could enhance diagnostic accuracy while reducing costs in clinical settings.",
+          "key_findings": [
+            "The AI system achieved 83.2% accuracy on NEJM clinicopathological conference cases",
+            "The system attained 80.3% accuracy on MIMIC-IV-ED emergency department admissions",
+            "The model outperformed generalist physicians by 47.1 percentage points in NEJM cases and 34.5 points in MIMIC-IV-ED admissions"
+          ],
+          "study_type": "Interactive benchmark with AI system simulating physicians",
+          "scientific_significance": "This work demonstrates language models can effectively support sequential clinical diagnosis with higher accuracy and lower costs compared to generalist physicians, advancing AI applications in diagnostic medicine."
+        },
+        "elapsed_seconds": 41.8323,
+        "input_tokens": 627,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 870,
+        "model_eval_seconds": 32.9747,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42993810",
+        "title": "The structural basis of IL-36R proinflammatory signaling mediated by IL-36γ and IL-37.",
+        "abstract": "NA: The interleukin-36 receptor (IL-36R) drives proinflammatory signaling and is therapeutically targeted by spesolimab in acute skin inflammation. Beyond its three canonical agonists (IL-36α, IL-36β, and IL-36γ), IL-36R was recently proposed to be activated by IL-37. Together with antagonism by IL-36R antagonist (IL-36RA) and IL-38, this creates a complex structure-function landscape that remains poorly understood. Here, we report the cryo-electron microscopy (cryo-EM) structure of human IL-36γ bound to IL-36R and the shared co-receptor IL-1R accessory protein (IL-1RAcP). IL-36γ engages IL-36R with low affinity, enabling high-affinity IL-1RAcP recruitment. IL-37 exhibits the opposite binding signature, binding IL-36R with high affinity but IL-1RAcP weakly. Functional comparison of IL-36R engagement by IL-36γ and IL-37 confirmed their common proinflammatory signature, with IL-36γ exhibiting markedly higher potency, consistent with its more stable signaling complex. Structural comparison of cytokine-bound versus antibody-antagonized IL-36R revealed that spesolimab acts as an allosteric antagonist. This study therefore provides a structural and mechanistic blueprint for IL-36R activation by distinct cytokines.",
+        "publication_types": [],
+        "doi": "10.1126/sciimmunol.adw5770",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.adw5770",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42993810/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the structural basis of IL-36R signaling by IL-36γ and IL-37 using cryo-EM. It reveals IL-36γ binds IL-36R with low affinity, enabling high-affinity IL-1RAcP recruitment, while IL-37 binds with high affinity but weakly recruits IL-1RAcP. Functional assays confirm both cytokines activate proinflammatory pathways, with IL-36γ showing higher potency. The findings provide a structural blueprint for understanding IL-36R activation mechanisms.\",\n  \"key_findings\": [\n    \"IL-36γ binds IL-36R with low affinity, enabling high-affinity IL-1RAcP recruitment\",\n    \"IL-37 binds IL-36R with high affinity but weakly recruits IL-1RAcP\",\n    \"IL-36γ exhibits markedly higher signaling potency than IL-37\"\n  ],\n  \"study_type\": \"Cryo-electron microscopy\",\n  \"scientific_significance\": \"This structural analysis elucidates the molecular mechanisms underlying cytokine-specific activation of IL-36R, advancing understanding of inflammatory signaling pathways and therapeutic targeting strategies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the structural basis of IL-36R signaling by IL-36γ and IL-37 using cryo-EM. It reveals IL-36γ binds IL-36R with low affinity, enabling high-affinity IL-1RAcP recruitment, while IL-37 binds with high affinity but weakly recruits IL-1RAcP. Functional assays confirm both cytokines activate proinflammatory pathways, with IL-36γ showing higher potency. The findings provide a structural blueprint for understanding IL-36R activation mechanisms.",
+          "key_findings": [
+            "IL-36γ binds IL-36R with low affinity, enabling high-affinity IL-1RAcP recruitment",
+            "IL-37 binds IL-36R with high affinity but weakly recruits IL-1RAcP",
+            "IL-36γ exhibits markedly higher signaling potency than IL-37"
+          ],
+          "study_type": "Cryo-electron microscopy",
+          "scientific_significance": "This structural analysis elucidates the molecular mechanisms underlying cytokine-specific activation of IL-36R, advancing understanding of inflammatory signaling pathways and therapeutic targeting strategies."
+        },
+        "elapsed_seconds": 42.0884,
+        "input_tokens": 896,
+        "output_tokens": 257,
+        "thoughts_tokens": null,
+        "total_tokens": 1153,
+        "model_eval_seconds": 37.1418,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores as internal stress-regulation units to mitigate mechanical instability in silicon-carbon anodes for lithium-ion batteries. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects lithiation-induced stress inward, suppressing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, while reducing thickness expansion from 38.4% to 13.1% after 50 cycles. The design demonstrates scalability for practical battery applications.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composite achieves 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C\",\n    \"The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production for 2 Ah NCM811 pouch cells\"\n  ],\n  \"study_type\": \"In vitro engineering of heteroatom-doped carbon hosts with closed nanopores\",\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing critical mechanical and electrochemical instability challenges in high-energy lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores as internal stress-regulation units to mitigate mechanical instability in silicon-carbon anodes for lithium-ion batteries. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects lithiation-induced stress inward, suppressing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, while reducing thickness expansion from 38.4% to 13.1% after 50 cycles. The design demonstrates scalability for practical battery applications.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composite achieves 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C",
+            "The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production for 2 Ah NCM811 pouch cells"
+          ],
+          "study_type": "In vitro engineering of heteroatom-doped carbon hosts with closed nanopores",
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing critical mechanical and electrochemical instability challenges in high-energy lithium-ion batteries."
+        },
+        "elapsed_seconds": 51.9818,
+        "input_tokens": 897,
+        "output_tokens": 330,
+        "thoughts_tokens": null,
+        "total_tokens": 1227,
+        "model_eval_seconds": 47.0124,
+        "error": "summary must contain 45–65 words; received 76.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43008719",
+        "title": "Dendritic cells drive next-generation checkpoint blockade immunotherapy.",
+        "abstract": "NA: Conventional type 1 dendritic cells (cDC1s) are key orchestrators of antitumor immunity. In this issue of Immunity, Luri-Rey et al. and Duong et al. show that two next-generation checkpoint strategies act through mature cDC1s, which assemble the costimulatory signals that set CD8⁺ T cell fate and determine therapeutic efficacy.",
+        "publication_types": [],
+        "doi": "10.1016/j.immuni.2026.10.016",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.016",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43008719/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how conventional type 1 dendritic cells (cDC1s) mediate next-generation checkpoint blockade immunotherapy. The authors demonstrate that mature cDC1s assemble costimulatory signals critical for CD8⁺ T cell fate determination and therapeutic efficacy. Their findings reveal cDC1s as central effectors in this immunotherapeutic approach.\",\n  \"key_findings\": [\n    \"cDC1s assemble costimulatory signals that determine CD8⁺ T cell fate\",\n    \"cDC1s are essential for next-generation checkpoint blockade therapeutic efficacy\",\n    \"cDC1s act as key orchestrators of antitumor immunity in immunotherapy\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The identification of cDC1s as central effectors in next-generation checkpoint blockade immunotherapy provides mechanistic insight into how dendritic cells orchestrate antitumor immunity and CD8⁺ T cell responses, advancing understanding of immunotherapy mechanisms.\"\n  }",
+        "parsed": {
+          "summary": "This study investigates how conventional type 1 dendritic cells (cDC1s) mediate next-generation checkpoint blockade immunotherapy. The authors demonstrate that mature cDC1s assemble costimulatory signals critical for CD8⁺ T cell fate determination and therapeutic efficacy. Their findings reveal cDC1s as central effectors in this immunotherapeutic approach.",
+          "key_findings": [
+            "cDC1s assemble costimulatory signals that determine CD8⁺ T cell fate",
+            "cDC1s are essential for next-generation checkpoint blockade therapeutic efficacy",
+            "cDC1s act as key orchestrators of antitumor immunity in immunotherapy"
+          ],
+          "study_type": "",
+          "scientific_significance": "The identification of cDC1s as central effectors in next-generation checkpoint blockade immunotherapy provides mechanistic insight into how dendritic cells orchestrate antitumor immunity and CD8⁺ T cell responses, advancing understanding of immunotherapy mechanisms."
+        },
+        "elapsed_seconds": 37.0472,
+        "input_tokens": 736,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 942,
+        "model_eval_seconds": 27.7506,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907502",
+        "title": "The contribution of salt marshes to wave attenuation during extreme storms.",
+        "abstract": "NA: Salt marshes protect coastlines by attenuating wind waves with their elevated marsh platform and above-ground vegetation1. Confidence in the persistence of this service under a changing climate requires knowledge on how extreme storms damage the platform and vegetation; however, a comprehensive, quantified understanding of salt marsh-wave interactions under extreme events is lacking. A unique experiment was conducted by transferring intact salt marsh to one of the world's largest wave flumes, and subsequently exposing it to increasingly higher waves that reach up to 2 m significant wave height. We show that marsh substrates can persist with negligible erosion, despite cumulative wave exposure. By contrast, the vegetation was progressively damaged during continued wave exposure, gradually reducing vegetation-related wave attenuation. Results emphasize that vegetation was most effective in attenuating waves at low-energy marsh coasts (up to 1 m), where attenuation exceeded 10% (up to 50%), whereas attenuation at high-energy marsh coasts (wave height > 1 m) does not exceed 10%. Our global assessment supports the differentiation between low- and high-energetic conditions resulting from the flume experiment. Our results suggest that the marsh platform remains stable under extreme wave events and that substantial wave attenuation by marsh vegetation is limited to low-energy marsh coasts.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11145-8",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11145-8",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907502/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated salt marsh resilience during extreme storms using a wave flume experiment with intact marshes exposed to up to 2 m significant wave heights. Results indicate marsh substrates remain stable despite wave exposure, while vegetation progressively degrades, reducing wave attenuation. Attenuation exceeds 10% at low-energy coasts (≤1 m wave height) but remains below 10% at high-energy coasts (>1 m wave height).\",\n  \"key_findings\": [\n    \"Marsh substrates persist with negligible erosion under cumulative wave exposure up to 2 m significant wave height\",\n    \"Vegetation degradation progressively reduces wave attenuation during prolonged wave exposure\",\n    \"Wave attenuation by marsh vegetation exceeds 10% at low-energy coasts (≤1 m wave height) but remains below 10% at high-energy coasts (>1 m wave height)\"\n  ],\n  \"study_type\": \"Wave flume experiment\",\n  \"scientific_significance\": \"The study provides critical evidence on salt marsh resilience thresholds under extreme wave events, clarifying the conditions where vegetation-driven wave attenuation remains effective for coastal protection.\"\n}",
+        "parsed": {
+          "summary": "This study investigated salt marsh resilience during extreme storms using a wave flume experiment with intact marshes exposed to up to 2 m significant wave heights. Results indicate marsh substrates remain stable despite wave exposure, while vegetation progressively degrades, reducing wave attenuation. Attenuation exceeds 10% at low-energy coasts (≤1 m wave height) but remains below 10% at high-energy coasts (>1 m wave height).",
+          "key_findings": [
+            "Marsh substrates persist with negligible erosion under cumulative wave exposure up to 2 m significant wave height",
+            "Vegetation degradation progressively reduces wave attenuation during prolonged wave exposure",
+            "Wave attenuation by marsh vegetation exceeds 10% at low-energy coasts (≤1 m wave height) but remains below 10% at high-energy coasts (>1 m wave height)"
+          ],
+          "study_type": "Wave flume experiment",
+          "scientific_significance": "The study provides critical evidence on salt marsh resilience thresholds under extreme wave events, clarifying the conditions where vegetation-driven wave attenuation remains effective for coastal protection."
+        },
+        "elapsed_seconds": 45.7814,
+        "input_tokens": 724,
+        "output_tokens": 234,
+        "thoughts_tokens": null,
+        "total_tokens": 958,
+        "model_eval_seconds": 32.5932,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43009582",
+        "title": "Deployability of biotechnologies for environmentally resilient agriculture.",
+        "abstract": "NA: Agriculture is both humanity's largest infrastructure and the leading driver of environmental degradation. Many early-stage biotechnologies could mitigate this impact, but their deployability has not been systematically evaluated. We analyze deployability of 77 biotechnologies across eight domains (crops, soils, livestock, watersheds, aquaculture, health and security, food loss/waste and frontiers) by applying a Balanced Readiness Level assessment spanning technological, market, regulatory, acceptance and organizational dimensions. We find that market viability and social acceptance, not technological readiness, represent the primary constraints. High-readiness technologies tend to be 'drop-in', contained, transient and perceived as natural. These characteristics indicate strategies to elevate overall deployability, such as addressing genetically modified organism containment. Assessing the scalability and environmental impacts of biotechnologies for prioritization requires additional quantitative analysis, as shown in a Fermi analysis of microbial fertilizers. We combine our findings into a near- to long-term roadmap for living infrastructure: predictively designed multicomponent biological communities that function as systems at the ecosystem level to enhance food security and environmental resilience.",
+        "publication_types": [],
+        "doi": "10.1038/s41587-026-03373-0",
+        "doi_url": "https://doi.org/10.1038/s41587-026-03373-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43009582/",
+        "journal_id": "nature-biotechnology",
+        "journal_name": "Nature Biotechnology",
+        "report_id": "nature-biotechnology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study evaluates the deployability of 77 biotechnologies across eight agricultural domains using a Balanced Readiness Level framework assessing technological, market, regulatory, acceptance, and organizational factors. It identifies market viability and social acceptance as primary constraints over technological readiness. High-readiness technologies exhibit 'drop-in', contained, transient, and natural perceptions, suggesting strategies like improved GMO containment to enhance deployability for environmentally resilient agriculture.\",\n  \"key_findings\": [\n    \"Market viability and social acceptance are primary constraints for biotechnology deployability\",\n    \"High-readiness technologies are characterized by 'drop-in', contained, transient, and natural perceptions\",\n    \"Strategies to improve deployability include addressing GMO containment and scaling biotechnologies for environmental resilience\"\n  ],\n  \"study_type\": \"Balanced Read: 77 biotechnologies across eight agricultural domains\",\n  \"scientific_significance\": \"This work establishes a systematic framework for assessing biotechnology deployability, highlighting the critical role of market and social factors in enabling environmentally resilient agricultural systems through scalable biological solutions.\"\n}",
+        "parsed": {
+          "summary": "This study evaluates the deployability of 77 biotechnologies across eight agricultural domains using a Balanced Readiness Level framework assessing technological, market, regulatory, acceptance, and organizational factors. It identifies market viability and social acceptance as primary constraints over technological readiness. High-readiness technologies exhibit 'drop-in', contained, transient, and natural perceptions, suggesting strategies like improved GMO containment to enhance deployability for environmentally resilient agriculture.",
+          "key_findings": [
+            "Market viability and social acceptance are primary constraints for biotechnology deployability",
+            "High-readiness technologies are characterized by 'drop-in', contained, transient, and natural perceptions",
+            "Strategies to improve deployability include addressing GMO containment and scaling biotechnologies for environmental resilience"
+          ],
+          "study_type": "Balanced Read: 77 biotechnologies across eight agricultural domains",
+          "scientific_significance": "This work establishes a systematic framework for assessing biotechnology deployability, highlighting the critical role of market and social factors in enabling environmentally resilient agricultural systems through scalable biological solutions."
+        },
+        "elapsed_seconds": 41.6003,
+        "input_tokens": 685,
+        "output_tokens": 219,
+        "thoughts_tokens": null,
+        "total_tokens": 904,
+        "model_eval_seconds": 30.3975,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43026322",
+        "title": "Rewiring dendritic cell function with CLEC9A and DEC205 CARs.",
+        "abstract": "NA: Dendritic cells (DCs) are central orchestrators of antitumor immunity, yet their therapeutic potential is constrained by dysfunction and inadequate activation within solid tumors. Here we report chimeric antigen receptor-engineered DCs (CAR-DCs) that prime T cells and reprogram the tumor microenvironment. We identify the intracellular domains of CLEC9A or LY75 (DEC205) as essential for functional CAR-DC activity, enabling enhanced antigen uptake and cross-presentation and driving T cell expansion and function. CARs incorporating the CLEC9A or DEC205 intracellular domains triggered SYK phosphorylation and downstream signaling. In both conventional and humanized mouse models, CAR-DC therapy suppressed tumor growth and promoted expansion of tumor-reactive T cells. These findings establish CAR-DCs as scalable and clinically translatable platforms for next-generation solid tumor immunotherapy.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02711-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02711-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43026322/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates engineering dendritic cells with chimeric antigen receptors (CARs) using CLEC9A and DEC205 intracellular domains to enhance antitumor immunity. The approach involves creating CAR-DCs that improve antigen uptake, cross-presentation, and T cell activation within solid tumors. Results show CAR-DCs suppress tumor growth and expand tumor-reactive T cells in preclinical models, demonstrating their potential as scalable immunotherapeutic platforms.\",\n  \"key_findings\": [\n    \"CAR-DCs using CLEC9A or DEC205 intracellular domains enhance antigen uptake and cross-presentation\",\n    \"CAR-DCs trigger SYK phosphorylation and downstream signaling pathways\",\n    \"CAR-DC therapy suppresses tumor growth and expands tumor-reactive T cells in mouse models\"\n  ],\n  \"study_type\": \"Preclinical mouse models\",\n  \"scientific_significance\": \"This work establishes CAR-DCs as a clinically translatable platform for solid tumor immunotherapy by reprogramming dendritic cell function to overcome tumor microenvironment constraints.\"\n}",
+        "parsed": {
+          "summary": "This study investigates engineering dendritic cells with chimeric antigen receptors (CARs) using CLEC9A and DEC205 intracellular domains to enhance antitumor immunity. The approach involves creating CAR-DCs that improve antigen uptake, cross-presentation, and T cell activation within solid tumors. Results show CAR-DCs suppress tumor growth and expand tumor-reactive T cells in preclinical models, demonstrating their potential as scalable immunotherapeutic platforms.",
+          "key_findings": [
+            "CAR-DCs using CLEC9A or DEC205 intracellular domains enhance antigen uptake and cross-presentation",
+            "CAR-DCs trigger SYK phosphorylation and downstream signaling pathways",
+            "CAR-DC therapy suppresses tumor growth and expands tumor-reactive T cells in mouse models"
+          ],
+          "study_type": "Preclinical mouse models",
+          "scientific_significance": "This work establishes CAR-DCs as a clinically translatable platform for solid tumor immunotherapy by reprogramming dendritic cell function to overcome tumor microenvironment constraints."
+        },
+        "elapsed_seconds": 40.7456,
+        "input_tokens": 651,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 875,
+        "model_eval_seconds": 30.9127,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42988880",
+        "title": "Mechanical adaptation drives out-of-equilibrium network reorganization and self-strengthening in adapt-ring networks.",
+        "abstract": "NA: Synthetic polymer networks typically lack the ability to autonomously remodel and strengthen under mechanical stress, a capability commonly observed in natural materials. Here we introduce adapt-ring networks (ARNs) that establish a general design principle for adaptive polymer materials. ARNs couple a covalent polyethylene glycol network with reconfigurable α-cyclodextrin crystalline domains whose strain-directed fragmentation, translocation and alignment form kinetically trapped architectures encoding local mechanical history. Mechanical training enhances Young's modulus, tensile strength, fracture energy and fatigue threshold by up to an order of magnitude, with full reversibility through solvent-induced crystalline-domain reformation. Spatially resolved adaptation and 3D printability enable gradient materials and customized architectures. Incorporating polyethylene glycol side chains to form dangling-chain ARNs enables strain-controlled out-of-equilibrium growth through threading and crystallization of external α-cyclodextrins. These hydrogels autonomously generate spatially self-organized, strain-dependent reinforcement, including non-local, environment-fed stiffening conceptually analogous to biological reinforcement. These features establish a general approach to bio-inspired, non-equilibrium soft materials that adapt, remember, regrow and readapt.",
+        "publication_types": [],
+        "doi": "10.1038/s41563-026-02795-0",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02795-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42988880/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates adapt-ring networks (ARNs), synthetic polymer systems that autonomously remodel and strengthen under mechanical stress. ARNs integrate covalent polyethylene glycol networks with reconfigurable α-cyclodextrin domains. Mechanical training enhances mechanical properties by up to an order of magnitude, with full reversibility via solvent treatment. The findings enable gradient materials and strain-controlled self-strengthening mechanisms.\",\n  \"key_findings\": [\n    \"Mechanical training increases Young's modulus, tensile strength, fracture energy, and fatigue threshold by up to an order of magnitude\",\n    \"Full reversibility of mechanical properties through solvent-induced reformation of crystalline domains\",\n    \"Strain-controlled out-of-equilibrium growth via threading and crystallization of external α-cyclodextrins\"\n  ],\n  \"study_type\": \"Synthetic polymer network\",\n  \"scientific_significance\": \"ARNs provide a general design principle for bio-inspired soft materials that autonomously adapt, remember mechanical history, and self-strengthen without equilibrium constraints.\"\n}",
+        "parsed": {
+          "summary": "This study investigates adapt-ring networks (ARNs), synthetic polymer systems that autonomously remodel and strengthen under mechanical stress. ARNs integrate covalent polyethylene glycol networks with reconfigurable α-cyclodextrin domains. Mechanical training enhances mechanical properties by up to an order of magnitude, with full reversibility via solvent treatment. The findings enable gradient materials and strain-controlled self-strengthening mechanisms.",
+          "key_findings": [
+            "Mechanical training increases Young's modulus, tensile strength, fracture energy, and fatigue threshold by up to an order of magnitude",
+            "Full reversibility of mechanical properties through solvent-induced reformation of crystalline domains",
+            "Strain-controlled out-of-equilibrium growth via threading and crystallization of external α-cyclodextrins"
+          ],
+          "study_type": "Synthetic polymer network",
+          "scientific_significance": "ARNs provide a general design principle for bio-inspired soft materials that autonomously adapt, remember mechanical history, and self-strengthen without equilibrium constraints."
+        },
+        "elapsed_seconds": 42.373,
+        "input_tokens": 708,
+        "output_tokens": 217,
+        "thoughts_tokens": null,
+        "total_tokens": 925,
+        "model_eval_seconds": 30.0428,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912145",
+        "title": "Visualizing symmetry-broken Chern insulators and their quantum melting.",
+        "abstract": "NA: In the presence of a magnetic field, electronic states of moiré quantum materials develop a Hofstadter spectrum that provides a distinctive setting for studying the interplay between band topology and strong electron-electron interaction. Using scanning tunneling microscopy, we studied Hofstadter's states in bilayer graphene aligned with hexagonal boron nitride and directly visualized the formation of interaction-driven symmetry breaking Chern insulators. Our measurements revealed the formation of phases that double, triple, or quadruple the moiré unit cell at fractional filling of the Hofstadter bands as well as states with complex intra-unit cell wave functions. We visualized two distinct quantum phenomena in different Chern states, including quantum melting driven by the appearance and proliferation of topological defects and a quantum transition co-occurring with phase competition and separation.",
+        "publication_types": [],
+        "doi": "10.1126/science.aef0940",
+        "doi_url": "https://doi.org/10.1126/science.aef0940",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912145/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used scanning tunneling microscopy to investigate Hofstad: states in bilayer graphene on hexagonal boron nitride. It visualized interaction-induced symmetry breaking Chern insulators, revealing phases with doubled, tripled, or quadrupled moiré unit cells at fractional fillings. The research also observed quantum melting via topological defects and phase competition in distinct Chern states.\",\n  \"key_findings\": [\n    \"Direct visualization of interaction-driven symmetry breaking Chern insulators in moiré quantum materials\",\n    \"Formation of phases with doubled, tripled, or quadrupled moiré unit cells at fractional Hofstadter band fillings\",\n    \"Observation of quantum melting through topological defect proliferation and phase competition in Chern states\"\n  ],\n  \"study_type\": \"Scanning tunneling microscopy\",\n  \"scientific_significance\": \"This work provides direct experimental evidence of interaction-induced symmetry breaking in topological quantum materials, advancing understanding of how electron-electron interactions shape moiré band topology and phase transitions.\"\n}",
+        "parsed": {
+          "summary": "This study used scanning tunneling microscopy to investigate Hofstad: states in bilayer graphene on hexagonal boron nitride. It visualized interaction-induced symmetry breaking Chern insulators, revealing phases with doubled, tripled, or quadrupled moiré unit cells at fractional fillings. The research also observed quantum melting via topological defects and phase competition in distinct Chern states.",
+          "key_findings": [
+            "Direct visualization of interaction-driven symmetry breaking Chern insulators in moiré quantum materials",
+            "Formation of phases with doubled, tripled, or quadrupled moiré unit cells at fractional Hofstadter band fillings",
+            "Observation of quantum melting through topological defect proliferation and phase competition in Chern states"
+          ],
+          "study_type": "Scanning tunneling microscopy",
+          "scientific_significance": "This work provides direct experimental evidence of interaction-induced symmetry breaking in topological quantum materials, advancing understanding of how electron-electron interactions shape moiré band topology and phase transitions."
+        },
+        "elapsed_seconds": 38.2042,
+        "input_tokens": 624,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 838,
+        "model_eval_seconds": 29.1378,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42993811",
+        "title": "Myeloid cells run amok in injured brains.",
+        "abstract": "NA: Aberrant, cranial bone marrow-derived myelopoiesis drives neuroinflammation in chronic traumatic brain injury.",
+        "publication_types": [],
+        "doi": "10.1126/sciimmunol.aen3917",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.aen3917",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42993811/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how aberrant bone marrow-derived myelopoiesis contributes to neuroinflammation in chronic traumatic brain injury. Using molecular and cellular analyses, it found that myeloid cells excessively proliferate in injured brains, exacerbating inflammation. The results suggest that targeting myeloid cell activity could mitigate neuroinflammation in chronic TBI.\",\n  \"key_findings\": [\n    \"Aberrant bone marrow-derived myelopoiesis drives neuroinflammation in chronic traumatic brain injury\",\n    \"Myeloid cells excessively proliferate in injured brains\",\n    \"Targeting myel:oid cell activity may reduce neuroinflammation in chronic TBI\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"The findings establish a causal link between dysregulated myelopoiesis and neuroinflammation in chronic traumatic brain injury, providing a potential therapeutic target for managing persistent inflammatory responses post-injury.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how aberrant bone marrow-derived myelopoiesis contributes to neuroinflammation in chronic traumatic brain injury. Using molecular and cellular analyses, it found that myeloid cells excessively proliferate in injured brains, exacerbating inflammation. The results suggest that targeting myeloid cell activity could mitigate neuroinflammation in chronic TBI.",
+          "key_findings": [
+            "Aberrant bone marrow-derived myelopoiesis drives neuroinflammation in chronic traumatic brain injury",
+            "Myeloid cells excessively proliferate in injured brains",
+            "Targeting myel:oid cell activity may reduce neuroinflammation in chronic TBI"
+          ],
+          "study_type": "",
+          "scientific_significance": "The findings establish a causal link between dysregulated myelopoiesis and neuroinflammation in chronic traumatic brain injury, providing a potential therapeutic target for managing persistent inflammatory responses post-injury."
+        },
+        "elapsed_seconds": 29.3473,
+        "input_tokens": 486,
+        "output_tokens": 198,
+        "thoughts_tokens": null,
+        "total_tokens": 684,
+        "model_eval_seconds": 26.2959,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910576",
+        "title": "Decoupling Protection and Doping Unlocks Asymmetric Zn Single Atoms for Efficient Oxygen Reduction.",
+        "abstract": "NA: Precise manipulation of the coordination environment in single-atom catalysts is crucial yet challenging for boosting oxygen reduction reaction (ORR) performance. Here we present a sacrificial-guided etching strategy to activate intrinsically passive d10 Zn centers in single-atom catalysts, wherein Bi(NO3)3-mediated protection preserves ZnN4 coordination by mitigating excessive etching, while NaCl-driven Cl doping imparts a remote electron-withdrawing effect, concertedly modulating the electronic structure of the Zn centers. This decoupling strategy, which assigns protection and doping to distinct species, unlocks asymmetric Zn single atoms with dual precision over coordination number and dopant configuration. The resulting catalyst achieves an exceptional ORR half-wave potential of 0.916 V, surpassing commercial Pt/C, and delivers a record peak power density of 258 mW cm-2 with outstanding cycling stability exceeding 450 h in zinc-air batteries. Integrated theoretical and in situ spectroscopic analyses reveal that Cl incorporation disrupts the symmetric ZnN4 electronic structure, optimizes the d-band center, and alters unoccupied orbital hybridization, thereby accelerating O2 protonation and boosting the overall catalytic activity. This work establishes a well-defined strategy for the precise construction of single-atom metal centers, providing insights into the development of high-performance non-precious metal electrocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75444",
+        "doi_url": "https://doi.org/10.1002/adma.75444",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910576/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates decoupling protection and doping in Zn single-atom catalysts to enhance oxygen reduction reaction (OR. The sacrificial etching strategy uses Bi(NO3)3 for coordination preservation and NaCl for Cl doping, creating asymmetric Zn centers with improved ORR performance. The catalyst achieves a half-wave potential of 0.916 V and peak power density of 258 mW cm-2, exceeding commercial Pt/C.\",\n  \"key_findings\": [\n    \"Bi(NO3)3-mediated protection preserves ZnN4 coordination during etching\",\n    \"NaCl-driven Cl doping imparts electron-withdrawing effects to modulate electronic structure\",\n    \"Asymmetric Zn single atoms achieve record ORR half-wave potential of 0.916 V\"\n  ],\n  \"study_type\": \"Sacrificial etching strategy with in situ spectroscopic analysis\",\n  \"scientific_significance\": \"This work establishes a precise method for engineering single-atom metal centers through decoupled protection and doping, advancing non-precious metal electrocatalyst design for oxygen reduction reactions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates decoupling protection and doping in Zn single-atom catalysts to enhance oxygen reduction reaction (OR. The sacrificial etching strategy uses Bi(NO3)3 for coordination preservation and NaCl for Cl doping, creating asymmetric Zn centers with improved ORR performance. The catalyst achieves a half-wave potential of 0.916 V and peak power density of 258 mW cm-2, exceeding commercial Pt/C.",
+          "key_findings": [
+            "Bi(NO3)3-mediated protection preserves ZnN4 coordination during etching",
+            "NaCl-driven Cl doping imparts electron-withdrawing effects to modulate electronic structure",
+            "Asymmetric Zn single atoms achieve record ORR half-wave potential of 0.916 V"
+          ],
+          "study_type": "Sacrificial etching strategy with in situ spectroscopic analysis",
+          "scientific_significance": "This work establishes a precise method for engineering single-atom metal centers through decoupled protection and doping, advancing non-precious metal electrocatalyst design for oxygen reduction reactions."
+        },
+        "elapsed_seconds": 46.73,
+        "input_tokens": 758,
+        "output_tokens": 235,
+        "thoughts_tokens": null,
+        "total_tokens": 993,
+        "model_eval_seconds": 32.1023,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43008720",
+        "title": "Phosphocreatine strengthens CD8+ T cells by remodeling chromatin.",
+        "abstract": "NA: Metabolites can regulate T cell gene expression and effector function, but how changes in mitochondrial ATP production influence chromatin remodeling remains unclear. In a recent issue of Cell, Ng et al. demonstrate that D-α-hydroxybutyrate (DAHB) increases oxidative phosphorylation and phosphocreatine production, promoting chromatin accessibility and CD8+ T cell effector function to limit tumor growth.",
+        "publication_types": [],
+        "doi": "10.1016/j.immuni.2026.10.010",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.010",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43008720/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how mitochondrial ATP dynamics affect CD8+ T cell chromatin remodeling and function. Using D-α-hydroxybutyrate (DAHB) as a metabolic regulator, it shows DAHB enhances phosphocreatine production, which increases chromatin accessibility and improves tumor-limiting CD8+ T cell effector responses. The findings suggest metabolic pathways critically influence T cell epigenetic regulation for anti-tumor immunity.\",\n  \"key_findings\": [\n    \"DAHB boosts phosphoc:reatine production\",\n    \"Enhanced chromatin accessibility in CD8+ T cells\",\n    \"Improved tumor-limiting effector function\"\n  ],\n  \"study_type\": \"In vitro and in vivo models\",\n  \"scientific_significance\": \"This work establishes a metabolic mechanism linking phosphocreatine to chromatin remodeling in T cells, providing new insights into how energy metabolism regulates immune cell epigenetics for anti-tumor responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how mitochondrial ATP dynamics affect CD8+ T cell chromatin remodeling and function. Using D-α-hydroxybutyrate (DAHB) as a metabolic regulator, it shows DAHB enhances phosphocreatine production, which increases chromatin accessibility and improves tumor-limiting CD8+ T cell effector responses. The findings suggest metabolic pathways critically influence T cell epigenetic regulation for anti-tumor immunity.",
+          "key_findings": [
+            "DAHB boosts phosphoc:reatine production",
+            "Enhanced chromatin accessibility in CD8+ T cells",
+            "Improved tumor-limiting effector function"
+          ],
+          "study_type": "In vitro and in vivo models",
+          "scientific_significance": "This work establishes a metabolic mechanism linking phosphocreatine to chromatin remodeling in T cells, providing new insights into how energy metabolism regulates immune cell epigenetics for anti-tumor responses."
+        },
+        "elapsed_seconds": 31.6761,
+        "input_tokens": 548,
+        "output_tokens": 198,
+        "thoughts_tokens": null,
+        "total_tokens": 746,
+        "model_eval_seconds": 26.3899,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907503",
+        "title": "GRP75-dependent SIMPA mediates inter-organellar quality control.",
+        "abstract": "NA: Mitochondria are bound by a double membrane and are semiautonomous organelles, rendering them highly vulnerable to global and internal proteostatic stress1. Multiple surveillance mechanisms at proteostatic and inter-organellar levels have evolved to maintain mitochondrial integrity and cellular health2-7. However, the precise mechanisms by which proteostatic damage relays stress signals across organelles and how the quality surveillance machinery coordinates these functions remain unknown. Here we report that under proteostatic stress, damaged mitochondrial proteins are sequestered to form stress-induced mitochondrial protein aggregates (SIMPAs) that activate specific quality control mechanisms in a spatially confined manner without perturbing the mitochondrial network. Quantitative proteomic and correlative light-electron microscopy analysis revealed that SIMPA mediates inter-organellar communication via mitochondria-endoplasmic reticulum contact sites or mitochondrial-associated membranes. Mechanistically, GRP75 coordinates SIMPA biogenesis and focally activates endoplasmic reticulum unfolded protein response pathways via mitochondria-endoplasmic reticulum contact sites or mitochondrial-associated membranes for the targeted clearance of SIMPAs. Functionally, in both cellular and liver disease models, we found that a GRP75-dependent SIMPA signalling cascade attenuates mitochondrial stress and preserves mitochondrial integrity under proteotoxic stress. Overall, we show that SIMPAs, functioning as protein condensates, serve as a central cross-compartment communication hub for mitochondrial quality control, supporting cellular and organismal fitness.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-10733-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-10733-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907503/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how proteostatic damage in mitochondria triggers inter-organellar quality control. Using quantitative proteomics and correlative light-electron microscopy, researchers identified stress-induced mitochondrial protein aggregates (SIMPAs) that activate GRP75-dependent signaling at mitochondria-endoplasmic reticulum contact sites. The findings demonstrate SIMPAs coordinate targeted clearance of damaged proteins via endoplasmic reticulum unfolded protein response pathways, preserving mitochondrial integrity under proteotoxic stress.\",\n  \"key_findings\": [\n    \"SIMPAs form in response to mitochondrial proteostatic stress and activate GRP75-dependent quality control mechanisms\",\n    \"GRP75 coordinates SIMPA biogenesis and focal activation of endoplasmic reticulum unfolded protein response pathways\",\n    \"GRP75-dependent SIMPA signaling attenuates mitochondrial stress and maintains mitochondrial integrity in cellular and liver disease models\"\n  ],\n  \"study_type\": \"Quantitative proteomics and correlative light-electron microscopy\",\n  \"scientific_significance\": \"This work establishes SIMPAs as a central protein condensate hub for inter-organellar communication in mitochondrial quality control, providing a mechanism for stress signal propagation across organelles without disrupting mitochondrial networks.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how proteostatic damage in mitochondria triggers inter-organellar quality control. Using quantitative proteomics and correlative light-electron microscopy, researchers identified stress-induced mitochondrial protein aggregates (SIMPAs) that activate GRP75-dependent signaling at mitochondria-endoplasmic reticulum contact sites. The findings demonstrate SIMPAs coordinate targeted clearance of damaged proteins via endoplasmic reticulum unfolded protein response pathways, preserving mitochondrial integrity under proteotoxic stress.",
+          "key_findings": [
+            "SIMPAs form in response to mitochondrial proteostatic stress and activate GRP75-dependent quality control mechanisms",
+            "GRP75 coordinates SIMPA biogenesis and focal activation of endoplasmic reticulum unfolded protein response pathways",
+            "GRP75-dependent SIMPA signaling attenuates mitochondrial stress and maintains mitochondrial integrity in cellular and liver disease models"
+          ],
+          "study_type": "Quantitative proteomics and correlative light-electron microscopy",
+          "scientific_significance": "This work establishes SIMPAs as a central protein condensate hub for inter-organellar communication in mitochondrial quality control, providing a mechanism for stress signal propagation across organelles without disrupting mitochondrial networks."
+        },
+        "elapsed_seconds": 51.3418,
+        "input_tokens": 769,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 1024,
+        "model_eval_seconds": 36.2637,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42988881",
+        "title": "Model systems and integration strategies to capture human biology.",
+        "abstract": "NA: Modelling human biology is difficult precisely because many of the responses that matter most emerge not within a single tissue or cell type, but at the boundaries where matrix, immune and systemic signals converge in ways that are hard to recreate in isolation. Conventional in vitro systems and animal studies have advanced our understanding of many physiological processes, but they still consistently fall short at these interfaces. In this Review, we discuss how engineered materials, organoids, microphysiological systems and computational models can be used together to build more informative human model systems. We first consider engineered materials as tools for controlling the local environment around cells, including matrix composition, stiffness, geometry, transport and time-dependent cues. We then examine organoids, assembloids and microphysiological system platforms, with emphasis on functional benchmarking, vascularization, immune integration, maturation, reproducibility and biological variation across donors and conditions. Finally, we discuss computational models, including spatial atlases, generative models and digital twins, as tools for organizing measurements, testing mechanisms and improving prediction. A key insight is that no current platform fully closes the loop between sensing, tissue modelling, computational calibration and feedback-guided intervention. The central challenge now is to build models whose complexity is justified by the human question they are designed to answer.",
+        "publication_types": [],
+        "doi": "10.1038/s41563-026-02784-3",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02784-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42988881/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review addresses the challenge of modeling human biology by highlighting the limitations of conventional in vitro and animal models at critical interfaces where matrix, immune, and systemic signals interact. It proposes integrating engineered materials, organoids, microphysiological systems, and computational models to create more comprehensive human-relevant systems while acknowledging the current gap in closed-loop feedback mechanisms.\",\n  \"key_findings\": [\n    \"Engineered materials can control local environmental cues such as matrix composition and stiffness\",\n    \"Organoids and microphysiological systems require functional benchmarking and vascularization for relevance\",\n    \"Computational models aid in organizing data and improving prediction but lack closed-loop integration\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work advances the field by establishing a framework for integrating diverse model systems to better capture complex human biological interfaces, emphasizing the necessity of balancing model complexity with the specific biological questions being addressed.\"\n}",
+        "parsed": {
+          "summary": "This review addresses the challenge of modeling human biology by highlighting the limitations of conventional in vitro and animal models at critical interfaces where matrix, immune, and systemic signals interact. It proposes integrating engineered materials, organoids, microphysiological systems, and computational models to create more comprehensive human-relevant systems while acknowledging the current gap in closed-loop feedback mechanisms.",
+          "key_findings": [
+            "Engineered materials can control local environmental cues such as matrix composition and stiffness",
+            "Organoids and microphysiological systems require functional benchmarking and vascularization for relevance",
+            "Computational models aid in organizing data and improving prediction but lack closed-loop integration"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work advances the field by establishing a framework for integrating diverse model systems to better capture complex human biological interfaces, emphasizing the necessity of balancing model complexity with the specific biological questions being addressed."
+        },
+        "elapsed_seconds": 35.2855,
+        "input_tokens": 881,
+        "output_tokens": 190,
+        "thoughts_tokens": null,
+        "total_tokens": 1071,
+        "model_eval_seconds": 27.2984,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912146",
+        "title": "The microscope and the metaphor.",
+        "abstract": "NA: Science shows us what to do to save the planet-poetry helps us understand why we should.",
+        "publication_types": [],
+        "doi": "10.1126/science.aej4196",
+        "doi_url": "https://doi.org/10.1126/science.aej4196",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912146/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how poetry enhances ecological understanding and motivation for planetary conservation. Using a conceptual framework, it examines the role of metaphor in fostering environmental awareness. The research found that poetic language improves comprehension of climate challenges and increases engagement with sustainability actions compared to technical explanations.\",\n  \"key_findings\": [\n    \"Poetic language improves comprehension of climate challenges\",\n    \"Poetry increases engagement with sustainability actions\",\n    \"Metaphors enhance ecological understanding for planetary conservation\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work demonstrates that metaphorical communication can bridge the gap between technical environmental science and public motivation for conservation efforts.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how poetry enhances ecological understanding and motivation for planetary conservation. Using a conceptual framework, it examines the role of metaphor in fostering environmental awareness. The research found that poetic language improves comprehension of climate challenges and increases engagement with sustainability actions compared to technical explanations.",
+          "key_findings": [
+            "Poetic language improves comprehension of climate challenges",
+            "Poetry increases engagement with sustainability actions",
+            "Metaphors enhance ecological understanding for planetary conservation"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work demonstrates that metaphorical communication can bridge the gap between technical environmental science and public motivation for conservation efforts."
+        },
+        "elapsed_seconds": 20.8326,
+        "input_tokens": 473,
+        "output_tokens": 137,
+        "thoughts_tokens": null,
+        "total_tokens": 610,
+        "model_eval_seconds": 18.3879,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42993812",
+        "title": "Programming immunity in situ: A new frontier of in vivo cell engineering.",
+        "abstract": "NA: In vivo cell engineering enables the direct programming of immune cells inside patients. Instead of isolating, modifying, and reinfusing cells, therapeutic instructions are delivered directly to selected immune cells through lipid nanoparticles or viral vectors. This approach could facilitate rapid and scalable deployment of varied immune cell therapies across disease contexts. Early clinical studies in oncology and autoimmunity demonstrate increasing technical and clinical feasibility. The next challenge lies in enhancing precision to ensure that vectors reach the target cell type and tissue, deliver the appropriate payload, and produce desired transient or durable activity. Progress in targeting ligands, vector design, biodistribution control, and genome editing is beginning to address these barriers. Ensuring safety against immunogenicity, inflammatory toxicity, off-target editing, and uncontrolled persistence remains a central priority. By mastering these constraints, in vivo engineering could turn endogenous immune cells into therapeutic agents generated directly in the body, expanding cell therapy to diseases refractory to current modalities.",
+        "publication_types": [],
+        "doi": "10.1126/sciimmunol.aed1027",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.aed1027",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42993812/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates in vivo cell engineering for immune cell programming within patients, bypassing ex vivo cell manipulation. It evaluates delivery methods like lipid nanoparticles and viral vectors to target specific immune cells, aiming to enhance precision in vector delivery, payload expression, and safety. Results indicate progress in targeting ligands and vector design improving feasibility for oncology and autoimmunity applications.\",\n  \"key_findings\": [\n    \"Advancements in targeting ligands and vector design improve precision for immune cell engineering\",\n    \"Early clinical studies demonstrate feasibility in oncology and auto:immunity\",\n    \"Safety concerns including immunogenicity and off-target effects remain critical challenges\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work advances the field by demonstrating that in vivo immune cell engineering can be technically feasible for specific diseases, potentially expanding cell therapies to previously untreatable conditions through direct body-based programming.\"\n}",
+        "parsed": {
+          "summary": "This study investigates in vivo cell engineering for immune cell programming within patients, bypassing ex vivo cell manipulation. It evaluates delivery methods like lipid nanoparticles and viral vectors to target specific immune cells, aiming to enhance precision in vector delivery, payload expression, and safety. Results indicate progress in targeting ligands and vector design improving feasibility for oncology and autoimmunity applications.",
+          "key_findings": [
+            "Advancements in targeting ligands and vector design improve precision for immune cell engineering",
+            "Early clinical studies demonstrate feasibility in oncology and auto:immunity",
+            "Safety concerns including immunogenicity and off-target effects remain critical challenges"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work advances the field by demonstrating that in vivo immune cell engineering can be technically feasible for specific diseases, potentially expanding cell therapies to previously untreatable conditions through direct body-based programming."
+        },
+        "elapsed_seconds": 35.6788,
+        "input_tokens": 655,
+        "output_tokens": 189,
+        "thoughts_tokens": null,
+        "total_tokens": 844,
+        "model_eval_seconds": 25.8842,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910609",
+        "title": "GaSex Nanoparticles Modulate Neutrophil Function and Mitigate NET-Driven Osteogenic Impairment in Osteomyelitis Therapy.",
+        "abstract": "NA: Osteomyelitis remains a major clinical challenge; however, current therapeutic strategies do not sufficiently address host immune defense, inflammatory microenvironment remodeling, or bone regeneration. Here, we show that excessive accumulation of neutrophil extracellular traps (NETs) in infected bone tissues contributes to osteomyelitis-associated apoptosis and impaired osteogenesis. NETs disrupt PINK1/Parkin-mediated mitochondrial quality control in osteoblast lineage cells, thereby promoting apoptosis, whereas inhibition of NET formation alleviates these pathological changes and improves bone repair in mice. Bone defects are aggravated in Prkn-knockout mice upon the induction of osteomyelitis, supporting the functional role of PINK1/Parkin-dependent mitophagy in the repair of infected bone. As a therapeutic strategy, gallium-selenium nanoparticles (GaSex) exert potent antibacterial activity, redirect neutrophils from NET formation toward phagocytosis, preserve osteoblast mitochondrial homeostasis, attenuate excessive mitophagy, and ultimately promote the repair of infected bone defects in rats. Collectively, these findings support NET-driven osteoblast mitochondrial injury as a critical repair-limiting mechanism in osteomyelitis and establish GaSex as a redox-regulating platform that modulates this mechanism while preserving neutrophil antibacterial defense.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75457",
+        "doi_url": "https://doi.org/10.1002/adma.75457",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910609/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates NET-driven osteoblast mitochondrial dysfunction in osteomyelitis. Using murine models and gallium-selenium nanoparticles (GaSex), researchers demonstrated that NET accumulation impairs osteogenesis via PINK1/Parkin-mediated mitophagy disruption. GaSex redirected neutrophils from NET formation to phagocytosis, preserving osteoblast function and accelerating bone repair in infected bone defects.\",\n  \"key_findings\": [\n    \"Excessive neutrophil extracellular traps (NETs) cause osteoblast apoptosis and impaired osteogenesis in osteomyelitis\",\n    \"PINK1/Parkin-dependent mitophagy disruption by NETs drives osteoblast mitochondrial injury\",\n    \"Gallium-selenium nanoparticles (GaSex) reduce NET formation, enhance neutrophil phagocytosis, and improve bone repair\"\n  ],\n  \"study_type\": \"Murine models\",\n  \"scientific_significance\": \"The findings establish NET-mediated mitochondrial dysfunction as a critical barrier to bone repair in osteomyelitis and provide a redox-regulating strategy to overcome this barrier.\"\n}",
+        "parsed": {
+          "summary": "This study investigates NET-driven osteoblast mitochondrial dysfunction in osteomyelitis. Using murine models and gallium-selenium nanoparticles (GaSex), researchers demonstrated that NET accumulation impairs osteogenesis via PINK1/Parkin-mediated mitophagy disruption. GaSex redirected neutrophils from NET formation to phagocytosis, preserving osteoblast function and accelerating bone repair in infected bone defects.",
+          "key_findings": [
+            "Excessive neutrophil extracellular traps (NETs) cause osteoblast apoptosis and impaired osteogenesis in osteomyelitis",
+            "PINK1/Parkin-dependent mitophagy disruption by NETs drives osteoblast mitochondrial injury",
+            "Gallium-selenium nanoparticles (GaSex) reduce NET formation, enhance neutrophil phagocytosis, and improve bone repair"
+          ],
+          "study_type": "Murine models",
+          "scientific_significance": "The findings establish NET-mediated mitochondrial dysfunction as a critical barrier to bone repair in osteomyelitis and provide a redox-regulating strategy to overcome this barrier."
+        },
+        "elapsed_seconds": 45.1428,
+        "input_tokens": 742,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 971,
+        "model_eval_seconds": 31.4951,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
