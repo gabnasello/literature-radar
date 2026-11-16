@@ -435,34 +435,42 @@ site_visible_journals <- function(journals) {
   visible[order(-update_times, names)]
 }
 
+site_journal_mark <- function(journal) {
+  id <- site_text(journal$id)
+  marks <- c(
+    "nature-biomedical-engineering" = "nature",
+    "nature-immunology" = "nature",
+    "science-immunology" = "Science",
+    "nature" = "nature",
+    "science" = "Science",
+    "cell" = "Cell",
+    "immunity" = "Immunity",
+    "cell-biomaterials" = "cell bio",
+    "nature-materials" = "nature",
+    "nature-biotechnology" = "nature"
+  )
+  mark <- unname(marks[id])
+  if (!length(mark) || is.na(mark)) mark <- toupper(substr(site_text(journal$name), 1, 3))
+  paste0('<span class="journal-mark journal-mark--', site_html_escape(site_slug(id)),
+         '" aria-hidden="true">', site_html_escape(mark), '</span>')
+}
+
 site_render_homepage_journal_list <- function(journals) {
   visible <- site_visible_journals(journals)
-  if (!length(visible)) {
-    return('<p class="empty-journal-list">No journal updates yet.</p>')
-  }
-
+  if (!length(visible)) return('<p class="empty-journal-list">No journal updates yet.</p>')
   items <- vapply(visible, function(journal) {
     latest <- journal$latest_report
-    update_at <- site_text(latest$generated_at_utc)
-    update_date <- site_format_date(substr(update_at, 1, 10))
+    update_date <- site_format_date(substr(site_text(latest$generated_at_utc), 1, 10))
     summary_at <- site_text(journal$latest_summary_at)
-    summary_date <- if (nzchar(summary_at)) {
-      site_format_date(substr(summary_at, 1, 10))
-    } else {
-      "not yet available"
-    }
-    metadata <- paste0(
-      "Last update ", update_date,
-      " · Latest summary ", summary_date
-    )
-    sprintf(
-      '<li><a href="journals/%s.html">%s</a><span class="journal-update">%s</span></li>',
-      site_html_escape(site_slug(journal$id)),
-      site_html_escape(journal$name),
-      site_html_escape(metadata)
-    )
+    summary_date <- if (nzchar(summary_at)) site_format_date(substr(summary_at, 1, 10)) else "not yet available"
+    sprintf(paste0(
+      '<li class="journal-card"><a class="journal-card-link" href="journals/%s.html">',
+      '%s<span class="journal-card-copy"><strong>%s</strong>',
+      '<span>Updated: %s</span><span>Latest summary: %s</span></span>',
+      '<span class="journal-card-arrow" aria-hidden="true">›</span></a></li>'
+    ), site_html_escape(site_slug(journal$id)), site_journal_mark(journal),
+    site_html_escape(journal$name), site_html_escape(update_date), site_html_escape(summary_date))
   }, character(1))
-
   paste0('<ul class="journal-list">', paste(items, collapse = ""), '</ul>')
 }
 
