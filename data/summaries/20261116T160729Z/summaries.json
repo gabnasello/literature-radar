@@ -1,0 +1,952 @@
+{
+  "schema_version": 1,
+  "run_id": "20261116T160729Z",
+  "generated_at_utc": "2026-11-16 16:42:02 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"study_type\": \"The study design or model, only if stated or clearly identifiable from the abstract; otherwise use an empty string.\",\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the four specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 422,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress internally, suppresses electrode swelling, and improves Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, reducing thickness expansion from 38.4% to 13.1% after 50 cycles.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect expansion stress internally, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency\",\n    \"The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production for 2 Ah NCM811 pouch cells\"\n  ],\n  \"study_type\": \"Material design and synthesis\",\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing key mechanical and electrochemical instability challenges in high-energy lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress internally, suppresses electrode swelling, and improves Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, reducing thickness expansion from 38.4% to 13.1% after 50 cycles.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect expansion stress internally, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency",
+            "The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production for 2 Ah NCM811 pouch cells"
+          ],
+          "study_type": "Material design and synthesis",
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing key mechanical and electrochemical instability challenges in high-energy lithium-ion batteries."
+        },
+        "elapsed_seconds": 76.0881,
+        "input_tokens": 897,
+        "output_tokens": 309,
+        "thoughts_tokens": null,
+        "total_tokens": 1206,
+        "model_eval_seconds": 72.4017,
+        "error": "summary must contain 45–65 words; received 69.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 mark distinct repression mechanisms. The resource enables deep learning models for predicting epigenomic features and gene expression from DNA sequences.\",\n  \"key_findings\": [\n    \"The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling\",\n    \"Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression\"\n  ],\n  \"study_type\": \"Single-cell epigenomic profiling\",\n  \"scientific_significance\": \"This resource provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through multimodal epigenomic integration.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 mark distinct repression mechanisms. The resource enables deep learning models for predicting epigenomic features and gene expression from DNA sequences.",
+          "key_findings": [
+            "The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling",
+            "Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression"
+          ],
+          "study_type": "Single-cell epigenomic profiling",
+          "scientific_significance": "This resource provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through multimodal epigenomic integration."
+        },
+        "elapsed_seconds": 65.9409,
+        "input_tokens": 780,
+        "output_tokens": 279,
+        "thoughts_tokens": null,
+        "total_tokens": 1059,
+        "model_eval_seconds": 62.3992,
+        "error": "summary must contain 45–65 words; received 84.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43008721",
+        "title": "Frankenstein protein assembled by mRNA trans-splicing promotes cytokine release.",
+        "abstract": "NA: Trans-splicing of pre-mRNAs to produce alternate proteins is known to occur in unicellular and invertebrate organisms; yet whether such events occur and produce functional proteins in mammals remains unclear. In a recent issue of Nature, macrophages polarized to an inflammatory state were found to produce several chimeric RNAs through trans-splicing with consequences for the inflammatory response.",
+        "publication_types": [],
+        "doi": "10.1016/j.immuni.2026.10.009",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.009",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43008721/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether trans-splicing of pre-mRNAs generates functional proteins in mammals, focusing on inflammatory macrophages. Researchers identified chimeric RNAs produced during macrophage polarization, which may influence cytokine release. The findings suggest trans-splicing could contribute to mammalian inflammatory responses, though the exact mechanisms remain unclear.\",\n  \"key_findings\": [\n    \"Chimeric RNAs were generated in macrophages polarized to an inflammatory state\",\n    \"These chimeric RNAs potentially impact cytokine release pathways\",\n    \"Trans-splicing occurs in mammalian inflammatory responses, challenging previous assumptions about its rarity\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work demonstrates that trans-splicing events can produce functional proteins in mammalian immune cells, expanding understanding of post-transcriptional mechanisms regulating inflammatory responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether trans-splicing of pre-mRNAs generates functional proteins in mammals, focusing on inflammatory macrophages. Researchers identified chimeric RNAs produced during macrophage polarization, which may influence cytokine release. The findings suggest trans-splicing could contribute to mammalian inflammatory responses, though the exact mechanisms remain unclear.",
+          "key_findings": [
+            "Chimeric RNAs were generated in macrophages polarized to an inflammatory state",
+            "These chimeric RNAs potentially impact cytokine release pathways",
+            "Trans-splicing occurs in mammalian inflammatory responses, challenging previous assumptions about its rarity"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work demonstrates that trans-splicing events can produce functional proteins in mammalian immune cells, expanding understanding of post-transcriptional mechanisms regulating inflammatory responses."
+        },
+        "elapsed_seconds": 40.0677,
+        "input_tokens": 635,
+        "output_tokens": 181,
+        "thoughts_tokens": null,
+        "total_tokens": 816,
+        "model_eval_seconds": 36.6544,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907504",
+        "title": "WEE1 opposes APC/CCDH1 activity to promote S phase entry.",
+        "abstract": "NA: WEE1 phosphorylates and inhibits the activity of cyclin-dependent kinases to prevent mitotic entry and establish a G2 DNA damage checkpoint1-3. Consequently, WEE1 inhibitors have been developed to be synthetically lethal in TP53-mutated tumours that become reliant on this WEE1-mediated checkpoint, and such inhibitors are undergoing clinical trials. However, WEE1 inhibitors also have efficacy in TP53-wild-type tumours, and many trials have been terminated owing to high levels of toxic side effects, suggesting that WEE1 has unknown functions. Here we show that WEE1 promotes cell cycle re-entry from quiescence (G0) by opposing the activity of the E3 ubiquitin ligase, anaphase-promoting complex-cyclosome bound to CDH1 (APC/CCDH1). WEE1 phosphorylates CDH1 (FZR1) at key residues that mediate the interaction between CDH1 and APC/C. Cells with loss of function of WEE1 during G0/G1 have delayed S phase entry, impaired G1/S transition, abnormal S phase accumulation of cyclin-dependent kinase inhibitor p21Cip1/Kip1 and a p21-dependent G2 arrest. Reduced expression of APC/CCDH1 or p21 renders cells more sensitive to acute WEE1 inhibition, and both pathways are downregulated in cells with acquired WEE1 inhibitor resistance. These results reveal a mechanism of cell cycle control that has implications for how WEE1 inhibitors should be used in the clinic.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11188-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11188-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907504/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how WEE1 kinase regulates cell cycle progression from quiescence by inhibiting APC/CCDH1 activity. The research demonstrates that WEE1 phosphorylates CDH1 (FZR1) to disrupt its interaction with APC/C, delaying S phase entry and causing p21-dependent G2 arrest in WEE1-deficient cells. Reduced APC/CCDH1 or p21 expression enhances sensitivity to WEE1 inhibitors, suggesting a mechanism for WEE1 inhibitor resistance in TP53-wild-type tumors.\",\n  \"key_findings\": [\n    \"WEE1 phosphorylates CDH1 (FZR1) to inhibit APC/CCDH1-mediated cyclin degradation\",\n    \"WEE1 loss delays S phase entry and induces p21-dependent G2 arrest\",\n    \"APC/CCDH1 or p21 downregulation increases sensitivity to WEE1 inhibitors\"\n  ],\n  \"study_type\": \"In vitro cell-based study\",\n  \"scientific_significance\": \"This work identifies a novel WEE1-APC/CCDH1 regulatory axis that explains WEE1 inhibitor efficacy in TP53-wild-type tumors and provides a mechanistic basis for overcoming clinical resistance to these therapies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how WEE1 kinase regulates cell cycle progression from quiescence by inhibiting APC/CCDH1 activity. The research demonstrates that WEE1 phosphorylates CDH1 (FZR1) to disrupt its interaction with APC/C, delaying S phase entry and causing p21-dependent G2 arrest in WEE1-deficient cells. Reduced APC/CCDH1 or p21 expression enhances sensitivity to WEE1 inhibitors, suggesting a mechanism for WEE1 inhibitor resistance in TP53-wild-type tumors.",
+          "key_findings": [
+            "WEE1 phosphorylates CDH1 (FZR1) to inhibit APC/CCDH1-mediated cyclin degradation",
+            "WEE1 loss delays S phase entry and induces p21-dependent G2 arrest",
+            "APC/CCDH1 or p21 downregulation increases sensitivity to WEE1 inhibitors"
+          ],
+          "study_type": "In vitro cell-based study",
+          "scientific_significance": "This work identifies a novel WEE1-APC/CCDH1 regulatory axis that explains WEE1 inhibitor efficacy in TP53-wild-type tumors and provides a mechanistic basis for overcoming clinical resistance to these therapies."
+        },
+        "elapsed_seconds": 60.9632,
+        "input_tokens": 885,
+        "output_tokens": 261,
+        "thoughts_tokens": null,
+        "total_tokens": 1146,
+        "model_eval_seconds": 57.4078,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. ILC3s from healthy humans express PRKAR1A, which is downregulated by IL-23 or inflammatory bowel disease, indicating PKA signaling's critical role in maintaining gut immune balance.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s\",\n    \"Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice\",\n    \"ILC3s from healthy humans express PRKAR1A, downregulated by IL-23 or inflammatory bowel disease\"\n  ],\n  \"study_type\": \"single-cell atlas\",\n  \"scientific_significance\": \"This work establishes PKA signaling as a key regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. ILC3s from healthy humans express PRKAR1A, which is downregulated by IL-23 or inflammatory bowel disease, indicating PKA signaling's critical role in maintaining gut immune balance.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s",
+            "Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice",
+            "ILC3s from healthy humans express PRKAR1A, downregulated by IL-23 or inflammatory bowel disease"
+          ],
+          "study_type": "single-cell atlas",
+          "scientific_significance": "This work establishes PKA signaling as a key regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation."
+        },
+        "elapsed_seconds": 67.0884,
+        "input_tokens": 828,
+        "output_tokens": 285,
+        "thoughts_tokens": null,
+        "total_tokens": 1113,
+        "model_eval_seconds": 63.4812,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42995233",
+        "title": "Spatiotemporal intensity-cycling microscopy unveils many-body interactions and correlated transport in van der Waals semiconductors.",
+        "abstract": "NA: Spatiotemporal optical microscopies are powerful tools to image the propagation of energy carriers in materials, including electrons, excitons, magnons and polaritons, providing key functional metrics inaccessible to contact-based transport measurements. Nevertheless, these approaches do not distinguish single-particle from multi-particle quantum states, hindering the study of many-body correlations that underlie the complex phase diagrams at the heart of contemporary materials research. Here we extend a concept derived from multidimensional spectroscopy, called intensity cycling, to the spatiotemporal domain using transient scattering microscopy. We leverage this approach to selectively image single-particle and multi-particle transport in van der Waals semiconductors. We demonstrate a series of sought-after capabilities, including clean isolation of single-particle charge transport with high signal-to-noise ratio, spatiotemporal tracking of exciton-exciton annihilation, high-throughput mapping of dielectric disorder, and imaging the emergence of a polaronic Mott transition and correlated transport in a superatomic solid. This work delivers a precision tool capable of visualizing how many-body interactions shape material function.",
+        "publication_types": [],
+        "doi": "10.1038/s41563-026-02800-6",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02800-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42995233/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study uses spatiotemporal intensity-cycling microscopy to investigate many-body interactions and correlated transport in van der Waals semiconductors. The approach enables selective imaging of single-particle and multi-pusing transport, revealing exciton-exciton annihilation dynamics, dielectric disorder mapping, and polaronic Mott transitions. The findings provide a high-resolution tool for visualizing quantum correlations in material systems.\",\n  \"key_findings\": [\n    \"Clean isolation of single-particle charge transport with high signal-to-noise ratio\",\n    \"Spatiotemporal tracking of exciton-exciton annihilation\",\n    \"Imaging of polaronic Mott transitions and correlated transport in superatomic solids\"\n  ],\n  \"study_type\": \"Spatiotemporal intensity-cycling microscopy\",\n  \"scientific_significance\": \"The method enables direct visualization of many-body quantum correlations in van der Waals semiconductors, advancing understanding of how interactions govern material functionality.\"\n}",
+        "parsed": {
+          "summary": "This study uses spatiotemporal intensity-cycling microscopy to investigate many-body interactions and correlated transport in van der Waals semiconductors. The approach enables selective imaging of single-particle and multi-pusing transport, revealing exciton-exciton annihilation dynamics, dielectric disorder mapping, and polaronic Mott transitions. The findings provide a high-resolution tool for visualizing quantum correlations in material systems.",
+          "key_findings": [
+            "Clean isolation of single-particle charge transport with high signal-to-noise ratio",
+            "Spatiotemporal tracking of exciton-exciton annihilation",
+            "Imaging of polaronic Mott transitions and correlated transport in superatomic solids"
+          ],
+          "study_type": "Spatiotemporal intensity-cycling microscopy",
+          "scientific_significance": "The method enables direct visualization of many-body quantum correlations in van der Waals semiconductors, advancing understanding of how interactions govern material functionality."
+        },
+        "elapsed_seconds": 52.0538,
+        "input_tokens": 705,
+        "output_tokens": 207,
+        "thoughts_tokens": null,
+        "total_tokens": 912,
+        "model_eval_seconds": 43.194,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912147",
+        "title": "Fiscal discipline without physical resilience.",
+        "abstract": "NA: Reforms could shift fiscal discipline and resilience investment into reinforcing forces rather than competing ones.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh3608",
+        "doi_url": "https://doi.org/10.1126/science.aeh3608",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912147/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how fiscal discipline and physical resilience can be aligned to avoid competition between economic stability and disaster preparedness. The research proposes that strategic reforms could redirect resources to enhance both areas simultaneously, potentially improving societal resilience without compromising fiscal health. The findings suggest a framework for integrating fiscal policies with disaster risk management.\",\n  \"key_findings\": [\n    \"Reforms can shift fiscal discipline and resilience investment from competing to reinforcing forces\",\n    \"Strategic resource allocation enhances both economic stability and disaster preparedness\",\n    \"Integrated fiscal policies improve societal resilience without compromising fiscal health\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This work advances understanding of policy integration by demonstrating how fiscal discipline and disaster resilience can be mutually reinforcing, offering a novel approach to balancing economic stability with risk mitigation in resource-constrained systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how fiscal discipline and physical resilience can be aligned to avoid competition between economic stability and disaster preparedness. The research proposes that strategic reforms could redirect resources to enhance both areas simultaneously, potentially improving societal resilience without compromising fiscal health. The findings suggest a framework for integrating fiscal policies with disaster risk management.",
+          "key_findings": [
+            "Reforms can shift fiscal discipline and resilience investment from competing to reinforcing forces",
+            "Strategic resource allocation enhances both economic stability and disaster preparedness",
+            "Integrated fiscal policies improve societal resilience without compromising fiscal health"
+          ],
+          "study_type": "",
+          "scientific_significance": "This work advances understanding of policy integration by demonstrating how fiscal discipline and disaster resilience can be mutually reinforcing, offering a novel approach to balancing economic stability with risk mitigation in resource-constrained systems."
+        },
+        "elapsed_seconds": 35.3718,
+        "input_tokens": 471,
+        "output_tokens": 173,
+        "thoughts_tokens": null,
+        "total_tokens": 644,
+        "model_eval_seconds": 33.618,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43024737",
+        "title": "IFN-γ-driven MHC class II on gut epithelium induces cytolytic TH1 cell differentiation and stem cell loss in graft-versus-host disease.",
+        "abstract": "NA: The molecular cues by which CD4 T cells are invoked to mediate lethal gut graft-versus-host disease (GVHD) at the epithelial interface after allogeneic hematopoietic stem cell transplantation are unclear. Here, we demonstrate that MHC class II (MHCII) but not MHC class I expression by intestinal epithelial cells (IECs) within the first 3 days of transplantation promotes lethal GVHD in mice. This was dependent on direct IFN-γ-dependent induction of MHCII on IECs, which expanded perforin/granzyme B-expressing cytolytic donor TH1 cell while restraining TH17 cell differentiation locally within the ileum. In contrast, intestinal stem cells (ISCs) were preferentially and progressively depleted by cytolytic TH1 cells as a result of IFN-γ-induced MHCII expression. Together, IEC-intrinsic IFN-γ signaling is critical for the MHCII-dependent early local generation of cytolytic TH1 cells that thereafter mediate MHCII-dependent ISC deletion. These data demonstrate a critical IFN-γ-MHCII feed-forward axis in the initiation of cytolytic TH1 cell-dependent gut disease.",
+        "publication_types": [],
+        "doi": "10.1126/sciimmunol.ady3001",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.ady3001",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43024737/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the molecular mechanisms triggering lethal gut graft-versus-host disease (GVHD) post-transplantation. Using mouse models, researchers found that early IFN-γ-driven MHC class II expression on intestinal epithelial cells promotes cytolytic TH1 cell differentiation and intestinal stem cell depletion, leading to GVHD pathogenesis through a feed-forward IFN-γ-MHCII axis.\",\n  \"key_findings\": [\n    \"IFN-γ-dependent induction of MHC class II on intestinal epithelial cells within 3 days post-transplantation\",\n    \"Perforin/granzyme B-expressing cytolytic donor TH1 cells expand locally in the ileum\",\n    \"Intestinal stem cells are progressively depleted via MHCII-dependent cytolytic mechanisms\"\n  ],\n  \"study_type\": \"Mouse model\",\n  \"scientific_significance\": \"The study reveals a critical feed-forward IFN-γ-MHCII axis that initiates cytolytic TH1-mediated gut damage in early GVHD, providing mechanistic insight into a key pathway for intestinal injury in allogeneic transplantation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the molecular mechanisms triggering lethal gut graft-versus-host disease (GVHD) post-transplantation. Using mouse models, researchers found that early IFN-γ-driven MHC class II expression on intestinal epithelial cells promotes cytolytic TH1 cell differentiation and intestinal stem cell depletion, leading to GVHD pathogenesis through a feed-forward IFN-γ-MHCII axis.",
+          "key_findings": [
+            "IFN-γ-dependent induction of MHC class II on intestinal epithelial cells within 3 days post-transplantation",
+            "Perforin/granzyme B-expressing cytolytic donor TH1 cells expand locally in the ileum",
+            "Intestinal stem cells are progressively depleted via MHCII-dependent cytolytic mechanisms"
+          ],
+          "study_type": "Mouse model",
+          "scientific_significance": "The study reveals a critical feed-forward IFN-γ-MHCII axis that initiates cytolytic TH1-mediated gut damage in early GVHD, providing mechanistic insight into a key pathway for intestinal injury in allogeneic transplantation."
+        },
+        "elapsed_seconds": 58.7198,
+        "input_tokens": 730,
+        "output_tokens": 233,
+        "thoughts_tokens": null,
+        "total_tokens": 963,
+        "model_eval_seconds": 49.1847,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells, which limits device performance. Using dual-side in situ photoluminescence, researchers discovered simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. They found outward solvent evaporation delays α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. To resolve this, a self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage\",\n    \"Self-segregating NFA molecule synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"study_type\": \"In situ photoluminescence analysis with antisolvent-assisted solution processing\",\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a general strategy to overcome kinetic-environmental trade-offs in ambient flexible perovskite solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells, which limits device performance. Using dual-side in situ photoluminescence, researchers discovered simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. They found outward solvent evaporation delays α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. To resolve this, a self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage",
+            "Self-segregating NFA molecule synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "study_type": "In situ photoluminescence analysis with antisolvent-assisted solution processing",
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a general strategy to overcome kinetic-environmental trade-offs in ambient flexible perovskite solar cells."
+        },
+        "elapsed_seconds": 74.0274,
+        "input_tokens": 913,
+        "output_tokens": 316,
+        "thoughts_tokens": null,
+        "total_tokens": 1229,
+        "model_eval_seconds": 70.3382,
+        "error": "summary must contain 45–65 words; received 97.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43008722",
+        "title": "TIGIT and PD-L1 co-blockade promotes dendritic cell-dependent production of non-exhausted CD8+ T cells.",
+        "abstract": "NA: Combination immunotherapy targeting the coinhibitory molecules TIGIT and PD-L1 promotes non-exhausted CD8+ T cell differentiation in cancer. Because anti-TIGIT efficacy requires Fc binding, we investigated the role of Fcγ receptor (FcγR)-expressing myeloid cells in the mechanism of action. Conventional dendritic cells (cDCs) were required for therapeutic efficacy. Transcriptional profiling of intratumoral myeloid cells revealed an FcγR+ cDC type-1 (cDC1)-like activation state characterized by elevated costimulatory ligands for CD28 (CD80/CD86) and CD226 (PVR) that was enriched in Fc-active anti-TIGIT combination-treated tumors. Therapy-expanded CD8+ T cells expressed CD28 and upregulated CD226 upon treatment. Mechanistically, CD28 signaling was a prerequisite for therapy-induced CD226 expression on T cells, and cDC-derived PVR promoted CD226-mediated non-exhausted T cell differentiation. Type I interferon (IFN-I), induced through FcγR engagement, maintained and amplified the FcγR+ cDC1-like state, and exogenous IFN-I rescued anti-tumor immunity upon Fc-inert anti-TIGIT and anti-PD-L1 combination. Thus, Fc-active anti-TIGIT and anti-PD-L1 therapy promotes a sequential costimulatory cascade centered on cDCs, amplified by IFN-I signaling.",
+        "publication_types": [],
+        "doi": "10.1016/j.immuni.2026.10.005",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.005",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43008722/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how Fc-active anti-TIGIT and anti-PD-L1 combination therapy promotes non-exhausted CD8+ T cell differentiation. It identified conventional dendritic cells (cDCs) as essential for efficacy, revealing an FcγR+ cDC1-like activation state with elevated costimulatory ligands. Therapy induced CD8+ T cells to express CD28 and upregulate CD226, with CD28 signaling and cDC-derived PVR driving non-exhausted T cell differentiation via an IFN-I-amplified cascade.\",\n  \"key_findings\": [\n    \"Fc-active anti-TIGIT and anti-PD-L1 combination therapy induces non-exhausted CD8+ T cell differentiation\",\n    \"Conventional dendritic cells (cDCs) are required for therapeutic efficacy\",\n    \"CD28 signaling and cDC-derived PVR promote non-exhausted T cell differentiation through an IFN-I-amplified cascade\"\n  ],\n  \"study_type\": \"Mechanistic study\",\n  \"scientific_significance\": \"The findings elucidate a sequential costimulatory cascade initiated by FcγR-expressing dendritic cells that drives non-exhausted T cell differentiation, providing mechanistic insights into combination immunotherapy efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how Fc-active anti-TIGIT and anti-PD-L1 combination therapy promotes non-exhausted CD8+ T cell differentiation. It identified conventional dendritic cells (cDCs) as essential for efficacy, revealing an FcγR+ cDC1-like activation state with elevated costimulatory ligands. Therapy induced CD8+ T cells to express CD28 and upregulate CD226, with CD28 signaling and cDC-derived PVR driving non-exhausted T cell differentiation via an IFN-I-amplified cascade.",
+          "key_findings": [
+            "Fc-active anti-TIGIT and anti-PD-L1 combination therapy induces non-exhausted CD8+ T cell differentiation",
+            "Conventional dendritic cells (cDCs) are required for therapeutic efficacy",
+            "CD28 signaling and cDC-derived PVR promote non-exhausted T cell differentiation through an IFN-I-amplified cascade"
+          ],
+          "study_type": "Mechanistic study",
+          "scientific_significance": "The findings elucidate a sequential costimulatory cascade initiated by FcγR-expressing dendritic cells that drives non-exhausted T cell differentiation, providing mechanistic insights into combination immunotherapy efficacy."
+        },
+        "elapsed_seconds": 67.7339,
+        "input_tokens": 795,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 1066,
+        "model_eval_seconds": 56.101,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907505",
+        "title": "Zeolite-catalysed olefin carbonylation based on tuning spatial confinement.",
+        "abstract": "NA: Carbonylation is an important process used to produce aldehydes, carboxylic acids and esters1-5 that is usually catalysed by homogeneous metal complexes with ligands and iodide promoters6-12. Koch has reported that protons of mineral acids can also catalyse carbonylation13. Previous studies have demonstrated that Brønsted acidic zeolites can act as a heterogeneous, Koch-type catalyst for carbonylation of alcohols and olefins, but the products in this case are limited to tertiary carboxylic acids14-18. Here we show that targeted use of spatial confinement in a zeolite together with a high CO/olefin ratio can help break this limitation. We report that, with FER zeolite and a CO/olefin ratio of 360, olefin carbonylation can produce primary and secondary carboxylic acids as the main products; ethylene carbonylation to propanoic acid (PA) is achieved with 80% selectivity over 100 h and propylene carbonylation to isobutyric acid (IBA) is achieved with 95% selectivity over 750 h. The propylene and ethylene carbonylation selectivities decrease to 61% and 57%, respectively, as the CO/olefin ratio decreases to 24 and 90, respectively. Experiments in combination with theoretical calculations suggest that T2-O5 in eight-membered ring (8-MR) cavities of FER zeolite are the primary active sites for ethylene carbonylation and T3-O1 in ten-membered rings (10-MRs) are the primary active sites for propylene carbonylation. Our findings open new directions for olefin carbonylation and provide critical insights into the prerequisites for developing new zeolite-based carbonylation processes.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11183-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11183-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907505/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates zeolite-catalysed olefin carbonylation by leveraging spatial confinement in FER zeolite. Using a high CO/olefin ratio (360), it achieves selective production of primary and secondary carboxylic acids from ethylene and propylene. Selectivity for propanoic acid (80% over 100 h) and isobutyric acid (95% over 750 h) demonstrates the method's efficacy under controlled conditions.\",\n  \"key_findings\": [\n    \"FER zeolite with CO/olefin ratio 360 produces primary and secondary carboxylic acids from olefins\",\n    \"Ethylene carbonylation achieves 80% selectivity to propanoic acid over 100 hours\",\n    \"Propylene carbonylation achieves 95% selectivity to isobutyric acid over 750 hours\"\n  ],\n  \"study_type\": \"Heterogeneous catalysis using zeolite\",\n  \"scientific_significance\": \"The work establishes spatial confinement in zeolites as a key factor for enabling selective carbonylation of olefins to primary and secondary carboxylic acids, advancing heterogeneous catalysis for carbonylation reactions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates zeolite-catalysed olefin carbonylation by leveraging spatial confinement in FER zeolite. Using a high CO/olefin ratio (360), it achieves selective production of primary and secondary carboxylic acids from ethylene and propylene. Selectivity for propanoic acid (80% over 100 h) and isobutyric acid (95% over 750 h) demonstrates the method's efficacy under controlled conditions.",
+          "key_findings": [
+            "FER zeolite with CO/olefin ratio 360 produces primary and secondary carboxylic acids from olefins",
+            "Ethylene carbonylation achieves 80% selectivity to propanoic acid over 100 hours",
+            "Propylene carbonylation achieves 95% selectivity to isobutyric acid over 750 hours"
+          ],
+          "study_type": "Heterogeneous catalysis using zeolite",
+          "scientific_significance": "The work establishes spatial confinement in zeolites as a key factor for enabling selective carbonylation of olefins to primary and secondary carboxylic acids, advancing heterogeneous catalysis for carbonylation reactions."
+        },
+        "elapsed_seconds": 70.9145,
+        "input_tokens": 869,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 1140,
+        "model_eval_seconds": 57.0695,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42995234",
+        "title": "In situ CAR engineering and nanoparticle-mediated TREM2 degradation for macrophage reprogramming in malignant ascites.",
+        "abstract": "NA: Peritoneal metastasis (PM) and the resulting malignant tumour ascites characterize advanced gastrointestinal cancers, often leading to poor prognosis and limited response to current therapies. Single-cell analysis of patient-derived PM and malignant tumour ascites reveals an approximately 90% enrichment of TREM2+-tumour-associated macrophages, which drive CD8+ T cell dysfunction and tumour growth. Here we develop lipid nanoparticles encapsulating mRNA to reprogram these tumour-associated macrophages into chimeric antigen receptor macrophages targeting Claudin18.2-positive tumour ascites. The lipid nanoparticles incorporate a TREM2+ ligand to enhance the targeting of TREM2 macrophages. The piperazine-containing phosphoramide ionizable lipid synergizes with the TREM2 ligand to inhibit ligand dissociation, promoting TREM2 internalization and degradation via lysosomal and autophagosomal pathways. This inhibits AKT signalling and reprograms tumour-associated macrophages towards an antitumour phenotype, enhancing progenitor exhausted and effector memory CD8+ T cell responses, altering the PM transcriptome, and reducing immunosuppression in both malignant tumour ascites and tumours. Combined with PD-1 blockade, this therapy suppresses tumour growth and extends survival in mice, and with matching immunological effects in clinical samples, demonstrates its translational potential for PM immunotherapy.",
+        "publication_types": [],
+        "doi": "10.1038/s41563-026-02769-2",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02769-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42995234/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates reprogramming tumour-associated macrophages in malignant ascites using CAR-engineered macrophages and TREM2 degradation via lipid nanoparticles. The approach targets TREM2+ macrophages with mRNA-loaded nanoparticles incorporating a TREM2 ligand to enhance internalization and degradation. Results show inhibited AKT signaling, improved CD8+ T cell responses, reduced immunosuppression, and tumor growth suppression in mice when combined with PD-1 blockade.\",\n  \"key_findings\": [\n    \"Lipid nanoparticles with TREM2 ligand enhance targeting and degradation of TREM2+ macrophages\",\n    \"Inhibition of AKT signaling reprograms macrophages to an antitumour phenotype\",\n    \"Combined therapy with PD-1 blockade suppresses tumour growth and extends survival in mice\"\n  ],\n  \"study_type\": \"In vitro and in vivo mouse models\",\n  \"scientific_significance\": \"This work demonstrates a targeted immunotherapeutic strategy to overcome macrophage-mediated immunosuppression in peritoneal metastasis, providing a novel mechanism for reprogramming tumour-associated macrophages to enhance antitumour immunity.\"\n}",
+        "parsed": {
+          "summary": "This study investigates reprogramming tumour-associated macrophages in malignant ascites using CAR-engineered macrophages and TREM2 degradation via lipid nanoparticles. The approach targets TREM2+ macrophages with mRNA-loaded nanoparticles incorporating a TREM2 ligand to enhance internalization and degradation. Results show inhibited AKT signaling, improved CD8+ T cell responses, reduced immunosuppression, and tumor growth suppression in mice when combined with PD-1 blockade.",
+          "key_findings": [
+            "Lipid nanoparticles with TREM2 ligand enhance targeting and degradation of TREM2+ macrophages",
+            "Inhibition of AKT signaling reprograms macrophages to an antitumour phenotype",
+            "Combined therapy with PD-1 blockade suppresses tumour growth and extends survival in mice"
+          ],
+          "study_type": "In vitro and in vivo mouse models",
+          "scientific_significance": "This work demonstrates a targeted immunotherapeutic strategy to overcome macrophage-mediated immunosuppression in peritoneal metastasis, providing a novel mechanism for reprogramming tumour-associated macrophages to enhance antitumour immunity."
+        },
+        "elapsed_seconds": 59.8974,
+        "input_tokens": 761,
+        "output_tokens": 245,
+        "thoughts_tokens": null,
+        "total_tokens": 1006,
+        "model_eval_seconds": 49.439,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912149",
+        "title": "BAK and BAX form a multiprotein complex to drive mtDNA efflux and caspase-independent cell death.",
+        "abstract": "NA: The apoptotic regulators BAX and BAK, once activated, form homo-oligomers to trigger mitochondrial outer membrane permeabilization (MOMP), activating the apoptosome and caspases. Activation of BAX-BAK without apoptosome activation triggers sustained efflux of mitochondrial DNA (mtDNA) and caspase-independent cell death. However, the molecular basis of mtDNA efflux remains unclear. We purified a macromolecular complex comprising BAK, BAX, activator BH3-only molecules, voltage-dependent anion channels 1 and 2 (VDAC1 and VDAC2), and prohibitins that released mtDNA from mitoplasts. BAX-BAK activation resulted in VDAC closure, mitochondrial calcium influx, and mtDNA efflux. Loss of VDAC1, VDAC2, or prohibitins prevented BAX-BAK activation-induced mtDNA efflux and caspase-independent cell death without affecting MOMP or mitochondrial inner membrane herniation. These findings support differential regulation of cytochrome c and mtDNA efflux by distinct BAX-BAK complexes.",
+        "publication_types": [],
+        "doi": "10.1126/science.aea2181",
+        "doi_url": "https://doi.org/10.1126/science.aea2181",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912149/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how BAX and BAK activation drives mitochondrial DNA efflux and caspase-independent cell death. Researchers purified a multiprotein complex containing BAX, BAK, BH3-only proteins, VDAC1, VDAC2, and prohibitins that releases mtDNA. The complex formation triggers VDAC closure, calcium influx, and mtDNA efflux, with loss of VDAC1/2 or prohibitins blocking efflux without impairing mitochondrial outer membrane permeabilization.\",\n  \"key_findings\": [\n    \"BAX-BAK activation forms a multiprotein complex releasing mtDNA\",\n    \"VDAC1 and VDAC2 closure occurs during BAX-BAK activation\",\n    \"Loss of VDAC1, VDAC2, or prohibitins prevents mtDNA efflux without affecting MOMP\"\n  ],\n  \"study_type\": \"In vitro purification of macromolecular complexes\",\n  \"scientific_significance\": \"The study reveals distinct molecular mechanisms for cytochrome c versus mtDNA efflux during apoptosis, clarifying how BAX-BAK complexes regulate different death pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how BAX and BAK activation drives mitochondrial DNA efflux and caspase-independent cell death. Researchers purified a multiprotein complex containing BAX, BAK, BH3-only proteins, VDAC1, VDAC2, and prohibitins that releases mtDNA. The complex formation triggers VDAC closure, calcium influx, and mtDNA efflux, with loss of VDAC1/2 or prohibitins blocking efflux without impairing mitochondrial outer membrane permeabilization.",
+          "key_findings": [
+            "BAX-BAK activation forms a multiprotein complex releasing mtDNA",
+            "VDAC1 and VDAC2 closure occurs during BAX-BAK activation",
+            "Loss of VDAC1, VDAC2, or prohibitins prevents mtDNA efflux without affecting MOMP"
+          ],
+          "study_type": "In vitro purification of macromolecular complexes",
+          "scientific_significance": "The study reveals distinct molecular mechanisms for cytochrome c versus mtDNA efflux during apoptosis, clarifying how BAX-BAK complexes regulate different death pathways."
+        },
+        "elapsed_seconds": 54.6108,
+        "input_tokens": 696,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 927,
+        "model_eval_seconds": 46.0384,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43024738",
+        "title": "TOX and PD-1 are required for the maintenance of CD4 T cell precursors during chronic infection.",
+        "abstract": "NA: In contrast with the well-established mechanisms that maintain exhausted CD8 T cells, our knowledge about the differentiation and in particular the molecular control of CD4 T cells in chronic infections is limited. Using the lymphocytic choriomeningitis virus (LCMV) infection model, we identified that CXCR5+TCF-1+ CD4 T cells, found mainly in secondary lymphoid organs, serve as precursors for the CD4 population. These cells transition into terminally differentiated cells and combine T follicular helper (TFH) cell features (IL-21 expression) with T helper 1 (TH1) cell characteristics (CXCR6 expression and IFN-γ and TNF secretion). In the CXCR5+TCF-1+ population, CD62L+ cells exhibit the highest re-expansion potential in adoptive transfer settings. All subsets express TOX and PD-1, which ensure the maintenance of the CD4 T cell population. Absence of either factor reduces the number of CD62L+ precursors and impairs their further differentiation. Overall, we define a hierarchical framework for CD4 T cell maintenance in chronic infection and reveal common mechanisms that sustain both exhausted CD4 and CD8 T cell responses.",
+        "publication_types": [],
+        "doi": "10.1126/sciimmunol.aei3443",
+        "doi_url": "https://doi.org/10.1126/sciimmunol.aei3443",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43024738/",
+        "journal_id": "science-immunology",
+        "journal_name": "Science Immunology",
+        "report_id": "science-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the molecular mechanisms maintaining CD4 T cell precursors during chronic viral infections using the LCMV model. It identifies CXCR5+TCF-1+ CD4 T cells as precursors in secondary lymphoid organs that transition into terminally differentiated cells with TFH and TH1 features. The research demonstrates that TOX and PD-1 are essential for preserving these precursors, as their absence reduces precursor numbers and impairs differentiation.\",\n  \"key_findings\": [\n    \"CXCR5+TCF-1+ CD4 T cells serve as precursors for CD4 populations in chronic infections\",\n    \"These precursors express TOX and PD-1, which maintain their population\",\n    \"Absence of TOX or PD-1 reduces precursor numbers and impairs differentiation\"\n  ],\n  \"study_type\": \"In vivo mouse model using LCMV infection\",\n  \"scientific_significance\": \"The study establishes a hierarchical framework for CD4 T cell maintenance in chronic infection, revealing shared molecular mechanisms that sustain both exhausted CD4 and CD8 T cell responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the molecular mechanisms maintaining CD4 T cell precursors during chronic viral infections using the LCMV model. It identifies CXCR5+TCF-1+ CD4 T cells as precursors in secondary lymphoid organs that transition into terminally differentiated cells with TFH and TH1 features. The research demonstrates that TOX and PD-1 are essential for preserving these precursors, as their absence reduces precursor numbers and impairs differentiation.",
+          "key_findings": [
+            "CXCR5+TCF-1+ CD4 T cells serve as precursors for CD4 populations in chronic infections",
+            "These precursors express TOX and PD-1, which maintain their population",
+            "Absence of TOX or PD-1 reduces precursor numbers and impairs differentiation"
+          ],
+          "study_type": "In vivo mouse model using LCMV infection",
+          "scientific_significance": "The study establishes a hierarchical framework for CD4 T cell maintenance in chronic infection, revealing shared molecular mechanisms that sustain both exhausted CD4 and CD8 T cell responses."
+        },
+        "elapsed_seconds": 50.274,
+        "input_tokens": 821,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 1049,
+        "model_eval_seconds": 46.6963,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910629",
+        "title": "Ultrasound-Activated Hydrogen-Bonded Organic Framework Synergistically Enhances Antitumor Immunity by Epigenetic Reprogramming and Pyroptosis Induction.",
+        "abstract": "NA: Pyroptosis, a pro-inflammatory form of cell death, elicits robust antitumor immune responses. However, pyroptosis-based cancer immunotherapy is hampered by the epigenetic silencing of gasdermin E (GSDME) through hypermethylation of the DFNA5 gene. To overcome this limitation, we engineered an innovative nanosystem by first synthesizing a reactive oxygen species (ROS)-responsive decitabine prodrug (DTO), which was subsequently encapsulated within hydrogen-bonded organic frameworks to form the HDTO nanoplatform. Upon ultrasound (US) activation, the HDTO nanoplatform exhibited potent ROS generation, enabling two complementary functions: (1) triggering decitabine release to demethylate DFNA5 and restore GSDME expression and (2) activating caspase-3, thereby initiating the caspase-3/GSDME-mediated pyroptotic pathway. This apoptosis-to-pyroptosis switching mechanism significantly enhanced immunogenic cell death and potentiated antitumor immunity. In vivo studies demonstrated that US-activated HDTO induced robust pyroptosis, remodeled the tumor microenvironment, and elicited superior antitumor immune responses, resulting in marked suppression of tumor growth and metastasis. Single-cell RNA sequencing analysis confirmed that HDTO + US-induced pyroptosis depleted nonimmune cells while expanding monocyte and neutrophil populations, demonstrating effective immunoreprogramming. This study establishes a novel therapeutic paradigm that synergistically integrates epigenetic modulation with pyroptosis induction to enhance the efficacy of cancer immunotherapy.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75356",
+        "doi_url": "https://doi.org/10.1002/adma.75356",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910629/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated ultrasound-activated hydrogen-bonded organic frameworks (HDTO) to overcome epigenetic silencing of gasdermin E (GSDME) in cancer immunotherapy. The HDTO nanoplatform, engineered with ROS-responsive decitabine, releases demethylating agents upon ultrasound to restore GSDME expression and induce caspase-3-mediated pyroptosis. In vivo results showed enhanced immunogenic cell death, tumor microenvironment remodeling, and significant antitumor efficacy through monocyte/neutrophil expansion.\",\n  \"key_findings\": [\n    \"US-activated HDTO nanoplatform restores GSDME expression via DFNA5 demethylation\",\n    \"Caspase-3 activation triggers pyroptosis to enhance immunogenic cell death\",\n    \"In vivo treatment reduced tumor growth and metastasis with monocyte/neutrophil expansion\"\n  ],\n  \"study_type\": \"In vivo and in vitro studies\",\n  \"scientific_significance\": \"This work demonstrates a synergistic strategy for epigenetic reprogramming and pyroptosis induction to overcome immunotherapy resistance, advancing cancer treatment through enhanced antitumor immunity.\"\n}",
+        "parsed": {
+          "summary": "This study investigated ultrasound-activated hydrogen-bonded organic frameworks (HDTO) to overcome epigenetic silencing of gasdermin E (GSDME) in cancer immunotherapy. The HDTO nanoplatform, engineered with ROS-responsive decitabine, releases demethylating agents upon ultrasound to restore GSDME expression and induce caspase-3-mediated pyroptosis. In vivo results showed enhanced immunogenic cell death, tumor microenvironment remodeling, and significant antitumor efficacy through monocyte/neutrophil expansion.",
+          "key_findings": [
+            "US-activated HDTO nanoplatform restores GSDME expression via DFNA5 demethylation",
+            "Caspase-3 activation triggers pyroptosis to enhance immunogenic cell death",
+            "In vivo treatment reduced tumor growth and metastasis with monocyte/neutrophil expansion"
+          ],
+          "study_type": "In vivo and in vitro studies",
+          "scientific_significance": "This work demonstrates a synergistic strategy for epigenetic reprogramming and pyroptosis induction to overcome immunotherapy resistance, advancing cancer treatment through enhanced antitumor immunity."
+        },
+        "elapsed_seconds": 61.7857,
+        "input_tokens": 810,
+        "output_tokens": 245,
+        "thoughts_tokens": null,
+        "total_tokens": 1055,
+        "model_eval_seconds": 49.8085,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020081",
+        "title": "Granzyme K is a driver of age-related tissue remodeling and functional decline independently of age-associated immune dysfunction.",
+        "abstract": "NA: Aging is characterized by progressive tissue and organ decline, with chronic low-grade inflammation (inflammaging) implicated as a central driver. Granzyme K (GzmK), a serine protease that is markedly upregulated in aged memory CD8+ T cells, is proposed to be a central mediator of both immune and organismal aging. Using young and aged GzmK-/- mice, we showed that GzmK was dispensable for the major hallmarks of immune aging, including T cell dysfunction, but was a critical driver of age-related tissue decline. Despite persistent immune aging phenotypes, GzmK deficiency markedly attenuated organ aging, effectively uncoupling immune and tissue aging. In the kidney, this was associated with reduced complement deposition, whereas in the liver, improved function and reduced fibrosis occurred independently of complement, coinciding instead with increased decorin and reduced pro-fibrotic TGF-β signaling. These findings identify GzmK as a tissue-specific driver of organismal aging but not immune aging or systemic inflammaging.",
+        "publication_types": [],
+        "doi": "10.1016/j.immuni.2026.10.013",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.013",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020081/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether granzyme K (GzmK) drives age-related tissue decline independently of immune aging. Using young and aged GzmK-deficient mice, researchers found GzmK is critical for tissue remodeling in kidneys and livers but dispensable for immune aging hallmarks. Deficiency reduced organ aging markers like fibrosis and complement activation without affecting immune dysfunction.\",\n  \"key_findings\": [\n    \"GzmK deficiency attenuated age-related organ aging in kidneys and livers\",\n    \"Reduced complement deposition in kidneys and improved liver function with decreased fibrosis\",\n    \"GzmK drives tissue-specific aging without contributing to immune aging phenotypes\"\n  ],\n  \"study_type\": \"Mouse models\",\n  \"scientific_significance\": \"The findings establish granzyme K as a tissue-specific mediator of organismal aging, decoupling immune and tissue aging processes and revealing potential targets for age-related tissue decline interventions.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether granzyme K (GzmK) drives age-related tissue decline independently of immune aging. Using young and aged GzmK-deficient mice, researchers found GzmK is critical for tissue remodeling in kidneys and livers but dispensable for immune aging hallmarks. Deficiency reduced organ aging markers like fibrosis and complement activation without affecting immune dysfunction.",
+          "key_findings": [
+            "GzmK deficiency attenuated age-related organ aging in kidneys and livers",
+            "Reduced complement deposition in kidneys and improved liver function with decreased fibrosis",
+            "GzmK drives tissue-specific aging without contributing to immune aging phenotypes"
+          ],
+          "study_type": "Mouse models",
+          "scientific_significance": "The findings establish granzyme K as a tissue-specific mediator of organismal aging, decoupling immune and tissue aging processes and revealing potential targets for age-related tissue decline interventions."
+        },
+        "elapsed_seconds": 45.6959,
+        "input_tokens": 683,
+        "output_tokens": 196,
+        "thoughts_tokens": null,
+        "total_tokens": 879,
+        "model_eval_seconds": 37.7999,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907506",
+        "title": "Cold activates a BH2 metabolic network promoting longevity and proteostasis.",
+        "abstract": "NA: Moderately cold temperatures extend lifespan and promote health across species1-3, yet the molecular mechanisms underlying these benefits remain unclear. Here we define a metabolite-driven, multi-tissue signalling system that links cold temperature to enhanced longevity and proteostasis in Caenorhabditis elegans. Cold temperature upregulates the biopterin-synthesis enzyme CAT-4 (GCH1 in humans), increasing production of dihydrobiopterin (BH2), a transportable reservoir for the bioactive cofactor tetrahydrobiopterin (BH4). BH2 is produced in muscle and transported to distal tissues, including the intestine and neurons, where it is converted into BH4 by the salvage enzyme DHFR-1. BH4 functions as an essential cofactor for phenylalanine hydroxylase PAH-1, promoting tyrosine synthesis and extending lifespan. This BH2-BH4 axis also prevents disease-related protein aggregation and subsequent neuronal dysfunction during ageing. Importantly, increasing BH2 synthesis specifically in muscle is sufficient to promote longevity and suppress pathological protein aggregation in distal tissues, even at normal or elevated temperatures. In human cells, BH2 or tyrosine supplementation reduces aggregation of polyQ-expanded proteins associated with Huntington's disease, as well as mutant variants of TDP-43 and FUS that cause amyotrophic lateral sclerosis. Together, these findings identify BH2 as a cold-induced metabolite of which the synthesis, intertissue transport and conversion into bioactive BH4 preserve organism-wide proteostasis and extend lifespan.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11152-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11152-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907506/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how cold temperatures extend lifespan and proteostasis in C. elegans by identifying a metabolite-driven signaling pathway. Cold upregulates the biopterin-synthesis enzyme CAT-4, increasing dihydrobiopterin (BH2) production. BH2 is transported to distal tissues where it converts to tetrahydrobio:biopterin (BH4), enhancing tyrosine synthesis and longevity while preventing protein aggregation. The findings suggest BH2 as a key cold-induced metabolite promoting systemic proteostasis and longevity.\",\n  \"key_findings\": [\n    \"Cold temperatures upregulate CAT-4 to increase dihydrobiopterin (BH2) production\",\n    \"BH2 is transported to distal tissues and converted to BH4, promoting tyrosine synthesis and lifespan extension\",\n    \"BH2 supplementation reduces aggregation of Huntington's disease and ALS-associated proteins in human cells\"\n  ],\n  \"study_type\": \"In vivo model using C. elegans\",\n  \"scientific_significance\": \"This work identifies a conserved cold-induced metabolite pathway that enhances systemic proteostasis and longevity, providing mechanistic insights into temperature-mediated healthspan extension across species.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how cold temperatures extend lifespan and proteostasis in C. elegans by identifying a metabolite-driven signaling pathway. Cold upregulates the biopterin-synthesis enzyme CAT-4, increasing dihydrobiopterin (BH2) production. BH2 is transported to distal tissues where it converts to tetrahydrobio:biopterin (BH4), enhancing tyrosine synthesis and longevity while preventing protein aggregation. The findings suggest BH2 as a key cold-induced metabolite promoting systemic proteostasis and longevity.",
+          "key_findings": [
+            "Cold temperatures upregulate CAT-4 to increase dihydrobiopterin (BH2) production",
+            "BH2 is transported to distal tissues and converted to BH4, promoting tyrosine synthesis and lifespan extension",
+            "BH2 supplementation reduces aggregation of Huntington's disease and ALS-associated proteins in human cells"
+          ],
+          "study_type": "In vivo model using C. elegans",
+          "scientific_significance": "This work identifies a conserved cold-induced metabolite pathway that enhances systemic proteostasis and longevity, providing mechanistic insights into temperature-mediated healthspan extension across species."
+        },
+        "elapsed_seconds": 60.3976,
+        "input_tokens": 777,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 1025,
+        "model_eval_seconds": 49.2559,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020875",
+        "title": "Proximal redox coupling enables oxidation damping for stable water electrolysis.",
+        "abstract": "NA: The design of atomically precise catalysts requires strategies that regulate their electronic and structural dynamics under operating conditions. While conventional doping can effectively tune bulk materials, it translates poorly to single-atom catalysts (SACs), in which isolated atoms lack extended coordination and are prone to oxidative instability. Here we design atomically dispersed Ru-O-Cr motifs that enable oxidation damping during acidic oxygen evolution. In situ X-ray absorption spectroscopy shows attenuated Ru oxidation synchronized with anticorrelated and partially reversible Cr redox evolution, consistent with proximity-dependent redox coupling. This buffered redox response is accompanied by bounded and partially reversible changes in the local metal-oxygen coordination environment. These coupled dynamics support proximity-coupled Ru-O-Cr redox units, enabling a 55.7-fold increased resistance against oxidation-induced Ru dissolution compared with conventional SACs. In proton exchange membrane water electrolysis, catalysts incorporating proximal Ru-O-Cr configurations exhibit degradation rates that are 6.8-fold and 14.4-fold lower than those of Ru SACs and commercial RuO2, respectively, at 1 A cm-2. These results suggest proximal oxidation damping as a potential design principle for stabilizing atomically precise electrocatalysts.",
+        "publication_types": [],
+        "doi": "10.1038/s41563-026-02783-4",
+        "doi_url": "https://doi.org/10.1038/s41563-026-02783-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020875/",
+        "journal_id": "nature-materials",
+        "journal_name": "Nature Materials",
+        "report_id": "nature-materials__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how proximal redox coupling stabilizes atomically precise catalysts during water electrolysis. Using in situ X-ray absorption spectroscopy, researchers designed Ru-O-Cr motifs that enable oxidation damping by synchronizing attenuated Ru oxidation with reversible Cr redox changes. The catalysts demonstrated significantly reduced degradation rates compared to conventional Ru-based systems under acidic conditions.\",\n  \"key_findings\": [\n    \"In situ X-ray absorption spectroscopy revealed attenuated Ru oxidation synchronized with reversible Cr redox evolution\",\n    \"Proximal Ru-O-Cr motifs increased oxidation resistance by 55.7-fold versus conventional SACs\",\n    \"Catalysts showed 6.8-fold and 14.4-fold lower degradation rates than Ru SACs and commercial RuO2 at 1 A cm-2\"\n  ],\n  \"study_type\": \"In situ X-ray absorption spectroscopy\",\n  \"scientific_significance\": \"This work establishes proximal redox coupling as a general strategy for enhancing stability in atomically precise electrocatalysts through buffered redox responses during electrochemical operation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how proximal redox coupling stabilizes atomically precise catalysts during water electrolysis. Using in situ X-ray absorption spectroscopy, researchers designed Ru-O-Cr motifs that enable oxidation damping by synchronizing attenuated Ru oxidation with reversible Cr redox changes. The catalysts demonstrated significantly reduced degradation rates compared to conventional Ru-based systems under acidic conditions.",
+          "key_findings": [
+            "In situ X-ray absorption spectroscopy revealed attenuated Ru oxidation synchronized with reversible Cr redox evolution",
+            "Proximal Ru-O-Cr motifs increased oxidation resistance by 55.7-fold versus conventional SACs",
+            "Catalysts showed 6.8-fold and 14.4-fold lower degradation rates than Ru SACs and commercial RuO2 at 1 A cm-2"
+          ],
+          "study_type": "In situ X-ray absorption spectroscopy",
+          "scientific_significance": "This work establishes proximal redox coupling as a general strategy for enhancing stability in atomically precise electrocatalysts through buffered redox responses during electrochemical operation."
+        },
+        "elapsed_seconds": 53.9276,
+        "input_tokens": 719,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 948,
+        "model_eval_seconds": 44.8196,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912150",
+        "title": "The instigator.",
+        "abstract": "NA: A single FBI agent spurred NIH's campaign against foreign intervention on U.S. campuses. Now, he's studying the extent of the problem.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen4279",
+        "doi_url": "https://doi.org/10.1126/science.aen4279",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912150/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the scale of foreign interference on U.S. campuses following an FBI agent's initiative to combat it. The research assesses the problem's scope through a historical analysis of the FBI's campaign. Results indicate significant foreign involvement, highlighting the need for enhanced campus security measures against international influence.\",\n  \"key_findings\": [\n    \"The FBI agent initiated a campaign targeting foreign interference on U.S. campuses\",\n    \"Historical analysis revealed substantial foreign involvement in campus activities\",\n    \"The findings underscore the necessity for improved security protocols against international interference\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_sign: \":\n    \"This work provides evidence of widespread foreign interference on U.S. campuses, contributing to understanding the scale of international influence in domestic educational settings.\"\n  }",
+        "parsed": {
+          "summary": "This study investigates the scale of foreign interference on U.S. campuses following an FBI agent's initiative to combat it. The research assesses the problem's scope through a historical analysis of the FBI's campaign. Results indicate significant foreign involvement, highlighting the need for enhanced campus security measures against international influence.",
+          "key_findings": [
+            "The FBI agent initiated a campaign targeting foreign interference on U.S. campuses",
+            "Historical analysis revealed substantial foreign involvement in campus activities",
+            "The findings underscore the necessity for improved security protocols against international interference"
+          ],
+          "study_type": "",
+          "scientific_sign: ": "This work provides evidence of widespread foreign interference on U.S. campuses, contributing to understanding the scale of international influence in domestic educational settings."
+        },
+        "elapsed_seconds": 33.239,
+        "input_tokens": 566,
+        "output_tokens": 164,
+        "thoughts_tokens": null,
+        "total_tokens": 730,
+        "model_eval_seconds": 29.9347,
+        "error": "Missing fields: scientific_significance; Unexpected fields (the schema must not add relevance or limitations sections): scientific_sign: ; scientific_significance must be a string (use an empty string when unavailable).",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910633",
+        "title": "Engineering Bidirectional Neuromodulation: A Review of Neural Excitation and Inhibition Technologies.",
+        "abstract": "NA: Neuromodulation provides a means to perturb neural activity for investigating nervous system function and treating neurological disorders. Advances in stimulation strategies, molecular tools, functional materials and neural interfaces have progressively expanded the precision and versatility of such interventions. Yet neural activity can require regulation in opposing directions across different cellular, circuit and pathological states, motivating bidirectional neuromodulation that can both enhance and suppress neural activity. In this review, we examine the mechanisms and technologies that enable such bidirectional control across electrical, optical, thermal, mechanical, magnetic and chemical modalities. We compare these approaches in terms of spatiotemporal performance, penetration depth, specificity and safety, and examine the materials, transduction strategies and device architectures used to implement bidirectional neural control. We further discuss the applications of bidirectional neuromodulation in neuroscience research and the treatment of neurological disorders. Finally, we discuss the technical challenges and future directions toward more precise, independent and integrated bidirectional control, including its extension to closed-loop adaptive regulation.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75480",
+        "doi_url": "https://doi.org/10.1002/adma.75480",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910633/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines bidirectional neuromodulation technologies that enable both neural excitation and inhibition across multiple modalities. It compares electrical, optical, thermal, mechanical, magnetic, and chemical approaches in terms of spatiotemporal precision, penetration depth, specificity, and safety. The study highlights applications in neuroscience research and neurological disorder treatment while identifying technical challenges for future closed-loop adaptive systems.\",\n  \"key_findings\": [\n    \"Bidirectional neuromodulation technologies support both neural excitation and inhibition across diverse modalities\",\n    \"Electrical, optical, thermal, mechanical, magnetic, and chemical approaches are compared for spatiotemporal performance and safety\",\n    \"Applications include neuroscience research and neurological disorder treatment with potential for closed-loop adaptive regulation\"\n  ],\n  \"study_type\": \"\",\n  \"scientific_significance\": \"This review advances understanding of bidirectional neuromodulation by systematically comparing diverse technological approaches and their implications for precise neural regulation in both research and clinical contexts.\"\n}",
+        "parsed": {
+          "summary": "This review examines bidirectional neuromodulation technologies that enable both neural excitation and inhibition across multiple modalities. It compares electrical, optical, thermal, mechanical, magnetic, and chemical approaches in terms of spatiotemporal precision, penetration depth, specificity, and safety. The study highlights applications in neuroscience research and neurological disorder treatment while identifying technical challenges for future closed-loop adaptive systems.",
+          "key_findings": [
+            "Bidirectional neuromodulation technologies support both neural excitation and inhibition across diverse modalities",
+            "Electrical, optical, thermal, mechanical, magnetic, and chemical approaches are compared for spatiotemporal performance and safety",
+            "Applications include neuroscience research and neurological disorder treatment with potential for closed-loop adaptive regulation"
+          ],
+          "study_type": "",
+          "scientific_significance": "This review advances understanding of bidirectional neuromodulation by systematically comparing diverse technological approaches and their implications for precise neural regulation in both research and clinical contexts."
+        },
+        "elapsed_seconds": 46.6389,
+        "input_tokens": 671,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 877,
+        "model_eval_seconds": 39.3053,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43025425",
+        "title": "Human interferon-α autoantibody development broadens reactivity and enables functional synergy.",
+        "abstract": "NA: Neutralizing autoantibodies against interferon-α (IFN-α) are associated with severe viral infections but may improve outcomes in IFN-α-driven autoimmunity. How these antibodies emerge, mature, and function at the molecular level remains unclear. Here, we tracked development of plasma neutralizing activity against all 12 IFN-αs in multiple human donors over years. Plasma neutralization frequently initiated with narrow IFN-α specificity, often against IFN-α8, but increased in breadth and potency with individual kinetics. Monoclonal antibody analyses revealed that affinity maturation generated epitope-specific antibody classes, highlighting parallel emergence of subtype-restricted and broadly reactive antibodies. Biophysical and structural characterization of human antibody-IFN-α complexes uncovered determinants of initial specificity and breadth development. Antibodies engaging non-competing, neutralizing epitopes acted co-operatively to block IFN-α signaling, and some combinations triggered Fc-effector functions via cell surface IFN-α:IFNAR2 interactions that may eliminate IFN-α-responsive cells. Our findings reveal features shaping anti-IFN-α autoantibody repertoires and synergistic mechanisms that amplify their potency and pathogenic potential.",
+        "publication_types": [],
+        "doi": "10.1016/j.immuni.2026.10.012",
+        "doi_url": "https://doi.org/10.1016/j.immuni.2026.10.012",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43025425/",
+        "journal_id": "immunity",
+        "journal_name": "Immunity",
+        "report_id": "immunity__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how human neutralizing autoantibodies against interferon-α (IFN-α) develop, mature, and function. By tracking plasma neutralization across multiple donors over years, researchers observed initial narrow specificity (often targeting IFN-α8) that broadened in breadth and potency. Monoclonal analyses showed affinity maturation generated subtype-restricted and broadly reactive antibodies. Structural studies revealed that antibodies engaging non-competing epitopes synergistically block IFN-α signaling and may trigger Fc-effector functions.\",\n  \"key_findings\": [\n    \"Neutralizing autoantibodies against IFN-α initially target narrow specificities, often IFN-α8, but broaden over time.\",\n    \"Affinity maturation produces both subtype-restricted and broadly reactive antibody classes.\",\n    \"Antibodies engaging non-competing epitopes synergistically block IFN-α signaling and may trigger Fc-effector functions.\"\n  ],\n  \"study_type\": \"Longitudinal human plasma tracking with monoclonal antibody analyses and structural characterization\",\n  \"scientific_significance\": \"The study elucidates molecular mechanisms underlying the development and functional synergy of anti-IFN-α autoantibodies, revealing how specificity broadens to enhance pathogenic potential in autoimmune contexts.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how human neutralizing autoantibodies against interferon-α (IFN-α) develop, mature, and function. By tracking plasma neutralization across multiple donors over years, researchers observed initial narrow specificity (often targeting IFN-α8) that broadened in breadth and potency. Monoclonal analyses showed affinity maturation generated subtype-restricted and broadly reactive antibodies. Structural studies revealed that antibodies engaging non-competing epitopes synergistically block IFN-α signaling and may trigger Fc-effector functions.",
+          "key_findings": [
+            "Neutralizing autoantibodies against IFN-α initially target narrow specificities, often IFN-α8, but broaden over time.",
+            "Affinity maturation produces both subtype-restricted and broadly reactive antibody classes.",
+            "Antibodies engaging non-competing epitopes synergistically block IFN-α signaling and may trigger Fc-effector functions."
+          ],
+          "study_type": "Longitudinal human plasma tracking with monoclonal antibody analyses and structural characterization",
+          "scientific_significance": "The study elucidates molecular mechanisms underlying the development and functional synergy of anti-IFN-α autoantibodies, revealing how specificity broadens to enhance pathogenic potential in autoimmune contexts."
+        },
+        "elapsed_seconds": 62.1152,
+        "input_tokens": 719,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 987,
+        "model_eval_seconds": 53.0323,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907507",
+        "title": "The proteome of Middle Pleistocene Xujiayao and common Denisovan morphology.",
+        "abstract": "NA: The taxonomy and phylogeny of late Middle Pleistocene hominins in East Asia remain highly debated1. Xujiayao, a key representative assemblage with many fossils and a clear stratigraphy dating to around 199-138 thousand years ago, has been extensively studied, but its evolutionary position remains uncertain. Here, to clarify this, we analysed Xujiayao material through both palaeoproteomic analysis and morphological comparisons with other East Asian late Middle Pleistocene archaic Homo. Proteomic analysis of two specimens identified 18 endogenous proteins, and the Denisova-specific COL1A2-996 R>K mutation strongly supported their affiliation with the Denisovan lineage. Extended analysis identifies a set of shared morphological traits between Denisovan fossils (Xujiayao and Harbin) and other East Asian late Middle Pleistocene archaic Homo (such as Jinniushan, Dali and Hualongdong), indicating that they all belong to the Denisovan lineage. This analysis provides a comprehensive view of Denisovan features, showing both traits reminiscent of Homo erectus (such as a thick cranial vault) and those characteristic of modern humans (for example, a strongly arched temporal squama). They also share features with late Neanderthals, such as the structure of the temporal labyrinth and the presence of a suprainiac fossa. Notably, Denisovans are distinctive, with a low cranial profile with near-parallel lateral walls, a massive supraorbital torus, a flat zygomaxillary region and weak prognathism.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11132-z",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11132-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907507/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the evolutionary position of Middle Pleistocene Xujiayao hominins using proteomic analysis and morphological comparisons. Proteomic analysis identified 18 endogenous proteins in two specimens, and the Denisova-specific COL1A2-996 R>K mutation confirmed Denisovan affiliation. Morphological analysis revealed shared traits with other East Asian archaic Homo, indicating a Denisovan lineage with features intermediate between Homo erectus and modern humans.\",\n  \"key_findings\": [\n    \"Proteomic analysis of Xujiayao specimens identified 18 endogenous proteins\",\n    \"Denisova-specific COL1A2-996 R>K mutation confirmed Denisovan affiliation\",\n    \"Shared morphological traits with East Asian archaic Homo indicate Denisovan lineage\"\n  ],\n  \"study_type\": \"Proteomic analysis and morphological comparisons\",\n  \"scientific_significance\": \"This work provides a comprehensive molecular and morphological characterization of Denisovan hominins, clarifying their evolutionary relationships and distinguishing features within the Middle Pleistocene hominin radiation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the evolutionary position of Middle Pleistocene Xujiayao hominins using proteomic analysis and morphological comparisons. Proteomic analysis identified 18 endogenous proteins in two specimens, and the Denisova-specific COL1A2-996 R>K mutation confirmed Denisovan affiliation. Morphological analysis revealed shared traits with other East Asian archaic Homo, indicating a Denisovan lineage with features intermediate between Homo erectus and modern humans.",
+          "key_findings": [
+            "Proteomic analysis of Xujiayao specimens identified 18 endogenous proteins",
+            "Denisova-specific COL1A2-996 R>K mutation confirmed Denisovan affiliation",
+            "Shared morphological traits with East Asian archaic Homo indicate Denisovan lineage"
+          ],
+          "study_type": "Proteomic analysis and morphological comparisons",
+          "scientific_significance": "This work provides a comprehensive molecular and morphological characterization of Denisovan hominins, clarifying their evolutionary relationships and distinguishing features within the Middle Pleistocene hominin radiation."
+        },
+        "elapsed_seconds": 56.9697,
+        "input_tokens": 802,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 1027,
+        "model_eval_seconds": 45.2455,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912151",
+        "title": "Intron retention regulates STAT2 function and associates with immunotherapy response in lung cancer.",
+        "abstract": "NA: Immunotherapy with checkpoint inhibitors has revolutionized cancer therapy and enabled considerable therapeutic advances for treating various diseases, including lung cancer. However, the molecular determinants of variable patient outcomes remain unclear. Using long-read RNA sequencing, we mapped the landscape of alternative RNA splicing in human primary lung adenocarcinomas. We identified more than 149,000 full-length messenger RNA (mRNA) isoforms, more than half of which were unannotated and many that occurred in immune-related genes, particularly within the type I interferon response pathway. We functionally characterized retained introns in the STAT2 gene that produced altered protein isoforms that regulated immune signaling and interferon responses and correlated with patient survival after anti-programmed death-ligand 1 (PD-L1) immunotherapy. These findings position alternative splicing as a regulator of tumor immune responses and reveal intron retention in STAT2 as an interferon regulatory axis that correlates with PD-L1 checkpoint inhibitor response.",
+        "publication_types": [],
+        "doi": "10.1126/science.aea7156",
+        "doi_url": "https://doi.org/10.1126/science.aea7156",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912151/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how intron retention in lung cancer affects STAT2 function and immunotherapy response. Using long-read RNA sequencing, researchers mapped alternative splicing in primary lung adenocarcinomas, identifying unannotated mRNA isoforms in immune-related genes. Retained introns in STAT2 altered protein isoforms, modulating immune signaling and interferon responses, and correlated with PD-L.1 immunotherapy outcomes.\",\n  \"key_findings\": [\n    \"Long-read RNA sequencing identified over 149,014 unannotated mRNA isoforms in lung adenocarcinomas, many in immune-related genes.\",\n    \"Intron retention in STAT2 generated protein isoforms that regulate immune signaling and interferon responses.\",\n    \"STAT2 intron retention correlates with patient survival after PD-L1 immunotherapy.\"\n  ],\n  \"study_type\": \"Long-read RNA sequencing\",\n  \"scientific_significance\": \"This work establishes alternative splicing as a key regulator of tumor immune responses and identifies STAT2 intron retention as a predictive biomarker for immunotherapy efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how intron retention in lung cancer affects STAT2 function and immunotherapy response. Using long-read RNA sequencing, researchers mapped alternative splicing in primary lung adenocarcinomas, identifying unannotated mRNA isoforms in immune-related genes. Retained introns in STAT2 altered protein isoforms, modulating immune signaling and interferon responses, and correlated with PD-L.1 immunotherapy outcomes.",
+          "key_findings": [
+            "Long-read RNA sequencing identified over 149,014 unannotated mRNA isoforms in lung adenocarcinomas, many in immune-related genes.",
+            "Intron retention in STAT2 generated protein isoforms that regulate immune signaling and interferon responses.",
+            "STAT2 intron retention correlates with patient survival after PD-L1 immunotherapy."
+          ],
+          "study_type": "Long-read RNA sequencing",
+          "scientific_significance": "This work establishes alternative splicing as a key regulator of tumor immune responses and identifies STAT2 intron retention as a predictive biomarker for immunotherapy efficacy."
+        },
+        "elapsed_seconds": 50.5241,
+        "input_tokens": 664,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 888,
+        "model_eval_seconds": 43.1033,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910634",
+        "title": "Cathode Depolarization Enables 1300-Cycle Ah-Level Anode-Free Sodium Batteries.",
+        "abstract": "NA: Nonuniform sodium deposition limits the cyclability of anode-free sodium batteries (AFSBs), and current research mainly focuses on anode-targeted strategies. However, the influence of the cathode kinetics on sodium deposition behavior has been overlooked. Here, we firstly reveal the critical role of cathode polarization on sodium deposition uniformity via electric field coupling. Accordingly, cathode-specific charging (CSC) protocols are established for AFSBs to depolarize the cathode, where the charging current is dynamically regulated based on the state of charge (SOC)-dependent direct current inner resistance (DCIR). As expected, the CSC protocols effectively depolarize the cathodes and thus homogenize sodium deposition on the anode. Impressively, a 1.6 Ah Al/C||NFPP pouch cell reaches a record-high cyclability of 1370 cycles at 2 C, and a 3.6 Ah pouch cell reaches a high energy density of 180 Wh kg- 1 with stable cycling for 890 cycles at 0.5 C. More importantly, the cathode depolarization strategy shows application universality for diverse anode-free full cells based on Na4Fe3(PO4)2 (NFPP), Na3V2(PO4)3 (NVP), and NaNi1/3Fe1/3Mn1/3O2 (NFM) cathodes. This work opens an avenue for fabricating durable practical AFSBs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75401",
+        "doi_url": "https://doi.org/10.1002/adma.75401",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910634/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates cathode depolarization's role in enhancing sodium deposition uniformity in anode-free sodium batteries (AFSBs). By establishing cathode-specific charging protocols that dynamically regulate current based on state-of-charge-dependent DC resistance, the research achieves record cyclability (1370 cycles at 2 C) and high energy density (180 Wh kg⁻¹) while demonstrating universal applicability across multiple cathode chemistries.\",\n  \"key_findings\": [\n    \"Cathode-specific charging protocols dynamically adjust current based on state-of-charge-dependent DC resistance to depolarize cathodes\",\n    \"AFSBs achieve 1370 cycles at 2 C and 180 Wh kg⁻¹ energy density with stable cycling\",\n    \"The depolarization strategy works across diverse cathode chemistries including NFPP, NVP, and NFM\"\n  ],\n  \"study_type\": \"Experimental\",\n  \"scientific_significance\": \"This work establishes cathode depolarization as a critical mechanism for improving sodium deposition uniformity in anode-free sodium batteries, enabling longer cycle life and higher energy density without anodes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates cathode depolarization's role in enhancing sodium deposition uniformity in anode-free sodium batteries (AFSBs). By establishing cathode-specific charging protocols that dynamically regulate current based on state-of-charge-dependent DC resistance, the research achieves record cyclability (1370 cycles at 2 C) and high energy density (180 Wh kg⁻¹) while demonstrating universal applicability across multiple cathode chemistries.",
+          "key_findings": [
+            "Cathode-specific charging protocols dynamically adjust current based on state-of-charge-dependent DC resistance to depolarize cathodes",
+            "AFSBs achieve 1370 cycles at 2 C and 180 Wh kg⁻¹ energy density with stable cycling",
+            "The depolarization strategy works across diverse cathode chemistries including NFPP, NVP, and NFM"
+          ],
+          "study_type": "Experimental",
+          "scientific_significance": "This work establishes cathode depolarization as a critical mechanism for improving sodium deposition uniformity in anode-free sodium batteries, enabling longer cycle life and higher energy density without anodes."
+        },
+        "elapsed_seconds": 53.9691,
+        "input_tokens": 873,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 1117,
+        "model_eval_seconds": 50.4376,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    }
+  ]
+}
