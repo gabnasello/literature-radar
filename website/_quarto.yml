@@ -7,8 +7,13 @@ website:
   title: "Literature Radar"
   site-url: "https://gabnasello.github.io/literature-radar/"
   description: "A date-based archive of PubMed updates and AI-generated paper summaries from selected journals."
+  favicon: images/icon.svg
   navbar:
+    logo: images/logo.svg
+    logo-alt: "Literature Radar"
     right:
+      - text: Install
+        href: "#install-app"
       - icon: github
         href: https://github.com/gabnasello/literature-radar
         aria-label: GitHub repository
@@ -17,8 +22,17 @@ format:
   html:
     theme: flatly
     css: styles.css
+    include-in-header: pwa-head.html
+    include-after-body: pwa-install.html
     toc: false
     smooth-scroll: true
+
+resources:
+  - manifest.webmanifest
+  - service-worker.js
+  - pwa.js
+  - images/logo.svg
+  - images/icon.svg
 
 execute:
   echo: false

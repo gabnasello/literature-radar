@@ -1,0 +1,26 @@
+{
+  "id": "/literature-radar/",
+  "name": "Literature Radar",
+  "short_name": "Literature Radar",
+  "description": "A focused radar for new papers from selected scientific journals.",
+  "start_url": "/literature-radar/",
+  "scope": "/literature-radar/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f8fafc",
+  "theme_color": "#102a43",
+  "icons": [
+    {
+      "src": "/literature-radar/images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/literature-radar/images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
