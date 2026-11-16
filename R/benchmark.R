@@ -136,7 +136,7 @@ safe_ollama_call <- function(prompt, config, max_attempts = 2L) {
         "QUALITY-CONTROL RETRY:",
         "Your previous response did not pass validation for these reasons:",
         paste0("- ", validation$errors, collapse = "\n"),
-        "Return a corrected JSON object using exactly the four requested fields.",
+        "Return a corrected JSON object using exactly the three requested fields.",
         "The summary must contain 45–65 words. Proofread every field for spelling errors, malformed words, fragments, duplicated phrases, and punctuation mistakes.",
         "Do not add a relevance assessment, limitations, caveats, or any other fields.",
         sep = "\n"
@@ -214,7 +214,6 @@ write_benchmark_markdown <- function(results, run_id, prompt_version, output_pat
       }
 
       fields <- list(
-        "Study type" = "study_type",
         "Scientific significance" = "scientific_significance"
       )
       for (heading in names(fields)) {
