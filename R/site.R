@@ -464,9 +464,9 @@ site_render_homepage_journal_list <- function(journals) {
     summary_at <- site_text(journal$latest_summary_at)
     summary_date <- if (nzchar(summary_at)) site_format_date(substr(summary_at, 1, 10)) else "not yet available"
     sprintf(paste0(
-      '<li class="journal-card"><a class="journal-card-link" href="journals/%s.html">',
+      '<li><a class="journal-card-link" href="journals/%s.html">',
       '%s<span class="journal-card-copy"><strong>%s</strong>',
-      '<span>Updated: %s</span><span>Latest summary: %s</span></span>',
+      '<span>Last update %s</span><span>Latest summary %s</span></span>',
       '<span class="journal-card-arrow" aria-hidden="true">›</span></a></li>'
     ), site_html_escape(site_slug(journal$id)), site_journal_mark(journal),
     site_html_escape(journal$name), site_html_escape(update_date), site_html_escape(summary_date))
