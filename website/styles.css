@@ -18,3 +18,20 @@ h1,h2,h3,h4,.navbar{font-family:"Manrope",sans-serif}.navbar{background:rgba(255
 .pwa-install{position:fixed;right:1rem;bottom:1rem;z-index:1030}.pwa-install button{border-radius:999px;box-shadow:0 3px 14px rgba(16,42,67,.2)}.pwa-help{width:min(92vw,26rem);border:1px solid var(--radar-line);border-radius:14px;padding:1.4rem;color:var(--radar-ink);box-shadow:0 12px 40px rgba(16,42,67,.2)}.pwa-help::backdrop{background:rgba(16,42,67,.42)}.pwa-help h3{font-size:1.1rem;margin:0 0 .65rem}.pwa-help p{line-height:1.55;margin:0 0 1rem}@media(display-mode:standalone){.pwa-install{display:none}}
 @media(max-width:900px){.home-layout{grid-template-columns:1fr}.install-panel{position:static}.install-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){main.content{padding-left:.9rem;padding-right:.9rem}.home-hero{gap:.9rem;padding:1.2rem;border-radius:18px}.hero-logo{width:64px}.hero-copy h1{font-size:1.8rem}.hero-copy p{font-size:.88rem}.journal-list{grid-template-columns:1fr;gap:.5rem}.journal-card-link{min-height:76px;padding:.65rem .75rem}.journal-mark{width:46px;height:46px;flex-basis:46px}.install-options{grid-template-columns:1fr}.section-heading{align-items:start;flex-direction:column}}
+
+/* Hero and mobile composition tuned to the approved Literature Radar mockup */
+.home-hero{min-height:190px;padding:1.6rem clamp(1.3rem,4vw,3rem);gap:1.6rem}
+.hero-logo{width:clamp(112px,15vw,168px);height:auto;object-fit:contain}
+.hero-copy h1{font-size:clamp(2rem,4.4vw,3.6rem);white-space:nowrap}
+.hero-copy p{font-size:clamp(1rem,2vw,1.3rem);max-width:42rem}
+.home-layout{grid-template-columns:minmax(0,1fr) 275px}
+.journal-section .journal-list{margin-top:.25rem}
+.navbar-brand img{max-height:48px;width:auto}
+@media(max-width:900px){.home-layout{grid-template-columns:1fr}.install-panel{position:static}}
+@media(max-width:600px){
+ .home-hero{min-height:0;flex-direction:column;justify-content:center;text-align:center;gap:.7rem;padding:1.5rem 1rem;margin:.2rem 0 1.1rem}
+ .hero-logo{width:116px;height:116px}
+ .hero-copy h1{font-size:2rem;white-space:normal;line-height:1.1}
+ .hero-copy p{font-size:1rem;line-height:1.45;margin-top:.5rem}
+ .journal-section .journal-list{margin-top:.1rem}
+}
