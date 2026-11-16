@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261116T164532Z",
+  "generated_at_utc": "2026-11-16 16:58:49 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 407,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, while minimizing thickness expansion to 13.1% after 50 cycles. The approach demonstrates scalable production for practical battery applications.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency\",\n    \"The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production for 2 Ah NCM811 pouch cells\"\n  ],\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing critical mechanical and electrochemical instability challenges in high-energy lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, while minimizing thickness expansion to 13.1% after 50 cycles. The approach demonstrates scalable production for practical battery applications.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency",
+            "The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production for 2 Ah NCM811 pouch cells"
+          ],
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing critical mechanical and electrochemical instability challenges in high-energy lithium-ion batteries."
+        },
+        "elapsed_seconds": 25.4839,
+        "input_tokens": 869,
+        "output_tokens": 298,
+        "thoughts_tokens": null,
+        "total_tokens": 1167,
+        "model_eval_seconds": 23.7335,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 mark distinct repression mechanisms. This resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.\",\n  \"key_findings\": [\n    \"The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling\",\n    \"Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression\"\n  ],\n  \"scientific_significance\": \"This multimodal epigenomic atlas provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 mark distinct repression mechanisms. This resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.",
+          "key_findings": [
+            "The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling",
+            "Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression"
+          ],
+          "scientific_significance": "This multimodal epigenomic atlas provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features."
+        },
+        "elapsed_seconds": 23.5452,
+        "input_tokens": 752,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1027,
+        "model_eval_seconds": 21.8259,
+        "error": "summary must contain 45–65 words; received 85.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907508",
+        "title": "Persistent neuronal stress signalling underlies Angelman syndrome phenotypes.",
+        "abstract": "NA: Angelman syndrome is a severe neurodevelopmental disorder caused by the loss of UBE3A, a gene that encodes an E3 ubiquitin ligase1,2. The mechanisms that underlie Angelman syndrome are not well understood, and in particular, the link between UBE3A substrates and disease phenotypes remains uncertain3. Here, using gain- and loss-of-function mutations in UBE3A4,5 along with unbiased proteomics, we show that asparagine synthetase (ASNS) is a target of UBE3A. We find that ASNS protein abundance is increased in the brains of Ube3a-null mice and in human neurons6. Genetic correction of ASNS overabundance rescues microcephaly and many behavioural deficits. Detailed molecular analyses show that ASNS overabundance activates stress signalling and causes a global reduction in neuronal protein synthesis. Our results suggest that loss of UBE3A traps neurons in a state of persistent stress and stunts neuronal growth during developmentally sensitive periods. Moreover, our results indicate that targeting ASNS and the stress response could hold therapeutic potential in Angelman syndrome.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11165-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11165-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907508/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the mechanisms of Angelman syndrome, caused by UBE3A loss. Using gain- and loss-of-function mutations and proteomics, it identifies asparagine synthetase (ASNS) as a UBE3A substrate. ASNS overabundance in Ube3a-null mice and human neurons activates stress signaling, reduces neuronal protein synthesis, and rescues microcephaly and behavioral deficits when corrected genetically. The findings suggest persistent neuronal stress signaling underlies Angelman syndrome phenotypes.\",\n  \"key_findings\": [\n    \"ASNS is a UBE3A substrate with increased abundance in Ube3a-null mice and human neurons\",\n    \"ASNS overabundance activates stress signaling and reduces neuronal protein synthesis\",\n    \"Genetic correction of ASNS overabundance rescues microcephaly and behavioral deficits\"\n  ],\n  \"scientific_significance\": \"The study identifies a specific stress signaling pathway activated by UBE3A loss that contributes to Angelman syndrome pathophysiology, providing a potential therapeutic target.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the mechanisms of Angelman syndrome, caused by UBE3A loss. Using gain- and loss-of-function mutations and proteomics, it identifies asparagine synthetase (ASNS) as a UBE3A substrate. ASNS overabundance in Ube3a-null mice and human neurons activates stress signaling, reduces neuronal protein synthesis, and rescues microcephaly and behavioral deficits when corrected genetically. The findings suggest persistent neuronal stress signaling underlies Angelman syndrome phenotypes.",
+          "key_findings": [
+            "ASNS is a UBE3A substrate with increased abundance in Ube3a-null mice and human neurons",
+            "ASNS overabundance activates stress signaling and reduces neuronal protein synthesis",
+            "Genetic correction of ASNS overabundance rescues microcephaly and behavioral deficits"
+          ],
+          "scientific_significance": "The study identifies a specific stress signaling pathway activated by UBE3A loss that contributes to Angelman syndrome pathophysiology, providing a potential therapeutic target."
+        },
+        "elapsed_seconds": 20.527,
+        "input_tokens": 665,
+        "output_tokens": 218,
+        "thoughts_tokens": null,
+        "total_tokens": 883,
+        "model_eval_seconds": 16.4129,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s\",\n    \"Prkar1a deletion reduces ILC3 numbers and increases enteric infection susceptibility in mice\",\n    \"IL-23 overproduction decreases PRKAR1A, increasing PKA signaling and gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s",
+            "Prkar1a deletion reduces ILC3 numbers and increases enteric infection susceptibility in mice",
+            "IL-23 overproduction decreases PRKAR1A, increasing PKA signaling and gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation."
+        },
+        "elapsed_seconds": 23.6529,
+        "input_tokens": 800,
+        "output_tokens": 279,
+        "thoughts_tokens": null,
+        "total_tokens": 1079,
+        "model_eval_seconds": 21.8817,
+        "error": "summary must contain 45–65 words; received 81.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912150",
+        "title": "The instigator.",
+        "abstract": "NA: A single FBI agent spurred NIH's campaign against foreign intervention on U.S. campuses. Now, he's studying the extent of the problem.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen4279",
+        "doi_url": "https://doi.org/10.1126/science.aen4279",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912150/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the scale of foreign intervention on U.S. campuses following an FBI agent's initiative to combat such activities. The research assesses the problem's scope through the agent's ongoing analysis. Findings indicate significant foreign involvement, though the exact extent remains unclear due to limited data.\",\n  \"key_findings\": [\n    \"The FBI agent initiated NIH's campaign against foreign intervention on U.S. campuses\",\n    \"The agent's analysis reveals substantial foreign activity on campus\",\n    \"Exact problem scale remains uncertain due to insufficient data\"\n  ],\n  \"scientific_significance\": \"The study provides insight into the intersection of domestic security and international influence in educational settings, highlighting gaps in understanding foreign campus engagement.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the scale of foreign intervention on U.S. campuses following an FBI agent's initiative to combat such activities. The research assesses the problem's scope through the agent's ongoing analysis. Findings indicate significant foreign involvement, though the exact extent remains unclear due to limited data.",
+          "key_findings": [
+            "The FBI agent initiated NIH's campaign against foreign intervention on U.S. campuses",
+            "The agent's analysis reveals substantial foreign activity on campus",
+            "Exact problem scale remains uncertain due to insufficient data"
+          ],
+          "scientific_significance": "The study provides insight into the intersection of domestic security and international influence in educational settings, highlighting gaps in understanding foreign campus engagement."
+        },
+        "elapsed_seconds": 11.7115,
+        "input_tokens": 452,
+        "output_tokens": 149,
+        "thoughts_tokens": null,
+        "total_tokens": 601,
+        "model_eval_seconds": 10.6123,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record efficiencies of 24.84% in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record efficiencies of 24.84% in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells."
+        },
+        "elapsed_seconds": 23.9813,
+        "input_tokens": 886,
+        "output_tokens": 285,
+        "thoughts_tokens": null,
+        "total_tokens": 1171,
+        "model_eval_seconds": 22.1938,
+        "error": "summary must contain 45–65 words; received 91.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907509",
+        "title": "A single archaeon couples long-chain fatty acid oxidation to methanogenesis.",
+        "abstract": "NA: Anaerobic degradation of complex organic compounds to methane and carbon dioxide is common in the deep subsurface biosphere and has long been considered to require syntrophic cooperation, with methanogens confined to the terminal use of simple C1 and C2 substrates. Thermodynamic considerations, multi-omics analyses and microcosm experiments suggest that archaeal lineages are capable of methanogenic degradation of complex substrates1-6. However, experimental validation in pure culture was lacking. Here we report the isolation of a thermophilic archaeon, Methanoglobus dolicholipophagus AA-75, affiliated with Archaeoglobi, from a Chinese petroleum reservoir. Strain AA-75 not only converts methanol into methane, carbon dioxide and acetate, but also uses saturated fatty acids varying from C7:0 to C18:0 and unsaturated fatty acids including C16:1, C18:1 and C18:2 to produce methane. We term the latter lipotrophic methanogenesis, which integrates β-oxidation of fatty acids with the Wood-Ljungdahl pathway and the canonical methyl-tetrahydromethanopterin:coenzyme M methyltransferase and methyl-coenzyme M reductase complexes, together with an intracellular electron transfer system. A formaldehyde-methanol branch probably functions as an auxiliary route for C1 metabolism during methanogenesis. Methane produced from stearate is moderately 13C-enriched (δ13C-CH4 = -40.0‰ to -36.3‰), distinct from the strong 13C depletion characteristic of canonical methanogenic pathways. These findings demonstrate that methanogens can function as primary degraders of complex organic matter, challenging the classical syntrophic paradigm and calling for refinement of current models of carbon cycling in the deep subsurface biosphere.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11207-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11207-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907509/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study isolates a thermophilic archaeon, Methanoglobus dolicholipophagus AA-75, capable of lipotrophic methanogenesis. It directly oxidizes long-chain fatty acids (C7:0–C18:0) and unsaturated fatty acids to methane, integrating β-oxidation with methanogenesis pathways. The archaeon produces 13C-enriched methane, challenging the syntrophic cooperation model and indicating methanogens can independently degrade complex organic substrates in deep subsurface environments.\",\n  \"key_findings\": [\n    \"The archaeon oxidizes saturated fatty acids from C7:0 to C18:0 and unsaturated fatty acids like C16:1, C18:1, and C18:2 to produce methane.\",\n    \"Lipotrophic methanogenesis integrates β-oxidation with the Wood-Ljungdahl pathway and methyl-tetrahydromethanopterin:coenzyme M methyltransferase complexes.\",\n    \"Methane from stearate shows moderate 13C-enrichment (δ13C-CH4 = -40.0‰ to -36.3‰), distinct from typical methanogenic pathways.\"\n  ],\n  \"scientific_significance\": \"This work demonstrates methanogens can independently degrade complex organic matter, challenging the classical syntrophic paradigm and refining models of carbon cycling in deep subsurface biospheres.\"\n}",
+        "parsed": {
+          "summary": "This study isolates a thermophilic archaeon, Methanoglobus dolicholipophagus AA-75, capable of lipotrophic methanogenesis. It directly oxidizes long-chain fatty acids (C7:0–C18:0) and unsaturated fatty acids to methane, integrating β-oxidation with methanogenesis pathways. The archaeon produces 13C-enriched methane, challenging the syntrophic cooperation model and indicating methanogens can independently degrade complex organic substrates in deep subsurface environments.",
+          "key_findings": [
+            "The archaeon oxidizes saturated fatty acids from C7:0 to C18:0 and unsaturated fatty acids like C16:1, C18:1, and C18:2 to produce methane.",
+            "Lipotrophic methanogenesis integrates β-oxidation with the Wood-Ljungdahl pathway and methyl-tetrahydromethanopterin:coenzyme M methyltransferase complexes.",
+            "Methane from stearate shows moderate 13C-enrichment (δ13C-CH4 = -40.0‰ to -36.3‰), distinct from typical methanogenic pathways."
+          ],
+          "scientific_significance": "This work demonstrates methanogens can independently degrade complex organic matter, challenging the classical syntrophic paradigm and refining models of carbon cycling in deep subsurface biospheres."
+        },
+        "elapsed_seconds": 25.5352,
+        "input_tokens": 926,
+        "output_tokens": 309,
+        "thoughts_tokens": null,
+        "total_tokens": 1235,
+        "model_eval_seconds": 23.7797,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912152",
+        "title": "Electronic bound states in the continuum in a two-dimensional metal.",
+        "abstract": "NA: Bound states in the continuum (BICs) are quantum states that remain localized despite lying within a continuum of extended, delocalized states. Whereas optical BICs have been realized in photonic systems, achieving electronic bound states embedded in a metallic background remains an ongoing challenge. In this study, we used scanning tunneling microscopy to identify two defect-induced electronic states that remain localized within the metallic continuum of Pd5AlI2, a two-dimensional van der Waals metal. Our calculations suggest that electron-hopping interference on the decorated checkerboard lattice of Pd5AlI2 gives rise to a (quasi) flat band built from spatially localized eigenstates that are orthogonal to the dispersive continuum. Atomic defects within this frustrated lattice shift the associated flat-band localized states into the metallic continuum, forming robust, symmetry-protected BICs.",
+        "publication_types": [],
+        "doi": "10.1126/science.adt9825",
+        "doi_url": "https://doi.org/10.1126/science.adt9825",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912152/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates electronic bound states in the continuum within a two-dimensional metal using scanning tunneling microscopy. Researchers identified defect-induced localized states in Pd5AlI2, a van der Waals metal, which remain stable within the metallic continuum. The findings suggest electron-hopping interference creates quasi-flat bands, with atomic defects shifting these states into the metallic continuum to form robust, symmetry-protected bound states.\",\n  \"key_findings\": [\n    \"Defect-induced electronic states remain localized within the metallic continuum of Pd5:AlI2\",\n    \"Electron-hopping interference generates quasi-flat bands orthogonal to the dispersive continuum\",\n    \"Atomic defects shift localized states into the metallic continuum, forming symmetry-protected bound states\"\n  ],\n  \"scientific_significance\": \"This work demonstrates the realization of electronic bound states in the continuum within a two-dimensional metal, providing a pathway to engineer robust quantum states in metallic systems through defect engineering.\"\n}",
+        "parsed": {
+          "summary": "This study investigates electronic bound states in the continuum within a two-dimensional metal using scanning tunneling microscopy. Researchers identified defect-induced localized states in Pd5AlI2, a van der Waals metal, which remain stable within the metallic continuum. The findings suggest electron-hopping interference creates quasi-flat bands, with atomic defects shifting these states into the metallic continuum to form robust, symmetry-protected bound states.",
+          "key_findings": [
+            "Defect-induced electronic states remain localized within the metallic continuum of Pd5:AlI2",
+            "Electron-hopping interference generates quasi-flat bands orthogonal to the dispersive continuum",
+            "Atomic defects shift localized states into the metallic continuum, forming symmetry-protected bound states"
+          ],
+          "scientific_significance": "This work demonstrates the realization of electronic bound states in the continuum within a two-dimensional metal, providing a pathway to engineer robust quantum states in metallic systems through defect engineering."
+        },
+        "elapsed_seconds": 17.1211,
+        "input_tokens": 604,
+        "output_tokens": 197,
+        "thoughts_tokens": null,
+        "total_tokens": 801,
+        "model_eval_seconds": 14.0082,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920103",
+        "title": "Amorphization Unlocks Active Sites in Organic Small Molecules for Ah-Level Aqueous Ammonium-Ion Batteries.",
+        "abstract": "NA: The performance of most organic rechargeable batteries is strongly hindered by insufficient active site exposure arising from strong molecular stacking. To address this issue, an amorphization strategy is implemented to disrupt strong intermolecular π-π stacking in the small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT), thereby improving electrolyte accessibility and activating buried redox sites. Amorphous TDT exhibits a high specific surface area of 738 m2 g-1, delivers 242.8 mAh g-1 at 0.1 A g-1, and retains 87.1% of its initial capacity after 817 cycles over 2900 h. In situ ATR-FTIR and EQCM-D measurements reveal that NH4 + is preferentially adsorbed and stored through coordination and deprotonation, while interfacial NH4 + accumulation induces localized hydrolysis to generate H3O+ for subsequent proton storage. The TDT||CuFe-PBA full cell retains 100% of its initial capacity over 100 000 cycles at 5 A g-1. Moreover, the first Ah-level AAIB pouch cell delivers 1.037 Ah at an average voltage of 1.14 V, demonstrating the practical promise of amorphous organic small molecule for durable, high capacity AAIBs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75494",
+        "doi_url": "https://doi.org/10.1002/adma.75494",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920103/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates amorphization of organic small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT) to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking, the amorphous TDT achieved a high specific surface area (738 m² g⁻¹), delivered 242.8 mAh g⁻¹ at 0.1 A g⁻¹, and retained 87.1% capacity after 817 cycles. In situ measurements showed NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage. The TDT||CuFe-PBA full cell maintained 100% capacity over 100,000 cycles at 5 A g⁻¹, with an Ah-level pouch cell delivering 1.037 Ah at 1.14 V.\",\n  \"key_findings\": [\n    \"Amorphous TDT achieved 738 m² g⁻¹ surface area and 242.8 mAh g⁻¹ capacity at 0.1 A g⁻¹\",\n    \"Amorphous TDT retained 87.1% capacity after 817 cycles and 100% capacity over 100,000 cycles at 5 A g⁻¹\",\n    \"In situ studies revealed NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage mechanisms\"\n  ],\n  \"scientific_significance\": \"Amorphization of organic small molecules enables high-capacity, durable aqueous ammonium-ion batteries by activating buried redox sites and improving electrolyte accessibility.\"\n}",
+        "parsed": {
+          "summary": "This study investigates amorphization of organic small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT) to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking, the amorphous TDT achieved a high specific surface area (738 m² g⁻¹), delivered 242.8 mAh g⁻¹ at 0.1 A g⁻¹, and retained 87.1% capacity after 817 cycles. In situ measurements showed NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage. The TDT||CuFe-PBA full cell maintained 100% capacity over 100,000 cycles at 5 A g⁻¹, with an Ah-level pouch cell delivering 1.037 Ah at 1.14 V.",
+          "key_findings": [
+            "Amorphous TDT achieved 738 m² g⁻¹ surface area and 242.8 mAh g⁻¹ capacity at 0.1 A g⁻¹",
+            "Amorphous TDT retained 87.1% capacity after 817 cycles and 100% capacity over 100,000 cycles at 5 A g⁻¹",
+            "In situ studies revealed NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage mechanisms"
+          ],
+          "scientific_significance": "Amorphization of organic small molecules enables high-capacity, durable aqueous ammonium-ion batteries by activating buried redox sites and improving electrolyte accessibility."
+        },
+        "elapsed_seconds": 30.9137,
+        "input_tokens": 860,
+        "output_tokens": 380,
+        "thoughts_tokens": null,
+        "total_tokens": 1240,
+        "model_eval_seconds": 29.1924,
+        "error": "summary must contain 45–65 words; received 87.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907510",
+        "title": "Amazon carbon emissions driven by human actions amplified by droughts.",
+        "abstract": "NA: The Amazon carbon sink is weakening as deforestation1-5, rising tree mortality6-8 and climate change disrupt the climatic conditions that sustain a humid tropical forest9-11. Forest loss reduces precipitation, increases temperatures and lengthens the dry season, driving higher carbon emissions1-4,11,12. Climate stress is stronger in more deforested regions, rendering forests progressively more flammable1,9,13. Large-scale climate events, such as El Niño, further amplify regional climate impacts9,14-17. Here we present an analysis of 15 years of Amazonian carbon fluxes derived from atmospheric CO2 measurements. We determine a carbon balance of 0.32 ± 0.08 PgC yr-1, with fires acting as the dominant source (0.40 ± 0.07 PgC yr-1) and forest uptake becoming increasingly unable to offset emissions. Furthermore, we investigate key drivers of the carbon emissions of Amazonia and identify three distinct year groups. Group 1 (2011-2014, 2017 and 2018) represents the role of the Amazon in the global carbon balance (0.11 ± 0.08 PgC yr-1) during wetter years with low human activity, such as deforestation, biomass burning and degradation. Group 2 (2019-2022) represents Amazon carbon emissions (0.43 ± 0.13 PgC yr-1) from human activities (mainly deforestation and degradation) during years with low climatic stress. Group 3 (2010, 2015, 2016, 2023 and 2024) has the highest carbon emissions (0.49 ± 0.07 PgC yr-1) and comprises warm and dry years (high climate stress), such as El Niño and the warming of the Tropical North Atlantic Ocean, associated with biomass burning.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11168-1",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11168-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907510/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study analyzed 15 years of Amazonian carbon fluxes using atmospheric CO2 measurements to assess how human activities and droughts impact carbon emissions. It found that deforestation, biomass burning, and climate stressors like El Niño amplify carbon emissions, with forest uptake increasingly failing to offset emissions. The carbon balance shows a net emission of 0.32 ± 0.08 PgC yr-1, driven primarily by fires.\",\n  \"key_findings\": [\n    \"Amazon carbon emissions increased to 0.49 ± 0.07 PgC yr-1 during high climate stress years (e.g., El Niño) with significant fire activity\",\n    \"Human-driven deforestation and degradation contributed 0.43 ± 0.13 PgC yr-1 during low climate stress periods\",\n    \"Forest carbon uptake became progressively unable to offset emissions, resulting in a net carbon balance of 0.32 ± 0.08 PgC yr-1\"\n  ],\n  \"scientific_significance\": \"The research demonstrates that human-induced deforestation and climate stressors synergistically amplify Amazon carbon emissions, revealing critical thresholds for forest carbon sink collapse.\"\n}",
+        "parsed": {
+          "summary": "This study analyzed 15 years of Amazonian carbon fluxes using atmospheric CO2 measurements to assess how human activities and droughts impact carbon emissions. It found that deforestation, biomass burning, and climate stressors like El Niño amplify carbon emissions, with forest uptake increasingly failing to offset emissions. The carbon balance shows a net emission of 0.32 ± 0.08 PgC yr-1, driven primarily by fires.",
+          "key_findings": [
+            "Amazon carbon emissions increased to 0.49 ± 0.07 PgC yr-1 during high climate stress years (e.g., El Niño) with significant fire activity",
+            "Human-driven deforestation and degradation contributed 0.43 ± 0.13 PgC yr-1 during low climate stress periods",
+            "Forest carbon uptake became progressively unable to offset emissions, resulting in a net carbon balance of 0.32 ± 0.08 PgC yr-1"
+          ],
+          "scientific_significance": "The research demonstrates that human-induced deforestation and climate stressors synergistically amplify Amazon carbon emissions, revealing critical thresholds for forest carbon sink collapse."
+        },
+        "elapsed_seconds": 21.1758,
+        "input_tokens": 992,
+        "output_tokens": 250,
+        "thoughts_tokens": null,
+        "total_tokens": 1242,
+        "model_eval_seconds": 19.4415,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912153",
+        "title": "Eyes on the ball.",
+        "abstract": "NA: A \"robo ump\" that calls balls and strikes in Major League Baseball makes its World Series debut this week. It has to be near-perfect.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen4278",
+        "doi_url": "https://doi.org/10.1126/science.aen4278",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912153/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the performance of a robotic umpire system designed to call balls and strikes in Major League Baseball. The system's World Series debut highlights its potential for high-stakes applications. The research assesses the robot's precision and reliability in real-world game conditions, though specific metrics are not detailed in the abstract.\",\n  \"key_findings\": [\n    \"The robotic umpire system made its World Series debut\",\n    \"The system requires near-perfect accuracy for high-stakes applications\",\n    \"The study evaluates the robot's precision and reliability in real-game scenarios\"\n  ],\n  \"scientific_significance\": \"The research demonstrates the feasibility of deploying robotic systems for critical sports officiating tasks, advancing the integration of automation in high-precision human activities.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the performance of a robotic umpire system designed to call balls and strikes in Major League Baseball. The system's World Series debut highlights its potential for high-stakes applications. The research assesses the robot's precision and reliability in real-world game conditions, though specific metrics are not detailed in the abstract.",
+          "key_findings": [
+            "The robotic umpire system made its World Series debut",
+            "The system requires near-perfect accuracy for high-stakes applications",
+            "The study evaluates the robot's precision and reliability in real-game scenarios"
+          ],
+          "scientific_significance": "The research demonstrates the feasibility of deploying robotic systems for critical sports officiating tasks, advancing the integration of automation in high-precision human activities."
+        },
+        "elapsed_seconds": 12.1051,
+        "input_tokens": 456,
+        "output_tokens": 159,
+        "thoughts_tokens": null,
+        "total_tokens": 615,
+        "model_eval_seconds": 11.0128,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920105",
+        "title": "Grain-Boundary-Facilitated Palladium Hydride Formation Enables Humidity-Tolerant Catalytic Hydrogen Sensing.",
+        "abstract": "NA: Reliable hydrogen sensing under high absolute humidity remains a significant challenge owing to the competitive adsorption of water molecules on the sensing material surface. Here, we report a humidity-tolerant catalytic H2 sensor based on a grain-boundary-rich palladium nanostructure (PdGB) that operates without any external heating. The PdGB sensor functions reliably at 22°C-80°C and 0%-90% relative humidity, achieving a lower limit of detection (LLOD) of 100 ppm even at 80°C and 90% relative humidity (261 g m-3 absolute humidity, corresponding to a > 3000-fold higher molar concentration of water vapor relative to the LLOD of H2), while satisfying ISO 26142 requirements for gas sensing. A machine-learning regression model integrated into a sensor prototype enables robust, quantitative determination of H2 concentration across a wide range of temperature and humidity conditions. Mechanistic investigations combining in situ XRD, temperature-programmed desorption, molecular dynamics simulations, and density functional theory calculations reveal that the exceptional humidity tolerance originates from the Pd grain boundaries, which accelerate PdHx formation for weakening H2O adsorption and suppress humidity-induced interference. These findings reveal a previously unexplored synergistic mechanism and establish a general materials-design strategy for next-generation humidity-tolerant catalytic gas sensors.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75476",
+        "doi_url": "https://doi.org/10.1002/adma.75476",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920105/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a palladium nanostructure with grain boundaries (PdGB) for humidity-tolerant hydrogen sensing. The researchers developed a sensor operating without external heating that functions across 22°C-80°C and 0%-90% relative humidity. It detects hydrogen at 100 ppm even under high humidity conditions, meeting ISO 2.6142 standards. Mechanistic studies show grain boundaries accelerate palladium hydride formation to weaken water adsorption, enabling reliable operation in humid environments.\",\n  \"key_findings\": [\n    \"PdGB sensors operate without external heating across 22°C-80°C and 0%-90% relative humidity\",\n    \"Achieves 100 ppm hydrogen detection limit at 80°C and 90% humidity (261 g m-3 absolute humidity)\",\n    \"Grain boundaries facilitate palladium hydride formation to suppress water interference in hydrogen sensing\"\n  ],\n  \"scientific_significance\": \"This work identifies grain boundaries as a critical design feature for humidity-tolerant catalytic hydrogen sensors, providing a general strategy to overcome water interference in gas sensing applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a palladium nanostructure with grain boundaries (PdGB) for humidity-tolerant hydrogen sensing. The researchers developed a sensor operating without external heating that functions across 22°C-80°C and 0%-90% relative humidity. It detects hydrogen at 100 ppm even under high humidity conditions, meeting ISO 2.6142 standards. Mechanistic studies show grain boundaries accelerate palladium hydride formation to weaken water adsorption, enabling reliable operation in humid environments.",
+          "key_findings": [
+            "PdGB sensors operate without external heating across 22°C-80°C and 0%-90% relative humidity",
+            "Achieves 100 ppm hydrogen detection limit at 80°C and 90% humidity (261 g m-3 absolute humidity)",
+            "Grain boundaries facilitate palladium hydride formation to suppress water interference in hydrogen sensing"
+          ],
+          "scientific_significance": "This work identifies grain boundaries as a critical design feature for humidity-tolerant catalytic hydrogen sensors, providing a general strategy to overcome water interference in gas sensing applications."
+        },
+        "elapsed_seconds": 23.798,
+        "input_tokens": 738,
+        "output_tokens": 246,
+        "thoughts_tokens": null,
+        "total_tokens": 984,
+        "model_eval_seconds": 18.5226,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907511",
+        "title": "Additive manufacturing of ultralong and architected single crystals.",
+        "abstract": "NA: Single-crystal materials are indispensable for high-performance applications, yet their deployment remains constrained by conventional manufacturing techniques that depend on strict quasi-steady thermal conditions1. This requirement fundamentally conflicts with the intense cyclic thermal fluctuations inherent to additive manufacturing2, historically preventing the 3D printing of large or architected single crystals. Here we present a free-form additive manufacturing approach that resolves this contradiction by using delicately controlled alternating and pulsed heat inputs to govern and direct single-crystal growth. Using this method, we demonstrate the fabrication of metre-tall, centimetre-diameter single-crystal Ti-6Al-4V alongside, to our knowledge, the first single-crystal lattice structures containing complex zigzag ligaments, effectively eliminating theoretical size constraints for single-crystal components. The resulting bulk single-crystal Ti-6Al-4V exhibits an order-of-magnitude increase in creep resistance over standard grain-size scaling predictions, driven by the synergistic elimination of grain boundaries and an additive manufacturing-induced hierarchical α/β-architecture that regulates dislocation density, mobility and void evolution. Furthermore, we demonstrate the broad applicability of this technique by printing single crystals of hard-to-process refractory metals, including W, Mo, Nb and MoNb alloys. Our work introduces a large-scale method for single-crystal additive manufacturing, expanding the accessible materials library and enabling high-performance, complex geometries previously unattainable by classical methods.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11185-0",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11185-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907511/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of fabricating large-scale single-crystal components using additive manufacturing by overcoming thermal constraints through controlled alternating heat inputs. The approach enables metre-tall Ti-6Al-4V single crystals and complex lattice structures, achieving significantly enhanced creep resistance via grain boundary elimination and hierarchical α/β-architecture. The method also extends to refractory metals, broadening the scope of printable single-crystal materials.\",\n  \"key_findings\": [\n    \"Fabrication of metre-tall, centimetre-diameter Ti-6Al-4V single crystals\",\n    \"First single-crystal lattice structures with complex zigzag ligaments\",\n    \"Order-of-magnitude increase in creep resistance over grain-size predictions\"\n  ],\n  \"scientific_significance\": \"This work establishes a scalable additive manufacturing technique for single-crystal materials, overcoming historical thermal limitations to enable large-scale, complex geometries previously unattainable by conventional methods.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of fabricating large-scale single-crystal components using additive manufacturing by overcoming thermal constraints through controlled alternating heat inputs. The approach enables metre-tall Ti-6Al-4V single crystals and complex lattice structures, achieving significantly enhanced creep resistance via grain boundary elimination and hierarchical α/β-architecture. The method also extends to refractory metals, broadening the scope of printable single-crystal materials.",
+          "key_findings": [
+            "Fabrication of metre-tall, centimetre-diameter Ti-6Al-4V single crystals",
+            "First single-crystal lattice structures with complex zigzag ligaments",
+            "Order-of-magnitude increase in creep resistance over grain-size predictions"
+          ],
+          "scientific_significance": "This work establishes a scalable additive manufacturing technique for single-crystal materials, overcoming historical thermal limitations to enable large-scale, complex geometries previously unattainable by conventional methods."
+        },
+        "elapsed_seconds": 19.5236,
+        "input_tokens": 725,
+        "output_tokens": 197,
+        "thoughts_tokens": null,
+        "total_tokens": 922,
+        "model_eval_seconds": 14.569,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912154",
+        "title": "Dynamic functionality-enabled fast and selective transport in nanochannels.",
+        "abstract": "NA: Nanochannels capable of fast and selective mass transport are central to applications in energy, resources, biomedicine, and the environment. However, extreme nanoscale confinement, often coupled with rigid channel environments, imposes substantial frictional and adhesive barriers, causing sluggish transport and constrained selectivity. We identified nanochannel dynamics as a key to addressing these challenges by harnessing the intrinsic mobility (e.g., self-rotation) of confined functionalities to enhance molecular transport. Through a combination of experiments and simulations, we demonstrated that such dynamics reshape transport by promoting kinetic energy transfer and enabling more efficient molecular relays, thereby improving separation performance beyond current benchmarks. Our findings highlight the role of nanochannel dynamics in regulating mass transport under confinement and provide a framework for designing advanced nanochannel systems.",
+        "publication_types": [],
+        "doi": "10.1126/science.aed8319",
+        "doi_url": "https://doi.org/10.1126/science.aed8319",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912154/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how nanochannel dynamics enhance fast and selective molecular transport under extreme confinement. By leveraging intrinsic mobility like self-rotation, the research demonstrates improved kinetic energy transfer and molecular relays, surpassing current separation benchmarks. The findings emphasize dynamic functionality's role in overcoming frictional and adhesive barriers for efficient mass transport in nanoscale systems.\",\n  \"key_findings\": [\n    \"Nanochannel dynamics enable kinetic energy transfer to improve molecular transport efficiency\",\n    \"Self-rotation of confined functionalities enhances separation performance beyond existing benchmarks\",\n    \"Dynamic functionality overcomes frictional and adhesive barriers in nanoscale confinement\"\n  ],\n  \"scientific_significance\": \"The study establishes nanochannel dynamics as a fundamental mechanism for optimizing mass transport in confined nanoscale systems, advancing understanding of molecular relays and transport selectivity under extreme confinement.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how nanochannel dynamics enhance fast and selective molecular transport under extreme confinement. By leveraging intrinsic mobility like self-rotation, the research demonstrates improved kinetic energy transfer and molecular relays, surpassing current separation benchmarks. The findings emphasize dynamic functionality's role in overcoming frictional and adhesive barriers for efficient mass transport in nanoscale systems.",
+          "key_findings": [
+            "Nanochannel dynamics enable kinetic energy transfer to improve molecular transport efficiency",
+            "Self-rotation of confined functionalities enhances separation performance beyond existing benchmarks",
+            "Dynamic functionality overcomes frictional and adhesive barriers in nanoscale confinement"
+          ],
+          "scientific_significance": "The study establishes nanochannel dynamics as a fundamental mechanism for optimizing mass transport in confined nanoscale systems, advancing understanding of molecular relays and transport selectivity under extreme confinement."
+        },
+        "elapsed_seconds": 15.5447,
+        "input_tokens": 589,
+        "output_tokens": 178,
+        "thoughts_tokens": null,
+        "total_tokens": 767,
+        "model_eval_seconds": 12.73,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920197",
+        "title": "Machine-Learning-Potential-Driven Volcano Relationship in Grain Boundary Amorphicity and Ionic Transport of Antiperovskite Solid Electrolytes.",
+        "abstract": "NA: Ionic transport in solid-state electrolytes is governed by interfacial disorder and local chemical environments, yet their microscopic design principles remain challenging because large-scale interfacial kinetics are simulated using molecular dynamics (MD), where predictive design requires quantum-level accuracy. Here, we use an actively learned machine learning interatomic potential (MLIP) to bridge this scale-accuracy gap in halide-tunable antiperovskite solid electrolytes. By varying the local Cl-/Br- ratio and quantifying interfacial amorphicity and ion flux, we identify an MLIP-driven volcano relationship between structural disorder and ionic transport. Cl-enriched grain boundaries remain overly ordered, whereas Br- enrichment induces excessive disorder that disrupts migration. Intermediate halide compositions maximize ionic transport through moderately amorphous environments. Guided by this relationship, we design an anion-engineered grain boundary through selective halide tuning. These results establish controlled anion segregation as a strategy for reducing interfacial resistance and highlight MLIP-enhanced MD as a predictive framework for transport and disorder engineering in solid-state materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75492",
+        "doi_url": "https://doi.org/10.1002/adma.75492",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920197/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how grain boundary amorphicity influences ionic transport in antiperovskite solid electrolytes using machine learning interatomic potentials (MLIPs). By varying Cl-/Br- ratios and measuring interfacial disorder, the researchers identified a volcano-shaped relationship where intermediate halide compositions optimize ionic conductivity. Cl-enriched boundaries are too ordered, while Br-enriched ones are overly disordered, with optimal performance at moderate amorphicity levels. The findings demonstrate MLIP-enhanced molecular dynamics as a predictive tool for designing low-resistance grain boundaries in solid-state electrolytes.\",\n  \"key_findings\": [\n    \"Intermediate Cl-/Br- ratios maximize ionic transport by balancing structural disorder\",\n    \"Cl-enriched grain boundaries exhibit excessive order, limiting ion migration\",\n    \"Br-enriched grain boundaries show excessive disorder, disrupting ionic conduction\"\n  ],\n  \"scientific_significance\": \"This work establishes a predictive volcano relationship between grain boundary amorphicity and ionic transport in antiperovskite solid electrolytes, enabling targeted anion engineering for reduced interfacial resistance.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how grain boundary amorphicity influences ionic transport in antiperovskite solid electrolytes using machine learning interatomic potentials (MLIPs). By varying Cl-/Br- ratios and measuring interfacial disorder, the researchers identified a volcano-shaped relationship where intermediate halide compositions optimize ionic conductivity. Cl-enriched boundaries are too ordered, while Br-enriched ones are overly disordered, with optimal performance at moderate amorphicity levels. The findings demonstrate MLIP-enhanced molecular dynamics as a predictive tool for designing low-resistance grain boundaries in solid-state electrolytes.",
+          "key_findings": [
+            "Intermediate Cl-/Br- ratios maximize ionic transport by balancing structural disorder",
+            "Cl-enriched grain boundaries exhibit excessive order, limiting ion migration",
+            "Br-enriched grain boundaries show excessive disorder, disrupting ionic conduction"
+          ],
+          "scientific_significance": "This work establishes a predictive volcano relationship between grain boundary amorphicity and ionic transport in antiperovskite solid electrolytes, enabling targeted anion engineering for reduced interfacial resistance."
+        },
+        "elapsed_seconds": 19.176,
+        "input_tokens": 767,
+        "output_tokens": 234,
+        "thoughts_tokens": null,
+        "total_tokens": 1001,
+        "model_eval_seconds": 17.4878,
+        "error": "summary must contain 45–65 words; received 77.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907512",
+        "title": "The anatomy of a personal health agent.",
+        "abstract": "NA: Large language models are enabling a new generation of health agents, yet their ability to address the diverse needs of individuals in everyday health settings remains underexplored1,2. Here we developed a comprehensive personal health agent that reasons over multimodal data from consumer wellness devices and medical records to provide personalized health support. Through analysis of web search and health forum queries, together with user-centred research involving end users and health experts, we identified four key user journeys: general health knowledge, personal data interpretation, wellness advice, and symptom assessment. These journeys informed three specialist sub-agents: (1) a data science agent that analyses longitudinal wearable and medical data, incorporating population-level statistics to contextualize numerical insights; (2) a health domain expert agent that integrates personal and contextual data with health knowledge to generate personalized insights; and (3) a health coach agent that synthesizes insights, supports multi-turn interaction and goal setting, applies specified psychological strategies and tracks progress. We integrated these capabilities in the personal health agent, an open-source multi-agent framework for dynamic, personalized health interactions. We evaluated the sub-agents and full system across 11 benchmark tasks using automated and human evaluation, with more than 7,000 annotations and 1,350 h of effort from health experts and end users. This represents the most comprehensive evaluation of a personal health agent thus far and provides a concrete foundation for improving access to high-quality personalized health support more broadly.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11161-8",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11161-8",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907512/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a personal health agent using large language models to integrate multimodal health data from wearable devices and medical records. The agent addresses four user journeys—general health knowledge, data interpretation, wellness advice, and symptom assessment—through three specialized sub-agents: data analysis, health expertise, and coaching. Evaluation across 11 benchmarks with over 7,00:00 annotations demonstrated its capability for personalized health support.\",\n  \"key_findings\": [\n    \"The agent identifies four key user journeys for personalized health interactions\",\n    \"Three specialized sub-agents handle data analysis, health expertise, and coaching\",\n    \"Evaluation across 11 benchmarks with over 7,000 annotations confirmed the system's effectiveness\"\n  ],\n  \"scientific_significance\": \"This work establishes a comprehensive framework for personalized health agents that bridges consumer health data with clinical insights, advancing the field of AI-driven health support systems.\"\n}",
+        "parsed": {
+          "summary": "This study developed a personal health agent using large language models to integrate multimodal health data from wearable devices and medical records. The agent addresses four user journeys—general health knowledge, data interpretation, wellness advice, and symptom assessment—through three specialized sub-agents: data analysis, health expertise, and coaching. Evaluation across 11 benchmarks with over 7,00:00 annotations demonstrated its capability for personalized health support.",
+          "key_findings": [
+            "The agent identifies four key user journeys for personalized health interactions",
+            "Three specialized sub-agents handle data analysis, health expertise, and coaching",
+            "Evaluation across 11 benchmarks with over 7,000 annotations confirmed the system's effectiveness"
+          ],
+          "scientific_significance": "This work establishes a comprehensive framework for personalized health agents that bridges consumer health data with clinical insights, advancing the field of AI-driven health support systems."
+        },
+        "elapsed_seconds": 19.5576,
+        "input_tokens": 722,
+        "output_tokens": 193,
+        "thoughts_tokens": null,
+        "total_tokens": 915,
+        "model_eval_seconds": 14.71,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912155",
+        "title": "Ultrarapid decision-making in an avian brain.",
+        "abstract": "NA: Perceptual decision-making is well studied in mammals, but its operation in other vertebrates remains unclear. We show that carrion crows (Corvus corone) make deliberate decisions in a classic visual motion discrimination task with unprecedented speed, reporting choices in approximately 235 milliseconds on average, which is roughly twice as fast as has been observed in monkeys or humans and without sacrificing accuracy. Recordings from the pallial endbrain reveal that direction-selective neurons encode the upcoming choice as early as about 70 milliseconds after stimulus onset and about 170 milliseconds before the response, with ramping activity scaling with sensory evidence and converging at response onset. These findings highlight the extraordinary efficiency of avian decision-making circuitry, possibly shaped by evolutionary pressures for rapid visuomotor control.",
+        "publication_types": [],
+        "doi": "10.1126/science.aed6459",
+        "doi_url": "https://doi.org/10.1126/science.aed6459",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912155/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates ultrarapid decision-making in carrion crows using visual motion discrimination tasks. Researchers recorded neural activity in the pallial endbrain to assess decision processes. Crows achieved choices in 235 milliseconds on average, twice as fast as primates without accuracy loss. Direction-selective neurons encoded decisions as early as 70 milliseconds post-stimulus onset, with activity ramping and converging before response.\",\n  \"key_findings\": [\n    \"Carrion c: 235 milliseconds for visual motion discrimination decisions\",\n    \"Direction-selective neurons encode choices 70 milliseconds after stimulus onset\",\n    \"Neural activity ramps with sensory evidence and converges at response onset\"\n  ],\n  \"scientific_significance\": \"This work demonstrates avian neural circuits can support ultrafast decision-making with high accuracy, revealing evolutionary adaptations for rapid visuomotor responses in birds.\"\n}",
+        "parsed": {
+          "summary": "This study investigates ultrarapid decision-making in carrion crows using visual motion discrimination tasks. Researchers recorded neural activity in the pallial endbrain to assess decision processes. Crows achieved choices in 235 milliseconds on average, twice as fast as primates without accuracy loss. Direction-selective neurons encoded decisions as early as 70 milliseconds post-stimulus onset, with activity ramping and converging before response.",
+          "key_findings": [
+            "Carrion c: 235 milliseconds for visual motion discrimination decisions",
+            "Direction-selective neurons encode choices 70 milliseconds after stimulus onset",
+            "Neural activity ramps with sensory evidence and converges at response onset"
+          ],
+          "scientific_significance": "This work demonstrates avian neural circuits can support ultrafast decision-making with high accuracy, revealing evolutionary adaptations for rapid visuomotor responses in birds."
+        },
+        "elapsed_seconds": 16.5315,
+        "input_tokens": 593,
+        "output_tokens": 190,
+        "thoughts_tokens": null,
+        "total_tokens": 783,
+        "model_eval_seconds": 13.5313,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920199",
+        "title": "Beyond State of Charge: Electrochemical States and Trajectory Design in Organic Mixed Conductors.",
+        "abstract": "NA: Organic mixed ionic-electronic conductors (OMIECs) couple electronic redox, ion transport, solvation, structural reorganization, and mechanics, enabling diverse electrochemical functions but making their internal states poorly represented by scalar descriptors such as voltage, charge, conductivity, or nominal doping level. This Review establishes a state-centered framework that treats electrochemical operation as the writing, observation, reconstruction, and design of multidimensional, history-dependent state trajectories. A problem-specific minimal sufficient state basis is introduced to distinguish essential from redundant coordinates, while waveform history and spatial heterogeneity define when lumped descriptions remain valid. Optical, electrical, ion-specific, gravimetric, structural, mechanical, and temporal readouts are analyzed as selective projections whose complementarity determines state observability and hidden-state reconstruction. Within this framework, congruence, kinetic ordering, decoupling, observational degeneracy, and mapping drift become experimentally testable relationships rather than isolated phenomena. Electrochromics, organic electrochemical transistors (OECTs), electrochemical memories, actuators, reconfigurable systems, and energy-storage and conversion devices are then recast as technologies that select different trajectories through a shared electrochemical-state landscape. The framework ultimately connects molecular structure, electrolyte, morphology, device architecture, and driving protocol to the inverse design of observable, controllable, reversible, and durable electrochemical trajectories.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75483",
+        "doi_url": "https://doi.org/10.1002/adma.75483",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920199/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This review establishes a state-centered framework for organic mixed ionic-electronic conductors (OMIECs), moving beyond scalar descriptors to model electrochemical operation as multidimensional, history-dependent state trajectories. It introduces a minimal sufficient state basis to distinguish essential coordinates, while waveform history and spatial heterogeneity determine when lumped descriptions are valid. The framework enables experimental testing of relationships like congruence and kinetic ordering, and recasts technologies such as electrochromics and electrochemical transistors through a shared electrochemical-state landscape.\",\n  \"key_findings\": [\n    \"A minimal sufficient state basis distinguishes essential from redundant coordinates in OMIECs\",\n    \"Waveform history and spatial heterogeneity define validity of lumped state descriptions\",\n    \"The framework enables experimental testing of congruence, kinetic ordering, and decoupling\"\n  ],\n  \"scientific_significance\": \"This framework provides a unified approach to model and design electrochemical trajectories in OMIECs, bridging molecular structure, device architecture, and operational protocols for reversible, controllable electrochemical functions.\"\n}",
+        "parsed": {
+          "summary": "This review establishes a state-centered framework for organic mixed ionic-electronic conductors (OMIECs), moving beyond scalar descriptors to model electrochemical operation as multidimensional, history-dependent state trajectories. It introduces a minimal sufficient state basis to distinguish essential coordinates, while waveform history and spatial heterogeneity determine when lumped descriptions are valid. The framework enables experimental testing of relationships like congruence and kinetic ordering, and recasts technologies such as electrochromics and electrochemical transistors through a shared electrochemical-state landscape.",
+          "key_findings": [
+            "A minimal sufficient state basis distinguishes essential from redundant coordinates in OMIECs",
+            "Waveform history and spatial heterogeneity define validity of lumped state descriptions",
+            "The framework enables experimental testing of congruence, kinetic ordering, and decoupling"
+          ],
+          "scientific_significance": "This framework provides a unified approach to model and design electrochemical trajectories in OMIECs, bridging molecular structure, device architecture, and operational protocols for reversible, controllable electrochemical functions."
+        },
+        "elapsed_seconds": 18.6345,
+        "input_tokens": 813,
+        "output_tokens": 221,
+        "thoughts_tokens": null,
+        "total_tokens": 1034,
+        "model_eval_seconds": 16.8972,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907513",
+        "title": "Octupole-driven spin torque switching of antiferromagnetic tunnel junctions.",
+        "abstract": "NA: Magnetic tunnel junctions based on ferromagnets are canonical devices in spintronics, with wide-ranging applications in data storage, computing and sensing. They simultaneously exhibit mechanisms for electrical detection and control of magnetic order through the tunnelling magnetoresistance (TMR)1-5 and spin-transfer torque6-9 effects, respectively. It was long assumed that neither of these effects could be sizeable in all-antiferromagnetic tunnel junctions (AATJs), considering that they have no net magnetization. However, it was recently shown that AATJs based on chiral antiferromagnets do exhibit TMR due to their non-relativistic momentum-dependent spin polarization and cluster magnetic octupole moment, which are manifestations of their spin-split band structure10-13. However, the reciprocal effect, that is, the antiferromagnetic counterpart of spin-transfer torque, has been assumed non-existent due to the total electric current being spin-neutral. Here we report nanoscale AATJs that display this reciprocal effect, which we term octupole-driven spin-transfer torque (OTT). We demonstrate current-induced OTT switching of PtMn3|MgO|PtMn3 AATJs, with a TMR value of 363% at room temperature and switching current densities of the order of 10 MA cm-2. Our theoretical modelling explains the origin of OTT in terms of the imbalance between intra- and inter-sublattice spin currents across the AATJ, and, equivalently, in terms of the non-zero net cluster octupole polarization of each PtMn3 layer. This work establishes a new materials platform for antiferromagnetic spintronics and provides a pathway towards deeply scaled magnetic memory and room-temperature terahertz technologies.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11172-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11172-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907513/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether antiferromagnetic tunnel junctions (AATJs) can exhibit spin-transfer torque effects. Using PtMn3|MgO|PtM. AATJs demonstrated octupole-driven spin-transfer torque (OTT) switching with 363% TMR at room temperature and switching currents near 10 MA cm-2. Theoretical modeling links OTT to spin current imbalances and cluster octupole polarization.\",\n  \"key_findings\": [\n    \"AATJs exhibit octupole-driven spin-transfer torque (OTT) switching\",\n    \"363% tunnelling magnetoresistance at room temperature\",\n    \"Switching currents of ~10 MA cm-2\"\n  ],\n  \"scientific_significance\": \"This work establishes antiferromagnetic tunnel junctions as a viable platform for spintronic applications, enabling room-temperature terahertz technologies and deeply scaled magnetic memory.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether antiferromagnetic tunnel junctions (AATJs) can exhibit spin-transfer torque effects. Using PtMn3|MgO|PtM. AATJs demonstrated octupole-driven spin-transfer torque (OTT) switching with 363% TMR at room temperature and switching currents near 10 MA cm-2. Theoretical modeling links OTT to spin current imbalances and cluster octupole polarization.",
+          "key_findings": [
+            "AATJs exhibit octupole-driven spin-transfer torque (OTT) switching",
+            "363% tunnelling magnetoresistance at room temperature",
+            "Switching currents of ~10 MA cm-2"
+          ],
+          "scientific_significance": "This work establishes antiferromagnetic tunnel junctions as a viable platform for spintronic applications, enabling room-temperature terahertz technologies and deeply scaled magnetic memory."
+        },
+        "elapsed_seconds": 21.1569,
+        "input_tokens": 807,
+        "output_tokens": 197,
+        "thoughts_tokens": null,
+        "total_tokens": 1004,
+        "model_eval_seconds": 14.8276,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912157",
+        "title": "Imaging electron-hole asymmetry in the quantum melting of generalized Wigner crystals.",
+        "abstract": "NA: Two-dimensional moiré materials provide a versatile platform to explore phase transitions in strongly correlated systems. Using scanning tunneling microscopy, we imaged the density-driven melting of generalized Wigner crystals (GWCs) and Mott insulators (MIs) in electron-doped, near-60°-twisted molybdenum diselenide bilayers featuring a triangular moiré superlattice. We observed notable electron-hole asymmetry in GWC melting: Hole-doped GWCs yielded interaction-driven disordered states, whereas electron-doped GWCs melted into delocalized liquid-like states. This asymmetry arose from the broken particle-hole symmetry of the moiré superlattice, which produced electron and hole Fermi pockets with different momentum geometries upon GWC condensation. MI states melted without such asymmetry, consistent with the absence of a symmetry-breaking density modulation. This work provides direct visualization of the emergent phases that appear as GWCs undergo quantum melting transitions.",
+        "publication_types": [],
+        "doi": "10.1126/science.aee6967",
+        "doi_url": "https://doi.org/10.1126/science.aee6967",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912157/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study used scanning tunneling microscopy to investigate quantum melting transitions in generalized Wigner crystals (GWCs) and Mott insulators within electron-doped, near-60°-twisted molybdenum diselenide bilayers. The researchers observed electron-hole asymmetry during GWC melting: hole-doped systems formed disordered states driven by interactions, while electron-doped systems transitioned to delocalized liquid-like states. This asymmetry originated from broken particle-hole symmetry in the moiré superlattice, which created distinct electron and hole Fermi pockets with different momentum geometries. The findings provide direct visualization of emergent phases during quantum melting transitions.\",\n  \"key_findings\": [\n    \"Electron-hole asymmetry in GWC melting: hole-doped systems exhibit interaction-driven disorder, whereas electron-doped systems form delocalized liquid-like states\",\n    \"Broken particle-hole symmetry in the moiré superlattice generates distinct electron and hole Fermi pockets with different momentum geometries\",\n    \"Mott insulators melt without electron-hole asymmetry, consistent with absent density modulation\"\n  ],\n  \"scientific_significance\": \"The study directly visualizes emergent phases during quantum melting transitions in moiré materials, revealing how particle-hole symmetry breaking drives electron-hole asymmetry in correlated systems.\"\n}",
+        "parsed": {
+          "summary": "This study used scanning tunneling microscopy to investigate quantum melting transitions in generalized Wigner crystals (GWCs) and Mott insulators within electron-doped, near-60°-twisted molybdenum diselenide bilayers. The researchers observed electron-hole asymmetry during GWC melting: hole-doped systems formed disordered states driven by interactions, while electron-doped systems transitioned to delocalized liquid-like states. This asymmetry originated from broken particle-hole symmetry in the moiré superlattice, which created distinct electron and hole Fermi pockets with different momentum geometries. The findings provide direct visualization of emergent phases during quantum melting transitions.",
+          "key_findings": [
+            "Electron-hole asymmetry in GWC melting: hole-doped systems exhibit interaction-driven disorder, whereas electron-doped systems form delocalized liquid-like states",
+            "Broken particle-hole symmetry in the moiré superlattice generates distinct electron and hole Fermi pockets with different momentum geometries",
+            "Mott insulators melt without electron-hole asymmetry, consistent with absent density modulation"
+          ],
+          "scientific_significance": "The study directly visualizes emergent phases during quantum melting transitions in moiré materials, revealing how particle-hole symmetry breaking drives electron-hole asymmetry in correlated systems."
+        },
+        "elapsed_seconds": 22.6713,
+        "input_tokens": 734,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1009,
+        "model_eval_seconds": 20.94,
+        "error": "summary must contain 45–65 words; received 84.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920364",
+        "title": "Spatial and Spectral Decoupled Meta-Window for Thermal Camouflage and Infrared Communication.",
+        "abstract": "NA: Thermal radiation carries energy and information, making simultaneous control of its spectral profile and spatial propagation crucial for infrared camouflage, signaling, and communication. However, most thermal materials prioritize spectral manipulation, leaving the propagation direction of broadband thermal signals underexplored and tightly coupled to the spectral response. Here, a spatial and spectral decoupled meta-window (SSDW) is demonstrated for independent control of the spectral profile and spatial distribution of broadband thermal radiation across 8-13 µm. By assigning directional reflection splitting and spectral tailoring to distinct geometric degrees of freedom, the SSDW exhibits visible haze, mid-infrared semitransparency, and broadband suppression of specular reflection, including at 10.6 µm. It maintains a stable apparent thermal signature both without external heat interference and under variations in external-source temperature, source incidence angle, and camera viewing angle. This enables visible-laser-infrared compatible camouflage, while preserving an outward channel for emergency signaling. As a proof-of-concept, the SSDW encodes the incidence direction of a 10.6 µm laser into spatial reflection patterns for assistive infrared communication, enabling reliable decoding over moderate angular variations. This work establishes spatial and spectral decoupling as a framework for thermal radiation engineering, extending control beyond radiative intensity toward coordinated heat and information pathways.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75471",
+        "doi_url": "https://doi.org/10.1002/adma.75471",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920364/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates thermal radiation engineering by developing a spatial and spectral decoupled meta-window (SSDW) that independently controls broadband thermal radiation's spectral profile and spatial distribution across 8-13 µm. The SSDW achieves visible haze, mid-infrared semitransparency, and suppression of specular reflection while maintaining stable thermal signatures under varying conditions. It enables infrared camouflage and laser-based communication through directional reflection patterns.\",\n  \"key_findings\": [\n    \"SSDW independently controls spectral profile and spatial distribution of broadband thermal radiation (8-13 µm)\",\n    \"Maintains stable thermal signatures despite external-source temperature, incidence angle, and camera viewing angle variations\",\n    \"Encodes 10.6 µm laser incidence direction into spatial reflection patterns for reliable infrared communication\"\n  ],\n  \"scientific_significance\": \"This work establishes spatial and spectral decoupling as a framework for thermal radiation engineering, enabling coordinated control of heat pathways and information transmission beyond traditional spectral manipulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates thermal radiation engineering by developing a spatial and spectral decoupled meta-window (SSDW) that independently controls broadband thermal radiation's spectral profile and spatial distribution across 8-13 µm. The SSDW achieves visible haze, mid-infrared semitransparency, and suppression of specular reflection while maintaining stable thermal signatures under varying conditions. It enables infrared camouflage and laser-based communication through directional reflection patterns.",
+          "key_findings": [
+            "SSDW independently controls spectral profile and spatial distribution of broadband thermal radiation (8-13 µm)",
+            "Maintains stable thermal signatures despite external-source temperature, incidence angle, and camera viewing angle variations",
+            "Encodes 10.6 µm laser incidence direction into spatial reflection patterns for reliable infrared communication"
+          ],
+          "scientific_significance": "This work establishes spatial and spectral decoupling as a framework for thermal radiation engineering, enabling coordinated control of heat pathways and information transmission beyond traditional spectral manipulation."
+        },
+        "elapsed_seconds": 20.2827,
+        "input_tokens": 707,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 913,
+        "model_eval_seconds": 15.5394,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907514",
+        "title": "Enzyme-embedded polyesters for accelerated biodegradation in the deep sea.",
+        "abstract": "NA: The accumulation of persistent plastics in the ocean is causing wide-ranging environmental problems1-3. Some commercially available compostable plastics4-7, developed to address these issues, degrade efficiently under industrial composting conditions; however, their degradation in marine environments, particularly in the deep sea, remains limited8-10. Here we demonstrate that thermally embedding enzymes into compostable polyesters (poly(butylene succinate) (PBS), poly(butylene succinate-co-adipate) (PBSA), poly(ε-caprolactone) (PCL) and poly(butylene adipate-co-terephthalate) (PBAT)) significantly accelerates their degradation in both coastal and deep-sea environments from water depths of 2-6 m to 5,503 m. Enzyme-embedded polyesters achieved near-complete degradation at a deep-sea depth of 757 m within 5 months. Furthermore, moderate biodegradation of enzyme-embedded polyesters was observed under extreme conditions on deep-sea floors of 5,503 m. In coastal seawater, films embedded with trace amounts (0.1 wt%) of enzyme underwent rapid degradation. The mechanical properties of enzyme-embedded polyesters were similar to those of enzyme-free polyesters. Chemical analysis confirmed the formation of low-molecular-mass degradation products and biochemical oxygen demand measurements supported the mineralization of the enzyme-embedded polyesters. The enzyme-embedding strategy enables enhanced marine degradation of compostable polyesters and represents a potential solution to marine plastic pollution.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11192-1",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11192-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907514/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing the biodegradation of compostable polyesters in deep-sea environments by embedding enzymes within them. The researchers thermally integrated enzymes into four types of polyesters (PBS, PBSA, PCL, PBAT) and tested their degradation in coastal and deep-sea settings up to 5,503 meters. Results showed near-complete degradation at 757 meters within five months, with significant biodegradation observed at extreme depths. The approach maintains mechanical properties while enabling rapid marine breakdown.\",\n  \"key_findings\": [\n    \"Enzyme-embedded polyesters achieved near-complete degradation at 757 m deep-sea depth within 5 months\",\n    \"Moderate biodegradation occurred at extreme depths of 5,503 m despite harsh conditions\",\n    \"The embedded enzymes enabled rapid degradation in coastal seawater with minimal enzyme concentration (0.1 wt%)\"\n  ],\n  \"scientific_significance\": \"This strategy provides a scalable method for accelerating marine biodegradation of compostable plastics, addressing a critical gap in deep-sea plastic pollution mitigation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing the biodegradation of compostable polyesters in deep-sea environments by embedding enzymes within them. The researchers thermally integrated enzymes into four types of polyesters (PBS, PBSA, PCL, PBAT) and tested their degradation in coastal and deep-sea settings up to 5,503 meters. Results showed near-complete degradation at 757 meters within five months, with significant biodegradation observed at extreme depths. The approach maintains mechanical properties while enabling rapid marine breakdown.",
+          "key_findings": [
+            "Enzyme-embedded polyesters achieved near-complete degradation at 757 m deep-sea depth within 5 months",
+            "Moderate biodegradation occurred at extreme depths of 5,503 m despite harsh conditions",
+            "The embedded enzymes enabled rapid degradation in coastal seawater with minimal enzyme concentration (0.1 wt%)"
+          ],
+          "scientific_significance": "This strategy provides a scalable method for accelerating marine biodegradation of compostable plastics, addressing a critical gap in deep-sea plastic pollution mitigation."
+        },
+        "elapsed_seconds": 20.3466,
+        "input_tokens": 860,
+        "output_tokens": 232,
+        "thoughts_tokens": null,
+        "total_tokens": 1092,
+        "model_eval_seconds": 18.5599,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912158",
+        "title": "Deep-sea life is still reeling from the BP oil spill.",
+        "abstract": "NA: A 13-year study shows Gulf of Mexico ecosystems still haven't recovered.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen4284",
+        "doi_url": "https://doi.org/10.1126/science.aen4284",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912158/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the long-term ecological impact of the 2010 Deepwater Horizon oil spill on Gulf of Mexico marine ecosystems. Using a 13-year longitudinal analysis, researchers assessed ecosystem recovery status. Findings indicate persistent ecological disruption, with no significant recovery observed in the studied areas despite 13 years post-spill.\",\n  \"key_findings\": [\n    \"No significant recovery of Gulf of Mexico marine ecosystems 13 years after the Deepwater Horizon oil spill\",\n    \"Persistent ecological disruption in the study areas\",\n    \"Long-term ecological impact of the oil spill continues to affect marine environments\"\n  ],\n  \"scientific_significance\": \"The research provides critical evidence that deep-sea ecosystems remain ecologically perturbed decades after major oil spills, highlighting the long-term consequences of such environmental disasters.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the long-term ecological impact of the 2010 Deepwater Horizon oil spill on Gulf of Mexico marine ecosystems. Using a 13-year longitudinal analysis, researchers assessed ecosystem recovery status. Findings indicate persistent ecological disruption, with no significant recovery observed in the studied areas despite 13 years post-spill.",
+          "key_findings": [
+            "No significant recovery of Gulf of Mexico marine ecosystems 13 years after the Deepwater Horizon oil spill",
+            "Persistent ecological disruption in the study areas",
+            "Long-term ecological impact of the oil spill continues to affect marine environments"
+          ],
+          "scientific_significance": "The research provides critical evidence that deep-sea ecosystems remain ecologically perturbed decades after major oil spills, highlighting the long-term consequences of such environmental disasters."
+        },
+        "elapsed_seconds": 13.3148,
+        "input_tokens": 450,
+        "output_tokens": 171,
+        "thoughts_tokens": null,
+        "total_tokens": 621,
+        "model_eval_seconds": 12.2029,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920376",
+        "title": "Cesium Tin Iodide Perovskites Engineer the Sn4+/Sn2+ Redox Reaction in Aqueous Zinc-Ion Batteries.",
+        "abstract": "NA: Tin displays rich redox chemistry transitioning between metallic tin (Sn0), stannous (Sn2+), and stannic (Sn4+) states, among which the Sn4+/Sn2+ couple offers the highest theoretical potential ( >0.14 V vs. SHE) whereas remaining unrealized in practical batteries. Herein, we introduce the in situ and successive growth of CsSnI3 single perovskite and Cs2SnI6 double perovskite layers on the cathode surface during operation, enabling the first demonstration of the Sn4+/Sn2+ redox reaction in zinc-ion batteries, with an increased potential to 0.39 V versus SHE due to enhanced tin-halide coordination. Further integrated into Zn||SnCl4 full batteries, the design delivers dual discharge plateaus at 1.18 V (Sn4+/Sn2+) and 1.28 V (I0/I-), yielding a high areal capacity of 0.80 mAh cm-2 at 1 mA cm-2 and high energy density of 0.99 mWh cm-2 (660 Wh kg-1, per SnCl4·5H2O mass of the cathode). The three-electron transfer design exhibits considerable longevity, with Swagelok cells retaining 7000 cycles at 16 mA cm-2 and pouch cells sustaining 200 cycles at 4 mA cm-2 without capacity loss. By enabling the high-potential Sn4+/Sn2+ redox reaction, the perovskite interlayer provides a cross-disciplinary strategy to advancing high-energy aqueous zinc-ion batteries.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75503",
+        "doi_url": "https://doi.org/10.1002/adma.75503",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920376/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates engineering the Sn4+/Sn2+ redox reaction in aqueous zinc-ion batteries using cesium tin iodide perovskites. The approach involves in situ growth of single and double perovskite layers on the cathode, enabling the first demonstration of the Sn4+/Sn2+ redox couple. Results show increased potential to 0.39 V vs. SHE, dual discharge plateaus, high areal capacity, and exceptional cycling stability in full batteries.\",\n  \"key_findings\": [\n    \"First demonstration of Sn4+/Sn2+ redox reaction in aqueous zinc-ion batteries\",\n    \"Increased redox potential to 0.39 V vs. SHE via enhanced tin-halide coordination\",\n    \"High areal capacity (0.80 mAh cm-2) and long cycling stability (7000 cycles at 16 mA cm-2)\"\n  ],\n  \"scientific_significance\": \"This work enables high-potential redox reactions in aqueous zinc-ion batteries through perovskite interlayers, advancing energy storage technology with enhanced capacity and stability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates engineering the Sn4+/Sn2+ redox reaction in aqueous zinc-ion batteries using cesium tin iodide perovskites. The approach involves in situ growth of single and double perovskite layers on the cathode, enabling the first demonstration of the Sn4+/Sn2+ redox couple. Results show increased potential to 0.39 V vs. SHE, dual discharge plateaus, high areal capacity, and exceptional cycling stability in full batteries.",
+          "key_findings": [
+            "First demonstration of Sn4+/Sn2+ redox reaction in aqueous zinc-ion batteries",
+            "Increased redox potential to 0.39 V vs. SHE via enhanced tin-halide coordination",
+            "High areal capacity (0.80 mAh cm-2) and long cycling stability (7000 cycles at 16 mA cm-2)"
+          ],
+          "scientific_significance": "This work enables high-potential redox reactions in aqueous zinc-ion batteries through perovskite interlayers, advancing energy storage technology with enhanced capacity and stability."
+        },
+        "elapsed_seconds": 25.5757,
+        "input_tokens": 816,
+        "output_tokens": 239,
+        "thoughts_tokens": null,
+        "total_tokens": 1055,
+        "model_eval_seconds": 19.1026,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
