@@ -1,9 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#102a43"/>
-  <circle cx="256" cy="244" r="151" fill="none" stroke="#4fc3b0" stroke-width="17"/>
-  <circle cx="256" cy="244" r="103" fill="none" stroke="#4fc3b0" stroke-width="9" opacity=".6"/>
-  <path d="M105 244h302M256 93v302M149 137l214 214M363 137 149 351" stroke="#4fc3b0" stroke-width="7" opacity=".35"/>
-  <path d="M256 244 369 131" stroke="#f5bd58" stroke-width="24" stroke-linecap="round"/>
-  <circle cx="256" cy="244" r="31" fill="#f5bd58"/>
-  <path d="M115 400c45-36 92-36 141 0 49-36 96-36 141 0" fill="none" stroke="#fff" stroke-width="19" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+<title id="title">Literature Radar</title>
+<defs>
+  <linearGradient id="bg" x1="70" y1="30" x2="440" y2="480" gradientUnits="userSpaceOnUse"><stop stop-color="#123b68"/><stop offset="1" stop-color="#071d38"/></linearGradient>
+  <linearGradient id="beam" x1="240" y1="250" x2="390" y2="90" gradientUnits="userSpaceOnUse"><stop stop-color="#55b9ff"/><stop offset="1" stop-color="#1684e5"/></linearGradient>
+  <clipPath id="disc"><circle cx="256" cy="236" r="202"/></clipPath>
+</defs>
+<circle cx="256" cy="236" r="218" fill="url(#bg)"/>
+<g clip-path="url(#disc)" fill="none" stroke="#328dcc" stroke-linecap="round">
+  <path d="M72 258a184 184 0 0 1 368 0" stroke-width="13"/>
+  <path d="M112 258a144 144 0 0 1 288 0" stroke-width="12" opacity=".9"/>
+  <path d="M158 258a98 98 0 0 1 196 0" stroke-width="10" opacity=".82"/>
+  <path d="M256 258 388 100A184 184 0 0 1 440 258Z" fill="url(#beam)" stroke="none" opacity=".95"/>
+  <path d="M256 258 388 100" stroke="#72c7ff" stroke-width="5" opacity=".8"/>
+  <circle cx="130" cy="220" r="12" fill="#3e9ddd" stroke="none"/>
+  <circle cx="376" cy="218" r="11" fill="#3e9ddd" stroke="none"/>
+  <circle cx="316" cy="103" r="10" fill="#3e9ddd" stroke="none"/>
+</g>
+<path d="M58 385c65-49 132-50 198-7 66-43 133-42 198 7l-7 47c-67-39-130-39-191 8-61-47-124-47-191-8Z" fill="#dce9f7"/>
+<path d="M256 378v55M66 390c66-41 128-39 190 5 62-44 124-46 190-5" fill="none" stroke="#9ebbd7" stroke-width="8" stroke-linecap="round"/>
+<path d="M84 410c58-28 112-23 172 16 60-39 114-44 172-16" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
 </svg>
