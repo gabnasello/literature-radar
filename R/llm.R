@@ -34,14 +34,14 @@ parse_summary_response <- function(text) {
 
 validate_summary_payload <- function(parsed, min_words = 45L, max_words = 65L) {
   errors <- character()
-  required <- c("summary", "key_findings", "study_type", "scientific_significance")
+  required <- c("summary", "key_findings", "scientific_significance")
 
   if (!is.list(parsed) || is.null(names(parsed))) {
     return(list(valid = FALSE, errors = "The response must be a JSON object."))
   }
 
   missing <- setdiff(required, names(parsed))
-  unexpected <- setdiff(names(parsed), required)
+  unexpected <- setdiff(names(parsed), c(required, "study_type"))
   if (length(missing)) {
     errors <- c(errors, paste("Missing fields:", paste(missing, collapse = ", ")))
   }
@@ -81,7 +81,7 @@ validate_summary_payload <- function(parsed, min_words = 45L, max_words = 65L) {
     }
   }
 
-  for (field in c("study_type", "scientific_significance")) {
+  for (field in "scientific_significance") {
     if (!scalar_string(parsed[[field]])) {
       errors <- c(errors, paste0(field, " must be a string (use an empty string when unavailable)."))
     }
