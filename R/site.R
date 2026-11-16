@@ -427,6 +427,8 @@ site_render_paper_card <- function(article) {
     cat(sprintf('<details class="abstract-details"><summary>Read original abstract</summary><p>%s</p></details>', abstract))
   } else if (site_is_summarizable(article)) {
     cat('<p class="summary-status unavailable">No abstract available</p>')
+  } else {
+    cat('<p class="summary-status unavailable">No AI summary for this item</p>')
   }
   cat("</article>")
 }
