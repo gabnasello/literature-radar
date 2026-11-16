@@ -394,22 +394,22 @@ site_render_paper_card <- function(article) {
 
   if (site_has_summary(article)) {
     parsed <- summary$parsed
+    scientific_significance <- summary_values(parsed, "scientific_significance")
+    if (length(scientific_significance)) {
+      cat(sprintf('<p class="ai-significance">%s</p>',
+                  site_html_escape(paste(scientific_significance, collapse = " "))))
+    }
+    cat('<details class="paper-details"><summary>Show more</summary><div class="paper-expanded">')
     summary_text <- paste(summary_values(parsed, "summary"), collapse = " ")
-    cat(sprintf('<p class="ai-preview">%s</p>', site_html_escape(site_summary_preview(summary_text))))
-    cat('<details class="paper-details"><summary>More details</summary><div class="paper-expanded">')
-    cat(sprintf('<p class="full-ai-summary">%s</p>', site_html_escape(summary_text)))
+    if (nzchar(summary_text)) {
+      cat(sprintf('<p class="full-ai-summary">%s</p>', site_html_escape(summary_text)))
+    }
 
     findings <- summary_values(parsed, "key_findings")
     if (length(findings)) {
       cat('<h4>Key findings</h4><ul class="key-findings">')
       for (finding in findings) cat(sprintf("<li>%s</li>", site_html_escape(finding)))
       cat("</ul>")
-    }
-
-    scientific_significance <- summary_values(parsed, "scientific_significance")
-    if (length(scientific_significance)) {
-      cat(sprintf('<p class="detail-line"><strong>Scientific significance:</strong> %s</p>',
-                  site_html_escape(paste(scientific_significance, collapse = " "))))
     }
 
     if (nzchar(abstract)) {
