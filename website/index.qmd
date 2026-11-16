@@ -1,4 +1,14 @@
-## Journals
+---
+title: false
+---
+
+<div class="home-hero">
+  <img class="hero-logo" src="images/logo.svg" alt="" />
+  <div class="hero-copy">
+    <h1>Literature <span>Radar</span></h1>
+    <p>Stay up to date with the latest scientific literature</p>
+  </div>
+</div>
 
 ```{r}
 source("../R/site.R")
@@ -6,6 +16,29 @@ source("../R/llm.R")
 site <- load_literature_site_data("..")
 ```
 
-```{r, results='asis'}
-cat(site_render_homepage_journal_list(site$journals))
-```
+<div class="home-layout">
+  <section class="journal-section">
+    <div class="section-heading">
+      <div>
+        <h2>Journals</h2>
+        <p>Latest updates from your selected journals</p>
+      </div>
+    </div>
+    ```{r, results='asis'}
+    cat(site_render_homepage_journal_list(site$journals))
+    ```
+  </section>
+  <aside class="install-panel">
+    <div class="install-icon" aria-hidden="true">↓</div>
+    <h3>Install Literature Radar</h3>
+    <p>Add it to your device for quick access, just like an app.</p>
+    <div class="install-options">
+      <div class="install-option"><span class="option-icon">🌐</span><span>Install as an app in Chrome or Edge</span></div>
+      <div class="install-option"><span class="option-icon">▶</span><span>Install on Android</span></div>
+      <div class="install-option"><span class="option-icon">▣</span><span>Add to iPhone or iPad home screen</span></div>
+      <div class="install-option"><span class="option-icon">▱</span><span>Install on Windows, macOS or Linux</span></div>
+    </div>
+    <a class="btn btn-primary install-cta" href="#install-app">Install app</a>
+  </aside>
+</div>
+<p class="home-tagline">Research. Summarised. At your fingertips.</p>
