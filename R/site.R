@@ -423,8 +423,10 @@ site_render_paper_card <- function(article) {
 site_visible_journals <- function(journals) {
   # List every journal with an update, even when its newest papers are still
   # awaiting summaries or older summaries fail the current quality checks.
+  # Only currently monitored journals appear on the homepage. Removed or
+  # disabled journals remain available through their historical archive pages.
   visible <- Filter(function(journal) {
-    !is.null(journal$latest_report)
+    isTRUE(journal$enabled) && !is.null(journal$latest_report)
   }, journals)
   if (length(visible) < 2L) return(visible)
 
@@ -461,15 +463,13 @@ site_render_homepage_journal_list <- function(journals) {
   items <- vapply(visible, function(journal) {
     latest <- journal$latest_report
     update_date <- site_format_date(substr(site_text(latest$generated_at_utc), 1, 10))
-    summary_at <- site_text(journal$latest_summary_at)
-    summary_date <- if (nzchar(summary_at)) site_format_date(substr(summary_at, 1, 10)) else "not yet available"
     sprintf(paste0(
       '<li><a class="journal-card-link" href="journals/%s.html">',
       '%s<span class="journal-card-copy"><strong>%s</strong>',
-      '<span>Last update %s</span><span>Latest summary %s</span></span>',
+      '<span>Last update %s</span></span>',
       '<span class="journal-card-arrow" aria-hidden="true">›</span></a></li>'
     ), site_html_escape(site_slug(journal$id)), site_journal_mark(journal),
-    site_html_escape(journal$name), site_html_escape(update_date), site_html_escape(summary_date))
+    site_html_escape(journal$name), site_html_escape(update_date))
   }, character(1))
   paste0('<ul class="journal-list">', paste(items, collapse = ""), '</ul>')
 }
