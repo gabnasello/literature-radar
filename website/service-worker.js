@@ -1,4 +1,4 @@
-const CACHE_NAME = "literature-radar-v1";
+const CACHE_NAME = "literature-radar-v2";
 const BASE = "/literature-radar/";
 const APP_SHELL = [
   BASE,
@@ -7,6 +7,8 @@ const APP_SHELL = [
   BASE + "styles.css",
   BASE + "pwa.js",
   BASE + "images/icon.svg",
+  BASE + "images/icon-192.png",
+  BASE + "images/icon-512.png",
   BASE + "images/logo.svg"
 ];
 
