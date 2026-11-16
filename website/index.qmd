@@ -3,11 +3,12 @@ title: ""
 ---
 
 ::: {.home-hero}
-![Literature Radar logo](images/logo.svg){.hero-logo}
+<img class="hero-logo" src="images/icon.svg" alt="Literature Radar" />
 
-# Literature <span>Radar</span>
-
-Stay up to date with the latest scientific literature
+<div class="hero-copy">
+<h1>Literature <span>Radar</span></h1>
+<p>Stay up to date with the latest scientific literature</p>
+</div>
 :::
 
 ```{r}
@@ -18,12 +19,6 @@ site <- load_literature_site_data("..")
 
 ::: {.home-layout}
 ::: {.journal-section}
-::: {.section-heading}
-## Journals
-
-Latest updates from your selected journals
-:::
-
 ```{r, results='asis'}
 cat(site_render_homepage_journal_list(site$journals))
 ```
@@ -36,25 +31,13 @@ cat(site_render_homepage_journal_list(site$journals))
 
 Add it to your device for quick access, just like an app.
 
-::: {.install-options}
-::: {.install-option}
-🌐  Install as an app in Chrome or Edge
-:::
-::: {.install-option}
-▶  Install on Android
-:::
-::: {.install-option}
-▣  Add to iPhone or iPad home screen
-:::
-::: {.install-option}
-▱  Install on Windows, macOS or Linux
-:::
-:::
+<div class="install-options">
+<div class="install-option"><span class="option-icon">🌐</span><span>Install as an app in Chrome or Edge</span></div>
+<div class="install-option"><span class="option-icon">▶</span><span>Install on Android</span></div>
+<div class="install-option"><span class="option-icon">▣</span><span>Add to iPhone or iPad home screen</span></div>
+<div class="install-option"><span class="option-icon">▱</span><span>Install on Windows, macOS or Linux</span></div>
+</div>
 
 [Install app](#install-app){.btn .btn-primary .install-cta}
 :::
-:::
-
-::: {.home-tagline}
-Research. Summarised. At your fingertips.
 :::
