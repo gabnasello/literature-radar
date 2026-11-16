@@ -79,6 +79,8 @@ parse_pubmed_article <- function(article_node) {
     fore <- xml_text(a, "./ForeName")
     trimws(paste(fore, last))
   }, character(1))
+  publication_types <- xml2::xml_find_all(article_node, ".//PublicationTypeList/PublicationType")
+  publication_types <- as.list(trimws(xml2::xml_text(publication_types)))
   pubdate <- xml_text(article_node, ".//JournalIssue/PubDate/Year")
   if (!nzchar(pubdate)) pubdate <- xml_text(article_node, ".//JournalIssue/PubDate/MedlineDate")
   created <- xml_text(article_node, ".//DateCreated/Year")
@@ -88,7 +90,8 @@ parse_pubmed_article <- function(article_node) {
   list(pmid = pmid, title = title, abstract = abstract,
        doi = doi, doi_url = if (nzchar(doi)) paste0("https://doi.org/", doi) else "",
        journal = journal, journal_issn = journal_issn,
-       authors = as.list(author_names), publication_date = pubdate,
+       authors = as.list(author_names), publication_types = publication_types,
+       publication_date = pubdate,
        pubmed_created_date = created,
        pubmed_url = if (nzchar(pmid)) paste0("https://pubmed.ncbi.nlm.nih.gov/", pmid, "/") else "")
 }
