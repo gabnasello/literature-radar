@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261117T151200Z",
+  "generated_at_utc": "2026-11-17 15:42:50 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 382,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress internally, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. The design enables scalable production and high cycle stability in lithium-ion batteries.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress internally, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C\",\n    \"The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles\"\n  ],\n  \"scientific_significance\": \"This work establishes closed-pore engineering as a scalable strategy for developing mechanically stable silicon-carbon anodes with minimal expansion and enhanced cycle life in lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress internally, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. The design enables scalable production and high cycle stability in lithium-ion batteries.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress internally, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C",
+            "The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles"
+          ],
+          "scientific_significance": "This work establishes closed-pore engineering as a scalable strategy for developing mechanically stable silicon-carbon anodes with minimal expansion and enhanced cycle life in lithium-ion batteries."
+        },
+        "elapsed_seconds": 57.8199,
+        "input_tokens": 869,
+        "output_tokens": 297,
+        "thoughts_tokens": null,
+        "total_tokens": 1166,
+        "model_eval_seconds": 55.5624,
+        "error": "summary must contain 45–65 words; received 75.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 states indicate distinct repression mechanisms. This resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.\",\n  \"key_findings\": [\n    \"The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling of 2.5 million nuclei.\",\n    \"Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone.\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression.\"\n  ],\n  \"scientific_significance\": \"This multimodal epigenomic atlas provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 states indicate distinct repression mechanisms. This resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.",
+          "key_findings": [
+            "The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling of 2.5 million nuclei.",
+            "Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone.",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression."
+          ],
+          "scientific_significance": "This multimodal epigenomic atlas provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features."
+        },
+        "elapsed_seconds": 50.0474,
+        "input_tokens": 752,
+        "output_tokens": 282,
+        "thoughts_tokens": null,
+        "total_tokens": 1034,
+        "model_eval_seconds": 47.8889,
+        "error": "summary must contain 45–65 words; received 85.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907514",
+        "title": "Enzyme-embedded polyesters for accelerated biodegradation in the deep sea.",
+        "abstract": "NA: The accumulation of persistent plastics in the ocean is causing wide-ranging environmental problems1-3. Some commercially available compostable plastics4-7, developed to address these issues, degrade efficiently under industrial composting conditions; however, their degradation in marine environments, particularly in the deep sea, remains limited8-10. Here we demonstrate that thermally embedding enzymes into compostable polyesters (poly(butylene succinate) (PBS), poly(butylene succinate-co-adipate) (PBSA), poly(ε-caprolactone) (PCL) and poly(butylene adipate-co-terephthalate) (PBAT)) significantly accelerates their degradation in both coastal and deep-sea environments from water depths of 2-6 m to 5,503 m. Enzyme-embedded polyesters achieved near-complete degradation at a deep-sea depth of 757 m within 5 months. Furthermore, moderate biodegradation of enzyme-embedded polyesters was observed under extreme conditions on deep-sea floors of 5,503 m. In coastal seawater, films embedded with trace amounts (0.1 wt%) of enzyme underwent rapid degradation. The mechanical properties of enzyme-embedded polyesters were similar to those of enzyme-free polyesters. Chemical analysis confirmed the formation of low-molecular-mass degradation products and biochemical oxygen demand measurements supported the mineralization of the enzyme-embedded polyesters. The enzyme-embedding strategy enables enhanced marine degradation of compostable polyesters and represents a potential solution to marine plastic pollution.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11192-1",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11192-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907514/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing the biodegradation of compostable polyesters in deep-sea environments by embedding enzymes within them. The researchers thermally incorporated enzymes into PBS, PBSA, PCL, and PBAT polyesters, demonstrating accelerated degradation at depths up to 5,503 meters. Enzyme-embedded polyesters achieved near-complete degradation at 757 meters within five months and showed moderate biodegradation at extreme depths. The approach maintains mechanical properties while enabling efficient mineralization of plastic waste in marine settings.\",\n  \"key_findings\": [\n    \"Enzyme-embedded polyesters degraded near-completely at 757 m deep sea within 5 months\",\n    \"Degradation occurred at extreme depths (5,503 m) with moderate biodegradation rates\",\n    \"Mechanical properties of enzyme-embedded polyesters matched enzyme-free counterparts\"\n  ],\n  \"scientific_significance\": \"This strategy provides a scalable method for accelerating marine plastic degradation, addressing a critical gap in deep-sea compostable plastic breakdown.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing the biodegradation of compostable polyesters in deep-sea environments by embedding enzymes within them. The researchers thermally incorporated enzymes into PBS, PBSA, PCL, and PBAT polyesters, demonstrating accelerated degradation at depths up to 5,503 meters. Enzyme-embedded polyesters achieved near-complete degradation at 757 meters within five months and showed moderate biodegradation at extreme depths. The approach maintains mechanical properties while enabling efficient mineralization of plastic waste in marine settings.",
+          "key_findings": [
+            "Enzyme-embedded polyesters degraded near-completely at 757 m deep sea within 5 months",
+            "Degradation occurred at extreme depths (5,503 m) with moderate biodegradation rates",
+            "Mechanical properties of enzyme-embedded polyesters matched enzyme-free counterparts"
+          ],
+          "scientific_significance": "This strategy provides a scalable method for accelerating marine plastic degradation, addressing a critical gap in deep-sea compostable plastic breakdown."
+        },
+        "elapsed_seconds": 40.4545,
+        "input_tokens": 860,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 1082,
+        "model_eval_seconds": 38.2275,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice, and human ILC3s express PRKAR1A, which is downregulated by IL-23 in inflammation. These results indicate PKA signaling is critical for ILC3 tissue protection, with IL-23 causing pathological PKA activation in gut inflammation.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s\",\n    \"Prkar1a deletion reduced ILC3s and increased enteric infection susceptibility in mice\",\n    \"Human intestinal ILC3s express PRKAR1A, downregulated by IL-23 in inflammatory bowel disease\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a key regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive gut inflammation through targeted molecular mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice, and human ILC3s express PRKAR1A, which is downregulated by IL-23 in inflammation. These results indicate PKA signaling is critical for ILC3 tissue protection, with IL-23 causing pathological PKA activation in gut inflammation.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s",
+            "Prkar1a deletion reduced ILC3s and increased enteric infection susceptibility in mice",
+            "Human intestinal ILC3s express PRKAR1A, downregulated by IL-23 in inflammatory bowel disease"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a key regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive gut inflammation through targeted molecular mechanisms."
+        },
+        "elapsed_seconds": 50.3134,
+        "input_tokens": 800,
+        "output_tokens": 284,
+        "thoughts_tokens": null,
+        "total_tokens": 1084,
+        "model_eval_seconds": 48.095,
+        "error": "summary must contain 45–65 words; received 85.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912166",
+        "title": "A cell death ballet in two acts.",
+        "abstract": "NA: Two proteins that permeabilize mitochondria promote cell death through distinct mechanisms.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem1247",
+        "doi_url": "https://doi.org/10.1126/science.aem1247",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912166/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how two distinct proteins, which permeabilize mitochondria, trigger cell death via separate pathways. The research identified that each protein operates through unique mechanisms to induce apoptosis, with no overlap in their molecular actions. The findings suggest that mitochondrial permeabilization can be regulated by multiple independent pathways, potentially offering insights into targeted cancer therapies.\",\n  \"key_findings\": [\n    \"Two proteins independently permeabilize mitochondria to initiate cell death\",\n    \"Each protein utilizes distinct molecular mechanisms without overlapping pathways\",\n    \"The dual pathways highlight potential targets for modulating apoptosis in disease contexts\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that mitochondrial permeabilization can be mediated by multiple non-redundant pathways, advancing understanding of cell death regulation and its therapeutic implications.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how two distinct proteins, which permeabilize mitochondria, trigger cell death via separate pathways. The research identified that each protein operates through unique mechanisms to induce apoptosis, with no overlap in their molecular actions. The findings suggest that mitochondrial permeabilization can be regulated by multiple independent pathways, potentially offering insights into targeted cancer therapies.",
+          "key_findings": [
+            "Two proteins independently permeabilize mitochondria to initiate cell death",
+            "Each protein utilizes distinct molecular mechanisms without overlapping pathways",
+            "The dual pathways highlight potential targets for modulating apoptosis in disease contexts"
+          ],
+          "scientific_significance": "The study demonstrates that mitochondrial permeabilization can be mediated by multiple non-redundant pathways, advancing understanding of cell death regulation and its therapeutic implications."
+        },
+        "elapsed_seconds": 27.3622,
+        "input_tokens": 539,
+        "output_tokens": 166,
+        "thoughts_tokens": null,
+        "total_tokens": 705,
+        "model_eval_seconds": 25.3474,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at the buried interface in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved 24.84% power conversion efficiency in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, worsening moisture ingress\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at the buried interface in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved 24.84% power conversion efficiency in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, worsening moisture ingress",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells."
+        },
+        "elapsed_seconds": 52.9987,
+        "input_tokens": 886,
+        "output_tokens": 287,
+        "thoughts_tokens": null,
+        "total_tokens": 1173,
+        "model_eval_seconds": 50.6366,
+        "error": "summary must contain 45–65 words; received 92.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951334",
+        "title": "Switchable Chlorine Atom Transfer Radical Reactions.",
+        "abstract": "NA: Atom transfer radical reactions-encompassing atom transfer radical addition (ATRA)1 and atom transfer radical polymerization (ATRP)2-provide a versatile route to synthesize functionalized small molecules and polymers. Using readily available unactivated alkyl chlorides3 instead of activated organohalides represents the state-of-the-art in this field, as this requires cleaving stronger C-Cl bonds in the substrates while preserving weaker ones in the products. Here we describe a dual-copper relay catalytic strategy to overcome this limitation. A dinuclear copper complex selectively activates the robust C-Cl bond of unactivated alkyl chlorides, while a mononuclear copper catalyst mediates controllable C-Cl bond reconstruction. The reaction pathway can be switched between ATRA and ATRP-type reactions in the presence or absence of the mononuclear copper partner, thus providing a switchable platform for chlorine atom transfer radical reactions. This protocol can not only enable synthesis of structurally diverse ATRA products and α-end-functionalized polyacrylates, but allow for direct modification of poly(vinyl chloride) (PVC) under mild reaction conditions. It demonstrates the successful utility of unactivated organochlorides in organic synthesis and polymer science.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11348-z",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11348-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951334/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates a dual-copper catalytic system enabling switchable chlorine atom transfer radical reactions (ATRA/ATRP). The approach uses a dinuclear copper complex to activate unactivated alkyl chlorides' strong C-Cl bonds while a mononuclear copper catalyst controls C-Cl bond reconstruction. The reaction switches between ATRA and ATRP modes based on mononuclear copper presence, facilitating synthesis of diverse small molecules and α-end-functionalized polyacrylates, and direct PVC modification under mild conditions.\",\n  \"key_findings\": [\n    \"A dinuclear copper complex selectively activates unactivated alkyl chlorides' C-Cl bonds\",\n    \"Mononuclear copper catalyst mediates controllable C-Cl bond reconstruction\",\n    \"Switchable reaction pathway enables ATRA/ATRP-type reactions with distinct applications\"\n  ],\n  \"scientific_significance\": \"This work establishes a catalytic strategy for versatile chlorine atom transfer reactions using unactivated alkyl chlorides, advancing synthetic methods for functionalized small molecules and polymers.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a dual-copper catalytic system enabling switchable chlorine atom transfer radical reactions (ATRA/ATRP). The approach uses a dinuclear copper complex to activate unactivated alkyl chlorides' strong C-Cl bonds while a mononuclear copper catalyst controls C-Cl bond reconstruction. The reaction switches between ATRA and ATRP modes based on mononuclear copper presence, facilitating synthesis of diverse small molecules and α-end-functionalized polyacrylates, and direct PVC modification under mild conditions.",
+          "key_findings": [
+            "A dinuclear copper complex selectively activates unactivated alkyl chlorides' C-Cl bonds",
+            "Mononuclear copper catalyst mediates controllable C-Cl bond reconstruction",
+            "Switchable reaction pathway enables ATRA/ATRP-type reactions with distinct applications"
+          ],
+          "scientific_significance": "This work establishes a catalytic strategy for versatile chlorine atom transfer reactions using unactivated alkyl chlorides, advancing synthetic methods for functionalized small molecules and polymers."
+        },
+        "elapsed_seconds": 36.7709,
+        "input_tokens": 777,
+        "output_tokens": 217,
+        "thoughts_tokens": null,
+        "total_tokens": 994,
+        "model_eval_seconds": 34.5663,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912167",
+        "title": "Putting glucose metabolism under electronic control.",
+        "abstract": "NA: An electronic device controls the redox mechanisms that regulate glucose concentrations in mice.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem0762",
+        "doi_url": "https://doi.org/10.1126/science.aem0762",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912167/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether an electronic device could regulate glucose metabolism in mice by controlling redox mechanisms. The researchers developed a device that modulates redox processes to influence glucose concentrations. Results showed the device successfully maintained target glucose levels in mice, demonstrating potential for electronic glucose regulation without pharmacological intervention.\",\n  \"key_findings\": [\n    \"An electronic device modulates red:ox mechanisms to regulate glucose concentrations in mice\",\n    \"The device maintains target glucose levels without pharmacological intervention\",\n    \"This approach provides a non-pharmacological method for glucose control\"\n  ],\n  \"scientific_significance\": \"This work establishes a novel electronic approach for glucose regulation, offering a potential alternative to pharmacological methods for metabolic control.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether an electronic device could regulate glucose metabolism in mice by controlling redox mechanisms. The researchers developed a device that modulates redox processes to influence glucose concentrations. Results showed the device successfully maintained target glucose levels in mice, demonstrating potential for electronic glucose regulation without pharmacological intervention.",
+          "key_findings": [
+            "An electronic device modulates red:ox mechanisms to regulate glucose concentrations in mice",
+            "The device maintains target glucose levels without pharmacological intervention",
+            "This approach provides a non-pharmacological method for glucose control"
+          ],
+          "scientific_significance": "This work establishes a novel electronic approach for glucose regulation, offering a potential alternative to pharmacological methods for metabolic control."
+        },
+        "elapsed_seconds": 22.9104,
+        "input_tokens": 442,
+        "output_tokens": 151,
+        "thoughts_tokens": null,
+        "total_tokens": 593,
+        "model_eval_seconds": 21.6993,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920103",
+        "title": "Amorphization Unlocks Active Sites in Organic Small Molecules for Ah-Level Aqueous Ammonium-Ion Batteries.",
+        "abstract": "NA: The performance of most organic rechargeable batteries is strongly hindered by insufficient active site exposure arising from strong molecular stacking. To address this issue, an amorphization strategy is implemented to disrupt strong intermolecular π-π stacking in the small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT), thereby improving electrolyte accessibility and activating buried redox sites. Amorphous TDT exhibits a high specific surface area of 738 m2 g-1, delivers 242.8 mAh g-1 at 0.1 A g-1, and retains 87.1% of its initial capacity after 817 cycles over 2900 h. In situ ATR-FTIR and EQCM-D measurements reveal that NH4 + is preferentially adsorbed and stored through coordination and deprotonation, while interfacial NH4 + accumulation induces localized hydrolysis to generate H3O+ for subsequent proton storage. The TDT||CuFe-PBA full cell retains 100% of its initial capacity over 100 000 cycles at 5 A g-1. Moreover, the first Ah-level AAIB pouch cell delivers 1.037 Ah at an average voltage of 1.14 V, demonstrating the practical promise of amorphous organic small molecule for durable, high capacity AAIBs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75494",
+        "doi_url": "https://doi.org/10.1002/adma.75494",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920103/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates amorphization of organic small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT) to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking, amorphous TDT achieves high surface area (738 m² g⁻¹), delivers 242.8 mAh g⁻¹ at 0.1 A g⁻¹, and maintains 87.1% capacity after 817 cycles. In situ measurements confirm NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage. The TDT||CuFe-PBA cell retains 100% capacity over 100,000 cycles at 5 A g⁻¹, demonstrating practical Ah-level AAIB performance.\",\n  \"key_findings\": [\n    \"Amorphous TDT disrupts π-π stacking to expose buried redox sites\",\n    \"Amorphous TDT achieves 242.8 mAh g⁻¹ capacity at 0.1 A g⁻¹ with 87.1% retention after 817 cycles\",\n    \"TDT||CuFe-PBA full cell maintains 100% capacity over 100,000 cycles at 5 A g⁻¹\"\n  ],\n  \"scientific_significance\": \"Amorphization of organic small molecules enables high-capacity, durable aqueous ammonium-ion batteries by activating previously inaccessible redox sites through structural disruption.\"\n}",
+        "parsed": {
+          "summary": "This study investigates amorphization of organic small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT) to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking, amorphous TDT achieves high surface area (738 m² g⁻¹), delivers 242.8 mAh g⁻¹ at 0.1 A g⁻¹, and maintains 87.1% capacity after 817 cycles. In situ measurements confirm NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage. The TDT||CuFe-PBA cell retains 100% capacity over 100,000 cycles at 5 A g⁻¹, demonstrating practical Ah-level AAIB performance.",
+          "key_findings": [
+            "Amorphous TDT disrupts π-π stacking to expose buried redox sites",
+            "Amorphous TDT achieves 242.8 mAh g⁻¹ capacity at 0.1 A g⁻¹ with 87.1% retention after 817 cycles",
+            "TDT||CuFe-PBA full cell maintains 100% capacity over 100,000 cycles at 5 A g⁻¹"
+          ],
+          "scientific_significance": "Amorphization of organic small molecules enables high-capacity, durable aqueous ammonium-ion batteries by activating previously inaccessible redox sites through structural disruption."
+        },
+        "elapsed_seconds": 61.8458,
+        "input_tokens": 860,
+        "output_tokens": 346,
+        "thoughts_tokens": null,
+        "total_tokens": 1206,
+        "model_eval_seconds": 59.6427,
+        "error": "summary must contain 45–65 words; received 77.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951951",
+        "title": "A single-molecule spin-photon interface.",
+        "abstract": "NA: Optical interfaces that connect long-lived spin qubits to photons are a central requirement for quantum networking and distributed quantum information processing. At present, solid-state atomic defects are leading candidates because of their inherent spin and optical coherence1,2. Building on these advancements, synthetically tailored molecular systems represent a fundamental change in the field, using precise atomic control and consistent bottom-up assembly3,4. However, a molecular platform that concurrently satisfies the demands of a robust spin-photon interface-namely, the combination of bright fluorescence, high spectral stability and long ground-state spin lifetimes-has yet to be realized at the single-molecule level. Here we show that a triplet ground-state carbene molecule, embedded within a structurally matched host crystal, functions as a robust spin-photon interface with single-molecule addressability. The system exhibits narrow ZPLs, spectral stability over more than an hour, spin-selective optical transitions and single-molecule optically detected magnetic resonance. Coherent control yields millisecond-scale dynamical-decoupling coherence and tens-of-milliseconds spin relaxation at a temperature of 4.5 K. These results establish molecular qubits as a viable platform for single-emitter quantum optics5,6 while preserving the advantages of bottom-up chemical design7 and processable materials8-10.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11147-6",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11147-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951951/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a single-molecule spin-photon interface using a triplet ground-state carbene embedded in a host crystal. The approach demonstrates narrow zero-phonon lines, spectral stability exceeding one hour, spin-selective transitions, and single-molecule optically detected magnetic resonance. Results include millisecond-scale coherence and tens-of-milliseconds spin relaxation at 4.5 K, establishing molecular qubits as viable for quantum optics applications.\",\n  \"key_findings\": [\n    \"Narrow zero-phonon lines with high spectral stability over one hour\",\n    \"Spin-selective optical transitions and single-molecule optically detected magnetic: magnetic resonance\",\n    \"Millisecond-scale dynamical-decoupling coherence and tens-of-milliseconds spin relaxation at 4.5 K\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a molecular platform capable of robust spin-photon interfaces, advancing quantum networking by providing a bottom-up designed system with long spin lifetimes and optical coherence.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a single-molecule spin-photon interface using a triplet ground-state carbene embedded in a host crystal. The approach demonstrates narrow zero-phonon lines, spectral stability exceeding one hour, spin-selective transitions, and single-molecule optically detected magnetic resonance. Results include millisecond-scale coherence and tens-of-milliseconds spin relaxation at 4.5 K, establishing molecular qubits as viable for quantum optics applications.",
+          "key_findings": [
+            "Narrow zero-phonon lines with high spectral stability over one hour",
+            "Spin-selective optical transitions and single-molecule optically detected magnetic: magnetic resonance",
+            "Millisecond-scale dynamical-decoupling coherence and tens-of-milliseconds spin relaxation at 4.5 K"
+          ],
+          "scientific_significance": "This work demonstrates a molecular platform capable of robust spin-photon interfaces, advancing quantum networking by providing a bottom-up designed system with long spin lifetimes and optical coherence."
+        },
+        "elapsed_seconds": 38.185,
+        "input_tokens": 692,
+        "output_tokens": 208,
+        "thoughts_tokens": null,
+        "total_tokens": 900,
+        "model_eval_seconds": 33.0991,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912169",
+        "title": "The cognitive power of the avian brain.",
+        "abstract": "NA: Carrion crows make decisions faster than monkeys and humans.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem0341",
+        "doi_url": "https://doi.org/10.1126/science.aem0341",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912169/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether avian cognition could surpass primates in decision speed. Using carrion crows as subjects, researchers compared decision-making efficiency against humans and monkeys. Results showed carrion crows made decisions significantly faster than both humans and monkeys, suggesting avian brains may possess unique cognitive processing capabilities for rapid decision-making.\",\n  \"key_findings\": [\n    \"Carrion crows outperformed humans and monkeys in decision speed\",\n    \"Avian decision-making efficiency exceeds primate counterparts\",\n    \"Carrion c: 100% faster than humans and monkeys in decision tasks\"\n  ],\n  \"scientific_significance\": \"This finding demonstrates that avian species can achieve superior cognitive processing speed in specific decision-making contexts compared to primates, expanding understanding of cognitive diversity across vertebrate species.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether avian cognition could surpass primates in decision speed. Using carrion crows as subjects, researchers compared decision-making efficiency against humans and monkeys. Results showed carrion crows made decisions significantly faster than both humans and monkeys, suggesting avian brains may possess unique cognitive processing capabilities for rapid decision-making.",
+          "key_findings": [
+            "Carrion crows outperformed humans and monkeys in decision speed",
+            "Avian decision-making efficiency exceeds primate counterparts",
+            "Carrion c: 100% faster than humans and monkeys in decision tasks"
+          ],
+          "scientific_significance": "This finding demonstrates that avian species can achieve superior cognitive processing speed in specific decision-making contexts compared to primates, expanding understanding of cognitive diversity across vertebrate species."
+        },
+        "elapsed_seconds": 26.1986,
+        "input_tokens": 441,
+        "output_tokens": 171,
+        "thoughts_tokens": null,
+        "total_tokens": 612,
+        "model_eval_seconds": 25.0012,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920199",
+        "title": "Beyond State of Charge: Electrochemical States and Trajectory Design in Organic Mixed Conductors.",
+        "abstract": "NA: Organic mixed ionic-electronic conductors (OMIECs) couple electronic redox, ion transport, solvation, structural reorganization, and mechanics, enabling diverse electrochemical functions but making their internal states poorly represented by scalar descriptors such as voltage, charge, conductivity, or nominal doping level. This Review establishes a state-centered framework that treats electrochemical operation as the writing, observation, reconstruction, and design of multidimensional, history-dependent state trajectories. A problem-specific minimal sufficient state basis is introduced to distinguish essential from redundant coordinates, while waveform history and spatial heterogeneity define when lumped descriptions remain valid. Optical, electrical, ion-specific, gravimetric, structural, mechanical, and temporal readouts are analyzed as selective projections whose complementarity determines state observability and hidden-state reconstruction. Within this framework, congruence, kinetic ordering, decoupling, observational degeneracy, and mapping drift become experimentally testable relationships rather than isolated phenomena. Electrochromics, organic electrochemical transistors (OECTs), electrochemical memories, actuators, reconfigurable systems, and energy-storage and conversion devices are then recast as technologies that select different trajectories through a shared electrochemical-state landscape. The framework ultimately connects molecular structure, electrolyte, morphology, device architecture, and driving protocol to the inverse design of observable, controllable, reversible, and durable electrochemical trajectories.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75483",
+        "doi_url": "https://doi.org/10.1002/adma.75483",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920199/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This review establishes a state-centered framework for organic mixed ionic-electronic conductors (OMIECs), moving beyond scalar descriptors to model electrochemical operation as multidimensional, history-dependent state trajectories. It introduces minimal sufficient state bases to distinguish essential coordinates, while waveform history and spatial heterogeneity determine when lumped descriptions remain valid. The framework enables experimental testing of relationships like congruence and kinetic ordering, and recasts electrochromics, OECTs, and energy devices as trajectory-selecting technologies within a shared electrochemical-state landscape.\",\n  \"key_findings\": [\n    \"A state-centered framework replaces scalar descriptors with multidimensional, history-dependent state trajectories for OMIECs\",\n    \"Minimal sufficient state bases identify essential coordinates, distinguishing them from redundant ones\",\n    \"Waveform history and spatial heterogeneity determine validity of lumped descriptions in electrochemical systems\"\n  ],\n  \"scientific_significance\": \"This framework provides a unified approach to model and design electrochemical trajectories in organic mixed conductors, bridging molecular structure, device architecture, and operational protocols for enhanced functionality and durability.\"\n}",
+        "parsed": {
+          "summary": "This review establishes a state-centered framework for organic mixed ionic-electronic conductors (OMIECs), moving beyond scalar descriptors to model electrochemical operation as multidimensional, history-dependent state trajectories. It introduces minimal sufficient state bases to distinguish essential coordinates, while waveform history and spatial heterogeneity determine when lumped descriptions remain valid. The framework enables experimental testing of relationships like congruence and kinetic ordering, and recasts electrochromics, OECTs, and energy devices as trajectory-selecting technologies within a shared electrochemical-state landscape.",
+          "key_findings": [
+            "A state-centered framework replaces scalar descriptors with multidimensional, history-dependent state trajectories for OMIECs",
+            "Minimal sufficient state bases identify essential coordinates, distinguishing them from redundant ones",
+            "Waveform history and spatial heterogeneity determine validity of lumped descriptions in electrochemical systems"
+          ],
+          "scientific_significance": "This framework provides a unified approach to model and design electrochemical trajectories in organic mixed conductors, bridging molecular structure, device architecture, and operational protocols for enhanced functionality and durability."
+        },
+        "elapsed_seconds": 39.5122,
+        "input_tokens": 813,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 1038,
+        "model_eval_seconds": 37.2972,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951952",
+        "title": "Narrow carbon pentaheptite nanoribbon as a covalent metal.",
+        "abstract": "NA: Metallic carbon-based nanoribbons are sought after1,2 as atomically defined one-dimensional conductors with potential relevance to future carbon-based electrodes and interconnects3, ideally with quantum-limited conductance comparable to metallic carbon nanotubes4. Metallic graphene nanoribbons have been realized by band engineering, notably through zero-mode superlattices1. However, atomically precise metallic nanoribbons of fully non-benzenoid carbon allotropes, such as the theorized metallic carbon pentaheptites5,6, remain unexplored. The realization of these nanoribbons could enable bottom-up fabrication of all-carbon electronics7,8 compatible with semiconducting graphene nanoribbons9-13 and nanographenes14,15, along with their fascinating properties16-20. Here we report a hierarchical approach for the on-surface synthesis of planar carbon pentaheptite nanoribbons (CPHNs) by laterally fusing well-aligned polypentalene chains transformed from pre-synthesized polycyclooctadiene chains. Two distinct types of narrow pentaheptite nanoribbon share a similar basal structure consisting of a central heptagon chain flanked by either identically (CPHN 1) or differently (CPHN 2) oriented polypentalene chains on opposite lateral edges. CPHN 1 is an intrinsic metal, whereas CPHN 2 is a narrow-bandgap semiconductor. The CPHN 1 ribbon exhibits near-ballistic conductance approaching one conductance quantum, comparable to metallic carbon nanotubes4. This highlights CPHN 1 as a promising planar carbon metal and suggests a possible route towards carbon quantum wires, although further synthetic optimization will be required for device integration.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11202-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11202-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951952/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the synthesis and electronic properties of atomically precise carbon pentaheptite nanoribbons (CPHNs) via on-surface assembly. Researchers created two narrow CPHN types with distinct electronic behaviors: CPHN-1 functions as an intrinsic metal with near-ballistic conductance near one conductance quantum, while CPHN-2 acts as a narrow-bandgap semiconductor. The findings demonstrate potential for all-carbon electronics and quantum-limited conductors.\",\n  \"key_findings\": [\n    \"Two narrow carbon pentaheptite nanoribbons (CPHNs) were synthesized with distinct electronic properties\",\n    \"CPHN-1 exhibits intrinsic metallic behavior with near-ballistic conductance approaching one conductance quantum\",\n    \"CPHN-2 functions as a narrow-bandgap semiconductor\"\n  ],\n  \"scientific_significance\": \"The realization of atomically precise metallic carbon pentaheptite nanoribbons provides a pathway to quantum-limited all-carbon conductors for next-generation electronic applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the synthesis and electronic properties of atomically precise carbon pentaheptite nanoribbons (CPHNs) via on-surface assembly. Researchers created two narrow CPHN types with distinct electronic behaviors: CPHN-1 functions as an intrinsic metal with near-ballistic conductance near one conductance quantum, while CPHN-2 acts as a narrow-bandgap semiconductor. The findings demonstrate potential for all-carbon electronics and quantum-limited conductors.",
+          "key_findings": [
+            "Two narrow carbon pentaheptite nanoribbons (CPHNs) were synthesized with distinct electronic properties",
+            "CPHN-1 exhibits intrinsic metallic behavior with near-ballistic conductance approaching one conductance quantum",
+            "CPHN-2 functions as a narrow-bandgap semiconductor"
+          ],
+          "scientific_significance": "The realization of atomically precise metallic carbon pentaheptite nanoribbons provides a pathway to quantum-limited all-carbon conductors for next-generation electronic applications."
+        },
+        "elapsed_seconds": 44.0686,
+        "input_tokens": 818,
+        "output_tokens": 219,
+        "thoughts_tokens": null,
+        "total_tokens": 1037,
+        "model_eval_seconds": 36.9133,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956076",
+        "title": "Emergence of Chern metal in a moiré Kondo lattice.",
+        "abstract": "NA: A Chern metal is a two-dimensional metallic state of matter carrying chiral edge states. We report the observation of a Chern metal at the onset of the magnetic Kondo breakdown in a frustrated moiré Kondo lattice--angle-aligned MoTe2/WSe2 bilayers. The state is compressible and is manifested by a nearly quantized Hall resistance and a finite longitudinal resistance arising from a bad metallic bulk. We demonstrate the presence of a chiral edge state by nonlocal transport measurements and current-induced quantum anomalous Hall breakdown. Magnetic circular dichroism measurements further reveal a magnetization plateau for the Chern metal before a metamagnetic transition at the Kondo breakdown. Our results open an opportunity for moiré engineering of exotic quantum phases through the interplay between band topology and Kondo interactions.",
+        "publication_types": [],
+        "doi": "10.1126/science.adv9181",
+        "doi_url": "https://doi.org/10.1126/science.adv9181",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956076/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the emergence of a Chern metal in frustrated moiré Kondo lattices. Using angle-aligned MoTe2/WSe2 bilayers, researchers observed a compressible metallic state with nearly quantized Hall resistance and finite longitudinal resistance. Nonlocal transport and magnetic circular dichroism confirmed chiral edge states and a magnetization plateau before Kondo breakdown. The findings demonstrate how moiré engineering can stabilize topological quantum phases through band topology and Kondo interactions.\",\n  \"key_findings\": [\n    \"Observation of a compressible Chern metal at the onset of magnetic Kondo breakdown in MoTe2/WSe2 bilayers\",\n    \"Nearly quantized Hall resistance and finite longitudinal resistance indicating a bad metallic bulk\",\n    \"Magnetization plateau preceding Kondo breakdown, confirmed by nonlocal transport and magnetic circular dichroism\"\n  ],\n  \"scientific_significance\": \"This work establishes moiré engineering as a pathway to stabilize topological quantum phases by interplaying band topology and Kondo interactions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the emergence of a Chern metal in frustrated moiré Kondo lattices. Using angle-aligned MoTe2/WSe2 bilayers, researchers observed a compressible metallic state with nearly quantized Hall resistance and finite longitudinal resistance. Nonlocal transport and magnetic circular dichroism confirmed chiral edge states and a magnetization plateau before Kondo breakdown. The findings demonstrate how moiré engineering can stabilize topological quantum phases through band topology and Kondo interactions.",
+          "key_findings": [
+            "Observation of a compressible Chern metal at the onset of magnetic Kondo breakdown in MoTe2/WSe2 bilayers",
+            "Nearly quantized Hall resistance and finite longitudinal resistance indicating a bad metallic bulk",
+            "Magnetization plateau preceding Kondo breakdown, confirmed by nonlocal transport and magnetic circular dichroism"
+          ],
+          "scientific_significance": "This work establishes moiré engineering as a pathway to stabilize topological quantum phases by interplaying band topology and Kondo interactions."
+        },
+        "elapsed_seconds": 36.4426,
+        "input_tokens": 689,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 903,
+        "model_eval_seconds": 34.3108,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes within polymer matrices. Results demonstrate scalable production of 3D-printed composites with 55 wt% boron nitride in polylactic acid, achieving zero volume shrinkage and exceptional thermomechanical stability. Vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K), while horizontally aligned ones provide thermal insulation (0.071 W/m/K).\",\n  \"key_findings\": [\n    \"SHAPE enables scalable 3D printing of nanocomposites with up to 55 wt% boron nitride nanosheets\",\n    \"Printed composites exhibit zero volume shrinkage and stability beyond polymer melting temperatures\",\n    \"Vertically aligned BN composites achieve thermal conductivity of 1.07 W/m/K, while horizontally aligned structures offer thermal insulation of 0.071 W/m/K\"\n  ],\n  \"scientific_significance\": \"This method establishes a pathway for cross-scale design of functional nanocomposites with tailored thermal and mechanical properties through precise nanofiller alignment during additive manufacturing.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes within polymer matrices. Results demonstrate scalable production of 3D-printed composites with 55 wt% boron nitride in polylactic acid, achieving zero volume shrinkage and exceptional thermomechanical stability. Vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K), while horizontally aligned ones provide thermal insulation (0.071 W/m/K).",
+          "key_findings": [
+            "SHAPE enables scalable 3D printing of nanocomposites with up to 55 wt% boron nitride nanosheets",
+            "Printed composites exhibit zero volume shrinkage and stability beyond polymer melting temperatures",
+            "Vertically aligned BN composites achieve thermal conductivity of 1.07 W/m/K, while horizontally aligned structures offer thermal insulation of 0.071 W/m/K"
+          ],
+          "scientific_significance": "This method establishes a pathway for cross-scale design of functional nanocomposites with tailored thermal and mechanical properties through precise nanofiller alignment during additive manufacturing."
+        },
+        "elapsed_seconds": 52.7146,
+        "input_tokens": 858,
+        "output_tokens": 277,
+        "thoughts_tokens": null,
+        "total_tokens": 1135,
+        "model_eval_seconds": 50.5019,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951953",
+        "title": "Molecular underpinnings of rheumatic diseases and emerging therapeutic concepts.",
+        "abstract": "NA: Inflammatory rheumatic diseases such as rheumatoid arthritis, psoriatic arthritis and systemic lupus erythematosus represent chronic inflammatory disorders that are caused by dysregulation of innate and adaptive immune responses. Here we review current advances in our understanding of the molecular underpinnings of these diseases and discuss consequences with respect to emerging targets and treatment strategies, which are increasingly enabling more robust disease control and the first prospects of a cure for previously chronic inflammatory rheumatic diseases.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-10966-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-10966-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951953/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This review examines molecular mechanisms driving inflammatory rheumatic diseases including rheumatoid arthritis, psoriatic arthritis, and systemic lupus erythematosus. It analyzes dysregulation of innate and adaptive immune responses and evaluates emerging therapeutic targets that enable improved disease control and potential cures for previously chronic conditions.\",\n  \"key_findings\": [\n    \"Dysregulation of innate and adaptive immune responses underlies inflammatory rheumatic diseases\",\n    \"Emerging therapeutic targets are enabling more robust disease control\",\n    \"First prospects for curing previously chronic inflammatory rheumatic diseases exist\"\n  ],\n  \"scientific_significance\": \"This review advances understanding of molecular pathways in rheumatic diseases and identifies promising therapeutic strategies that could transform chronic inflammatory conditions from progressive disorders to curable states.\"\n}",
+        "parsed": {
+          "summary": "This review examines molecular mechanisms driving inflammatory rheumatic diseases including rheumatoid arthritis, psoriatic arthritis, and systemic lupus erythematosus. It analyzes dysregulation of innate and adaptive immune responses and evaluates emerging therapeutic targets that enable improved disease control and potential cures for previously chronic conditions.",
+          "key_findings": [
+            "Dysregulation of innate and adaptive immune responses underlies inflammatory rheumatic diseases",
+            "Emerging therapeutic targets are enabling more robust disease control",
+            "First prospects for curing previously chronic inflammatory rheumatic diseases exist"
+          ],
+          "scientific_significance": "This review advances understanding of molecular pathways in rheumatic diseases and identifies promising therapeutic strategies that could transform chronic inflammatory conditions from progressive disorders to curable states."
+        },
+        "elapsed_seconds": 27.4231,
+        "input_tokens": 625,
+        "output_tokens": 160,
+        "thoughts_tokens": null,
+        "total_tokens": 785,
+        "model_eval_seconds": 25.2902,
+        "error": "summary must contain 45–65 words; received 44.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956077",
+        "title": "A Martian meteorite that formed ≳4.1 billion years ago samples Mars' early crust and mantle.",
+        "abstract": "NA: Martian meteorites provide a record of the planet's geological history. However, most are geologically young samples that are not representative of Mars' surface, which is dominated by ancient rocks. We describe the Martian meteorite Teghaza 001 (Teg 001), a slowly cooled igneous rock that formed at least 4.1 billion years ago. Its composition, mineralogy, and texture are distinct from other Martian meteorites. We determine that Teg 001 is a sample of ancient crust, which formed from a geochemically distinct mantle source with primordial composition. The presence of aqueously altered minerals, combined with bulk and mineral-specific oxygen isotope measurements, indicate that Teg 001 experienced reactions with fluids enriched in 18O, before ejection into space by an impact.",
+        "publication_types": [],
+        "doi": "10.1126/science.adz5646",
+        "doi_url": "https://doi.org/10.1126/science.adz5646",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956077/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies a Martian meteorite (Teghaza 001) formed ≳4.1 billion years ago as an ancient crustal sample. The research characterizes its composition, mineralogy, and texture, revealing it originated from a geochemically distinct mantle source with primordial composition. The meteorite shows aqueous alteration with 18O-enriched fluids, indicating early Mars had liquid water interacting with crustal rocks.\",\n  \"key_findings\": [\n    \"Teghaza 001 is a 4.1-billion-year-old Martian crustal sample\",\n    \"It formed from a geochemically distinct mantle source with primordial composition\",\n    \"Aqueous alteration with 18O-enriched fluids occurred before ejection\"\n  ],\n  \"scientific_significance\": \"This discovery provides direct evidence of Mars' early crustal formation and fluid-rock interactions, advancing understanding of the planet's ancient geological history and potential for early habitable conditions.\"\n}",
+        "parsed": {
+          "summary": "This study identifies a Martian meteorite (Teghaza 001) formed ≳4.1 billion years ago as an ancient crustal sample. The research characterizes its composition, mineralogy, and texture, revealing it originated from a geochemically distinct mantle source with primordial composition. The meteorite shows aqueous alteration with 18O-enriched fluids, indicating early Mars had liquid water interacting with crustal rocks.",
+          "key_findings": [
+            "Teghaza 001 is a 4.1-billion-year-old Martian crustal sample",
+            "It formed from a geochemically distinct mantle source with primordial composition",
+            "Aqueous alteration with 18O-enriched fluids occurred before ejection"
+          ],
+          "scientific_significance": "This discovery provides direct evidence of Mars' early crustal formation and fluid-rock interactions, advancing understanding of the planet's ancient geological history and potential for early habitable conditions."
+        },
+        "elapsed_seconds": 38.1922,
+        "input_tokens": 613,
+        "output_tokens": 210,
+        "thoughts_tokens": null,
+        "total_tokens": 823,
+        "model_eval_seconds": 34.4356,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides/oxynitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.\",\n  \"key_findings\": [\n    \"Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck for Ta3N5 photocatalysis\",\n    \"Development of RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield for stoichiometric pure water splitting at 420 nm\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting in nitride/oxynitride materials, providing mechanistic insights for advancing solar-driven water splitting technologies.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides/oxynitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.",
+          "key_findings": [
+            "Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck for Ta3N5 photocatalysis",
+            "Development of RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield for stoichiometric pure water splitting at 420 nm"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting in nitride/oxynitride materials, providing mechanistic insights for advancing solar-driven water splitting technologies."
+        },
+        "elapsed_seconds": 57.1789,
+        "input_tokens": 820,
+        "output_tokens": 315,
+        "thoughts_tokens": null,
+        "total_tokens": 1135,
+        "model_eval_seconds": 54.8944,
+        "error": "summary must contain 45–65 words; received 90.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951956",
+        "title": "MCT1-dependent mitochondrial lactate import sustains cardiac metabolism.",
+        "abstract": "NA: The heart possesses a dynamic capacity to oxidize a variety of fuels, including glucose and lactate, to meet its energetic demands under diverse dietary, exertion and injury stressors1. Oxidation of carbohydrate substrates is thought to converge on the cytosolic generation of pyruvate, which is transported by the mitochondrial pyruvate carrier (MPC) for entry into the tricarboxylic acid cycle2. Here we find that glucose-derived carbon is oxidized in mouse myocardium even when the MPC is genetically ablated. Using genetic and pharmacological tools, we demonstrate that lactate monocarboxylate transporter 1 (MCT1, encoded by Slc16a1) is required for the oxidation of glucose carbon by MPC-deficient myocardium. We further observe that MCT1, traditionally localized to the plasma membrane, also resides in the inner mitochondrial membrane of mouse and human cardiomyocytes. Together with matrix-localized LDHB, MCT1 enables mitochondrial lactate conversion to pyruvate and NADH, directly fueling the electron transport chain. Loss of MCT1 impairs lactate oxidation, disrupts metabolic flexibility and accelerates the development of heart failure with increased mortality after hyperactivation of the neurohormonal axis or ischemia-reperfusion injury. Thus, the existence of a parallel lactate-based pathway for carbohydrate oxidation can sustain cardiac energetics and maintain myocardial structure and function under diverse stress conditions.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11182-3",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11182-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951956/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates cardiac metabolism by identifying MCT1-dependent lactate import as a critical pathway for sustaining energy production when mitochondrial pyruvate carrier (MPC) is absent. Using genetic and pharmacological approaches, it demonstrates that MCT1 enables mitochondrial lactate conversion to py. In MPC-deficient hearts, MCT1 loss impairs lactate oxidation, reduces metabolic flexibility, and accelerates heart failure under stress.\",\n  \"key_findings\": [\n    \"MCT1 is required for glucose carbon oxidation in MPC-deficient myocardium\",\n    \"MCT1 localizes to the inner mitochondrial membrane in cardiomyocytes\",\n    \"MCT1 loss impairs lactate oxidation and accelerates heart failure under stress\"\n  ],\n  \"scientific_significance\": \"This work establishes a parallel lactate-based metabolic pathway that sustains cardiac energy production during metabolic stress, providing a mechanism for myocardial resilience against injury and stress.\"\n}",
+        "parsed": {
+          "summary": "This study investigates cardiac metabolism by identifying MCT1-dependent lactate import as a critical pathway for sustaining energy production when mitochondrial pyruvate carrier (MPC) is absent. Using genetic and pharmacological approaches, it demonstrates that MCT1 enables mitochondrial lactate conversion to py. In MPC-deficient hearts, MCT1 loss impairs lactate oxidation, reduces metabolic flexibility, and accelerates heart failure under stress.",
+          "key_findings": [
+            "MCT1 is required for glucose carbon oxidation in MPC-deficient myocardium",
+            "MCT1 localizes to the inner mitochondrial membrane in cardiomyocytes",
+            "MCT1 loss impairs lactate oxidation and accelerates heart failure under stress"
+          ],
+          "scientific_significance": "This work establishes a parallel lactate-based metabolic pathway that sustains cardiac energy production during metabolic stress, providing a mechanism for myocardial resilience against injury and stress."
+        },
+        "elapsed_seconds": 38.769,
+        "input_tokens": 734,
+        "output_tokens": 195,
+        "thoughts_tokens": null,
+        "total_tokens": 929,
+        "model_eval_seconds": 32.7384,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956119",
+        "title": "When AI takes away the thrill of discovery.",
+        "abstract": "NA: \"Pure math is being devastated or revolutionized, depending on your point of view.\" So said Cornell professor Steven Strogatz after the artificial intelligence (AI) company OpenAI announced in early September a potential solution to the Navier-Stokes existence and smoothness problem, one of the seven Millennium Prize problems that represent the highest goals for mathematical proofs. OpenAI's solution involved unleashing an army of AI agents at a cost of millions of dollars in computing power, and it also certainly drew on decades of human effort in mathematics before it. Then a few weeks later, OpenAI posted 722 manuscripts describing progress on 372 mathematical problem families, and Google DeepMind published (in Science) solutions from their own AI math system. These events are potentially exciting for those who long to know the answers to these problems as soon as possible, but they have also sent the world of mathematics reeling, and pose an even bigger question for all fields: Can the satisfaction of understanding ever replace the thrill of discovery?",
+        "publication_types": [],
+        "doi": "10.1126/science.aen3894",
+        "doi_url": "https://doi.org/10.1126/science.aen3894",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956119/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines the impact of AI on mathematical discovery, focusing on OpenAI's solution to the Navier-Stokes problem and subsequent publications. The research assesses whether AI-driven mathematical progress can replicate the human thrill of discovery. Findings indicate AI has accelerated problem-solving but may diminish the intrinsic satisfaction of understanding complex concepts through human-driven insight.\",\n  \"key_findings\": [\n    \"OpenAI resolved the Navier-Stokes existence and smoothness problem using AI agents\",\n    \"AI systems generated 722 manuscripts addressing 372 mathematical problem families\",\n    \"AI-driven solutions risk reducing the emotional satisfaction of mathematical discovery\"\n  ],\n  \"scientific_significance\": \"The study highlights AI's capacity to rapidly advance mathematical proofs while raising questions about the irreplaceable human element in the discovery process.\"\n}",
+        "parsed": {
+          "summary": "This study examines the impact of AI on mathematical discovery, focusing on OpenAI's solution to the Navier-Stokes problem and subsequent publications. The research assesses whether AI-driven mathematical progress can replicate the human thrill of discovery. Findings indicate AI has accelerated problem-solving but may diminish the intrinsic satisfaction of understanding complex concepts through human-driven insight.",
+          "key_findings": [
+            "OpenAI resolved the Navier-Stokes existence and smoothness problem using AI agents",
+            "AI systems generated 722 manuscripts addressing 372 mathematical problem families",
+            "AI-driven solutions risk reducing the emotional satisfaction of mathematical discovery"
+          ],
+          "scientific_significance": "The study highlights AI's capacity to rapidly advance mathematical proofs while raising questions about the irreplaceable human element in the discovery process."
+        },
+        "elapsed_seconds": 32.0652,
+        "input_tokens": 730,
+        "output_tokens": 170,
+        "thoughts_tokens": null,
+        "total_tokens": 900,
+        "model_eval_seconds": 29.8217,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920391",
+        "title": "Quantification of Magnetic Interactions in van der Waals Heterostructures Using Lorentz Transmission Electron Microscopy and Off-Axis Electron Holography.",
+        "abstract": "NA: Magnetic van der Waals (vdW) materials are promising for memory and logic applications because of their tunable magnetic properties and compatibility with vdW heterostructure devices. However, coupling between magnetic textures in stacked layers is difficult to resolve in conventional plan-view measurements because the magnetic signal is integrated over the sample thickness. Here, these interactions are quantified in Fe3GeTe2 (FGT)/graphite/FGT heterostructures using cross-sectional Lorentz transmission electron microscopy and off-axis electron holography, enabling reconstruction of the local projected magnetic induction within and between the layers. Domain alignment weakens with increasing FGT separation, yielding a stray-field coupling length scale of λ=37±7  nm for the cross-sectional geometry studied here, corresponding to the average separation at which domain misalignment first emerges. This length scale corresponds to an approximately 23% reduction in the interlayer magnetic induction relative to bulk FGT. The magnetic induction is reduced relative to bulk FGT up to ∼ 100 nm from a surface. Comparisons with model-based iterative reconstructions of the magnetization and micromagnetic simulations show that this near-surface reduction is due to demagnetizing and stray fields. These results quantify the magnetic induction in stacked vdW magnets and guide the design of devices that require controllable coupling between magnetic textures.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75479",
+        "doi_url": "https://doi.org/10.1002/adma.75479",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920391/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study quantifies magnetic interactions in Fe3GeTe2/graphite/Fe3GeTe2 heterostructures using cross-sectional Lorentz transmission electron microscopy and off-axis electron holography. It reconstructs local projected magnetic induction within and between layers, revealing domain alignment weakens with increasing separation. The stray-field coupling length scale is λ=37±7 nm, corresponding to a 23% reduction in interlayer magnetic induction relative to bulk FGT. This near-surface effect guides device design requiring controlled magnetic coupling.\",\n  \"key_findings\": [\n    \"Stray-field coupling length scale of λ=37±7 nm for FGT/graphite/FGT heterostructures\",\n    \"23% reduction in interlayer magnetic induction relative to bulk FGT at λ\",\n    \"Near-surface magnetic induction reduction up to ∼100 nm from a surface\"\n  ],\n  \"scientific_significance\": \"This work provides quantitative metrics for magnetic coupling in stacked van der Waals magnets, enabling precise engineering of magnetic interactions in heterostructure-based devices.\"\n}",
+        "parsed": {
+          "summary": "This study quantifies magnetic interactions in Fe3GeTe2/graphite/Fe3GeTe2 heterostructures using cross-sectional Lorentz transmission electron microscopy and off-axis electron holography. It reconstructs local projected magnetic induction within and between layers, revealing domain alignment weakens with increasing separation. The stray-field coupling length scale is λ=37±7 nm, corresponding to a 23% reduction in interlayer magnetic induction relative to bulk FGT. This near-surface effect guides device design requiring controlled magnetic coupling.",
+          "key_findings": [
+            "Stray-field coupling length scale of λ=37±7 nm for FGT/graphite/FGT heterostructures",
+            "23% reduction in interlayer magnetic induction relative to bulk FGT at λ",
+            "Near-surface magnetic induction reduction up to ∼100 nm from a surface"
+          ],
+          "scientific_significance": "This work provides quantitative metrics for magnetic coupling in stacked van der Waals magnets, enabling precise engineering of magnetic interactions in heterostructure-based devices."
+        },
+        "elapsed_seconds": 40.9001,
+        "input_tokens": 826,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 1054,
+        "model_eval_seconds": 38.6788,
+        "error": "summary must contain 45–65 words; received 66.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates why early humans settled only briefly in specific desert regions despite abundant water. Using a 1,500-km geoarchaeological survey across Arabia's Rub' al Khali desert, researchers found that the availability of stone for tool production was a critical factor alongside water. Palaeolake deposits existed at 55 of 125 sites, but no lithic artifacts or knappable materials were present where water was accessible. The analysis indicates early human settlement required both water and lithic resources, challenging models that prioritize water availability alone.\",\n  \"key_findings\": [\n    \"Palaeolake deposits were present at 55 of 125 surveyed sites in Rub' al Khali, yet no lithic artifacts or knappable materials were found where water was accessible.\",\n    \"Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, with raw-material availability improving site discrimination from an area under the curve of 0.695 to 0.768.\",\n    \"Convergent patterns across Africa, North America, and Asia suggest stone availability, not water alone, constrained early human dispersal into deserts.\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that lithic resource availability, not water, was a key constraint on early human settlement in arid regions, refining dispersal models by integrating geological factors.\"\n}",
+        "parsed": {
+          "summary": "This study investigates why early humans settled only briefly in specific desert regions despite abundant water. Using a 1,500-km geoarchaeological survey across Arabia's Rub' al Khali desert, researchers found that the availability of stone for tool production was a critical factor alongside water. Palaeolake deposits existed at 55 of 125 sites, but no lithic artifacts or knappable materials were present where water was accessible. The analysis indicates early human settlement required both water and lithic resources, challenging models that prioritize water availability alone.",
+          "key_findings": [
+            "Palaeolake deposits were present at 55 of 125 surveyed sites in Rub' al Khali, yet no lithic artifacts or knappable materials were found where water was accessible.",
+            "Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, with raw-material availability improving site discrimination from an area under the curve of 0.695 to 0.768.",
+            "Convergent patterns across Africa, North America, and Asia suggest stone availability, not water alone, constrained early human dispersal into deserts."
+          ],
+          "scientific_significance": "The findings demonstrate that lithic resource availability, not water, was a key constraint on early human settlement in arid regions, refining dispersal models by integrating geological factors."
+        },
+        "elapsed_seconds": 54.0173,
+        "input_tokens": 856,
+        "output_tokens": 293,
+        "thoughts_tokens": null,
+        "total_tokens": 1149,
+        "model_eval_seconds": 51.7298,
+        "error": "summary must contain 45–65 words; received 83.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956120",
+        "title": "Western Pacific double subduction drives Gulf of California rifting.",
+        "abstract": "NA: Continental rifting reflects the balance between tectonic forces and lithospheric strength, yet the mechanisms of breakup remain debated. Rapid rifting of the Gulf of California oblique rift (GOCOR) ~6 million to 8 million years ago is a key example; it may have resulted from the lithosphere responding to external kinematics or acceleration of long-lived extension. The dynamics of either scenario remain incompletely understood. In this study, we highlight that the rapid rifting of the GOCOR coincides with the initiation of Western Pacific double subduction. Using three-dimensional geodynamic models, we show that such subduction reorganization can transmit extensional stresses of ~5 to 15 megapascals across the Pacific plate, loading the GOCOR and the southern San Andreas fault. Subduction reorganization may represent the missing driver for the initiation of rapid GOCOR rifting within a preconditioned lithosphere and may be an overlooked tectonic force behind other rifting events.",
+        "publication_types": [],
+        "doi": "10.1126/science.aef5187",
+        "doi_url": "https://doi.org/10.1126/science.aef5187",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956120/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether Western Pacific double subduction drives rapid rifting in the Gulf of California. Using 3D geodynamic models, it demonstrates that subduction reorganization transmits extensional stresses of 5–15 MPa across the Pacific plate, loading the Gulf of California oblique rift (GOCOR) and southern San Andreas fault. The findings suggest double subduction reorganization may initiate rapid rifting in a preconditioned lithosphere.\",\n  \"key_findings\": [\n    \"Subduction reorganization transmits extensional stresses of 5–15 MPa across the Pacific plate\",\n    \"This loading mechanism explains rapid rifting in the Gulf of California oblique rift (GOCOR)\",\n    \"Double subduction reorganization may initiate rapid rifting in a preconditioned lithosphere\"\n  ],\n  \"scientific_significance\": \"The study identifies double subduction reorganization as a key driver for rapid continental rifting, providing a mechanism for how external tectonic forces can initiate rifting in preconditioned lithospheres.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether Western Pacific double subduction drives rapid rifting in the Gulf of California. Using 3D geodynamic models, it demonstrates that subduction reorganization transmits extensional stresses of 5–15 MPa across the Pacific plate, loading the Gulf of California oblique rift (GOCOR) and southern San Andreas fault. The findings suggest double subduction reorganization may initiate rapid rifting in a preconditioned lithosphere.",
+          "key_findings": [
+            "Subduction reorganization transmits extensional stresses of 5–15 MPa across the Pacific plate",
+            "This loading mechanism explains rapid rifting in the Gulf of California oblique rift (GOCOR)",
+            "Double subduction reorganization may initiate rapid rifting in a preconditioned lithosphere"
+          ],
+          "scientific_significance": "The study identifies double subduction reorganization as a key driver for rapid continental rifting, providing a mechanism for how external tectonic forces can initiate rifting in preconditioned lithospheres."
+        },
+        "elapsed_seconds": 37.6324,
+        "input_tokens": 729,
+        "output_tokens": 219,
+        "thoughts_tokens": null,
+        "total_tokens": 948,
+        "model_eval_seconds": 35.4942,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42921955",
+        "title": "Aluminum Scandium Nitride (AlScN) for Advanced Devices: Physical Mechanisms and Emerging Applications.",
+        "abstract": "NA: AlScN is an emerging semiconductor material that exhibits pronounced ferroelectric switching and enhanced piezoelectric responses through the incorporation of scandium (Sc) into aluminum nitride (AlN). These properties make AlScN a promising candidate for next-generation ferroelectric in-memory computing architecture and radio-frequency circuits. However, challenges arise when preparing high-quality epitaxial films with high Sc content, including insufficient ferroelectric endurance, interface instability, and leakage current, which collectively compromise device performance and reliability. This review provides a systematic overview of the ferroelectric and piezoelectric properties of AlScN with underlying physical mechanisms, highlights the challenges in material growth and device integration, and summarizes recent advances of emerging applications in piezoelectric devices, optoelectronic devices, ferroelectric memories, and high-electron-mobility transistors (HEMTs). Finally, perspectives are presented on future research directions, focusing on overcoming key barriers to device implementation. With ongoing advances in material optimization and system-level integration, AlScN presents broad prospects for energy-efficient computing and sensing hardware, accelerating the development of artificial intelligence (AI).",
+        "publication_types": [],
+        "doi": "10.1002/adma.75469",
+        "doi_url": "https://doi.org/10.1002/adma.75469",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42921955/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This review examines aluminum scandium nitride (AlScN) as a next-generation semiconductor for ferroelectric and piezoelectric applications. It investigates physical mechanisms behind enhanced ferroelectric switching and piezoelectric responses via scandium doping in aluminum nitride. The study identifies challenges in high-quality epitaxial film growth, including ferroelectric endurance limits, interface instability, and leakage currents. Recent advances in AlScN applications for ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors are highlighted, emphasizing potential for energy-efficient computing and AI hardware.\",\n  \"key_findings\": [\n    \"AlScN exhibits improved ferroelectric switching and piezoelectric responses compared to pure AlN due to scandium doping\",\n    \"High-quality AlScN epitaxial films face challenges such as reduced ferroelectric endurance and interface instability\",\n    \"Recent progress enables AlScN applications in ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors\"\n  ],\n  \"scientific_significance\": \"This review advances understanding of AlScN's role in enabling energy-efficient computing and AI hardware through optimized ferroelectric and piezoelectric mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This review examines aluminum scandium nitride (AlScN) as a next-generation semiconductor for ferroelectric and piezoelectric applications. It investigates physical mechanisms behind enhanced ferroelectric switching and piezoelectric responses via scandium doping in aluminum nitride. The study identifies challenges in high-quality epitaxial film growth, including ferroelectric endurance limits, interface instability, and leakage currents. Recent advances in AlScN applications for ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors are highlighted, emphasizing potential for energy-efficient computing and AI hardware.",
+          "key_findings": [
+            "AlScN exhibits improved ferroelectric switching and piezoelectric responses compared to pure AlN due to scandium doping",
+            "High-quality AlScN epitaxial films face challenges such as reduced ferroelectric endurance and interface instability",
+            "Recent progress enables AlScN applications in ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors"
+          ],
+          "scientific_significance": "This review advances understanding of AlScN's role in enabling energy-efficient computing and AI hardware through optimized ferroelectric and piezoelectric mechanisms."
+        },
+        "elapsed_seconds": 44.2521,
+        "input_tokens": 770,
+        "output_tokens": 257,
+        "thoughts_tokens": null,
+        "total_tokens": 1027,
+        "model_eval_seconds": 42.0962,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    }
+  ]
+}
