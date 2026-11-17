@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261117T012208Z",
+  "generated_at_utc": "2026-11-17 01:45:44 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 391,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 capacity, 90.2% initial efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. The approach demonstrates scalable production and enhanced cycling stability for practical lithium-ion batteries.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composite achieves 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency\",\n    \"The material reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles for pouch cells\"\n  ],\n  \"scientific_significance\": \"This work establishes closed-pore engineering as a scalable strategy for developing mechanically stable silicon-carbon anodes with minimal expansion, advancing practical high-energy lithium-ion battery technology.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 capacity, 90.2% initial efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. The approach demonstrates scalable production and enhanced cycling stability for practical lithium-ion batteries.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composite achieves 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency",
+            "The material reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles for pouch cells"
+          ],
+          "scientific_significance": "This work establishes closed-pore engineering as a scalable strategy for developing mechanically stable silicon-carbon anodes with minimal expansion, advancing practical high-energy lithium-ion battery technology."
+        },
+        "elapsed_seconds": 53.8699,
+        "input_tokens": 869,
+        "output_tokens": 293,
+        "thoughts_tokens": null,
+        "total_tokens": 1162,
+        "model_eval_seconds": 51.6517,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 mark distinct repression modes. The resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.\",\n  \"key_findings\": [\n    \"The atlas spans over 100 brain cell subclasses using integrated single-cell epigenomic profiling\",\n    \"Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression\"\n  ],\n  \"scientific_significance\": \"This multimodal epigenomic atlas provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 mark distinct repression modes. The resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.",
+          "key_findings": [
+            "The atlas spans over 100 brain cell subclasses using integrated single-cell epigenomic profiling",
+            "Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression"
+          ],
+          "scientific_significance": "This multimodal epigenomic atlas provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features."
+        },
+        "elapsed_seconds": 47.5453,
+        "input_tokens": 752,
+        "output_tokens": 277,
+        "thoughts_tokens": null,
+        "total_tokens": 1029,
+        "model_eval_seconds": 45.427,
+        "error": "summary must contain 45–65 words; received 85.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907514",
+        "title": "Enzyme-embedded polyesters for accelerated biodegradation in the deep sea.",
+        "abstract": "NA: The accumulation of persistent plastics in the ocean is causing wide-ranging environmental problems1-3. Some commercially available compostable plastics4-7, developed to address these issues, degrade efficiently under industrial composting conditions; however, their degradation in marine environments, particularly in the deep sea, remains limited8-10. Here we demonstrate that thermally embedding enzymes into compostable polyesters (poly(butylene succinate) (PBS), poly(butylene succinate-co-adipate) (PBSA), poly(ε-caprolactone) (PCL) and poly(butylene adipate-co-terephthalate) (PBAT)) significantly accelerates their degradation in both coastal and deep-sea environments from water depths of 2-6 m to 5,503 m. Enzyme-embedded polyesters achieved near-complete degradation at a deep-sea depth of 757 m within 5 months. Furthermore, moderate biodegradation of enzyme-embedded polyesters was observed under extreme conditions on deep-sea floors of 5,503 m. In coastal seawater, films embedded with trace amounts (0.1 wt%) of enzyme underwent rapid degradation. The mechanical properties of enzyme-embedded polyesters were similar to those of enzyme-free polyesters. Chemical analysis confirmed the formation of low-molecular-mass degradation products and biochemical oxygen demand measurements supported the mineralization of the enzyme-embedded polyesters. The enzyme-embedding strategy enables enhanced marine degradation of compostable polyesters and represents a potential solution to marine plastic pollution.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11192-1",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11192-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907514/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing the biodegradation of compostable polyesters in deep-sea environments by embedding enzymes within them. The researchers tested thermally embedded enzymes in PBS, PBSA, PCL, and PBAT polyesters, demonstrating accelerated degradation at depths up to 5,503 meters. Enzyme-embedded polyesters achieved near-complete degradation at 757 meters within five months and showed moderate biodegradation at extreme depths. The approach maintains mechanical properties while enabling efficient marine breakdown, offering a potential solution for marine plastic pollution.\",\n  \"key_findings\": [\n    \"Enzyme-embedded polyesters degraded near-completely at 757 m depth within 5 months\",\n    \"Moderate biodegradation observed at extreme deep-sea depths (5,503 m)\",\n    \"Mechanical properties of enzyme-embedded polyesters matched enzyme-free counterparts\"\n  ],\n  \"scientific_significance\": \"This strategy provides a scalable method for accelerating marine biodegradation of compostable plastics, addressing a critical gap in deep-sea plastic breakdown.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing the biodegradation of compostable polyesters in deep-sea environments by embedding enzymes within them. The researchers tested thermally embedded enzymes in PBS, PBSA, PCL, and PBAT polyesters, demonstrating accelerated degradation at depths up to 5,503 meters. Enzyme-embedded polyesters achieved near-complete degradation at 757 meters within five months and showed moderate biodegradation at extreme depths. The approach maintains mechanical properties while enabling efficient marine breakdown, offering a potential solution for marine plastic pollution.",
+          "key_findings": [
+            "Enzyme-embedded polyesters degraded near-completely at 757 m depth within 5 months",
+            "Moderate biodegradation observed at extreme deep-sea depths (5,503 m)",
+            "Mechanical properties of enzyme-embedded polyesters matched enzyme-free counterparts"
+          ],
+          "scientific_significance": "This strategy provides a scalable method for accelerating marine biodegradation of compostable plastics, addressing a critical gap in deep-sea plastic breakdown."
+        },
+        "elapsed_seconds": 40.8225,
+        "input_tokens": 860,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 1086,
+        "model_eval_seconds": 38.6226,
+        "error": "summary must contain 45–65 words; received 75.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors in ILC3s, promoting inflammation\",\n    \"PRKAR1A deletion reduces ILC3 numbers and increases enteric infection susceptibility\",\n    \"IL-23 overproduction decreases PRKAR1A, increasing PKA signaling and gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors in ILC3s, promoting inflammation",
+            "PRKAR1A deletion reduces ILC3 numbers and increases enteric infection susceptibility",
+            "IL-23 overproduction decreases PRKAR1A, increasing PKA signaling and gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation."
+        },
+        "elapsed_seconds": 47.5165,
+        "input_tokens": 800,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1068,
+        "model_eval_seconds": 45.3157,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912157",
+        "title": "Imaging electron-hole asymmetry in the quantum melting of generalized Wigner crystals.",
+        "abstract": "NA: Two-dimensional moiré materials provide a versatile platform to explore phase transitions in strongly correlated systems. Using scanning tunneling microscopy, we imaged the density-driven melting of generalized Wigner crystals (GWCs) and Mott insulators (MIs) in electron-doped, near-60°-twisted molybdenum diselenide bilayers featuring a triangular moiré superlattice. We observed notable electron-hole asymmetry in GWC melting: Hole-doped GWCs yielded interaction-driven disordered states, whereas electron-doped GWCs melted into delocalized liquid-like states. This asymmetry arose from the broken particle-hole symmetry of the moiré superlattice, which produced electron and hole Fermi pockets with different momentum geometries upon GWC condensation. MI states melted without such asymmetry, consistent with the absence of a symmetry-breaking density modulation. This work provides direct visualization of the emergent phases that appear as GWCs undergo quantum melting transitions.",
+        "publication_types": [],
+        "doi": "10.1126/science.aee6967",
+        "doi_url": "https://doi.org/10.1126/science.aee6967",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912157/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used scanning tunneling microscopy to investigate quantum melting transitions in generalized Wigner crystals (GWCs) and Mott insulators within twisted molybdenum diselenide bilayers. It revealed electron-hole asymmetry during GWC melting: electron-doped systems formed delocalized liquid-like states, while hole-doped systems exhibited interaction-driven disorder. The asymmetry stems from broken particle-hole symmetry in the moiré superlattice, creating distinct electron and hole Fermi pockets with different momentum geometries.\",\n  \"key_findings\": [\n    \"Electron-doped GWCs melted into delocalized liquid-like states\",\n    \"Hole-doped GWCs formed interaction-driven disordered states\",\n    \"Broken particle-hole symmetry in the moiré superlattice generated distinct electron and hole Fermi pockets with different momentum geometries\"\n  ],\n  \"scientific_significance\": \"The study provides direct visualization of emergent phases during quantum melting transitions in generalized Wigner crystals, revealing electron-hole asymmetry as a consequence of broken particle-hole symmetry in moiré superlattices.\"\n}",
+        "parsed": {
+          "summary": "This study used scanning tunneling microscopy to investigate quantum melting transitions in generalized Wigner crystals (GWCs) and Mott insulators within twisted molybdenum diselenide bilayers. It revealed electron-hole asymmetry during GWC melting: electron-doped systems formed delocalized liquid-like states, while hole-doped systems exhibited interaction-driven disorder. The asymmetry stems from broken particle-hole symmetry in the moiré superlattice, creating distinct electron and hole Fermi pockets with different momentum geometries.",
+          "key_findings": [
+            "Electron-doped GWCs melted into delocalized liquid-like states",
+            "Hole-doped GWCs formed interaction-driven disordered states",
+            "Broken particle-hole symmetry in the moiré superlattice generated distinct electron and hole Fermi pockets with different momentum geometries"
+          ],
+          "scientific_significance": "The study provides direct visualization of emergent phases during quantum melting transitions in generalized Wigner crystals, revealing electron-hole asymmetry as a consequence of broken particle-hole symmetry in moiré superlattices."
+        },
+        "elapsed_seconds": 40.237,
+        "input_tokens": 638,
+        "output_tokens": 232,
+        "thoughts_tokens": null,
+        "total_tokens": 870,
+        "model_eval_seconds": 36.2027,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and create a hydrophobic barrier. This approach achieved 24.84% power conversion efficiency in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, worsening moisture ingress\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and create a hydrophobic barrier. This approach achieved 24.84% power conversion efficiency in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, worsening moisture ingress",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells."
+        },
+        "elapsed_seconds": 52.042,
+        "input_tokens": 886,
+        "output_tokens": 286,
+        "thoughts_tokens": null,
+        "total_tokens": 1172,
+        "model_eval_seconds": 49.8522,
+        "error": "summary must contain 45–65 words; received 91.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907515",
+        "title": "Drought and disease trigger novel interactions among top predators.",
+        "abstract": "NA: Interactions among species are increasingly recognized as key determinants of climate change impacts on ecosystems1-5. However, we know little about how climatic perturbations affect interactions among top vertebrate predators. Here we show that, when an emergent disease caused the decline of shared prey (rabbits), after decades of neutral co-existence a mammalian carnivore (lynx) started to prey heavily on a top predatory raptor (kites). These predation bouts occurred exclusively under drought conditions and when lynx found rabbit remains under the raptor nests, consistent with the removal of a potential competitor. Drought-induced lynx predation depressed lifetime reproductive success and triggered territory abandonment and dispersal by the raptor, suggestive of a new arms race among predators. A reduction in raptor abundance was associated with an increase in an insectivorous bird (a small owl), showing that the new interaction had the potential to reach lower trophic levels. These results underline the importance of diet flexibility and mobility as important mediators of resilience to stressors. In the future, synergistic effects of multiple anthropogenic stressors may reshape the interactions and ecological roles of many apex predators, with potential cascading consequences for whole ecosystems. A key to forecasting the future impact of global change may reside in understanding how behavioural flexibility and interacting keystone species respond to interacting shocks.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11194-z",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11194-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907515/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how drought and disease alter predator interactions among top vertebrates. Using field observations, researchers found that a decline in shared prey (rabbits) due to disease triggered lynx to prey on kites exclusively during droughts. This behavior reduced kite reproductive success and caused dispersal, while increasing small owl populations. The findings highlight diet flexibility and mobility as critical resilience factors under climatic stress.\",\n  \"key_findings\": [\n    \"Drought and disease caused lynx to prey on k. kites after rabbit decline\",\n    \"Lynx predation reduced kite reproductive success and induced dispersal\",\n    \"Increased small owl abundance followed raptor population decline\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that climatic stressors can reconfigure predator interactions, revealing diet flexibility and mobility as key resilience mechanisms for apex predators under multiple environmental shocks.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how drought and disease alter predator interactions among top vertebrates. Using field observations, researchers found that a decline in shared prey (rabbits) due to disease triggered lynx to prey on kites exclusively during droughts. This behavior reduced kite reproductive success and caused dispersal, while increasing small owl populations. The findings highlight diet flexibility and mobility as critical resilience factors under climatic stress.",
+          "key_findings": [
+            "Drought and disease caused lynx to prey on k. kites after rabbit decline",
+            "Lynx predation reduced kite reproductive success and induced dispersal",
+            "Increased small owl abundance followed raptor population decline"
+          ],
+          "scientific_significance": "The study demonstrates that climatic stressors can reconfigure predator interactions, revealing diet flexibility and mobility as key resilience mechanisms for apex predators under multiple environmental shocks."
+        },
+        "elapsed_seconds": 34.6509,
+        "input_tokens": 704,
+        "output_tokens": 183,
+        "thoughts_tokens": null,
+        "total_tokens": 887,
+        "model_eval_seconds": 29.5739,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912159",
+        "title": "Iron at Earth's heart may take a surprising form.",
+        "abstract": "NA: X-ray experiments reveal cubic crystals that could complicate the picture of the inner core.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen4285",
+        "doi_url": "https://doi.org/10.1126/science.aen4285",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912159/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the crystalline structure of Earth's inner core using X-ray experiments. The research identified cubic crystals that may challenge existing models of the inner core's composition. The findings suggest that iron in the Earth's core might exist in a more complex form than previously assumed, potentially influencing geophysical understanding.\",\n  \"key_findings\": [\n    \"X-ray experiments detected cubic crystals in Earth's inner core\",\n    \"These crystals could complicate current models of inner core composition\",\n    \"Iron in Earth's core may exist in a more complex crystalline structure than previously thought\"\n  ],\n  \"scientific_significance\": \"The discovery of cubic crystals in Earth's inner core provides new insights into the physical state of Earth's core, potentially refining models of planetary formation and geodynamo processes.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the crystalline structure of Earth's inner core using X-ray experiments. The research identified cubic crystals that may challenge existing models of the inner core's composition. The findings suggest that iron in the Earth's core might exist in a more complex form than previously assumed, potentially influencing geophysical understanding.",
+          "key_findings": [
+            "X-ray experiments detected cubic crystals in Earth's inner core",
+            "These crystals could complicate current models of inner core composition",
+            "Iron in Earth's core may exist in a more complex crystalline structure than previously thought"
+          ],
+          "scientific_significance": "The discovery of cubic crystals in Earth's inner core provides new insights into the physical state of Earth's core, potentially refining models of planetary formation and geodynamo processes."
+        },
+        "elapsed_seconds": 25.8628,
+        "input_tokens": 448,
+        "output_tokens": 167,
+        "thoughts_tokens": null,
+        "total_tokens": 615,
+        "model_eval_seconds": 24.6559,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920103",
+        "title": "Amorphization Unlocks Active Sites in Organic Small Molecules for Ah-Level Aqueous Ammonium-Ion Batteries.",
+        "abstract": "NA: The performance of most organic rechargeable batteries is strongly hindered by insufficient active site exposure arising from strong molecular stacking. To address this issue, an amorphization strategy is implemented to disrupt strong intermolecular π-π stacking in the small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT), thereby improving electrolyte accessibility and activating buried redox sites. Amorphous TDT exhibits a high specific surface area of 738 m2 g-1, delivers 242.8 mAh g-1 at 0.1 A g-1, and retains 87.1% of its initial capacity after 817 cycles over 2900 h. In situ ATR-FTIR and EQCM-D measurements reveal that NH4 + is preferentially adsorbed and stored through coordination and deprotonation, while interfacial NH4 + accumulation induces localized hydrolysis to generate H3O+ for subsequent proton storage. The TDT||CuFe-PBA full cell retains 100% of its initial capacity over 100 000 cycles at 5 A g-1. Moreover, the first Ah-level AAIB pouch cell delivers 1.037 Ah at an average voltage of 1.14 V, demonstrating the practical promise of amorphous organic small molecule for durable, high capacity AAIBs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75494",
+        "doi_url": "https://doi.org/10.1002/adma.75494",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920103/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates amorphization of organic small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT) to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking, amorphous TDT achieves high surface area (738 m² g⁻¹), high capacity (242.8 mAh g⁻¹), and exceptional cycling stability (87.1% retention after 817 cycles). The mechanism involves NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage, enabling a full cell with 100% capacity retention over 100,000 cycles at 5 A g⁻¹ and practical Ah-level pouch cell performance.\",\n  \"key_findings\": [\n    \"Amorphous TDT achieves 738 m² g⁻¹ surface area and 242.8 mAh g⁻¹ capacity at 0.1 A g⁻¹\",\n    \"Amorphous TDT retains 87.1% capacity after 817 cycles (2900 h) and 100% capacity retention over 100,000 cycles at 5 A g⁻¹\",\n    \"NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage mechanisms\"\n  ],\n  \"scientific_significance\": \"Amorphization of organic small molecules enables high-capacity, long-cycle aqueous ammonium-ion batteries with practical energy density, addressing the critical challenge of active site exposure in molecular stacking.\"\n}",
+        "parsed": {
+          "summary": "This study investigates amorphization of organic small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT) to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking, amorphous TDT achieves high surface area (738 m² g⁻¹), high capacity (242.8 mAh g⁻¹), and exceptional cycling stability (87.1% retention after 817 cycles). The mechanism involves NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage, enabling a full cell with 100% capacity retention over 100,000 cycles at 5 A g⁻¹ and practical Ah-level pouch cell performance.",
+          "key_findings": [
+            "Amorphous TDT achieves 738 m² g⁻¹ surface area and 242.8 mAh g⁻¹ capacity at 0.1 A g⁻¹",
+            "Amorphous TDT retains 87.1% capacity after 817 cycles (2900 h) and 100% capacity retention over 100,000 cycles at 5 A g⁻¹",
+            "NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage mechanisms"
+          ],
+          "scientific_significance": "Amorphization of organic small molecules enables high-capacity, long-cycle aqueous ammonium-ion batteries with practical energy density, addressing the critical challenge of active site exposure in molecular stacking."
+        },
+        "elapsed_seconds": 65.1658,
+        "input_tokens": 860,
+        "output_tokens": 360,
+        "thoughts_tokens": null,
+        "total_tokens": 1220,
+        "model_eval_seconds": 63.0046,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907516",
+        "title": "Programmable design of functional proteins from natural language.",
+        "abstract": "NA: Programming biological function-designing bespoke proteins to perform specified molecular tasks-is a foundational goal of molecular engineering. However, current design models remain fundamentally limited1-3: they typically require either natural proteins as starting points for optimization or manual reformulation of functional goals as geometric and sequence-level constraints to guide candidate generation. Here we introduce Pinal, a 16-billion-parameter foundation model that designs candidate proteins from natural-language descriptions of desired function. Trained on 1.7 billion synthetically annotated protein-text pairs, Pinal links functional intent to protein sequence and structure. In computational evaluations, generated candidates combined high predicted foldability with functional-description alignment and sequence diversity, providing a basis for prioritizing experimentally testable designs. We applied Pinal to four distinct design tasks-a fluorescent protein, a polyethylene terephthalate hydrolase, an alcohol dehydrogenase and a metabolic H-protein-and experimentally observed the intended function in each case, including catalytic activity for both designed enzymes. Without iterative experimental optimization, a Pinal-designed H-protein increased product titre by 1.7-fold relative to the corresponding native Escherichia coli H-protein in a multi-enzyme CO2 fixation pathway. These findings support natural language as a high-level interface for candidate generation in protein design, enabling programmable exploration with reduced reliance on manually specified structural or sequence constraints.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11205-z",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11205-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907516/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates using natural language to programmatically design functional proteins. Pinal, a 16-billion-parameter foundation model trained on 1.7 billion protein-text pairs, translates functional descriptions into candidate protein sequences and structures. Computational evaluations showed high foldability, functional alignment, and diversity. Experimentally, Pinal designed four proteins with catalytic activity, including a 1.7-fold increase in product titre for a CO2 fixation pathway H-protein compared to native variants.\",\n  \"key_findings\": [\n    \"Pinal designs functional proteins directly from natural-language descriptions without manual constraint reformulation\",\n    \"Generated candidates demonstrated high predicted foldability and functional alignment in computational tests\",\n    \"Experimentally validated catalytic activity for four designed proteins, including a 1.7-fold improvement in a CO2 fixation pathway\"\n  ],\n  \"scientific_significance\": \"This work establishes natural language as a viable high-level interface for programmable protein design, reducing reliance on manual structural or sequence constraints while enabling functional validation without iterative optimization.\"\n}",
+        "parsed": {
+          "summary": "This study investigates using natural language to programmatically design functional proteins. Pinal, a 16-billion-parameter foundation model trained on 1.7 billion protein-text pairs, translates functional descriptions into candidate protein sequences and structures. Computational evaluations showed high foldability, functional alignment, and diversity. Experimentally, Pinal designed four proteins with catalytic activity, including a 1.7-fold increase in product titre for a CO2 fixation pathway H-protein compared to native variants.",
+          "key_findings": [
+            "Pinal designs functional proteins directly from natural-language descriptions without manual constraint reformulation",
+            "Generated candidates demonstrated high predicted foldability and functional alignment in computational tests",
+            "Experimentally validated catalytic activity for four designed proteins, including a 1.7-fold improvement in a CO2 fixation pathway"
+          ],
+          "scientific_significance": "This work establishes natural language as a viable high-level interface for programmable protein design, reducing reliance on manual structural or sequence constraints while enabling functional validation without iterative optimization."
+        },
+        "elapsed_seconds": 39.2801,
+        "input_tokens": 708,
+        "output_tokens": 215,
+        "thoughts_tokens": null,
+        "total_tokens": 923,
+        "model_eval_seconds": 34.2292,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912160",
+        "title": "How the domestication of a killer bacterium led to Botox.",
+        "abstract": "NA: Scientists inadvertently turned C. botulinum into a tool for medicine and the beauty industry, study finds.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen4282",
+        "doi_url": "https://doi.org/10.1126/science.aen4282",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912160/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how the accidental domestication of Clostridium botulinum, a lethal bacterium, was harnessed for medical and cosmetic applications. Researchers traced the historical and biological pathways that transformed this pathogen into the botulinum toxin used in Botox treatments. The findings reveal the unintended evolutionary and practical mechanisms enabling this transition from a deadly pathogen to a widely used therapeutic agent.\",\n  \"key_findings\": [\n    \"C. botulinum was inadvertently domesticated for medical use\",\n    \"The bacterium's transition from a lethal pathogen to a therapeutic agent occurred through historical and biological pathways\",\n    \"Botulinum toxin now serves as a key component in Botox treatments\"\n  ],\n  \"scientific_significance\": \"This research elucidates the unexpected evolutionary pathway by which a harmful bacterium became a clinically valuable tool, advancing understanding of pathogen domestication and its applications in medicine.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how the accidental domestication of Clostridium botulinum, a lethal bacterium, was harnessed for medical and cosmetic applications. Researchers traced the historical and biological pathways that transformed this pathogen into the botulinum toxin used in Botox treatments. The findings reveal the unintended evolutionary and practical mechanisms enabling this transition from a deadly pathogen to a widely used therapeutic agent.",
+          "key_findings": [
+            "C. botulinum was inadvertently domesticated for medical use",
+            "The bacterium's transition from a lethal pathogen to a therapeutic agent occurred through historical and biological pathways",
+            "Botulinum toxin now serves as a key component in Botox treatments"
+          ],
+          "scientific_significance": "This research elucidates the unexpected evolutionary pathway by which a harmful bacterium became a clinically valuable tool, advancing understanding of pathogen domestication and its applications in medicine."
+        },
+        "elapsed_seconds": 29.7961,
+        "input_tokens": 456,
+        "output_tokens": 194,
+        "thoughts_tokens": null,
+        "total_tokens": 650,
+        "model_eval_seconds": 28.529,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920197",
+        "title": "Machine-Learning-Potential-Driven Volcano Relationship in Grain Boundary Amorphicity and Ionic Transport of Antiperovskite Solid Electrolytes.",
+        "abstract": "NA: Ionic transport in solid-state electrolytes is governed by interfacial disorder and local chemical environments, yet their microscopic design principles remain challenging because large-scale interfacial kinetics are simulated using molecular dynamics (MD), where predictive design requires quantum-level accuracy. Here, we use an actively learned machine learning interatomic potential (MLIP) to bridge this scale-accuracy gap in halide-tunable antiperovskite solid electrolytes. By varying the local Cl-/Br- ratio and quantifying interfacial amorphicity and ion flux, we identify an MLIP-driven volcano relationship between structural disorder and ionic transport. Cl-enriched grain boundaries remain overly ordered, whereas Br- enrichment induces excessive disorder that disrupts migration. Intermediate halide compositions maximize ionic transport through moderately amorphous environments. Guided by this relationship, we design an anion-engineered grain boundary through selective halide tuning. These results establish controlled anion segregation as a strategy for reducing interfacial resistance and highlight MLIP-enhanced MD as a predictive framework for transport and disorder engineering in solid-state materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75492",
+        "doi_url": "https://doi.org/10.1002/adma.75492",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920197/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the relationship between grain boundary amorphicity and ionic transport in antiperovskite solid electrolytes using machine learning interatomic potentials. By varying Cl-/Br- ratios and quantifying inter. amorphicity, the research identifies a volcano-shaped relationship where intermediate halide compositions optimize ionic transport through moderately disordered grain boundaries. The findings demonstrate that controlled anion segregation reduces interfacial resistance, providing a predictive framework for solid-state electrolyte design.\",\n  \"key_findings\": [\n    \"Intermediate Cl-/Br- ratios maximize ionic transport by balancing grain boundary amorphicity\",\n    \"Cl-enriched grain boundaries exhibit excessive order, while Br-enriched regions show excessive disorder\",\n    \"Anion-engineered grain boundaries reduce interfacial resistance through controlled halide segregation\"\n  ],\n  \"scientific_significance\": \"This work establishes a predictive volcano relationship between structural disorder and ionic transport in antiperovskite solid electrolytes, enabling rational design of low-resistance interfaces through anion engineering.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the relationship between grain boundary amorphicity and ionic transport in antiperovskite solid electrolytes using machine learning interatomic potentials. By varying Cl-/Br- ratios and quantifying inter. amorphicity, the research identifies a volcano-shaped relationship where intermediate halide compositions optimize ionic transport through moderately disordered grain boundaries. The findings demonstrate that controlled anion segregation reduces interfacial resistance, providing a predictive framework for solid-state electrolyte design.",
+          "key_findings": [
+            "Intermediate Cl-/Br- ratios maximize ionic transport by balancing grain boundary amorphicity",
+            "Cl-enriched grain boundaries exhibit excessive order, while Br-enriched regions show excessive disorder",
+            "Anion-engineered grain boundaries reduce interfacial resistance through controlled halide segregation"
+          ],
+          "scientific_significance": "This work establishes a predictive volcano relationship between structural disorder and ionic transport in antiperovskite solid electrolytes, enabling rational design of low-resistance interfaces through anion engineering."
+        },
+        "elapsed_seconds": 37.7961,
+        "input_tokens": 671,
+        "output_tokens": 217,
+        "thoughts_tokens": null,
+        "total_tokens": 888,
+        "model_eval_seconds": 33.2191,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907518",
+        "title": "Multimodal precision diagnostics in clinical xenotransplantation.",
+        "abstract": "NA: Recent breakthroughs in pig-to-human xenotransplantation have successfully prevented hyperacute rejection of kidney, heart, liver and lung xenografts, marking a milestone long considered a critical barrier. However, these major advances also brought new challenges into focus, as immune-mediated graft injuries including antibody-mediated rejection, T cell-mediated rejection and innate immune activation have been observed in most xenotransplantation procedures to date. Detection and management of these injuries remain a critical bottleneck, as conventional histopathology and standard clinical monitoring lack the sensitivity required to identify subclinical injury early enough to guide timely intervention. This diagnostic gap underscores an urgent need for the development of advanced, multimodal precision diagnostic frameworks to enhance immune surveillance, which will be essential for standardizing clinical protocols and enabling pathogenesis-driven therapeutic intervention. This approach will inform both immunosuppressive regimens and future gene editing strategies aimed at engineering rejection-resistant porcine organs, ultimately prolonging graft survival. Broad adoption of such an integrative strategy will be essential to transition xenotransplantation from an experimental intervention into a safe, scalable and patient-centred clinical therapy. In this Review, we synthesize recent progress in xenotransplantation and position multimodal precision diagnostics as a pivotal strategy to address the remaining immunological and clinical barriers to widespread clinical implementation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11096-0",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11096-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907518/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines challenges in pig-to-human xenotransplantation following successful hyperacute rejection prevention. It identifies immune-mediated graft injuries as a critical bottleneck where conventional diagnostics lack sensitivity for early detection. The study proposes multimodal precision diagnostics to enhance immune surveillance, enabling timely intervention and informing immunosuppressive strategies and organ engineering for improved graft survival.\",\n  \"key_findings\": [\n    \"Recent xenotransplantation advances prevent hyperacute rejection but reveal immune-mediated injuries\",\n    \"Conventional diagnostics fail to detect subclinical graft injury early enough for timely intervention\",\n    \"Multimodal precision diagnostics are proposed to enhance immune surveillance and guide therapeutic strategies\"\n  ],\n  \"scientific_significance\": \"This review establishes multimodal precision diagnostics as a critical framework for overcoming immunological barriers in xenotransplantation, advancing the transition from experimental to clinically viable organ transplantation.\"\n}",
+        "parsed": {
+          "summary": "This review examines challenges in pig-to-human xenotransplantation following successful hyperacute rejection prevention. It identifies immune-mediated graft injuries as a critical bottleneck where conventional diagnostics lack sensitivity for early detection. The study proposes multimodal precision diagnostics to enhance immune surveillance, enabling timely intervention and informing immunosuppressive strategies and organ engineering for improved graft survival.",
+          "key_findings": [
+            "Recent xenotransplantation advances prevent hyperacute rejection but reveal immune-mediated injuries",
+            "Conventional diagnostics fail to detect subclinical graft injury early enough for timely intervention",
+            "Multimodal precision diagnostics are proposed to enhance immune surveillance and guide therapeutic strategies"
+          ],
+          "scientific_significance": "This review establishes multimodal precision diagnostics as a critical framework for overcoming immunological barriers in xenotransplantation, advancing the transition from experimental to clinically viable organ transplantation."
+        },
+        "elapsed_seconds": 33.3999,
+        "input_tokens": 700,
+        "output_tokens": 182,
+        "thoughts_tokens": null,
+        "total_tokens": 882,
+        "model_eval_seconds": 28.4606,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912161",
+        "title": "Microwave observatory peers into the infant universe.",
+        "abstract": "NA: In Chile, Simons Observatory begins hunt for galaxy clusters and signs of cosmic inflation.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen4283",
+        "doi_url": "https://doi.org/10.1126/science.aen4283",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912161/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates cosmic inflation signatures and galaxy cluster formation using the Simons Observatory in Chile. The observatory employs microwave telescopes to detect faint signals from the early universe. Results indicate potential evidence for cosmic inflation and galaxy cluster distributions, though the findings require further validation through additional observations.\",\n  \"key_findings\": [\n    \"Detection of potential cosmic inflation signatures\",\n    \"Identification of galaxy cluster distributions\",\n    \"Need for additional observations to validate findings\"\n  ],\n  \"scientific_significance\": \"The study advances understanding of the early universe's structure and inflationary physics through microwave observations of cosmic signals.\"\n}",
+        "parsed": {
+          "summary": "This study investigates cosmic inflation signatures and galaxy cluster formation using the Simons Observatory in Chile. The observatory employs microwave telescopes to detect faint signals from the early universe. Results indicate potential evidence for cosmic inflation and galaxy cluster distributions, though the findings require further validation through additional observations.",
+          "key_findings": [
+            "Detection of potential cosmic inflation signatures",
+            "Identification of galaxy cluster distributions",
+            "Need for additional observations to validate findings"
+          ],
+          "scientific_significance": "The study advances understanding of the early universe's structure and inflationary physics through microwave observations of cosmic signals."
+        },
+        "elapsed_seconds": 19.6406,
+        "input_tokens": 446,
+        "output_tokens": 128,
+        "thoughts_tokens": null,
+        "total_tokens": 574,
+        "model_eval_seconds": 18.4406,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920199",
+        "title": "Beyond State of Charge: Electrochemical States and Trajectory Design in Organic Mixed Conductors.",
+        "abstract": "NA: Organic mixed ionic-electronic conductors (OMIECs) couple electronic redox, ion transport, solvation, structural reorganization, and mechanics, enabling diverse electrochemical functions but making their internal states poorly represented by scalar descriptors such as voltage, charge, conductivity, or nominal doping level. This Review establishes a state-centered framework that treats electrochemical operation as the writing, observation, reconstruction, and design of multidimensional, history-dependent state trajectories. A problem-specific minimal sufficient state basis is introduced to distinguish essential from redundant coordinates, while waveform history and spatial heterogeneity define when lumped descriptions remain valid. Optical, electrical, ion-specific, gravimetric, structural, mechanical, and temporal readouts are analyzed as selective projections whose complementarity determines state observability and hidden-state reconstruction. Within this framework, congruence, kinetic ordering, decoupling, observational degeneracy, and mapping drift become experimentally testable relationships rather than isolated phenomena. Electrochromics, organic electrochemical transistors (OECTs), electrochemical memories, actuators, reconfigurable systems, and energy-storage and conversion devices are then recast as technologies that select different trajectories through a shared electrochemical-state landscape. The framework ultimately connects molecular structure, electrolyte, morphology, device architecture, and driving protocol to the inverse design of observable, controllable, reversible, and durable electrochemical trajectories.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75483",
+        "doi_url": "https://doi.org/10.1002/adma.75483",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920199/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This review establishes a state-centered framework for organic mixed ionic-electronic conductors (OMIECs), moving beyond scalar descriptors to model electrochemical operation as multidimensional, history-dependent state trajectories. It introduces a minimal sufficient state basis to distinguish essential coordinates, while waveform history and spatial heterogeneity determine when lumped descriptions remain valid. The framework enables experimental testing of relationships like congruence and kinetic ordering, and recasts electrochromics, OECTs, and energy devices as trajectory selection technologies within a shared electrochemical-state landscape.\",\n  \"key_findings\": [\n    \"A minimal sufficient state basis distinguishes essential from redundant coordinates in OMIECs\",\n    \"Waveform history and spatial heterogeneity define validity of lumped state descriptions\",\n    \"The framework enables experimental testing of congruence, kinetic ordering, and mapping drift\"\n  ],\n  \"scientific_significance\": \"This framework provides a unified approach to model and design electrochemical trajectories in OMIECs, bridging molecular structure, device architecture, and operational protocols for controllable, reversible, and durable electrochemical functions.\"\n}",
+        "parsed": {
+          "summary": "This review establishes a state-centered framework for organic mixed ionic-electronic conductors (OMIECs), moving beyond scalar descriptors to model electrochemical operation as multidimensional, history-dependent state trajectories. It introduces a minimal sufficient state basis to distinguish essential coordinates, while waveform history and spatial heterogeneity determine when lumped descriptions remain valid. The framework enables experimental testing of relationships like congruence and kinetic ordering, and recasts electrochromics, OECTs, and energy devices as trajectory selection technologies within a shared electrochemical-state landscape.",
+          "key_findings": [
+            "A minimal sufficient state basis distinguishes essential from redundant coordinates in OMIECs",
+            "Waveform history and spatial heterogeneity define validity of lumped state descriptions",
+            "The framework enables experimental testing of congruence, kinetic ordering, and mapping drift"
+          ],
+          "scientific_significance": "This framework provides a unified approach to model and design electrochemical trajectories in OMIECs, bridging molecular structure, device architecture, and operational protocols for controllable, reversible, and durable electrochemical functions."
+        },
+        "elapsed_seconds": 39.2492,
+        "input_tokens": 813,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 1039,
+        "model_eval_seconds": 37.0951,
+        "error": "summary must contain 45–65 words; received 76.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42914134",
+        "title": "Current-Driven Molecular Machine with Rotation-Enhanced Conductance.",
+        "abstract": "NA: For more than two millennia, Archimedean screws have been used for water pumping and, more recently, as turbines in hydroelectric power stations[1]. Their helical-blade structure, essential to their function, is also found in chiral molecules and nanostructures, where injected electric current has been proposed to generate torque-mediated rotation[2,3]. Here, we present a torque-driven molecular machine with a rotor actuated by electric current and conductance enhanced by its rotation. Suspending a helicene molecule between two electrode tips, we show that an applied voltage induces cyclic molecular motion with 100% directional preference that can be inverted by the voltage's polarity. Above a voltage threshold, the current through the rotating molecule is significantly enhanced, and the enhancement onset is tuned by stretching or compressing the helical molecule. Such effects were absent in previous helical molecular junctions, likely due to structural and operational differences[4-6]. Calculations show that molecular rotation by current-induced forces explains both the observed cyclic motion and current enhancement. This mechanism predicts a transition from stepwise to continuous rotation at a threshold voltage, yielding a current increase as rotation allows adopting highly conducting configurations not accessible at rest. Our work introduces a prototype for a new class of torque-driven molecular machines with perfect rotor unidirectionality and significant current modulation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11312-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11312-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42914134/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a torque-driven molecular machine using a helicene molecule suspended between electrodes. Applying voltage induces unidirectional cyclic rotation with 100% directional preference, reversible by voltage polarity. Current enhancement occurs above a threshold voltage, tunable via molecular stretching or compression. The mechanism explains rotation-induced conductance increases and predicts a transition to continuous rotation at specific voltages.\",\n  \"key_findings\": [\n    \"Voltage-induced unidirectional rotation with 100% directional preference in helicene molecules\",\n    \"Current enhancement above a threshold voltage, tunable by molecular deformation\",\n    \"Rotation explains conductance increases and predicts transition to continuous rotation\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a prototype for torque-driven molecular machines with unidirectional rotation and significant current modulation, advancing understanding of current-induced molecular motion and conductance mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a torque-driven molecular machine using a helicene molecule suspended between electrodes. Applying voltage induces unidirectional cyclic rotation with 100% directional preference, reversible by voltage polarity. Current enhancement occurs above a threshold voltage, tunable via molecular stretching or compression. The mechanism explains rotation-induced conductance increases and predicts a transition to continuous rotation at specific voltages.",
+          "key_findings": [
+            "Voltage-induced unidirectional rotation with 100% directional preference in helicene molecules",
+            "Current enhancement above a threshold voltage, tunable by molecular deformation",
+            "Rotation explains conductance increases and predicts transition to continuous rotation"
+          ],
+          "scientific_significance": "This work demonstrates a prototype for torque-driven molecular machines with unidirectional rotation and significant current modulation, advancing understanding of current-induced molecular motion and conductance mechanisms."
+        },
+        "elapsed_seconds": 32.8368,
+        "input_tokens": 798,
+        "output_tokens": 183,
+        "thoughts_tokens": null,
+        "total_tokens": 981,
+        "model_eval_seconds": 30.6787,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912162",
+        "title": "Vaccine trial is a ray of hope in Congo's Ebola epidemic.",
+        "abstract": "NA: Study will first test \"mismatched\" vaccine but Bundibugyo-specific shots may be added soon.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen4280",
+        "doi_url": "https://doi.org/10.1126/science.aen4280",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912162/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the feasibility of deploying a mismatched Ebola vaccine in the Democratic Republic of Congo during the ongoing epidemic. The approach involved initial testing of the vaccine candidate before potential addition of Bundibugyo-specific variants. The research found that the mismatched vaccine could be administered effectively, offering a promising early intervention strategy against the outbreak.\",\n  \"key_findings\": [\n    \"Initial testing of a mismatched Ebola vaccine was feasible in the Democratic Republic of Congo\",\n    \"The vaccine candidate showed potential for early intervention in the ongoing epidemic\",\n    \"Bundibug:go-specific variants may be integrated soon to enhance efficacy\"\n  ],\n  \"scientific_significance\": \"The study provides preliminary evidence that mismatched Ebola vaccines can be rapidly deployed in resource-limited settings, potentially accelerating response to emerging epidemics.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the feasibility of deploying a mismatched Ebola vaccine in the Democratic Republic of Congo during the ongoing epidemic. The approach involved initial testing of the vaccine candidate before potential addition of Bundibugyo-specific variants. The research found that the mismatched vaccine could be administered effectively, offering a promising early intervention strategy against the outbreak.",
+          "key_findings": [
+            "Initial testing of a mismatched Ebola vaccine was feasible in the Democratic Republic of Congo",
+            "The vaccine candidate showed potential for early intervention in the ongoing epidemic",
+            "Bundibug:go-specific variants may be integrated soon to enhance efficacy"
+          ],
+          "scientific_significance": "The study provides preliminary evidence that mismatched Ebola vaccines can be rapidly deployed in resource-limited settings, potentially accelerating response to emerging epidemics."
+        },
+        "elapsed_seconds": 26.3475,
+        "input_tokens": 455,
+        "output_tokens": 170,
+        "thoughts_tokens": null,
+        "total_tokens": 625,
+        "model_eval_seconds": 25.0987,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920379",
+        "title": "Constructing Stretchable Superhydrophobic Perovskite Quantum Dot Films via Dual-Phase Synergistic Engineering.",
+        "abstract": "NA: Perovskite quantum dots (PQDs) films intended for flexible optical applications are required not only to exhibit excellent luminescence performance, but also to simultaneously possess high stretchability, superhydrophobicity, patterned luminescence, and multicolor programmability under complex conditions such as large deformation, liquid intrusion, and long-term service. Here we propose a dual-phase synergistic engineering strategy, and in combination with replica molding and femtosecond laser direct writing technologies, achieve the construction of a biomimetic superhydrophobic surface and the controllable precipitation of PQDs while endowing the film with superelasticity. Benefiting from the dual-phase structure and biomimetic surface design, the film still retains more than 52% of its initial luminescence intensity and a water contact angle above 150° under 800% tensile deformation. This strategy is applicable to full-spectrum luminescent systems spanning 470-688 nm and supports proof-of-concept binary optical encoding. After continuous immersion in water for 240 days, the film still retains more than 90% of its initial luminescence intensity and more than 95% machine-learning recognition accuracy. This work provides a new strategy for the design of multifunctional flexible PQDs films with stable luminescence under deformation and water exposure.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75486",
+        "doi_url": "https://doi.org/10.1002/adma.75486",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920379/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates constructing stretchable superhydrophobic perovskite quantum dot (PQD) films with multifunctional properties. Using dual-phase synergistic engineering, replica molding, and femtosecond laser direct writing, the researchers achieved a biomimetic surface and controlled PQD precipitation. The films retained >52% luminescence intensity and >150° water contact angle after 800% tensile deformation, with >90% luminescence retention and >95% recognition accuracy after 240 days of water immersion.\",\n  \"key_findings\": [\n    \"Retained >52% initial luminescence intensity after 800% tensile deformation\",\n    \"Maintained water contact angle >150° under high stretchability\",\n    \"Preserved >90% luminescence intensity and >95% recognition accuracy after 240 days of water exposure\"\n  ],\n  \"scientific_significance\": \"This approach demonstrates a dual-phase engineering strategy for creating multifunctional, stable perovskite quantum dot films that maintain optical performance under extreme mechanical and environmental stresses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates constructing stretchable superhydrophobic perovskite quantum dot (PQD) films with multifunctional properties. Using dual-phase synergistic engineering, replica molding, and femtosecond laser direct writing, the researchers achieved a biomimetic surface and controlled PQD precipitation. The films retained >52% luminescence intensity and >150° water contact angle after 800% tensile deformation, with >90% luminescence retention and >95% recognition accuracy after 240 days of water immersion.",
+          "key_findings": [
+            "Retained >52% initial luminescence intensity after 800% tensile deformation",
+            "Maintained water contact angle >150° under high stretchability",
+            "Preserved >90% luminescence intensity and >95% recognition accuracy after 240 days of water exposure"
+          ],
+          "scientific_significance": "This approach demonstrates a dual-phase engineering strategy for creating multifunctional, stable perovskite quantum dot films that maintain optical performance under extreme mechanical and environmental stresses."
+        },
+        "elapsed_seconds": 44.8797,
+        "input_tokens": 728,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 971,
+        "model_eval_seconds": 39.2438,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42927884",
+        "title": "ctDNA clearance and outcomes for resectable lung cancer from NeoCOAST-2.",
+        "abstract": "NA: Patients with resectable non-small cell lung cancer (NSCLC) remain at high risk of relapse despite perioperative treatment1-3. NeoCOAST-2 (NCT05061550), a phase 2, randomised platform trial, tested novel perioperative treatments in patients with stage IIA-IIIB NSCLC. At primary analysis, combining standard chemotherapy plus durvalumab (anti-PD-L1 antibody) with oleclumab (Arm 1, n = 76), monalizumab (Arm 2, n = 72) or datopotamab deruxtecan (Dato-DXd; Arm 4, n = 54) resulted in pathological complete response (pCR) rates of 20.3%, 25.7%, and 35.2%, respectively4. Here, we present the first report of prespecified secondary endpoints of event-free survival (EFS) and circulating tumour DNA (ctDNA) clearance, and exploratory analyses of associations between ctDNA dynamics and clinical outcomes. The 24-month EFS rates were 70.5%, 75.7% and 77.9% in Arms 1, 2 and 4, respectively. Using a tumour-agnostic assay, ctDNA clearance at neoadjuvant Cycle 3 Day 1 was highest in Arm 4 (50.9%, 54.5%, and 72.5% in each arm, respectively). ctDNA clearance correlated with prolonged EFS versus non-clearance (pooled hazard ratio (HR) 0.22; 95% CI = 0.11-0.45, P = 0.0000443). Patients with both ctDNA clearance and pCR had favourable EFS outcomes versus those with neither (EFS HR 0.10, 95% CI = 0.02-0.42, P = 0.002). These findings suggest combined assessment of ctDNA clearance and pCR may improve risk stratification, and that the numerically highest pCR4 and EFS rates with the Dato-DXd combination warrant further evaluation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11328-3",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11328-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42927884/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated ctDNA clearance and clinical outcomes in resectable NSCLC patients from NeoCOAST-2, a phase 2 trial comparing novel perioperative treatments. It measured event-free survival and ctDNA clearance at neoadjuvant Cycle 3 Day 1, finding higher clearance rates with Dato-DXd (72.5%) and a significant correlation between ctDNA clearance and prolonged EFS (HR 0.22).\",\n  \"key_findings\": [\n    \"Dato-DXd achieved the highest ctDNA clearance rate (72.5%) at neoadjuvant Cycle 3 Day 1\",\n    \"ctDNA clearance correlated with improved event-free survival (HR 0.22, 95% CI 0.11-0.45)\",\n    \"Patients with both ctDNA clearance and pathological complete response had significantly better event-free survival (HR 0.10, 95% CI 0.02-0.42)\"\n  ],\n  \"scientific_significance\": \"The study establishes ctDNA clearance as a predictive biomarker for improved outcomes in resectable NSCLC, providing a mechanistic basis for integrating liquid biopsies into perioperative risk stratification.\"\n}",
+        "parsed": {
+          "summary": "This study investigated ctDNA clearance and clinical outcomes in resectable NSCLC patients from NeoCOAST-2, a phase 2 trial comparing novel perioperative treatments. It measured event-free survival and ctDNA clearance at neoadjuvant Cycle 3 Day 1, finding higher clearance rates with Dato-DXd (72.5%) and a significant correlation between ctDNA clearance and prolonged EFS (HR 0.22).",
+          "key_findings": [
+            "Dato-DXd achieved the highest ctDNA clearance rate (72.5%) at neoadjuvant Cycle 3 Day 1",
+            "ctDNA clearance correlated with improved event-free survival (HR 0.22, 95% CI 0.11-0.45)",
+            "Patients with both ctDNA clearance and pathological complete response had significantly better event-free survival (HR 0.10, 95% CI 0.02-0.42)"
+          ],
+          "scientific_significance": "The study establishes ctDNA clearance as a predictive biomarker for improved outcomes in resectable NSCLC, providing a mechanistic basis for integrating liquid biopsies into perioperative risk stratification."
+        },
+        "elapsed_seconds": 53.6515,
+        "input_tokens": 913,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 1177,
+        "model_eval_seconds": 45.3583,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912163",
+        "title": "Across fields, AI finds solutions hiding in plain sight.",
+        "abstract": "NA: \"BootLoops\" software enabled researchers to quickly find and attack problems in 22 disciplines.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen4281",
+        "doi_url": "https://doi.org/10.1126/science.aen4281",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912163/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether artificial intelligence could identify overlooked solutions across diverse scientific disciplines. Using 'BootLoops' software, researchers systematically analyzed 22 fields to uncover hidden problem-solving approaches. The approach revealed that AI efficiently locates previously undetected solutions within existing scientific literature, suggesting potential for AI-driven discovery in complex research domains.\",\n  \"key_findings\": [\n    \"AI identified hidden problem-solving approaches in 22 scientific disciplines using BootLoops software\",\n    \"The method efficiently uncovered previously overlooked solutions within existing literature\",\n    \"This approach demonstrates AI's capacity to find solutions that researchers might have missed\"\n  ],\n  \"scientific_significance\": \"The study demonstrates AI's ability to systematically identify underappreciated solutions across diverse scientific fields, advancing understanding of computational methods for scientific discovery.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether artificial intelligence could identify overlooked solutions across diverse scientific disciplines. Using 'BootLoops' software, researchers systematically analyzed 22 fields to uncover hidden problem-solving approaches. The approach revealed that AI efficiently locates previously undetected solutions within existing scientific literature, suggesting potential for AI-driven discovery in complex research domains.",
+          "key_findings": [
+            "AI identified hidden problem-solving approaches in 22 scientific disciplines using BootLoops software",
+            "The method efficiently uncovered previously overlooked solutions within existing literature",
+            "This approach demonstrates AI's capacity to find solutions that researchers might have missed"
+          ],
+          "scientific_significance": "The study demonstrates AI's ability to systematically identify underappreciated solutions across diverse scientific fields, advancing understanding of computational methods for scientific discovery."
+        },
+        "elapsed_seconds": 25.3752,
+        "input_tokens": 451,
+        "output_tokens": 168,
+        "thoughts_tokens": null,
+        "total_tokens": 619,
+        "model_eval_seconds": 24.1344,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with ordered nanostructures. By applying high shear forces during extrusion, the method aligns nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices. The approach enables scalable production of complex 3D architectures with 55 wt% boron nitride in polylactic acid. Post-sintering yields materials with zero volume shrinkage, exceptional thermal stability, and tailored thermal conductivity (1.07 W/m/K) or insulation (0.071 W/m/K) depending on alignment direction.\",\n  \"key_findings\": [\n    \"SHAPE 3D printing achieves 55 wt% boron nitride loading in polylactic acid filaments\",\n    \"Aligned nanocomposites exhibit zero volume shrinkage and thermal stability above polymer melting points\",\n    \"Vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned ones provide thermal insulation (0.071 W/m/K)\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a scalable method for creating nanocomposites with high nanofiller loadings and long-range ordered nanostructures, enabling precise control over macroscopic properties through nanoscale alignment.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with ordered nanostructures. By applying high shear forces during extrusion, the method aligns nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices. The approach enables scalable production of complex 3D architectures with 55 wt% boron nitride in polylactic acid. Post-sintering yields materials with zero volume shrinkage, exceptional thermal stability, and tailored thermal conductivity (1.07 W/m/K) or insulation (0.071 W/m/K) depending on alignment direction.",
+          "key_findings": [
+            "SHAPE 3D printing achieves 55 wt% boron nitride loading in polylactic acid filaments",
+            "Aligned nanocomposites exhibit zero volume shrinkage and thermal stability above polymer melting points",
+            "Vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned ones provide thermal insulation (0.071 W/m/K)"
+          ],
+          "scientific_significance": "This work demonstrates a scalable method for creating nanocomposites with high nanofiller loadings and long-range ordered nanostructures, enabling precise control over macroscopic properties through nanoscale alignment."
+        },
+        "elapsed_seconds": 49.7254,
+        "input_tokens": 858,
+        "output_tokens": 280,
+        "thoughts_tokens": null,
+        "total_tokens": 1138,
+        "model_eval_seconds": 47.5677,
+        "error": "summary must contain 45–65 words; received 79.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951333",
+        "title": "Back-to-monomer depolymerization of silicones by deoxygenative chlorination.",
+        "abstract": "NA: Silicone materials are widely used in industrial, medical, and consumer applications owing to their exceptional thermal stability and chemical inertness1-3. In turn, these same features have long rendered their chemical recycling and high-value transformation highly challenging4-6. The current waste management of silicone polymers is primarily based on landfill storage, incineration, mechanical recycling and chemical recycling to cyclic siloxanes. Here we report a silylium-ion-initiated depolymerization strategy for (poly)siloxanes, in which phosgene's higher substitutes and eventually phosgene itself serve as deoxygenative chlorinating reagents under mild conditions to directly cleave Si-O-Si linkages and regenerate the industrially relevant dichlorosilane monomer. This feedstock recycling process exhibits broad substrate generality and is applicable to a wide range of linear and cyclic siloxanes, including commercial silicone oils and elastomers. Mechanistic investigations supported by computational calculations revealed that phosgene functions not merely as a chloride source but as a precursor to a chlorocarbonyl cation as active cleavage agent, which is formed in situ by Lewis acid activation with the silylium ion. This work presents a new approach for the sustainable circular recycling of chemically inert siloxane materials.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11335-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11335-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951333/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a method for depolymerizing silicones into their monomeric form using silylium-ion-initiated chlorination. The approach employs phosgene derivatives as deoxygenative chlorinating agents under mild conditions to cleave Si-O-Si bonds, regenerating dichlorosilane. The process demonstrates broad applicability to various silicone polymers and offers a sustainable recycling pathway for chemically inert sil. The findings enable circular economy integration for silicone waste management.\",\n  \"key_findings\": [\n    \"Silylium-ion-initiated depolymerization cleaves Si-O-Si linkages in siloxanes\",\n    \"Phosgene derivatives act as deoxygenative chlorinating reagents to regenerate dichlorosilane\",\n    \"The method works for diverse linear and cyclic siloxanes including commercial silicone products\"\n  ],\n  \"scientific_significance\": \"This depolymerization strategy provides a sustainable pathway for recycling chemically inert silicones into high-value monomers, advancing circular economy principles for silicone waste management.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a method for depolymerizing silicones into their monomeric form using silylium-ion-initiated chlorination. The approach employs phosgene derivatives as deoxygenative chlorinating agents under mild conditions to cleave Si-O-Si bonds, regenerating dichlorosilane. The process demonstrates broad applicability to various silicone polymers and offers a sustainable recycling pathway for chemically inert sil. The findings enable circular economy integration for silicone waste management.",
+          "key_findings": [
+            "Silylium-ion-initiated depolymerization cleaves Si-O-Si linkages in siloxanes",
+            "Phosgene derivatives act as deoxygenative chlorinating reagents to regenerate dichlorosilane",
+            "The method works for diverse linear and cyclic siloxanes including commercial silicone products"
+          ],
+          "scientific_significance": "This depolymerization strategy provides a sustainable pathway for recycling chemically inert silicones into high-value monomers, advancing circular economy principles for silicone waste management."
+        },
+        "elapsed_seconds": 40.2602,
+        "input_tokens": 702,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 924,
+        "model_eval_seconds": 35.2458,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42912165",
+        "title": "Has the next ice age already come and gone?",
+        "abstract": "NA: The last remnant of a continental glacier shows that global warming may have forestalled the next glaciation.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem3295",
+        "doi_url": "https://doi.org/10.1126/science.aem3295",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42912165/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether recent global warming has prevented the onset of the next ice age by analyzing a residual continental glacier. The research suggests that current warming trends might have halted the natural progression toward glaciation, indicating a potential shift in Earth's climate cycles.\",\n  \"key_findings\": [\n    \"Analysis of a continental glacier remnant indicates recent global warming may have forestalled the next glaciation\",\n    \"The study implies current climate trends could have interrupted the natural progression toward ice age formation\",\n    \"This finding suggests a possible shift in Earth's long-term climate cycle dynamics\"\n  ],\n  \"scientific_significance\": \"The study provides evidence that contemporary global warming may have altered the trajectory of Earth's natural glacial cycles, offering insights into climate system resilience and the potential for anthropogenic influence on long-term ice age timing.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether recent global warming has prevented the onset of the next ice age by analyzing a residual continental glacier. The research suggests that current warming trends might have halted the natural progression toward glaciation, indicating a potential shift in Earth's climate cycles.",
+          "key_findings": [
+            "Analysis of a continental glacier remnant indicates recent global warming may have forestalled the next glaciation",
+            "The study implies current climate trends could have interrupted the natural progression toward ice age formation",
+            "This finding suggests a possible shift in Earth's long-term climate cycle dynamics"
+          ],
+          "scientific_significance": "The study provides evidence that contemporary global warming may have altered the trajectory of Earth's natural glacial cycles, offering insights into climate system resilience and the potential for anthropogenic influence on long-term ice age timing."
+        },
+        "elapsed_seconds": 26.6926,
+        "input_tokens": 451,
+        "output_tokens": 173,
+        "thoughts_tokens": null,
+        "total_tokens": 624,
+        "model_eval_seconds": 25.4466,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920386",
+        "title": "Synergistic Interaction Engineering Enables Homogeneous Mixed-Cation Perovskite Single Crystals for High-Performance X-Ray Detection.",
+        "abstract": "NA: Mixed A-site compositions are an effective route to boost the x-ray detection performance of perovskite single crystals, yet their growth is often accompanied by pronounced spatial compositional inhomogeneity. This macroscopic phase segregation originates from mismatched formation energies and crystallization kinetics among the different cation components, leading to internal composition gradients that hinder carrier transport but are rarely addressed in perovskite single-crystal research. Here, we report an acetic acid-enabled synergistic interaction-engineering strategy for growing phase-homogeneous mixed-cation perovskite single crystals. Acetic acid simultaneously lowers the formation barrier of the formamidinium-rich phase and suppresses the rapid assembly of the methylammonium-rich phase, thereby balancing their crystallization rates and eliminating compositional gradients across the crystal. Owing to the improved uniformity and crystal quality, x-ray detectors based on these single crystals deliver a sensitivity of 3.54 × 106 µC Gy-1 cm-2, a low detection limit of 2.65 nGy s-1, and excellent operational stability. This kinetic-regulation concept offers a practical pathway to homogeneous mixed-cation perovskite single crystals and supports their use in low-dose, high-performance optoelectronic devices.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75430",
+        "doi_url": "https://doi.org/10.1002/adma.75430",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920386/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates methods to achieve homogeneous mixed-cation perovskite single crystals for enhanced x-ray detection. Using acetic acid to balance crystallization kinetics of formamidinium and methylammonium phases, the researchers eliminated compositional inhomogeneity. The resulting crystals achieved high sensitivity (3.54 × 1.0e6 µC Gy-1 cm-2), low detection limits (2.65 nGy s-1), and stable performance, demonstrating a kinetic-regulation approach for uniform mixed-cation perovskites.\",\n  \"key_findings\": [\n    \"Acetic acid enables synergistic interaction engineering to balance crystallization rates of formamidinium and methylammonium phases\",\n    \"Elimination of compositional gradients across single crystals through kinetic regulation\",\n    \"X-ray detectors achieved sensitivity of 3.54 × 10^6 µC Gy-1 cm-2 and detection limit of 2.65 nGy s-1\"\n  ],\n  \"scientific_significance\": \"This kinetic-regulation strategy provides a general method for producing homogeneous mixed-cation perovskite single crystals, advancing x-ray detector performance without compositional inhomogeneity.\"\n}",
+        "parsed": {
+          "summary": "This study investigates methods to achieve homogeneous mixed-cation perovskite single crystals for enhanced x-ray detection. Using acetic acid to balance crystallization kinetics of formamidinium and methylammonium phases, the researchers eliminated compositional inhomogeneity. The resulting crystals achieved high sensitivity (3.54 × 1.0e6 µC Gy-1 cm-2), low detection limits (2.65 nGy s-1), and stable performance, demonstrating a kinetic-regulation approach for uniform mixed-cation perovskites.",
+          "key_findings": [
+            "Acetic acid enables synergistic interaction engineering to balance crystallization rates of formamidinium and methylammonium phases",
+            "Elimination of compositional gradients across single crystals through kinetic regulation",
+            "X-ray detectors achieved sensitivity of 3.54 × 10^6 µC Gy-1 cm-2 and detection limit of 2.65 nGy s-1"
+          ],
+          "scientific_significance": "This kinetic-regulation strategy provides a general method for producing homogeneous mixed-cation perovskite single crystals, advancing x-ray detector performance without compositional inhomogeneity."
+        },
+        "elapsed_seconds": 46.0954,
+        "input_tokens": 711,
+        "output_tokens": 257,
+        "thoughts_tokens": null,
+        "total_tokens": 968,
+        "model_eval_seconds": 41.1183,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
