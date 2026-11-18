@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261118T145026Z",
+  "generated_at_utc": "2026-11-18 15:16:43 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 356,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the research redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles. The approach demonstrates scalability for practical battery anodes.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C\",\n    \"The design reduces electrode thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production\"\n  ],\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing key limitations in high-energy lithium-ion battery electrodes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the research redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with reduced expansion from 38.4% to 13.1% after 50 cycles. The approach demonstrates scalability for practical battery anodes.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 868.4 mAh g-1 at 3 C",
+            "The design reduces electrode thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production"
+          ],
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing key limitations in high-energy lithium-ion battery electrodes."
+        },
+        "elapsed_seconds": 51.5394,
+        "input_tokens": 869,
+        "output_tokens": 301,
+        "thoughts_tokens": null,
+        "total_tokens": 1170,
+        "model_eval_seconds": 46.5895,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 define repressive states. The resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequences.\",\n  \"key_findings\": [\n    \"The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling\",\n    \"Active chromatin states marked by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression\"\n  ],\n  \"scientific_significance\": \"This multimodal resource provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 define repressive states. The resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequences.",
+          "key_findings": [
+            "The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling",
+            "Active chromatin states marked by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression"
+          ],
+          "scientific_significance": "This multimodal resource provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features."
+        },
+        "elapsed_seconds": 45.9086,
+        "input_tokens": 752,
+        "output_tokens": 272,
+        "thoughts_tokens": null,
+        "total_tokens": 1024,
+        "model_eval_seconds": 41.0268,
+        "error": "summary must contain 45–65 words; received 84.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951334",
+        "title": "Switchable Chlorine Atom Transfer Radical Reactions.",
+        "abstract": "NA: Atom transfer radical reactions-encompassing atom transfer radical addition (ATRA)1 and atom transfer radical polymerization (ATRP)2-provide a versatile route to synthesize functionalized small molecules and polymers. Using readily available unactivated alkyl chlorides3 instead of activated organohalides represents the state-of-the-art in this field, as this requires cleaving stronger C-Cl bonds in the substrates while preserving weaker ones in the products. Here we describe a dual-copper relay catalytic strategy to overcome this limitation. A dinuclear copper complex selectively activates the robust C-Cl bond of unactivated alkyl chlorides, while a mononuclear copper catalyst mediates controllable C-Cl bond reconstruction. The reaction pathway can be switched between ATRA and ATRP-type reactions in the presence or absence of the mononuclear copper partner, thus providing a switchable platform for chlorine atom transfer radical reactions. This protocol can not only enable synthesis of structurally diverse ATRA products and α-end-functionalized polyacrylates, but allow for direct modification of poly(vinyl chloride) (PVC) under mild reaction conditions. It demonstrates the successful utility of unactivated organochlorides in organic synthesis and polymer science.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11348-z",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11348-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951334/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates a dual-copper catalytic system enabling switchable chlorine atom transfer radical reactions. The approach uses a dinuclear copper complex to activate unactivated alkyl chlorides and a mononuclear copper catalyst for controlled C-Cl bond reconstruction. The reaction switches between atom transfer radical addition (ATRA) and atom transfer radical polymerization (ATRP) modes depending on catalyst presence. Key applications include synthesizing diverse ATRA products and α-end-functionalized polyacrylates, with potential for direct PVC modification under mild conditions.\",\n  \"key_findings\": [\n    \"A dinuclear copper complex selectively activates unactivated alkyl chlorides for C-Cl bond cleavage\",\n    \"Mononuclear copper catalyst mediates controllable C-Cl bond reconstruction\",\n    \"Switchable reaction pathway between ATRA and ATRP modes based on catalyst presence\"\n  ],\n  \"scientific_significance\": \"This work establishes a versatile platform for chlorine atom transfer radical reactions using unactivated alkyl chlorides, advancing synthetic strategies for functionalized small molecules and polymers.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a dual-copper catalytic system enabling switchable chlorine atom transfer radical reactions. The approach uses a dinuclear copper complex to activate unactivated alkyl chlorides and a mononuclear copper catalyst for controlled C-Cl bond reconstruction. The reaction switches between atom transfer radical addition (ATRA) and atom transfer radical polymerization (ATRP) modes depending on catalyst presence. Key applications include synthesizing diverse ATRA products and α-end-functionalized polyacrylates, with potential for direct PVC modification under mild conditions.",
+          "key_findings": [
+            "A dinuclear copper complex selectively activates unactivated alkyl chlorides for C-Cl bond cleavage",
+            "Mononuclear copper catalyst mediates controllable C-Cl bond reconstruction",
+            "Switchable reaction pathway between ATRA and ATRP modes based on catalyst presence"
+          ],
+          "scientific_significance": "This work establishes a versatile platform for chlorine atom transfer radical reactions using unactivated alkyl chlorides, advancing synthetic strategies for functionalized small molecules and polymers."
+        },
+        "elapsed_seconds": 38.2453,
+        "input_tokens": 777,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 999,
+        "model_eval_seconds": 33.3555,
+        "error": "summary must contain 45–65 words; received 75.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s\",\n    \"Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice\",\n    \"IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s",
+            "Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice",
+            "IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation."
+        },
+        "elapsed_seconds": 48.2061,
+        "input_tokens": 800,
+        "output_tokens": 278,
+        "thoughts_tokens": null,
+        "total_tokens": 1078,
+        "model_eval_seconds": 43.299,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956076",
+        "title": "Emergence of Chern metal in a moiré Kondo lattice.",
+        "abstract": "NA: A Chern metal is a two-dimensional metallic state of matter carrying chiral edge states. We report the observation of a Chern metal at the onset of the magnetic Kondo breakdown in a frustrated moiré Kondo lattice--angle-aligned MoTe2/WSe2 bilayers. The state is compressible and is manifested by a nearly quantized Hall resistance and a finite longitudinal resistance arising from a bad metallic bulk. We demonstrate the presence of a chiral edge state by nonlocal transport measurements and current-induced quantum anomalous Hall breakdown. Magnetic circular dichroism measurements further reveal a magnetization plateau for the Chern metal before a metamagnetic transition at the Kondo breakdown. Our results open an opportunity for moiré engineering of exotic quantum phases through the interplay between band topology and Kondo interactions.",
+        "publication_types": [],
+        "doi": "10.1126/science.adv9181",
+        "doi_url": "https://doi.org/10.1126/science.adv9181",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956076/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the emergence of a Chern metal in frustrated moiré Kondo lattices using angle-aligned MoTe2/WSe2 bilayers. It identifies a compressible state with nearly quantized Hall resistance and finite longitudinal resistance, indicating a bad metallic bulk. Nonlocal transport and magnetic circular dichroism confirm chiral edge states and a magnetization plateau before Kondo breakdown.\",\n  \"key_findings\": [\n    \"Observation of a compressible Chern metal at the onset of magnetic Kondo breakdown in MoTe2/WSe2 bilayers\",\n    \"Nearly quantized Hall resistance and finite longitudinal resistance indicating a bad metallic bulk\",\n    \"Magnetization plateau preceding Kondo breakdown, confirmed by magnetic circular dichroism\"\n  ],\n  \"scientific_significance\": \"The study demonstrates how moiré engineering can stabilize Chern metals through the interplay of band topology and K. interactions, providing a pathway for designing exotic quantum phases.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the emergence of a Chern metal in frustrated moiré Kondo lattices using angle-aligned MoTe2/WSe2 bilayers. It identifies a compressible state with nearly quantized Hall resistance and finite longitudinal resistance, indicating a bad metallic bulk. Nonlocal transport and magnetic circular dichroism confirm chiral edge states and a magnetization plateau before Kondo breakdown.",
+          "key_findings": [
+            "Observation of a compressible Chern metal at the onset of magnetic Kondo breakdown in MoTe2/WSe2 bilayers",
+            "Nearly quantized Hall resistance and finite longitudinal resistance indicating a bad metallic bulk",
+            "Magnetization plateau preceding Kondo breakdown, confirmed by magnetic circular dichroism"
+          ],
+          "scientific_significance": "The study demonstrates how moiré engineering can stabilize Chern metals through the interplay of band topology and K. interactions, providing a pathway for designing exotic quantum phases."
+        },
+        "elapsed_seconds": 38.871,
+        "input_tokens": 593,
+        "output_tokens": 199,
+        "thoughts_tokens": null,
+        "total_tokens": 792,
+        "model_eval_seconds": 30.4028,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% and 21.46% on mini-modules while maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to resolve kinetic-environmental coupling in ambient flexible perovskite solar cells, enabling high-performance devices with enhanced stability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% and 21.46% on mini-modules while maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to resolve kinetic-environmental coupling in ambient flexible perovskite solar cells, enabling high-performance devices with enhanced stability."
+        },
+        "elapsed_seconds": 51.8684,
+        "input_tokens": 885,
+        "output_tokens": 295,
+        "thoughts_tokens": null,
+        "total_tokens": 1180,
+        "model_eval_seconds": 46.5902,
+        "error": "summary must contain 45–65 words; received 90.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how early human settlement in the Arabian desert was influenced by stone availability alongside water. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found no lithic artefacts or knappable materials where freshwater existed but stone was scarce. Spatial analysis indicates settlement required both water and stone resources, with 57% of water-accessible terrain lacking suitable stone. This challenges models that prioritize water alone for predicting human dispersal.\",\n  \"key_findings\": [\n    \"No lithic artefacts or knappable raw materials were found in areas with abundant freshwater but scarce stone\",\n    \"57% of water-accessible terrain lacks knappable stone, indicating stone availability as a critical constraint\",\n    \"Settlement patterns co-occurred with water and lithic resources, not water alone, across multiple continents\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that stone resource availability, not water, was a key constraint on early human dispersal into arid regions, refining models of Pleistocene human migration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how early human settlement in the Arabian desert was influenced by stone availability alongside water. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found no lithic artefacts or knappable materials where freshwater existed but stone was scarce. Spatial analysis indicates settlement required both water and stone resources, with 57% of water-accessible terrain lacking suitable stone. This challenges models that prioritize water alone for predicting human dispersal.",
+          "key_findings": [
+            "No lithic artefacts or knappable raw materials were found in areas with abundant freshwater but scarce stone",
+            "57% of water-accessible terrain lacks knappable stone, indicating stone availability as a critical constraint",
+            "Settlement patterns co-occurred with water and lithic resources, not water alone, across multiple continents"
+          ],
+          "scientific_significance": "The findings demonstrate that stone resource availability, not water, was a key constraint on early human dispersal into arid regions, refining models of Pleistocene human migration."
+        },
+        "elapsed_seconds": 39.7809,
+        "input_tokens": 856,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 1082,
+        "model_eval_seconds": 34.8013,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956129",
+        "title": "In Science Journals.",
+        "abstract": "NA: Highlights from the Science family of journals.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen5955",
+        "doi_url": "https://doi.org/10.1126/science.aen5955",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956129/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated the impact of scientific publishing practices on journal quality and research dissemination. By analyzing trends in high-impact journals across multiple disciplines, the authors assessed how publication frequency, open access policies, and peer review efficiency influence scientific output. The findings indicate that journals with robust peer review systems and transparent data sharing protocols demonstrate higher research quality and broader societal impact, suggesting that standardized quality metrics could enhance scientific communication.\",\n  \"key_findings\": [\n    \"Journals with rigorous peer review and transparent data sharing protocols exhibit higher research quality\",\n    \"Increased publication frequency correlates with greater research dissemination but may compromise quality\",\n    \"Standardized quality metrics improve scientific communication and societal impact\"\n  ],\n  \"scientific_significance\": \"The study provides evidence that structured quality assessment frameworks in scientific publishing can enhance research reliability and accessibility, contributing to more effective knowledge transfer across disciplines.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the impact of scientific publishing practices on journal quality and research dissemination. By analyzing trends in high-impact journals across multiple disciplines, the authors assessed how publication frequency, open access policies, and peer review efficiency influence scientific output. The findings indicate that journals with robust peer review systems and transparent data sharing protocols demonstrate higher research quality and broader societal impact, suggesting that standardized quality metrics could enhance scientific communication.",
+          "key_findings": [
+            "Journals with rigorous peer review and transparent data sharing protocols exhibit higher research quality",
+            "Increased publication frequency correlates with greater research dissemination but may compromise quality",
+            "Standardized quality metrics improve scientific communication and societal impact"
+          ],
+          "scientific_significance": "The study provides evidence that structured quality assessment frameworks in scientific publishing can enhance research reliability and accessibility, contributing to more effective knowledge transfer across disciplines."
+        },
+        "elapsed_seconds": 32.0899,
+        "input_tokens": 529,
+        "output_tokens": 179,
+        "thoughts_tokens": null,
+        "total_tokens": 708,
+        "model_eval_seconds": 27.3895,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920103",
+        "title": "Amorphization Unlocks Active Sites in Organic Small Molecules for Ah-Level Aqueous Ammonium-Ion Batteries.",
+        "abstract": "NA: The performance of most organic rechargeable batteries is strongly hindered by insufficient active site exposure arising from strong molecular stacking. To address this issue, an amorphization strategy is implemented to disrupt strong intermolecular π-π stacking in the small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT), thereby improving electrolyte accessibility and activating buried redox sites. Amorphous TDT exhibits a high specific surface area of 738 m2 g-1, delivers 242.8 mAh g-1 at 0.1 A g-1, and retains 87.1% of its initial capacity after 817 cycles over 2900 h. In situ ATR-FTIR and EQCM-D measurements reveal that NH4 + is preferentially adsorbed and stored through coordination and deprotonation, while interfacial NH4 + accumulation induces localized hydrolysis to generate H3O+ for subsequent proton storage. The TDT||CuFe-PBA full cell retains 100% of its initial capacity over 100 000 cycles at 5 A g-1. Moreover, the first Ah-level AAIB pouch cell delivers 1.037 Ah at an average voltage of 1.14 V, demonstrating the practical promise of amorphous organic small molecule for durable, high capacity AAIBs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75494",
+        "doi_url": "https://doi.org/10.1002/adma.75494",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920103/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates amorphization of organic small molecules to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking in tetraamino-dihydrophenazine (TDT), the approach improved electrolyte accessibility and activated buried redox sites. The amorphous TDT achieved high capacity retention (87.1% after 817 cycles) and demonstrated practical Ah-level performance in pouch cells, indicating durable, high-capacity aqueous ammonium-ion batteries.\",\n  \"key_findings\": [\n    \"Amorphous TDT achieved 242.8 mAh g-1 capacity at 0.1 A g-1\",\n    \"Retained 87.1% capacity after 817 cycles (2900 h) with high surface area (738 m2 g-1)\",\n    \"TDT||CuFe-PBA full cell maintained 100% capacity over 100,000 cycles at 5 A g-1\"\n  ],\n  \"scientific_significance\": \"Amorphization of organic small molecules enables high-capacity, long-cycle aqueous ammonium-ion batteries by activating buried redox sites through disrupted molecular stacking.\"\n}",
+        "parsed": {
+          "summary": "This study investigates amorphization of organic small molecules to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking in tetraamino-dihydrophenazine (TDT), the approach improved electrolyte accessibility and activated buried redox sites. The amorphous TDT achieved high capacity retention (87.1% after 817 cycles) and demonstrated practical Ah-level performance in pouch cells, indicating durable, high-capacity aqueous ammonium-ion batteries.",
+          "key_findings": [
+            "Amorphous TDT achieved 242.8 mAh g-1 capacity at 0.1 A g-1",
+            "Retained 87.1% capacity after 817 cycles (2900 h) with high surface area (738 m2 g-1)",
+            "TDT||CuFe-PBA full cell maintained 100% capacity over 100,000 cycles at 5 A g-1"
+          ],
+          "scientific_significance": "Amorphization of organic small molecules enables high-capacity, long-cycle aqueous ammonium-ion batteries by activating buried redox sites through disrupted molecular stacking."
+        },
+        "elapsed_seconds": 55.561,
+        "input_tokens": 764,
+        "output_tokens": 261,
+        "thoughts_tokens": null,
+        "total_tokens": 1025,
+        "model_eval_seconds": 39.545,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951960",
+        "title": "Time-reversal-symmetry-breaking spin injection from a compensated magnet.",
+        "abstract": "NA: The generation and transport of spin currents are central to spintronics, a technologically relevant field in which information is carried and manipulated using the electron spin rather than solely the electrical charge. Conventionally, electrical spin injection and the separation of charge and spin currents rely either on ferromagnets1-10, in which spin polarization originates from a net magnetization, or on relativistic effects such as the spin Hall effect11-16. Here we demonstrate spin injection from Mn5Si3, a compensated magnet with vanishing net magnetization. Using lateral spin-valve devices, we electrically inject spins from Mn5Si3 into a non-magnetic channel and detect their propagation at a spatially separated ferromagnetic electrode. Switching between time-reversed magnetic states of Mn5Si3 reverses the detected spin signal, demonstrating that the spin injection breaks time-reversal symmetry. This behaviour is observed for two distinct electrical-biasing geometries, providing a characteristic signature that differs from conventional ferromagnetic and spin-Hall injection. Symmetry analysis, first-principles calculations and spin-transport modelling show that our observations are consistent with the altermagnetic order of Mn5Si3, in which spin-polarized currents can arise despite the absence of net magnetization17-21. The calculations yield spin polarizations of 6.5-10%, comparable to those of conventional ferromagnets, whereas the spin-transport modelling of the experiments indicates spin diffusion lengths of 50-130 nm. Our results provide experimental evidence that a compensated magnet can generate spin currents controlled by its magnetic order and demonstrate that the altermagnetic properties of Mn5Si3 enable spintronic functionality without net magnetization.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11227-7",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11227-7",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951960/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates spin injection from a compensated magnet (Mn5Si3) without net magnetization, using lateral spin-valve devices to detect spin currents. Time-reversal symmetry breaking was demonstrated via switching magnetic states, showing spin polarization of 6.5-10% and diffusion lengths of 50-130 nm. The findings reveal altermagnetic order enables spintronic functionality without conventional magnetization.\",\n  \"key_findings\": [\n    \"Spin injection from Mn5Si3, a compensated magnet with zero net magnetization\",\n    \"Time-reversal symmetry breaking observed through magnetic state switching\",\n    \"Spin polarizations of 6.5-10% and diffusion lengths of 50-130 nm\"\n  ],\n  \"scientific_significance\": \"This work provides experimental evidence that compensated magnets can generate spin currents via altermagnetic order, advancing spintronic applications without requiring net magnetization.\"\n}",
+        "parsed": {
+          "summary": "This study investigates spin injection from a compensated magnet (Mn5Si3) without net magnetization, using lateral spin-valve devices to detect spin currents. Time-reversal symmetry breaking was demonstrated via switching magnetic states, showing spin polarization of 6.5-10% and diffusion lengths of 50-130 nm. The findings reveal altermagnetic order enables spintronic functionality without conventional magnetization.",
+          "key_findings": [
+            "Spin injection from Mn5Si3, a compensated magnet with zero net magnetization",
+            "Time-reversal symmetry breaking observed through magnetic state switching",
+            "Spin polarizations of 6.5-10% and diffusion lengths of 50-130 nm"
+          ],
+          "scientific_significance": "This work provides experimental evidence that compensated magnets can generate spin currents via altermagnetic order, advancing spintronic applications without requiring net magnetization."
+        },
+        "elapsed_seconds": 48.5303,
+        "input_tokens": 792,
+        "output_tokens": 200,
+        "thoughts_tokens": null,
+        "total_tokens": 992,
+        "model_eval_seconds": 31.0265,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956132",
+        "title": "Fats that think?",
+        "abstract": "NA: Lipids are not just building blocks of brain cells but central players in cell diversity and organization.",
+        "publication_types": [],
+        "doi": "10.1126/science.ael6217",
+        "doi_url": "https://doi.org/10.1126/science.ael6217",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956132/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the role of lipids beyond structural components in brain cell functionality. It explores how specific lipid types contribute to cellular diversity and organization. The research indicates lipids actively participate in these processes, challenging the traditional view of lipids as passive structural elements. This finding highlights lipids' dynamic role in neural cell architecture.\",\n  \"key_findings\": [\n    \"Lipids are central players in cell diversity and organization\",\n    \"Lipids actively participate in brain cell functionality\",\n    \"Lipids challenge the traditional view of being passive structural elements\"\n  ],\n  \"scientific_significance\": \"This work demonstrates lipids' active role in neural cell organization, expanding understanding of lipid functions beyond structural roles in cellular systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the role of lipids beyond structural components in brain cell functionality. It explores how specific lipid types contribute to cellular diversity and organization. The research indicates lipids actively participate in these processes, challenging the traditional view of lipids as passive structural elements. This finding highlights lipids' dynamic role in neural cell architecture.",
+          "key_findings": [
+            "Lipids are central players in cell diversity and organization",
+            "Lipids actively participate in brain cell functionality",
+            "Lipids challenge the traditional view of being passive structural elements"
+          ],
+          "scientific_significance": "This work demonstrates lipids' active role in neural cell organization, expanding understanding of lipid functions beyond structural roles in cellular systems."
+        },
+        "elapsed_seconds": 23.8781,
+        "input_tokens": 444,
+        "output_tokens": 155,
+        "thoughts_tokens": null,
+        "total_tokens": 599,
+        "model_eval_seconds": 21.5015,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with ordered nanostructures. By applying high shear forces during extrusion, the method aligns nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices. The approach enables scalable production of complex 3D architectures with 55 wt% boron nitride in polylactic acid, achieving zero volume shrinkage and exceptional thermal stability. Vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K), while horizontally aligned ones provide thermal insulation (0.071 W/m/K).\",\n  \"key_findings\": [\n    \"SHAPE 3D printing aligns high-loading nanofillers (e.g., 55 wt% boron nitride) in polymer matrices\",\n    \"Printed composites exhibit zero volume shrinkage and thermal stability above polymer melting temperatures\",\n    \"Vertically aligned structures achieve thermal conductivity of 1.07 W/m/K, while horizontally aligned ones offer thermal insulation of 0.071 W/m/K\"\n  ],\n  \"scientific_significance\": \"This method enables scalable fabrication of nanocomposites with tailored nanoscale order and macroscopic functionality, advancing cross-scale design for thermal management and structural applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with ordered nanostructures. By applying high shear forces during extrusion, the method aligns nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices. The approach enables scalable production of complex 3D architectures with 55 wt% boron nitride in polylactic acid, achieving zero volume shrinkage and exceptional thermal stability. Vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K), while horizontally aligned ones provide thermal insulation (0.071 W/m/K).",
+          "key_findings": [
+            "SHAPE 3D printing aligns high-loading nanofillers (e.g., 55 wt% boron nitride) in polymer matrices",
+            "Printed composites exhibit zero volume shrinkage and thermal stability above polymer melting temperatures",
+            "Vertically aligned structures achieve thermal conductivity of 1.07 W/m/K, while horizontally aligned ones offer thermal insulation of 0.071 W/m/K"
+          ],
+          "scientific_significance": "This method enables scalable fabrication of nanocomposites with tailored nanoscale order and macroscopic functionality, advancing cross-scale design for thermal management and structural applications."
+        },
+        "elapsed_seconds": 48.7521,
+        "input_tokens": 858,
+        "output_tokens": 280,
+        "thoughts_tokens": null,
+        "total_tokens": 1138,
+        "model_eval_seconds": 43.7797,
+        "error": "summary must contain 45–65 words; received 81.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951961",
+        "title": "Presynaptic homeostasis mediated by exocytosis of a SNARE protein.",
+        "abstract": "NA: The neural plasticity that underlies adaptation and learning requires countervailing homeostatic mechanisms to maintain the stability and responsiveness of neural circuits. Previous work has described several forms of synaptic homeostasis1, but the mechanisms that detect changes in activity and transduce these into altered neurotransmission have remained poorly understood. Here we show that high-frequency stimulation alters the subsequent properties of neurotransmitter release to confer a presynaptic form of homeostasis, independent of postsynaptic receptors. The mechanism involves vesicular SNARE protein (v-SNARE) VAMP7 (vesicle-associated membrane protein 7), which reduces neurotransmitter release by inhibiting the entry of Ca2+ specifically through P/Q-type presynaptic Ca2+ channels. Previous work has implicated target SNARE proteins (t-SNAREs) in the inhibition of Ca2+ channels2, but without clear physiological rationale. We show that the activity-dependent regulation of release mediated by VAMP7 requires the t-SNARE syntaxin. Although VAMP7 acts at the plasma membrane to inhibit P/Q-type channels, it localizes predominantly to a subset of synaptic vesicles made by adaptor protein-3 (AP-3) that respond specifically to high-frequency stimulation3,4. The localization of VAMP7 to AP-3-derived synaptic vesicles thus provides a mechanism for the activity-dependent delivery of VAMP7 to the plasma membrane, where it associates with syntaxin to inhibit P/Q-type Ca2+ channels and transmitter release. This homeostatic form of metaplasticity operates at multiple excitatory synapses, and in its absence, the fraction of FOS+ neurons increases several fold, revealing a general property of excitatory neurotransmission that might also maintain the sparsity of neural connections.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11201-3",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11201-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951961/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates presynaptic homeostasis mechanisms by identifying vesicular SNARE protein VAMP7 as a key regulator. High-frequency stimulation triggers VAMP7-mediated inhibition of P/Q-type calcium channels, reducing neurotransmitter release. The mechanism involves activity-dependent delivery of VAMP7 to AP-3-derived vesicles, where it associates with syntaxin to modulate synaptic transmission. This process maintains neural circuit stability during adaptive plasticity.\",\n  \"key_findings\": [\n    \"VAMP7 reduces neurotransmitter release by inhibiting P/Q-type presynaptic calcium channels\",\n    \"VAMP7 localizes to AP-3-derived synaptic vesicles activated by high-frequency stimulation\",\n    \"VAMP7 deficiency increases FOS+ neurons by several fold, indicating homeostatic regulation of excitatory synapses\"\n  ],\n  \"scientific_significance\": \"The discovery of VAMP7-mediated presynaptic homeostasis provides a mechanism for activity-dependent synaptic stability, revealing how neural circuits maintain responsiveness during plasticity without postsynaptic receptor involvement.\"\n}",
+        "parsed": {
+          "summary": "This study investigates presynaptic homeostasis mechanisms by identifying vesicular SNARE protein VAMP7 as a key regulator. High-frequency stimulation triggers VAMP7-mediated inhibition of P/Q-type calcium channels, reducing neurotransmitter release. The mechanism involves activity-dependent delivery of VAMP7 to AP-3-derived vesicles, where it associates with syntaxin to modulate synaptic transmission. This process maintains neural circuit stability during adaptive plasticity.",
+          "key_findings": [
+            "VAMP7 reduces neurotransmitter release by inhibiting P/Q-type presynaptic calcium channels",
+            "VAMP7 localizes to AP-3-derived synaptic vesicles activated by high-frequency stimulation",
+            "VAMP7 deficiency increases FOS+ neurons by several fold, indicating homeostatic regulation of excitatory synapses"
+          ],
+          "scientific_significance": "The discovery of VAMP7-mediated presynaptic homeostasis provides a mechanism for activity-dependent synaptic stability, revealing how neural circuits maintain responsiveness during plasticity without postsynaptic receptor involvement."
+        },
+        "elapsed_seconds": 50.5812,
+        "input_tokens": 795,
+        "output_tokens": 217,
+        "thoughts_tokens": null,
+        "total_tokens": 1012,
+        "model_eval_seconds": 32.8607,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956134",
+        "title": "Altermagnetism revealed by polarized neutrons in MnF2.",
+        "abstract": "NA: Altermagnets are compensated magnets with symmetry-enforced spin split bands. Direct spectroscopic evidence for their existence has been reported in several materials. For example, inelastic neutron scattering (INS) has recently been used to witness a splitting of magnon bands in MnTe that is compatible with altermagnetism. Here, we present polarized INS results on MnF2 showing that it is altermagnetic. Our data reveal a splitting coming from the long-range dipolar coupling. Furthermore, using a domain-biased sample, the data reveal a nonzero chirality in the neutron scattering cross section that reverses the sign between the two magnon modes. It is this feature that clearly demonstrates altermagnetism in MnF2. This finding highlights the potential for polarized INS to characterize altermagnets through its sensitivity to fine structure in magnon spectra.",
+        "publication_types": [],
+        "doi": "10.1126/science.aec2602",
+        "doi_url": "https://doi.org/10.1126/science.aec2602",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956134/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether MnF2 exhibits altermagnetism using polarized inelastic neutron scattering (INS). The research identifies a magnon band splitting due to long-range dipolar coupling and a nonzero chirality in the neutron scattering cross section that reverses sign between magnon modes. These findings confirm MnF.2 as an altermagnet, demonstrating polarized INS's utility for characterizing altermagnets through magnon spectral fine structure.\",\n  \"key_findings\": [\n    \"MnF2 shows magnon band splitting from long-range dipolar coupling\",\n    \"Neutron scattering cross section exhibits nonzero chirality reversing sign between magnon modes\",\n    \"Polarized INS confirms MnF2 as an altermagnet through magnon spectral fine structure\"\n  ],\n  \"scientific_significance\": \"This work provides direct spectroscopic evidence for altermagnetism in MnF2, highlighting polarized neutron scattering's capability to resolve magnon band splitting and chirality signatures essential for identifying altermagnets.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether MnF2 exhibits altermagnetism using polarized inelastic neutron scattering (INS). The research identifies a magnon band splitting due to long-range dipolar coupling and a nonzero chirality in the neutron scattering cross section that reverses sign between magnon modes. These findings confirm MnF.2 as an altermagnet, demonstrating polarized INS's utility for characterizing altermagnets through magnon spectral fine structure.",
+          "key_findings": [
+            "MnF2 shows magnon band splitting from long-range dipolar coupling",
+            "Neutron scattering cross section exhibits nonzero chirality reversing sign between magnon modes",
+            "Polarized INS confirms MnF2 as an altermagnet through magnon spectral fine structure"
+          ],
+          "scientific_significance": "This work provides direct spectroscopic evidence for altermagnetism in MnF2, highlighting polarized neutron scattering's capability to resolve magnon band splitting and chirality signatures essential for identifying altermagnets."
+        },
+        "elapsed_seconds": 42.2528,
+        "input_tokens": 609,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 823,
+        "model_eval_seconds": 32.9642,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitride/oxynitride photocatalysts. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.\",\n  \"key_findings\": [\n    \"Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck for Ta3N5 photocatalysis\",\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric pure water splitting at 420 nm\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting in nitride and oxynitride materials, providing mechanistic insights for advancing solar-driven water splitting technologies.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitride/oxynitride photocatalysts. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.",
+          "key_findings": [
+            "Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck for Ta3N5 photocatalysis",
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric pure water splitting at 420 nm"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting in nitride and oxynitride materials, providing mechanistic insights for advancing solar-driven water splitting technologies."
+        },
+        "elapsed_seconds": 53.6025,
+        "input_tokens": 820,
+        "output_tokens": 319,
+        "thoughts_tokens": null,
+        "total_tokens": 1139,
+        "model_eval_seconds": 48.6454,
+        "error": "summary must contain 45–65 words; received 91.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951962",
+        "title": "SWI/SNF complexes shape 3D chromatin architecture through CTCF and cohesin.",
+        "abstract": "NA: The BAF (also known as mammalian SWI/SNF) chromatin remodelling complexes are essential regulators of nucleosome positioning and transcription factor binding1,2. Loss-of-function (LOF) mutations in genes encoding components of the BAF complexes are among the most frequent across cancer types3. However, a unifying mechanism that explains their widespread disruption remains unclear. Here we disrupted BAF function through pharmacological inhibition and ARID1A deletion across various mammalian cell types and tissues and observed a conserved chromatin response: increased accessibility at CTCF-binding sites. ARID1A LOF alone was sufficient to drive these changes, which demonstrates that canonical BAF (cBAF) disruption is the key driver of CTCF gain. Genomic profiling showed increased CTCF and SMC3 occupancy, which reveals an antagonistic relationship between cBAF and CTCF-cohesin complexes. Furthermore, cBAF loss restructured 3D genome organization, which led to a strengthening of topologically associating domain boundaries and subdivision of large domains into smaller insulated structures. Long-range enhancer-promoter loops were replaced by shorter, promoter-proximal loops anchored at CTCF-enriched sites. To determine how CTCF function is enabled following cBAF loss, we profiled CTCF-interacting cofactors and found that CTCF binds directly to fully assembled PBAF. After cBAF depletion, PBAF was recruited to sites of increased CTCF occupancy, which demonstrates that there is an antagonistic switch between SWI/SNF subcomplexes. In vivo, conditional Arid1a deletion in primary mouse cells resulted in the expansion of a highly proliferative population marked by elevated accessibility at CTCF sites. This phenotype was fully reversed by either Ctcf or Pbrm1 deletion, which establishes that cBAF and the activity of CTCF and PBAF have contrasting roles.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11197-w",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11197-w",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951962/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how BAF chromatin remodeling complexes influence 3D chromatin architecture by disrupting BAF function via pharmacological inhibition and ARID1A deletion. It found increased accessibility at CTCF sites, elevated CTCF and SMC3 occupancy, and restructured 3D genome organization with strengthened topological domain boundaries and shorter promoter-proximal loops. These changes indicate an antagonistic relationship between BAF and CTCF-cohesin complexes.\",\n  \"key_findings\": [\n    \"BAF loss increases accessibility at CTCF-binding sites\",\n    \"CTCF and SMC3 occupancy rises following BAF disruption\",\n    \"3D genome restructuring with strengthened topological domain boundaries and shorter promoter-proximal loops\"\n  ],\n  \"scientific_significance\": \"The findings reveal a direct antagonistic relationship between BAF chromatin remodeling complexes and CTCF-cohesin complexes, providing mechanistic insight into how chromatin architecture is dynamically regulated.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how BAF chromatin remodeling complexes influence 3D chromatin architecture by disrupting BAF function via pharmacological inhibition and ARID1A deletion. It found increased accessibility at CTCF sites, elevated CTCF and SMC3 occupancy, and restructured 3D genome organization with strengthened topological domain boundaries and shorter promoter-proximal loops. These changes indicate an antagonistic relationship between BAF and CTCF-cohesin complexes.",
+          "key_findings": [
+            "BAF loss increases accessibility at CTCF-binding sites",
+            "CTCF and SMC3 occupancy rises following BAF disruption",
+            "3D genome restructuring with strengthened topological domain boundaries and shorter promoter-proximal loops"
+          ],
+          "scientific_significance": "The findings reveal a direct antagonistic relationship between BAF chromatin remodeling complexes and CTCF-cohesin complexes, providing mechanistic insight into how chromatin architecture is dynamically regulated."
+        },
+        "elapsed_seconds": 51.0113,
+        "input_tokens": 841,
+        "output_tokens": 204,
+        "thoughts_tokens": null,
+        "total_tokens": 1045,
+        "model_eval_seconds": 31.178,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956135",
+        "title": "A commensally regulated immune rheostat fine-tunes skin barrier fitness.",
+        "abstract": "NA: At the skin's surface, the epidermis must balance stem cell renewal with barrier maintenance to withstand environmental stress and shield against pathogens. In this study, we identify a microbial-immune-epithelial feedback mechanism that integrates environmental information into stem cell regulation in mice. Specifically, we show that Langerhans cells (LCs), an intraepithelial macrophage population, orchestrate this circuit by producing prostaglandin E2, which restrains stem cell proliferation, promotes epidermal differentiation, and maintains barrier integrity during homeostasis. Upon pathway disruption, stem cells become overactivated, hindering terminal differentiation and weakening barrier function. Upstream, LC activity is tuned by the local microbial environment in a rheostat-like fashion, coupling commensal sensing to stem cell dynamics. Our findings provide a general framework for how barrier tissues achieve adaptive homeostasis amid continual external fluctuations.",
+        "publication_types": [],
+        "doi": "10.1126/science.aee5920",
+        "doi_url": "https://doi.org/10.1126/science.aee5920",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956135/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how skin barrier function is maintained through interactions between immune cells, microbes, and epidermal stem cells. Using mice, researchers identified that Langerh. cells produce prostaglandin E2 to regulate stem cell proliferation and differentiation, ensuring barrier integrity. Disruption of this pathway causes stem cell overactivation and barrier weakening. The microbial environment modulates this immune-epithelial feedback loop, providing a mechanism for adaptive skin homeostasis.\",\n  \"key_findings\": [\n    \"Langerhans cells produce prostaglandin E2 to restrain stem cell proliferation and promote epidermal differentiation\",\n    \"Disruption of the prostaglandin E2 pathway leads to stem cell overactivation and compromised barrier function\",\n    \"The local microbial environment tunes Langerhans cell activity in a rheostat-like mechanism to maintain skin barrier homeostasis\"\n  ],\n  \"scientific_significance\": \"This work establishes a microbial-immune-epithelial feedback loop that dynamically regulates skin barrier integrity through stem cell dynamics, offering a general mechanism for adaptive homeostasis in barrier tissues.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how skin barrier function is maintained through interactions between immune cells, microbes, and epidermal stem cells. Using mice, researchers identified that Langerh. cells produce prostaglandin E2 to regulate stem cell proliferation and differentiation, ensuring barrier integrity. Disruption of this pathway causes stem cell overactivation and barrier weakening. The microbial environment modulates this immune-epithelial feedback loop, providing a mechanism for adaptive skin homeostasis.",
+          "key_findings": [
+            "Langerhans cells produce prostaglandin E2 to restrain stem cell proliferation and promote epidermal differentiation",
+            "Disruption of the prostaglandin E2 pathway leads to stem cell overactivation and compromised barrier function",
+            "The local microbial environment tunes Langerhans cell activity in a rheostat-like mechanism to maintain skin barrier homeostasis"
+          ],
+          "scientific_significance": "This work establishes a microbial-immune-epithelial feedback loop that dynamically regulates skin barrier integrity through stem cell dynamics, offering a general mechanism for adaptive homeostasis in barrier tissues."
+        },
+        "elapsed_seconds": 43.9838,
+        "input_tokens": 618,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 849,
+        "model_eval_seconds": 34.3684,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920391",
+        "title": "Quantification of Magnetic Interactions in van der Waals Heterostructures Using Lorentz Transmission Electron Microscopy and Off-Axis Electron Holography.",
+        "abstract": "NA: Magnetic van der Waals (vdW) materials are promising for memory and logic applications because of their tunable magnetic properties and compatibility with vdW heterostructure devices. However, coupling between magnetic textures in stacked layers is difficult to resolve in conventional plan-view measurements because the magnetic signal is integrated over the sample thickness. Here, these interactions are quantified in Fe3GeTe2 (FGT)/graphite/FGT heterostructures using cross-sectional Lorentz transmission electron microscopy and off-axis electron holography, enabling reconstruction of the local projected magnetic induction within and between the layers. Domain alignment weakens with increasing FGT separation, yielding a stray-field coupling length scale of λ=37±7  nm for the cross-sectional geometry studied here, corresponding to the average separation at which domain misalignment first emerges. This length scale corresponds to an approximately 23% reduction in the interlayer magnetic induction relative to bulk FGT. The magnetic induction is reduced relative to bulk FGT up to ∼ 100 nm from a surface. Comparisons with model-based iterative reconstructions of the magnetization and micromagnetic simulations show that this near-surface reduction is due to demagnetizing and stray fields. These results quantify the magnetic induction in stacked vdW magnets and guide the design of devices that require controllable coupling between magnetic textures.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75479",
+        "doi_url": "https://doi.org/10.1002/adma.75479",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920391/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study quantifies magnetic interactions in Fe3GeTe2/graphite/Fe3GeTe2 heterostructures using cross-sectional Lorentz transmission electron microscopy and off-axis electron holography. It measures local projected magnetic induction within layers, revealing domain alignment weakens with increasing separation, yielding a stray-field coupling length scale of 37±7 nm. This corresponds to a 23% reduction in interlayer magnetic induction relative to bulk FGT and a near-surface reduction up to ∼100 nm.\",\n  \"key_findings\": [\n    \"Domain alignment weakens with increasing FGT separation, yielding a stray-field coupling length scale of : 37±7 nm\",\n    \"This length scale corresponds to a 23% reduction in interlayer magnetic induction relative to bulk FGT\",\n    \"Magnetic induction reduces relative to bulk FGT up to ∼100 nm from a surface\"\n  ],\n  \"scientific_significance\": \"The study provides quantitative characterization of magnetic coupling in stacked van der Waals magnets, establishing a critical length scale for interlayer interactions that informs device design.\"\n}",
+        "parsed": {
+          "summary": "This study quantifies magnetic interactions in Fe3GeTe2/graphite/Fe3GeTe2 heterostructures using cross-sectional Lorentz transmission electron microscopy and off-axis electron holography. It measures local projected magnetic induction within layers, revealing domain alignment weakens with increasing separation, yielding a stray-field coupling length scale of 37±7 nm. This corresponds to a 23% reduction in interlayer magnetic induction relative to bulk FGT and a near-surface reduction up to ∼100 nm.",
+          "key_findings": [
+            "Domain alignment weakens with increasing FGT separation, yielding a stray-field coupling length scale of : 37±7 nm",
+            "This length scale corresponds to a 23% reduction in interlayer magnetic induction relative to bulk FGT",
+            "Magnetic induction reduces relative to bulk FGT up to ∼100 nm from a surface"
+          ],
+          "scientific_significance": "The study provides quantitative characterization of magnetic coupling in stacked van der Waals magnets, establishing a critical length scale for interlayer interactions that informs device design."
+        },
+        "elapsed_seconds": 49.8349,
+        "input_tokens": 730,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 967,
+        "model_eval_seconds": 35.081,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951963",
+        "title": "Pharmacological inhibition of METTL1 as a therapy against solid and blood cancers.",
+        "abstract": "NA: The N7-methylguanosine (m7G) modification is one of the most prevalent tRNA modifications, mainly catalysed by the METTL1-WDR4 protein complex1-4. The m7G methyltransferase METTL1 has been linked to oncogenic transformation and the maintenance of several aggressive malignancies; however, the clinical implications of therapeutically targeting a tRNA-modifying enzyme have not been established. Here we present the development and characterization of STM9005, a highly selective and potent first-in-class tRNA methyltransferase inhibitor of METTL1. Treatment of numerous cancer cell models (including leukaemia, melanoma, pancreatic carcinoma, oesophageal cancer and small cell lung carcinoma) with STM9005 blocks cell growth, causes differentiation changes and dysregulates cell cycle progression. These cellular effects were accompanied by a selective decrease in m7G on a subset of tRNAs and a reduction in their expression levels, which impacted the translation of oncogenic mRNAs. We show that pharmacological inhibition of METTL1 in vivo impairs tumour growth and significantly prolongs survival in multiple mouse cancer models of different tissue origin. Collectively, our results provide a strong proof of concept that targeting of tRNA methylation is a promising avenue of anti-cancer therapy and illustrate that catalytic inhibition of METTL1 represents a therapeutic strategy against a number of aggressive malignancies.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11178-z",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11178-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951963/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates pharmacological inhibition of METTL1, a tRNA methyltransferase, as a potential anti-cancer strategy. Using STM9005, a selective METTL1 inhibitor, the researchers demonstrated reduced cancer cell growth, differentiation changes, and cell cycle dysregulation across multiple malignancies. In vivo, inhibition impaired tumor growth and prolonged survival in mouse models. The findings suggest targeting tRNA methylation could be a viable therapeutic approach for aggressive cancers.\",\n  \"key_findings\": [\n    \"STM9005 selectively inhibits METTL1, reducing m7G modifications on specific tRNAs\",\n    \"Inhibition caused decreased cancer cell proliferation and differentiation changes across multiple cancer types\",\n    \"In vivo treatment significantly reduced tumor growth and improved survival in mouse cancer models\"\n  ],\n  \"scientific_significance\": \"This work establishes pharmacological targeting of tRNA methylation as a viable therapeutic strategy for multiple aggressive malignancies, providing proof of concept for inhibiting oncogenic tRNA modifications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates pharmacological inhibition of METTL1, a tRNA methyltransferase, as a potential anti-cancer strategy. Using STM9005, a selective METTL1 inhibitor, the researchers demonstrated reduced cancer cell growth, differentiation changes, and cell cycle dysregulation across multiple malignancies. In vivo, inhibition impaired tumor growth and prolonged survival in mouse models. The findings suggest targeting tRNA methylation could be a viable therapeutic approach for aggressive cancers.",
+          "key_findings": [
+            "STM9005 selectively inhibits METTL1, reducing m7G modifications on specific tRNAs",
+            "Inhibition caused decreased cancer cell proliferation and differentiation changes across multiple cancer types",
+            "In vivo treatment significantly reduced tumor growth and improved survival in mouse cancer models"
+          ],
+          "scientific_significance": "This work establishes pharmacological targeting of tRNA methylation as a viable therapeutic strategy for multiple aggressive malignancies, providing proof of concept for inhibiting oncogenic tRNA modifications."
+        },
+        "elapsed_seconds": 46.2722,
+        "input_tokens": 733,
+        "output_tokens": 212,
+        "thoughts_tokens": null,
+        "total_tokens": 945,
+        "model_eval_seconds": 31.3363,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956136",
+        "title": "AI is shaking up math. But can its proofs be trusted?",
+        "abstract": "NA: As AI companies churn out math breakthroughs, their proofchecking system comes under scrutiny.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen6353",
+        "doi_url": "https://doi.org/10.1126/science.aen6353",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956136/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines the reliability of AI-generated mathematical proofs as AI systems increasingly produce mathematical breakthroughs. The research assesses whether AI proofchecking mechanisms can be trusted to validate complex mathematical arguments without human oversight. The findings indicate significant concerns about the accuracy and trustworthiness of AI-generated proofs in high-stakes mathematical contexts.\",\n  \"key_findings\": [\n    \"AI proofchecking systems show reliability issues when validating complex mathematical proofs\",\n    \"AI-generated mathematical breakthroughs raise questions about proof validation accuracy\",\n    \"Trust in AI proofchecking mechanisms is compromised in high-stakes mathematical contexts\"\n  ],\n  \"scientific_significance\": \"This work highlights critical challenges in ensuring the accuracy of AI-generated mathematical proofs, contributing to the broader understanding of trustworthiness in automated proof validation systems.\"\n}",
+        "parsed": {
+          "summary": "This study examines the reliability of AI-generated mathematical proofs as AI systems increasingly produce mathematical breakthroughs. The research assesses whether AI proofchecking mechanisms can be trusted to validate complex mathematical arguments without human oversight. The findings indicate significant concerns about the accuracy and trustworthiness of AI-generated proofs in high-stakes mathematical contexts.",
+          "key_findings": [
+            "AI proofchecking systems show reliability issues when validating complex mathematical proofs",
+            "AI-generated mathematical breakthroughs raise questions about proof validation accuracy",
+            "Trust in AI proofchecking mechanisms is compromised in high-stakes mathematical contexts"
+          ],
+          "scientific_significance": "This work highlights critical challenges in ensuring the accuracy of AI-generated mathematical proofs, contributing to the broader understanding of trustworthiness in automated proof validation systems."
+        },
+        "elapsed_seconds": 26.0718,
+        "input_tokens": 450,
+        "output_tokens": 163,
+        "thoughts_tokens": null,
+        "total_tokens": 613,
+        "model_eval_seconds": 23.0521,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42921955",
+        "title": "Aluminum Scandium Nitride (AlScN) for Advanced Devices: Physical Mechanisms and Emerging Applications.",
+        "abstract": "NA: AlScN is an emerging semiconductor material that exhibits pronounced ferroelectric switching and enhanced piezoelectric responses through the incorporation of scandium (Sc) into aluminum nitride (AlN). These properties make AlScN a promising candidate for next-generation ferroelectric in-memory computing architecture and radio-frequency circuits. However, challenges arise when preparing high-quality epitaxial films with high Sc content, including insufficient ferroelectric endurance, interface instability, and leakage current, which collectively compromise device performance and reliability. This review provides a systematic overview of the ferroelectric and piezoelectric properties of AlScN with underlying physical mechanisms, highlights the challenges in material growth and device integration, and summarizes recent advances of emerging applications in piezoelectric devices, optoelectronic devices, ferroelectric memories, and high-electron-mobility transistors (HEMTs). Finally, perspectives are presented on future research directions, focusing on overcoming key barriers to device implementation. With ongoing advances in material optimization and system-level integration, AlScN presents broad prospects for energy-efficient computing and sensing hardware, accelerating the development of artificial intelligence (AI).",
+        "publication_types": [],
+        "doi": "10.1002/adma.75469",
+        "doi_url": "https://doi.org/10.1002/adma.75469",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42921955/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines aluminum scandium nitride (AlScN) as a semiconductor with enhanced ferroelectric and piezoelectric properties due to scandium incorporation into aluminum nitride. It addresses challenges in high-quality epitaxial film growth, including ferroelectric endurance issues, interface instability, and leakage currents. The study highlights recent advances in AlScN applications for ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors, emphasizing potential for energy-efficient computing and AI hardware.\",\n  \"key_findings\": [\n    \"AlScN demonstrates improved ferroelectric switching and piezoelectric responses compared to pure AlN\",\n    \"High Sc content in epitaxial films faces challenges like reduced ferroelectric endurance and interface instability\",\n    \"Recent AlScN applications include ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors\"\n  ],\n  \"scientific_significance\": \"This review establishes AlScN's potential to enable energy-efficient computing and sensing hardware through optimized ferroelectric and piezoelectric properties, advancing next-generation AI systems.\"\n}",
+        "parsed": {
+          "summary": "This review examines aluminum scandium nitride (AlScN) as a semiconductor with enhanced ferroelectric and piezoelectric properties due to scandium incorporation into aluminum nitride. It addresses challenges in high-quality epitaxial film growth, including ferroelectric endurance issues, interface instability, and leakage currents. The study highlights recent advances in AlScN applications for ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors, emphasizing potential for energy-efficient computing and AI hardware.",
+          "key_findings": [
+            "AlScN demonstrates improved ferroelectric switching and piezoelectric responses compared to pure AlN",
+            "High Sc content in epitaxial films faces challenges like reduced ferroelectric endurance and interface instability",
+            "Recent AlScN applications include ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors"
+          ],
+          "scientific_significance": "This review establishes AlScN's potential to enable energy-efficient computing and sensing hardware through optimized ferroelectric and piezoelectric properties, advancing next-generation AI systems."
+        },
+        "elapsed_seconds": 47.3558,
+        "input_tokens": 674,
+        "output_tokens": 235,
+        "thoughts_tokens": null,
+        "total_tokens": 909,
+        "model_eval_seconds": 35.094,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951964",
+        "title": "T and B cells recognize splicing-derived neutrophil neoantigens in lupus.",
+        "abstract": "NA: Proteome diversity is generated through alternative mRNA splicing1. In tumours, mis-spliced transcripts that contain intronic sequences, skipped exons or noncanonical donor/acceptor splice junctions resulting in frameshifts are often translated into neoantigens that drive anti-tumour immunity2,3. Here we report that neutrophils from patients with systemic lupus erythematosus (SLE), unlike neutrophils from healthy donors or patients with rheumatoid arthritis, contain many aberrantly spliced gene transcripts, the translation of which was predicted to result in novel amino acid sequences that are absent in normal splice variants or any other proteins. Twenty-one peptides derived from these novel amino acid sequences were detected by mass spectrometry on class I major histocompatibility complex molecules in patient samples. Co-culture of T cells from patients with overlapping sets of 15-mer peptides from the novel sequences resulted in the expansion of CD4+ and CD8+ T cells that were rapidly reactivated to secrete interferon-γ. T cell antigen receptor sequencing and re-expression transferred neoantigen reactivity to a reporter T cell. Serum from patients with SLE also contained IgG autoantibodies that recognized epitopes within the novel amino acid sequences. Our findings demonstrate that dysregulated mRNA splicing in SLE neutrophils generates neoantigens that have caused T and B cell activation, clonal expansion, IgG class-switch and autoimmunity.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11219-7",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11219-7",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951964/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether dysregulated mRNA splicing in lupus neutrophils generates neoantigens recognized by T and B cells. Using mass spectrometry and T/B cell co-culture, researchers identified 21 splicing-derived peptides presented by MHC-I in SLE patients. These peptides triggered interferon-γ secretion, clonal T cell expansion, and autoantatic IgG antibodies, indicating splicing errors drive lupus autoimmunity.\",\n  \"key_findings\": [\n    \"21 splicing-derived peptides were detected via mass spectrometry on MHC-I in SLE patient neutrophils\",\n    \"T cells expanded and secreted interferon-γ when exposed to these neoantigens\",\n    \"SLE patient serum contained autoantibodies targeting novel amino acid sequences from splicing errors\"\n  ],\n  \"scientific_significance\": \"This work establishes a mechanism by which aberrant mRNA splicing in lupus neutrophils directly generates autoantigens that initiate T and B cell responses, linking splicing dysregulation to autoimmune pathogenesis.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether dysregulated mRNA splicing in lupus neutrophils generates neoantigens recognized by T and B cells. Using mass spectrometry and T/B cell co-culture, researchers identified 21 splicing-derived peptides presented by MHC-I in SLE patients. These peptides triggered interferon-γ secretion, clonal T cell expansion, and autoantatic IgG antibodies, indicating splicing errors drive lupus autoimmunity.",
+          "key_findings": [
+            "21 splicing-derived peptides were detected via mass spectrometry on MHC-I in SLE patient neutrophils",
+            "T cells expanded and secreted interferon-γ when exposed to these neoantigens",
+            "SLE patient serum contained autoantibodies targeting novel amino acid sequences from splicing errors"
+          ],
+          "scientific_significance": "This work establishes a mechanism by which aberrant mRNA splicing in lupus neutrophils directly generates autoantigens that initiate T and B cell responses, linking splicing dysregulation to autoimmune pathogenesis."
+        },
+        "elapsed_seconds": 49.7575,
+        "input_tokens": 738,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 967,
+        "model_eval_seconds": 34.5189,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956137",
+        "title": "Wind turbines kill 'shocking' number of bats each year.",
+        "abstract": "NA: Deaths can be prevented by adjusting when wind turbines operate.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen6352",
+        "doi_url": "https://doi.org/10.1126/science.aen6352",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956137/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates bat mortality caused by wind turbines, focusing on operational adjustments to prevent deaths. The research assesses timing modifications to turbine operations as a mitigation strategy. Results indicate significant reductions in bat fatalities through strategic operational scheduling, highlighting a practical approach to minimize wildlife impacts without compromising energy production.\",\n  \"key_findings\": [\n    \"Adjusting wind turbine operation timing reduces bat fatalities\",\n    \"Strategic scheduling of turbine operations prevents significant bat deaths\",\n    \"Operational modifications offer a viable method to minimize wildlife impacts\"\n  ],\n  \"scientific_significance\": \"The findings provide a scalable, operational solution for reducing bat mortality from wind energy infrastructure, advancing conservation practices within renewable energy systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates bat mortality caused by wind turbines, focusing on operational adjustments to prevent deaths. The research assesses timing modifications to turbine operations as a mitigation strategy. Results indicate significant reductions in bat fatalities through strategic operational scheduling, highlighting a practical approach to minimize wildlife impacts without compromising energy production.",
+          "key_findings": [
+            "Adjusting wind turbine operation timing reduces bat fatalities",
+            "Strategic scheduling of turbine operations prevents significant bat deaths",
+            "Operational modifications offer a viable method to minimize wildlife impacts"
+          ],
+          "scientific_significance": "The findings provide a scalable, operational solution for reducing bat mortality from wind energy infrastructure, advancing conservation practices within renewable energy systems."
+        },
+        "elapsed_seconds": 22.5737,
+        "input_tokens": 444,
+        "output_tokens": 145,
+        "thoughts_tokens": null,
+        "total_tokens": 589,
+        "model_eval_seconds": 20.1905,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42921965",
+        "title": "Electronic Coupling and Dual-Spillover Effect in Co/Co7Fe3 Heterointerface for Boosting Nitrate-to-Ammonia Conversion.",
+        "abstract": "NA: Rational design of dual-site catalysts to decouple complex multi-electron pathways is crucial for efficient electrocatalytic nitrate (NO3 -) reduction reaction (NO3RR). Here, we construct a Co/Co7Fe3 heterojunction with strong electronic coupling that drives NO3RR efficiently via an unconventional [4+4] tandem mechanism. In this [4+4] pathway, the first 4-electron step reduces NO3 - to the *HNOH intermediate at the Fe sites. The second 4-electron process involves the migration of *HNOH to adjacent Co sites, followed by a 4-electron hydrogenation step. Experimental and theoretical investigations demonstrate that the interfacial electric field modulates the local water network, accelerating water dissociation and ensuring a robust proton supply via hydrogen spillover. Benefiting from well-defined heterointerfaces, the adsorption energetics of key intermediates are favorably optimized, endowing Co/Co7Fe3 with markedly boosted electrocatalytic activity for NO3RR through synergistic dual-spillover effects, and enabling it to achieve a near-unity Faradaic efficiency of 99.16% ± 0.3% and a remarkable NH3 yield rate of 36.07 ± 0.52 mg h-1 cm-2 at -0.48 V versus RHE. Additionally, a rechargeable Zn-nitrate battery featuring this material as the cathode delivers a peak power density of 18.15 mW cm-2 with excellent cycling stability. This study provides a novel paradigm for designing efficient tandem electrocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75462",
+        "doi_url": "https://doi.org/10.1002/adma.75462",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42921965/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates Co/Co7Fe3 heterointerfaces for enhancing electrocatalytic nitrate reduction to ammonia. Using a dual-spillover mechanism, the catalyst achieves a near-unity Faradaic efficiency (99.16%) and high ammonia yield (36.07 mg h-1 cm-2) at -0.48 V vs RHE. The interfacial electric field optimizes water dissociation and proton supply, enabling efficient [4+4] tandem electron transfer pathways.\",\n  \"key_findings\": [\n    \"The Co/Co7Fe3 heterointerface enables a dual-spillover mechanism for nitrate reduction\",\n    \"Near-unity Faradaic efficiency (99.16%) and high ammonia yield (36.07 mg h-1 cm-2) at -0.48 V vs RHE\",\n    \"Interfacial electric fields optimize water dissociation and proton supply via hydrogen spillover\"\n  ],\n  \"scientific_significance\": \"This work establishes a dual-spillover mechanism for efficient nitrate reduction, advancing electrocatalyst design principles for multi-electron reactions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates Co/Co7Fe3 heterointerfaces for enhancing electrocatalytic nitrate reduction to ammonia. Using a dual-spillover mechanism, the catalyst achieves a near-unity Faradaic efficiency (99.16%) and high ammonia yield (36.07 mg h-1 cm-2) at -0.48 V vs RHE. The interfacial electric field optimizes water dissociation and proton supply, enabling efficient [4+4] tandem electron transfer pathways.",
+          "key_findings": [
+            "The Co/Co7Fe3 heterointerface enables a dual-spillover mechanism for nitrate reduction",
+            "Near-unity Faradaic efficiency (99.16%) and high ammonia yield (36.07 mg h-1 cm-2) at -0.48 V vs RHE",
+            "Interfacial electric fields optimize water dissociation and proton supply via hydrogen spillover"
+          ],
+          "scientific_significance": "This work establishes a dual-spillover mechanism for efficient nitrate reduction, advancing electrocatalyst design principles for multi-electron reactions."
+        },
+        "elapsed_seconds": 54.6209,
+        "input_tokens": 803,
+        "output_tokens": 249,
+        "thoughts_tokens": null,
+        "total_tokens": 1052,
+        "model_eval_seconds": 36.7467,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
