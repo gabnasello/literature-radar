@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261118T001551Z",
+  "generated_at_utc": "2026-11-18 00:46:50 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 371,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress internally, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. The approach demonstrates scalable production and enhanced cycling stability for practical lithium-ion batteries.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress internally, reducing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composite achieves 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency\",\n    \"The material reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles for NCM811 pouch cells\"\n  ],\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, advancing battery electrode design for high-energy applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress internally, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. The approach demonstrates scalable production and enhanced cycling stability for practical lithium-ion batteries.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress internally, reducing electrode swelling",
+            "Nitrogen-doped silicon-carbon composite achieves 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency",
+            "The material reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles for NCM811 pouch cells"
+          ],
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, advancing battery electrode design for high-energy applications."
+        },
+        "elapsed_seconds": 51.3217,
+        "input_tokens": 869,
+        "output_tokens": 302,
+        "thoughts_tokens": null,
+        "total_tokens": 1171,
+        "model_eval_seconds": 46.3726,
+        "error": "summary must contain 45–65 words; received 76.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei to construct a comprehensive atlas. It combined histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization to define 100+ cell subclasses and chromatin states across 81% of the genome. Active states with combinatorial histone marks better identify functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 define repressive states. The atlas enables deep learning models for predicting epigenomic features and gene expression from DNA sequence.\",\n  \"key_findings\": [\n    \"Integration of four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome data across 2.5 million nuclei\",\n    \"Active chromatin states defined by combinatorial histone modifications better identify functional enhancers than chromatin accessibility alone\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression\"\n  ],\n  \"scientific_significance\": \"This atlas provides a unified framework for annotating the regulatory genome of the adult mouse brain and interpreting non-coding disease risk variants through multi-modal epigenomic integration.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei to construct a comprehensive atlas. It combined histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization to define 100+ cell subclasses and chromatin states across 81% of the genome. Active states with combinatorial histone marks better identify functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 define repressive states. The atlas enables deep learning models for predicting epigenomic features and gene expression from DNA sequence.",
+          "key_findings": [
+            "Integration of four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome data across 2.5 million nuclei",
+            "Active chromatin states defined by combinatorial histone modifications better identify functional enhancers than chromatin accessibility alone",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression"
+          ],
+          "scientific_significance": "This atlas provides a unified framework for annotating the regulatory genome of the adult mouse brain and interpreting non-coding disease risk variants through multi-modal epigenomic integration."
+        },
+        "elapsed_seconds": 47.3795,
+        "input_tokens": 752,
+        "output_tokens": 276,
+        "thoughts_tokens": null,
+        "total_tokens": 1028,
+        "model_eval_seconds": 42.5425,
+        "error": "summary must contain 45–65 words; received 80.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42907514",
+        "title": "Enzyme-embedded polyesters for accelerated biodegradation in the deep sea.",
+        "abstract": "NA: The accumulation of persistent plastics in the ocean is causing wide-ranging environmental problems1-3. Some commercially available compostable plastics4-7, developed to address these issues, degrade efficiently under industrial composting conditions; however, their degradation in marine environments, particularly in the deep sea, remains limited8-10. Here we demonstrate that thermally embedding enzymes into compostable polyesters (poly(butylene succinate) (PBS), poly(butylene succinate-co-adipate) (PBSA), poly(ε-caprolactone) (PCL) and poly(butylene adipate-co-terephthalate) (PBAT)) significantly accelerates their degradation in both coastal and deep-sea environments from water depths of 2-6 m to 5,503 m. Enzyme-embedded polyesters achieved near-complete degradation at a deep-sea depth of 757 m within 5 months. Furthermore, moderate biodegradation of enzyme-embedded polyesters was observed under extreme conditions on deep-sea floors of 5,503 m. In coastal seawater, films embedded with trace amounts (0.1 wt%) of enzyme underwent rapid degradation. The mechanical properties of enzyme-embedded polyesters were similar to those of enzyme-free polyesters. Chemical analysis confirmed the formation of low-molecular-mass degradation products and biochemical oxygen demand measurements supported the mineralization of the enzyme-embedded polyesters. The enzyme-embedding strategy enables enhanced marine degradation of compostable polyesters and represents a potential solution to marine plastic pollution.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11192-1",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11192-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42907514/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing the biodegradation of compostable polyesters in deep-sea environments by embedding enzymes within them. The researchers tested enzyme-embedded polyesters (PBS, PBSA, PCL, PBAT) at depths up to 5,503 meters. Results showed near-complete degradation at 757 meters within five months and moderate degradation at extreme depths. The approach maintains mechanical properties while enabling rapid marine breakdown.\",\n  \"key_findings\": [\n    \"Enzyme-embedded polyesters degraded near-completely at 757 m deep-sea depth within five months\",\n    \"Moderate biodegradation occurred at extreme depths of 5,503 m\",\n    \"Mechanical properties remained comparable to enzyme-free polyesters\"\n  ],\n  \"scientific_significance\": \"This strategy provides a scalable method for accelerating marine biodegradation of compostable plastics, addressing a critical gap in deep-sea plastic pollution mitigation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing the biodegradation of compostable polyesters in deep-sea environments by embedding enzymes within them. The researchers tested enzyme-embedded polyesters (PBS, PBSA, PCL, PBAT) at depths up to 5,503 meters. Results showed near-complete degradation at 757 meters within five months and moderate degradation at extreme depths. The approach maintains mechanical properties while enabling rapid marine breakdown.",
+          "key_findings": [
+            "Enzyme-embedded polyesters degraded near-completely at 757 m deep-sea depth within five months",
+            "Moderate biodegradation occurred at extreme depths of 5,503 m",
+            "Mechanical properties remained comparable to enzyme-free polyesters"
+          ],
+          "scientific_significance": "This strategy provides a scalable method for accelerating marine biodegradation of compostable plastics, addressing a critical gap in deep-sea plastic pollution mitigation."
+        },
+        "elapsed_seconds": 46.5398,
+        "input_tokens": 764,
+        "output_tokens": 201,
+        "thoughts_tokens": null,
+        "total_tokens": 965,
+        "model_eval_seconds": 30.4803,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"ILC3s maintain tissue-protective functions via PKA signaling regulated by prostaglandin\",\n    \"IL-23 suppresses PKA inhibitors, reducing ILC3 numbers and increasing infection susceptibility\",\n    \"IL-23 overproduction decreases PRKAR1A, increasing PKA signaling and gut inflammation in mice\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to gut inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "ILC3s maintain tissue-protective functions via PKA signaling regulated by prostaglandin",
+            "IL-23 suppresses PKA inhibitors, reducing ILC3 numbers and increasing infection susceptibility",
+            "IL-23 overproduction decreases PRKAR1A, increasing PKA signaling and gut inflammation in mice"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to gut inflammation."
+        },
+        "elapsed_seconds": 45.9477,
+        "input_tokens": 800,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1075,
+        "model_eval_seconds": 41.0474,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956076",
+        "title": "Emergence of Chern metal in a moiré Kondo lattice.",
+        "abstract": "NA: A Chern metal is a two-dimensional metallic state of matter carrying chiral edge states. We report the observation of a Chern metal at the onset of the magnetic Kondo breakdown in a frustrated moiré Kondo lattice--angle-aligned MoTe2/WSe2 bilayers. The state is compressible and is manifested by a nearly quantized Hall resistance and a finite longitudinal resistance arising from a bad metallic bulk. We demonstrate the presence of a chiral edge state by nonlocal transport measurements and current-induced quantum anomalous Hall breakdown. Magnetic circular dichroism measurements further reveal a magnetization plateau for the Chern metal before a metamagnetic transition at the Kondo breakdown. Our results open an opportunity for moiré engineering of exotic quantum phases through the interplay between band topology and Kondo interactions.",
+        "publication_types": [],
+        "doi": "10.1126/science.adv9181",
+        "doi_url": "https://doi.org/10.1126/science.adv9181",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956076/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the emergence of a Chern metal in frustrated moiré Kondo lattices. Using angle-aligned MoTe2/WSe2 bilayers, researchers observed a compressible state with nearly quantized Hall resistance and finite longitudinal resistance. Nonlocal transport confirmed chiral edge states, while magnetic circular dichroism revealed a magnetization plateau preceding a metamagnetic transition at Kondo breakdown. The findings demonstrate how moiré engineering can stabilize topological quantum phases through Kondo interactions.\",\n  \"key_findings\": [\n    \"Observation of a compressible Chern metal state with nearly quantized Hall resistance\",\n    \"Nonlocal transport measurements confirmed chiral edge states\",\n    \"Magnetic circular dichroism showed a magnetization plateau before Kondo breakdown\"\n  ],\n  \"scientific_significance\": \"This work establishes moiré engineering as a pathway to stabilize topological quantum phases by coupling band topology with Kondo interactions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the emergence of a Chern metal in frustrated moiré Kondo lattices. Using angle-aligned MoTe2/WSe2 bilayers, researchers observed a compressible state with nearly quantized Hall resistance and finite longitudinal resistance. Nonlocal transport confirmed chiral edge states, while magnetic circular dichroism revealed a magnetization plateau preceding a metamagnetic transition at Kondo breakdown. The findings demonstrate how moiré engineering can stabilize topological quantum phases through Kondo interactions.",
+          "key_findings": [
+            "Observation of a compressible Chern metal state with nearly quantized Hall resistance",
+            "Nonlocal transport measurements confirmed chiral edge states",
+            "Magnetic circular dichroism showed a magnetization plateau before Kondo breakdown"
+          ],
+          "scientific_significance": "This work establishes moiré engineering as a pathway to stabilize topological quantum phases by coupling band topology with Kondo interactions."
+        },
+        "elapsed_seconds": 33.2661,
+        "input_tokens": 689,
+        "output_tokens": 195,
+        "thoughts_tokens": null,
+        "total_tokens": 884,
+        "model_eval_seconds": 28.4505,
+        "error": "summary must contain 45–65 words; received 67.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at the buried interface in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, researchers discovered simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The authors designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% (0.09 cm²) and 21.46% on mini-modules, maintaining 96.26% efficiency after 1000 h damp aging at 85 ± 5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at the buried interface in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, researchers discovered simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The authors designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% (0.09 cm²) and 21.46% on mini-modules, maintaining 96.26% efficiency after 1000 h damp aging at 85 ± 5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite solar cells."
+        },
+        "elapsed_seconds": 50.1961,
+        "input_tokens": 886,
+        "output_tokens": 297,
+        "thoughts_tokens": null,
+        "total_tokens": 1183,
+        "model_eval_seconds": 45.1526,
+        "error": "summary must contain 45–65 words; received 95.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951334",
+        "title": "Switchable Chlorine Atom Transfer Radical Reactions.",
+        "abstract": "NA: Atom transfer radical reactions-encompassing atom transfer radical addition (ATRA)1 and atom transfer radical polymerization (ATRP)2-provide a versatile route to synthesize functionalized small molecules and polymers. Using readily available unactivated alkyl chlorides3 instead of activated organohalides represents the state-of-the-art in this field, as this requires cleaving stronger C-Cl bonds in the substrates while preserving weaker ones in the products. Here we describe a dual-copper relay catalytic strategy to overcome this limitation. A dinuclear copper complex selectively activates the robust C-Cl bond of unactivated alkyl chlorides, while a mononuclear copper catalyst mediates controllable C-Cl bond reconstruction. The reaction pathway can be switched between ATRA and ATRP-type reactions in the presence or absence of the mononuclear copper partner, thus providing a switchable platform for chlorine atom transfer radical reactions. This protocol can not only enable synthesis of structurally diverse ATRA products and α-end-functionalized polyacrylates, but allow for direct modification of poly(vinyl chloride) (PVC) under mild reaction conditions. It demonstrates the successful utility of unactivated organochlorides in organic synthesis and polymer science.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11348-z",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11348-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951334/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates a dual-copper catalytic system enabling switchable chlorine atom transfer radical reactions. The approach uses a dinuclear copper complex to activate unactivated alkyl chlorides and a mononuclear copper catalyst for controlled C-Cl bond reconstruction. The reaction switches between atom transfer radical addition (ATRA) and atom transfer radical polymerization (ATRP) depending on the presence of the mononuclear copper partner. The protocol facilitates synthesis of diverse ATRA products and α-end-functionalized polyacrylates, and allows direct modification of poly(vinyl chloride) under mild conditions.\",\n  \"key_findings\": [\n    \"A dinuclear copper complex selectively activates robust C-Cl bonds in unactivated alkyl chlorides\",\n    \"A mononuclear copper catalyst mediates controlled C-Cl bond reconstruction for reaction switching\",\n    \"The system enables synthesis of structurally diverse ATRA products and direct PVC modification under mild conditions\"\n  ],\n  \"scientific_significance\": \"This work establishes a versatile platform for chlorine atom transfer radical reactions using unactivated alkyl chlorides, advancing synthetic strategies for functionalized small molecules and polymers.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a dual-copper catalytic system enabling switchable chlorine atom transfer radical reactions. The approach uses a dinuclear copper complex to activate unactivated alkyl chlorides and a mononuclear copper catalyst for controlled C-Cl bond reconstruction. The reaction switches between atom transfer radical addition (ATRA) and atom transfer radical polymerization (ATRP) depending on the presence of the mononuclear copper partner. The protocol facilitates synthesis of diverse ATRA products and α-end-functionalized polyacrylates, and allows direct modification of poly(vinyl chloride) under mild conditions.",
+          "key_findings": [
+            "A dinuclear copper complex selectively activates robust C-Cl bonds in unactivated alkyl chlorides",
+            "A mononuclear copper catalyst mediates controlled C-Cl bond reconstruction for reaction switching",
+            "The system enables synthesis of structurally diverse ATRA products and direct PVC modification under mild conditions"
+          ],
+          "scientific_significance": "This work establishes a versatile platform for chlorine atom transfer radical reactions using unactivated alkyl chlorides, advancing synthetic strategies for functionalized small molecules and polymers."
+        },
+        "elapsed_seconds": 40.2243,
+        "input_tokens": 777,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 1014,
+        "model_eval_seconds": 34.9843,
+        "error": "summary must contain 45–65 words; received 81.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956121",
+        "title": "Whole-body single-cell atlas of an adult vertebrate, Danionella cerebrum.",
+        "abstract": "NA: A complete cell type transcriptome atlas of a vertebrate could promote understanding of animal cell type composition, organization, and evolution. The miniaturized, transparent, and regenerative teleost Danionella cerebrum brings whole-vertebrate single-cell profiling experiments within reach. We performed region-stratified single-cell RNA sequencing across the adult Danionella body and mapped cell types and gene expression at single-cell resolution using spatial transcriptomics. We delineated spatially distinct neural cell types on the basis of their regional gene expression signatures. The body-wide atlas elucidated cell types harboring adult molecular positional memory, uncovered paedomorphic features, and revealed conserved body-region and appendage-specification programs in adult connective tissue. Comparative analyses revealed conserved neural cell types, and regeneration datasets uncovered expression dynamics during telencephalon regeneration. This whole-vertebrate transcriptome atlas yields a comprehensive resource for myriad questions in biology and neuroscience.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeg1125",
+        "doi_url": "https://doi.org/10.1126/science.aeg1125",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956121/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study generated a whole-vertebrate single-cell transcriptome atlas using region-stratified single-cell RNA sequencing and spatial transcriptomics in the transparent teleost Danion as a model. It identified spatially distinct neural cell types, adult molecular positional memory, paedomorphic features, and conserved body-region specification programs. The atlas provides a resource for understanding vertebrate cell type composition, organization, and evolutionary mechanisms.\",\n  \"key_findings\": [\n    \"Identification of spatially distinct neural cell types based on regional gene expression signatures\",\n    \"Discovery of adult molecular positional memory in specific cell types\",\n    \"Uncovering paedomorphic features and conserved body-region and appendage-specification programs in adult connective tissue\"\n  ],\n  \"scientific_significance\": \"This whole-vertebrate single-cell atlas advances understanding of vertebrate cell type composition, spatial organization, and evolutionary conservation across species.\"\n}",
+        "parsed": {
+          "summary": "This study generated a whole-vertebrate single-cell transcriptome atlas using region-stratified single-cell RNA sequencing and spatial transcriptomics in the transparent teleost Danion as a model. It identified spatially distinct neural cell types, adult molecular positional memory, paedomorphic features, and conserved body-region specification programs. The atlas provides a resource for understanding vertebrate cell type composition, organization, and evolutionary mechanisms.",
+          "key_findings": [
+            "Identification of spatially distinct neural cell types based on regional gene expression signatures",
+            "Discovery of adult molecular positional memory in specific cell types",
+            "Uncovering paedomorphic features and conserved body-region and appendage-specification programs in adult connective tissue"
+          ],
+          "scientific_significance": "This whole-vertebrate single-cell atlas advances understanding of vertebrate cell type composition, spatial organization, and evolutionary conservation across species."
+        },
+        "elapsed_seconds": 38.1878,
+        "input_tokens": 626,
+        "output_tokens": 188,
+        "thoughts_tokens": null,
+        "total_tokens": 814,
+        "model_eval_seconds": 28.1784,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920103",
+        "title": "Amorphization Unlocks Active Sites in Organic Small Molecules for Ah-Level Aqueous Ammonium-Ion Batteries.",
+        "abstract": "NA: The performance of most organic rechargeable batteries is strongly hindered by insufficient active site exposure arising from strong molecular stacking. To address this issue, an amorphization strategy is implemented to disrupt strong intermolecular π-π stacking in the small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT), thereby improving electrolyte accessibility and activating buried redox sites. Amorphous TDT exhibits a high specific surface area of 738 m2 g-1, delivers 242.8 mAh g-1 at 0.1 A g-1, and retains 87.1% of its initial capacity after 817 cycles over 2900 h. In situ ATR-FTIR and EQCM-D measurements reveal that NH4 + is preferentially adsorbed and stored through coordination and deprotonation, while interfacial NH4 + accumulation induces localized hydrolysis to generate H3O+ for subsequent proton storage. The TDT||CuFe-PBA full cell retains 100% of its initial capacity over 100 000 cycles at 5 A g-1. Moreover, the first Ah-level AAIB pouch cell delivers 1.037 Ah at an average voltage of 1.14 V, demonstrating the practical promise of amorphous organic small molecule for durable, high capacity AAIBs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75494",
+        "doi_url": "https://doi.org/10.1002/adma.75494",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920103/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates amorphization of organic small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT) to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking, the amorphous TDT achieves high surface area (738 m² g⁻¹), delivers 242.8 mAh g⁻¹ at 0.1 A g⁻¹, and maintains 87.1% capacity after 817 cycles. In situ measurements confirm NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage, enabling a 100,000-cycle full cell and practical Ah-level pouch cell performance.\",\n  \"key_findings\": [\n    \"Amorphous TDT disrupts π-π stacking to expose buried redox sites\",\n    \"Amorphous TDT achieves 242.8 mAh g⁻¹ capacity at 0.1 A g⁻¹ with 87.1% retention after 817 cycles\",\n    \"In situ evidence shows NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that amorphization of organic small molecules can unlock active sites for high-capacity, long-cycle aqueous ammonium-ion batteries, advancing sustainable energy storage solutions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates amorphization of organic small molecule 2,3,7,8-tetraamino-5,10-dihydrophenazine-1,4,6,9-tetraone (TDT) to enhance active site exposure in aqueous ammonium-ion batteries. By disrupting π-π stacking, the amorphous TDT achieves high surface area (738 m² g⁻¹), delivers 242.8 mAh g⁻¹ at 0.1 A g⁻¹, and maintains 87.1% capacity after 817 cycles. In situ measurements confirm NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage, enabling a 100,000-cycle full cell and practical Ah-level pouch cell performance.",
+          "key_findings": [
+            "Amorphous TDT disrupts π-π stacking to expose buried redox sites",
+            "Amorphous TDT achieves 242.8 mAh g⁻¹ capacity at 0.1 A g⁻¹ with 87.1% retention after 817 cycles",
+            "In situ evidence shows NH₄⁺ adsorption via coordination/deprotonation and hydrolysis-driven proton storage"
+          ],
+          "scientific_significance": "This work demonstrates that amorphization of organic small molecules can unlock active sites for high-capacity, long-cycle aqueous ammonium-ion batteries, advancing sustainable energy storage solutions."
+        },
+        "elapsed_seconds": 54.1771,
+        "input_tokens": 860,
+        "output_tokens": 321,
+        "thoughts_tokens": null,
+        "total_tokens": 1181,
+        "model_eval_seconds": 49.2189,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951953",
+        "title": "Molecular underpinnings of rheumatic diseases and emerging therapeutic concepts.",
+        "abstract": "NA: Inflammatory rheumatic diseases such as rheumatoid arthritis, psoriatic arthritis and systemic lupus erythematosus represent chronic inflammatory disorders that are caused by dysregulation of innate and adaptive immune responses. Here we review current advances in our understanding of the molecular underpinnings of these diseases and discuss consequences with respect to emerging targets and treatment strategies, which are increasingly enabling more robust disease control and the first prospects of a cure for previously chronic inflammatory rheumatic diseases.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-10966-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-10966-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951953/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines molecular mechanisms driving inflammatory rheumatic diseases including rheumatoid arthritis, psoriatic arthritis, and systemic lupus eryusing dysregulated innate and adaptive immunity. It evaluates recent advances in understanding disease pathogenesis and identifies emerging therapeutic targets that could enable more effective disease control and potential cures for these previously chronic conditions.\",\n  \"key_findings\": [\n    \"Dysregulation of innate and adaptive immune responses underlies inflammatory rheumatic diseases\",\n    \"Recent advances reveal molecular mechanisms contributing to disease pathogenesis\",\n    \"Emerging therapeutic targets offer potential for improved disease control and cures\"\n  ],\n  \"scientific_significance\": \"This study advances understanding of immune dysregulation in rheumatic diseases and provides a foundation for developing targeted therapies that may transform chronic inflammatory conditions into manageable or curable disorders.\"\n}",
+        "parsed": {
+          "summary": "This review examines molecular mechanisms driving inflammatory rheumatic diseases including rheumatoid arthritis, psoriatic arthritis, and systemic lupus eryusing dysregulated innate and adaptive immunity. It evaluates recent advances in understanding disease pathogenesis and identifies emerging therapeutic targets that could enable more effective disease control and potential cures for these previously chronic conditions.",
+          "key_findings": [
+            "Dysregulation of innate and adaptive immune responses underlies inflammatory rheumatic diseases",
+            "Recent advances reveal molecular mechanisms contributing to disease pathogenesis",
+            "Emerging therapeutic targets offer potential for improved disease control and cures"
+          ],
+          "scientific_significance": "This study advances understanding of immune dysregulation in rheumatic diseases and provides a foundation for developing targeted therapies that may transform chronic inflammatory conditions into manageable or curable disorders."
+        },
+        "elapsed_seconds": 29.1592,
+        "input_tokens": 529,
+        "output_tokens": 171,
+        "thoughts_tokens": null,
+        "total_tokens": 700,
+        "model_eval_seconds": 23.4549,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956122",
+        "title": "Genomic erosion across avifauna in a biodiversity hotspot sounds a conservation alarm.",
+        "abstract": "NA: Loss of biodiversity can have a hidden dimension-the cryptic erosion of genetic diversity even in the face of apparent species resilience. We quantified changes in genetic diversity by comparing historical and modern genomes of 62 songbird species from the Gaoligong Mountains, a biodiversity hotspot in southwestern China. We identified genomic loss averaging between 43 and 49%; and, unexpectedly, common species were disproportionately affected. We argue that this loss was driven primarily by habitat fragmentation (and mitigated by dispersal ability) and show that it exceeds prior estimates and conservation policy thresholds. Species identified as having lost diversity continue to be listed as \"Least Concern\" on the International Union for Conservation of Nature's Red List of Threatened Species, exposing a blind spot in extinction risk monitoring. We call for genomic metrics to be rapidly integrated into global conservation frameworks.",
+        "publication_types": [],
+        "doi": "10.1126/science.aef3063",
+        "doi_url": "https://doi.org/10.1126/science.aef3063",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956122/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study quantified genetic diversity loss in 62 songbird species from China's Gaol. Mountains biodiversity hotspot by comparing historical and modern genomes. It found genomic erosion averaging 43-49%, disproportionately affecting common species. The loss is driven by habitat fragmentation, exceeds conservation thresholds, and persists despite species being listed as 'Least Concern' on the IUCN Red List, highlighting a critical gap in extinction risk monitoring.\",\n  \"key_findings\": [\n    \"Genomic erosion averaged 43-49% across 62 songbird species in a Chinese biodiversity hotspot\",\n    \"Common species were disproportionately affected by genetic diversity loss\",\n    \"The erosion exceeds conservation policy thresholds and persists despite IUCN 'Least Concern' listings\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that genetic diversity loss in songbirds can occur rapidly in biodiversity hotspots, challenging current conservation metrics and underscoring the need for genomic assessments in extinction risk monitoring.\"\n}",
+        "parsed": {
+          "summary": "This study quantified genetic diversity loss in 62 songbird species from China's Gaol. Mountains biodiversity hotspot by comparing historical and modern genomes. It found genomic erosion averaging 43-49%, disproportionately affecting common species. The loss is driven by habitat fragmentation, exceeds conservation thresholds, and persists despite species being listed as 'Least Concern' on the IUCN Red List, highlighting a critical gap in extinction risk monitoring.",
+          "key_findings": [
+            "Genomic erosion averaged 43-49% across 62 songbird species in a Chinese biodiversity hotspot",
+            "Common species were disproportionately affected by genetic diversity loss",
+            "The erosion exceeds conservation policy thresholds and persists despite IUCN 'Least Concern' listings"
+          ],
+          "scientific_significance": "The study demonstrates that genetic diversity loss in songbirds can occur rapidly in biodiversity hotspots, challenging current conservation metrics and underscoring the need for genomic assessments in extinction risk monitoring."
+        },
+        "elapsed_seconds": 38.6001,
+        "input_tokens": 605,
+        "output_tokens": 205,
+        "thoughts_tokens": null,
+        "total_tokens": 810,
+        "model_eval_seconds": 29.5177,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920199",
+        "title": "Beyond State of Charge: Electrochemical States and Trajectory Design in Organic Mixed Conductors.",
+        "abstract": "NA: Organic mixed ionic-electronic conductors (OMIECs) couple electronic redox, ion transport, solvation, structural reorganization, and mechanics, enabling diverse electrochemical functions but making their internal states poorly represented by scalar descriptors such as voltage, charge, conductivity, or nominal doping level. This Review establishes a state-centered framework that treats electrochemical operation as the writing, observation, reconstruction, and design of multidimensional, history-dependent state trajectories. A problem-specific minimal sufficient state basis is introduced to distinguish essential from redundant coordinates, while waveform history and spatial heterogeneity define when lumped descriptions remain valid. Optical, electrical, ion-specific, gravimetric, structural, mechanical, and temporal readouts are analyzed as selective projections whose complementarity determines state observability and hidden-state reconstruction. Within this framework, congruence, kinetic ordering, decoupling, observational degeneracy, and mapping drift become experimentally testable relationships rather than isolated phenomena. Electrochromics, organic electrochemical transistors (OECTs), electrochemical memories, actuators, reconfigurable systems, and energy-storage and conversion devices are then recast as technologies that select different trajectories through a shared electrochemical-state landscape. The framework ultimately connects molecular structure, electrolyte, morphology, device architecture, and driving protocol to the inverse design of observable, controllable, reversible, and durable electrochemical trajectories.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75483",
+        "doi_url": "https://doi.org/10.1002/adma.75483",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920199/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review establishes a state-centered framework for organic mixed ionic-electronic conductors (OMIECs), moving beyond scalar descriptors like voltage or charge. It introduces a minimal sufficient state basis to distinguish essential coordinates, while waveform history and spatial heterogeneity determine when lumped descriptions are valid. The framework enables reconstructing hidden states and designing multidimensional electrochemical trajectories for applications such as electrochromics, OECTs, and energy storage devices.\",\n  \"key_findings\": [\n    \"A minimal sufficient state basis identifies essential coordinates for OMIECs\",\n    \"Waveform history and spatial heterogeneity define validity of lumped state descriptions\",\n    \"The framework enables reconstruction of hidden states and trajectory design for electrochemical applications\"\n  ],\n  \"scientific_significance\": \"This framework provides a unified approach to model and design electrochemical states in OMIECs, advancing understanding of how molecular structure, device architecture, and driving protocols influence observable, reversible, and durable electrochemical trajectories.\"\n}",
+        "parsed": {
+          "summary": "This review establishes a state-centered framework for organic mixed ionic-electronic conductors (OMIECs), moving beyond scalar descriptors like voltage or charge. It introduces a minimal sufficient state basis to distinguish essential coordinates, while waveform history and spatial heterogeneity determine when lumped descriptions are valid. The framework enables reconstructing hidden states and designing multidimensional electrochemical trajectories for applications such as electrochromics, OECTs, and energy storage devices.",
+          "key_findings": [
+            "A minimal sufficient state basis identifies essential coordinates for OMIECs",
+            "Waveform history and spatial heterogeneity define validity of lumped state descriptions",
+            "The framework enables reconstruction of hidden states and trajectory design for electrochemical applications"
+          ],
+          "scientific_significance": "This framework provides a unified approach to model and design electrochemical states in OMIECs, advancing understanding of how molecular structure, device architecture, and driving protocols influence observable, reversible, and durable electrochemical trajectories."
+        },
+        "elapsed_seconds": 36.5325,
+        "input_tokens": 813,
+        "output_tokens": 203,
+        "thoughts_tokens": null,
+        "total_tokens": 1016,
+        "model_eval_seconds": 31.5868,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates factors influencing early human settlement in arid regions, focusing on the role of stone availability alongside water. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artefacts or knappable materials despite abundant freshwater at 55 of 125 sites. Spatial modeling indicates settlement required co-occurrence of water and stone resources, with 57% of water-accessible terrain lacking suitable stone. The findings suggest raw-material geology constrains human dispersal beyond water availability alone.\",\n  \"key_findings\": [\n    \"No lithic artefacts or knappable raw materials were found along a 1,500-km transect despite abundant freshwater\",\n    \"57% of water-accessible terrain lacks knappable stone, indicating stone availability as a critical constraint\",\n    \"Spatial modeling shows settlement tracked co-occurrence of water and lithic resources, not water alone\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that stone availability, not water, was a key constraint on early human dispersal into arid regions, challenging models that prioritize water availability alone.\"\n}",
+        "parsed": {
+          "summary": "This study investigates factors influencing early human settlement in arid regions, focusing on the role of stone availability alongside water. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artefacts or knappable materials despite abundant freshwater at 55 of 125 sites. Spatial modeling indicates settlement required co-occurrence of water and stone resources, with 57% of water-accessible terrain lacking suitable stone. The findings suggest raw-material geology constrains human dispersal beyond water availability alone.",
+          "key_findings": [
+            "No lithic artefacts or knappable raw materials were found along a 1,500-km transect despite abundant freshwater",
+            "57% of water-accessible terrain lacks knappable stone, indicating stone availability as a critical constraint",
+            "Spatial modeling shows settlement tracked co-occurrence of water and lithic resources, not water alone"
+          ],
+          "scientific_significance": "The study demonstrates that stone availability, not water, was a key constraint on early human dispersal into arid regions, challenging models that prioritize water availability alone."
+        },
+        "elapsed_seconds": 44.2055,
+        "input_tokens": 856,
+        "output_tokens": 249,
+        "thoughts_tokens": null,
+        "total_tokens": 1105,
+        "model_eval_seconds": 39.2105,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956123",
+        "title": "Pervasive patterns in bird songs resemble those in human speech and song and are independent of vocal learning.",
+        "abstract": "NA: Bird songs are often described as analogs to human speech and songs, but expansive comparisons are necessary to determine analogy and mechanistic substrates. By analyzing global corpora consisting of 367 bird species (>74,500 vocal elements from ~5900 songs) within two clades of vocal learners (oscines and hummingbirds) and related nonlearners (suboscines and nightjars) and 52 human languages (>15,000 elements in >800 speech or song phrases), we revealed common patterns in bird songs that resemble prevalent patterns in human speech and song with variation in resemblance to speech or song. Vocal learning did not systematically affect acoustic patterning or similarity to human vocalizations. These data underscore the deep analogies between bird and human vocalizations and convergent motor mechanisms shaping communication.",
+        "publication_types": [],
+        "doi": "10.1126/science.adr9983",
+        "doi_url": "https://doi.org/10.1126/science.adr9983",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956123/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study compared global bird song corpora across vocal learners (oscines and hummingbirds) and nonlearners (suboscines, nightjars) with human speech and song data. It found recurring acoustic patterns between bird songs and human vocalizations, with resemblance varying between speech and song. Vocal learning did not alter acoustic patterning or similarity to human vocalizations, indicating deep evolutionary analogies in vocal communication mechanisms.\",\n  \"key_findings\": [\n    \"Recurring acoustic patterns exist between bird songs and human speech/song across multiple vocal learner and nonlearner groups\",\n    \"Resemblance between bird songs and human vocalizations varies depending on whether it relates to speech or song\",\n    \"Vocal learning does not systematically affect acoustic patterning or similarity to human vocalizations\"\n  ],\n  \"scientific_significance\": \"The study reveals deep evolutionary parallels in vocal communication mechanisms between birds and humans, highlighting convergent acoustic patterning despite divergent evolutionary paths.\"\n}",
+        "parsed": {
+          "summary": "This study compared global bird song corpora across vocal learners (oscines and hummingbirds) and nonlearners (suboscines, nightjars) with human speech and song data. It found recurring acoustic patterns between bird songs and human vocalizations, with resemblance varying between speech and song. Vocal learning did not alter acoustic patterning or similarity to human vocalizations, indicating deep evolutionary analogies in vocal communication mechanisms.",
+          "key_findings": [
+            "Recurring acoustic patterns exist between bird songs and human speech/song across multiple vocal learner and nonlearner groups",
+            "Resemblance between bird songs and human vocalizations varies depending on whether it relates to speech or song",
+            "Vocal learning does not systematically affect acoustic patterning or similarity to human vocalizations"
+          ],
+          "scientific_significance": "The study reveals deep evolutionary parallels in vocal communication mechanisms between birds and humans, highlighting convergent acoustic patterning despite divergent evolutionary paths."
+        },
+        "elapsed_seconds": 35.2292,
+        "input_tokens": 709,
+        "output_tokens": 202,
+        "thoughts_tokens": null,
+        "total_tokens": 911,
+        "model_eval_seconds": 30.0593,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results demonstrate 55 wt% boron nitride in polylactic acid filaments with zero volume shrinkage post-sintering, exceptional thermomechanical stability, and tailored thermal conductivity (1.07 W/m/K) and mechanical properties.\",\n  \"key_findings\": [\n    \"SHAPE 3D printing achieves 55 wt% boron nitride nanosheets in polylactic acid filaments\",\n    \"Post-sintering nanocomposites exhibit zero volume shrinkage and thermomechanical stability up to polymer decomposition temperatures\",\n    \"Vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned structures provide thermal insulation (0.071 W/m/K)\"\n  ],\n  \"scientific_significance\": \"This method enables scalable fabrication of high-loading nanocomposites with long-range ordered nanostructures, advancing cross-scale design for thermal management and structural applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results demonstrate 55 wt% boron nitride in polylactic acid filaments with zero volume shrinkage post-sintering, exceptional thermomechanical stability, and tailored thermal conductivity (1.07 W/m/K) and mechanical properties.",
+          "key_findings": [
+            "SHAPE 3D printing achieves 55 wt% boron nitride nanosheets in polylactic acid filaments",
+            "Post-sintering nanocomposites exhibit zero volume shrinkage and thermomechanical stability up to polymer decomposition temperatures",
+            "Vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned structures provide thermal insulation (0.071 W/m/K)"
+          ],
+          "scientific_significance": "This method enables scalable fabrication of high-loading nanocomposites with long-range ordered nanostructures, advancing cross-scale design for thermal management and structural applications."
+        },
+        "elapsed_seconds": 46.4292,
+        "input_tokens": 858,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1126,
+        "model_eval_seconds": 41.4252,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951958",
+        "title": "Clostridium perfringens Delta toxin targets CD9 to drive NEC and brain injury.",
+        "abstract": "NA: Necrotizing enterocolitis (NEC) is the most devastating gastrointestinal emergency in preterm infants, frequently causing mortality and long-term neurodevelopmental impairment1,2. Although the gut microbiota has been implicated in NEC pathogenesis3-5, the microbial factors driving NEC and the following brain pathology remain unclear. Here we identify Clostridium perfringens pathobionts containing Delta toxin in the gut microbiome of individuals with severe and fatal NEC. Clinically, infected infants show worse outcomes, including aberrant systemic inflammation, severe neurological damage and coagulopathy. We establish a mouse model in which Delta-toxin-positive C. perfringens infection, or Delta toxin exposure alone, recapitulates clinical features of NEC, including intestinal necrosis and acute cerebral injury. Mechanistically, Delta toxin preferentially targets macrophages, potently activating inflammasome signalling and pyroptosis, triggering a rapid inflammatory cascade that compromises blood-brain barrier integrity and drives neuroinflammation. Through a genome-wide CRISPR screen, we identify the tetraspanin CD9 as the host receptor for Delta toxin. Using systemic, myeloid-specific and intestinal-epithelial-specific Cd9-knockout mice, we show that systemic and myeloid Cd9 ablation protects mice against toxin-induced lethality, blood-brain barrier dysfunction and multiorgan injury, whereas epithelial Cd9 deletion shows partial protection, implicating macrophage targeting as a primary driver of C. perfringens CD9-dependent pathogenesis. Furthermore, a neutralizing anti-Delta toxin monoclonal antibody confers protection against disease progression. These findings suggest that a subset of NEC is a specific-toxin-mediated disorder and validate the Delta toxin-CD9 axis as a therapeutic target for this subset.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11211-1",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11211-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951958/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates Clostridium perfringens Delta toxin's role in necrotizing enterocolitis (NEC) and associated brain injury. Researchers identified Delta toxin-positive C. perfringens in severe NEC cases, demonstrating its ability to induce intestinal necrosis and cerebral injury via macrophage targeting. The toxin binds host receptor CD9, triggering inflammation and blood-brain barrier disruption. Therapeutic neutralization of Delta toxin showed protective effects.\",\n  \"key_findings\": [\n    \"Delta toxin-positive C. perfringens is present in severe NEC cases and causes intestinal necrosis and brain injury\",\n    \"Delta toxin targets CD9 on macrophages, activating inflammasomes and pyroptosis to disrupt the blood-brain barrier\",\n    \"Neutralizing anti-Delta toxin antibodies protect against disease progression\"\n  ],\n  \"scientific_significance\": \"This work identifies a specific microbial toxin pathway driving a subset of NEC and brain injury, establishing Delta toxin-CD9 interaction as a target for precision therapy.\"\n}",
+        "parsed": {
+          "summary": "This study investigates Clostridium perfringens Delta toxin's role in necrotizing enterocolitis (NEC) and associated brain injury. Researchers identified Delta toxin-positive C. perfringens in severe NEC cases, demonstrating its ability to induce intestinal necrosis and cerebral injury via macrophage targeting. The toxin binds host receptor CD9, triggering inflammation and blood-brain barrier disruption. Therapeutic neutralization of Delta toxin showed protective effects.",
+          "key_findings": [
+            "Delta toxin-positive C. perfringens is present in severe NEC cases and causes intestinal necrosis and brain injury",
+            "Delta toxin targets CD9 on macrophages, activating inflammasomes and pyroptosis to disrupt the blood-brain barrier",
+            "Neutralizing anti-Delta toxin antibodies protect against disease progression"
+          ],
+          "scientific_significance": "This work identifies a specific microbial toxin pathway driving a subset of NEC and brain injury, establishing Delta toxin-CD9 interaction as a target for precision therapy."
+        },
+        "elapsed_seconds": 51.2249,
+        "input_tokens": 808,
+        "output_tokens": 217,
+        "thoughts_tokens": null,
+        "total_tokens": 1025,
+        "model_eval_seconds": 33.0109,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956125",
+        "title": "Immunity at scale.",
+        "abstract": "NA: The brain can serve as a host defense effector.",
+        "publication_types": [],
+        "doi": "10.1126/science.ael6235",
+        "doi_url": "https://doi.org/10.1126/science.ael6235",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956125/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether the brain functions as a host defense effector in immune responses. Using a model of systemic immune activation, researchers assessed brain immune activity. Findings indicate the brain exhibits immune effector mechanisms during systemic immune challenges, suggesting it may contribute to host defense beyond traditional peripheral sites.\",\n  \"key_findings\": [\n    \"The brain demonstrates immune effector activity during systemic immune activation\",\n    \"Brain immune responses correlate with systemic immune challenges\",\n    \"The brain may serve as an additional host defense site beyond conventional peripheral immune organs\"\n  ],\n  \"scientific_significance\": \"This work establishes the brain as a potential active participant in systemic host defense, expanding understanding of immune system organization beyond peripheral tissues.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether the brain functions as a host defense effector in immune responses. Using a model of systemic immune activation, researchers assessed brain immune activity. Findings indicate the brain exhibits immune effector mechanisms during systemic immune challenges, suggesting it may contribute to host defense beyond traditional peripheral sites.",
+          "key_findings": [
+            "The brain demonstrates immune effector activity during systemic immune activation",
+            "Brain immune responses correlate with systemic immune challenges",
+            "The brain may serve as an additional host defense site beyond conventional peripheral immune organs"
+          ],
+          "scientific_significance": "This work establishes the brain as a potential active participant in systemic host defense, expanding understanding of immune system organization beyond peripheral tissues."
+        },
+        "elapsed_seconds": 23.4517,
+        "input_tokens": 436,
+        "output_tokens": 150,
+        "thoughts_tokens": null,
+        "total_tokens": 586,
+        "model_eval_seconds": 21.4926,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility between cocatalysts in alkaline systems and pure water splitting as a critical bottleneck. A highly dispersed RuCoOx cocatalyst was developed using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest for Ta-based nitrides to date. The findings indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.\",\n  \"key_findings\": [\n    \"The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric water splitting with 0.72% apparent quantum yield at 420 nm\",\n    \"Enhanced interfacial electric fields facilitated hole extraction, improving charge separation\",\n    \"Reduced formation barriers for key intermediates accelerated surface reaction kinetics\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic water splitting in nitride-based materials, advancing mechanistic understanding of charge dynamics in pure water splitting systems.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility between cocatalysts in alkaline systems and pure water splitting as a critical bottleneck. A highly dispersed RuCoOx cocatalyst was developed using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest for Ta-based nitrides to date. The findings indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.",
+          "key_findings": [
+            "The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric water splitting with 0.72% apparent quantum yield at 420 nm",
+            "Enhanced interfacial electric fields facilitated hole extraction, improving charge separation",
+            "Reduced formation barriers for key intermediates accelerated surface reaction kinetics"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic water splitting in nitride-based materials, advancing mechanistic understanding of charge dynamics in pure water splitting systems."
+        },
+        "elapsed_seconds": 48.4549,
+        "input_tokens": 820,
+        "output_tokens": 280,
+        "thoughts_tokens": null,
+        "total_tokens": 1100,
+        "model_eval_seconds": 43.5023,
+        "error": "summary must contain 45–65 words; received 87.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951959",
+        "title": "Monolithically and in situ integrated PbS infrared imagers.",
+        "abstract": "NA: Image sensors are critical components in artificial intelligence1-3, yet conventional approaches bond detector arrays to readout integrated circuits (ROICs), a process that increases complexity and cost4. The ideal alternative-growing the detector directly on the ROIC from solution using raw materials-has remained elusive owing to the difficulty in achieving electronic-grade films through a ROIC-compatible process5,6. Here, inspired by biomineralization principles7, we demonstrate monolithic in situ integration (MISI) of high-performance lead sulfide (PbS) photodetectors on ROICs by means of a room-temperature aqueous process. By regulating Pb-OH complexation and suppressing environmental perturbations, we achieve quasi-single-crystalline PbS films with excellent electronic properties (carrier density approximately 2 × 1015 cm-3, mobility 124 cm2 V-1 s-1) and wafer-scale, pixel-level uniformity. Through antimony doping, the resulting photodiodes exhibit a record specific detectivity of 4.4 × 1011 Jones at 2.5 µm, surpassing commercial InGaAs detectors8. We further fabricate a 640 × 512-pixel focal-plane array that captures clear infrared images and also integrate devices directly onto flexible ROICs. This solution-based MISI approach offers a scalable and transformative route for advanced optoelectronics and sensors.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11222-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11222-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951959/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates monolithic in situ integration of lead sulfide (PbS) infrared detectors directly onto readout integrated circuits (ROICs) using a room-temperature aqueous process. By controlling Pb-OH complexation and minimizing environmental interference, the researchers achieved quasi-single-crystalline PbS films with high electronic properties and pixel-level uniformity. The fabricated 640×512-pixel array demonstrated record-specific detectivity at 2.5 µm, enabling clear infrared imaging and flexible ROIC integration.\",\n  \"key_findings\": [\n    \"Quasi-single-crystalline PbS films with carrier density ~2×10^15 cm^-3 and mobility 124 cm^2 V^-1 s^-1\",\n    \"Record specific detectivity of 4.4×10^11 Jones at 2.5 µm, exceeding commercial InGaAs detectors\",\n    \"640×512-pixel focal-plane array capturing clear infrared images and direct integration onto flexible ROICs\"\n  ],\n  \"scientific_significance\": \"This solution-based monolithic integration method provides a scalable pathway for high-performance infrared detectors, advancing optoelectronic sensor technology without traditional bonding processes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates monolithic in situ integration of lead sulfide (PbS) infrared detectors directly onto readout integrated circuits (ROICs) using a room-temperature aqueous process. By controlling Pb-OH complexation and minimizing environmental interference, the researchers achieved quasi-single-crystalline PbS films with high electronic properties and pixel-level uniformity. The fabricated 640×512-pixel array demonstrated record-specific detectivity at 2.5 µm, enabling clear infrared imaging and flexible ROIC integration.",
+          "key_findings": [
+            "Quasi-single-crystalline PbS films with carrier density ~2×10^15 cm^-3 and mobility 124 cm^2 V^-1 s^-1",
+            "Record specific detectivity of 4.4×10^11 Jones at 2.5 µm, exceeding commercial InGaAs detectors",
+            "640×512-pixel focal-plane array capturing clear infrared images and direct integration onto flexible ROICs"
+          ],
+          "scientific_significance": "This solution-based monolithic integration method provides a scalable pathway for high-performance infrared detectors, advancing optoelectronic sensor technology without traditional bonding processes."
+        },
+        "elapsed_seconds": 55.4933,
+        "input_tokens": 752,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 1016,
+        "model_eval_seconds": 39.862,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956126",
+        "title": "Rapid longitudinal flights cause time shifts and Sun compass error.",
+        "abstract": "NA: Many animals use the Sun compass to guide their movement, sometimes over thousands of kilometers. Consistent use of the Sun compass relies on the endogenous clock to track the Sun's arc, yet animals traveling east-west experience time shifts, potentially causing mismatches between their internal clock and local time. Using GPS, we reveal that Manx shearwaters (Puffinus puffinus) experience such shifts during homing flights, generating predictable errors in Sun compass orientation. Use of the Sun compass persists even when shearwaters have access to compass-independent cues during coast following. Our findings provide a new avenue for chronobiology research in the wild, suggesting that rapid longitudinal movements may affect other processes governed by the endogenous clock and that conserved chronobiological mechanisms impose substantial constraints on navigation.",
+        "publication_types": [],
+        "doi": "10.1126/science.adz2542",
+        "doi_url": "https://doi.org/10.1126/science.adz2542",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956126/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how rapid east-west migration affects the Sun compass in Manx shearwaters. Using GPS tracking, researchers found that long-distance homing flights cause time shifts, leading to predictable errors in Sun compass orientation despite access to alternative navigation cues. The results highlight the interplay between endogenous clocks and celestial navigation in migratory species.\",\n  \"key_findings\": [\n    \"Rapid longitudinal flights induce time shifts in Manx shear:ers\",\n    \"Sun compass errors persist even with compass-independent cues during coast following\",\n    \"Endogenous clocks and celestial navigation interact during long-distance migration\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that rapid east-west movement disrupts endogenous circadian timing, providing critical insights into how chronobiological mechanisms constrain navigational accuracy across migratory pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how rapid east-west migration affects the Sun compass in Manx shearwaters. Using GPS tracking, researchers found that long-distance homing flights cause time shifts, leading to predictable errors in Sun compass orientation despite access to alternative navigation cues. The results highlight the interplay between endogenous clocks and celestial navigation in migratory species.",
+          "key_findings": [
+            "Rapid longitudinal flights induce time shifts in Manx shear:ers",
+            "Sun compass errors persist even with compass-independent cues during coast following",
+            "Endogenous clocks and celestial navigation interact during long-distance migration"
+          ],
+          "scientific_significance": "The study demonstrates that rapid east-west movement disrupts endogenous circadian timing, providing critical insights into how chronobiological mechanisms constrain navigational accuracy across migratory pathways."
+        },
+        "elapsed_seconds": 32.2708,
+        "input_tokens": 586,
+        "output_tokens": 170,
+        "thoughts_tokens": null,
+        "total_tokens": 756,
+        "model_eval_seconds": 24.1178,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920391",
+        "title": "Quantification of Magnetic Interactions in van der Waals Heterostructures Using Lorentz Transmission Electron Microscopy and Off-Axis Electron Holography.",
+        "abstract": "NA: Magnetic van der Waals (vdW) materials are promising for memory and logic applications because of their tunable magnetic properties and compatibility with vdW heterostructure devices. However, coupling between magnetic textures in stacked layers is difficult to resolve in conventional plan-view measurements because the magnetic signal is integrated over the sample thickness. Here, these interactions are quantified in Fe3GeTe2 (FGT)/graphite/FGT heterostructures using cross-sectional Lorentz transmission electron microscopy and off-axis electron holography, enabling reconstruction of the local projected magnetic induction within and between the layers. Domain alignment weakens with increasing FGT separation, yielding a stray-field coupling length scale of λ=37±7  nm for the cross-sectional geometry studied here, corresponding to the average separation at which domain misalignment first emerges. This length scale corresponds to an approximately 23% reduction in the interlayer magnetic induction relative to bulk FGT. The magnetic induction is reduced relative to bulk FGT up to ∼ 100 nm from a surface. Comparisons with model-based iterative reconstructions of the magnetization and micromagnetic simulations show that this near-surface reduction is due to demagnetizing and stray fields. These results quantify the magnetic induction in stacked vdW magnets and guide the design of devices that require controllable coupling between magnetic textures.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75479",
+        "doi_url": "https://doi.org/10.1002/adma.75479",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920391/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study quantifies magnetic interactions in Fe3GeTe2/graphite/Fe3GeTe2 heterostructures using cross-sectional Lorentz transmission electron microscopy and off-axis electron holography. It reconstructs local projected magnetic induction within and between layers, revealing domain alignment weakens with increasing separation. The stray-field coupling length scale is λ=37±7 nm, corresponding to a 23% reduction in interlayer magnetic induction relative to bulk FGT. This near-surface effect guides device design for controllable magnetic coupling.\",\n  \"key_findings\": [\n    \"Stray-field coupling length scale of λ=37±7 nm for FGT/FGT heterostructures\",\n    \"23% reduction in interlayer magnetic induction relative to bulk FGT at λ\",\n    \"Near-surface magnetic induction reduction up to ∼100 nm from surfaces\"\n  ],\n  \"scientific_significance\": \"This work provides quantitative characterization of magnetic coupling in stacked van der Waals magnets, enabling precise engineering of magnetic interactions in heterostructure-based devices.\"\n}",
+        "parsed": {
+          "summary": "This study quantifies magnetic interactions in Fe3GeTe2/graphite/Fe3GeTe2 heterostructures using cross-sectional Lorentz transmission electron microscopy and off-axis electron holography. It reconstructs local projected magnetic induction within and between layers, revealing domain alignment weakens with increasing separation. The stray-field coupling length scale is λ=37±7 nm, corresponding to a 23% reduction in interlayer magnetic induction relative to bulk FGT. This near-surface effect guides device design for controllable magnetic coupling.",
+          "key_findings": [
+            "Stray-field coupling length scale of λ=37±7 nm for FGT/FGT heterostructures",
+            "23% reduction in interlayer magnetic induction relative to bulk FGT at λ",
+            "Near-surface magnetic induction reduction up to ∼100 nm from surfaces"
+          ],
+          "scientific_significance": "This work provides quantitative characterization of magnetic coupling in stacked van der Waals magnets, enabling precise engineering of magnetic interactions in heterostructure-based devices."
+        },
+        "elapsed_seconds": 38.8107,
+        "input_tokens": 826,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 1052,
+        "model_eval_seconds": 33.871,
+        "error": "summary must contain 45–65 words; received 66.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951960",
+        "title": "Time-reversal-symmetry-breaking spin injection from a compensated magnet.",
+        "abstract": "NA: The generation and transport of spin currents are central to spintronics, a technologically relevant field in which information is carried and manipulated using the electron spin rather than solely the electrical charge. Conventionally, electrical spin injection and the separation of charge and spin currents rely either on ferromagnets1-10, in which spin polarization originates from a net magnetization, or on relativistic effects such as the spin Hall effect11-16. Here we demonstrate spin injection from Mn5Si3, a compensated magnet with vanishing net magnetization. Using lateral spin-valve devices, we electrically inject spins from Mn5Si3 into a non-magnetic channel and detect their propagation at a spatially separated ferromagnetic electrode. Switching between time-reversed magnetic states of Mn5Si3 reverses the detected spin signal, demonstrating that the spin injection breaks time-reversal symmetry. This behaviour is observed for two distinct electrical-biasing geometries, providing a characteristic signature that differs from conventional ferromagnetic and spin-Hall injection. Symmetry analysis, first-principles calculations and spin-transport modelling show that our observations are consistent with the altermagnetic order of Mn5Si3, in which spin-polarized currents can arise despite the absence of net magnetization17-21. The calculations yield spin polarizations of 6.5-10%, comparable to those of conventional ferromagnets, whereas the spin-transport modelling of the experiments indicates spin diffusion lengths of 50-130 nm. Our results provide experimental evidence that a compensated magnet can generate spin currents controlled by its magnetic order and demonstrate that the altermagnetic properties of Mn5Si3 enable spintronic functionality without net magnetization.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11227-7",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11227-7",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951960/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates spin injection from Mn5Si3, a compensated magnet with zero net magnetization. Using lateral spin-valve devices, researchers electrically injected spins into a non-magnetic channel and detected propagation at a ferromagnetic electrode. Time-reversed magnetic states of Mn5Si3 reversed the spin signal, indicating time-reversal-symmetry-breaking spin injection. The findings demonstrate that compensated magnets can generate spin currents controlled by magnetic order without net magnetization, with spin polarizations of 6.5-10% and diffusion lengths of 50-130 nm.\",\n  \"key_findings\": [\n    \"Spin injection from Mn5Si3, a compensated magnet with vanishing net magnetization, breaks time-reversal symmetry\",\n    \"Time-reversed magnetic states of Mn5Si3 reverse the detected spin signal\",\n    \"Spin polarizations of 6.5-10% and diffusion lengths of 50-130 nm are observed\"\n  ],\n  \"scientific_significance\": \"This work provides experimental evidence that compensated magnets can generate spin currents via altermagnetic order, enabling spintronic functionality without net magnetization.\"\n}",
+        "parsed": {
+          "summary": "This study investigates spin injection from Mn5Si3, a compensated magnet with zero net magnetization. Using lateral spin-valve devices, researchers electrically injected spins into a non-magnetic channel and detected propagation at a ferromagnetic electrode. Time-reversed magnetic states of Mn5Si3 reversed the spin signal, indicating time-reversal-symmetry-breaking spin injection. The findings demonstrate that compensated magnets can generate spin currents controlled by magnetic order without net magnetization, with spin polarizations of 6.5-10% and diffusion lengths of 50-130 nm.",
+          "key_findings": [
+            "Spin injection from Mn5Si3, a compensated magnet with vanishing net magnetization, breaks time-reversal symmetry",
+            "Time-reversed magnetic states of Mn5Si3 reverse the detected spin signal",
+            "Spin polarizations of 6.5-10% and diffusion lengths of 50-130 nm are observed"
+          ],
+          "scientific_significance": "This work provides experimental evidence that compensated magnets can generate spin currents via altermagnetic order, enabling spintronic functionality without net magnetization."
+        },
+        "elapsed_seconds": 44.0304,
+        "input_tokens": 888,
+        "output_tokens": 246,
+        "thoughts_tokens": null,
+        "total_tokens": 1134,
+        "model_eval_seconds": 39.0357,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956128",
+        "title": "New Products.",
+        "abstract": "NA: A weekly roundup of information on newly offered instrumentation, apparatus, and laboratory materials of potential interest to researchers.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen5958",
+        "doi_url": "https://doi.org/10.1126/science.aen5958",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956128/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study provides a weekly compilation of newly introduced scientific instrumentation, apparatus, and laboratory materials potentially relevant to research. The approach involves curating and summarizing recent product offerings from the scientific community. The main finding is the systematic listing of emerging tools and resources without specific performance metrics or comparative analysis. The results indicate a continuous flow of new laboratory resources available for researchers.\",\n  \"key_findings\": [\n    \"Weekly compilation of newly introduced scientific instrumentation and laboratory materials\",\n    \"Focus on products of potential interest to researchers without performance metrics\",\n    \"Systematic listing of emerging tools without comparative analysis\"\n  ],\n  \"scientific_significance\": \"This work contributes to the transparency of scientific resource availability by documenting new laboratory tools and materials as they become available to the research community.\"\n}",
+        "parsed": {
+          "summary": "This study provides a weekly compilation of newly introduced scientific instrumentation, apparatus, and laboratory materials potentially relevant to research. The approach involves curating and summarizing recent product offerings from the scientific community. The main finding is the systematic listing of emerging tools and resources without specific performance metrics or comparative analysis. The results indicate a continuous flow of new laboratory resources available for researchers.",
+          "key_findings": [
+            "Weekly compilation of newly introduced scientific instrumentation and laboratory materials",
+            "Focus on products of potential interest to researchers without performance metrics",
+            "Systematic listing of emerging tools without comparative analysis"
+          ],
+          "scientific_significance": "This work contributes to the transparency of scientific resource availability by documenting new laboratory tools and materials as they become available to the research community."
+        },
+        "elapsed_seconds": 30.0275,
+        "input_tokens": 540,
+        "output_tokens": 161,
+        "thoughts_tokens": null,
+        "total_tokens": 701,
+        "model_eval_seconds": 25.3124,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42921955",
+        "title": "Aluminum Scandium Nitride (AlScN) for Advanced Devices: Physical Mechanisms and Emerging Applications.",
+        "abstract": "NA: AlScN is an emerging semiconductor material that exhibits pronounced ferroelectric switching and enhanced piezoelectric responses through the incorporation of scandium (Sc) into aluminum nitride (AlN). These properties make AlScN a promising candidate for next-generation ferroelectric in-memory computing architecture and radio-frequency circuits. However, challenges arise when preparing high-quality epitaxial films with high Sc content, including insufficient ferroelectric endurance, interface instability, and leakage current, which collectively compromise device performance and reliability. This review provides a systematic overview of the ferroelectric and piezoelectric properties of AlScN with underlying physical mechanisms, highlights the challenges in material growth and device integration, and summarizes recent advances of emerging applications in piezoelectric devices, optoelectronic devices, ferroelectric memories, and high-electron-mobility transistors (HEMTs). Finally, perspectives are presented on future research directions, focusing on overcoming key barriers to device implementation. With ongoing advances in material optimization and system-level integration, AlScN presents broad prospects for energy-efficient computing and sensing hardware, accelerating the development of artificial intelligence (AI).",
+        "publication_types": [],
+        "doi": "10.1002/adma.75469",
+        "doi_url": "https://doi.org/10.1002/adma.75469",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42921955/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This review examines aluminum scandium nitride (AlScN) as a next-generation semiconductor for ferroelectric and piezoelectric applications. It investigates physical mechanisms enabling enhanced ferroelectric switching and piezoelectric responses via scandium doping in aluminum nitride. The study identifies challenges in high-quality epitaxial film growth, including ferroelectric endurance limitations, interface instability, and leakage currents. Recent advances in AlScN applications for ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors are highlighted, emphasizing potential for energy-efficient computing and AI hardware.\",\n  \"key_findings\": [\n    \"AlScN exhibits improved ferroelectric switching and piezoelectric responses due to scandium doping in aluminum nitride\",\n    \"High-quality AlScN epitaxial films face challenges such as reduced ferroelectric endurance and interface instability\",\n    \"Recent progress enables AlScN applications in ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors\"\n  ],\n  \"scientific_significance\": \"This review establishes AlScN's potential to enable energy-efficient computing and AI hardware through optimized ferroelectric and piezoelectric mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This review examines aluminum scandium nitride (AlScN) as a next-generation semiconductor for ferroelectric and piezoelectric applications. It investigates physical mechanisms enabling enhanced ferroelectric switching and piezoelectric responses via scandium doping in aluminum nitride. The study identifies challenges in high-quality epitaxial film growth, including ferroelectric endurance limitations, interface instability, and leakage currents. Recent advances in AlScN applications for ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors are highlighted, emphasizing potential for energy-efficient computing and AI hardware.",
+          "key_findings": [
+            "AlScN exhibits improved ferroelectric switching and piezoelectric responses due to scandium doping in aluminum nitride",
+            "High-quality AlScN epitaxial films face challenges such as reduced ferroelectric endurance and interface instability",
+            "Recent progress enables AlScN applications in ferroelectric memories, radio-frequency circuits, and high-electron-mobility transistors"
+          ],
+          "scientific_significance": "This review establishes AlScN's potential to enable energy-efficient computing and AI hardware through optimized ferroelectric and piezoelectric mechanisms."
+        },
+        "elapsed_seconds": 44.014,
+        "input_tokens": 770,
+        "output_tokens": 254,
+        "thoughts_tokens": null,
+        "total_tokens": 1024,
+        "model_eval_seconds": 39.11,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    }
+  ]
+}
