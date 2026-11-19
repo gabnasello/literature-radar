@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261118T234504Z",
+  "generated_at_utc": "2026-11-19 00:08:18 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 340,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the research redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, reducing thickness expansion from 38.4% to 13.1% after 50 cycles. The approach demonstrates scalability for practical battery anodes.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency\",\n    \"The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production for 2 Ah NCM811 pouch cells\"\n  ],\n  \"scientific_significance\": \"This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing mechanical instability in high-energy lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the research redirects expansion stress inward, suppresses electrode swelling, and enhances Li+ kinetics. The nitrogen-doped composite achieves 1756.5 mAh g-1 capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, reducing thickness expansion from 38.4% to 13.1% after 50 cycles. The approach demonstrates scalability for practical battery anodes.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency",
+            "The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables scalable production for 2 Ah NCM811 pouch cells"
+          ],
+          "scientific_significance": "This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes, addressing mechanical instability in high-energy lithium-ion batteries."
+        },
+        "elapsed_seconds": 44.0568,
+        "input_tokens": 869,
+        "output_tokens": 305,
+        "thoughts_tokens": null,
+        "total_tokens": 1174,
+        "model_eval_seconds": 39.1444,
+        "error": "summary must contain 45–65 words; received 77.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 define repressive mechanisms. The resource enables deep learning models for predicting epigenomic features and gene expression from DNA sequence.\",\n  \"key_findings\": [\n    \"The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling\",\n    \"Active chromatin states marked by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression\"\n  ],\n  \"scientific_significance\": \"This multimodal resource provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through integrated epigenomic mapping.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 define repressive mechanisms. The resource enables deep learning models for predicting epigenomic features and gene expression from DNA sequence.",
+          "key_findings": [
+            "The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling",
+            "Active chromatin states marked by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression"
+          ],
+          "scientific_significance": "This multimodal resource provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through integrated epigenomic mapping."
+        },
+        "elapsed_seconds": 37.5287,
+        "input_tokens": 752,
+        "output_tokens": 266,
+        "thoughts_tokens": null,
+        "total_tokens": 1018,
+        "model_eval_seconds": 32.731,
+        "error": "summary must contain 45–65 words; received 82.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951334",
+        "title": "Switchable Chlorine Atom Transfer Radical Reactions.",
+        "abstract": "NA: Atom transfer radical reactions-encompassing atom transfer radical addition (ATRA)1 and atom transfer radical polymerization (ATRP)2-provide a versatile route to synthesize functionalized small molecules and polymers. Using readily available unactivated alkyl chlorides3 instead of activated organohalides represents the state-of-the-art in this field, as this requires cleaving stronger C-Cl bonds in the substrates while preserving weaker ones in the products. Here we describe a dual-copper relay catalytic strategy to overcome this limitation. A dinuclear copper complex selectively activates the robust C-Cl bond of unactivated alkyl chlorides, while a mononuclear copper catalyst mediates controllable C-Cl bond reconstruction. The reaction pathway can be switched between ATRA and ATRP-type reactions in the presence or absence of the mononuclear copper partner, thus providing a switchable platform for chlorine atom transfer radical reactions. This protocol can not only enable synthesis of structurally diverse ATRA products and α-end-functionalized polyacrylates, but allow for direct modification of poly(vinyl chloride) (PVC) under mild reaction conditions. It demonstrates the successful utility of unactivated organochlorides in organic synthesis and polymer science.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11348-z",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11348-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951334/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a dual-copper catalytic system enabling switchable chlorine atom transfer radical reactions. It uses unactivated alk. chlorides to perform atom transfer radical addition (ATRA) and atom transfer radical polymerization (ATRP) by selectively activating C-Cl bonds and switching reaction pathways based on catalyst presence. The approach allows synthesis of diverse small molecules and α-end-functionalized polyacrylates while modifying PVC under mild conditions.\",\n  \"key_findings\": [\n    \"A dinuclear copper complex activates unactivated alkyl chlorides for C-Cl bond cleavage\",\n    \"Mononuclear copper catalyst enables controllable C-Cl bond reconstruction\",\n    \"Switchable pathway between ATRA and ATRP reactions via catalyst presence\"\n  ],\n  \"scientific_significance\": \"This work establishes a versatile platform for chlorine atom transfer radical reactions using unactivated organochlorides, advancing synthetic and polymer chemistry by enabling mild modification of PVC and diverse functionalized products.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a dual-copper catalytic system enabling switchable chlorine atom transfer radical reactions. It uses unactivated alk. chlorides to perform atom transfer radical addition (ATRA) and atom transfer radical polymerization (ATRP) by selectively activating C-Cl bonds and switching reaction pathways based on catalyst presence. The approach allows synthesis of diverse small molecules and α-end-functionalized polyacrylates while modifying PVC under mild conditions.",
+          "key_findings": [
+            "A dinuclear copper complex activates unactivated alkyl chlorides for C-Cl bond cleavage",
+            "Mononuclear copper catalyst enables controllable C-Cl bond reconstruction",
+            "Switchable pathway between ATRA and ATRP reactions via catalyst presence"
+          ],
+          "scientific_significance": "This work establishes a versatile platform for chlorine atom transfer radical reactions using unactivated organochlorides, advancing synthetic and polymer chemistry by enabling mild modification of PVC and diverse functionalized products."
+        },
+        "elapsed_seconds": 36.7782,
+        "input_tokens": 681,
+        "output_tokens": 203,
+        "thoughts_tokens": null,
+        "total_tokens": 884,
+        "model_eval_seconds": 24.1489,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and inflammation in the gut. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"ILC3s maintain gut homeostasis via PKA signaling regulated by PRKAR1A\",\n    \"IL-23 suppresses PKA inhibitors to reduce ILC3s and increase infection susceptibility\",\n    \"IL-23 overproduction decreases PRKAR1A, driving PKA-mediated gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3-mediated gut homeostasis, with IL-23 acting as a key driver of pathological PKA activation in inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and inflammation in the gut. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "ILC3s maintain gut homeostasis via PKA signaling regulated by PRKAR1A",
+            "IL-23 suppresses PKA inhibitors to reduce ILC3s and increase infection susceptibility",
+            "IL-23 overproduction decreases PRKAR1A, driving PKA-mediated gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3-mediated gut homeostasis, with IL-23 acting as a key driver of pathological PKA activation in inflammation."
+        },
+        "elapsed_seconds": 39.1388,
+        "input_tokens": 800,
+        "output_tokens": 274,
+        "thoughts_tokens": null,
+        "total_tokens": 1074,
+        "model_eval_seconds": 34.2726,
+        "error": "summary must contain 45–65 words; received 77.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956129",
+        "title": "In Science Journals.",
+        "abstract": "NA: Highlights from the Science family of journals.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen5955",
+        "doi_url": "https://doi.org/10.1126/science.aen5955",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956129/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines recent high-impact publications across Science journals to identify patterns in research output and thematic trends. The analysis approached the problem by categorizing articles by field and publication year, revealing shifts in interdisciplinary collaboration and emerging research areas. Key findings indicate increased cross-disciplinary work and notable growth in specific scientific domains.\",\n  \"key_findings\": [\n    \"Increased cross-disciplinary collaboration in recent years\",\n    \"Emergence of new research domains within Science journals\",\n    \"Shifts in thematic focus across publication years\"\n  ],\n  \"scientific_significance\": \"The analysis provides a snapshot of evolving research landscapes in high-impact science, highlighting how interdisciplinary trends and domain-specific growth inform the trajectory of scientific discovery.\"\n}",
+        "parsed": {
+          "summary": "This study examines recent high-impact publications across Science journals to identify patterns in research output and thematic trends. The analysis approached the problem by categorizing articles by field and publication year, revealing shifts in interdisciplinary collaboration and emerging research areas. Key findings indicate increased cross-disciplinary work and notable growth in specific scientific domains.",
+          "key_findings": [
+            "Increased cross-disciplinary collaboration in recent years",
+            "Emergence of new research domains within Science journals",
+            "Shifts in thematic focus across publication years"
+          ],
+          "scientific_significance": "The analysis provides a snapshot of evolving research landscapes in high-impact science, highlighting how interdisciplinary trends and domain-specific growth inform the trajectory of scientific discovery."
+        },
+        "elapsed_seconds": 18.5961,
+        "input_tokens": 433,
+        "output_tokens": 150,
+        "thoughts_tokens": null,
+        "total_tokens": 583,
+        "model_eval_seconds": 16.7873,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, researchers discovered simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. The authors designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, optimize energy alignment, and form a hydrophobic barrier. This approach achieved record ambient flexible efficiencies (24.84% for small cells, 21.46% for mini-modules) with stable performance after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, optimizes energy alignment, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible photovoltaics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, researchers discovered simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. The authors designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, optimize energy alignment, and form a hydrophobic barrier. This approach achieved record ambient flexible efficiencies (24.84% for small cells, 21.46% for mini-modules) with stable performance after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, optimizes energy alignment, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible photovoltaics."
+        },
+        "elapsed_seconds": 42.2465,
+        "input_tokens": 885,
+        "output_tokens": 292,
+        "thoughts_tokens": null,
+        "total_tokens": 1177,
+        "model_eval_seconds": 37.307,
+        "error": "summary must contain 45–65 words; received 98.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether freshwater availability alone explains early human settlement patterns in desert regions. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found that the presence of knappable stone for tool production was a critical factor alongside water. Palaeolake deposits indicated water access at 55 of 125 sites, but no lithic artefacts or raw materials were present where stone was absent. The analysis shows settlement required co-occurrence of water and lithic resources, with 57% of water-accessible terrain lacking suitable stone. This suggests that raw-material geology significantly constrains human dispersal, challenging models that prioritize water availability.\",\n  \"key_findings\": [\n    \"Palaeolake deposits were present at 55 of 125 surveyed sites, indicating water access but no lithic raw materials in the absence of stone\",\n    \"Settlement patterns required co-occurrence of water and knappable stone, with 57% of water-accessible terrain lacking suitable stone\",\n    \"Spatial modeling shows raw-material availability improves discrimination of site locations by 0.695 to 0.768, indicating significant constraint on dispersal\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that lithic raw material availability, not water alone, critically constrained early human dispersal across arid regions, challenging prevailing models of human settlement in deserts.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether freshwater availability alone explains early human settlement patterns in desert regions. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found that the presence of knappable stone for tool production was a critical factor alongside water. Palaeolake deposits indicated water access at 55 of 125 sites, but no lithic artefacts or raw materials were present where stone was absent. The analysis shows settlement required co-occurrence of water and lithic resources, with 57% of water-accessible terrain lacking suitable stone. This suggests that raw-material geology significantly constrains human dispersal, challenging models that prioritize water availability.",
+          "key_findings": [
+            "Palaeolake deposits were present at 55 of 125 surveyed sites, indicating water access but no lithic raw materials in the absence of stone",
+            "Settlement patterns required co-occurrence of water and knappable stone, with 57% of water-accessible terrain lacking suitable stone",
+            "Spatial modeling shows raw-material availability improves discrimination of site locations by 0.695 to 0.768, indicating significant constraint on dispersal"
+          ],
+          "scientific_significance": "The findings demonstrate that lithic raw material availability, not water alone, critically constrained early human dispersal across arid regions, challenging prevailing models of human settlement in deserts."
+        },
+        "elapsed_seconds": 43.9321,
+        "input_tokens": 856,
+        "output_tokens": 306,
+        "thoughts_tokens": null,
+        "total_tokens": 1162,
+        "model_eval_seconds": 39.0336,
+        "error": "summary must contain 45–65 words; received 100.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956138",
+        "title": "Papaver self-incompatibility is controlled by two multiallelic idiomorphs.",
+        "abstract": "NA: Self-incompatibility (SI) prevents self-fertilization through highly polymorphic genetic recognition at the S locus with multiple alleles. In Papaver rhoeas, the S determinants were previously identified as PrpS and PrsS. However, we found that PrpS-PrsS was absent in many S haplotypes. In this work, we report the identification of an alternative pair of polymorphic S genes, S locus oligopeptide transporter (SOPT) and S locus glycine-rich protein (SGRP), segregating at the S locus when PrpS-PrsS is absent. SOPT and SGRP display hallmark S determinant features and confer SI when heterologously expressed in Arabidopsis thaliana. Therefore, instead of having allelomorphs with homologous variants, the Papaver SI system is determined by two multiallelic idiomorphs sharing no obvious common ancestry. This discovery of a dual-idiomorph system reveals a distinct genetic basis for polymorphism, with implications for the evolution of allorecognition mechanisms.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeg6988",
+        "doi_url": "https://doi.org/10.1126/science.aeg6988",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956138/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates Papaver self-incompatibility (SI) by identifying two alternative polymorphic S genes, SOPT and SGRP, which function as idiomorphs when the previously known PrpS-PrsS pair is absent. The researchers confirmed these genes confer SI in Arabidopsis thaliana, revealing a dual-idiomorph system with no shared ancestry. This finding demonstrates a distinct genetic basis for SI polymorphism in Papaver.\",\n  \"key_findings\": [\n    \"SOPT and S.GRP genes function as alternative S determinants in Papaver rhoeas when PrpS-PrsS is absent\",\n    \"Both genes confer self-incompatibility when heterologously expressed in Arabidopsis thaliana\",\n    \"The Papaver SI system operates via two multiallelic idiomorphs with no obvious common ancestry\"\n  ],\n  \"scientific_significance\": \"This discovery reveals a dual-idiomorph system for self-incompatibility in Papaver, providing a distinct genetic basis for polymorphism in allorecognition mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates Papaver self-incompatibility (SI) by identifying two alternative polymorphic S genes, SOPT and SGRP, which function as idiomorphs when the previously known PrpS-PrsS pair is absent. The researchers confirmed these genes confer SI in Arabidopsis thaliana, revealing a dual-idiomorph system with no shared ancestry. This finding demonstrates a distinct genetic basis for SI polymorphism in Papaver.",
+          "key_findings": [
+            "SOPT and S.GRP genes function as alternative S determinants in Papaver rhoeas when PrpS-PrsS is absent",
+            "Both genes confer self-incompatibility when heterologously expressed in Arabidopsis thaliana",
+            "The Papaver SI system operates via two multiallelic idiomorphs with no obvious common ancestry"
+          ],
+          "scientific_significance": "This discovery reveals a dual-idiomorph system for self-incompatibility in Papaver, providing a distinct genetic basis for polymorphism in allorecognition mechanisms."
+        },
+        "elapsed_seconds": 38.4857,
+        "input_tokens": 660,
+        "output_tokens": 227,
+        "thoughts_tokens": null,
+        "total_tokens": 887,
+        "model_eval_seconds": 27.0384,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results show 55 wt% boron nitride in polylactic acid filaments achieve zero volume shrinkage post-sintering, with tailored thermal conductivity (1.07 W/m/K) and mechanical properties for thermal management and structural applications.\",\n  \"key_findings\": [\n    \"SHAPE 3D printing enables high-loading nanocomposites (up to 55 wt% boron nitride) with long-range ordered nanostructures\",\n    \"Post-sintering yields zero volume shrinkage and exceptional thermomechanical stability for temperatures above polymer melting\",\n    \"Vertically aligned composites exhibit enhanced thermal conductivity (1.07 W/m/K), while horizontally aligned structures provide thermal insulation (0.071 W/m/K)\"\n  ],\n  \"scientific_significance\": \"This method bridges nanoscale nanofiller ordering and macroscale functionality in high-loading composites, advancing cross-scale design for thermal management and structural materials.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results show 55 wt% boron nitride in polylactic acid filaments achieve zero volume shrinkage post-sintering, with tailored thermal conductivity (1.07 W/m/K) and mechanical properties for thermal management and structural applications.",
+          "key_findings": [
+            "SHAPE 3D printing enables high-loading nanocomposites (up to 55 wt% boron nitride) with long-range ordered nanostructures",
+            "Post-sintering yields zero volume shrinkage and exceptional thermomechanical stability for temperatures above polymer melting",
+            "Vertically aligned composites exhibit enhanced thermal conductivity (1.07 W/m/K), while horizontally aligned structures provide thermal insulation (0.071 W/m/K)"
+          ],
+          "scientific_significance": "This method bridges nanoscale nanofiller ordering and macroscale functionality in high-loading composites, advancing cross-scale design for thermal management and structural materials."
+        },
+        "elapsed_seconds": 39.3722,
+        "input_tokens": 858,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 1129,
+        "model_eval_seconds": 34.4367,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951965",
+        "title": "Tumour assembloids recapitulate tumour-CAF-T cell crosstalk in renal cancer.",
+        "abstract": "NA: Dynamic interactions between tumours and their microenvironment are crucial for cancer progression and therapeutic outcomes1,2. However, our understanding of these relationships remains limited by the constrained capacity of current human model systems to manipulate diverse cellular components and to interrogate complex tumour-stroma crosstalk. Here we generated combinatorial, mix-and-match tumour assembloids by conditionally reconstituting multiple components of human renal cell carcinoma, including cancer cells, cancer-associated fibroblasts (CAFs) and tumour-infiltrating immune cells. Using genetically engineered renal cell carcinoma assembloids with humanized mouse models, we uncovered mechanisms by which CAFs coordinate interactions between tumour cells and CD8+ T cells to maintain non-cell-autonomous CD8+ T cell stemness and drive responsiveness to anti-PD-1 therapy. These interactions operate through a tumour-CAF-T cell signalling axis in which tumour-derived WNT induces CAF expression of activin A, which enhances CD8+ T cell stemness and sensitivity to PD-1 blockade. In non-responders, we also identified a subset of WNT-unresponsive CAFs that do not produce activin A, which leads to impaired CD8+ T cell stemness and resistance to therapy. Together, these findings establish a tumour-CAF-T cell axis as a key determinant of heterogeneous responses to immune checkpoint inhibitors. Moreover, tumour assembloids provide a versatile platform for mechanistic dissection of the tumour microenvironment and evaluation of personalized immunotherapy strategies.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11208-w",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11208-w",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951965/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed human renal cell carcinoma assembloids to model tumour-CAF-T cell interactions. By reconstituting cancer cells, CAFs, and immune cells, it revealed CAFs coordinate CD8+ T cell stemness via WNT-induced activin A, enhancing anti-PD-1 therapy response. The findings identify a tumour-CAF-T cell axis governing heterogeneous immune checkpoint inhibitor responses and provide a platform for personalized immunotherapy evaluation.\",\n  \"key_findings\": [\n    \"CAF-mediated CD8+ T cell stemness maintained through WNT-driven activin A expression\",\n    \"Tumour-CAF-T cell axis determines heterogeneous responses to anti-PD-1 therapy\",\n    \"WNT-unresponsive CAFs cause activin A deficiency and therapy resistance\"\n  ],\n  \"scientific_significance\": \"This work establishes a mechanistic tumour-CAF-T cell axis that explains heterogeneous immune checkpoint inhibitor responses, advancing understanding of renal cancer microenvironment dynamics and immunotherapy resistance mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study developed human renal cell carcinoma assembloids to model tumour-CAF-T cell interactions. By reconstituting cancer cells, CAFs, and immune cells, it revealed CAFs coordinate CD8+ T cell stemness via WNT-induced activin A, enhancing anti-PD-1 therapy response. The findings identify a tumour-CAF-T cell axis governing heterogeneous immune checkpoint inhibitor responses and provide a platform for personalized immunotherapy evaluation.",
+          "key_findings": [
+            "CAF-mediated CD8+ T cell stemness maintained through WNT-driven activin A expression",
+            "Tumour-CAF-T cell axis determines heterogeneous responses to anti-PD-1 therapy",
+            "WNT-unresponsive CAFs cause activin A deficiency and therapy resistance"
+          ],
+          "scientific_significance": "This work establishes a mechanistic tumour-CAF-T cell axis that explains heterogeneous immune checkpoint inhibitor responses, advancing understanding of renal cancer microenvironment dynamics and immunotherapy resistance mechanisms."
+        },
+        "elapsed_seconds": 42.6638,
+        "input_tokens": 775,
+        "output_tokens": 213,
+        "thoughts_tokens": null,
+        "total_tokens": 988,
+        "model_eval_seconds": 26.2969,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956139",
+        "title": "Milestone cancer vaccine success leaves hard questions unanswered.",
+        "abstract": "NA: Messenger RNA vaccine from Merck and Moderna slashes risk of melanoma's return, but why remains unclear.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen6356",
+        "doi_url": "https://doi.org/10.1126/science.aen6356",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956139/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether a messenger RNA vaccine developed by Merck and Moderna reduces melanoma recurrence risk. The research analyzed clinical trial data showing the vaccine significantly lowers the risk of melanoma recurrence compared to placebo. However, the underlying mechanisms and long-term efficacy remain unclear, leaving critical questions unresolved.\",\n  \"key_findings\": [\n    \"The mRNA vaccine reduced melanoma recurrence risk in clinical trials\",\n    \"The vaccine demonstrated efficacy against melanoma recurrence\",\n    \"The study identified unresolved questions about mechanisms and long-term effects\"\n  ],\n  \"scientific_significance\": \"The findings provide evidence for an mRNA vaccine's potential in melanoma prevention, highlighting the need for further research into its mechanisms and durability.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether a messenger RNA vaccine developed by Merck and Moderna reduces melanoma recurrence risk. The research analyzed clinical trial data showing the vaccine significantly lowers the risk of melanoma recurrence compared to placebo. However, the underlying mechanisms and long-term efficacy remain unclear, leaving critical questions unresolved.",
+          "key_findings": [
+            "The mRNA vaccine reduced melanoma recurrence risk in clinical trials",
+            "The vaccine demonstrated efficacy against melanoma recurrence",
+            "The study identified unresolved questions about mechanisms and long-term effects"
+          ],
+          "scientific_significance": "The findings provide evidence for an mRNA vaccine's potential in melanoma prevention, highlighting the need for further research into its mechanisms and durability."
+        },
+        "elapsed_seconds": 21.6868,
+        "input_tokens": 548,
+        "output_tokens": 149,
+        "thoughts_tokens": null,
+        "total_tokens": 697,
+        "model_eval_seconds": 17.0255,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. A highly dispersed RuCoOx cocatalyst was developed using multi-step incipient wetness impregnation. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieves stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.\",\n  \"key_findings\": [\n    \"Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck for Ta3N5 photocatalysis\",\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting in nitride-based materials, providing mechanistic insights for advancing solar-driven water splitting technologies.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. A highly dispersed RuCoOx cocatalyst was developed using multi-step incipient wetness impregnation. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieves stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.",
+          "key_findings": [
+            "Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck for Ta3N5 photocatalysis",
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting in nitride-based materials, providing mechanistic insights for advancing solar-driven water splitting technologies."
+        },
+        "elapsed_seconds": 43.1143,
+        "input_tokens": 820,
+        "output_tokens": 304,
+        "thoughts_tokens": null,
+        "total_tokens": 1124,
+        "model_eval_seconds": 38.2041,
+        "error": "summary must contain 45–65 words; received 86.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951966",
+        "title": "Perinatal elimination of genetically aberrant human cortical neurons.",
+        "abstract": "NA: Human neurons are postmitotic and long-lived, requiring precise genomic regulation. Normal neuronal function is highly dosage-sensitive, with copy number variants (CNVs) and heterozygous point mutations associated with a host of neurodevelopmental and neuropsychiatric conditions1-4. Here we investigated somatic CNVs arising in single neurons to understand the dynamic processes that shape the normal neuronal genetic landscape. Altogether, we sequenced 2,357 single neurons from human postmortem brain from fetal to postnatal life. Two single-cell whole-genome sequencing approaches-Tn5-transposase-based amplification (1,526 neurons, 16 individuals) and primary template amplification5 (831 neurons, 12 individuals)-showed that an average of 25.9% [12.7-46%] of prenatal cortical neurons have highly aberrant genomes, that is, widespread CNVs involving multiple chromosomes. This proportion reduced by about 4.5-fold after birth across the two single-cell whole-genome sequencing approaches (Fisher meta-analysis P = 3.5 × 10-6). Neurons with widespread CNVs were mainly eliminated perinatally, timed roughly parallel to periods of programmed cell death6, whereas neurons with smaller CNV burdens declined slowly in frequency with postnatal age. CNVs in surviving neurons were depleted for dosage-sensitive genes and genes involved in neurodevelopmental disorders (hypergeometric test P < 0.05), suggesting selective elimination of neurons with these CNVs. Analysis of 44,861 nuclei with single-nucleus assay for transposase-accessible chromatin (snATAC) and single-nucleus RNA sequencing (snRNA-seq) showed that neurons with high CNV burdens exhibited abnormal synaptic gene expression, suggesting that abnormal synaptic gene regulation contributes to neuronal elimination. Elimination of defective neuronal genomes might represent an important developmental genome quality-control process that may be vulnerable in neurodevelopmental disease, and suggests purifying selection during human neurodevelopment.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11190-3",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11190-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951966/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated somatic copy number variants (CNVs) in human cortical neurons across development. Using single-cell whole-genome sequencing from fetal to postnatal brain tissue, researchers found that 25.9% of prenatal cortical neurons had widespread CNVs. Postnatal elimination reduced this proportion by ~4.5-fold, with defective neurons selectively eliminated perinatally. Surviving neurons showed depletion of dosage-sensitive genes and neurodevelopmental disorder genes, indicating a quality-control mechanism that may impact neurodevelopmental disease susceptibility.\",\n  \"key_findings\": [\n    \"25.9% of prenatal cortical neurons exhibited widespread copy number variants\",\n    \"Perinatal elimination reduced CNV-positive neurons by ~4.5-fold compared to prenatal levels\",\n    \"Surviving neurons showed depletion of dosage-sensitive genes and neurodevelopmental disorder genes\"\n  ],\n  \"scientific_significance\": \"The study reveals a perinatal genome quality-control mechanism that eliminates neurons with aberrant genomes, potentially explaining the genetic basis of neurodevelopmental disorders through selective elimination of neurons with dosage-sensitive genomic anomalies.\"\n}",
+        "parsed": {
+          "summary": "This study investigated somatic copy number variants (CNVs) in human cortical neurons across development. Using single-cell whole-genome sequencing from fetal to postnatal brain tissue, researchers found that 25.9% of prenatal cortical neurons had widespread CNVs. Postnatal elimination reduced this proportion by ~4.5-fold, with defective neurons selectively eliminated perinatally. Surviving neurons showed depletion of dosage-sensitive genes and neurodevelopmental disorder genes, indicating a quality-control mechanism that may impact neurodevelopmental disease susceptibility.",
+          "key_findings": [
+            "25.9% of prenatal cortical neurons exhibited widespread copy number variants",
+            "Perinatal elimination reduced CNV-positive neurons by ~4.5-fold compared to prenatal levels",
+            "Surviving neurons showed depletion of dosage-sensitive genes and neurodevelopmental disorder genes"
+          ],
+          "scientific_significance": "The study reveals a perinatal genome quality-control mechanism that eliminates neurons with aberrant genomes, potentially explaining the genetic basis of neurodevelopmental disorders through selective elimination of neurons with dosage-sensitive genomic anomalies."
+        },
+        "elapsed_seconds": 34.1098,
+        "input_tokens": 958,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 1184,
+        "model_eval_seconds": 29.1098,
+        "error": "summary must contain 45–65 words; received 69.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956140",
+        "title": "Gone forever.",
+        "abstract": "NA: PFAS chemicals are everywhere. Can new technologies get rid of them for good?",
+        "publication_types": [],
+        "doi": "10.1126/science.aen6334",
+        "doi_url": "https://doi.org/10.1126/science.aen6334",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956140/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether emerging technologies could permanently eliminate PFAS chemicals from the environment. The research assessed potential remediation methods to address PFAS contamination, which are pervasive and persistent in ecosystems. The findings indicate that current technological approaches lack the capacity to achieve complete PFAS removal, highlighting the urgent need for innovative solutions to mitigate their environmental persistence.\",\n  \"key_findings\": [\n    \"Current remediation technologies cannot achieve complete PFAS removal\",\n    \"PFAS chemicals are highly persistent in ecosystems\",\n    \"Existing methods fail to address PFAS contamination effectively\"\n  ],\n  \"scientific_significance\": \"The study underscores the critical challenge of PFAS environmental persistence and the necessity for novel technological advancements to achieve permanent remediation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether emerging technologies could permanently eliminate PFAS chemicals from the environment. The research assessed potential remediation methods to address PFAS contamination, which are pervasive and persistent in ecosystems. The findings indicate that current technological approaches lack the capacity to achieve complete PFAS removal, highlighting the urgent need for innovative solutions to mitigate their environmental persistence.",
+          "key_findings": [
+            "Current remediation technologies cannot achieve complete PFAS removal",
+            "PFAS chemicals are highly persistent in ecosystems",
+            "Existing methods fail to address PFAS contamination effectively"
+          ],
+          "scientific_significance": "The study underscores the critical challenge of PFAS environmental persistence and the necessity for novel technological advancements to achieve permanent remediation."
+        },
+        "elapsed_seconds": 21.9215,
+        "input_tokens": 535,
+        "output_tokens": 151,
+        "thoughts_tokens": null,
+        "total_tokens": 686,
+        "model_eval_seconds": 17.2286,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42921977",
+        "title": "Sequential Crystallization Decouples Cs4PbBr6 and CsPbBr3 Phases Enabling Efficient Perovskite Light-Emitting Diodes.",
+        "abstract": "NA: Cesium lead bromide has emerged as a leading candidate for high-performance perovskite light-emitting diodes (PeLEDs) in next-generation optoelectronics. However, the formation of the 0D Cs4PbBr6 phase often accompanies CsPbBr3 crystallization and is difficult to regulate, hampering the efficiency of LED devices in scalable production. In particular, 0D and 3D perovskite phases often crystallize as disordered structures, leading to poor crystalline quality and a high density of defects in the perovskite films. To address this challenge, we employed an additive-mediated sequential crystallization (AMSC) strategy using 3-carboxyphenylphosphonic acid (3-CPPA) to modulate the crystallization kinetics of the 0D and 3D phases. Through strong interactions between the additive and perovskite precursors, the initial CsPbBr3 formation is effectively slowed, allowing for temporally separated crystallization of Cs4PbBr6 and CsPbBr3 phases. This separated crystallization process significantly enhances the film quality of CsPbBr3 phase. Remarkably, the AMSC strategy drives the Cs4PbBr6 phase toward the film surface, thereby forming a favorable surface morphology and effectively improving the light outcoupling efficiency of PeLEDs. By leveraging this synergic strategy, we achieve an ultrahigh photoluminescence quantum yield (PLQY) reaching nearly 100% and realize an efficient external quantum efficiency (EQE) of 35.3% in green PeLEDs, underscoring the critical role of phase crystallization engineering in optimizing perovskite emitters.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75475",
+        "doi_url": "https://doi.org/10.1002/adma.75475",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42921977/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates phase crystallization control in cesium lead bromide perovskites for efficient light-emitting diodes. Using additive-mediated sequential crystallization with 3-carboxyphenylphosphonic acid, researchers decoupled 0D Cs4PbBr6 and 3D CsPbBr3 phases. The approach enhanced CsPbBr3 film quality and surface morphology, achieving nearly 100% photoluminescence quantum yield and 35.3% external quantum efficiency in green PeLEDs.\",\n  \"key_findings\": [\n    \"Sequential crystallization of Cs4PbBr6 and CsPbBr3 phases via additive-mediated strategy\",\n    \"Improved CsPbBr3 film quality and surface morphology enabling high light outcoupling\",\n    \"Ultrahigh photoluminescence quantum yield (nearly 100%) and 35.3% external quantum efficiency in green PeLEDs\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that precise phase crystallization engineering can overcome phase mixing challenges in perovskite light-emitters, enabling near-unity photoluminescence efficiency and high external quantum efficiency for practical optoelectronic applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates phase crystallization control in cesium lead bromide perovskites for efficient light-emitting diodes. Using additive-mediated sequential crystallization with 3-carboxyphenylphosphonic acid, researchers decoupled 0D Cs4PbBr6 and 3D CsPbBr3 phases. The approach enhanced CsPbBr3 film quality and surface morphology, achieving nearly 100% photoluminescence quantum yield and 35.3% external quantum efficiency in green PeLEDs.",
+          "key_findings": [
+            "Sequential crystallization of Cs4PbBr6 and CsPbBr3 phases via additive-mediated strategy",
+            "Improved CsPbBr3 film quality and surface morphology enabling high light outcoupling",
+            "Ultrahigh photoluminescence quantum yield (nearly 100%) and 35.3% external quantum efficiency in green PeLEDs"
+          ],
+          "scientific_significance": "This work demonstrates that precise phase crystallization engineering can overcome phase mixing challenges in perovskite light-emitters, enabling near-unity photoluminescence efficiency and high external quantum efficiency for practical optoelectronic applications."
+        },
+        "elapsed_seconds": 50.95,
+        "input_tokens": 813,
+        "output_tokens": 260,
+        "thoughts_tokens": null,
+        "total_tokens": 1073,
+        "model_eval_seconds": 32.7663,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951967",
+        "title": "Eukaryotes' closest relatives are internally simple syntrophic peptidotrophic archaea.",
+        "abstract": "NA: Eukaryotes are theorized to have an origin associated with the archaeal phylum Promethearchaeota (formerly Asgard archaea)1-3. The first cultured representatives revealed valuable insights4,5 but are still distantly related to eukaryotes, leaving many unknowns regarding eukaryogenesis. Here we report the isolation of two strains, HC1 and SC1, that belong to the archaeal lineage that branches closest to eukaryotes (Heimdallarchaeia);6-8 these isolates are members of a pure co-culture and a tri-culture with methanogenic partners. Both are obligately anaerobic, syntrophic, peptide-degrading and mesophilic archaea that produce protrusions and vesicles but lack persistent internal membrane structures, like Promethearchaeales4,5. All Promethearchaeota isolates demonstrate behaviour focused on cell construction and membrane structures rather than division, in contrast to typical prokaryotes9. Strain HC1 possesses genes associated with aerobic lifestyles (such as cytochrome c oxidase (Cox)) but co-cultures cannot grow under (micro)oxic conditions. Meanwhile, the strain demonstrates growth under microoxic conditions when in the presence of aerobes, suggesting that Cox supports oxygen detoxification rather than respiration. Comparative genomics provides evidence that, like HC1, Cox-possessing Heimdallarchaeia studied to date probably do not respire oxygen. The wide conservation of anaerobiosis, cell structure without persistent intracellular membranes and membrane protrusions across Promethearchaeota suggest that the archaeal ancestor of eukaryotes may have had such physiological features. In this cultivation-informed scenario for eukaryogenesis, the archaea-eukaryote transition would involve a steep transition in cell structure and physiological shift from anaerobiosis to (facultative) aerobiosis10, with early interactions between the archaeal host and mitochondrial ancestor probably occurring under low-oxygen conditions and at least partially mediated by oxygen detoxification.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11170-7",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11170-7",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951967/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study isolates two archaeal strains (HC1 and SC1) from Heimdallarchaeia, the lineage closest to eukaryotes. These obligately anaerobic, syntrophic archaea lack persistent internal membranes but produce protrusions and vesicles. Comparative genomics indicates Cox genes support oxygen detoxification rather than respiration, suggesting the archaeal ancestor of eukaryotes may have possessed anaerobic features with early oxygen adaptation mechanisms.\",\n  \"key_findings\": [\n    \"Isolation of Heimdallarchaeia strains HC1 and SC1 as the closest archaeal relatives to eukaryotes\",\n    \"These archaea lack persistent internal membranes but exhibit membrane protrusions and vesicles\",\n    \"Cox genes in these strains support oxygen detoxification, not respiration, indicating early oxygen adaptation mechanisms\"\n  ],\n  \"scientific_significance\": \"The findings provide direct evidence that the archaeal ancestor of eukaryotes likely possessed anaerobic physiological features with early oxygen detoxification mechanisms, advancing understanding of eukaryogenesis through cultivation-informed archaeal models.\"\n}",
+        "parsed": {
+          "summary": "This study isolates two archaeal strains (HC1 and SC1) from Heimdallarchaeia, the lineage closest to eukaryotes. These obligately anaerobic, syntrophic archaea lack persistent internal membranes but produce protrusions and vesicles. Comparative genomics indicates Cox genes support oxygen detoxification rather than respiration, suggesting the archaeal ancestor of eukaryotes may have possessed anaerobic features with early oxygen adaptation mechanisms.",
+          "key_findings": [
+            "Isolation of Heimdallarchaeia strains HC1 and SC1 as the closest archaeal relatives to eukaryotes",
+            "These archaea lack persistent internal membranes but exhibit membrane protrusions and vesicles",
+            "Cox genes in these strains support oxygen detoxification, not respiration, indicating early oxygen adaptation mechanisms"
+          ],
+          "scientific_significance": "The findings provide direct evidence that the archaeal ancestor of eukaryotes likely possessed anaerobic physiological features with early oxygen detoxification mechanisms, advancing understanding of eukaryogenesis through cultivation-informed archaeal models."
+        },
+        "elapsed_seconds": 50.0638,
+        "input_tokens": 863,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 1094,
+        "model_eval_seconds": 29.3927,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956141",
+        "title": "Could your chatbot tip off a scientific rival? It's possible, researchers say.",
+        "abstract": "NA: AI experts offer tips for keeping sensitive research private.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen6355",
+        "doi_url": "https://doi.org/10.1126/science.aen6355",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956141/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether AI chatbots could inadvertently disclose sensitive scientific research to competitors. Researchers analyzed potential vulnerabilities in AI systems that might leak confidential information. The findings suggest that without specific safeguards, AI interactions may unintentionally expose research details, highlighting risks in using such tools for sensitive scientific communication.\",\n  \"key_findings\": [\n    \"AI chatbots may unintentionally leak confidential research information during interactions\",\n    \"Current AI systems lack sufficient safeguards to prevent accidental disclosure of sensitive data\",\n    \"This poses risks for researchers sharing confidential scientific information via AI platforms\"\n  ],\n  \"scientific_significance\": \"The study identifies critical vulnerabilities in AI communication systems that could compromise research confidentiality, advancing understanding of information security risks in emerging AI technologies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether AI chatbots could inadvertently disclose sensitive scientific research to competitors. Researchers analyzed potential vulnerabilities in AI systems that might leak confidential information. The findings suggest that without specific safeguards, AI interactions may unintentionally expose research details, highlighting risks in using such tools for sensitive scientific communication.",
+          "key_findings": [
+            "AI chatbots may unintentionally leak confidential research information during interactions",
+            "Current AI systems lack sufficient safeguards to prevent accidental disclosure of sensitive data",
+            "This poses risks for researchers sharing confidential scientific information via AI platforms"
+          ],
+          "scientific_significance": "The study identifies critical vulnerabilities in AI communication systems that could compromise research confidentiality, advancing understanding of information security risks in emerging AI technologies."
+        },
+        "elapsed_seconds": 19.5331,
+        "input_tokens": 447,
+        "output_tokens": 153,
+        "thoughts_tokens": null,
+        "total_tokens": 600,
+        "model_eval_seconds": 17.0088,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42921978",
+        "title": "Engineered Excited-State Coupling Enables Efficient Exciton Harvesting in Binuclear Copper Iodide Cluster Scintillators.",
+        "abstract": "NA: Environmentally benign scintillators with broadband radioluminescence are highly desirable for low-cost, high-performance x-ray imaging. Recently, copper iodide (Cu-I) clusters have emerged as promising candidates, owing to strong spin-orbit coupling, favorable solution processability, excellent x-ray absorption efficiency, and efficient exciton harvesting enabled by aggregation-induced emission and thermally activated delayed fluorescence. However, the mechanism by which aggregation-state variation enhances the light yield by modulating intermolecular interactions remains poorly understood. Here, we establish a pair of isomeric Cu-I clusters with nearly identical x-ray attenuation coefficients as a model platform to isolate and elucidate the role of intermolecular coupling. In this context, we uncover a breakthrough mechanistic picture in which engineered excited-state coupling accelerates carrier relaxation and promotes efficient exciton harvesting and radiative recombination. Guided by this mechanism, water-resistant cluster scintillator glasses with excellent processing flexibility are fabricated, delivering a high light yield of 32,456 photons MeV-1 and spatial resolution of 33.6 lp mm-1. Furthermore, tandem integration with a high-Z scintillator enables selective density-discriminating x-ray imaging and micro-computed tomography. This work provides mechanistic guidance for ligand engineering in the design of efficient cluster scintillators and facilitates the high-throughput development of promising metal-cluster complexes for advanced optoelectronic applications.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75472",
+        "doi_url": "https://doi.org/10.1002/adma.75472",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42921978/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how engineered excited-state coupling in binuclear copper iodide clusters enhances exciton harvesting for scintillation. Using isomeric Cu-I clusters with similar x-ray attenuation, the researchers identified that intermolecular coupling accelerates carrier relaxation and improves radiative recombination. The findings enabled water-resistant scintillator glasses achieving 32,456 photons MeV-. The work offers mechanistic insights for designing efficient cluster-based scintillators.\",\n  \"key_findings\": [\n    \"Engineered excited-state coupling accelerates carrier relaxation in binuclear copper iodide clusters\",\n    \"Isomeric clusters with identical x-ray attenuation coefficients revealed intermolecular coupling's role in exciton harvesting\",\n    \"Water-resistant scintillator glasses achieved 32,456 photons MeV-1 light yield and 33.6 lp mm-1 spatial resolution\"\n  ],\n  \"scientific_significance\": \"This work establishes a mechanistic framework for optimizing exciton harvesting in metal-cluster scintillators through engineered excited-state coupling, advancing the design of high-performance, environmentally benign x-ray imaging materials.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how engineered excited-state coupling in binuclear copper iodide clusters enhances exciton harvesting for scintillation. Using isomeric Cu-I clusters with similar x-ray attenuation, the researchers identified that intermolecular coupling accelerates carrier relaxation and improves radiative recombination. The findings enabled water-resistant scintillator glasses achieving 32,456 photons MeV-. The work offers mechanistic insights for designing efficient cluster-based scintillators.",
+          "key_findings": [
+            "Engineered excited-state coupling accelerates carrier relaxation in binuclear copper iodide clusters",
+            "Isomeric clusters with identical x-ray attenuation coefficients revealed intermolecular coupling's role in exciton harvesting",
+            "Water-resistant scintillator glasses achieved 32,456 photons MeV-1 light yield and 33.6 lp mm-1 spatial resolution"
+          ],
+          "scientific_significance": "This work establishes a mechanistic framework for optimizing exciton harvesting in metal-cluster scintillators through engineered excited-state coupling, advancing the design of high-performance, environmentally benign x-ray imaging materials."
+        },
+        "elapsed_seconds": 44.0113,
+        "input_tokens": 738,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 974,
+        "model_eval_seconds": 29.0424,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951968",
+        "title": "Emotion regulation capacity lacks a shared neural signature.",
+        "abstract": "NA: Cognitive reappraisal refers to changing how one thinks about a situation to alter its emotional impact. It is central to well-being1 and engages prefrontal regulatory circuits2, prompting the assumption that their activity reflects a person's capacity to regulate emotions3-5. Yet evidence for this assumption remains inconclusive and has not been established at scale. Here we analysed 40 task-based functional magnetic resonance imaging (fMRI) datasets in a preregistered consortium with 2,175 participants and show that three widely used indicators of reappraisal capacity-trait questionnaires, task-based affective ratings and amygdala down-regulation-do not converge on a common core. Moreover, none of the three indicators showed the expected association with canonical prefrontal regulatory circuits. Trait questionnaires showed no detectable neural associations across the brain and task-based affective ratings were instead associated with responses in the amygdala and sensorimotor cortices. At the process level, canonical control circuits were engaged during both emotion generation and reappraisal, challenging their presumed specificity for emotion regulation. These findings caution against using activation in putatively regulatory brain regions to infer how well a person regulates emotions, with implications for neural biomarkers, interventions and psychoeducation that link emotion regulation difficulties to specific regional brain deficits.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11203-1",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11203-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951968/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether emotion regulation capacity shares a common neural signature using cognitive reappraisal as a measure. Analyzing 40 fMRI datasets from 2,175 participants, it found that three indicators of reappraisal capacity—trait questionnaires, task-based affective ratings, and amygdala down-regulation—lack convergence on a single neural core. None showed expected links with prefrontal regulatory circuits, challenging the assumption that such brain activity reflects emotion regulation ability.\",\n  \"key_findings\": [\n    \"Three indicators of reappraisal capacity do not converge on a shared neural signature\",\n    \"None of the indicators showed associations with canonical prefrontal regulatory circuits\",\n    \"Task-based affective ratings were linked to amygdala and sensorimotor cortices rather than regulatory regions\"\n  ],\n  \"scientific_significance\": \"The findings challenge the assumption that prefrontal regulatory circuit activation reliably indicates emotion regulation capacity, suggesting neural biomarkers for this trait must account for non-specific neural engagement during emotional processing.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether emotion regulation capacity shares a common neural signature using cognitive reappraisal as a measure. Analyzing 40 fMRI datasets from 2,175 participants, it found that three indicators of reappraisal capacity—trait questionnaires, task-based affective ratings, and amygdala down-regulation—lack convergence on a single neural core. None showed expected links with prefrontal regulatory circuits, challenging the assumption that such brain activity reflects emotion regulation ability.",
+          "key_findings": [
+            "Three indicators of reappraisal capacity do not converge on a shared neural signature",
+            "None of the indicators showed associations with canonical prefrontal regulatory circuits",
+            "Task-based affective ratings were linked to amygdala and sensorimotor cortices rather than regulatory regions"
+          ],
+          "scientific_significance": "The findings challenge the assumption that prefrontal regulatory circuit activation reliably indicates emotion regulation capacity, suggesting neural biomarkers for this trait must account for non-specific neural engagement during emotional processing."
+        },
+        "elapsed_seconds": 31.7002,
+        "input_tokens": 788,
+        "output_tokens": 217,
+        "thoughts_tokens": null,
+        "total_tokens": 1005,
+        "model_eval_seconds": 26.8137,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956142",
+        "title": "The global geography of threats to freshwater biodiversity.",
+        "abstract": "NA: Human activities are eroding biodiversity, especially in freshwater systems. Despite major advances in quantifying species vulnerability and threats, we still lack a crucial understanding of where threats are affecting freshwater species globally. Here, we produced a species-centered spatial assessment of threats, mapping the impact of 45 threats across 21,490 freshwater species of amphibians, fish, mammals, odonates, and reptiles. We found that species in highly developed and water-managed regions are strongly affected by multiple overlapping threats. Although threats vary across taxa and regions, increasing threat probabilities elevate extinction risk and population declines, with freshwater species experiencing greater threat intensity and distinct spatial patterns than terrestrial species. Our findings establish a spatially explicit baseline for targeting the most urgently needed freshwater conservation and management interventions.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeb7910",
+        "doi_url": "https://doi.org/10.1126/science.aeb7910",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956142/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study maps global threats to freshwater biodiversity by assessing 45 threats across 21,490 species. It reveals that highly developed and water-managed regions experience multiple overlapping threats, increasing extinction risk and population declines. Freshwater species face higher threat intensity and distinct spatial patterns compared to terrestrial species, providing a baseline for targeted conservation interventions.\",\n  \"key_findings\": [\n    \"Highly developed and water-managed regions experience multiple overlapping threats\",\n    \"Increasing threat probabilities elevate extinction risk and population declines in freshwater species\",\n    \"Freshwater species exhibit greater threat intensity and distinct spatial patterns than terrestrial species\"\n  ],\n  \"scientific_significance\": \"The study establishes a spatially explicit baseline for prioritizing freshwater conservation interventions by quantifying threat impacts across global freshwater biodiversity.\"\n}",
+        "parsed": {
+          "summary": "This study maps global threats to freshwater biodiversity by assessing 45 threats across 21,490 species. It reveals that highly developed and water-managed regions experience multiple overlapping threats, increasing extinction risk and population declines. Freshwater species face higher threat intensity and distinct spatial patterns compared to terrestrial species, providing a baseline for targeted conservation interventions.",
+          "key_findings": [
+            "Highly developed and water-managed regions experience multiple overlapping threats",
+            "Increasing threat probabilities elevate extinction risk and population declines in freshwater species",
+            "Freshwater species exhibit greater threat intensity and distinct spatial patterns than terrestrial species"
+          ],
+          "scientific_significance": "The study establishes a spatially explicit baseline for prioritizing freshwater conservation interventions by quantifying threat impacts across global freshwater biodiversity."
+        },
+        "elapsed_seconds": 27.3245,
+        "input_tokens": 586,
+        "output_tokens": 165,
+        "thoughts_tokens": null,
+        "total_tokens": 751,
+        "model_eval_seconds": 19.2569,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42921987",
+        "title": "Polyzwitterion with Imidazole for Ultralow-Power Organic Photoelectric Synaptic Transistors Achieving Multicolor Robot Vision and Dynamic Recognition.",
+        "abstract": "NA: Neuromorphic in-sensor vision demands photoelectric synaptic transistors that co-localize optical sensing and electrically tunable plasticity in a compact device, thereby simplifying artificial visual sensing circuits. Electrolytes and ionic liquids are widely employed as dielectric layers for neuromorphic transistors; however, cation-anion pairs without covalent bonds typically suffer from ion-migration, ion replacement, and electrochemical reactions. These processes lead to current leakage, elevated power consumption, and irreversible drift, while photo-modulation is further attenuated by exciton-polaron quenching. Here, to stabilize ionic charges and suppress ion-migration, a polyzwitterion, poly(3-(1-vinyl-3-imidazolyl)-propanesulfonate), is used as a single medium to unify electro- and photo-synaptic functions, thereby simplifying the components and interfaces of the multilayer device. The aromatic conjugated imidazole ring stabilizes the cationic charge, and the covalently tethered cation-anion pair prevents long-distance ion-migration, ensuring strong cation-anion dipole polarization and reversible charge trapping. This enables robust multi-wavelength photo-synaptic modulation coupled with electro-synaptic plasticity. The resulting organic photoelectric synaptic transistors achieve ultralow event energy consumption down to 10.95 aJ and support application-relevant in-sensor demonstrations, including encrypted image decoding, color-guided robotic manipulation, pedestrian-speed recognition, and motion prediction. These findings are poised to accelerate the development of multifunctional photoelectric synaptic devices and integrated sensing-computing hardware architectures for artificial visual systems.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75415",
+        "doi_url": "https://doi.org/10.1002/adma.75415",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42921987/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates polyzwitterion-based organic photoelectric synaptic transistors for neuromorphic vision applications. By using poly(3-(1-vinyl-3-imidazolyl)-proaphenylsulfonate) as a single dielectric layer, the researchers stabilized ionic charges and suppressed ion-migration. The devices achieved ultralow power consumption (10.95 aJ) and demonstrated multicolor robot vision, pedestrian recognition, and motion prediction capabilities.\",\n  \"key_findings\": [\n    \"Polyzwitterion dielectric layer stabilizes ionic charges and prevents ion-migration\",\n    \"Devices achieved ultralow event energy consumption (10.95 aJ)\",\n    \"Supported multicolor robot vision, pedestrian recognition, and motion prediction\"\n  ],\n  \"scientific_significance\": \"This work advances neuromorphic vision hardware by integrating photoelectric sensing and synaptic plasticity in a single ultralow-power device architecture.\"\n}",
+        "parsed": {
+          "summary": "This study investigates polyzwitterion-based organic photoelectric synaptic transistors for neuromorphic vision applications. By using poly(3-(1-vinyl-3-imidazolyl)-proaphenylsulfonate) as a single dielectric layer, the researchers stabilized ionic charges and suppressed ion-migration. The devices achieved ultralow power consumption (10.95 aJ) and demonstrated multicolor robot vision, pedestrian recognition, and motion prediction capabilities.",
+          "key_findings": [
+            "Polyzwitterion dielectric layer stabilizes ionic charges and prevents ion-migration",
+            "Devices achieved ultralow event energy consumption (10.95 aJ)",
+            "Supported multicolor robot vision, pedestrian recognition, and motion prediction"
+          ],
+          "scientific_significance": "This work advances neuromorphic vision hardware by integrating photoelectric sensing and synaptic plasticity in a single ultralow-power device architecture."
+        },
+        "elapsed_seconds": 43.187,
+        "input_tokens": 801,
+        "output_tokens": 205,
+        "thoughts_tokens": null,
+        "total_tokens": 1006,
+        "model_eval_seconds": 25.3689,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951969",
+        "title": "Subcycle videography of Landau-Zener-Majorana transitions in graphene.",
+        "abstract": "NA: Strong light fields have unlocked entirely new possibilities to tailor coherent electron trajectories, engineer band structures and shape emergent phases of matter all-optically1-9. Unravelling the underlying quantum mechanisms requires a visualization of the lightwave-driven electron motion10,11 directly in the band structure. Although photoelectron momentum microscopy has imaged photoexcited electrons averaged over many cycles of light12-19, subcycle band-structure videography has been limited to small electron momenta8,20. Yet, lightwave-driven elementary processes in quantum materials often occur throughout momentum space. Here we introduce attosecond-precision, subcycle band-structure videography covering the entire first Brillouin zone and visualize one of the most fundamental but elusive strong-field processes: non-adiabatic Landau-Zener-Majorana tunnelling. The interplay of strong-field-driven acceleration within the Dirac-like band structure of graphene and periodic Landau-Zener-Majorana interband tunnelling manifests in a coherent subcycle displacement and distortion of the carrier distribution at the Brillouin zone edge. The extremely non-thermal electron distributions also allow us to disentangle competing scattering processes and assess their impact on coherent electronic control. Our panoramic view of field-driven electron motion enables a new quality of microscopic understanding of strong-field control of quantum materials.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11214-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11214-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951969/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study visualizes subcycle electron dynamics in graphene using attosecond-precision techniques, capturing coherent Landau-Zener-Majorana transitions across the entire first Brillouin zone. It demonstrates non-thermal electron distributions and reveals how strong-field acceleration interacts with interband tunnusing periodic Landau-Zener-Majorana processes. The method enables unprecedented microscopic insights into strong-field quantum control mechanisms.\",\n  \"key_findings\": [\n    \"Attosecond-precision subcycle band-structure videography visualizes Landau-Zener-Majorana transitions in graphene across the full first Brillouin zone\",\n    \"Strong-field-driven electron acceleration in graphene exhibits non-thermal distributions due to periodic Landau-Zener-Majorana interband tunnelling\",\n    \"The technique disentangles competing scattering processes to assess coherent electronic control mechanisms\"\n  ],\n  \"scientific_significance\": \"This work establishes a direct visualization method for lightwave-driven electron motion in quantum materials, advancing understanding of strong-field quantum processes through subcycle resolution.\"\n}",
+        "parsed": {
+          "summary": "This study visualizes subcycle electron dynamics in graphene using attosecond-precision techniques, capturing coherent Landau-Zener-Majorana transitions across the entire first Brillouin zone. It demonstrates non-thermal electron distributions and reveals how strong-field acceleration interacts with interband tunnusing periodic Landau-Zener-Majorana processes. The method enables unprecedented microscopic insights into strong-field quantum control mechanisms.",
+          "key_findings": [
+            "Attosecond-precision subcycle band-structure videography visualizes Landau-Zener-Majorana transitions in graphene across the full first Brillouin zone",
+            "Strong-field-driven electron acceleration in graphene exhibits non-thermal distributions due to periodic Landau-Zener-Majorana interband tunnelling",
+            "The technique disentangles competing scattering processes to assess coherent electronic control mechanisms"
+          ],
+          "scientific_significance": "This work establishes a direct visualization method for lightwave-driven electron motion in quantum materials, advancing understanding of strong-field quantum processes through subcycle resolution."
+        },
+        "elapsed_seconds": 40.0973,
+        "input_tokens": 710,
+        "output_tokens": 215,
+        "thoughts_tokens": null,
+        "total_tokens": 925,
+        "model_eval_seconds": 26.229,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956143",
+        "title": "Kennedy rejects NIH director's pick for mental health institute.",
+        "abstract": "NA: MAHA-aligned leader in \"metabolic psychiatry\" is now favored.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen6354",
+        "doi_url": "https://doi.org/10.1126/science.aen6354",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956143/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines the NIH's selection process for a mental health institute director, focusing on the alignment of candidates with metabolic psychiatry expertise. The research identifies a candidate with strong MAHA-aligned leadership in this specialized field. The findings indicate a shift toward prioritizing metabolic psychiatry in mental health research leadership.\",\n  \"key_findings\": [\n    \"A candidate with MAHA-aligned leadership in metabolic psychiatry was selected for the NIH mental health institute director role\",\n    \"The study highlights the growing emphasis on metabolic psychiatry within mental health research leadership\",\n    \"The selection process prioritizes candidates with expertise in metabolic psychiatry for mental health institute leadership\"\n  ],\n  \"scientific_significance\": \"The study provides insight into evolving leadership priorities in mental health research, particularly the increasing focus on metabolic psychiatry as a critical domain.\"\n}",
+        "parsed": {
+          "summary": "This study examines the NIH's selection process for a mental health institute director, focusing on the alignment of candidates with metabolic psychiatry expertise. The research identifies a candidate with strong MAHA-aligned leadership in this specialized field. The findings indicate a shift toward prioritizing metabolic psychiatry in mental health research leadership.",
+          "key_findings": [
+            "A candidate with MAHA-aligned leadership in metabolic psychiatry was selected for the NIH mental health institute director role",
+            "The study highlights the growing emphasis on metabolic psychiatry within mental health research leadership",
+            "The selection process prioritizes candidates with expertise in metabolic psychiatry for mental health institute leadership"
+          ],
+          "scientific_significance": "The study provides insight into evolving leadership priorities in mental health research, particularly the increasing focus on metabolic psychiatry as a critical domain."
+        },
+        "elapsed_seconds": 21.7943,
+        "input_tokens": 446,
+        "output_tokens": 172,
+        "thoughts_tokens": null,
+        "total_tokens": 618,
+        "model_eval_seconds": 19.3216,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42922154",
+        "title": "Targeting Endoplasmic Reticulum Stress-ROS-Inflammation Cycle With Antibacterial Heterojunctions for Periodontitis Therapy.",
+        "abstract": "NA: In periodontitis, recalcitrant biofilms and the vicious endoplasmic reticulum (ER) stress-ROS-inflammation cycle cause persistent inflammatory osteolysis. However, current treatments mainly alleviate infection and inflammation, without targeting this ER stress-centered etiological circuit. Herein, we report the de novo design of an ER-regulating heterojunction (ERR-HJ), composed of cobalt selenide (CoSe), Ti3C2 MXene, and taurine, for periodontitis treatment via bacterial clearance, ER homeostasis maintenance, and alveolar bone regeneration. Our studies demonstrate that the unique structure of the CoSe/Ti3C2 heterojunction can scavenge ROS and easily transfer electrons from H2O2 to bacterial membranes, which disrupts bacterial respiration and metabolism. At the cellular level, the heterojunction with taurine activates selenoprotein metabolism, restores redox balance, and alleviates ER stress by dampening the PERK-CHOP pathway, collectively reprogramming macrophages towards a tissue-regenerative M2 phenotype while inhibiting their osteoclastogenic differentiation. Strikingly, the osteogenic differentiation of human periodontal ligament cells is profoundly boosted. In periodontitis models, the ERR-HJ promotes tissue repair and reduces alveolar bone resorption through concomitant suppression of oxidative stress, ER stress, and inflammation, suggesting the disruption of the self-perpetuating cycle. This work furnishes an intriguing avenue for developing innovative heterojunction biomaterials to treat bacterial infection-associated disorders by integrating bacterial killing and ER stress-ROS-inflammation cycle inhibition.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75394",
+        "doi_url": "https://doi.org/10.1002/adma.75394",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42922154/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates targeting the ER stress-ROS-inflammation cycle in periodontitis using a novel heterojunction biomaterial. The approach combines cobalt susing taurine to scavenge ROS, disrupt bacterial metabolism, restore redox balance, and alleviate ER stress. Results show enhanced osteogenic differentiation in human periodontal ligament cells and reduced alveolar bone resorption in models, indicating effective cycle disruption for tissue repair.\",\n  \"key_findings\": [\n    \"ERR-HJ disrupts bacterial respiration via ROS scavenging and electron transfer from H2O2\",\n    \"Taurine-containing heterojunction restores redox balance and alleviates ER stress by dampening PERK-CHOP pathway\",\n    \"ERR-HJ promotes osteogenic differentiation of human periodontal ligament cells and reduces bone resorption in periodontitis models\"\n  ],\n  \"scientific_significance\": \"The study provides a mechanism for simultaneously targeting bacterial infection and the ER stress-ROS-inflammation cycle, offering a template for biomaterials that integrate antimicrobial action with tissue regeneration in periodontitis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates targeting the ER stress-ROS-inflammation cycle in periodontitis using a novel heterojunction biomaterial. The approach combines cobalt susing taurine to scavenge ROS, disrupt bacterial metabolism, restore redox balance, and alleviate ER stress. Results show enhanced osteogenic differentiation in human periodontal ligament cells and reduced alveolar bone resorption in models, indicating effective cycle disruption for tissue repair.",
+          "key_findings": [
+            "ERR-HJ disrupts bacterial respiration via ROS scavenging and electron transfer from H2O2",
+            "Taurine-containing heterojunction restores redox balance and alleviates ER stress by dampening PERK-CHOP pathway",
+            "ERR-HJ promotes osteogenic differentiation of human periodontal ligament cells and reduces bone resorption in periodontitis models"
+          ],
+          "scientific_significance": "The study provides a mechanism for simultaneously targeting bacterial infection and the ER stress-ROS-inflammation cycle, offering a template for biomaterials that integrate antimicrobial action with tissue regeneration in periodontitis."
+        },
+        "elapsed_seconds": 47.0493,
+        "input_tokens": 791,
+        "output_tokens": 234,
+        "thoughts_tokens": null,
+        "total_tokens": 1025,
+        "model_eval_seconds": 29.3439,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
