@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261119T145626Z",
+  "generated_at_utc": "2026-11-19 15:15:34 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 308,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, while minimizing thickness expansion to 13.1% after 50 cycles.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency\",\n    \"The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles, enabling scalable production for battery applications\"\n  ],\n  \"scientific_significance\": \"This work establishes closed-pore engineering as a scalable strategy for developing mechanically stable silicon-carbon anodes with minimal expansion, advancing practical lithium-ion battery electrode design.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress inward, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 reversible capacity, 90.2% initial Coulombic efficiency, and 868.4 mAh g-1 at 3 C, while minimizing thickness expansion to 13.1% after 50 cycles.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress inward, suppressing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency",
+            "The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles, enabling scalable production for battery applications"
+          ],
+          "scientific_significance": "This work establishes closed-pore engineering as a scalable strategy for developing mechanically stable silicon-carbon anodes with minimal expansion, advancing practical lithium-ion battery electrode design."
+        },
+        "elapsed_seconds": 33.0614,
+        "input_tokens": 869,
+        "output_tokens": 273,
+        "thoughts_tokens": null,
+        "total_tokens": 1142,
+        "model_eval_seconds": 29.9936,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 define distinct repression mechanisms. The resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.\",\n  \"key_findings\": [\n    \"The atlas spans over 100 brain cell subclasses using integrated single-cell epigenomic profiling\",\n    \"Active chromatin states marked by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression\"\n  ],\n  \"scientific_significance\": \"This multimodal epigenomic atlas provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than accessibility alone, while H3K27me3 and H3K9me3 define distinct repression mechanisms. The resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.",
+          "key_findings": [
+            "The atlas spans over 100 brain cell subclasses using integrated single-cell epigenomic profiling",
+            "Active chromatin states marked by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression"
+          ],
+          "scientific_significance": "This multimodal epigenomic atlas provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features."
+        },
+        "elapsed_seconds": 32.1837,
+        "input_tokens": 752,
+        "output_tokens": 277,
+        "thoughts_tokens": null,
+        "total_tokens": 1029,
+        "model_eval_seconds": 29.1847,
+        "error": "summary must contain 45–65 words; received 85.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates factors influencing early human settlement in desert regions, focusing on the role of stone availability alongside water. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artefacts or knappable raw materials where freshwater existed but stone was scarce. The results indicate that early human settlement patterns were constrained by the co-occurrence of water and lithic resources, not water alone, with implications for understanding Pleistocene dispersal models across multiple continents.\",\n  \"key_findings\": [\n    \"Palaeolake deposits were present at 55 of 125 surveyed localities but no lithic artefacts or knappable stone were found in areas with abundant freshwater\",\n    \"Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, and raw-material availability improves site discrimination accuracy to 0.768\",\n    \"Convergent patterns across Africa, North America, and Asia suggest stone availability constraints are a universal factor in Pleistocene human dispersal\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that lithic resource availability, not water alone, was a critical constraint on early human settlement in arid regions, refining models of Pleistocene dispersal across continents.\"\n}",
+        "parsed": {
+          "summary": "This study investigates factors influencing early human settlement in desert regions, focusing on the role of stone availability alongside water. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artefacts or knappable raw materials where freshwater existed but stone was scarce. The results indicate that early human settlement patterns were constrained by the co-occurrence of water and lithic resources, not water alone, with implications for understanding Pleistocene dispersal models across multiple continents.",
+          "key_findings": [
+            "Palaeolake deposits were present at 55 of 125 surveyed localities but no lithic artefacts or knappable stone were found in areas with abundant freshwater",
+            "Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, and raw-material availability improves site discrimination accuracy to 0.768",
+            "Convergent patterns across Africa, North America, and Asia suggest stone availability constraints are a universal factor in Pleistocene human dispersal"
+          ],
+          "scientific_significance": "The study demonstrates that lithic resource availability, not water alone, was a critical constraint on early human settlement in arid regions, refining models of Pleistocene dispersal across continents."
+        },
+        "elapsed_seconds": 33.2459,
+        "input_tokens": 856,
+        "output_tokens": 272,
+        "thoughts_tokens": null,
+        "total_tokens": 1128,
+        "model_eval_seconds": 30.1795,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s\",\n    \"Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice\",\n    \"IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s",
+            "Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice",
+            "IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation."
+        },
+        "elapsed_seconds": 33.3728,
+        "input_tokens": 800,
+        "output_tokens": 278,
+        "thoughts_tokens": null,
+        "total_tokens": 1078,
+        "model_eval_seconds": 30.3041,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956155",
+        "title": "The delocalized nature of chemical bonding at a catalytic metal surface.",
+        "abstract": "NA: Adsorbate bonding at metal surfaces requires hybridization of localized molecular orbitals with delocalized electronic bands of the metal; hence, the electronic wave function involved in bonding may extend far beyond the adsorption site. We revealed the consequence of this delocalization by determining the distance over which structural variations of the metal surface influence the molecule-metal bond strength. Velocity-resolved kinetics provided adsorption energies for three molecules bound at atomic steps of platinum (Pt), each exhibiting bond-strength changes of up to 0.2 electron volts as the step-step distance varied over 100 angstroms. We observed molecule-specific behavior reflecting the hybridization of molecule-specific orbitals with symmetry-selected orbital bands of the metal that respond differently to structural modifications of the solid. We discuss implications of these observations for adsorption on Pt nanoparticles.",
+        "publication_types": [],
+        "doi": "10.1126/science.aei5255",
+        "doi_url": "https://doi.org/10.1126/science.aei5255",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956155/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how adsorbate bonding at platinum surfaces extends beyond the adsorption site due to delocalized electronic bands. Using velocity-resolved kinetics, researchers measured bond strength changes of three molecules across 100 angstroms of step-step distance on Pt, finding variations up to 0.2 eV. The results highlight molecule-specific orbital hybridization with metal bands, influencing bond strength through structural modifications.\",\n  \"key_findings\": [\n    \"Bond strength variations of up to 0.2 eV observed across 100 angstroms of step-step distance on platinum\",\n    \"Molecule-specific orbital hybridization with symmetry-selected metal bands\",\n    \"Structural modifications of the metal surface directly impact molecule-metal bond strength\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that electronic delocalization in catalytic metal surfaces significantly influences adsorbate bond strength over large structural scales, providing insights into surface reactivity mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how adsorbate bonding at platinum surfaces extends beyond the adsorption site due to delocalized electronic bands. Using velocity-resolved kinetics, researchers measured bond strength changes of three molecules across 100 angstroms of step-step distance on Pt, finding variations up to 0.2 eV. The results highlight molecule-specific orbital hybridization with metal bands, influencing bond strength through structural modifications.",
+          "key_findings": [
+            "Bond strength variations of up to 0.2 eV observed across 100 angstroms of step-step distance on platinum",
+            "Molecule-specific orbital hybridization with symmetry-selected metal bands",
+            "Structural modifications of the metal surface directly impact molecule-metal bond strength"
+          ],
+          "scientific_significance": "The findings demonstrate that electronic delocalization in catalytic metal surfaces significantly influences adsorbate bond strength over large structural scales, providing insights into surface reactivity mechanisms."
+        },
+        "elapsed_seconds": 25.8469,
+        "input_tokens": 601,
+        "output_tokens": 201,
+        "thoughts_tokens": null,
+        "total_tokens": 802,
+        "model_eval_seconds": 20.3599,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% in small cells and 21.46% in mini-modules while maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, increasing moisture vulnerability\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% in small cells and 21.46% in mini-modules while maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, increasing moisture vulnerability",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells."
+        },
+        "elapsed_seconds": 35.4596,
+        "input_tokens": 885,
+        "output_tokens": 289,
+        "thoughts_tokens": null,
+        "total_tokens": 1174,
+        "model_eval_seconds": 32.36,
+        "error": "summary must contain 45–65 words; received 93.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951971",
+        "title": "Connectome simulations identify a central pattern generator for fly walking.",
+        "abstract": "NA: Animal locomotion relies on rhythmic body movements driven by central pattern generators (CPGs): neural circuits that produce oscillating output without oscillating input. However, the circuit structure of a CPG for walking is not known in any animal1,2. To identify the cells and synapses that underlie rhythmic leg movement in walking flies, we developed dynamic simulations of the Drosophila ventral nerve cord connectomes3-6. A computational activation screen of descending neurons from the central brain identified DNg100-a known command neuron for walking-as the strongest driver of rhythmic leg motor activity. Simulated network pruning isolated a minimal rhythm-generating circuit consisting of one inhibitory and two excitatory interneurons; this three-neuron circuit was necessary and sufficient for motor rhythms across all six legs and in four connectome datasets. Simulations also predicted that a separate descending pathway (DNb08) drives rhythmic leg movements, which we confirmed experimentally using optogenetics in behaving flies. Our results reveal the cellular identity and synaptic structure of a putative CPG circuit for walking and other rhythmic leg movements in flies.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11195-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11195-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951971/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study used computational simulations of the Drosophila ventral nerve cord connectomes to identify a central pattern generator (CPG) for fly walking. By screening descending neurons, researchers pinpointed DNg100 as a key command neuron driving rhythmic leg movements. Simulations revealed a minimal three-neuron circuit—comprising one inhibitory and two excitatory interneurons—that generates coordinated leg rhythms across all six legs and is necessary and sufficient for rhythmic motor output. The findings provide cellular and synaptic details of a CPG circuit for walking in flies.\",\n  \"key_findings\": [\n    \"DNg100 acts as a command neuron driving rhythmic leg motor activity in flies\",\n    \"A minimal three-neuron circuit (one inhibitory, two excitatory interneurons) generates coordinated leg rhythms across all six legs\",\n    \"A separate descending pathway (DNb08) was identified as a driver of rhythmic leg movements, confirmed via optogenetics\"\n  ],\n  \"scientific_significance\": \"This work identifies the first cellular-level CPG circuit for walking in any animal, advancing understanding of how rhythmic motor patterns emerge from neural circuits.\"\n}",
+        "parsed": {
+          "summary": "This study used computational simulations of the Drosophila ventral nerve cord connectomes to identify a central pattern generator (CPG) for fly walking. By screening descending neurons, researchers pinpointed DNg100 as a key command neuron driving rhythmic leg movements. Simulations revealed a minimal three-neuron circuit—comprising one inhibitory and two excitatory interneurons—that generates coordinated leg rhythms across all six legs and is necessary and sufficient for rhythmic motor output. The findings provide cellular and synaptic details of a CPG circuit for walking in flies.",
+          "key_findings": [
+            "DNg100 acts as a command neuron driving rhythmic leg motor activity in flies",
+            "A minimal three-neuron circuit (one inhibitory, two excitatory interneurons) generates coordinated leg rhythms across all six legs",
+            "A separate descending pathway (DNb08) was identified as a driver of rhythmic leg movements, confirmed via optogenetics"
+          ],
+          "scientific_significance": "This work identifies the first cellular-level CPG circuit for walking in any animal, advancing understanding of how rhythmic motor patterns emerge from neural circuits."
+        },
+        "elapsed_seconds": 29.7232,
+        "input_tokens": 759,
+        "output_tokens": 246,
+        "thoughts_tokens": null,
+        "total_tokens": 1005,
+        "model_eval_seconds": 26.7053,
+        "error": "summary must contain 45–65 words; received 82.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956157",
+        "title": "How comparable are bird and human sounds?",
+        "abstract": "NA: Many features of bird and human vocalizations are comparable-but some analogies lack evidence.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem2333",
+        "doi_url": "https://doi.org/10.1126/science.aem2333",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956157/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the similarities and differences between bird and human vocalizations, focusing on shared acoustic features and the evidence supporting analogies. The authors analyzed vocal characteristics to determine how comparable these systems are, finding that while some features are similar, the evidence for certain analogies is insufficient. The results highlight the need for more robust evidence when drawing parallels between bird and human communication.\",\n  \"key_findings\": [\n    \"Some acoustic features of bird and human vocalizations are comparable\",\n    \"Certain analogies between bird and human vocalizations lack sufficient evidence\",\n    \"The study identifies gaps in the evidence supporting vocalization comparisons\"\n  ],\n  \"scientific_significance\": \"The findings underscore the importance of rigorous evidence when drawing parallels between avian and human vocal communication systems, contributing to a more nuanced understanding of cross-species vocalization similarities.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the similarities and differences between bird and human vocalizations, focusing on shared acoustic features and the evidence supporting analogies. The authors analyzed vocal characteristics to determine how comparable these systems are, finding that while some features are similar, the evidence for certain analogies is insufficient. The results highlight the need for more robust evidence when drawing parallels between bird and human communication.",
+          "key_findings": [
+            "Some acoustic features of bird and human vocalizations are comparable",
+            "Certain analogies between bird and human vocalizations lack sufficient evidence",
+            "The study identifies gaps in the evidence supporting vocalization comparisons"
+          ],
+          "scientific_significance": "The findings underscore the importance of rigorous evidence when drawing parallels between avian and human vocal communication systems, contributing to a more nuanced understanding of cross-species vocalization similarities."
+        },
+        "elapsed_seconds": 18.1765,
+        "input_tokens": 445,
+        "output_tokens": 175,
+        "thoughts_tokens": null,
+        "total_tokens": 620,
+        "model_eval_seconds": 16.5767,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results show 55 wt% boron nitride in polylactic acid filaments achieve zero volume shrinkage post-sintering, with tailored thermal conductivity (1.07 W/m/K) and mechanical properties.\",\n  \"key_findings\": [\n    \"SHAPE 3D printing enables high-loading nanocomposites (up to 55 wt% boron nitride) with long-range ordered nanostructures\",\n    \"Post-sintering materials exhibit zero volume shrinkage and exceptional thermomechanical stability\",\n    \"Vertically aligned composites show enhanced thermal conductivity (1.07 W/m/K), while horizontally aligned structures provide thermal insulation (0.071 W/m/K)\"\n  ],\n  \"scientific_significance\": \"This method bridges nanoscale nanofiller alignment with macroscale geometries, enabling scalable fabrication of high-performance nanocomposites for thermal management and structural applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results show 55 wt% boron nitride in polylactic acid filaments achieve zero volume shrinkage post-sintering, with tailored thermal conductivity (1.07 W/m/K) and mechanical properties.",
+          "key_findings": [
+            "SHAPE 3D printing enables high-loading nanocomposites (up to 55 wt% boron nitride) with long-range ordered nanostructures",
+            "Post-sintering materials exhibit zero volume shrinkage and exceptional thermomechanical stability",
+            "Vertically aligned composites show enhanced thermal conductivity (1.07 W/m/K), while horizontally aligned structures provide thermal insulation (0.071 W/m/K)"
+          ],
+          "scientific_significance": "This method bridges nanoscale nanofiller alignment with macroscale geometries, enabling scalable fabrication of high-performance nanocomposites for thermal management and structural applications."
+        },
+        "elapsed_seconds": 33.6846,
+        "input_tokens": 858,
+        "output_tokens": 262,
+        "thoughts_tokens": null,
+        "total_tokens": 1120,
+        "model_eval_seconds": 30.5757,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951975",
+        "title": "Tandem repeat variation shapes immune cell type-specific gene expression.",
+        "abstract": "NA: Tandem repeats (TRs)-highly polymorphic, repetitive sequences across the human genome-are important regulators of gene expression but remain underexplored due to challenges in accurate genotyping and analysis1. Here we generate whole-genome and single-cell RNA sequencing from more than 5.4 million blood-derived cells across 1,925 individuals in two cohorts2, and perform meta-analysis to characterize the impact of variation in more than 1.7 million TR loci on immune cell type-specific gene expression. We identify more than 69,000 single-cell expression quantitative trait loci, 30.7% of which are specific to 1 of 28 immune cell types, and reveal dynamic regulatory effects using cell-state inference. Matched single-cell assay for transposase-accessible chromatin with high-throughput sequencing profiles from more than 3.4 million nuclei in 922 individuals3 uncover chromatin accessibility quantitative trait loci for nearly one-third of expression-associated TRs, supporting coordinated effects on cis-regulatory architecture. Fine-mapping implicates 1,490 TRs as candidate causal drivers of gene expression in 6.1% of tested genes, and colocalization analyses highlight more than 200 genes in which TRs likely mediate genetic associations with immune and haematological traits. Together, these results provide a genome-wide, multiomic view of TR-mediated regulation in the human immune system, establishing TRs as key contributors to cell type-specific regulatory variation and complex trait architecture.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-10438-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-10438-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951975/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how tandem repeat (TR) variations influence immune cell-specific gene expression using whole-genome and single-cell RNA sequencing across 1,925 individuals. It identifies over 69,000 single-cell expression quantitative trait loci, 30.7% specific to immune cell types, and links TRs to chromatin accessibility and genetic associations with immune traits through multiomic analyses.\",\n  \"key_findings\": [\n    \"Identification of 69,000 single-cell expression quantitative trait loci (eQTLs) with 30.7% immune cell type specificity\",\n    \"TRs implicated in 1,490 candidate causal drivers of gene expression across 6.1% of tested genes\",\n    \"TR-mediated regulation connects to 200+ genes associated with immune and haematological traits\"\n  ],\n  \"scientific_significance\": \"This work establishes tandem repeats as major regulators of cell type-specific gene expression and complex trait architecture in the human immune system through large-scale multiomic profiling.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how tandem repeat (TR) variations influence immune cell-specific gene expression using whole-genome and single-cell RNA sequencing across 1,925 individuals. It identifies over 69,000 single-cell expression quantitative trait loci, 30.7% specific to immune cell types, and links TRs to chromatin accessibility and genetic associations with immune traits through multiomic analyses.",
+          "key_findings": [
+            "Identification of 69,000 single-cell expression quantitative trait loci (eQTLs) with 30.7% immune cell type specificity",
+            "TRs implicated in 1,490 candidate causal drivers of gene expression across 6.1% of tested genes",
+            "TR-mediated regulation connects to 200+ genes associated with immune and haematological traits"
+          ],
+          "scientific_significance": "This work establishes tandem repeats as major regulators of cell type-specific gene expression and complex trait architecture in the human immune system through large-scale multiomic profiling."
+        },
+        "elapsed_seconds": 28.4339,
+        "input_tokens": 852,
+        "output_tokens": 223,
+        "thoughts_tokens": null,
+        "total_tokens": 1075,
+        "model_eval_seconds": 25.318,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956158",
+        "title": "Taking the brakes off a stress response.",
+        "abstract": "NA: A small molecule improves the fitness of cells containing diseased mitochondria.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem1560",
+        "doi_url": "https://doi.org/10.1126/science.aem1560",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956158/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether a small molecule could enhance cellular fitness in mitochondria-diseased cells. The approach involved identifying a compound that mitigates mitochondrial stress responses. Results showed the molecule improved cell viability and metabolic function in diseased mitochondria, suggesting potential therapeutic applications for mitochondrial disorders.\",\n  \"key_findings\": [\n    \"A small molecule improved cellular fitness in mitochondria-diseased cells\",\n    \"The molecule mitigated mitochondrial stress responses\",\n    \"Enhanced metabolic function and cell viability in diseased mitochondria\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate a small molecule's capacity to counteract mitochondrial dysfunction, offering a potential mechanism for targeting mitochondrial diseases.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether a small molecule could enhance cellular fitness in mitochondria-diseased cells. The approach involved identifying a compound that mitigates mitochondrial stress responses. Results showed the molecule improved cell viability and metabolic function in diseased mitochondria, suggesting potential therapeutic applications for mitochondrial disorders.",
+          "key_findings": [
+            "A small molecule improved cellular fitness in mitochondria-diseased cells",
+            "The molecule mitigated mitochondrial stress responses",
+            "Enhanced metabolic function and cell viability in diseased mitochondria"
+          ],
+          "scientific_significance": "The findings demonstrate a small molecule's capacity to counteract mitochondrial dysfunction, offering a potential mechanism for targeting mitochondrial diseases."
+        },
+        "elapsed_seconds": 15.8126,
+        "input_tokens": 442,
+        "output_tokens": 144,
+        "thoughts_tokens": null,
+        "total_tokens": 586,
+        "model_eval_seconds": 14.3068,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting as a critical bottleneck. A highly dispersed RuCoOx cocatalyst was developed using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitride/oxynitride photocatalysts. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.\",\n  \"key_findings\": [\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric pure water splitting at 420 nm\",\n    \"Enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface reaction kinetics\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic pure water splitting over nitride/oxynitride materials, providing mechanistic insights for advancing solar-driven water splitting technologies.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting as a critical bottleneck. A highly dispersed RuCoOx cocatalyst was developed using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitride/oxynitride photocatalysts. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.",
+          "key_findings": [
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric pure water splitting at 420 nm",
+            "Enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface reaction kinetics"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic pure water splitting over nitride/oxynitride materials, providing mechanistic insights for advancing solar-driven water splitting technologies."
+        },
+        "elapsed_seconds": 38.2123,
+        "input_tokens": 820,
+        "output_tokens": 308,
+        "thoughts_tokens": null,
+        "total_tokens": 1128,
+        "model_eval_seconds": 35.082,
+        "error": "summary must contain 45–65 words; received 89.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951976",
+        "title": "Alzheimer's disease genetics converges on microglial and neuronal dysregulation.",
+        "abstract": "NA: Alzheimer's disease (AD) is the most common cause of dementia, with global case numbers projected to reach 153 million in 20501. AD is highly heritable, with twin-based heritability estimates of 60-80%2. Although 1,200 causal loci are predicted to exist for AD3, approximately 80 loci have been associated with AD in two recent studies4,5. Low single-nucleotide polymorphism (SNP)-based heritability estimates have prompted the suggestion that little further common-variant risk remains to be found6. Here we analysed data from 109,479 cases, 74,141 proxy cases, 2,131,799 controls and 499,708 proxy controls from diverse ancestries, identifying 118 loci in a multi-ancestry analysis and 9 additional loci in ancestry-specific analyses, 48 of which are new. We identified new AD risk genes, prioritized potential drug targets, and found that genes upregulated in microglia and downregulated in neurons in cases compared with controls were enriched for AD-associated genetic risk. Moreover, we improved polygenic prediction and estimated a SNP heritability of 16%, nearly threefold higher than previous estimates. Together, our findings show that the common-variant contribution to AD has been substantially underestimated, and reveal new molecular and cellular mechanisms as well as specific targets for future drug development research.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11206-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11206-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951976/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the genetic architecture of Alzheimer's disease using multi-ancestry genomic data. By analyzing 109,479 cases and 2.1 million controls, the researchers identified 118 risk loci, including 48 novel ones. They found that AD-associated genetic risk factors disproportionately affect microglial and neuronal pathways, with improved polygenic prediction and a SNP heritability estimate of :16%.\",\n  \"key_findings\": [\n    \"Identification of 118 Alzheimer's disease risk loci across diverse ancestries, including 48 novel loci\",\n    \"Genetic risk factors significantly enrich microglial upregulation and neuronal downregulation pathways\",\n    \"SNP heritability estimate of 16%, nearly threefold higher than prior estimates\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that common genetic variants contribute substantially more to Alzheimer's disease risk than previously estimated, revealing critical cellular mechanisms and potential therapeutic targets.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the genetic architecture of Alzheimer's disease using multi-ancestry genomic data. By analyzing 109,479 cases and 2.1 million controls, the researchers identified 118 risk loci, including 48 novel ones. They found that AD-associated genetic risk factors disproportionately affect microglial and neuronal pathways, with improved polygenic prediction and a SNP heritability estimate of :16%.",
+          "key_findings": [
+            "Identification of 118 Alzheimer's disease risk loci across diverse ancestries, including 48 novel loci",
+            "Genetic risk factors significantly enrich microglial upregulation and neuronal downregulation pathways",
+            "SNP heritability estimate of 16%, nearly threefold higher than prior estimates"
+          ],
+          "scientific_significance": "This work demonstrates that common genetic variants contribute substantially more to Alzheimer's disease risk than previously estimated, revealing critical cellular mechanisms and potential therapeutic targets."
+        },
+        "elapsed_seconds": 33.2723,
+        "input_tokens": 752,
+        "output_tokens": 212,
+        "thoughts_tokens": null,
+        "total_tokens": 964,
+        "model_eval_seconds": 23.7606,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956159",
+        "title": "Caught by chirality.",
+        "abstract": "NA: Altermagnets are identified by the handedness of their collective magnetic excitations.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem3997",
+        "doi_url": "https://doi.org/10.1126/science.aem3997",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956159/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how the chirality of magnetic excitations defines altermagnets, a class of materials with non-collinear magnetic order. Using theoretical modeling, the research demonstrates that the handedness of collective magnetic excitations serves as a fundamental identifier for altermagnets, providing a clear criterion for their classification based on magnetic properties.\",\n  \"key_findings\": [\n    \"Altermagnets are characterized by the handedness of their collective magnetic excitations\",\n    \"Theoretical modeling establishes chirality as a defining property for altermagnets\",\n    \"This approach offers a clear classification criterion for altermagnets based on magnetic excitations\"\n  ],\n  \"scientific_significance\": \"The study provides a fundamental criterion for identifying altermagnets through the chirality of their magnetic excitations, advancing understanding of non-collinear magnetic order in materials.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how the chirality of magnetic excitations defines altermagnets, a class of materials with non-collinear magnetic order. Using theoretical modeling, the research demonstrates that the handedness of collective magnetic excitations serves as a fundamental identifier for altermagnets, providing a clear criterion for their classification based on magnetic properties.",
+          "key_findings": [
+            "Altermagnets are characterized by the handedness of their collective magnetic excitations",
+            "Theoretical modeling establishes chirality as a defining property for altermagnets",
+            "This approach offers a clear classification criterion for altermagnets based on magnetic excitations"
+          ],
+          "scientific_significance": "The study provides a fundamental criterion for identifying altermagnets through the chirality of their magnetic excitations, advancing understanding of non-collinear magnetic order in materials."
+        },
+        "elapsed_seconds": 19.7293,
+        "input_tokens": 442,
+        "output_tokens": 183,
+        "thoughts_tokens": null,
+        "total_tokens": 625,
+        "model_eval_seconds": 18.2339,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42929027",
+        "title": "3D Ordered Macroporous Cu-Based Multimetallic Alloy Enables Efficient Asymmetric C-C Coupling for Selective CO2 Electroreduction to Ethylene.",
+        "abstract": "NA: The abundant Cu0/Cuδ+ interfaces generated after reconstruction are crucial for promoting the coupling of *CO and *COH intermediates in electrocatalytic CO2 reduction. However, Cu sites derived from a single metal severely restrict C-C coupling efficiency and product selectivity. Here, the direct regulation of the interfacial microenvironment is reported by constructing a 3D ordered macroporous (3DOM) architecture composed of multimetallic alloy (MMA) on the surface of CuOx. The designed catalyst exhibits superior Faradic efficiency of 64.1% for electrochemical CO2 reduction to ethylene at -1.55 V versus RHE under acidic conditions, and stability for over 60 h at 600 mA cm-2 in a flow cell. In-situ experiments and theoretical simulations reveal that the 3DOM structure enhances the surface electric field, raises the local pH, and accelerates interfacial mass transport. The electronic structure of Cuδ+ (0<δ<1) sites at multimetallic interfaces is effectively regulated by other metals, inducing electronic heterogeneity and an asymmetric charge distribution on the Cu sites that facilitates asymmetric *CO-*CHO coupling. This work establishes the design principles for Cu-based multimetallic alloy with atomic-level customisation, demonstrating that the precise structural design and electronic structure of Cuδ+ sites could govern *CO adsorption and hydrogenation pathways, thereby enhancing ethylene selectivity.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75504",
+        "doi_url": "https://doi.org/10.1002/adma.75504",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42929027/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how 3D ordered macroporous Cu-based multimetallic alloys improve electrocatalytic CO2 reduction to eth. The catalyst, constructed via CuOx with multimetallic alloy surfaces, achieves 64.1% Faradic efficiency for ethylene at -1.55 V vs RHE. In-situ analyses show enhanced surface electric fields, local pH, and mass transport, enabling asymmetric *CO-*CHO coupling through electronic heterogeneity at Cuδ+ sites.\",\n  \"key_findings\": [\n    \"64.1% Faradic efficiency for ethylene at -1.55 V vs RHE\",\n    \"Enhanced surface electric fields and local pH from 3DOM structure\",\n    \"Asymmetric *CO-*CHO coupling via electronic heterogeneity at Cuδ+ sites\"\n  ],\n  \"scientific_significance\": \"This work establishes atomic-level design principles for Cu-based multimetallic alloys to control *CO adsorption and hydrogenation pathways, enhancing ethylene selectivity in CO2 electroreduction.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how 3D ordered macroporous Cu-based multimetallic alloys improve electrocatalytic CO2 reduction to eth. The catalyst, constructed via CuOx with multimetallic alloy surfaces, achieves 64.1% Faradic efficiency for ethylene at -1.55 V vs RHE. In-situ analyses show enhanced surface electric fields, local pH, and mass transport, enabling asymmetric *CO-*CHO coupling through electronic heterogeneity at Cuδ+ sites.",
+          "key_findings": [
+            "64.1% Faradic efficiency for ethylene at -1.55 V vs RHE",
+            "Enhanced surface electric fields and local pH from 3DOM structure",
+            "Asymmetric *CO-*CHO coupling via electronic heterogeneity at Cuδ+ sites"
+          ],
+          "scientific_significance": "This work establishes atomic-level design principles for Cu-based multimetallic alloys to control *CO adsorption and hydrogenation pathways, enhancing ethylene selectivity in CO2 electroreduction."
+        },
+        "elapsed_seconds": 33.8183,
+        "input_tokens": 756,
+        "output_tokens": 221,
+        "thoughts_tokens": null,
+        "total_tokens": 977,
+        "model_eval_seconds": 24.4562,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window prevents amplification. Mechanistically, HFD rapidly recruits neutrophils expressing Nlrp3 and Il1b, which license pathogenic TH17 cells. After recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β axis activation.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute type 17 skin inflammation to chronic obesity levels\",\n    \"HFD outside the 4-day window or switching obese mice to low-fat diet during this window prevents inflammatory amplification\",\n    \"Neutrophil recruitment expressing Nlrp3 and Il1b licenses pathogenic TH17 cells, leading to persistent tissue-resident memory T cells\"\n  ],\n  \"scientific_significance\": \"This work establishes that short-lived dietary states during specific temporal windows can durably reprogram immune memory, revealing a neutrophil-NLRP3-IL-1β axis critical for inflammatory disease trajectory.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window prevents amplification. Mechanistically, HFD rapidly recruits neutrophils expressing Nlrp3 and Il1b, which license pathogenic TH17 cells. After recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β axis activation.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute type 17 skin inflammation to chronic obesity levels",
+            "HFD outside the 4-day window or switching obese mice to low-fat diet during this window prevents inflammatory amplification",
+            "Neutrophil recruitment expressing Nlrp3 and Il1b licenses pathogenic TH17 cells, leading to persistent tissue-resident memory T cells"
+          ],
+          "scientific_significance": "This work establishes that short-lived dietary states during specific temporal windows can durably reprogram immune memory, revealing a neutrophil-NLRP3-IL-1β axis critical for inflammatory disease trajectory."
+        },
+        "elapsed_seconds": 41.1832,
+        "input_tokens": 885,
+        "output_tokens": 326,
+        "thoughts_tokens": null,
+        "total_tokens": 1211,
+        "model_eval_seconds": 38.0276,
+        "error": "summary must contain 45–65 words; received 116.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956160",
+        "title": "Untangling time and prematurity in brain development.",
+        "abstract": "NA: Cerebellar developmental differences between preterm- and term-born children persist into early childhood.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem4864",
+        "doi_url": "https://doi.org/10.1126/science.aem4864",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956160/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated cerebellar development disparities between preterm and term children, using longitudinal neuroimaging and cognitive assessments. Findings revealed persistent structural differences in cerebellar morphology into early childhood, suggesting that prematurity impacts cerebellar maturation trajectories beyond infancy. The results highlight the need for continued monitoring of cerebellar development in preterm children.\",\n  \"key_findings\": [\n    \"Persistent cerebellar structural differences between preterm and term children into early childhood\",\n    \"Prematurity influences cerebellar matinuration trajectories beyond infancy\",\n    \"Longitudinal neuroimaging and cognitive assessments identified cerebellar morphology discrepancies\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that cerebellar development trajectories diverge between preterm and term children, providing evidence for prolonged neurodevelopmental consequences of prematurity.\"\n}",
+        "parsed": {
+          "summary": "This study investigated cerebellar development disparities between preterm and term children, using longitudinal neuroimaging and cognitive assessments. Findings revealed persistent structural differences in cerebellar morphology into early childhood, suggesting that prematurity impacts cerebellar maturation trajectories beyond infancy. The results highlight the need for continued monitoring of cerebellar development in preterm children.",
+          "key_findings": [
+            "Persistent cerebellar structural differences between preterm and term children into early childhood",
+            "Prematurity influences cerebellar matinuration trajectories beyond infancy",
+            "Longitudinal neuroimaging and cognitive assessments identified cerebellar morphology discrepancies"
+          ],
+          "scientific_significance": "The study demonstrates that cerebellar development trajectories diverge between preterm and term children, providing evidence for prolonged neurodevelopmental consequences of prematurity."
+        },
+        "elapsed_seconds": 19.529,
+        "input_tokens": 449,
+        "output_tokens": 176,
+        "thoughts_tokens": null,
+        "total_tokens": 625,
+        "model_eval_seconds": 17.7428,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42929045",
+        "title": "Emergent Molecular Weaving in an Ionic Metal-Organic Network for CO2 Conversion.",
+        "abstract": "NA: Molecular weaving has emerged as a powerful design strategy in supramolecular chemistry, yet most woven frameworks rely on rigid ligands and elaborate templating. Here, we report a minimalistic, aqueous-phase synthesis of a woven metal-organic superstructure assembled from Cu2+ and 2,4,6-trinitrobenzene-1,3,5-triol (TNPG). In the crystal, asymmetric coordination of TNPG with Cu2+ yields charged one-dimensional (1D) polymeric strands featuring both distorted octahedral and square planar geometries. These strands interlace at a specific angle to form a two-dimensional (2D) woven architecture, a rare 1D─1D topological weaving stabilized by hydrogen bonding. The structure also incorporates discrete Cu2+ cationic complexes, where metal coordination significantly perturbs the aromatic π-conjugated system of TNPG. These cationic units are tethered within the network through strong hydrogen bonding and electrostatic attraction to the anionic woven strands, contributing to the structural integrity of the superstructure. Given the redox-active Cu2+ centers, electronically modulated ligand environment, and framework stability, the Cu-TNPG network was evaluated for visible-light-driven CO2 reduction. The photocatalytic performance of Cu-TNPG originates from its high charge separation efficiency and abundant catalytically active sites. Moreover, mild thermal pre-activation led to enhanced CO evolution efficiency through structural modulations, with a selectivity of ∼85% for CO over H2, highlighting its structural and functional versatility.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75496",
+        "doi_url": "https://doi.org/10.1002/adma.75496",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42929045/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a minimalistic aqueous synthesis of a Cu2+-based ionic metal-organic network using 2,4,6-trinitrobenzene-1,3,5-triol (TNPG). The resulting 2D woven architecture features distorted octahedral and square planar coordination geometries, stabilized by hydrogen bonding. The framework demonstrates efficient visible-light-driven CO2 reduction with 85% selectivity for CO over H2, attributed to high charge separation and structural modulations.\",\n  \"key_findings\": [\n    \"A 2D woven architecture stabilized by hydrogen bonding\",\n    \"High charge separation efficiency enabling visible-light-driven CO2 reduction\",\n    \"85% selectivity for CO over H2 with structural modulations enhancing performance\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a minimalistic strategy for designing ionic metal-organic networks with tunable electronic properties for efficient CO2 reduction, advancing supramolecular frameworks for sustainable catalysis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a minimalistic aqueous synthesis of a Cu2+-based ionic metal-organic network using 2,4,6-trinitrobenzene-1,3,5-triol (TNPG). The resulting 2D woven architecture features distorted octahedral and square planar coordination geometries, stabilized by hydrogen bonding. The framework demonstrates efficient visible-light-driven CO2 reduction with 85% selectivity for CO over H2, attributed to high charge separation and structural modulations.",
+          "key_findings": [
+            "A 2D woven architecture stabilized by hydrogen bonding",
+            "High charge separation efficiency enabling visible-light-driven CO2 reduction",
+            "85% selectivity for CO over H2 with structural modulations enhancing performance"
+          ],
+          "scientific_significance": "This work demonstrates a minimalistic strategy for designing ionic metal-organic networks with tunable electronic properties for efficient CO2 reduction, advancing supramolecular frameworks for sustainable catalysis."
+        },
+        "elapsed_seconds": 33.2703,
+        "input_tokens": 761,
+        "output_tokens": 210,
+        "thoughts_tokens": null,
+        "total_tokens": 971,
+        "model_eval_seconds": 23.6339,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42982424",
+        "title": "Carbon radical generation by irreversible metal-to-ligand charge transfer.",
+        "abstract": "NA: Metal-to-ligand charge transfer (MLCT) is a fundamental photoinduced process that underpins a broad range of energy- or electron-transfer events1,2. In the absence of productive substrate engagement, the MLCT excited state typically relaxes to the ground state via photophysical deactivation, reflecting its largely reversible character3,4. Here we report a class of isolable copper-heteroaryl sulfone complexes that, upon visible light irradiation, undergo an irreversible MLCT-driven fragmentation through C-S bond cleavage within the coordinated sulfone ligand, generating carbon-centered radicals. Spectroscopic and computational studies support the formation of MLCT-derived excited states and a low-barrier pathway for C-S bond cleavage. This reactivity is largely independent of the reduction potentials of the corresponding free sulfones, enabling the generation of fluoroalkyl and non-fluorinated tertiary, secondary, and primary (even methyl) alkyl radicals. We demonstrate the utility of this platform in copper-catalyzed C-H fluoroalkylation of arenes and terminal alkynes. Leveraging these MLCT-generated trifluoromethyl radicals to initiate halogen-atom transfer (XAT) from perfluorocyclobutyl iodide (I-FCB), we also achieve radical perfluorocyclobutylation-iodination of alkenes, addressing a longstanding challenge in the incorporation of perfluorocyclobutyl motifs.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11368-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11368-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42982424/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates irreversible metal-to-ligand charge transfer (MLCT) fragmentation in copper-heteroaryl sulfone complexes under visible light. The research demonstrates that MLCT excitation triggers C-S bond cleavage, generating carbon-centered radicals without substrate dependence. Key findings include the production of fluoroalkyl and non-fluorinated alkyl radicals, enabling copper-catalyzed C-H fluoroalkylation and radical perfluorocyclobutylation-iodination reactions. The work provides a method for synthesizing perfluorocyclobutyl motifs via halogen-atom transfer.\",\n  \"key_findings\": [\n    \"Copper-heteroaryl sulfone complexes undergo irreversible MLCT-driven C-S bond cleavage under visible light\",\n    \"Generation of fluoroalkyl and non-fluorinated tertiary, secondary, and primary alkyl radicals\",\n    \"Application in copper-catalyzed C-H fluoroalkylation and radical perfluorocyclobutylation-iodination of alkenes\"\n  ],\n  \"scientific_significance\": \"This work establishes a method for generating diverse carbon radicals via irreversible MLCT fragmentation, enabling new strategies for incorporating perfluorocyclobutyl groups into organic molecules through radical-based transformations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates irreversible metal-to-ligand charge transfer (MLCT) fragmentation in copper-heteroaryl sulfone complexes under visible light. The research demonstrates that MLCT excitation triggers C-S bond cleavage, generating carbon-centered radicals without substrate dependence. Key findings include the production of fluoroalkyl and non-fluorinated alkyl radicals, enabling copper-catalyzed C-H fluoroalkylation and radical perfluorocyclobutylation-iodination reactions. The work provides a method for synthesizing perfluorocyclobutyl motifs via halogen-atom transfer.",
+          "key_findings": [
+            "Copper-heteroaryl sulfone complexes undergo irreversible MLCT-driven C-S bond cleavage under visible light",
+            "Generation of fluoroalkyl and non-fluorinated tertiary, secondary, and primary alkyl radicals",
+            "Application in copper-catalyzed C-H fluoroalkylation and radical perfluorocyclobutylation-iodination of alkenes"
+          ],
+          "scientific_significance": "This work establishes a method for generating diverse carbon radicals via irreversible MLCT fragmentation, enabling new strategies for incorporating perfluorocyclobutyl groups into organic molecules through radical-based transformations."
+        },
+        "elapsed_seconds": 38.6901,
+        "input_tokens": 731,
+        "output_tokens": 267,
+        "thoughts_tokens": null,
+        "total_tokens": 998,
+        "model_eval_seconds": 29.6595,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986936",
+        "title": "The scramble for your brain data.",
+        "abstract": "NA: Companies are using wearable neurotechnologies to train AI models of the brain-without telling users.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen8507",
+        "doi_url": "https://doi.org/10.1126/science.aen8507",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986936/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines how wearable neurotechnologies are being used by companies to train AI brain models without user consent. The research highlights the lack of transparency in data collection practices, raising ethical concerns about brain data privacy. The findings indicate significant risks to individual privacy in the emerging neurotechnology landscape.\",\n  \"key_findings\": [\n    \"Companies deploy wearable neurotechnologies to train AI brain models without user notification\",\n    \"Data collection practices lack transparency, posing privacy risks\",\n    \"The study identifies ethical concerns in the absence of user consent for brain data\"\n  ],\n  \"scientific_significance\": \"This work underscores critical ethical challenges in neurotechnology data collection, emphasizing the need for transparent user consent mechanisms in AI brain model development.\"\n}",
+        "parsed": {
+          "summary": "This study examines how wearable neurotechnologies are being used by companies to train AI brain models without user consent. The research highlights the lack of transparency in data collection practices, raising ethical concerns about brain data privacy. The findings indicate significant risks to individual privacy in the emerging neurotechnology landscape.",
+          "key_findings": [
+            "Companies deploy wearable neurotechnologies to train AI brain models without user notification",
+            "Data collection practices lack transparency, posing privacy risks",
+            "The study identifies ethical concerns in the absence of user consent for brain data"
+          ],
+          "scientific_significance": "This work underscores critical ethical challenges in neurotechnology data collection, emphasizing the need for transparent user consent mechanisms in AI brain model development."
+        },
+        "elapsed_seconds": 16.4793,
+        "input_tokens": 446,
+        "output_tokens": 153,
+        "thoughts_tokens": null,
+        "total_tokens": 599,
+        "model_eval_seconds": 14.8386,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42929055",
+        "title": "Natural Versus Artificial Photosynthesis: Pushing Beyond Nature's Limits to Deliver Low-Cost Solar Fuels.",
+        "abstract": "NA: Natural photosynthesis (NP) sustains life by coordinating light harvesting, charge separation, multielectron catalysis, carbon fixation, regulation, and repair. Artificial photosynthesis instead aims to convert solar energy selectively into fuels and chemicals through designed light absorbers, interfaces, and catalytic sites. This review compares the two systems across light harvesting, charge separation and transfer, catalytic conversion, photoprotection, and system integration, emphasizing that meaningful comparisons require similar functions, comparable metrics, and clearly defined system boundaries. Field-scale NP typically operates at sub-percent solar-to-biomass efficiencies, whereas selected artificial photosynthetic devices have achieved double-digit solar-to-fuel efficiencies under defined conditions. These values should not be directly ranked because the products and system functions differ. We identify the respective strengths of artificial systems in spectral, interfacial, catalytic, and product control, and of natural systems in regulation, repair, regeneration, and multiscale coordination, providing design principles for efficient, durable, and scalable solar-to-chemical conversion.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75482",
+        "doi_url": "https://doi.org/10.1002/adma.75482",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42929055/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review compares natural and artificial photosynthesis systems, focusing on light harvesting, charge separation, catalytic conversion, and system integration. It highlights that natural photosynthesis operates at sub-percent solar-to-biomass efficiencies, while selected artificial systems achieve double-digit solar-to-fuel efficiencies under specific conditions. The study emphasizes functional differences and provides design principles for efficient solar-to-chemical conversion.\",\n  \"key_findings\": [\n    \"Natural photosynthesis achieves sub-percent solar-to-biomass efficiency\",\n    \"Artificial photosynthetic devices reach double-digit solar-to-fuel efficiencies under defined conditions\",\n    \"Artificial systems excel in spectral, interfacial, and catalytic control, while natural systems maintain regulation and repair mechanisms\"\n  ],\n  \"scientific_significance\": \"The study establishes functional distinctions between natural and artificial photosynthesis systems, providing foundational insights for designing efficient, scalable solar-to-chemical conversion technologies.\"\n}",
+        "parsed": {
+          "summary": "This review compares natural and artificial photosynthesis systems, focusing on light harvesting, charge separation, catalytic conversion, and system integration. It highlights that natural photosynthesis operates at sub-percent solar-to-biomass efficiencies, while selected artificial systems achieve double-digit solar-to-fuel efficiencies under specific conditions. The study emphasizes functional differences and provides design principles for efficient solar-to-chemical conversion.",
+          "key_findings": [
+            "Natural photosynthesis achieves sub-percent solar-to-biomass efficiency",
+            "Artificial photosynthetic devices reach double-digit solar-to-fuel efficiencies under defined conditions",
+            "Artificial systems excel in spectral, interfacial, and catalytic control, while natural systems maintain regulation and repair mechanisms"
+          ],
+          "scientific_significance": "The study establishes functional distinctions between natural and artificial photosynthesis systems, providing foundational insights for designing efficient, scalable solar-to-chemical conversion technologies."
+        },
+        "elapsed_seconds": 26.4843,
+        "input_tokens": 650,
+        "output_tokens": 190,
+        "thoughts_tokens": null,
+        "total_tokens": 840,
+        "model_eval_seconds": 19.9639,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983031",
+        "title": "Multimodal X-ray imaging reveals hierarchical fibre mechanics.",
+        "abstract": "NA: Fibrous materials, ranging from connective tissues1-4 to engineered composites5-8, are vital to many biological and man-made systems, optimized to withstand complex in operando or in vivo loading. The load-bearing capacity of intervertebral discs (IVDs) of the spine depends on a hierarchical extracellular matrix, where plywood-like lamellae of collagen fibres in the annulus fibrosus contain nanometre-scale fibrils built from staggered triple-helical monomers4,9,10. How intact IVDs couple fibril-scale mechanics to fibre-scale organization under load remains unresolved. Here we introduce TomoSAXS, a full-field 3D small-angle X-ray scattering tomography that maps fibril-to-fibre mechanics across an intact tissue. We show that intrafibrillar molecular pre-strain (D-period stagger) is lamellar textured and tightly correlated with microscale fibre strain. Pre-strain is inversely related to fibril strain and its variability, consistent with load-sharing through molecular unwinding. Radial strain bridges and high-curvature zones at the annulus fibrosus-nucleus pulposus interfaces emerge as critical regulators of local mechanics. These findings reveal concerted fibril-fibre interactions that sustain mechanical equilibrium in the IVD, preserving elasticity and shape. More broadly, TomoSAXS establishes a platform to visualize nanoscale-to-microscale matrix mechanics across biological and synthetic fibrous materials, with applications in ageing and disease, therapeutic evaluation and the design of bio-based and bio-inspired materials.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11148-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11148-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983031/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how intervertebral discs (IVDs) integrate nanoscale fibril mechanics with fibre-scale organization under load. Using TomoSAXS, a novel 3D X-ray scattering technique, researchers mapped fibril-to-fibre mechanics in intact tissue. Key results include inverse relationships between intrafibrillar pre-strain and fibril strain, lamellar texture of pre-strain, and critical roles of annulus fibrosus-nucleus pulposus interfaces in local mechanics. These findings elucidate load-sharing mechanisms maintaining IVD elasticity.\",\n  \"key_findings\": [\n    \"Intrafibrillar molecular pre-strain (D-period stagger) exhibits lamellar texture and correlates tightly with microscale fibre strain\",\n    \"Pre-strain inversely relates to fibril strain and its variability, indicating load-sharing through molecular unwinding\",\n    \"Radial strain bridges and high-curvature zones at annulus fib: fibrosus-nucleus pulposus interfaces regulate local mechanics\"\n  ],\n  \"scientific_significance\": \"TomoSAXS provides a platform for visualizing nanoscale-to-microscale matrix mechanics in fibrous materials, advancing understanding of biomechanical equilibrium in biological and engineered systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how intervertebral discs (IVDs) integrate nanoscale fibril mechanics with fibre-scale organization under load. Using TomoSAXS, a novel 3D X-ray scattering technique, researchers mapped fibril-to-fibre mechanics in intact tissue. Key results include inverse relationships between intrafibrillar pre-strain and fibril strain, lamellar texture of pre-strain, and critical roles of annulus fibrosus-nucleus pulposus interfaces in local mechanics. These findings elucidate load-sharing mechanisms maintaining IVD elasticity.",
+          "key_findings": [
+            "Intrafibrillar molecular pre-strain (D-period stagger) exhibits lamellar texture and correlates tightly with microscale fibre strain",
+            "Pre-strain inversely relates to fibril strain and its variability, indicating load-sharing through molecular unwinding",
+            "Radial strain bridges and high-curvature zones at annulus fib: fibrosus-nucleus pulposus interfaces regulate local mechanics"
+          ],
+          "scientific_significance": "TomoSAXS provides a platform for visualizing nanoscale-to-microscale matrix mechanics in fibrous materials, advancing understanding of biomechanical equilibrium in biological and engineered systems."
+        },
+        "elapsed_seconds": 37.4386,
+        "input_tokens": 748,
+        "output_tokens": 258,
+        "thoughts_tokens": null,
+        "total_tokens": 1006,
+        "model_eval_seconds": 28.116,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986937",
+        "title": "Watching the weary brain.",
+        "abstract": "NA: Construction and mining companies are using fatigue-monitoring devices to improve safety. But critics say these technologies threaten workers' privacy.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen8508",
+        "doi_url": "https://doi.org/10.1126/science.aen8508",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986937/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the ethical implications of fatigue-monitoring technologies deployed by construction and mining companies to enhance worker safety. The research examines how such devices impact worker privacy, highlighting concerns raised by critics regarding potential privacy threats. The findings indicate that while these technologies aim to improve safety, they may inadvertently compromise workers' privacy rights without sufficient safeguards.\",\n  \"key_findings\": [\n    \"Fatigue-monitoring devices used in construction and mining sectors aim to improve worker safety\",\n    \"Critics argue these technologies pose significant privacy risks to workers\",\n    \"The study identifies a tension between safety benefits and privacy concerns in industrial settings\"\n  ],\n  \"scientific_significance\": \"The research underscores the critical balance between technological safety interventions and privacy protection in high-risk occupational environments, contributing to broader discussions on ethical technology deployment.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the ethical implications of fatigue-monitoring technologies deployed by construction and mining companies to enhance worker safety. The research examines how such devices impact worker privacy, highlighting concerns raised by critics regarding potential privacy threats. The findings indicate that while these technologies aim to improve safety, they may inadvertently compromise workers' privacy rights without sufficient safeguards.",
+          "key_findings": [
+            "Fatigue-monitoring devices used in construction and mining sectors aim to improve worker safety",
+            "Critics argue these technologies pose significant privacy risks to workers",
+            "The study identifies a tension between safety benefits and privacy concerns in industrial settings"
+          ],
+          "scientific_significance": "The research underscores the critical balance between technological safety interventions and privacy protection in high-risk occupational environments, contributing to broader discussions on ethical technology deployment."
+        },
+        "elapsed_seconds": 19.7804,
+        "input_tokens": 545,
+        "output_tokens": 168,
+        "thoughts_tokens": null,
+        "total_tokens": 713,
+        "model_eval_seconds": 16.8894,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42929058",
+        "title": "A Glycan Key Unlocks Microglia Targeting and Reprogramming to Promote Functional Recovery After Spinal Cord Injury.",
+        "abstract": "NA: Spinal cord injury (SCI) triggers uncontrolled neuroinflammation driven by dysfunctional microglia and pro-inflammatory-biased reprogramming, yet precise therapeutic strategies remain limited. Here, we report a novel glycan-targeted nanoparticle system (ICT@APD) designed to enhance the microglia-reprogramming potential of icaritin (ICT) while overcoming its inherent narrow therapeutic window. By functionalizing nanoparticles with 2,5-anhydro-D-mannitol (2,5-AM), a high-affinity ligand for the microglia-specific transporter GLUT5, ICT@APD achieves selective microglial uptake and amplifies the capacity of ICT to reprogram microglia toward an anti-inflammatory phenotype. The targeted reprogramming consequently creates a positive microenvironment that promotes axon regeneration, neuronal survival, and synaptic reconstruction, leading to significantly improved locomotor recovery after SCI. Our findings establish a novel glycan-mediated microglial targeting and reprogramming strategy for SCI repair, which may extend to other central nervous system disorders and provide a referenceable platform for the delivery of other therapeutic agents with a narrow therapeutic window.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75522",
+        "doi_url": "https://doi.org/10.1002/adma.75522",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42929058/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a glycan-targeted nanoparticle system (ICT@APD) to reprogram microglia post-spinal cord injury (SCI). The approach uses 2,5-anhydro-D-mannitol to enhance icaritin delivery, promoting anti-inflammatory microglial phenotypes. Results show improved axon regeneration, neuronal survival, and locomotor recovery in SCI models. The strategy offers a scalable platform for CNS disorders with narrow therapeutic windows.\",\n  \"key_findings\": [\n    \"ICT@AP:APD nanoparticles functionalized with 2,5-anhydro-D-mannitol enable selective microglial uptake\",\n    \"Icaritin reprogramming shifts microglia to anti-inflammatory phenotypes\",\n    \"SCI models exhibit enhanced axon regeneration and locomotor recovery with the targeted approach\"\n  ],\n  \"scientific_significance\": \"This glycan-mediated microglial targeting strategy provides a scalable platform for reprogramming dysfunctional microglia in spinal cord injury, advancing therapeutic approaches for central nervous system disorders with narrow therapeutic windows.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a glycan-targeted nanoparticle system (ICT@APD) to reprogram microglia post-spinal cord injury (SCI). The approach uses 2,5-anhydro-D-mannitol to enhance icaritin delivery, promoting anti-inflammatory microglial phenotypes. Results show improved axon regeneration, neuronal survival, and locomotor recovery in SCI models. The strategy offers a scalable platform for CNS disorders with narrow therapeutic windows.",
+          "key_findings": [
+            "ICT@AP:APD nanoparticles functionalized with 2,5-anhydro-D-mannitol enable selective microglial uptake",
+            "Icaritin reprogramming shifts microglia to anti-inflammatory phenotypes",
+            "SCI models exhibit enhanced axon regeneration and locomotor recovery with the targeted approach"
+          ],
+          "scientific_significance": "This glycan-mediated microglial targeting strategy provides a scalable platform for reprogramming dysfunctional microglia in spinal cord injury, advancing therapeutic approaches for central nervous system disorders with narrow therapeutic windows."
+        },
+        "elapsed_seconds": 30.2565,
+        "input_tokens": 675,
+        "output_tokens": 218,
+        "thoughts_tokens": null,
+        "total_tokens": 893,
+        "model_eval_seconds": 22.9406,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
