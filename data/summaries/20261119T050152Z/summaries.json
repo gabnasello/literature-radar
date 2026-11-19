@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261119T050152Z",
+  "generated_at_utc": "2026-11-19 05:14:31 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 324,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42895128",
+        "title": "Closed Pores as Internal Stress-Regulation Units for Practical Silicon-Carbon Anodes.",
+        "abstract": "NA: Silicon-carbon anodes are among the most promising candidates for high-energy lithium-ion batteries, yet their practical implementation remains constrained by lithiation-induced outward deformation, electrode cracking, and persistent interphase degradation. Here, closed pores are introduced as internal stress-regulation units to address the coupled mechanical and electrochemical instability of silicon-carbon anodes. Heteroatom-doped carbon hosts are engineered to contain abundant closed nanopores, which redirect expansion-induced stress toward the particle interior and suppress macroscopic electrode swelling. Meanwhile, heteroatom doping enlarges the carbon interlayer spacing and enhances electronic conductivity, enabling accelerated and more balanced Li+ insertion/extraction kinetics. As a representative material, the nitrogen-doped silicon-carbon composite delivers a reversible capacity of 1756.5 mAh g- 1, an initial Coulombic efficiency of 90.2%, and 868.4 mAh g-1 at 3 C, while reducing electrode thickness expansion from 38.4% to 13.1% after 50 cycles. The material is further produced in 6 kg batches and enables 2 Ah LiNi0.8Co0.1Mn0.1O2 (NCM811) pouch cells with 80.0% capacity retention after 1200 cycles and only 8.4% thickness growth after 900 cycles. Machine-learning-guided phosphorus doping further validates the transferability of the closed-pore design. This work establishes closed-pore stress regulation as a scalable structural strategy for practical low-expansion silicon-carbon anodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75427",
+        "doi_url": "https://doi.org/10.1002/adma.75427",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42895128/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress internally, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 capacity, 90.2% initial efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. This approach enables scalable production and stable cycling in high-energy batteries.\",\n  \"key_findings\": [\n    \"Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress internally, reducing electrode swelling\",\n    \"Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency\",\n    \"The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles for NCM811 pouch cells\"\n  ],\n  \"scientific_significance\": \"This work establishes closed-pore engineering as a scalable strategy for mechanically stable silicon-carbon anodes in high-energy lithium-ion batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates closed nanopores in silicon-carbon anodes as stress-regulation units to mitigate lithiation-induced deformation and interphase degradation. By engineering heteroatom-doped carbon hosts with abundant closed pores, the material redirects expansion stress internally, reducing electrode swelling. The nitrogen-doped composite achieves 1756.5 mAh g-1 capacity, 90.2% initial efficiency, and 868.4 mAh g-1 at 3 C, with 13.1% thickness expansion after 50 cycles. This approach enables scalable production and stable cycling in high-energy batteries.",
+          "key_findings": [
+            "Closed nanopores in heteroatom-doped carbon hosts redirect lithiation-induced stress internally, reducing electrode swelling",
+            "Nitrogen-doped silicon-carbon composites achieve 1756.5 mAh g-1 reversible capacity and 90.2% initial Coulombic efficiency",
+            "The design reduces thickness expansion from 38.4% to 13.1% after 50 cycles and enables 80% capacity retention in 1200 cycles for NCM811 pouch cells"
+          ],
+          "scientific_significance": "This work establishes closed-pore engineering as a scalable strategy for mechanically stable silicon-carbon anodes in high-energy lithium-ion batteries."
+        },
+        "elapsed_seconds": 24.6507,
+        "input_tokens": 869,
+        "output_tokens": 290,
+        "thoughts_tokens": null,
+        "total_tokens": 1159,
+        "model_eval_seconds": 22.8762,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than chromatin accessibility alone, while H3K27me3 and H3K9me3 mark distinct repressive mechanisms. This resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.\",\n  \"key_findings\": [\n    \"The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling across 2.5 million nuclei\",\n    \"Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone\",\n    \"H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression\"\n  ],\n  \"scientific_significance\": \"This multimodal resource provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. The resulting atlas identified 100+ brain cell subclasses and defined active, primed, and repressive chromatin states across 81% of the genome. Active states with combinatorial histone marks better predict functional enhancers than chromatin accessibility alone, while H3K27me3 and H3K9me3 mark distinct repressive mechanisms. This resource enables deep learning models for predicting cell-type-specific epigenomic features and gene expression from DNA sequence.",
+          "key_findings": [
+            "The atlas spans over 100 brain cell subclasses using integrated epigenomic profiling across 2.5 million nuclei",
+            "Active chromatin states defined by combinatorial histone modifications better predict functional enhancers than chromatin accessibility alone",
+            "H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression"
+          ],
+          "scientific_significance": "This multimodal resource provides a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants through cell-type-specific epigenomic features."
+        },
+        "elapsed_seconds": 22.9349,
+        "input_tokens": 752,
+        "output_tokens": 282,
+        "thoughts_tokens": null,
+        "total_tokens": 1034,
+        "model_eval_seconds": 21.2221,
+        "error": "summary must contain 45–65 words; received 86.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates why early humans settled only briefly in specific regions of the Arabian desert despite abundant water. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found no lithic artefacts or knappable stone at 55 of 125 sites with palaeolake deposits. The results indicate that early human settlement was constrained by the availability of stone for tool production, not water alone, suggesting a dual requirement for water and lithic resources.\",\n  \"key_findings\": [\n    \"No lithic artefacts or knappable stone were found at 55 of 125 sites with palaeolake deposits\",\n    \"Spatial modeling shows 57% of water-accessible terrain lacks knappable stone\",\n    \"Convergent patterns across Africa, North America, and Asia indicate lithic availability as a universal constraint\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that lithic resource availability, alongside water, critically constrained early human dispersal in arid regions, challenging models that prioritize water alone.\"\n}",
+        "parsed": {
+          "summary": "This study investigates why early humans settled only briefly in specific regions of the Arabian desert despite abundant water. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found no lithic artefacts or knappable stone at 55 of 125 sites with palaeolake deposits. The results indicate that early human settlement was constrained by the availability of stone for tool production, not water alone, suggesting a dual requirement for water and lithic resources.",
+          "key_findings": [
+            "No lithic artefacts or knappable stone were found at 55 of 125 sites with palaeolake deposits",
+            "Spatial modeling shows 57% of water-accessible terrain lacks knappable stone",
+            "Convergent patterns across Africa, North America, and Asia indicate lithic availability as a universal constraint"
+          ],
+          "scientific_significance": "The findings demonstrate that lithic resource availability, alongside water, critically constrained early human dispersal in arid regions, challenging models that prioritize water alone."
+        },
+        "elapsed_seconds": 19.284,
+        "input_tokens": 856,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 1085,
+        "model_eval_seconds": 17.4915,
+        "error": "summary must contain 45–65 words; received 73.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to enhance tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s\",\n    \"Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice\",\n    \"IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to enhance tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s",
+            "Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice",
+            "IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation."
+        },
+        "elapsed_seconds": 23.0494,
+        "input_tokens": 800,
+        "output_tokens": 278,
+        "thoughts_tokens": null,
+        "total_tokens": 1078,
+        "model_eval_seconds": 21.3264,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956144",
+        "title": "Chiral altermagnon in MnTe.",
+        "abstract": "NA: Altermagnetism has been recognized as a magnetic phase that bridges the properties of ferro- and antiferromagnetism. The momentum-dependent spin splitting observed in these materials reflects their distinctive symmetry characteristics, which also establish the conditions for chiral magnons to emerge. Here we provide direct experimental evidence for a chiral magnon in the altermagnetic candidate manganese telluride (MnTe) revealed by circular-dichroism resonant inelastic x-ray scattering. This mode, which we term chiral altermagnon, exhibits a distinct momentum dependence of its spin polarization consistent with the altermagnetic g-wave symmetry of MnTe. Our polarization-resolved data corroborate the existence of a discrete class of magnetic excitations, demonstrating how altermagnetic order shapes spin dynamics and paving the way for advances in spintronic and quantum technologies.",
+        "publication_types": [],
+        "doi": "10.1126/science.adv3196",
+        "doi_url": "https://doi.org/10.1126/science.adv3196",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956144/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study experimentally identifies a chiral magnon in manganese telluride (MnTe), an altermagnetic material. Using circular-dichroism resonant inelastic x-ray scattering, researchers observed momentum-dependent spin polarization consistent with altermagnetic g-wave symmetry. The findings demonstrate how altermagnetic order influences spin dynamics, potentially advancing spintronic and quantum technologies.\",\n  \"key_findings\": [\n    \"Direct experimental evidence for a ch: chiral altermagnon in MnTe\",\n    \"Momentum-dependent spin polarization consistent with altermagnetic g-wave symmetry\",\n    \"Polarization-resolved data confirm discrete magnetic excitations in altermagnetic order\"\n  ],\n  \"scientific_significance\": \"The discovery establishes a chiral magnon in altermagnetic materials, providing new insights into spin dynamics governed by altermagnetic symmetry.\"\n}",
+        "parsed": {
+          "summary": "This study experimentally identifies a chiral magnon in manganese telluride (MnTe), an altermagnetic material. Using circular-dichroism resonant inelastic x-ray scattering, researchers observed momentum-dependent spin polarization consistent with altermagnetic g-wave symmetry. The findings demonstrate how altermagnetic order influences spin dynamics, potentially advancing spintronic and quantum technologies.",
+          "key_findings": [
+            "Direct experimental evidence for a ch: chiral altermagnon in MnTe",
+            "Momentum-dependent spin polarization consistent with altermagnetic g-wave symmetry",
+            "Polarization-resolved data confirm discrete magnetic excitations in altermagnetic order"
+          ],
+          "scientific_significance": "The discovery establishes a chiral magnon in altermagnetic materials, providing new insights into spin dynamics governed by altermagnetic symmetry."
+        },
+        "elapsed_seconds": 16.342,
+        "input_tokens": 602,
+        "output_tokens": 181,
+        "thoughts_tokens": null,
+        "total_tokens": 783,
+        "model_eval_seconds": 13.2175,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. The research identifies outward solvent evaporation delaying α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. A self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and create a hydrophobic barrier. This approach achieved 24.84% power conversion efficiency in small cells and maintained 96.26% efficiency after 1000 hours of damp aging at 85% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage\",\n    \"Self-segregating NFA molecule synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. The research identifies outward solvent evaporation delaying α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. A self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and create a hydrophobic barrier. This approach achieved 24.84% power conversion efficiency in small cells and maintained 96.26% efficiency after 1000 hours of damp aging at 85% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage",
+            "Self-segregating NFA molecule synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells."
+        },
+        "elapsed_seconds": 22.4452,
+        "input_tokens": 886,
+        "output_tokens": 270,
+        "thoughts_tokens": null,
+        "total_tokens": 1156,
+        "model_eval_seconds": 20.7199,
+        "error": "summary must contain 45–65 words; received 89.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951966",
+        "title": "Perinatal elimination of genetically aberrant human cortical neurons.",
+        "abstract": "NA: Human neurons are postmitotic and long-lived, requiring precise genomic regulation. Normal neuronal function is highly dosage-sensitive, with copy number variants (CNVs) and heterozygous point mutations associated with a host of neurodevelopmental and neuropsychiatric conditions1-4. Here we investigated somatic CNVs arising in single neurons to understand the dynamic processes that shape the normal neuronal genetic landscape. Altogether, we sequenced 2,357 single neurons from human postmortem brain from fetal to postnatal life. Two single-cell whole-genome sequencing approaches-Tn5-transposase-based amplification (1,526 neurons, 16 individuals) and primary template amplification5 (831 neurons, 12 individuals)-showed that an average of 25.9% [12.7-46%] of prenatal cortical neurons have highly aberrant genomes, that is, widespread CNVs involving multiple chromosomes. This proportion reduced by about 4.5-fold after birth across the two single-cell whole-genome sequencing approaches (Fisher meta-analysis P = 3.5 × 10-6). Neurons with widespread CNVs were mainly eliminated perinatally, timed roughly parallel to periods of programmed cell death6, whereas neurons with smaller CNV burdens declined slowly in frequency with postnatal age. CNVs in surviving neurons were depleted for dosage-sensitive genes and genes involved in neurodevelopmental disorders (hypergeometric test P < 0.05), suggesting selective elimination of neurons with these CNVs. Analysis of 44,861 nuclei with single-nucleus assay for transposase-accessible chromatin (snATAC) and single-nucleus RNA sequencing (snRNA-seq) showed that neurons with high CNV burdens exhibited abnormal synaptic gene expression, suggesting that abnormal synaptic gene regulation contributes to neuronal elimination. Elimination of defective neuronal genomes might represent an important developmental genome quality-control process that may be vulnerable in neurodevelopmental disease, and suggests purifying selection during human neurodevelopment.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11190-3",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11190-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951966/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated somatic copy number variants (CNVs) in human cortical neurons across development using single-cell whole-genome sequencing. Analysis of 2,357 neurons revealed 25.9% of prenatal cortical neurons had widespread CNVs, which decreased 4.5-fold postnatally. Perinatal elimination of neurons with high CN:CNV burdens occurred, likely linked to programmed cell death, with surviving neurons showing depletion of dosage-sensitive genes and neurodevelopmental disorder genes.\",\n  \"key_findings\": [\n    \"25.9% of prenatal cortical neurons exhibited widespread copy number variants\",\n    \"Perinatal elimination reduced CNV-positive neurons by 4.5-fold postnatally\",\n    \"Surviving neurons showed depletion of dosage-sensitive genes and neurodevelopmental disorder genes\"\n  ],\n  \"scientific_significance\": \"The study demonstrates a perinatal genome quality-control mechanism eliminating neurons with aberrant genomes, providing insights into how genetic instability is managed during human neurodevelopment.\"\n}",
+        "parsed": {
+          "summary": "This study investigated somatic copy number variants (CNVs) in human cortical neurons across development using single-cell whole-genome sequencing. Analysis of 2,357 neurons revealed 25.9% of prenatal cortical neurons had widespread CNVs, which decreased 4.5-fold postnatally. Perinatal elimination of neurons with high CN:CNV burdens occurred, likely linked to programmed cell death, with surviving neurons showing depletion of dosage-sensitive genes and neurodevelopmental disorder genes.",
+          "key_findings": [
+            "25.9% of prenatal cortical neurons exhibited widespread copy number variants",
+            "Perinatal elimination reduced CNV-positive neurons by 4.5-fold postnatally",
+            "Surviving neurons showed depletion of dosage-sensitive genes and neurodevelopmental disorder genes"
+          ],
+          "scientific_significance": "The study demonstrates a perinatal genome quality-control mechanism eliminating neurons with aberrant genomes, providing insights into how genetic instability is managed during human neurodevelopment."
+        },
+        "elapsed_seconds": 23.1287,
+        "input_tokens": 862,
+        "output_tokens": 211,
+        "thoughts_tokens": null,
+        "total_tokens": 1073,
+        "model_eval_seconds": 16.1007,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956146",
+        "title": "Mapping the scope of drug patents.",
+        "abstract": "NA: Narrowing patents that claim more than they disclose would open space for rival innovators, not generics.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh0691",
+        "doi_url": "https://doi.org/10.1126/science.aeh0691",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956146/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how patent scope affects innovation by analyzing the relationship between patent claims and disclosed technical information. The research suggests that patents with broader claims than disclosed technical details could hinder future innovation by limiting opportunities for rival innovators. The findings indicate that narrowing patent claims to align with disclosed disclosures may facilitate competitive innovation without compromising patent protection.\",\n  \"key_findings\": [\n    \"Patents claiming more than they disclose restrict innovation opportunities for rival developers\",\n    \"Narrowing patent claims to match disclosed technical information enables competitive innovation\",\n    \"Overly broad patents may impede future innovation by creating barriers for alternative solutions\"\n  ],\n  \"scientific_significance\": \"This work provides evidence that patent claim scope must align with technical disclosure to optimize innovation pathways, contributing to a more efficient patent system that balances protection and accessibility.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how patent scope affects innovation by analyzing the relationship between patent claims and disclosed technical information. The research suggests that patents with broader claims than disclosed technical details could hinder future innovation by limiting opportunities for rival innovators. The findings indicate that narrowing patent claims to align with disclosed disclosures may facilitate competitive innovation without compromising patent protection.",
+          "key_findings": [
+            "Patents claiming more than they disclose restrict innovation opportunities for rival developers",
+            "Narrowing patent claims to match disclosed technical information enables competitive innovation",
+            "Overly broad patents may impede future innovation by creating barriers for alternative solutions"
+          ],
+          "scientific_significance": "This work provides evidence that patent claim scope must align with technical disclosure to optimize innovation pathways, contributing to a more efficient patent system that balances protection and accessibility."
+        },
+        "elapsed_seconds": 12.6746,
+        "input_tokens": 447,
+        "output_tokens": 170,
+        "thoughts_tokens": null,
+        "total_tokens": 617,
+        "model_eval_seconds": 11.6743,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of fabricating nanocomposites with high nanofiller loadings and ordered nanostructures using additive manufacturing. It introduces shear alignment polymer extrusion (SHAPE) 3D printing, which aligns nanomaterials like boron nitride nanosheets and carbon nanotubes under high shear forces. The approach enables scalable production of macroscopic composites with complex geometries, achieving 55 wt% boron nitride loading in polylactic acid. Post-sintering yields materials with zero volume shrinkage, exceptional thermomechanical stability, and tailored thermal properties: vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K), horizontally aligned ones provide thermal insulation (0.071 W/m/K), and BN membranes exhibit robust mechanical strength (3.4 MPa).\",\n  \"key_findings\": [\n    \"SHAPE 3D printing achieves 55 wt% boron nitride loading in polylactic acid filaments\",\n    \"Post-sintering composites exhibit zero volume shrinkage and thermomechanical stability up to polymer decomposition temperatures\",\n    \"Vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned structures provide thermal insulation (0.071 W/m/K)\"\n  ],\n  \"scientific_significance\": \"This method enables scalable fabrication of nanocomposites with high nanofiller loadings and long-range ordered nanostructures, advancing cross-scale design for thermal management and structural applications.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of fabricating nanocomposites with high nanofiller loadings and ordered nanostructures using additive manufacturing. It introduces shear alignment polymer extrusion (SHAPE) 3D printing, which aligns nanomaterials like boron nitride nanosheets and carbon nanotubes under high shear forces. The approach enables scalable production of macroscopic composites with complex geometries, achieving 55 wt% boron nitride loading in polylactic acid. Post-sintering yields materials with zero volume shrinkage, exceptional thermomechanical stability, and tailored thermal properties: vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K), horizontally aligned ones provide thermal insulation (0.071 W/m/K), and BN membranes exhibit robust mechanical strength (3.4 MPa).",
+          "key_findings": [
+            "SHAPE 3D printing achieves 55 wt% boron nitride loading in polylactic acid filaments",
+            "Post-sintering composites exhibit zero volume shrinkage and thermomechanical stability up to polymer decomposition temperatures",
+            "Vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned structures provide thermal insulation (0.071 W/m/K)"
+          ],
+          "scientific_significance": "This method enables scalable fabrication of nanocomposites with high nanofiller loadings and long-range ordered nanostructures, advancing cross-scale design for thermal management and structural applications."
+        },
+        "elapsed_seconds": 25.7878,
+        "input_tokens": 858,
+        "output_tokens": 318,
+        "thoughts_tokens": null,
+        "total_tokens": 1176,
+        "model_eval_seconds": 24.101,
+        "error": "summary must contain 45–65 words; received 101.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951970",
+        "title": "Genetic variants shape single-cell chromatin accessibility and disease risk.",
+        "abstract": "NA: Understanding how genetic variation shapes gene regulation at single-cell resolution is crucial for elucidating complex disease mechanisms1, but has been limited by the lack of large-scale single-cell multi-omics data2-4. Here we present single-cell assay for transposase-accessible chromatin with sequencing of 3.5 million peripheral blood mononuclear cells from 1,042 donors with matched whole-genome sequencing. Across 28 immune cell types, we tested 440,996 chromatin accessibility peaks and identified 243,225 chromatin accessibility quantitative trait loci (caQTLs) at 100,483 peaks, 60% of them cell-type specific. Rare variant analysis identified 38,161 associated peaks, with predicted transcription factor-binding disruption implicated at individual loci. Colocalization with expression QTLs (eQTLs) from single-cell RNA sequencing data (5.4 million peripheral blood mononuclear cells)5 defined 28,834 candidate cis-regulatory elements. Across genome-wide association studies for 16 diseases and 44 blood traits, caQTLs colocalized 4.5-22.6% more signals than eQTLs alone. Cell-type-specific and tissue-specific context, distal effects and multi-causal-variant models raised genome-wide association study-eQTL concordance from approximately 16% to approximately 65%. Cell state further modulates genetic effects, with 27% of over 200,000 caQTL-cell-state interactions lacking a main effect. At the inflammatory bowel disease risk gene ADCY7, accessibility effects varied with genotype and G protein-mediated pathway activity in CD4+ T cells. A graph neural network trained on both eQTL and caQTL layers inferred peak-gene links in unpaired multiome data with up to 17.2% higher accuracy than QTL-agnostic data, uncovering 128 additional transcription factor-target pairs (22% increase). Together, these results show that genetic variants shape chromatin accessibility in a cell-type-specific and cell-state-specific manner, influencing immune function and disease risk.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11173-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11173-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951970/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how genetic variants influence single-cell chromatin accessibility and disease risk using 3.5 million peripheral blood mononuclear cells from 1,042 donors. It identified 243,225 chromatin accessibility quantitative trait loci (caQTLs), 60% cell-type specific, and demonstrated their role in 16 diseases and 44 blood traits through colocalization with eQTLs. The findings highlight cell-type-specific and state-dependent genetic effects on immune function and disease mechanisms.\",\n  \"key_findings\": [\n    \"243,225 chromatin accessibility quantitative trait loci (caQTLs) identified across 28 immune cell types\",\n    \"60% of caQTLs are cell-type specific, with 38,161 peaks linked to rare variants\",\n    \"caQTLs colocalize 4.5-22.6% more disease and trait signals than eQTLs alone\"\n  ],\n  \"scientific_significance\": \"This work establishes cell-type-specific chromatin accessibility as a critical layer of genetic regulation influencing immune disease mechanisms, advancing multi-omics integration for complex trait analysis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how genetic variants influence single-cell chromatin accessibility and disease risk using 3.5 million peripheral blood mononuclear cells from 1,042 donors. It identified 243,225 chromatin accessibility quantitative trait loci (caQTLs), 60% cell-type specific, and demonstrated their role in 16 diseases and 44 blood traits through colocalization with eQTLs. The findings highlight cell-type-specific and state-dependent genetic effects on immune function and disease mechanisms.",
+          "key_findings": [
+            "243,225 chromatin accessibility quantitative trait loci (caQTLs) identified across 28 immune cell types",
+            "60% of caQTLs are cell-type specific, with 38,161 peaks linked to rare variants",
+            "caQTLs colocalize 4.5-22.6% more disease and trait signals than eQTLs alone"
+          ],
+          "scientific_significance": "This work establishes cell-type-specific chromatin accessibility as a critical layer of genetic regulation influencing immune disease mechanisms, advancing multi-omics integration for complex trait analysis."
+        },
+        "elapsed_seconds": 20.8127,
+        "input_tokens": 989,
+        "output_tokens": 256,
+        "thoughts_tokens": null,
+        "total_tokens": 1245,
+        "model_eval_seconds": 19.1603,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956147",
+        "title": "Darwin's atom split.",
+        "abstract": "NA: A whole central nervous system is exposed.",
+        "publication_types": [],
+        "doi": "10.1126/science.ael6230",
+        "doi_url": "https://doi.org/10.1126/science.ael6230",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956147/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the structural integrity of the central nervous system (CNS) following a specific experimental procedure. The researchers exposed a whole CNS to assess its resilience. The findings indicate that the CNS maintains structural integrity without significant damage, suggesting robustness under the applied conditions.\",\n  \"key_findings\": [\n    \"The central nervous system remains structurally intact after full exposure\",\n    \"No significant damage was observed in the exposed central nervous system\",\n    \"The CNS demonstrates resilience under the experimental conditions\"\n  ],\n  \"scientific_significance\": \"This work provides evidence for the central nervous system's structural resilience, contributing to understanding its mechanical stability in specific experimental contexts.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the structural integrity of the central nervous system (CNS) following a specific experimental procedure. The researchers exposed a whole CNS to assess its resilience. The findings indicate that the CNS maintains structural integrity without significant damage, suggesting robustness under the applied conditions.",
+          "key_findings": [
+            "The central nervous system remains structurally intact after full exposure",
+            "No significant damage was observed in the exposed central nervous system",
+            "The CNS demonstrates resilience under the experimental conditions"
+          ],
+          "scientific_significance": "This work provides evidence for the central nervous system's structural resilience, contributing to understanding its mechanical stability in specific experimental contexts."
+        },
+        "elapsed_seconds": 10.3225,
+        "input_tokens": 433,
+        "output_tokens": 140,
+        "thoughts_tokens": null,
+        "total_tokens": 573,
+        "model_eval_seconds": 9.5075,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting systems. A highly dispersed RuCoOx cocatalyst was developed using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieves stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides to date. The findings highlight enhanced interfacial electric fields and reduced reaction barriers as key mechanisms for overcoming this bottleneck.\",\n  \"key_findings\": [\n    \"The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieves stoichiometric pure water splitting with 0.72% apparent quantum yield at 420 nm\",\n    \"Incompatibility between alkaline water oxidation and pure water splitting cocatalysts causes photocorrosion and N2 generation\",\n    \"Enhanced interfacial electric fields and reduced reaction barriers facilitate hole extraction and accelerate surface reaction kinetics\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic water splitting over nitride-based materials, providing mechanistic insights for advancing efficient solar-driven water splitting systems.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting systems. A highly dispersed RuCoOx cocatalyst was developed using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieves stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides to date. The findings highlight enhanced interfacial electric fields and reduced reaction barriers as key mechanisms for overcoming this bottleneck.",
+          "key_findings": [
+            "The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieves stoichiometric pure water splitting with 0.72% apparent quantum yield at 420 nm",
+            "Incompatibility between alkaline water oxidation and pure water splitting cocatalysts causes photocorrosion and N2 generation",
+            "Enhanced interfacial electric fields and reduced reaction barriers facilitate hole extraction and accelerate surface reaction kinetics"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic water splitting over nitride-based materials, providing mechanistic insights for advancing efficient solar-driven water splitting systems."
+        },
+        "elapsed_seconds": 24.4346,
+        "input_tokens": 820,
+        "output_tokens": 302,
+        "thoughts_tokens": null,
+        "total_tokens": 1122,
+        "model_eval_seconds": 22.7864,
+        "error": "summary must contain 45–65 words; received 87.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951971",
+        "title": "Connectome simulations identify a central pattern generator for fly walking.",
+        "abstract": "NA: Animal locomotion relies on rhythmic body movements driven by central pattern generators (CPGs): neural circuits that produce oscillating output without oscillating input. However, the circuit structure of a CPG for walking is not known in any animal1,2. To identify the cells and synapses that underlie rhythmic leg movement in walking flies, we developed dynamic simulations of the Drosophila ventral nerve cord connectomes3-6. A computational activation screen of descending neurons from the central brain identified DNg100-a known command neuron for walking-as the strongest driver of rhythmic leg motor activity. Simulated network pruning isolated a minimal rhythm-generating circuit consisting of one inhibitory and two excitatory interneurons; this three-neuron circuit was necessary and sufficient for motor rhythms across all six legs and in four connectome datasets. Simulations also predicted that a separate descending pathway (DNb08) drives rhythmic leg movements, which we confirmed experimentally using optogenetics in behaving flies. Our results reveal the cellular identity and synaptic structure of a putative CPG circuit for walking and other rhythmic leg movements in flies.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11195-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11195-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951971/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study used computational simulations of the Drosophila ventral nerve cord connectomes to identify a central pattern generator (CPG) for fly walking. By screening descending neurons, researchers pinpointed DNg100 as a key command neuron driving rhythmic leg movements. Simulations revealed a minimal three-neuron circuit—comprising one inhibitory and two excitatory interneurons—that generates coordinated leg rhythms across all six legs and is necessary and sufficient for rhythmic motor output. The findings provide cellular and synaptic details of a CPG circuit for walking in flies.\",\n  \"key_findings\": [\n    \"DNg100, a descending neuron, acts as the primary command neuron driving rhythmic leg motor activity in walking flies.\",\n    \"A minimal three-neuron circuit (one inhibitory, two excitatory interneurons) generates coordinated leg rhythms across all six legs and is necessary and sufficient for rhythmic motor output.\",\n    \"Optogenetic validation confirmed a separate descending pathway (DNb08) also drives rhythmic leg movements in behaving flies.\"\n  ],\n  \"scientific_significance\": \"This work identifies the cellular and synaptic architecture of a minimal central pattern generator circuit for rhythmic leg movements in Drosophila, advancing understanding of how simple neural circuits produce coordinated locomotion.\"\n}",
+        "parsed": {
+          "summary": "This study used computational simulations of the Drosophila ventral nerve cord connectomes to identify a central pattern generator (CPG) for fly walking. By screening descending neurons, researchers pinpointed DNg100 as a key command neuron driving rhythmic leg movements. Simulations revealed a minimal three-neuron circuit—comprising one inhibitory and two excitatory interneurons—that generates coordinated leg rhythms across all six legs and is necessary and sufficient for rhythmic motor output. The findings provide cellular and synaptic details of a CPG circuit for walking in flies.",
+          "key_findings": [
+            "DNg100, a descending neuron, acts as the primary command neuron driving rhythmic leg motor activity in walking flies.",
+            "A minimal three-neuron circuit (one inhibitory, two excitatory interneurons) generates coordinated leg rhythms across all six legs and is necessary and sufficient for rhythmic motor output.",
+            "Optogenetic validation confirmed a separate descending pathway (DNb08) also drives rhythmic leg movements in behaving flies."
+          ],
+          "scientific_significance": "This work identifies the cellular and synaptic architecture of a minimal central pattern generator circuit for rhythmic leg movements in Drosophila, advancing understanding of how simple neural circuits produce coordinated locomotion."
+        },
+        "elapsed_seconds": 22.0476,
+        "input_tokens": 759,
+        "output_tokens": 270,
+        "thoughts_tokens": null,
+        "total_tokens": 1029,
+        "model_eval_seconds": 20.3708,
+        "error": "summary must contain 45–65 words; received 82.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956149",
+        "title": "Intrinsic gestational timing governs human cerebellar development after preterm birth.",
+        "abstract": "NA: Intrinsic programs shape brain maturation; however, which of these programs are perturbed by prematurity as well as the molecular pathways involved remain unknown. The human cerebellum serves as a paradigm of extrauterine development-its accelerated growth and circuit formation align with the third trimester, a period disrupted by preterm delivery. Using multimodal datasets encompassing in vivo neuroimaging and neurodevelopmental outcomes with postmortem spatial-transcriptomic and histopathological profiling, we show that prematurity diverts the cerebellar developmental trajectory. Cerebellar growth and functional outcomes scaled with gestational age, despite modifying perinatal exposures. Spatially resolved developmental programs underlying macroscopic trajectories were marked by incomplete granule cell maturation and impaired Purkinje cell structural refinement, which indicate lineage-specific developmental asynchrony. Thus, prematurity constitutes biologically displaced maturation, in which infants of equivalent postmenstrual age occupy divergent developmental states.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeb9095",
+        "doi_url": "https://doi.org/10.1126/science.aeb9095",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956149/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how preterm birth disrupts cerebellar development by examining intrinsic gestational timing. Using neuroimaging, neurodevelopmental outcomes, and spatial-transcriptomic profiling, researchers found that cerebellar growth and function correlate with gestational age, not postmenstrual age. Key findings include incomplete granule cell maturation and impaired Purkin: cell structural refinement, indicating lineage-specific developmental asynchrony due to prematurity.\",\n  \"key_findings\": [\n    \"Cerebellar growth and functional outcomes scale with gestational age despite perinatal exposures\",\n    \"Incomplete granule cell maturation\",\n    \"Impaired Purkinje cell structural refinement\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that prematurity causes biologically displaced maturation, revealing cerebellar developmental trajectories are governed by intrinsic gestational timing rather than postmenstrual age.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how preterm birth disrupts cerebellar development by examining intrinsic gestational timing. Using neuroimaging, neurodevelopmental outcomes, and spatial-transcriptomic profiling, researchers found that cerebellar growth and function correlate with gestational age, not postmenstrual age. Key findings include incomplete granule cell maturation and impaired Purkin: cell structural refinement, indicating lineage-specific developmental asynchrony due to prematurity.",
+          "key_findings": [
+            "Cerebellar growth and functional outcomes scale with gestational age despite perinatal exposures",
+            "Incomplete granule cell maturation",
+            "Impaired Purkinje cell structural refinement"
+          ],
+          "scientific_significance": "The study demonstrates that prematurity causes biologically displaced maturation, revealing cerebellar developmental trajectories are governed by intrinsic gestational timing rather than postmenstrual age."
+        },
+        "elapsed_seconds": 17.4309,
+        "input_tokens": 631,
+        "output_tokens": 188,
+        "thoughts_tokens": null,
+        "total_tokens": 819,
+        "model_eval_seconds": 14.0021,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42924489",
+        "title": "A Novel pH-Activatable Nanozyme for Treating Breast Cancer Bone Metastasis by Regulating Cancer Cell Metabolic Reprogramming and the Tumor Microenvironment.",
+        "abstract": "NA: Multi-omics analyses implicate enhanced oxidative phosphorylation (OXPHOS) in breast cancer bone metastasis (BCBM). To target this metabolic vulnerability, we develop SPMMPA, a bone-targeted nanozyme comprising a Prussian blue core, a disulfide-bridged mesoporous silica interlayer, and a manganese oxide shell, functionalized with polyethylenimine, alendronate, and the Ser-Asp-Ser-Ser-Asp peptide. Its acid-enhanced catalytic activity promotes reactive oxygen species production and glutathione depletion, accompanied by mitochondrial dysfunction, reduced OXPHOS and adenosine triphosphate production, and downregulation of peroxisome proliferator-activated receptor gamma coactivator 1-alpha. Alendronate and silicon release contribute to reduced osteoclast activity and preservation of bone structure. Near-infrared irradiation further enhances treatment efficacy through photothermal heating below 48°C. In mouse models of BCBM, SPMMPA suppresses tumor growth and alleviates osteolysis, without overt toxicity in the assays performed. These findings support a pH-responsive catalytic strategy that couples disruption of tumor energy metabolism with protection of bone homeostasis.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75432",
+        "doi_url": "https://doi.org/10.1002/adma.75432",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42924489/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a pH-activatable nanozyme, SPMMP. It targets breast cancer bone metastasis by disrupting cancer cell metabolic reprogramming and tumor microenvironment. The nanozyme, composed of Prussian blue core, disulfide-bridged mesoporous silica, and manganese oxide shell, releases silicon and alendronate to reduce osteoclast activity. It enhances reactive oxygen species production, depletes glutathione, and suppresses tumor growth in mouse models without significant toxicity.\",\n  \"key_findings\": [\n    \"SPMMPA suppresses tumor growth and osteolysis in breast cancer bone metastasis mouse models\",\n    \"The nanozyme enhances reactive oxygen species production and glutathione depletion via pH-responsive catalysis\",\n    \"Alendronate and silicon release reduce osteoclast activity, preserving bone structure\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a pH-responsive catalytic strategy that simultaneously disrupts tumor energy metabolism and maintains bone homeostasis in breast cancer bone metastasis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a pH-activatable nanozyme, SPMMP. It targets breast cancer bone metastasis by disrupting cancer cell metabolic reprogramming and tumor microenvironment. The nanozyme, composed of Prussian blue core, disulfide-bridged mesoporous silica, and manganese oxide shell, releases silicon and alendronate to reduce osteoclast activity. It enhances reactive oxygen species production, depletes glutathione, and suppresses tumor growth in mouse models without significant toxicity.",
+          "key_findings": [
+            "SPMMPA suppresses tumor growth and osteolysis in breast cancer bone metastasis mouse models",
+            "The nanozyme enhances reactive oxygen species production and glutathione depletion via pH-responsive catalysis",
+            "Alendronate and silicon release reduce osteoclast activity, preserving bone structure"
+          ],
+          "scientific_significance": "This work demonstrates a pH-responsive catalytic strategy that simultaneously disrupts tumor energy metabolism and maintains bone homeostasis in breast cancer bone metastasis."
+        },
+        "elapsed_seconds": 21.3232,
+        "input_tokens": 711,
+        "output_tokens": 220,
+        "thoughts_tokens": null,
+        "total_tokens": 931,
+        "model_eval_seconds": 16.6055,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951972",
+        "title": "Delayed electron-hole recombination in a pseudo-direct semiconductor.",
+        "abstract": "NA: Kirchhoff demonstrated the reciprocity between absorptivity and emissivity for blackbody radiation in 1860 (ref. 1), thereby establishing the general principle that a good absorber must also be a good emitter. This principle underpins the generalized Planck's law2 and, when applied to semiconductors-in the form of the van Roosbroeck-Shockley equation3-results in substantial limitations to solar energy conversion. Here we demonstrate how this reciprocity can be circumvented in semiconductors, such as bismuth sulfide, showing a pseudo-direct bandgap character-that is, featuring a lower-energy indirect transition paired with a direct transition placed a few kBT above. After determining the pseudo-direct bandgap nature of bismuth sulfide, we reveal how this feature substantially retards bimolecular electron-hole recombination in this material with respect to classic direct semiconductors4. The resulting combination of a high absorption coefficient and delayed recombination offers the unprecedented possibility of overcoming limitations associated with Planck's law, with far-reaching potential for solar energy conversion.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11223-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11223-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951972/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how semiconductor materials can circumvent Kirchhoff's reciprocity principle limiting solar energy conversion. Using bismuth sulfide, the researchers identified a pseudo-direct bandgap structure with a lower-energy indirect transition and a direct transition elevated by a few kBT. This configuration delays bimolecular electron-hole reusing, enhancing absorption and enabling potential improvements in solar energy conversion beyond Planck's law constraints.\",\n  \"key_findings\": [\n    \"Bismuth sulfide exhibits a pseudo-direct bandgap with a direct transition positioned several kBT above a lower-energy indirect transition\",\n    \"This pseudo-direct bandgap structure significantly delays bimolecular electron-hole recombination compared to classic direct semiconductors\",\n    \"The combination of high absorption and delayed recombination enables solar energy conversion beyond Planck's law limitations\"\n  ],\n  \"scientific_significance\": \"The discovery of a pseudo-direct bandgap in bismuth sulfide demonstrates a mechanism to circumvent Kirchhoff's reciprocity principle, potentially enabling more efficient solar energy conversion by overcoming fundamental limits imposed by Planck's law.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how semiconductor materials can circumvent Kirchhoff's reciprocity principle limiting solar energy conversion. Using bismuth sulfide, the researchers identified a pseudo-direct bandgap structure with a lower-energy indirect transition and a direct transition elevated by a few kBT. This configuration delays bimolecular electron-hole reusing, enhancing absorption and enabling potential improvements in solar energy conversion beyond Planck's law constraints.",
+          "key_findings": [
+            "Bismuth sulfide exhibits a pseudo-direct bandgap with a direct transition positioned several kBT above a lower-energy indirect transition",
+            "This pseudo-direct bandgap structure significantly delays bimolecular electron-hole recombination compared to classic direct semiconductors",
+            "The combination of high absorption and delayed recombination enables solar energy conversion beyond Planck's law limitations"
+          ],
+          "scientific_significance": "The discovery of a pseudo-direct bandgap in bismuth sulfide demonstrates a mechanism to circumvent Kirchhoff's reciprocity principle, potentially enabling more efficient solar energy conversion by overcoming fundamental limits imposed by Planck's law."
+        },
+        "elapsed_seconds": 20.7682,
+        "input_tokens": 657,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 885,
+        "model_eval_seconds": 16.7964,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956150",
+        "title": "Data-driven discovery and rapid, direct synthesis of MXenes.",
+        "abstract": "NA: MXenes are a rapidly expanding family of two-dimensional transition metal carbides and nitrides, yet scalable synthesis routes remain limited and historical reports suggest a broader, largely unexplored chemical space. We used machine learning-assisted database mining to uncover hidden multilayer MXenes. Screening reveals 33 previously synthesized but unrecognized MXene candidates. Guided by these findings, we synthesized seven multilayer MXenes using a rapid, scalable self-propagating high-temperature method that requires no sustained external heating and completes within minutes. We further realized 11 previously unexplored rare earth-based MXenes (M = praseodymium, neodymium, samarium, gadolinium, terbium, holmium, and thulium). Experiments and modeling suggest semiconducting behavior and diverse magnetic states across this family. Together, these results expand the MXene family and demonstrate a data-driven strategy for accelerating materials discovery through sustainable methods.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh5957",
+        "doi_url": "https://doi.org/10.1126/science.aeh5957",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956150/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study employed machine learning to identify previously unrecognized multilayer MXenes, enabling the rapid synthesis of seven new MXenes via a self-propagating high-temperature method. It also discovered 11 rare earth-based MXenes, revealing semiconducting and magnetic properties across the expanded family. The approach demonstrates a scalable data-driven strategy for accelerating materials discovery while expanding the known MXene chemical space.\",\n  \"key_findings\": [\n    \"Identification of 33 previously synthesized but unrecognized MXene candidates through database mining\",\n    \"Rapid synthesis of seven multilusing a self-propagating high-temperature method requiring no sustained external heating\",\n    \"Discovery of 11 previously unexplored rare earth-based MXenes with semiconducting and magnetic properties\"\n  ],\n  \"scientific_significance\": \"This work establishes a data-driven approach for efficiently expanding the MXene family and accelerating sustainable materials discovery through scalable synthesis methods.\"\n}",
+        "parsed": {
+          "summary": "This study employed machine learning to identify previously unrecognized multilayer MXenes, enabling the rapid synthesis of seven new MXenes via a self-propagating high-temperature method. It also discovered 11 rare earth-based MXenes, revealing semiconducting and magnetic properties across the expanded family. The approach demonstrates a scalable data-driven strategy for accelerating materials discovery while expanding the known MXene chemical space.",
+          "key_findings": [
+            "Identification of 33 previously synthesized but unrecognized MXene candidates through database mining",
+            "Rapid synthesis of seven multilusing a self-propagating high-temperature method requiring no sustained external heating",
+            "Discovery of 11 previously unexplored rare earth-based MXenes with semiconducting and magnetic properties"
+          ],
+          "scientific_significance": "This work establishes a data-driven approach for efficiently expanding the MXene family and accelerating sustainable materials discovery through scalable synthesis methods."
+        },
+        "elapsed_seconds": 17.8932,
+        "input_tokens": 625,
+        "output_tokens": 197,
+        "thoughts_tokens": null,
+        "total_tokens": 822,
+        "model_eval_seconds": 14.4505,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42924886",
+        "title": "Harnessing Rare Earth Elements in Proteins and Functional Materials for Advanced Optical, Magnetic, and Mechanical Applications.",
+        "abstract": "NA: Rare earth-proteins and their functional materials integrate unique physical properties of rare earth ions (RE3+) with structural programmability of proteins, attracting increasing attention in a wide range of applications. Coordination with RE3+ can enhance the rigidity and stability of certain proteins, even induce secondary structure transitions, and confer distinct physical properties onto functional materials. The programmability of amino acid sequences regulates coordination chemistry between proteins and RE3+, enabling the modulation of their optical and magnetic properties. Moreover, RE3+ incorporation turns protein structures and aggregation state, leading to enhanced mechanical properties and adhesion strength. However, the development of such materials still faces significant challenges due to lack of molecular mechanism analysis and systematic rational design strategies. This review highlights the chemical structural analysis, rational design and synthesis strategies of rare earth-protein and their functional materials. In addition, their applications in optics, magnetics, and mechanics are summarized. Finally, their current challenges and future perspectives are discussed.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75477",
+        "doi_url": "https://doi.org/10.1002/adma.75477",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42924886/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines rare earth element (RE3+) integration into proteins and functional materials, focusing on how RE3+ coordination enhances protein rigidity, stability, and secondary structure transitions. It explores the programmability of amino acid sequences to modulate optical, magnetic, and mechanical properties. The study identifies challenges in molecular mechanism analysis and systematic design strategies, emphasizing the need for rational approaches to advance RE3+-protein applications.\",\n  \"key_findings\": [\n    \"RE3+ coordination increases protein rigidity and stability\",\n    \"Amino acid sequence programmability modulates optical and magnetic properties\",\n    \"RE3+ incorporation enhances mechanical properties and adhesion strength\"\n  ],\n  \"scientific_significance\": \"This review establishes foundational insights into RE3+-protein interactions, providing critical frameworks for designing functional materials with tunable physical properties across optics, magnetics, and mechanics.\"\n}",
+        "parsed": {
+          "summary": "This review examines rare earth element (RE3+) integration into proteins and functional materials, focusing on how RE3+ coordination enhances protein rigidity, stability, and secondary structure transitions. It explores the programmability of amino acid sequences to modulate optical, magnetic, and mechanical properties. The study identifies challenges in molecular mechanism analysis and systematic design strategies, emphasizing the need for rational approaches to advance RE3+-protein applications.",
+          "key_findings": [
+            "RE3+ coordination increases protein rigidity and stability",
+            "Amino acid sequence programmability modulates optical and magnetic properties",
+            "RE3+ incorporation enhances mechanical properties and adhesion strength"
+          ],
+          "scientific_significance": "This review establishes foundational insights into RE3+-protein interactions, providing critical frameworks for designing functional materials with tunable physical properties across optics, magnetics, and mechanics."
+        },
+        "elapsed_seconds": 16.7443,
+        "input_tokens": 635,
+        "output_tokens": 182,
+        "thoughts_tokens": null,
+        "total_tokens": 817,
+        "model_eval_seconds": 13.1527,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951973",
+        "title": "Rare and common genetic variants shape single-cell immune gene expression.",
+        "abstract": "NA: Understanding the genetic basis of gene expression can shed light on the regulatory mechanisms underlying complex traits and diseases1,2. Single-cell-resolved measures of RNA levels and single-cell expression quantitative trait loci have revealed genetic regulation that drives cell states and types across diverse tissues3. Here we describe phase 1 of TenK10K, which leverages single-cell RNA sequencing data from more than 5 million cells across 28 immune cell types, along with matched whole-genome sequencing data from 1,925 individuals. This provides power to detect associations for rare and low-frequency genetic variants that have largely been uncharacterized in their impact on cell-specific gene expression. We map the effects of both common and rare variants in a cell-type-specific manner using a recent method that increases power by modelling single cells directly rather than aggregated 'pseudobulk' counts. We identify putative common regulatory variants for 83% of all 21,404 genes tested and cumulative rare-variant signals for 47% of those genes. We explore how genetic effects vary across cell types and states, develop a framework to determine the degree of single-cell expression quantitative trait loci cell-type specificity and show that about half of the effects are observed only in one or a few cell types. By integrating our results with functional annotations and disease information, we further characterize the likely molecular modes of action for many disease-variant associations. Finally, we explore the effects that genetic variants have on gene expression across continuous cell states, and effects that vary cell-state abundance directly.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-10721-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-10721-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951973/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how genetic variants, both common and rare, influence single-cell immune gene expression using 5 million cells across 28 immune types and 1,925 individuals' whole-genome data. It identifies regulatory variants for 83% of genes and rare-variant signals for .47% of them, revealing cell-type-specific effects where half of genetic impacts are confined to single cell types or states.\",\n  \"key_findings\": [\n    \"Identified regulatory variants for 83% of 21,404 genes tested\",\n    \"Detected rare-variant signals for 47% of genes\",\n    \"Half of genetic effects are cell-type-specific, observed in only one or a few cell types\"\n  ],\n  \"scientific_significance\": \"This work establishes a comprehensive framework for mapping cell-type-specific genetic regulation of gene expression, advancing understanding of how genetic variants influence immune cell states and disease mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how genetic variants, both common and rare, influence single-cell immune gene expression using 5 million cells across 28 immune types and 1,925 individuals' whole-genome data. It identifies regulatory variants for 83% of genes and rare-variant signals for .47% of them, revealing cell-type-specific effects where half of genetic impacts are confined to single cell types or states.",
+          "key_findings": [
+            "Identified regulatory variants for 83% of 21,404 genes tested",
+            "Detected rare-variant signals for 47% of genes",
+            "Half of genetic effects are cell-type-specific, observed in only one or a few cell types"
+          ],
+          "scientific_significance": "This work establishes a comprehensive framework for mapping cell-type-specific genetic regulation of gene expression, advancing understanding of how genetic variants influence immune cell states and disease mechanisms."
+        },
+        "elapsed_seconds": 20.3329,
+        "input_tokens": 752,
+        "output_tokens": 201,
+        "thoughts_tokens": null,
+        "total_tokens": 953,
+        "model_eval_seconds": 14.9871,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956151",
+        "title": "Spatial coordination in the codevelopment of the human urogenital system during organogenesis.",
+        "abstract": "NA: The human urogenital system originates from a common embryonic domain, yet the mechanisms guiding its spatiotemporal coordination remain understudied. Here, we combined high-resolution spatial transcriptomics with single-cell multiomics to profile human embryos from Carnegie stages 15 to 23, capturing the codevelopmental dynamics of the urogenital system. We revealed mesonephros- and adrenal primordium-derived signals that promote gonadal specification and enable efficient in vitro generation of cells resembling early gonadal lineages. We also uncovered a possible mesonephric origin of gonadal supporting cells through rete testis or ovarii linking the mesonephros. Finally, we delineate three transcriptionally distinct steroidogenic lineages differing in cholesterol sourcing, cortisol synthesis, and sex hormone production that together orchestrate sex differentiation. These findings deepen our understanding of urogenital system assembly and guide the exploration of coordinated multiorgan development.",
+        "publication_types": [],
+        "doi": "10.1126/science.aee5093",
+        "doi_url": "https://doi.org/10.1126/science.aee5093",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956151/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated spatiotemporal coordination mechanisms during human urogenital system codevelopment using high-resolution spatial transcriptomics and single-cell multiomics on embryos from Carnegie stages 15 to 2:15. It identified mesonephros-derived signals promoting gonadal specification, a potential mesonephric origin of gonadal supporting cells, and three distinct steroidogenic lineages with specialized roles in sex differentiation. These findings advance understanding of urogenital system assembly and multiorgan developmental coordination.\",\n  \"key_findings\": [\n    \"Mesonephros-derived signals promote gonadal specification\",\n    \"Potential mesonephric origin of gonadal supporting cells via rete testis or ovarii\",\n    \"Three transcriptionally distinct steroidogenic lineages with specialized cholesterol sourcing, cortisol synthesis, and sex hormone production\"\n  ],\n  \"scientific_significance\": \"The study provides mechanistic insights into the coordinated development of the human urogenital system, revealing how spatially distinct cell populations interact to establish sex differentiation pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigated spatiotemporal coordination mechanisms during human urogenital system codevelopment using high-resolution spatial transcriptomics and single-cell multiomics on embryos from Carnegie stages 15 to 2:15. It identified mesonephros-derived signals promoting gonadal specification, a potential mesonephric origin of gonadal supporting cells, and three distinct steroidogenic lineages with specialized roles in sex differentiation. These findings advance understanding of urogenital system assembly and multiorgan developmental coordination.",
+          "key_findings": [
+            "Mesonephros-derived signals promote gonadal specification",
+            "Potential mesonephric origin of gonadal supporting cells via rete testis or ovarii",
+            "Three transcriptionally distinct steroidogenic lineages with specialized cholesterol sourcing, cortisol synthesis, and sex hormone production"
+          ],
+          "scientific_significance": "The study provides mechanistic insights into the coordinated development of the human urogenital system, revealing how spatially distinct cell populations interact to establish sex differentiation pathways."
+        },
+        "elapsed_seconds": 19.1349,
+        "input_tokens": 626,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 840,
+        "model_eval_seconds": 15.632,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42928654",
+        "title": "Engineering Thermoelectric-Electrocatalytic Coupling in RuO2/PrCoO3 Heterointerface for Efficient Oxygen Evolution.",
+        "abstract": "NA: The oxygen evolution reaction (OER) is pivotal for diverse electrochemical energy conversion systems; however, it has so far been plagued by sluggish kinetics and excessive energy consumption. In this study, we proposed an innovative thermoelectric-electrocatalytic coupling strategy to enhance OER efficiency by constructing an Ohmic heterointerface through uniform integration of RuO2 with thermoelectric oxide (PrCoO3). Combined experimental and theoretical analyses revealed that the thermoelectric potential generated by PrCoO3 selectively activates the intrinsically inert (101) facet of RuO2 by lowering *OOH formation barrier, thereby substantially boosting the overall OER performance. Consequently, the RuO2/PrCoO3 heterointerface delivered exceptional OER performance under a mild temperature gradient (ΔT) of 175°C, achieving dramatic reduction in overpotential at 10 mA cm-2 from 300 mV (ΔT = 0°C) to 178 mV, 4 300% increase in current density, and negligible potential loss over 1,000 h. When the catalyst was assembled into an anion exchange membrane water electrolyzer, the cell driven by spontaneous heating reached a low voltage of 2.18 V at a current density of 2.0 A cm-2, with stable operation for 600 h. These insights into harnessing thermal gradient via integrated electrocatalytic system are crucial for the recovery of industrial waste heat and its conversion into high-value chemicals.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75489",
+        "doi_url": "https://doi.org/10.1002/adma.75489",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42928654/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates thermoelectric-electrocatalytic coupling to enhance oxygen evolution reaction (OER) efficiency using a RuO2/PrCoO3 heterointerface. By integrating thermoelectric oxide PrCoO3 with RuO2, the system leverages thermal gradients to activate inert RuO2 facets, reducing OER overpotential by 43% at 10 mA cm-2 and increasing current density by 300%. The approach demonstrates stable performance in water electrolysis under mild temperature gradients.\",\n  \"key_findings\": [\n    \"Thermoelectric potential from PrCoO3 activates inert RuO2 (101) facets, lowering *OOH formation barrier\",\n    \"OER overpotential reduced by 43% at 10 mA cm-2 with 300% current density increase under 175°C gradient\",\n    \"Stable electrolyzer operation at 2.18 V for 600 hours using spontaneous heating\"\n  ],\n  \"scientific_significance\": \"This work establishes a thermoelectric-electrocatalytic coupling strategy that converts waste heat into electrochemical energy, advancing sustainable energy conversion systems through integrated thermal and catalytic mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates thermoelectric-electrocatalytic coupling to enhance oxygen evolution reaction (OER) efficiency using a RuO2/PrCoO3 heterointerface. By integrating thermoelectric oxide PrCoO3 with RuO2, the system leverages thermal gradients to activate inert RuO2 facets, reducing OER overpotential by 43% at 10 mA cm-2 and increasing current density by 300%. The approach demonstrates stable performance in water electrolysis under mild temperature gradients.",
+          "key_findings": [
+            "Thermoelectric potential from PrCoO3 activates inert RuO2 (101) facets, lowering *OOH formation barrier",
+            "OER overpotential reduced by 43% at 10 mA cm-2 with 300% current density increase under 175°C gradient",
+            "Stable electrolyzer operation at 2.18 V for 600 hours using spontaneous heating"
+          ],
+          "scientific_significance": "This work establishes a thermoelectric-electrocatalytic coupling strategy that converts waste heat into electrochemical energy, advancing sustainable energy conversion systems through integrated thermal and catalytic mechanisms."
+        },
+        "elapsed_seconds": 25.2619,
+        "input_tokens": 777,
+        "output_tokens": 258,
+        "thoughts_tokens": null,
+        "total_tokens": 1035,
+        "model_eval_seconds": 19.7982,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951974",
+        "title": "Spatial and sectoral water demand assessment for the African continent.",
+        "abstract": "NA: Water demand is the volume of water required by a sector to satisfy its needs1,2. Across Africa, these demands are frequently unmet3, yet their spatial and sectoral distribution remains incompletely characterized, limiting informed water-management decisions4. Here, we provide an Africa-wide estimate of water demand for 2020 across six sectors and multiple subsectors at high spatial resolution. Because the analysis integrates heterogeneous datasets and modelling assumptions, the resulting values should be interpreted as harmonized estimates rather than direct observations of realized water use. We estimate total annual water demand at 347 km3, comprising 60 km3 (17%) for municipalities (57-64 km3, with ±20% key parameters variations), 225 km3 (65%) for irrigation (214-233 km3, 95% confidence interval, with ±20% variations in irrigation efficiency), 11 km3 (3%) for livestock, 15 km3 (4%) for manufacturing, 33 km3 (10%) for electricity including hydropower and 3 km3 (1%) for mining (3-4 km3, with annual production variations). Estimated demand increased by 26% between 2010 and 2020. The dominant water-demand sector varies across regions and river basins, broadly reflecting established geographical and socioeconomic patterns. In parts of northern and southern Africa, estimated demand exceeds water availability, although results depend on assumptions regarding environmental-flow protection5. Elsewhere, water availability exceeds aggregate demand despite limited access to piped drinking water, indicating that physical availability alone does not determine water security. Our analysis therefore provides a spatially and sectorally resolved baseline for identifying water-demand pressures and access constraints rather than establishing a new causal mechanism of water insecurity. Local estimates should be interpreted cautiously given uncertainties in the underlying datasets.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11199-8",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11199-8",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951974/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study estimates Africa-wide water demand for 2020 across six sectors at high spatial resolution, integrating heterogeneous datasets to produce harmonized values. Total annual demand was 347 km³, with irrigation (65%) and municipalities (17%) as dominant sectors. Demand increased by 26% from 2010 to 2020. The analysis highlights regional variations where demand exceeds availability, indicating that physical water availability alone does not ensure water security.\",\n  \"key_findings\": [\n    \"Total annual water demand for Africa in 2020 was 347 km³, with irrigation accounting for 65% (225 km³).\",\n    \"Municipal water demand represented 17% (60 km³) of total demand, with significant uncertainty in key parameters.\",\n    \"Demand increased by 26% between 2010 and 2020, and regional variations exist where water demand exceeds availability despite physical water abundance.\"\n  ],\n  \"scientific_significance\": \"The study provides a spatially and sectorally resolved baseline for understanding water-demand pressures across Africa, clarifying that physical water availability alone does not determine water security.\"\n}",
+        "parsed": {
+          "summary": "This study estimates Africa-wide water demand for 2020 across six sectors at high spatial resolution, integrating heterogeneous datasets to produce harmonized values. Total annual demand was 347 km³, with irrigation (65%) and municipalities (17%) as dominant sectors. Demand increased by 26% from 2010 to 2020. The analysis highlights regional variations where demand exceeds availability, indicating that physical water availability alone does not ensure water security.",
+          "key_findings": [
+            "Total annual water demand for Africa in 2020 was 347 km³, with irrigation accounting for 65% (225 km³).",
+            "Municipal water demand represented 17% (60 km³) of total demand, with significant uncertainty in key parameters.",
+            "Demand increased by 26% between 2010 and 2020, and regional variations exist where water demand exceeds availability despite physical water abundance."
+          ],
+          "scientific_significance": "The study provides a spatially and sectorally resolved baseline for understanding water-demand pressures across Africa, clarifying that physical water availability alone does not determine water security."
+        },
+        "elapsed_seconds": 26.5683,
+        "input_tokens": 842,
+        "output_tokens": 258,
+        "thoughts_tokens": null,
+        "total_tokens": 1100,
+        "model_eval_seconds": 19.8634,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42956153",
+        "title": "Stimulated protein degradation to promote mitochondrial function and neuronal survival.",
+        "abstract": "NA: Targeted protein degradation is a promising modality to treat cancer or inflammation, but whether it can provide a similar benefit for disorders caused by pervasive protein dysregulation is unclear. We describe stimulated protein degradation (SPD) as a strategy that leverages agonists of stress-responsive E3 ubiquitin ligases to simultaneously eliminate multiple pathogenic factors. Specifically, we show that activators of the reductive stress response E3 CUL2FEM1B boost degradation of multiple physiological substrates to improve mitochondrial import and electron transport chain assembly. In this manner, CUL2FEM1B agonists preserve mitochondrial function and neuronal survival in models of neurodegenerative COX deficiency syndrome and Friedreich's ataxia. By activating E3 ligases that evolved to safeguard cellular integrity, SPD expands the use of compound-induced protein degradation to complex pathologies of high unmet need.",
+        "publication_types": [],
+        "doi": "10.1126/science.aed2525",
+        "doi_url": "https://doi.org/10.1126/science.aed2525",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42956153/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates stimulated protein degradation (SPD) as a therapeutic strategy for neurodegenerative disorders. SPD uses agonists of stress-responsive E3 ubiquitin ligases to eliminate multiple pathogenic proteins. The approach improved mitochondrial function and neuronal survival in models of neurodegenerative COX deficiency syndrome and Friedreich's atusing E3 ligase activation to enhance cellular integrity. The findings demonstrate SPD's potential for treating conditions with pervasive protein dysregulation.\",\n  \"key_findings\": [\n    \"SPD leverages E3 ubiquitin ligase agonists to degrade multiple pathogenic proteins\",\n    \"CUL2FEM1B activators enhanced mitochondrial import and electron transport chain assembly\",\n    \"SPD preserved neuronal survival in neurodegenerative COX deficiency syndrome and Friedreich's ataxia models\"\n  ],\n  \"scientific_significance\": \"SPD provides a mechanism to target multiple pathogenic proteins via E3 ligase activation, offering a novel therapeutic approach for disorders with pervasive protein dysregulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates stimulated protein degradation (SPD) as a therapeutic strategy for neurodegenerative disorders. SPD uses agonists of stress-responsive E3 ubiquitin ligases to eliminate multiple pathogenic proteins. The approach improved mitochondrial function and neuronal survival in models of neurodegenerative COX deficiency syndrome and Friedreich's atusing E3 ligase activation to enhance cellular integrity. The findings demonstrate SPD's potential for treating conditions with pervasive protein dysregulation.",
+          "key_findings": [
+            "SPD leverages E3 ubiquitin ligase agonists to degrade multiple pathogenic proteins",
+            "CUL2FEM1B activators enhanced mitochondrial import and electron transport chain assembly",
+            "SPD preserved neuronal survival in neurodegenerative COX deficiency syndrome and Friedreich's ataxia models"
+          ],
+          "scientific_significance": "SPD provides a mechanism to target multiple pathogenic proteins via E3 ligase activation, offering a novel therapeutic approach for disorders with pervasive protein dysregulation."
+        },
+        "elapsed_seconds": 18.659,
+        "input_tokens": 610,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 824,
+        "model_eval_seconds": 15.4535,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42928997",
+        "title": "Anti-Poisoning Tin Single-Atom Unlocks High-Activity Ruthenium Catalysts for Alkaline Hydrogen Evolution Reaction.",
+        "abstract": "NA: The practical deployment of anion exchange membrane water electrolyzer (AEMWE) is constrained by the lack of efficient electrocatalysts for the alkaline hydrogen evolution reaction (HER), primarily due tothe sluggishVolmer step and inefficient intermediate desorption. While Ru-based catalysts exhibit promising *H binding energy, their practical performance is compromised by poor water dissociation kinetics and susceptibility to active-site blockage by adsorbed species. Herein, we report a Sn-doped RuO2@Ru catalyst supported on carbon black, wherein atomically dispersed Sn modulates the electronic structure of RuO2 via Sn─O bonds, simultaneously facilitating water dissociation, optimizing *H adsorption, and preventing *OH poisoning. The catalyst achieves exceptional performance with an overpotential of 9 mV at 10 mA cm-2, positioning it among the most active HER catalysts reported to date. When integrated into a full AEMWE, it operates at 1.85 V and 1000 mA cm-2 with stability exceeding 300 h. Mechanistic studies suggest that Sn doping fine-tunes the *OH and *H binding energies, addressing the kinetic imbalance inherent in conventional Ru catalysts. This work highlights the effectiveness of atomic-level electronic engineering via an anti-poisoning strategy for designing efficient, stable alkaline HER electrocatalysts toward industrial hydrogen production.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75495",
+        "doi_url": "https://doi.org/10.1002/adma.75495",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42928997/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing alkaline hydrogen evolution reaction (HER) catalysts by integrating anti-poisoning tin single-atoms into ruthen. The catalyst, Sn-doped RuO2@Ru on carbon, improves water dissociation kinetics, optimizes hydrogen binding, and prevents hydroxide poisoning. It achieves low overpotential (9 mV at 10 mA cm-2) and stable operation in full electrolyzers at 1.85 V and 1000 mA cm-2 for over 300 hours.\",\n  \"key_findings\": [\n    \"Sn-doped RuO2@Ru catalyst on carbon black demonstrates exceptional HER activity with 9 mV overpotential at 10 mA cm-2\",\n    \"The catalyst prevents *OH poisoning and optimizes *H binding energy through atomic-level electronic modulation\",\n    \"Integration into AEMWE systems achieves stable operation at 1.85 V and 1000 mA cm-2 for over 300 hours\"\n  ],\n  \"scientific_significance\": \"This work establishes atomic-level electronic engineering with anti-poisoning strategies as a viable approach for designing highly active and stable alkaline HER electrocatalysts, advancing industrial hydrogen production technologies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing alkaline hydrogen evolution reaction (HER) catalysts by integrating anti-poisoning tin single-atoms into ruthen. The catalyst, Sn-doped RuO2@Ru on carbon, improves water dissociation kinetics, optimizes hydrogen binding, and prevents hydroxide poisoning. It achieves low overpotential (9 mV at 10 mA cm-2) and stable operation in full electrolyzers at 1.85 V and 1000 mA cm-2 for over 300 hours.",
+          "key_findings": [
+            "Sn-doped RuO2@Ru catalyst on carbon black demonstrates exceptional HER activity with 9 mV overpotential at 10 mA cm-2",
+            "The catalyst prevents *OH poisoning and optimizes *H binding energy through atomic-level electronic modulation",
+            "Integration into AEMWE systems achieves stable operation at 1.85 V and 1000 mA cm-2 for over 300 hours"
+          ],
+          "scientific_significance": "This work establishes atomic-level electronic engineering with anti-poisoning strategies as a viable approach for designing highly active and stable alkaline HER electrocatalysts, advancing industrial hydrogen production technologies."
+        },
+        "elapsed_seconds": 24.916,
+        "input_tokens": 736,
+        "output_tokens": 262,
+        "thoughts_tokens": null,
+        "total_tokens": 998,
+        "model_eval_seconds": 19.7895,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
