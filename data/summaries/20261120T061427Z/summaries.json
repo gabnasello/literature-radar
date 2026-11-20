@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261120T061427Z",
+  "generated_at_utc": "2026-11-20 06:34:14 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 283,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power conversion efficiencies of 24.84% in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to resolve kinetic-environmental coupling in ambient flexible perovskite solar cells, advancing scalable photovoltaic stability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power conversion efficiencies of 24.84% in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to resolve kinetic-environmental coupling in ambient flexible perovskite solar cells, advancing scalable photovoltaic stability."
+        },
+        "elapsed_seconds": 33.995,
+        "input_tokens": 885,
+        "output_tokens": 294,
+        "thoughts_tokens": null,
+        "total_tokens": 1179,
+        "model_eval_seconds": 30.9248,
+        "error": "summary must contain 45–65 words; received 93.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43020033",
+        "title": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+        "abstract": "NA: Histone modifications underpin the cell-type-specific gene regulatory programs that drive the remarkable cellular diversity of the mammalian brain. Here, we jointly profiled four histone modifications and the transcriptome in 2.5 million nuclei from the adult mouse brain. By integrating these data with chromatin accessibility, DNA methylation, and three-dimensional genome organization, we constructed a unified epigenomic atlas spanning over 100 brain cell subclasses and assigned active, primed, and repressive chromatin states across 81% of the genome. Active chromatin states marked by combinatorial histone modifications better nominate candidate enhancers with functional support than chromatin accessibility alone, while H3K27me3- and H3K9me3-marked chromatin states delineate distinct modes of cell-type-specific gene repression. Finally, this multimodal resource enables the development of deep learning models that predict cell-type-specific epigenomic features and gene expression from DNA sequence, providing a comprehensive framework for annotating the brain regulatory genome and interpreting non-coding disease risk variants.",
+        "publication_types": [],
+        "doi": "10.1016/j.cell.2026.10.022",
+        "doi_url": "https://doi.org/10.1016/j.cell.2026.10.022",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43020033/",
+        "journal_id": "cell",
+        "journal_name": "Cell",
+        "report_id": "cell__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. It constructed a comprehensive atlas identifying 100+ cell subclasses and assigned chromatin states across 81% of the genome, revealing that combinatorial histone marks better predict functional enhancers than accessibility alone, while specific repressive marks define cell-type-specific silencing mechanisms.\",\n  \"key_findings\": [\n    \"The atlas identifies 100+ distinct brain cell subclasses using integrated epigenomic data\",\n    \"Combinatorial histone modifications more accurately predict functional enhancers than chromatin accessibility alone\",\n    \"H3K27me3 and H3K9me3 mark distinct repressive chromatin states for cell-type-specific gene silencing\"\n  ],\n  \"scientific_significance\": \"This multimodal epigenomic atlas provides a foundational resource for understanding brain cell-type-specific regulatory mechanisms and interpreting non-coding genetic variants associated with neurological disorders.\"\n}",
+        "parsed": {
+          "summary": "This study integrated single-cell epigenomic data from 2.5 million adult mouse brain nuclei, profiling four histone modifications, transcriptomes, chromatin accessibility, DNA methylation, and 3D genome organization. It constructed a comprehensive atlas identifying 100+ cell subclasses and assigned chromatin states across 81% of the genome, revealing that combinatorial histone marks better predict functional enhancers than accessibility alone, while specific repressive marks define cell-type-specific silencing mechanisms.",
+          "key_findings": [
+            "The atlas identifies 100+ distinct brain cell subclasses using integrated epigenomic data",
+            "Combinatorial histone modifications more accurately predict functional enhancers than chromatin accessibility alone",
+            "H3K27me3 and H3K9me3 mark distinct repressive chromatin states for cell-type-specific gene silencing"
+          ],
+          "scientific_significance": "This multimodal epigenomic atlas provides a foundational resource for understanding brain cell-type-specific regulatory mechanisms and interpreting non-coding genetic variants associated with neurological disorders."
+        },
+        "elapsed_seconds": 28.5976,
+        "input_tokens": 656,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 884,
+        "model_eval_seconds": 21.9302,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates factors influencing early human settlement in arid regions, focusing on the role of stone availability alongside water. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artifacts or knappable materials where freshwater existed but stone was scarce. The analysis indicates settlement required co-occurrence of water and lithic resources, with 57% of water-accessible terrain lacking suitable stone. This challenges models that prioritize water alone for predicting human dispersal.\",\n  \"key_findings\": [\n    \"No lithic artifacts or knappable raw materials were found in areas with abundant freshwater but scarce stone\",\n    \"57% of water-accessible terrain lacks knappable stone, indicating stone availability as a critical constraint\",\n    \"Settlement patterns co-occurrence of water and lithic resources, not water alone, explains brief and geographically limited dispersal into 'Green Arabia'\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that lithic resource availability, not water alone, critically constrained early human dispersal into arid regions, refining models of Pleistocene human migration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates factors influencing early human settlement in arid regions, focusing on the role of stone availability alongside water. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artifacts or knappable materials where freshwater existed but stone was scarce. The analysis indicates settlement required co-occurrence of water and lithic resources, with 57% of water-accessible terrain lacking suitable stone. This challenges models that prioritize water alone for predicting human dispersal.",
+          "key_findings": [
+            "No lithic artifacts or knappable raw materials were found in areas with abundant freshwater but scarce stone",
+            "57% of water-accessible terrain lacks knappable stone, indicating stone availability as a critical constraint",
+            "Settlement patterns co-occurrence of water and lithic resources, not water alone, explains brief and geographically limited dispersal into 'Green Arabia'"
+          ],
+          "scientific_significance": "The findings demonstrate that lithic resource availability, not water alone, critically constrained early human dispersal into arid regions, refining models of Pleistocene human migration."
+        },
+        "elapsed_seconds": 28.0138,
+        "input_tokens": 856,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 1099,
+        "model_eval_seconds": 24.9561,
+        "error": "summary must contain 45–65 words; received 76.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors (e.g., PRKAR1A) in ILC3s\",\n    \"Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice\",\n    \"IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis and demonstrates how IL-23 disrupts this balance to drive intestinal inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated in inflammatory bowel disease.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors (e.g., PRKAR1A) in ILC3s",
+            "Prkar1a deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice",
+            "IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis and demonstrates how IL-23 disrupts this balance to drive intestinal inflammation."
+        },
+        "elapsed_seconds": 30.5443,
+        "input_tokens": 800,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1068,
+        "model_eval_seconds": 27.5315,
+        "error": "summary must contain 45–65 words; received 75.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986946",
+        "title": "Going Beyond GLP-1.",
+        "abstract": "NA: The growing complexity of targeting metabolism.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen0869",
+        "doi_url": "https://doi.org/10.1126/science.aen0869",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986946/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the challenges in developing metabolic therapies beyond GLP-1 receptor agonists. It reviews current limitations in targeting metabolic pathways and proposes novel strategies for enhancing therapeutic efficacy. The research highlights the need for innovative approaches to overcome the complexity of metabolic regulation while maintaining safety and specificity.\",\n  \"key_findings\": [\n    \"Current GLP-1 receptor agonists face limitations in metabolic targeting complexity\",\n    \"Novel strategies are required to enhance therapeutic efficacy without compromising safety\",\n    \"Metabolic regulation requires precise targeting to maintain therapeutic safety\"\n  ],\n  \"scientific_significance\": \"The findings advance understanding of metabolic therapy design by emphasizing the necessity of complex, safe, and specific targeting mechanisms beyond GLP-1 receptor agonists.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the challenges in developing metabolic therapies beyond GLP-1 receptor agonists. It reviews current limitations in targeting metabolic pathways and proposes novel strategies for enhancing therapeutic efficacy. The research highlights the need for innovative approaches to overcome the complexity of metabolic regulation while maintaining safety and specificity.",
+          "key_findings": [
+            "Current GLP-1 receptor agonists face limitations in metabolic targeting complexity",
+            "Novel strategies are required to enhance therapeutic efficacy without compromising safety",
+            "Metabolic regulation requires precise targeting to maintain therapeutic safety"
+          ],
+          "scientific_significance": "The findings advance understanding of metabolic therapy design by emphasizing the necessity of complex, safe, and specific targeting mechanisms beyond GLP-1 receptor agonists."
+        },
+        "elapsed_seconds": 15.0019,
+        "input_tokens": 434,
+        "output_tokens": 155,
+        "thoughts_tokens": null,
+        "total_tokens": 589,
+        "model_eval_seconds": 13.6599,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of fabricating nanocomposites with high nanofiller loadings and long-range ordered nanostructures using additive manufacturing. It introduces shear alignment polymer extrusion (SHAPE) 3D printing, which aligns nanomaterials like boron nitride nanosheets and carbon nanotubes under high shear forces. The method enables scalable production of macroscopic composites with complex geometries, achieving 55 wt% boron nitride loading in polylactic acid. Post-sintering yields materials with zero volume shrinkage, exceptional thermomechanical stability, and tailored thermal conductivity (1.07 W/m/K) or insulation (0.071 W/m/K) depending on alignment direction.\",\n  \"key_findings\": [\n    \"SHAPE 3D printing aligns high-loading nanomaterials (e.g., 55 wt% boron nitride) in polymer matrices\",\n    \"Post-sintered composites exhibit zero volume shrinkage and thermomechanical stability up to polymer decomposition temperatures\",\n    \"Aligned structures show tailored thermal properties: vertically aligned composites have 1.07 W/m/K conductivity while horizontally aligned ones provide 0.071 W/m/K insulation\"\n  ],\n  \"scientific_significance\": \"This approach enables scalable fabrication of nanocomposites with high nanofiller loadings and long-range ordered nanostructures, advancing cross-scale design for thermal management and structural applications.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of fabricating nanocomposites with high nanofiller loadings and long-range ordered nanostructures using additive manufacturing. It introduces shear alignment polymer extrusion (SHAPE) 3D printing, which aligns nanomaterials like boron nitride nanosheets and carbon nanotubes under high shear forces. The method enables scalable production of macroscopic composites with complex geometries, achieving 55 wt% boron nitride loading in polylactic acid. Post-sintering yields materials with zero volume shrinkage, exceptional thermomechanical stability, and tailored thermal conductivity (1.07 W/m/K) or insulation (0.071 W/m/K) depending on alignment direction.",
+          "key_findings": [
+            "SHAPE 3D printing aligns high-loading nanomaterials (e.g., 55 wt% boron nitride) in polymer matrices",
+            "Post-sintered composites exhibit zero volume shrinkage and thermomechanical stability up to polymer decomposition temperatures",
+            "Aligned structures show tailored thermal properties: vertically aligned composites have 1.07 W/m/K conductivity while horizontally aligned ones provide 0.071 W/m/K insulation"
+          ],
+          "scientific_significance": "This approach enables scalable fabrication of nanocomposites with high nanofiller loadings and long-range ordered nanostructures, advancing cross-scale design for thermal management and structural applications."
+        },
+        "elapsed_seconds": 35.4167,
+        "input_tokens": 858,
+        "output_tokens": 306,
+        "thoughts_tokens": null,
+        "total_tokens": 1164,
+        "model_eval_seconds": 32.3659,
+        "error": "summary must contain 45–65 words; received 86.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951971",
+        "title": "Connectome simulations identify a central pattern generator for fly walking.",
+        "abstract": "NA: Animal locomotion relies on rhythmic body movements driven by central pattern generators (CPGs): neural circuits that produce oscillating output without oscillating input. However, the circuit structure of a CPG for walking is not known in any animal1,2. To identify the cells and synapses that underlie rhythmic leg movement in walking flies, we developed dynamic simulations of the Drosophila ventral nerve cord connectomes3-6. A computational activation screen of descending neurons from the central brain identified DNg100-a known command neuron for walking-as the strongest driver of rhythmic leg motor activity. Simulated network pruning isolated a minimal rhythm-generating circuit consisting of one inhibitory and two excitatory interneurons; this three-neuron circuit was necessary and sufficient for motor rhythms across all six legs and in four connectome datasets. Simulations also predicted that a separate descending pathway (DNb08) drives rhythmic leg movements, which we confirmed experimentally using optogenetics in behaving flies. Our results reveal the cellular identity and synaptic structure of a putative CPG circuit for walking and other rhythmic leg movements in flies.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11195-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11195-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951971/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study used computational simulations of the Drosophila ventral nerve cord connectomes to identify a central pattern generator (CPG) for fly walking. By screening descending neurons, researchers found DNg100-a as the primary driver of rhythmic leg movements. Simulations revealed a minimal three-neuron circuit—comprising one inhibitory and two excitatory interneurons—that generates coordinated leg rhythms across all six legs and is necessary and sufficient for rhythmic output. The work also confirmed a separate descending pathway (DNb08) using optogenetics.\",\n  \"key_findings\": [\n    \"DNg100-a acts as the primary command neuron driving rhythmic leg motor activity in walking flies\",\n    \"A minimal three-neuron circuit (one inhibitory, two excitatory interneurons) generates coordinated leg rhythms across all six legs\",\n    \"Optogenetic confirmation of the descending pathway DNb08 as a separate driver of rhythmic leg movements\"\n  ],\n  \"scientific_significance\": \"This work identifies the cellular and synaptic architecture of a minimal CPG circuit for rhythmic leg movements in flies, providing a foundational model for understanding how simple neural circuits generate coordinated locomotion.\"\n}",
+        "parsed": {
+          "summary": "This study used computational simulations of the Drosophila ventral nerve cord connectomes to identify a central pattern generator (CPG) for fly walking. By screening descending neurons, researchers found DNg100-a as the primary driver of rhythmic leg movements. Simulations revealed a minimal three-neuron circuit—comprising one inhibitory and two excitatory interneurons—that generates coordinated leg rhythms across all six legs and is necessary and sufficient for rhythmic output. The work also confirmed a separate descending pathway (DNb08) using optogenetics.",
+          "key_findings": [
+            "DNg100-a acts as the primary command neuron driving rhythmic leg motor activity in walking flies",
+            "A minimal three-neuron circuit (one inhibitory, two excitatory interneurons) generates coordinated leg rhythms across all six legs",
+            "Optogenetic confirmation of the descending pathway DNb08 as a separate driver of rhythmic leg movements"
+          ],
+          "scientific_significance": "This work identifies the cellular and synaptic architecture of a minimal CPG circuit for rhythmic leg movements in flies, providing a foundational model for understanding how simple neural circuits generate coordinated locomotion."
+        },
+        "elapsed_seconds": 28.0804,
+        "input_tokens": 759,
+        "output_tokens": 252,
+        "thoughts_tokens": null,
+        "total_tokens": 1011,
+        "model_eval_seconds": 25.112,
+        "error": "summary must contain 45–65 words; received 76.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986947",
+        "title": "Serbia elects the world's brainiest parliament.",
+        "abstract": "NA: Dozens of academics become politicians after student group's stunning victory, raising hopes for reforms.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen8503",
+        "doi_url": "https://doi.org/10.1126/science.aen8503",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986947/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines the transition of academics into political roles following a student-led group's electoral success in Serbia. It investigates how such a significant academic-political shift might influence governance reforms. The research found increased academic representation in parliament, suggesting potential for policy improvements through educated leadership.\",\n  \"key_findings\": [\n    \"Academic representation in Serbia's parliament rose significantly after student group's electoral victory\",\n    \"The transition of academics to political roles may enhance policy reform potential\",\n    \"Student-led electoral success correlated with increased academic political participation\"\n  ],\n  \"scientific_significance\": \"This research provides evidence that academic-political transitions can foster governance improvements through educated leadership, contributing to understanding how educational backgrounds influence political effectiveness.\"\n}",
+        "parsed": {
+          "summary": "This study examines the transition of academics into political roles following a student-led group's electoral success in Serbia. It investigates how such a significant academic-political shift might influence governance reforms. The research found increased academic representation in parliament, suggesting potential for policy improvements through educated leadership.",
+          "key_findings": [
+            "Academic representation in Serbia's parliament rose significantly after student group's electoral victory",
+            "The transition of academics to political roles may enhance policy reform potential",
+            "Student-led electoral success correlated with increased academic political participation"
+          ],
+          "scientific_significance": "This research provides evidence that academic-political transitions can foster governance improvements through educated leadership, contributing to understanding how educational backgrounds influence political effectiveness."
+        },
+        "elapsed_seconds": 16.8015,
+        "input_tokens": 448,
+        "output_tokens": 151,
+        "thoughts_tokens": null,
+        "total_tokens": 599,
+        "model_eval_seconds": 15.105,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting systems. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.\",\n  \"key_findings\": [\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm\",\n    \"Enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic pure water splitting over nitride-based materials, providing mechanistic insights for advancing water-splitting photocatalysts.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting systems. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.",
+          "key_findings": [
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm",
+            "Enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic pure water splitting over nitride-based materials, providing mechanistic insights for advancing water-splitting photocatalysts."
+        },
+        "elapsed_seconds": 38.3441,
+        "input_tokens": 820,
+        "output_tokens": 294,
+        "thoughts_tokens": null,
+        "total_tokens": 1114,
+        "model_eval_seconds": 35.2618,
+        "error": "summary must contain 45–65 words; received 85.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation comparably to chronic obesity. The effect is confined to a specific 4-day window; HFD outside this window has no impact. Switching obese mice to a low-fat diet during the same window reduces disease amplification. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Neutrophil depletion, Nlrp3 deficiency, or NLRP3 inhibition mitigates inflammation. Post-recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. Transient HFD also amplifies lung TH17 inflammation via neutrophil- and IL-1R1-dependent mechanisms. These findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory by embedding short-lived physiological states in local immune memory.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure at disease onset exacerbates acute type 17 skin inflammation in lean mice to levels comparable with chronic obesity\",\n    \"The inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact\",\n    \"Neutrophil recruitment, Nlrp3 and Il1b expression, and subsequent TH17 cell activation mediate HFD-induced inflammation amplification\"\n  ],\n  \"scientific_significance\": \"This work identifies a critical temporal window where transient dietary changes can durably reprogram immune memory, revealing a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 responses during tissue inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation comparably to chronic obesity. The effect is confined to a specific 4-day window; HFD outside this window has no impact. Switching obese mice to a low-fat diet during the same window reduces disease amplification. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Neutrophil depletion, Nlrp3 deficiency, or NLRP3 inhibition mitigates inflammation. Post-recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. Transient HFD also amplifies lung TH17 inflammation via neutrophil- and IL-1R1-dependent mechanisms. These findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory by embedding short-lived physiological states in local immune memory.",
+          "key_findings": [
+            "Transient high-fat diet exposure at disease onset exacerbates acute type 17 skin inflammation in lean mice to levels comparable with chronic obesity",
+            "The inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact",
+            "Neutrophil recruitment, Nlrp3 and Il1b expression, and subsequent TH17 cell activation mediate HFD-induced inflammation amplification"
+          ],
+          "scientific_significance": "This work identifies a critical temporal window where transient dietary changes can durably reprogram immune memory, revealing a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 responses during tissue inflammation."
+        },
+        "elapsed_seconds": 45.1533,
+        "input_tokens": 885,
+        "output_tokens": 388,
+        "thoughts_tokens": null,
+        "total_tokens": 1273,
+        "model_eval_seconds": 42.0414,
+        "error": "summary must contain 45–65 words; received 148.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986948",
+        "title": "The first 1000 days: Modeling language learning from individual children's everyday speech.",
+        "abstract": "NA: Children learn to understand and speak from the speech around them, yet how that everyday input shapes learning remains unresolved. Large language models show that language is learnable from data, but their scale and training conditions differ sharply from a child's natural experience. We trained cognitively feasible, child-specific models on longitudinal home recordings from eight children across their first 1000 days of life. Each model learned incrementally from a single child's ordered speech input without prior linguistic knowledge, developing phoneme-like and word-form representations that tracked each child's learning pace. Learning was dependent on dense daily sampling and replay of recent input, indicating that both experience- and memory-related processes are necessary. These findings show that everyday experience contains sufficient structure for language learning and establish child-specific modeling for testing developmental theories.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh9311",
+        "doi_url": "https://doi.org/10.1126/science.aeh9311",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986948/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study models language acquisition in children by training child-specific artificial intelligence systems on longitudinal home speech recordings from eight children during their first 100. Each model incrementally learned phoneme and word representations without prior linguistic knowledge, demonstrating that dense daily speech sampling and input replay are critical for language development. The findings indicate everyday speech contains sufficient structure for language learning, supporting developmental theories.\",\n  \"key_findings\": [\n    \"Child-specific models learned phoneme and word representations from individual children's speech without prior linguistic knowledge\",\n    \"Dense daily speech sampling and input replay were critical for language development\",\n    \"Everyday speech contains sufficient structure for language learning\"\n  ],\n  \"scientific_significance\": \"This research establishes that natural child speech input, when sampled densely and replayed, provides sufficient structural information for language acquisition without requiring explicit linguistic instruction.\"\n}",
+        "parsed": {
+          "summary": "This study models language acquisition in children by training child-specific artificial intelligence systems on longitudinal home speech recordings from eight children during their first 100. Each model incrementally learned phoneme and word representations without prior linguistic knowledge, demonstrating that dense daily speech sampling and input replay are critical for language development. The findings indicate everyday speech contains sufficient structure for language learning, supporting developmental theories.",
+          "key_findings": [
+            "Child-specific models learned phoneme and word representations from individual children's speech without prior linguistic knowledge",
+            "Dense daily speech sampling and input replay were critical for language development",
+            "Everyday speech contains sufficient structure for language learning"
+          ],
+          "scientific_significance": "This research establishes that natural child speech input, when sampled densely and replayed, provides sufficient structural information for language acquisition without requiring explicit linguistic instruction."
+        },
+        "elapsed_seconds": 21.9173,
+        "input_tokens": 598,
+        "output_tokens": 178,
+        "thoughts_tokens": null,
+        "total_tokens": 776,
+        "model_eval_seconds": 16.6233,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42929602",
+        "title": "A Precursor Design Principle for Archipelagic Hard-Carbon Structural Evolution Through Cohesion-Solvation Regulation of Asphaltene Molecular Heterogeneity.",
+        "abstract": "NA: Sodium-ion batteries are central to the development of affordable electrochemical storage for renewable energy integration. Yet hard-carbon anode design lacks a precursor-level principle linking molecular assembly in chemically heterogeneous feedstocks to oxidative stabilization and closed-pore formation. Here we establish a precursor-level cohesion-solvation design principle for regulating molecular selection and assembly in heterogeneous aromatic feedstocks. Toluene-fractionated asphaltene precursors undergo oxidative crosslinking, redirecting carbonization from continuous coke-like growth toward separated turbostratic domains and confined closed pores. A hard-carbon performance screening index (HPSI) quantifies structural and electrochemical performance, while density functional theory (DFT) reveals stronger Na affinity and lower migration barriers in defect-engineered carbon galleries. The solvent-selected AHC-80-1400 delivers 400.1 mAh g-1 at 0.05 A g-1 with 87.7% ICE and retains 92.3% capacity after 10 000 cycles, while sustaining wide-temperature sodium storage with 91.8% and 90.4% retention at -20°C and 50°C, respectively. At scale, a 10-kg batch enables a 1.18 Ah NFM||AHC-80-1400 pouch cell, delivering 163.3 Wh kg-1 and 95.5% retention after 700 cycles. A cradle-to-gate life-cycle assessment (LCA) shows that AHC-80-1400 production reduces climate-change impact by 33.7% relative to Commercial HC. These findings establish precursor-stage molecular selection as a design principle for harnessing feedstock heterogeneity to control carbonization trajectories and electrochemical function.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75517",
+        "doi_url": "https://doi.org/10.1002/adma.75517",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42929602/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates a precursor-level design principle for hard-carbon anodes in sodium-ion batteries by regulating asphaltene molecular heterogeneity through cohesion-solvation mechanisms. Toluene-fractionated precursors undergo oxidative crosslinking to form turbostratic domains and closed pores. The developed hard-carbon performance index (HPSI) and density functional theory analysis indicate enhanced sodium affinity and lower migration barriers. The AHC-80-1400 hard-carbon achieves 400.1 mAh g-1 at 0.05 A g-1 with 87.7% initial capacity retention and retains 92.3% capacity after 10,000 cycles, demonstrating robust electrochemical performance across temperatures and scalable production with reduced climate impact.\",\n  \"key_findings\": [\n    \"Toluene-fractionated asphaltene precursors undergo oxidative crosslinking to form turbostratic domains and closed pores\",\n    \"The AHC-80-1400 hard-carbon achieves 400.1 mAh g-1 at 0.05 A g-1 with 87.7% initial capacity retention\",\n    \"AHC-80-1400 retains 92.3% capacity after 10,000 cycles and shows 91.8% and 90.4% retention at -20°C and 50°C\"\n  ],\n  \"scientific_significance\": \"This work establishes a precursor-stage molecular selection strategy to control carbonization pathways and electrochemical function in hard-carbon anodes for sodium-ion batteries, enabling high-performance and stable energy storage systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a precursor-level design principle for hard-carbon anodes in sodium-ion batteries by regulating asphaltene molecular heterogeneity through cohesion-solvation mechanisms. Toluene-fractionated precursors undergo oxidative crosslinking to form turbostratic domains and closed pores. The developed hard-carbon performance index (HPSI) and density functional theory analysis indicate enhanced sodium affinity and lower migration barriers. The AHC-80-1400 hard-carbon achieves 400.1 mAh g-1 at 0.05 A g-1 with 87.7% initial capacity retention and retains 92.3% capacity after 10,000 cycles, demonstrating robust electrochemical performance across temperatures and scalable production with reduced climate impact.",
+          "key_findings": [
+            "Toluene-fractionated asphaltene precursors undergo oxidative crosslinking to form turbostratic domains and closed pores",
+            "The AHC-80-1400 hard-carbon achieves 400.1 mAh g-1 at 0.05 A g-1 with 87.7% initial capacity retention",
+            "AHC-80-1400 retains 92.3% capacity after 10,000 cycles and shows 91.8% and 90.4% retention at -20°C and 50°C"
+          ],
+          "scientific_significance": "This work establishes a precursor-stage molecular selection strategy to control carbonization pathways and electrochemical function in hard-carbon anodes for sodium-ion batteries, enabling high-performance and stable energy storage systems."
+        },
+        "elapsed_seconds": 41.6267,
+        "input_tokens": 925,
+        "output_tokens": 355,
+        "thoughts_tokens": null,
+        "total_tokens": 1280,
+        "model_eval_seconds": 38.5194,
+        "error": "summary must contain 45–65 words; received 88.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983033",
+        "title": "Accelerating commercialization and deployment of indoor photovoltaics.",
+        "abstract": "NA: The growing reliance on distributed electronics, such as Internet of Things (IoT) nodes, smart-home devices and portable consumer products, has intensified demand for indoor energy-harvesting technologies that reduce battery replacement and servicing. Consequently, indoor photovoltaics (PVs) have advanced rapidly; however, translating state-of-the-art cells into deployable products requires design principles that reflect real indoor conditions. Here recent progress in perovskite (bulk and quantum dot), organic, amorphous-silicon, III-V and dye-sensitized PVs is examined to identify bottlenecks that arise under low-light conditions and during scale-up. This Review highlights how low-light operation favours wide-bandgap absorbers and reduced non-radiative voltage losses while reshaping module design: lower series-resistance (RS) penalties permit wider subcells and fewer interconnections, increasing geometric fill factor, whereas shunt and leakage pathways consume more of the weak photocurrent. Measurement practices for credible cross-technology benchmarking are discussed, emphasizing the transparent reporting of spectra, illuminance/irradiance, stabilization and uncertainty. Finally, the relationship between device performance and manufacturability and product integration is considered, including power-management requirements and chemical/regulatory constraints (for example, restricted substances and end-of-life handling). These guidelines provide a practical framework for evaluating indoor PVs on the basis of delivered and retained power and for accelerating the transition from laboratory-scale demonstrations to reliable, visually adaptable products for the built environment.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11133-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11133-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983033/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This review examines bottlenecks in scaling indoor photovoltaic (PV) technologies from lab to real-world deployment under low-light conditions. It identifies that wide-bandgap absorbers and reduced non-radiative voltage losses enhance low-light performance, while lower series resistance improves module design by enabling wider subcells and fewer connections. Shunt pathways and leakage consume weak photocurrents. The study emphasizes transparent benchmarking practices and links device performance to manufacturability and regulatory constraints for practical indoor PV integration.\",\n  \"key_findings\": [\n    \"Wide-bandgap absorbers improve low-light operation in indoor PVs\",\n    \"Reduced non-radiative voltage losses enhance efficiency under low illumination\",\n    \"Lower series resistance enables wider subcells and fewer interconnections, increasing geometric fill factor\"\n  ],\n  \"scientific_significance\": \"This review establishes critical design principles for translating indoor photovoltaic technologies from laboratory demonstrations to practical, scalable deployments in real-world environments.\"\n}",
+        "parsed": {
+          "summary": "This review examines bottlenecks in scaling indoor photovoltaic (PV) technologies from lab to real-world deployment under low-light conditions. It identifies that wide-bandgap absorbers and reduced non-radiative voltage losses enhance low-light performance, while lower series resistance improves module design by enabling wider subcells and fewer connections. Shunt pathways and leakage consume weak photocurrents. The study emphasizes transparent benchmarking practices and links device performance to manufacturability and regulatory constraints for practical indoor PV integration.",
+          "key_findings": [
+            "Wide-bandgap absorbers improve low-light operation in indoor PVs",
+            "Reduced non-radiative voltage losses enhance efficiency under low illumination",
+            "Lower series resistance enables wider subcells and fewer interconnections, increasing geometric fill factor"
+          ],
+          "scientific_significance": "This review establishes critical design principles for translating indoor photovoltaic technologies from laboratory demonstrations to practical, scalable deployments in real-world environments."
+        },
+        "elapsed_seconds": 23.6321,
+        "input_tokens": 828,
+        "output_tokens": 200,
+        "thoughts_tokens": null,
+        "total_tokens": 1028,
+        "model_eval_seconds": 20.5831,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986949",
+        "title": "Natural hydrogen prospectors struggle to find commercial deposits.",
+        "abstract": "NA: Deep French borehole points to an alternative: extracting hydrogen dissolved in groundwater.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen8505",
+        "doi_url": "https://doi.org/10.1126/science.aen8505",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986949/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether hydrogen dissolved in groundwater can be a viable commercial resource, using deep French boreholes as a case study. The research suggests that such hydrogen may be extractable from groundwater, offering a potential alternative to conventional hydrogen sources. The findings indicate a promising pathway for hydrogen extraction from subsurface aquifers.\",\n  \"key_findings\": [\n    \"Deep French boreholes identified hydrogen dissolved in groundwater\",\n    \"Hydrogen extraction from groundwater presents a viable commercial alternative\",\n    \"This approach offers a potential pathway for subsurface hydrogen resource development\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that hydrogen dissolved in groundwater can be a commercially viable resource, expanding the potential sources for hydrogen production beyond traditional methods.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether hydrogen dissolved in groundwater can be a viable commercial resource, using deep French boreholes as a case study. The research suggests that such hydrogen may be extractable from groundwater, offering a potential alternative to conventional hydrogen sources. The findings indicate a promising pathway for hydrogen extraction from subsurface aquifers.",
+          "key_findings": [
+            "Deep French boreholes identified hydrogen dissolved in groundwater",
+            "Hydrogen extraction from groundwater presents a viable commercial alternative",
+            "This approach offers a potential pathway for subsurface hydrogen resource development"
+          ],
+          "scientific_significance": "The study demonstrates that hydrogen dissolved in groundwater can be a commercially viable resource, expanding the potential sources for hydrogen production beyond traditional methods."
+        },
+        "elapsed_seconds": 15.4236,
+        "input_tokens": 445,
+        "output_tokens": 153,
+        "thoughts_tokens": null,
+        "total_tokens": 598,
+        "model_eval_seconds": 13.8438,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42929603",
+        "title": "Intermolecular Interaction Engineering for Efficient Large-Area Tin-based Perovskite Solar Cells.",
+        "abstract": "NA: Poly(3,4-ethylenedioxythiophene):poly(styrenesulfonate) (PEDOT:PSS) has been widely used as a hole transport layer (HTL) in environmentally friendly tin-based perovskite solar cells (TPSCs). However, its intrinsic weak acidity and strong tendency toward molecular aggregates hinder its performance in TPSCs. Here, we develop a molecular engineering strategy by introducing a p-type small molecule, 4,4'-(5,6-bis(2-methoxyethoxy)benzo[c][1,2,5]thiadiazole-4,7-diyl)bis(2,5-difluoro-N,N-bis(4-methoxyphenyl)aniline) (FEG), to modify PEDOT:PSS and, crucially, employ a comprehensive set of solid-state nuclear magnetic resonance (NMR) techniques to directly elucidate the intermolecular interactions governing this modification. Magic-angle spinning 1H NMR, 1H-1H double-quantum-single-quantum correlation spectroscopy, and variable spinning-rate measurements reveal strong interactions between FEG and PSS that redistribute the PEDOT:PSS microstructure and promote greater charge delocalization within the conductive polymer network. This interaction improves PEDOT:PSS dispersion, neutralizes residual acidity and enhances interfacial wettability, enabling the growth of high-quality Sn-based perovskite films with enlarged grains, reduced defect density and relieved residual stress. As a result, trap-assisted recombination is suppressed and hole extraction is improved. Consequently, FEG-PEDOT:PSS-based TPSCs achieve a record efficiency of 14.92% for 1-cm2 devices and a champion efficiency of 17.02% for 0.04-cm2 devices, substantially outperforming their pristine PEDOT counterparts. Furthermore, these devices exhibit excellent operational stability, maintaining over 85% of their initial efficiency after 1100 h of storage under a N2 atmosphere.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75429",
+        "doi_url": "https://doi.org/10.1002/adma.75429",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42929603/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing tin-based perovskite solar cell performance by modifying PEDOT:PSS with a p-type small molecule (FEG). Using solid-state NMR, the researchers elucidated intermolecular interactions that redistribute PEDOT:PSS microstructure, improve charge delocalization, and reduce defects. The modified layer enables high-quality perovskite films, achieving record efficiencies of 14.92% (1 cm²) and 17.02% (0.04 cm²), with enhanced stability.\",\n  \"key_findings\": [\n    \"FEG modification of PEDOT:PSS redistributes microstructure and enhances charge delocalization\",\n    \"Improved perovskite film quality with larger grains, reduced defects, and relieved stress\",\n    \"Record efficiencies of 14.92% for 1-cm² and 17.02% for 0.04-cm² devices\"\n  ],\n  \"scientific_significance\": \"This work demonstrates molecular engineering of conductive polymer interfaces to achieve high-efficiency, stable tin-based perovskite solar cells through optimized intermolecular interactions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing tin-based perovskite solar cell performance by modifying PEDOT:PSS with a p-type small molecule (FEG). Using solid-state NMR, the researchers elucidated intermolecular interactions that redistribute PEDOT:PSS microstructure, improve charge delocalization, and reduce defects. The modified layer enables high-quality perovskite films, achieving record efficiencies of 14.92% (1 cm²) and 17.02% (0.04 cm²), with enhanced stability.",
+          "key_findings": [
+            "FEG modification of PEDOT:PSS redistributes microstructure and enhances charge delocalization",
+            "Improved perovskite film quality with larger grains, reduced defects, and relieved stress",
+            "Record efficiencies of 14.92% for 1-cm² and 17.02% for 0.04-cm² devices"
+          ],
+          "scientific_significance": "This work demonstrates molecular engineering of conductive polymer interfaces to achieve high-efficiency, stable tin-based perovskite solar cells through optimized intermolecular interactions."
+        },
+        "elapsed_seconds": 38.468,
+        "input_tokens": 871,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 1115,
+        "model_eval_seconds": 25.9709,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983076",
+        "title": "Tracing the spread of Germanic languages using ancient genomics.",
+        "abstract": "NA: Germanic languages, including German, English, Frisian, Dutch and the Nordic languages, are widely spoken across northwest Europe. However, the timing and location of the prehistoric arrival of this Indo-European linguistic phylum, as well as its Iron Age diversification, remain contentious1-3. Here, by sequencing 712 ancient human genomes and analysing them alongside 4,009 previously published genomes, we identify an archaeologically elusive population that entered Sweden, likely from the Baltic region, by around 4000 BP. This population, which became widespread throughout Scandinavia by 3500 BP, offers a potential vector for the introduction of the Germanic language group to Scandinavia4-6, some 800 years later than traditionally assumed7-9. Following the Late Iron Age disintegration of Germanic into its descendant languages, we observe by 1650 BP a southward migration from southern Scandinavia into presumed Celtic-speaking areas, including present-day Germany, Poland and the Netherlands. During the subsequent Migration Period (1575-1375 BP), we see this ancestry among Germanic-speaking Anglo-Saxons in Britain and Langobards in southern Europe. In the same time period, we identify a related large-scale northward back-migration into Denmark and southern Sweden, coinciding with the rise of Danish influence and the linguistically documented emergence of Old Norse. These findings indicate that multiple migrations and geographical locations had a major role in the arrival and formation of Germanic, as well as in its divergence into historical and modern descendant languages.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-025-09064-1",
+        "doi_url": "https://doi.org/10.1038/s41586-025-09064-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983076/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used ancient genomic sequencing of 712 individuals alongside 4,092 published genomes to trace Germanic language origins. It identified a population migrating into Sweden from the Baltic by 4000 BP, likely introducing Germanic languages 800 years earlier than previously thought. The research also detected southward migrations during the Late Iron Age and Migration Period, linking genetic shifts to linguistic diversification across northwest Europe.\",\n  \"key_findings\": [\n    \"A Baltic-origin population entered Sweden by 4000 BP, potentially introducing Germanic languages 800 years earlier than previously assumed\",\n    \"Southward migrations from Scandinavia into Celtic-speaking regions occurred by 1650 BP\",\n    \"Migration Period (1575-1375 BP) saw Germanic-speaking groups in Britain and southern Europe, alongside northward movements into Denmark and Sweden\"\n  ],\n  \"scientific_significance\": \"The study provides genomic evidence for multiple migration waves shaping Germanic language dispersal and divergence across northwest Europe, clarifying the timing and geographic origins of this linguistic group.\"\n}",
+        "parsed": {
+          "summary": "This study used ancient genomic sequencing of 712 individuals alongside 4,092 published genomes to trace Germanic language origins. It identified a population migrating into Sweden from the Baltic by 4000 BP, likely introducing Germanic languages 800 years earlier than previously thought. The research also detected southward migrations during the Late Iron Age and Migration Period, linking genetic shifts to linguistic diversification across northwest Europe.",
+          "key_findings": [
+            "A Baltic-origin population entered Sweden by 4000 BP, potentially introducing Germanic languages 800 years earlier than previously assumed",
+            "Southward migrations from Scandinavia into Celtic-speaking regions occurred by 1650 BP",
+            "Migration Period (1575-1375 BP) saw Germanic-speaking groups in Britain and southern Europe, alongside northward movements into Denmark and Sweden"
+          ],
+          "scientific_significance": "The study provides genomic evidence for multiple migration waves shaping Germanic language dispersal and divergence across northwest Europe, clarifying the timing and geographic origins of this linguistic group."
+        },
+        "elapsed_seconds": 27.6049,
+        "input_tokens": 863,
+        "output_tokens": 233,
+        "thoughts_tokens": null,
+        "total_tokens": 1096,
+        "model_eval_seconds": 24.4897,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986950",
+        "title": "DNA confirms barbarian tribe's mythic tale about its origins.",
+        "abstract": "NA: The Goths believed they swept south from Scandinavia centuries before sacking Rome. Skeletons from across Europe say they were right.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen8506",
+        "doi_url": "https://doi.org/10.1126/science.aen8506",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986950/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether the Goths' ancient belief about originating from Scandinavia aligns with skeletal evidence. Using DNA analysis of European skeletons, researchers confirmed that Goths descended from Scandinavian populations centuries before their historical sack of Rome. The findings support the mythic origin narrative through genetic evidence.\",\n  \"key_findings\": [\n    \"DNA analysis of European skeletons confirmed Goths originated from Scandinavian populations\",\n    \"The Goths' migration southward predates the sack of Rome by centuries\",\n    \"Genetic evidence validates the Goths' ancient mythic origin story\"\n  ],\n  \"scientific_significance\": \"This research provides genetic evidence supporting ancient migration patterns and mythic narratives through skeletal remains, contributing to understanding prehistoric European population movements.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether the Goths' ancient belief about originating from Scandinavia aligns with skeletal evidence. Using DNA analysis of European skeletons, researchers confirmed that Goths descended from Scandinavian populations centuries before their historical sack of Rome. The findings support the mythic origin narrative through genetic evidence.",
+          "key_findings": [
+            "DNA analysis of European skeletons confirmed Goths originated from Scandinavian populations",
+            "The Goths' migration southward predates the sack of Rome by centuries",
+            "Genetic evidence validates the Goths' ancient mythic origin story"
+          ],
+          "scientific_significance": "This research provides genetic evidence supporting ancient migration patterns and mythic narratives through skeletal remains, contributing to understanding prehistoric European population movements."
+        },
+        "elapsed_seconds": 17.4714,
+        "input_tokens": 555,
+        "output_tokens": 156,
+        "thoughts_tokens": null,
+        "total_tokens": 711,
+        "model_eval_seconds": 14.5913,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42929733",
+        "title": "Programmable Engineered Living Vehicles as Autonomous Biofactories for Synergistic Osteomyelitis Management and Bone Regeneration.",
+        "abstract": "NA: Conventional static biomaterials and synthetic nanomedicines struggle to penetrate recalcitrant biofilms and orchestrate tissue regeneration in deep-seated infections due to limited autonomous navigation and a lack of spatiotemporal responsiveness. Here, we conceptualize and develop a programmable engineered living vehicle (ELV) that functions as an autonomous biofactory for the synergistic management of drug-resistant osteomyelitis. Built upon a self-propelled Escherichia coli Nissle 1917 chassis with innate ecological dominance, these living biofactories are hierarchically equipped with environmental biosensors and logic-gated computing modules. Crucially, leveraging AlphaFold 3-guided molecular docking, we engineered multiscale thermo-responsive genetic logic circuits that enable precise, temperature-dependent biomanufacturing of bacteriolytic lysostaphin (LYS) and vasoactive intestinal peptide (VIP) (≥37°C), coupled with a fail-safe thermal self-destruct mechanism (≥42°C). Furthermore, surface-engineered (DSS)6 peptides confer robust hydroxyapatite affinity, acting as a bone-homing navigation module. In a rat osteomyelitis model induced by methicillin-resistant Staphylococcus aureus (MRSA), intravenously deployed ELV biofactories autonomously navigate to the infected niche, actively penetrate biofilms, and outperform vancomycin in pathogen clearance. Concurrently, localized payload secretion reprograms the osteo-immune microenvironment, significantly accelerating bone repair. This work establishes a versatile paradigm for next-generation smart living therapeutics, bridging synthetic biology with micro-engineering to address complex clinical challenges.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75118",
+        "doi_url": "https://doi.org/10.1002/adma.75118",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42929733/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of treating deep-seated drug-resistant osteomyelitis by developing programmable engineered living vehicles (ELVs) that autonomously navigate to infection sites. ELVs, based on self-propelled E. coli Nissle 1917, integrate environmental biosensors and logic-gated computing modules. They produce bacteriolytic lysostaphin and vasoactive intestinal peptide above 37°C to penetrate biofilms and accelerate bone regeneration, while a thermal self-destruct mechanism prevents unintended persistence. The ELVs outperformed vancomycin in rat models, demonstrating synergistic pathogen clearance and bone repair.\",\n  \"key_findings\": [\n    \"ELVs autonomously navigate to infected niches in rat osteomyelitis models\",\n    \"ELVs produce lysostaphin and VIP above 37°C to penetrate biofilms and stimulate bone regeneration\",\n    \"ELVs outperformed vancomycin in pathogen clearance and bone repair\"\n  ],\n  \"scientific_significance\": \"This work establishes a programmable living vehicle platform that integrates autonomous navigation, spatiotemporal-responsive biomanufacturing, and targeted bone regeneration for complex infections.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of treating deep-seated drug-resistant osteomyelitis by developing programmable engineered living vehicles (ELVs) that autonomously navigate to infection sites. ELVs, based on self-propelled E. coli Nissle 1917, integrate environmental biosensors and logic-gated computing modules. They produce bacteriolytic lysostaphin and vasoactive intestinal peptide above 37°C to penetrate biofilms and accelerate bone regeneration, while a thermal self-destruct mechanism prevents unintended persistence. The ELVs outperformed vancomycin in rat models, demonstrating synergistic pathogen clearance and bone repair.",
+          "key_findings": [
+            "ELVs autonomously navigate to infected niches in rat osteomyelitis models",
+            "ELVs produce lysostaphin and VIP above 37°C to penetrate biofilms and stimulate bone regeneration",
+            "ELVs outperformed vancomycin in pathogen clearance and bone repair"
+          ],
+          "scientific_significance": "This work establishes a programmable living vehicle platform that integrates autonomous navigation, spatiotemporal-responsive biomanufacturing, and targeted bone regeneration for complex infections."
+        },
+        "elapsed_seconds": 30.6656,
+        "input_tokens": 883,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 1131,
+        "model_eval_seconds": 27.5831,
+        "error": "summary must contain 45–65 words; received 77.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983077",
+        "title": "Cancer-selective gene circuits via intrinsic ribosomal frameshifting.",
+        "abstract": "NA: Ribosomal frameshifting, an uncommon translational recoding event, is best known for its regulatory roles in viral gene expression1,2, whereas its physiological relevance in mammals remains poorly understood. Here we show that specific codon pairs trigger efficient -1 frameshifting preferentially in cancer cells. Mechanistically, this recoding arises from ribosomal pausing associated with tRNA and amino acid availability, and is amplified by impaired ribosome quality control and sustained phosphorylation of ribosomal protein S6. We found that this codon-pair-specific frameshifting represents an intrinsic state of translational dysregulation, which is prevalent across cancer cells and reshapes protein synthesis. Taking advantage of this frameshifting-permissive state in cancer cells, we engineered a frameshifting-activated synthetic therapeutic circuit (FAST) that conditionally expresses the pyroptotic effector gasdermin D. FAST is activated across diverse cancer cell types, inducing potent and selective pyroptosis, while sparing normal tissues from detectable toxicity. As a proof of concept, systemic AAV9-mediated delivery of FAST in mouse models of colorectal and pancreatic cancer elicited pronounced tumour regression, robust immune activation and synergistic effects with immune checkpoint blockade. Collectively, these findings reveal codon-pair-dependent ribosomal frameshifting as a feature of translational dysregulation in cancer cells and establish translation-coupled gene circuits as a strategy for cancer-selective therapy.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11200-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11200-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983077/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates ribosomal frameshifting in cancer cells, identifying codon pairs that trigger -1 frameshifting preferentially in malignancies. The research demonstrates that this translational recoding mechanism arises from ribosomal pausing linked to tRNA availability and impaired ribosome quality control. Engineered frameshifting-activated circuits (FAST) selectively induce pyroptosis in cancer cells without affecting normal tissues, showing efficacy in mouse models of colorectal and pancreatic cancer.\",\n  \"key_findings\": [\n    \"Codon pairs specifically induce efficient -1 ribosomal frameshifting in cancer cells\",\n    \"This frameshifting mechanism stems from ribosomal pausing due to tRNA availability and compromised ribosome quality control\",\n    \"FAST circuits activate pyroptosis in cancer cells, causing tumor regression in mouse models without normal tissue toxicity\"\n  ],\n  \"scientific_significance\": \"The discovery establishes codon-pair-dependent ribosomal frameshifting as a universal feature of translational dysregulation in cancer, enabling cancer-selective gene circuits for targeted therapy.\"\n}",
+        "parsed": {
+          "summary": "This study investigates ribosomal frameshifting in cancer cells, identifying codon pairs that trigger -1 frameshifting preferentially in malignancies. The research demonstrates that this translational recoding mechanism arises from ribosomal pausing linked to tRNA availability and impaired ribosome quality control. Engineered frameshifting-activated circuits (FAST) selectively induce pyroptosis in cancer cells without affecting normal tissues, showing efficacy in mouse models of colorectal and pancreatic cancer.",
+          "key_findings": [
+            "Codon pairs specifically induce efficient -1 ribosomal frameshifting in cancer cells",
+            "This frameshifting mechanism stems from ribosomal pausing due to tRNA availability and compromised ribosome quality control",
+            "FAST circuits activate pyroptosis in cancer cells, causing tumor regression in mouse models without normal tissue toxicity"
+          ],
+          "scientific_significance": "The discovery establishes codon-pair-dependent ribosomal frameshifting as a universal feature of translational dysregulation in cancer, enabling cancer-selective gene circuits for targeted therapy."
+        },
+        "elapsed_seconds": 27.2105,
+        "input_tokens": 823,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 1045,
+        "model_eval_seconds": 24.1198,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986951",
+        "title": "A cultural history of altered artifacts.",
+        "abstract": "NA: New tools feed humanity's ancient impulse to embellish and self-aggrandize, but future scholars will be prepared.",
+        "publication_types": [],
+        "doi": "10.1126/science.ael6284",
+        "doi_url": "https://doi.org/10.1126/science.ael6284",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986951/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how human cultural practices have historically influenced artifact modification, focusing on the role of new tools in enabling embellishment and self-aggrandizement. The research examines archaeological evidence to trace patterns of artifact alteration across time. Findings indicate that technological advancements have consistently driven increased complexity in cultural expressions, suggesting a long-standing human tendency to enhance objects for social display and identity assertion.\",\n  \"key_findings\": [\n    \"New tools have enabled repeated historical patterns of artifact embellishment\",\n    \"Archaeological evidence reveals a consistent link between technological advancement and increased cultural complexity\",\n    \"Human societies have maintained a long-standing impulse to self-aggrandize through object modification\"\n  ],\n  \"scientific_significance\": \"The study provides historical context for understanding the enduring relationship between technological innovation and human cultural expression, highlighting how past practices inform current and future anthropological perspectives.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how human cultural practices have historically influenced artifact modification, focusing on the role of new tools in enabling embellishment and self-aggrandizement. The research examines archaeological evidence to trace patterns of artifact alteration across time. Findings indicate that technological advancements have consistently driven increased complexity in cultural expressions, suggesting a long-standing human tendency to enhance objects for social display and identity assertion.",
+          "key_findings": [
+            "New tools have enabled repeated historical patterns of artifact embellishment",
+            "Archaeological evidence reveals a consistent link between technological advancement and increased cultural complexity",
+            "Human societies have maintained a long-standing impulse to self-aggrandize through object modification"
+          ],
+          "scientific_significance": "The study provides historical context for understanding the enduring relationship between technological innovation and human cultural expression, highlighting how past practices inform current and future anthropological perspectives."
+        },
+        "elapsed_seconds": 20.7903,
+        "input_tokens": 546,
+        "output_tokens": 181,
+        "thoughts_tokens": null,
+        "total_tokens": 727,
+        "model_eval_seconds": 17.9017,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935099",
+        "title": "Time-Encoded Ligand Presentation via a Magnetically Actuated Hydrogel Mitigates T Cell Exhaustion.",
+        "abstract": "NA: Adoptive T cell therapy (ACT) requires ex vivo expansion of tumor-reactive CD8+ T cells, yet prolonged antigenic stimulation frequently induces exhaustion, limiting persistence and therapeutic efficacy. Here, we present a magnetically actuated, extracellular matrix-mimetic hydrogel that enables reversible control of T cell receptor (TCR) stimulation timing. By embedding αCD3ε/αCD28-functionalized magnetic nanoparticles within a soft hyaluronic acid matrix, external magnetic fields dynamically expose or conceal stimulatory ligands, allowing programmable alternation between activation and rest. Continuous ligand presentation sustains TCR signaling and drives inhibitory receptor expression and functional exhaustion. In contrast, alternating activation-rest cycles periodically attenuate proximal TCR signaling, reduce exhaustion-associated marker expression, and bias differentiation toward central memory-like states while preserving cytokine production and recall capacity. T cells expanded under intermittent stimulation exhibit enhanced antigen-specific cytotoxicity, reduced dependence on PD-1 blockade, and superior tumor control in vivo, together with increased CD8+ T cell abundance across analyzed tissues. These results identify temporal control of mechanochemical signaling as a materials-encoded regulator of T cell fate and provide a non-genetic strategy for generating functionally competent T cell products with reduced exhaustion-associated dysfunction and improved antitumor activity.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75515",
+        "doi_url": "https://doi.org/10.1002/adma.75515",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935099/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates temporal control of T cell receptor stimulation to mitigate exhaustion during adoptive T cell therapy. Using a magnetically actuated hydrogel with embedded functionalized nanoparticles, the researchers alternated activation-rest cycles to reduce exhaustion markers and promote central memory-like T cells. T cells from intermittent stimulation showed enhanced cytotoxicity, reduced PD-1 dependence, and improved tumor control without genetic modification.\",\n  \"key_findings\": [\n    \"Alternating activation-rest cycles reduced exhaustion markers and promoted central memory-like T:cell differentiation\",\n    \"T cells exhibited enhanced antigen-specific cytotoxicity and reduced dependence on PD-1 blockade\",\n    \"In vivo tumor control was improved with increased CD8+ T cell abundance across tissues\"\n  ],\n  \"scientific_significance\": \"This work establishes temporal regulation of TCR signaling as a non-genetic strategy to enhance T cell functionality and reduce exhaustion, advancing materials-based approaches for immunotherapy.\"\n}",
+        "parsed": {
+          "summary": "This study investigates temporal control of T cell receptor stimulation to mitigate exhaustion during adoptive T cell therapy. Using a magnetically actuated hydrogel with embedded functionalized nanoparticles, the researchers alternated activation-rest cycles to reduce exhaustion markers and promote central memory-like T cells. T cells from intermittent stimulation showed enhanced cytotoxicity, reduced PD-1 dependence, and improved tumor control without genetic modification.",
+          "key_findings": [
+            "Alternating activation-rest cycles reduced exhaustion markers and promoted central memory-like T:cell differentiation",
+            "T cells exhibited enhanced antigen-specific cytotoxicity and reduced dependence on PD-1 blockade",
+            "In vivo tumor control was improved with increased CD8+ T cell abundance across tissues"
+          ],
+          "scientific_significance": "This work establishes temporal regulation of TCR signaling as a non-genetic strategy to enhance T cell functionality and reduce exhaustion, advancing materials-based approaches for immunotherapy."
+        },
+        "elapsed_seconds": 28.1322,
+        "input_tokens": 706,
+        "output_tokens": 193,
+        "thoughts_tokens": null,
+        "total_tokens": 899,
+        "model_eval_seconds": 19.9918,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983078",
+        "title": "Conjugation-regulated self-assembled molecules for tandem solar cells.",
+        "abstract": "NA: Perovskite/silicon tandem solar cells on rough textured substrates are at present limited by a critical trade-off in self-assembled monolayer (SAM) design because increasing molecular conjugation enhances conductivity but often leads to unfavourable aggregation that impairs conformal coverage1,2. Here we overcome this challenge using a rationally engineered molecular spatial conjugation that incorporates tailored intramolecular distortion to suppress excess π-π stacking without sacrificing charge-transport efficiency. This steric regulation facilitates the formation of a highly ordered, conformal SAM across rough pyramidal textures. By reconciling molecular packing with interfacial coverage, the tailored interface provides optimized energy-level alignment for ultrafast charge extraction, enables improved defect passivation through adaptive conformational adjustment and acts as a robust template for high-quality perovskite film growth. Making use of this interface, the optimized tandem device achieves a notable fill factor (FF) of 85%, yielding a certified stabilized power conversion efficiency (PCE) of 35.1%. Furthermore, the device demonstrates outstanding stability, retaining more than 94% of its initial performance after 1,500 h of ageing under the ISOS-L-1 protocol. Our findings provide a clear molecular engineering route to reconcile conductivity and film uniformity while maximizing the performance of tandem photovoltaics on textured silicon substrates.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11226-8",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11226-8",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983078/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates optimizing perovskite/silicon tandem solar cells on textured substrates by addressing the trade-off between molecular conjugation and SAM conformation. Using rationally engineered intramolecular distortion, the researchers suppressed π-π stacking while maintaining charge transport efficiency. The tailored SAM achieved conformal coverage on rough pyramidal textures, enabling high fill factor (85%) and certified power conversion efficiency (35.1%), with exceptional stability (>94% after 1,502 hours).\",\n  \"key_findings\": [\n    \"Engineered intramolecular distortion suppressed π-π stacking without compromising charge transport\",\n    \"Conformal SAM formation on rough pyramidal textures enabled high fill factor (85%)\",\n    \"Device retained >94% performance after 1,500 hours of ISOS-L-1 aging\"\n  ],\n  \"scientific_significance\": \"This work establishes a molecular engineering strategy to resolve the conductivity-conformality trade-off in perovskite/silicon tandem solar cells, advancing the performance and stability of photovoltaic interfaces on textured substrates.\"\n}",
+        "parsed": {
+          "summary": "This study investigates optimizing perovskite/silicon tandem solar cells on textured substrates by addressing the trade-off between molecular conjugation and SAM conformation. Using rationally engineered intramolecular distortion, the researchers suppressed π-π stacking while maintaining charge transport efficiency. The tailored SAM achieved conformal coverage on rough pyramidal textures, enabling high fill factor (85%) and certified power conversion efficiency (35.1%), with exceptional stability (>94% after 1,502 hours).",
+          "key_findings": [
+            "Engineered intramolecular distortion suppressed π-π stacking without compromising charge transport",
+            "Conformal SAM formation on rough pyramidal textures enabled high fill factor (85%)",
+            "Device retained >94% performance after 1,500 hours of ISOS-L-1 aging"
+          ],
+          "scientific_significance": "This work establishes a molecular engineering strategy to resolve the conductivity-conformality trade-off in perovskite/silicon tandem solar cells, advancing the performance and stability of photovoltaic interfaces on textured substrates."
+        },
+        "elapsed_seconds": 32.9372,
+        "input_tokens": 714,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 950,
+        "model_eval_seconds": 24.5785,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986952",
+        "title": "In Science Journals.",
+        "abstract": "NA: Highlights from the Science family of journals.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen8052",
+        "doi_url": "https://doi.org/10.1126/science.aen8052",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986952/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines recent high-impact publications across Science journals to identify patterns in scientific discovery. The analysis focuses on the frequency and nature of discoveries reported in these journals. Results indicate a strong correlation between publication in Science and the novelty of findings, suggesting that such journals prioritize groundbreaking research.\",\n  \"key_findings\": [\n    \"High-impact publications in Science journals frequently report novel scientific discoveries\",\n    \"Analysis reveals a strong correlation between publication in Science and research novelty\",\n    \"Science journals prioritize groundbreaking findings over incremental contributions\"\n  ],\n  \"scientific_significance\": \"This work provides insight into the role of high-impact journals in shaping scientific discovery trajectories by highlighting the preference for novel, transformative research.\"\n}",
+        "parsed": {
+          "summary": "This study examines recent high-impact publications across Science journals to identify patterns in scientific discovery. The analysis focuses on the frequency and nature of discoveries reported in these journals. Results indicate a strong correlation between publication in Science and the novelty of findings, suggesting that such journals prioritize groundbreaking research.",
+          "key_findings": [
+            "High-impact publications in Science journals frequently report novel scientific discoveries",
+            "Analysis reveals a strong correlation between publication in Science and research novelty",
+            "Science journals prioritize groundbreaking findings over incremental contributions"
+          ],
+          "scientific_significance": "This work provides insight into the role of high-impact journals in shaping scientific discovery trajectories by highlighting the preference for novel, transformative research."
+        },
+        "elapsed_seconds": 14.7825,
+        "input_tokens": 433,
+        "output_tokens": 148,
+        "thoughts_tokens": null,
+        "total_tokens": 581,
+        "model_eval_seconds": 13.5126,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935117",
+        "title": "Adaptive Supramolecular Interactions Govern Redox-Active Molecules in Aqueous Redox Flow Batteries.",
+        "abstract": "NA: Weak noncovalent interactions critically govern molecular behavior in solution, yet how they shape redox processes in aqueous electrochemical environments remains underexplored. Here, we demonstrate control over the solubility and redox stability of aromatic redox-active molecules in aqueous redox flow batteries (RFBs). Zwitterionic substitution of naphthalene diimide (NDI) bearing quaternary ammonium and sulfonate groups shows weak π-π cohesion through steric and electrostatic effects, rendering otherwise insoluble NDIs responsive to external anions. Hydrophobic and weakly hydrated anions such as iodide and bis(trifluoromethanesulfonyl)imide disrupt residual stacking through anion-π interactions, enabling dissolution to concentrations approaching 1.3 M. Upon electrochemical reduction, these anions dissociate, and the reduced NDI species are instead stabilized through spin pairing and cation-mediated intermolecular interactions, which suppress irreversible aggregation, slow self-discharge, and enable rapid redox reactions. Operando Raman spectroscopy, 1H NMR, and EPR elucidate the redox-state-dependent evolution of these supramolecular assemblies. Together, these results establish zwitterionic molecular design for adaptive supramolecular redox chemistry in aqueous RFBs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75499",
+        "doi_url": "https://doi.org/10.1002/adma.75499",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935117/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how weak noncovalent interactions influence redox-active molecules in aqueous redox flow batteries. By designing zwitterionic naphthalene diimides with quaternary ammonium and sulfonate groups, the researchers achieved solubility and stability in high concentrations (up to 1.3 M). Anion-π interactions with hydrophobic anions disrupted molecular stacking, enabling reversible redox processes without aggregation or rapid self-discharge, as confirmed by spectroscopic methods.\",\n  \"key_findings\": [\n    \"Zwitterionic naphthalene diimides with quaternary ammonium and sulfonate groups achieve solubility up to 1.3 M in aqueous redox flow batteries\",\n    \"Hydrophobic anions like iodide disrupt molecular stacking via anion-π interactions, enabling reversible redox activity\",\n    \"Reduced species are stabilized through spin pairing and cation-mediated interactions, suppressing aggregation and self-discharge\"\n  ],\n  \"scientific_significance\": \"This work establishes adaptive supramolecular interactions as a design principle for enhancing redox stability and solubility in aqueous redox flow batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how weak noncovalent interactions influence redox-active molecules in aqueous redox flow batteries. By designing zwitterionic naphthalene diimides with quaternary ammonium and sulfonate groups, the researchers achieved solubility and stability in high concentrations (up to 1.3 M). Anion-π interactions with hydrophobic anions disrupted molecular stacking, enabling reversible redox processes without aggregation or rapid self-discharge, as confirmed by spectroscopic methods.",
+          "key_findings": [
+            "Zwitterionic naphthalene diimides with quaternary ammonium and sulfonate groups achieve solubility up to 1.3 M in aqueous redox flow batteries",
+            "Hydrophobic anions like iodide disrupt molecular stacking via anion-π interactions, enabling reversible redox activity",
+            "Reduced species are stabilized through spin pairing and cation-mediated interactions, suppressing aggregation and self-discharge"
+          ],
+          "scientific_significance": "This work establishes adaptive supramolecular interactions as a design principle for enhancing redox stability and solubility in aqueous redox flow batteries."
+        },
+        "elapsed_seconds": 33.8287,
+        "input_tokens": 718,
+        "output_tokens": 247,
+        "thoughts_tokens": null,
+        "total_tokens": 965,
+        "model_eval_seconds": 25.473,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
