@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261120T192826Z",
+  "generated_at_utc": "2026-11-20 19:54:43 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 251,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, researchers revealed simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. A self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved 24.84% power conversion efficiency in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite photovoltaics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, researchers revealed simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. A self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved 24.84% power conversion efficiency in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite photovoltaics."
+        },
+        "elapsed_seconds": 48.1492,
+        "input_tokens": 886,
+        "output_tokens": 280,
+        "thoughts_tokens": null,
+        "total_tokens": 1166,
+        "model_eval_seconds": 43.1656,
+        "error": "summary must contain 45–65 words; received 84.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the factors influencing early human settlement in the Arabian desert. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found that while freshwater was present, the availability of stone for tool production was a critical independent factor. Palaeolake deposits existed at 55 of 125 sites without lithic artefacts or knappable materials. Spatial modeling indicates settlement required co-occurrence of water and lithic resources, not water alone. This challenges models that prioritize water availability in dispersal predictions.\",\n  \"key_findings\": [\n    \"Palaeolake deposits were present at 55 of 125 surveyed sites without lithic artefacts or knappable stone\",\n    \"Spatial modeling shows settlement required co-occurrence of water and lithic resources, not water alone\",\n    \"57% of water-accessible terrain lacks knappable stone, improving site discrimination accuracy to 0.768\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that lithic resource availability, not water alone, constrained early human dispersal patterns across arid regions, refining models of Pleistocene human migration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the factors influencing early human settlement in the Arabian desert. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found that while freshwater was present, the availability of stone for tool production was a critical independent factor. Palaeolake deposits existed at 55 of 125 sites without lithic artefacts or knappable materials. Spatial modeling indicates settlement required co-occurrence of water and lithic resources, not water alone. This challenges models that prioritize water availability in dispersal predictions.",
+          "key_findings": [
+            "Palaeolake deposits were present at 55 of 125 surveyed sites without lithic artefacts or knappable stone",
+            "Spatial modeling shows settlement required co-occurrence of water and lithic resources, not water alone",
+            "57% of water-accessible terrain lacks knappable stone, improving site discrimination accuracy to 0.768"
+          ],
+          "scientific_significance": "The findings demonstrate that lithic resource availability, not water alone, constrained early human dispersal patterns across arid regions, refining models of Pleistocene human migration."
+        },
+        "elapsed_seconds": 43.8227,
+        "input_tokens": 856,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 1107,
+        "model_eval_seconds": 38.8844,
+        "error": "summary must contain 45–65 words; received 79.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice, and human ILC3s expressed PRKAR1A, which was downregulated by IL-23 in inflammation. These results indicate PKA signaling is critical for ILC3 maintenance and that IL-23-driven PKA dysregulation causes gut inflammation.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors in ILC3s, promoting inflammation\",\n    \"PRKAR1A deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice\",\n    \"Human intestinal ILC3s express PRKAR1A, which is downregulated by IL-23 in inflammatory bowel disease\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a key regulator of ILC3 homeostasis and demonstrates how IL-23 disrupts this balance to drive gut inflammation, providing mechanistic insights into inflammatory bowel disease pathogenesis.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice, and human ILC3s expressed PRKAR1A, which was downregulated by IL-23 in inflammation. These results indicate PKA signaling is critical for ILC3 maintenance and that IL-23-driven PKA dysregulation causes gut inflammation.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors in ILC3s, promoting inflammation",
+            "PRKAR1A deletion reduced ILC3 numbers and increased enteric infection susceptibility in mice",
+            "Human intestinal ILC3s express PRKAR1A, which is downregulated by IL-23 in inflammatory bowel disease"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a key regulator of ILC3 homeostasis and demonstrates how IL-23 disrupts this balance to drive gut inflammation, providing mechanistic insights into inflammatory bowel disease pathogenesis."
+        },
+        "elapsed_seconds": 49.5525,
+        "input_tokens": 800,
+        "output_tokens": 291,
+        "thoughts_tokens": null,
+        "total_tokens": 1091,
+        "model_eval_seconds": 44.6424,
+        "error": "summary must contain 45–65 words; received 84.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986954",
+        "title": "Obesity management medications: The way forward.",
+        "abstract": "NA: Obesity is now widely recognized as a chronic progressive condition. The altered biological mechanisms that cause obesity frequently require long-term treatment, including pharmacotherapies or bariatric surgery. In recent decades, the pathophysiology of obesity has been understood to an extent that obesity management medication (OMM) discovery could be rationally pursued. Advances in defining the regulation of food intake and energy expenditure by molecular communication from peripheral organs to the brain led to the development of OMMs that appear capable of safely achieving scalable and sustained body weight loss. However, side effects, heterogeneous treatment responses, long-term metabolic adaptations, adherence, and other factors may limit the use of existing OMMs and justify the development of additional medications to improve the health of people living with obesity.",
+        "publication_types": [],
+        "doi": "10.1126/science.aej1120",
+        "doi_url": "https://doi.org/10.1126/science.aej1120",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986954/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines the current state of obesity management medications (OMMs), highlighting advances in understanding obesity pathophysiology that enable rational drug discovery. It identifies key challenges including side effects, variable treatment responses, long-term metabolic changes, and adherence issues that limit existing OMMs. The research suggests developing new medications to address these barriers for sustainable weight loss and improved obesity health outcomes.\",\n  \"key_findings\": [\n    \"Advances in understanding obesity pathophysiology enable rational development of obesity management medications\",\n    \"Existing OMMs face limitations due to side effects, heterogeneous treatment responses, and long-term metabolic adaptations\",\n    \"Further medication development is necessary to overcome barriers for sustainable weight loss in obesity management\"\n  ],\n  \"scientific_significance\": \"This research provides a framework for rationally designing next-generation obesity medications by addressing current limitations in existing therapies, advancing the field toward more effective and sustainable weight management solutions.\"\n}",
+        "parsed": {
+          "summary": "This study examines the current state of obesity management medications (OMMs), highlighting advances in understanding obesity pathophysiology that enable rational drug discovery. It identifies key challenges including side effects, variable treatment responses, long-term metabolic changes, and adherence issues that limit existing OMMs. The research suggests developing new medications to address these barriers for sustainable weight loss and improved obesity health outcomes.",
+          "key_findings": [
+            "Advances in understanding obesity pathophysiology enable rational development of obesity management medications",
+            "Existing OMMs face limitations due to side effects, heterogeneous treatment responses, and long-term metabolic adaptations",
+            "Further medication development is necessary to overcome barriers for sustainable weight loss in obesity management"
+          ],
+          "scientific_significance": "This research provides a framework for rationally designing next-generation obesity medications by addressing current limitations in existing therapies, advancing the field toward more effective and sustainable weight management solutions."
+        },
+        "elapsed_seconds": 36.5454,
+        "input_tokens": 580,
+        "output_tokens": 191,
+        "thoughts_tokens": null,
+        "total_tokens": 771,
+        "model_eval_seconds": 28.6919,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results demonstrate 55 wt% boron nitride in polylactic acid filaments with zero volume shrinkage post-sintering, achieving tailored thermal conductivity (1.07 W/m/K) and mechanical properties for thermal management and structural applications.\",\n  \"key_findings\": [\n    \"SHAPE 3D printing enables high-loading nanocomposites (up to 55 wt% boron nitride) with long-range ordered nanostructures\",\n    \"Post-sintering yields zero volume shrinkage and exceptional thermomechanical stability exceeding polymer melting temperatures\",\n    \"Vertically aligned boron nitride composites exhibit enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned structures provide thermal insulation (0.071 W/m/K)\"\n  ],\n  \"scientific_significance\": \"This work establishes a scalable method for cross-scale design of nanocomposites with tailored functionalities, advancing thermal management and structural materials applications through precise nanofiller alignment.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results demonstrate 55 wt% boron nitride in polylactic acid filaments with zero volume shrinkage post-sintering, achieving tailored thermal conductivity (1.07 W/m/K) and mechanical properties for thermal management and structural applications.",
+          "key_findings": [
+            "SHAPE 3D printing enables high-loading nanocomposites (up to 55 wt% boron nitride) with long-range ordered nanostructures",
+            "Post-sintering yields zero volume shrinkage and exceptional thermomechanical stability exceeding polymer melting temperatures",
+            "Vertically aligned boron nitride composites exhibit enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned structures provide thermal insulation (0.071 W/m/K)"
+          ],
+          "scientific_significance": "This work establishes a scalable method for cross-scale design of nanocomposites with tailored functionalities, advancing thermal management and structural materials applications through precise nanofiller alignment."
+        },
+        "elapsed_seconds": 47.1568,
+        "input_tokens": 858,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1133,
+        "model_eval_seconds": 42.2468,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether transient dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation comparably to chronic obesity. The effect is confined to a specific 4-day window; HFD outside this window has no impact. Neutrophils recruited by HFD express NLRP3 and IL-1β, driving pathogenic TH17 cell activation. After recovery on low-fat diet, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence. These findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β mechanisms.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure at disease onset exacerbates inflammation in lean mice comparably to chronic obesity\",\n    \"The pro-inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact\",\n    \"Neutrophil-mediated NLRP3-IL-1β signaling licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells after recovery on low-fat diet\"\n  ],\n  \"scientific_significance\": \"This work establishes that short-lived dietary states during acute inflammation can durably reprogram immune memory via neutrophil-NLRP3-IL-1β pathways, revealing a temporal window for dietary interventions to modulate inflammatory disease trajectories.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether transient dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation comparably to chronic obesity. The effect is confined to a specific 4-day window; HFD outside this window has no impact. Neutrophils recruited by HFD express NLRP3 and IL-1β, driving pathogenic TH17 cell activation. After recovery on low-fat diet, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence. These findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β mechanisms.",
+          "key_findings": [
+            "Transient high-fat diet exposure at disease onset exacerbates inflammation in lean mice comparably to chronic obesity",
+            "The pro-inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact",
+            "Neutrophil-mediated NLRP3-IL-1β signaling licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells after recovery on low-fat diet"
+          ],
+          "scientific_significance": "This work establishes that short-lived dietary states during acute inflammation can durably reprogram immune memory via neutrophil-NLRP3-IL-1β pathways, revealing a temporal window for dietary interventions to modulate inflammatory disease trajectories."
+        },
+        "elapsed_seconds": 55.5839,
+        "input_tokens": 884,
+        "output_tokens": 324,
+        "thoughts_tokens": null,
+        "total_tokens": 1208,
+        "model_eval_seconds": 50.6255,
+        "error": "summary must contain 45–65 words; received 107.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986962",
+        "title": "Can artificial intelligence align with Indigenous science?",
+        "abstract": "NA: As the use of generative and agentic artificial intelligence (AI) increases, alarms are being raised about how the technology could replace human contribution, override human supervision, ignore ethical and technical guardrails, and cause increasingly irreparable harm to the environment. This creates potentially destructive outcomes for life on Earth. From a traditional Indigenous science perspective, such possibilities in themselves would be enough to immediately stop presently configured AI releases. In a Lakota context, science must ensure as little harm as possible is done to life. Therefore, AI as presently configured simply would not qualify to advance further from an ethical and scientific standpoint. Indigenous science asks something fundamentally different than what AI presently seeks to, or can, answer. But that does not mean that future forms of AI can never align with Indigenous science.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen6314",
+        "doi_url": "https://doi.org/10.1126/science.aen6314",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986962/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines whether current AI systems align with Indigenous scientific principles, emphasizing ethical and environmental safeguards. It argues that present AI configurations risk irreversible harm and thus conflict with Indigenous science's priority of minimizing ecological damage. The research concludes that existing AI lacks ethical and scientific compatibility with Indigenous perspectives, though future AI could potentially align if reconfigured.\",\n  \"key_findings\": [\n    \"Current AI systems pose risks of irreversible environmental harm due to inadequate ethical safeguards\",\n    \"Indigenous science prioritizes minimal ecological damage as a core ethical principle\",\n    \"Present AI configurations are incompatible with Indigenous scientific ethics but future AI may align if reconfigured\"\n  ],\n  \"scientific_significance\": \"This work highlights a critical ethical boundary between current AI development and Indigenous ecological knowledge systems, urging reevaluation of AI design to prevent environmental harm.\"\n}",
+        "parsed": {
+          "summary": "This study examines whether current AI systems align with Indigenous scientific principles, emphasizing ethical and environmental safeguards. It argues that present AI configurations risk irreversible harm and thus conflict with Indigenous science's priority of minimizing ecological damage. The research concludes that existing AI lacks ethical and scientific compatibility with Indigenous perspectives, though future AI could potentially align if reconfigured.",
+          "key_findings": [
+            "Current AI systems pose risks of irreversible environmental harm due to inadequate ethical safeguards",
+            "Indigenous science prioritizes minimal ecological damage as a core ethical principle",
+            "Present AI configurations are incompatible with Indigenous scientific ethics but future AI may align if reconfigured"
+          ],
+          "scientific_significance": "This work highlights a critical ethical boundary between current AI development and Indigenous ecological knowledge systems, urging reevaluation of AI design to prevent environmental harm."
+        },
+        "elapsed_seconds": 32.9593,
+        "input_tokens": 584,
+        "output_tokens": 171,
+        "thoughts_tokens": null,
+        "total_tokens": 755,
+        "model_eval_seconds": 24.9594,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.\",\n  \"key_findings\": [\n    \"The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric pure water splitting with 0.72% apparent quantum yield at 420 nm, the highest for Ta-based nitrides.\",\n    \"Cocatalyst incompatibility between alkaline water oxidation systems and pure water splitting causes N2 generation via photocorrosion.\",\n    \"Enhanced interfacial electric fields and reduced reaction barriers in the cocatalyst improve hole extraction and surface reaction kinetics.\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic pure water splitting and provides mechanistic insights for advancing nitride and oxynitride photocatalysts.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.",
+          "key_findings": [
+            "The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric pure water splitting with 0.72% apparent quantum yield at 420 nm, the highest for Ta-based nitrides.",
+            "Cocatalyst incompatibility between alkaline water oxidation systems and pure water splitting causes N2 generation via photocorrosion.",
+            "Enhanced interfacial electric fields and reduced reaction barriers in the cocatalyst improve hole extraction and surface reaction kinetics."
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic pure water splitting and provides mechanistic insights for advancing nitride and oxynitride photocatalysts."
+        },
+        "elapsed_seconds": 53.9534,
+        "input_tokens": 820,
+        "output_tokens": 320,
+        "thoughts_tokens": null,
+        "total_tokens": 1140,
+        "model_eval_seconds": 49.0544,
+        "error": "summary must contain 45–65 words; received 90.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983080",
+        "title": "Transcriptomic convergence and the female protective effect in autism.",
+        "abstract": "NA: Autism spectrum disorder (ASD) is highly heritable, and mutations in hundreds of genes have been implicated as individually rare causes of ASD1-3. Understanding how disruptions to these functionally diverse genes lead to the core features of ASD remains a major challenge4. Moreover, ASD is three- to four-fold more common in male than in female individuals5, and female autistic people tend to carry more autosomal risk alleles for ASD compared with their male counterparts6,7; however, the biological basis of this 'female protective effect' (FPE) has remained unknown8,9. Here we show that individual perturbations of 18 ASD genes in human neural progenitor cells converge on shared effects on gene expression, including widespread downregulation of other ASD genes. De novo reconstruction of a gene regulatory network enabled identification of central transcriptional regulators that drive this transcriptomic convergence, including prominent ASD gene CHD8 and candidates including REST. Furthermore, X-linked transcription factor ZFX, which is expressed from both the active and the inactive X chromosomes in female individuals10, emerged as a key activator of many ASD genes: we propose that the higher ZFX expression level observed in the female brain can buffer damaging mutations in diverse ASD genes, contributing to the female protective effect. Together, these results show how key gene regulatory networks can become broadly and similarly dysregulated upon disruption of individual ASD genes and provide molecular insight into the female protective effect in ASD.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11236-6",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11236-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983080/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the molecular basis of the female protective effect (FPE) in autism spectrum disorder (ASD). Using human neural progenitor cells, researchers identified transcriptomic convergence among 18 ASD genes, revealing shared downregulation of ASD genes. De novo gene regulatory network reconstruction highlighted CHD8 and REST as central regulators, while X-linked ZFX expression in females was proposed to buffer ASD gene mutations, explaining FPE.\",\n  \"key_findings\": [\n    \"Individual perturbations of 1:8 ASD genes converge on shared downregulation of ASD genes in human neural progenitor cells\",\n    \"Central transcriptional regulators CHD8 and REST drive transcriptomic convergence among ASD genes\",\n    \"X-linked ZFX expression in females buffers ASD gene mutations, contributing to the female protective effect\"\n  ],\n  \"scientific_significance\": \"This work provides molecular mechanisms underlying the female protective effect in autism by identifying convergent gene regulatory networks and X-linked factors that mitigate ASD risk in females.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the molecular basis of the female protective effect (FPE) in autism spectrum disorder (ASD). Using human neural progenitor cells, researchers identified transcriptomic convergence among 18 ASD genes, revealing shared downregulation of ASD genes. De novo gene regulatory network reconstruction highlighted CHD8 and REST as central regulators, while X-linked ZFX expression in females was proposed to buffer ASD gene mutations, explaining FPE.",
+          "key_findings": [
+            "Individual perturbations of 1:8 ASD genes converge on shared downregulation of ASD genes in human neural progenitor cells",
+            "Central transcriptional regulators CHD8 and REST drive transcriptomic convergence among ASD genes",
+            "X-linked ZFX expression in females buffers ASD gene mutations, contributing to the female protective effect"
+          ],
+          "scientific_significance": "This work provides molecular mechanisms underlying the female protective effect in autism by identifying convergent gene regulatory networks and X-linked factors that mitigate ASD risk in females."
+        },
+        "elapsed_seconds": 46.3435,
+        "input_tokens": 725,
+        "output_tokens": 210,
+        "thoughts_tokens": null,
+        "total_tokens": 935,
+        "model_eval_seconds": 31.848,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986964",
+        "title": "Targeting hormone conversion through dietary fiber improves polyendocrine metabolic ovarian syndrome.",
+        "abstract": "NA: Excessive androgens serve as a primary driver for many phenotypic features of polyendocrine metabolic ovarian syndrome (PMOS). Although dietary fiber has been shown to alleviate PMOS, its effects on androgen concentrations and the underlying mechanisms remain unclear. In a clinical trial, we demonstrated that a dietary fiber combination consisting of inulin, resistant starch, and β-glucan reduces androgen concentrations in patients' plasma. Mechanistically, dietary fiber increased the abundance of Bacteroides xylanisolvens, which converts androstenedione into a nonandrogenic secondary hormone metabolite we named coproandrosterone, which is further metabolized by gut microbiota into dihydro-coproandrosterone. This metabolic pathway was validated in a mouse model. These findings highlight the potential of dietary fiber to alleviate PMOS by modulating androgen homeostasis through gut microbiota, offering insights for prebiotic and probiotic therapies.",
+        "publication_types": [],
+        "doi": "10.1126/science.aed8952",
+        "doi_url": "https://doi.org/10.1126/science.aed8952",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986964/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how dietary fiber impacts androgen levels in polyendocrine metabolic ovarian syndrome (PMOS). Using a clinical trial with inulin, resistant starch, and β-glucan, researchers observed reduced plasma androgens. Mechanistically, dietary fiber increased Bacteroides xylanisolvens, which converts androstenedione to coproandrosterone—a nonandrogenic metabolite—further processed into dihydro-coproandroone. The pathway was confirmed in mice, suggesting dietary fiber modulates androgen homeostasis via gut microbiota to alleviate PMOS.\",\n  \"key_findings\": [\n    \"Dietary fiber combinations reduced plasma androgen concentrations in PMOS patients\",\n    \"Bacteroides xylanisolvens increased and converted androstenedione to coproandrosterone\",\n    \"The coproandrosterone pathway was validated in mouse models\"\n  ],\n  \"scientific_significance\": \"This work establishes a gut microbiota-mediated mechanism by which dietary fiber regulates androgen metabolism, providing a foundation for targeted interventions in PMOS.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how dietary fiber impacts androgen levels in polyendocrine metabolic ovarian syndrome (PMOS). Using a clinical trial with inulin, resistant starch, and β-glucan, researchers observed reduced plasma androgens. Mechanistically, dietary fiber increased Bacteroides xylanisolvens, which converts androstenedione to coproandrosterone—a nonandrogenic metabolite—further processed into dihydro-coproandroone. The pathway was confirmed in mice, suggesting dietary fiber modulates androgen homeostasis via gut microbiota to alleviate PMOS.",
+          "key_findings": [
+            "Dietary fiber combinations reduced plasma androgen concentrations in PMOS patients",
+            "Bacteroides xylanisolvens increased and converted androstenedione to coproandrosterone",
+            "The coproandrosterone pathway was validated in mouse models"
+          ],
+          "scientific_significance": "This work establishes a gut microbiota-mediated mechanism by which dietary fiber regulates androgen metabolism, providing a foundation for targeted interventions in PMOS."
+        },
+        "elapsed_seconds": 44.2593,
+        "input_tokens": 626,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 852,
+        "model_eval_seconds": 34.1404,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935292",
+        "title": "Heterointerfacial Bonding Governs Service Stability in Flexible Perovskite Photovoltaics.",
+        "abstract": "NA: The service stability of flexible perovskite solar module (FPSM) is contingent upon the bonding strength and stress-response behavior at heterointerfaces. However, the fullerene-based layer mainly relies on weak non-covalent interactions. This makes it difficult for the FPSM to tackle the challenges posed by the coupling of multiple stresses in the actual service environment. Through the blending strategy of the polyamide curing agent and fullerene derivatives, we constructed an active energy-dissipating multi-bond network featuring covalent bond anchoring and hydrogen bond dissipation, which significantly enhanced the interfacial bonding and energy dissipation capabilities. Based on this strategy, a 100 cm2 FPSM achieves a recorded power conversion efficiency of 22.33% (certified 21.5%). More importantly, for the first time, we developed an in situ bending electroluminescence experiment for FPSM under ultraviolet irradiation. After 5000 consecutive bending cycles, there was no significant decline in the module's performance, which verified its service stability under multi-field coupling.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75516",
+        "doi_url": "https://doi.org/10.1002/adma.75516",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935292/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how heterointerfacial bonding affects service stability in flexible perovskite photovoltaics. By blending polyamide curing agents with fullerene derivatives, researchers created a multi-bond network that enhances covalent anchoring and hydrogen bonding for improved energy dissipation. The resulting 100 cm² module achieved 22.33% power conversion efficiency (certified 2.15%) and maintained performance after 5,000 bending cycles under UV irradiation, demonstrating exceptional stability against multi-stress coupling.\",\n  \"key_findings\": [\n    \"A polyamide-cured fullerene blend forms a multi-bond network with covalent and hydrogen bonding for enhanced interfacial stability\",\n    \"The 100 cm² perovskite solar module achieved 22.33% certified power conversion efficiency\",\n    \"The module retained performance after 5,000 consecutive bending cycles under UV irradiation without significant degradation\"\n  ],\n  \"scientific_significance\": \"This work establishes a novel heterointerfacial bonding strategy that enables flexible perovskite photovoltaics to maintain stability under multi-stress conditions, advancing the field of durable organic photovoltaic devices.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how heterointerfacial bonding affects service stability in flexible perovskite photovoltaics. By blending polyamide curing agents with fullerene derivatives, researchers created a multi-bond network that enhances covalent anchoring and hydrogen bonding for improved energy dissipation. The resulting 100 cm² module achieved 22.33% power conversion efficiency (certified 2.15%) and maintained performance after 5,000 bending cycles under UV irradiation, demonstrating exceptional stability against multi-stress coupling.",
+          "key_findings": [
+            "A polyamide-cured fullerene blend forms a multi-bond network with covalent and hydrogen bonding for enhanced interfacial stability",
+            "The 100 cm² perovskite solar module achieved 22.33% certified power conversion efficiency",
+            "The module retained performance after 5,000 consecutive bending cycles under UV irradiation without significant degradation"
+          ],
+          "scientific_significance": "This work establishes a novel heterointerfacial bonding strategy that enables flexible perovskite photovoltaics to maintain stability under multi-stress conditions, advancing the field of durable organic photovoltaic devices."
+        },
+        "elapsed_seconds": 51.1382,
+        "input_tokens": 668,
+        "output_tokens": 260,
+        "thoughts_tokens": null,
+        "total_tokens": 928,
+        "model_eval_seconds": 39.1832,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983081",
+        "title": "Tracing the spread of Celtic languages using ancient genomics.",
+        "abstract": "NA: Celtic languages are today restricted to Europe's Atlantic fringes but were widely spoken across the continent during the Iron Age1-3. How Celtic achieved this early distribution remains contested4, with alternative archaeological and linguistic models proposing different homelands and dispersal routes. Here we analyse genome-wide data from 4,587 ancient individuals, focusing on Bronze and Iron Age Europe, to test the extent to which these models fit reconstructed demographic histories. We identify three main processes shaping European population structure that are relevant to the Celtic dispersal. First, the arrival of Steppe-related ancestry with Bell Beaker-associated groups after around 4400 BP (calibrated years before present or 1950 CE) across the region in which Celtic and related languages were later spoken. Second, a movement from southwestern Europe into Britain during the Bronze Age (3800-3200 BP), consistent with scenarios in which Celtic formed along the Atlantic façade. Third, a westward expansion of ancestry related to Late Bronze Age Knovíz-Urnfield-associated populations from eastern central Europe (3200-2800 BP), affecting France, the British Isles, northeastern Iberia and Italy and later associated with Iron Age Hallstatt and La Tène contexts5-8. Although all three movements have parallels with proposed models, we argue that the final movement, from eastern central Europe, is most parsimonious for the spread of Celtic. Although human history does not necessarily follow a parsimonious trajectory9 and language shifts need not track genetic change, these results delimit the demographic scenarios that are plausible for the emergence of Celtic in prehistoric Europe.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11198-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11198-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983081/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing genome-wide data, it identifies three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, Iberia, and Italy. The findings suggest the eastern central European migration is most parsimonious for Celtic spread, though language shifts may not directly track genetic changes.\",\n  \"key_findings\": [\n    \"Steppe-related ancestry entered Europe via Bell Beaker groups approximately 4400 years ago\",\n    \"Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP\",\n    \"Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions where Celtic languages later emerged\"\n  ],\n  \"scientific_significance\": \"This work provides genomic evidence for the demographic processes that most plausibly facilitated the spread of Celtic languages across prehistoric Europe, clarifying the genetic pathways associated with their historical distribution.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing genome-wide data, it identifies three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, Iberia, and Italy. The findings suggest the eastern central European migration is most parsimonious for Celtic spread, though language shifts may not directly track genetic changes.",
+          "key_findings": [
+            "Steppe-related ancestry entered Europe via Bell Beaker groups approximately 4400 years ago",
+            "Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP",
+            "Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions where Celtic languages later emerged"
+          ],
+          "scientific_significance": "This work provides genomic evidence for the demographic processes that most plausibly facilitated the spread of Celtic languages across prehistoric Europe, clarifying the genetic pathways associated with their historical distribution."
+        },
+        "elapsed_seconds": 46.5672,
+        "input_tokens": 874,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1142,
+        "model_eval_seconds": 41.5514,
+        "error": "summary must contain 45–65 words; received 92.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986965",
+        "title": "Discovering molecular modulators with nanoswitch screening.",
+        "abstract": "NA: Molecules that modulate protein-protein interactions, including through ternary complex formation, have been established as key therapeutics. Yet they can be challenging to discover, as standard screening approaches often lack throughput or fail to directly assay multibody interactions. We addressed this by combining DNA nanoswitch-based selection of nucleotide-encoded libraries with next-generation sequencing to create FIND (Functional Interaction-based Nanoswitch Discovery), which enables ultrahigh-throughput discovery of compounds that induce or increase protein-protein interactions. We demonstrate FIND by discovering nanobodies that stabilize the interaction between angiotensin-converting enzyme 2 and the receptor-binding domain of severe acute respiratory syndrome coronavirus 2 and by discovering agonists of peroxisome proliferator-activated receptor gamma from a DNA-barcoded small-molecule library. By enabling rapid discovery of molecular modulators, FIND could lead to new therapeutics across many conditions.",
+        "publication_types": [],
+        "doi": "10.1126/science.adt7185",
+        "doi_url": "https://doi.org/10.1126/science.adt7185",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986965/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed FIND, a high-throughput method using DNA nanoswitches and next-generation sequencing to identify molecular modulators of protein-protein interactions. It discovered nanobodies stabilizing ACE2-SARS-CoV-2 receptor binding and agonists for peroxisome proliferator-using receptor gamma. The approach enables rapid therapeutic discovery for conditions involving protein interactions.\",\n  \"key_findings\": [\n    \"FIND identified nanobodies that stabilize ACE2-SARS-CoV-2 receptor binding\",\n    \"FIND discovered agonists for peroxisome proliferator-activated receptor gamma\",\n    \"The method enables ultrahigh-throughput screening of protein-protein interaction modulators\"\n  ],\n  \"scientific_significance\": \"This approach provides a scalable platform for discovering therapeutic modulators of protein-protein interactions, accelerating the development of treatments for diseases involving such interactions.\"\n}",
+        "parsed": {
+          "summary": "This study developed FIND, a high-throughput method using DNA nanoswitches and next-generation sequencing to identify molecular modulators of protein-protein interactions. It discovered nanobodies stabilizing ACE2-SARS-CoV-2 receptor binding and agonists for peroxisome proliferator-using receptor gamma. The approach enables rapid therapeutic discovery for conditions involving protein interactions.",
+          "key_findings": [
+            "FIND identified nanobodies that stabilize ACE2-SARS-CoV-2 receptor binding",
+            "FIND discovered agonists for peroxisome proliferator-activated receptor gamma",
+            "The method enables ultrahigh-throughput screening of protein-protein interaction modulators"
+          ],
+          "scientific_significance": "This approach provides a scalable platform for discovering therapeutic modulators of protein-protein interactions, accelerating the development of treatments for diseases involving such interactions."
+        },
+        "elapsed_seconds": 36.7074,
+        "input_tokens": 614,
+        "output_tokens": 186,
+        "thoughts_tokens": null,
+        "total_tokens": 800,
+        "model_eval_seconds": 27.2798,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935295",
+        "title": "Threo-Chiral Cation Additive Enables Ordered Lattice Adsorption and Enhanced Operational Stability of Perovskite Photovoltaics.",
+        "abstract": "NA: Chiral molecular engineering is an effective strategy to modulate crystallization and mitigate nonradiative defects in perovskite solar cells (PSCs). However, unconstrained bond rotation often leads to spatial mismatch between chiral molecules and the perovskite lattice, hindering effective defect coordination. Herein, we introduce threo-chiral cation additive of (2S,3R)-2-amino-3-hydroxybutanamide hydrochloride (ThrA) to achieve precise perovskite lattice regulation. Benefiting from methyl‑induced steric hindrance originating from its dual chiral‑center threo‑configuration, ThrA acquires a conformationally locked rigid stereostructure and further facilitates thermodynamically‑favored parallel‑to‑lattice multi‑site synergistic adsorption via hydrogen bonding and Pb coordination. Such stereoselective \"lock-and-key\" interaction reduces lattice surface energy, guides preferential (100) crystal growth, and simultaneously suppresses lattice distortion and ion migration. Consequently, the ThrA-modified inverted PSCs achieve a champion efficiency of 26.68% (certified 26.31%), while 65 cm2 large-area module delivers a promising PCE of 22.78% (certified 22.12%), representing one of the outstanding certification efficiencies for perovskite modules of comparable size. Unencapsulated devices retain 90% of their initial efficiency after 1000 h thermal aging (ISOS-D-2) and maintain 92% performance after 2000 h continuous maximum power point tracking (ISOS-L-2). This work demonstrates that the stereostructure of additive is decisive for precise perovskite crystallization modulation, providing advanced stereochemical strategy toward high-efficiency and ultra-stable perovskite photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75539",
+        "doi_url": "https://doi.org/10.1002/adma.75539",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935295/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates threo-chiral cation additives for enhancing perovskite solar cell stability and efficiency. Using (2S,3R)-2-amino-3-hydroxybutanamide hydrochloride (ThrA), researchers achieved precise lattice regulation via stereoselective hydrogen bonding and lead coordination. The approach reduced surface energy, promoted (100) crystal growth, and suppressed defects. ThrA-modified cells reached 26.68% certified efficiency and maintained 90% performance after 1000h thermal aging.\",\n  \"key_findings\": [\n    \"ThrA's threo-configuration enables conformationally locked rigid stereostructure for stereoselective adsorption\",\n    \"ThrA-modified cells achieved 26.68% certified efficiency and 22.78% for 65 cm² modules\",\n    \"Unencapsulated devices retained 90% initial efficiency after 1000h thermal aging\"\n  ],\n  \"scientific_significance\": \"This work establishes stereochemical control as a critical factor for optimizing perovskite crystallization, advancing strategies for high-efficiency and ultra-stable photovoltaic devices.\"\n}",
+        "parsed": {
+          "summary": "This study investigates threo-chiral cation additives for enhancing perovskite solar cell stability and efficiency. Using (2S,3R)-2-amino-3-hydroxybutanamide hydrochloride (ThrA), researchers achieved precise lattice regulation via stereoselective hydrogen bonding and lead coordination. The approach reduced surface energy, promoted (100) crystal growth, and suppressed defects. ThrA-modified cells reached 26.68% certified efficiency and maintained 90% performance after 1000h thermal aging.",
+          "key_findings": [
+            "ThrA's threo-configuration enables conformationally locked rigid stereostructure for stereoselective adsorption",
+            "ThrA-modified cells achieved 26.68% certified efficiency and 22.78% for 65 cm² modules",
+            "Unencapsulated devices retained 90% initial efficiency after 1000h thermal aging"
+          ],
+          "scientific_significance": "This work establishes stereochemical control as a critical factor for optimizing perovskite crystallization, advancing strategies for high-efficiency and ultra-stable photovoltaic devices."
+        },
+        "elapsed_seconds": 58.4512,
+        "input_tokens": 840,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 1095,
+        "model_eval_seconds": 38.6393,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983083",
+        "title": "Microbiome-wide PheWAS links gut microbial SNVs to health and exposures.",
+        "abstract": "NA: Alterations in the microbial composition of the human gut have been associated with a wide range of chronic diseases1,2. Yet species-level composition alone can obscure extensive within-species genetic diversity and functional variation. This has driven a shift towards strain-resolved, genetic-level analysis of the microbiome, leveraging microbial genetic variation to identify disease-relevant genes and pathways3-6. Here we conducted a phenome-wide association study (PheWAS) analysing 12.8 million gut microbial single-nucleotide variants (SNVs) with 244 host health phenotypes and environmental exposures in 10,781 individuals from 6 independent cohorts. We identify 940 independent associations across 69 host factors, including age, sex and cardiovascular and metabolic parameters. Structural analyses identified host-phenotype-associated SNVs in functionally important regions of proteins, findings that inform mechanistic hypotheses about how microbial genetic changes relate to environmental and host physiological factors. For example, we identified an age-associated SNV in Faecalibacterium prausnitzii that affects an amino acid within the protein pocket that binds glutathione. To support future efforts, all study summary statistics are provided in an online catalogue ( https://fulab.web.rug.nl/SNV-MWAS/ ). Together, these results identify new biological connections between the human host and microbial genetic variants at base pair resolution and provide a resource for hypothesis generation that will aid future understanding of the strain-level functionality of the gut microbiota.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11220-0",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11220-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983083/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study performed a phenome-wide association study (PheWAS) analyzing 12.8 million gut microbial single-nucleotide variants (SNVs) across 244 health phenotypes and exposures in 10,781 individuals. It identified 940 independent associations linking microbial SNVs to host factors like age, sex, and metabolic parameters. Structural analyses revealed SNVs in functionally critical protein regions, suggesting mechanisms by which microbial genetic variation influences host health and environmental interactions.\",\n  \"key_findings\": [\n    \"940 independent associations between gut microbial SNVs and 69 host factors including age, sex, and cardiovascular/metabolic parameters\",\n    \"Identification of age-associated SNVs in Faecalibacterium prausnitzii affecting glutathione-binding protein regions\",\n    \"Structural insights into how microbial genetic variants impact host health through protein functional regions\"\n  ],\n  \"scientific_significance\": \"This work establishes base-pair resolution links between gut microbial genetic variation and host health phenotypes, providing a resource for mechanistic hypotheses about strain-level microbiome functionality.\"\n}",
+        "parsed": {
+          "summary": "This study performed a phenome-wide association study (PheWAS) analyzing 12.8 million gut microbial single-nucleotide variants (SNVs) across 244 health phenotypes and exposures in 10,781 individuals. It identified 940 independent associations linking microbial SNVs to host factors like age, sex, and metabolic parameters. Structural analyses revealed SNVs in functionally critical protein regions, suggesting mechanisms by which microbial genetic variation influences host health and environmental interactions.",
+          "key_findings": [
+            "940 independent associations between gut microbial SNVs and 69 host factors including age, sex, and cardiovascular/metabolic parameters",
+            "Identification of age-associated SNVs in Faecalibacterium prausnitzii affecting glutathione-binding protein regions",
+            "Structural insights into how microbial genetic variants impact host health through protein functional regions"
+          ],
+          "scientific_significance": "This work establishes base-pair resolution links between gut microbial genetic variation and host health phenotypes, providing a resource for mechanistic hypotheses about strain-level microbiome functionality."
+        },
+        "elapsed_seconds": 50.6715,
+        "input_tokens": 746,
+        "output_tokens": 234,
+        "thoughts_tokens": null,
+        "total_tokens": 980,
+        "model_eval_seconds": 34.9334,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986967",
+        "title": "Glacial abrupt transitions in ocean circulation were much slower than ice-core records imply.",
+        "abstract": "NA: Dansgaard-Oeschger (DO) events during the last ice age are thought to reflect rapid shifts in the Atlantic Meridional Overturning Circulation (AMOC). Greenland ice cores suggest warming transitions within only a few decades-or even just over 10 years. Using precisely dated speleothem oxygen-isotope records from the Asian monsoon region, we have shown that the same DO warmings unfolded over more than a century. Isotope modeling revealed that Greenland records primarily capture a rapid atmospheric reorganization triggered by the initial sea-ice retreat in the northeastern North Atlantic, whereas the parallel AMOC recovery and hemispheric thermal adjustment proceeded much more slowly. These findings reveal that natural AMOC transitions evolved more slowly than the rapid North Greenland oxygen-isotope shifts would imply, thereby refining our understanding of \"abruptness\" during DO events.",
+        "publication_types": [],
+        "doi": "10.1126/science.aed4270",
+        "doi_url": "https://doi.org/10.1126/science.aed4270",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986967/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the timescale of Atlantic Meridional Overturning Circulation (AMOC) changes during Dansgaard-Oeschger (DO) events using speleothem oxygen-isotope records. The research demonstrates that AMOC recovery took over a century, contrasting with Greenland ice cores indicating warming within decades. The findings reveal that initial atmospheric reorganization preceded slower oceanic adjustments, challenging the perception of abrupt AMOC transitions.\",\n  \"key_findings\": [\n    \"AMOC recovery during DO events spanned over a century, not decades as ice cores suggest\",\n    \"Greenland ice cores capture rapid atmospheric reorganization from initial sea-ice retreat\",\n    \"Oceanic thermal adjustment occurred significantly slower than atmospheric changes\"\n  ],\n  \"scientific_significance\": \"The study clarifies that natural AMOC transitions are more gradual than Greenland ice core records imply, refining the understanding of abrupt climate shifts during past ice ages.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the timescale of Atlantic Meridional Overturning Circulation (AMOC) changes during Dansgaard-Oeschger (DO) events using speleothem oxygen-isotope records. The research demonstrates that AMOC recovery took over a century, contrasting with Greenland ice cores indicating warming within decades. The findings reveal that initial atmospheric reorganization preceded slower oceanic adjustments, challenging the perception of abrupt AMOC transitions.",
+          "key_findings": [
+            "AMOC recovery during DO events spanned over a century, not decades as ice cores suggest",
+            "Greenland ice cores capture rapid atmospheric reorganization from initial sea-ice retreat",
+            "Oceanic thermal adjustment occurred significantly slower than atmospheric changes"
+          ],
+          "scientific_significance": "The study clarifies that natural AMOC transitions are more gradual than Greenland ice core records imply, refining the understanding of abrupt climate shifts during past ice ages."
+        },
+        "elapsed_seconds": 37.5592,
+        "input_tokens": 607,
+        "output_tokens": 193,
+        "thoughts_tokens": null,
+        "total_tokens": 800,
+        "model_eval_seconds": 28.3426,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935365",
+        "title": "Processing Window Expansion Enables Uniform Crystallization in Scalable Ambient-Fabricated Perovskite Photovoltaics.",
+        "abstract": "NA: Slot-die coating is a promising scalable deposition technique for perovskite devices due to its high material utilization and inherent compatibility with continuous manufacturing. However, a narrow deposition-to-annealing time window and inhomogeneous ink distribution limit the device performance. Herein, we report a combined additive (CA) strategy that simultaneously regulates nucleation kinetics and phase evolution, broadening the processing window for slot-die coating in the ambient. By synergistically introducing rubidium thiocyanate (RbSCN) and formamidinium thiocyanate (FASCN), an in situ coordination mechanism is established that lowers the energy barrier for the δ-to-α phase transition while suppressing non-photoactive phase formation. This leads to uniform crystallization over an extended time window exceeding 100 s, yielding dense large-grained α-FAPbI3 films with minimized vertical compositional gradient and reduced residual strain. The resulting films exhibit suppressed defects, prolonged carrier lifetime, and optimized energy-level alignment, enabling efficient charge extraction and reduced nonradiative recombination. The CA strategy enables highly uniform large-area deposition to deliver an efficiency of 22.70% for perovskite solar modules. Meanwhile, the unencapsulated devices maintain 97.76% of the initial efficiency under ISOS-L-3 for 1300 h. This CA strategy establishes a generalizable pathway for decoupling crystallization kinetics from processing constraints, providing a robust method for scalable high-performance perovskite photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75520",
+        "doi_url": "https://doi.org/10.1002/adma.75520",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935365/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing slot-die coating for perovskite solar cells by expanding the processing window. Using rubidium and formamidinium thiocyanates as additives, the researchers broadened the deposition-to-annealing time window beyond 100 seconds. This approach achieved uniform crystallization, minimized compositional gradients, and improved device efficiency to 22.70% with stable performance over 1300 hours under ambient conditions.\",\n  \"key_findings\": [\n    \"Broadened processing window exceeding 100 seconds for slot-die coating\",\n    \"Uniform crystallization with minimized vertical compositional gradients\",\n    \"22.10% efficiency with 97.76% retention after 1300 hours under ISOS-L-3\"\n  ],\n  \"scientific_significance\": \"This work establishes a generalizable method for decoupling crystallization kinetics from processing constraints in scalable perovskite photovoltaic fabrication.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing slot-die coating for perovskite solar cells by expanding the processing window. Using rubidium and formamidinium thiocyanates as additives, the researchers broadened the deposition-to-annealing time window beyond 100 seconds. This approach achieved uniform crystallization, minimized compositional gradients, and improved device efficiency to 22.70% with stable performance over 1300 hours under ambient conditions.",
+          "key_findings": [
+            "Broadened processing window exceeding 100 seconds for slot-die coating",
+            "Uniform crystallization with minimized vertical compositional gradients",
+            "22.10% efficiency with 97.76% retention after 1300 hours under ISOS-L-3"
+          ],
+          "scientific_significance": "This work establishes a generalizable method for decoupling crystallization kinetics from processing constraints in scalable perovskite photovoltaic fabrication."
+        },
+        "elapsed_seconds": 47.4111,
+        "input_tokens": 760,
+        "output_tokens": 208,
+        "thoughts_tokens": null,
+        "total_tokens": 968,
+        "model_eval_seconds": 31.5654,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983084",
+        "title": "Venousization enables angiogenesis in the absence of VEGFR signalling.",
+        "abstract": "NA: The vascular endothelial growth factor (VEGF) ligand and its main receptor VEGFR2 are considered to be essential for endothelial differentiation, proliferation, sprouting and survival1. Blood vessels cannot form in growing embryos or tissues when VEGF-VEGFR2 signalling is compromised in all cells2,3. The anti-VEGF antibody, which can block angiogenesis in cancer, wound healing or ischaemic diseases, is among the most widely used antibodies in the clinic. However, vascular resistance to anti-VEGF therapy has been reported4,5. Here we used iFlpMosaics and iSuRe-HadCre to induce and track genetic mosaics of endothelial cells (ECs) lacking VEGFR2 during the entire embryonic and postnatal development. These Vegfr2-knockout (Vegfr2KO) ECs adapted, proliferated normally and competed with wild-type cells over time, eventually forming a substantial portion of the vascular network in most organs. Vegfr2KO ECs could not sprout during the first wave of angiogenesis in most tissues, because this process is highly VEGF-dependent and favours growth and mobilization of wild-type ECs. However, owing to their inability to respond to VEGF, Vegfr2KO ECs became dominant in veins, which represented a long-term and continuous source of ECs for subsequent waves of VEGF-independent angiogenesis. Comparative single-cell RNA sequencing analysis of ECs with acute and long-term loss of VEGFR2 identified both common and organ-specific molecular mechanisms of adaptation and resistance to VEGF signalling loss. These included significant endothelial venousization and upregulation of ligands for VEGFR1 and VEGFR3. VEGFR1 only partially compensated for VEGFR2 loss in capillary ECs, whereas VEGFR3 compensated only in arterial ECs. Loss of the three VEGF receptors did not compromise venous growth. Notably, loss of the master regulator of venous development, NR2F2 (also known as COUP-TFII), significantly compromised expansion of Vegfr2KO ECs. This work has implications for our understanding of the role of VEGF receptors in angiogenesis and demonstrates venousization as a mechanism of adaptation and resistance to VEGF signalling loss during angiogenesis.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11224-w",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11224-w",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983084/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how endothelial cells (ECs) adapt to the absence of VEGFR2 signaling during angiogenesis. Using genetic mosaics, researchers found that Vegfr2KO ECs initially fail to sprout but later dominate venous networks, enabling VEGF-independent angiogenesis. Molecular analysis revealed compensatory mechanisms involving VEGFR1 and V. The findings highlight venousization as a key adaptation strategy to VEGF signaling loss.\",\n  \"key_findings\": [\n    \"Vegfr2KO endothelial cells initially fail sprouting but become dominant in veins\",\n    \"VEGFR1 partially compensates for VEGFR2 loss in capillary cells, while VEGFR3 compensates in arterial cells\",\n    \"Loss of NR2F2 significantly impairs expansion of Vegfr2KO endothelial cells\"\n  ],\n  \"scientific_significance\": \"The study demonstrates venousization as a critical mechanism for endothelial adaptation and resistance to VEGF signaling loss during angiogenesis, providing insights into vascular development and therapeutic resistance.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how endothelial cells (ECs) adapt to the absence of VEGFR2 signaling during angiogenesis. Using genetic mosaics, researchers found that Vegfr2KO ECs initially fail to sprout but later dominate venous networks, enabling VEGF-independent angiogenesis. Molecular analysis revealed compensatory mechanisms involving VEGFR1 and V. The findings highlight venousization as a key adaptation strategy to VEGF signaling loss.",
+          "key_findings": [
+            "Vegfr2KO endothelial cells initially fail sprouting but become dominant in veins",
+            "VEGFR1 partially compensates for VEGFR2 loss in capillary cells, while VEGFR3 compensates in arterial cells",
+            "Loss of NR2F2 significantly impairs expansion of Vegfr2KO endothelial cells"
+          ],
+          "scientific_significance": "The study demonstrates venousization as a critical mechanism for endothelial adaptation and resistance to VEGF signaling loss during angiogenesis, providing insights into vascular development and therapeutic resistance."
+        },
+        "elapsed_seconds": 58.6015,
+        "input_tokens": 922,
+        "output_tokens": 223,
+        "thoughts_tokens": null,
+        "total_tokens": 1145,
+        "model_eval_seconds": 35.2774,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986968",
+        "title": "Denoising the US Census: Succinct block hierarchical regression.",
+        "abstract": "NA: The 2020 United States Census adopted differential privacy to protect individual confidentiality, adding calibrated noise to summary demographic measurements that are then reconciled into population tables. We developed BlueDown, a postprocessing algorithm that combines techniques from linear regression and constrained optimization while exploiting measurement structure for efficiency. On 2020 Census data, BlueDown reduced the error of groupings by race at the county level by 21 to 36% and of all county-level groupings by 9 to 58%; at the tract level, it reduced error of groupings by housing type by 38 to 61%. These gains came at no cost to confidentiality or computational efficiency and would improve the validity of research relying on this definitive dataset and analyses used to guide the distribution of more than $1.5 trillion in annual federal spending.",
+        "publication_types": [],
+        "doi": "10.1126/science.aej1765",
+        "doi_url": "https://doi.org/10.1126/science.aej1765",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986968/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed BlueDown, a postprocessing algorithm for US Census data using differential privacy. It combines regression and constrained optimization to reduce error in county-level racial groupings by 21-36% and all county-level groupings by 9-58%. At the tract level, it improved housing type groupings by 38-61%. The approach enhances data validity without compromising confidentiality or computational efficiency, supporting federal spending decisions.\",\n  \"key_findings\": [\n    \"BlueDown reduced county-level racial grouping errors by 21-36%\",\n    \"All county-level grouping errors decreased by 9-58%\",\n    \"Tract-level housing type grouping errors were reduced by 38-61%\"\n  ],\n  \"scientific_significance\": \"This work advances differential privacy by providing a highly efficient postprocessing method that significantly improves data accuracy while maintaining confidentiality, directly benefiting large-scale demographic analyses and policy decisions.\"\n}",
+        "parsed": {
+          "summary": "This study developed BlueDown, a postprocessing algorithm for US Census data using differential privacy. It combines regression and constrained optimization to reduce error in county-level racial groupings by 21-36% and all county-level groupings by 9-58%. At the tract level, it improved housing type groupings by 38-61%. The approach enhances data validity without compromising confidentiality or computational efficiency, supporting federal spending decisions.",
+          "key_findings": [
+            "BlueDown reduced county-level racial grouping errors by 21-36%",
+            "All county-level grouping errors decreased by 9-58%",
+            "Tract-level housing type grouping errors were reduced by 38-61%"
+          ],
+          "scientific_significance": "This work advances differential privacy by providing a highly efficient postprocessing method that significantly improves data accuracy while maintaining confidentiality, directly benefiting large-scale demographic analyses and policy decisions."
+        },
+        "elapsed_seconds": 38.7492,
+        "input_tokens": 604,
+        "output_tokens": 198,
+        "thoughts_tokens": null,
+        "total_tokens": 802,
+        "model_eval_seconds": 29.6337,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935374",
+        "title": "Nanocatalytic Inhibition of ROS-Dependent GSDMD Palmitoylation Mitigates Sepsis Progression.",
+        "abstract": "NA: Sepsis is a life-threatening condition characterized by multiple organ dysfunction, high morbidity, and mortality. Gasdermin D (GSDMD)-mediated pyroptosis constitutes a key pathogenic mechanism. Here, we discovered that GSDMD in peripheral blood mononuclear cells (PBMCs) from septic patients undergoes enhanced palmitoylation, driven by reactive oxygen species (ROS) and mediated by ZDHHC5/ZDHHC9 transferases. Targeting this new mechanism, we designed and screened vanadium oxide hydroxide nanosheets (VOOH NSs) as catalytic ROS scavengers and GSDMD palmitoylation inhibitor. Crucially, we investigated and optimized the exposure patterns of specific lattice planes to maximize their ROS-eliminating capability. This intervention measure prevents GSDMD palmitoylation, inhibits both canonical and non-canonical pyroptosis, alleviates inflammatory damage, and demonstrates potent therapeutic effects in two sepsis animal models. Validation in GSDMD-knockout mice further confirms this palmitoylation pathway as the key therapeutic target. These results demonstrate that targeting ROS-mediated GSDMD palmitoylation is a key therapeutic strategy for treating sepsis.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75502",
+        "doi_url": "https://doi.org/10.1002/adma.75502",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935374/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated ROS-driven GSDMD palmitoylation in sepsis using PBMCs from patients. Researchers identified ZDHHC5/ZDHHC9 transferases as key mediators and developed vanadium oxide hydroxide nanosheets (VOOH NSs) to scavenge ROS and inhibit palmitoylation. The intervention reduced pyroptosis, inflammation, and sepsis severity in animal models, with validation in GSDMD-knockout mice confirming the pathway's therapeutic relevance.\",\n  \"key_findings\": [\n    \"GSDMD palmitoylation in septic PBMCs is enhanced by ROS via ZDHHC5/ZDHHC9 transferases\",\n    \"VOOH NSs inhibit ROS and palmitoylation, reducing pyroptosis and inflammation\",\n    \"GSDMD-knockout mice validation confirms palmitoylation pathway as a therapeutic target\"\n  ],\n  \"scientific_significance\": \"Targeting ROS-mediated GSDMD palmitoylation provides a novel mechanism to mitigate sepsis progression by inhibiting pyroptosis and inflammatory damage.\"\n}",
+        "parsed": {
+          "summary": "This study investigated ROS-driven GSDMD palmitoylation in sepsis using PBMCs from patients. Researchers identified ZDHHC5/ZDHHC9 transferases as key mediators and developed vanadium oxide hydroxide nanosheets (VOOH NSs) to scavenge ROS and inhibit palmitoylation. The intervention reduced pyroptosis, inflammation, and sepsis severity in animal models, with validation in GSDMD-knockout mice confirming the pathway's therapeutic relevance.",
+          "key_findings": [
+            "GSDMD palmitoylation in septic PBMCs is enhanced by ROS via ZDHHC5/ZDHHC9 transferases",
+            "VOOH NSs inhibit ROS and palmitoylation, reducing pyroptosis and inflammation",
+            "GSDMD-knockout mice validation confirms palmitoylation pathway as a therapeutic target"
+          ],
+          "scientific_significance": "Targeting ROS-mediated GSDMD palmitoylation provides a novel mechanism to mitigate sepsis progression by inhibiting pyroptosis and inflammatory damage."
+        },
+        "elapsed_seconds": 48.6087,
+        "input_tokens": 700,
+        "output_tokens": 234,
+        "thoughts_tokens": null,
+        "total_tokens": 934,
+        "model_eval_seconds": 35.374,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983085",
+        "title": "Nectin-4 mediates rubella virus entry in airway and placental cells.",
+        "abstract": "NA: Rubella virus (RuV) causes rubella and, when acquired during pregnancy, congenital rubella syndrome1. Despite its clinical significance, the cellular entry mechanism of RuV remains poorly characterized, owing to limited identification of host receptors2, which hinders pathogenesis research and therapeutic development. Here, using proximity biotin labelling-based proteomics coupled with CRISPR-Cas9 validation, we identify nectin-4 as a functional RuV entry receptor. Ectopic expression of nectin-4 conferred susceptibility to RuV in non-permissive cells, whereas blocking or genetic ablation of nectin-4 reduced infection, results that demonstrate that nectin-4 is a major entry factor. Mechanistically, nectin-4 directly interacts with the RuV envelope glycoprotein heterodimer and facilitates receptor-mediated endocytosis following initial calcium-dependent viral attachment to cellular lipids. In polarized airway epithelial models, nectin-4 mediates basolateral entry of RuV and supports apical progeny release, a finding that provides a molecular mechanism for respiratory transmission. In placental models, nectin-4 is highly expressed on syncytiotrophoblasts and facilitates infection at the maternal-fetal interface, although additional nectin-4-independent pathways contribute to infection of other trophoblast populations. Together, these data establish nectin-4 as a key factor for respiratory transmission and early placental infection of RuV and highlight it as a promising therapeutic target for the prevention of rubella and related diseases.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11248-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11248-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983085/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies nectin-4 as a functional receptor for rubella virus (RuV) entry in airway and placental cells. Using proximity biotin labelling proteomics and CRISPR-Cas9 validation, researchers demonstrated that nectin-4 mediates RuV attachment, endocytosis, and infection in both cell types. The findings reveal nectin-4's role in respiratory transmission and early placental infection, with implications for therapeutic targeting.\",\n  \"key_findings\": [\n    \"Nectin-4 directly interacts with RuV envelope glycoproteins to facilitate entry\",\n    \"Nectin-4 enables basolateral RuV entry in airway epithelia and apical progeny release\",\n    \"Nectin-4 is highly expressed on placental syncytiotrophoblasts, supporting maternal-fetal interface infection\"\n  ],\n  \"scientific_significance\": \"This work establishes nectin-4 as a critical receptor for rubella virus transmission across respiratory and placental barriers, providing a molecular basis for understanding congenital rubella syndrome pathogenesis and potential therapeutic interventions.\"\n}",
+        "parsed": {
+          "summary": "This study identifies nectin-4 as a functional receptor for rubella virus (RuV) entry in airway and placental cells. Using proximity biotin labelling proteomics and CRISPR-Cas9 validation, researchers demonstrated that nectin-4 mediates RuV attachment, endocytosis, and infection in both cell types. The findings reveal nectin-4's role in respiratory transmission and early placental infection, with implications for therapeutic targeting.",
+          "key_findings": [
+            "Nectin-4 directly interacts with RuV envelope glycoproteins to facilitate entry",
+            "Nectin-4 enables basolateral RuV entry in airway epithelia and apical progeny release",
+            "Nectin-4 is highly expressed on placental syncytiotrophoblasts, supporting maternal-fetal interface infection"
+          ],
+          "scientific_significance": "This work establishes nectin-4 as a critical receptor for rubella virus transmission across respiratory and placental barriers, providing a molecular basis for understanding congenital rubella syndrome pathogenesis and potential therapeutic interventions."
+        },
+        "elapsed_seconds": 52.6194,
+        "input_tokens": 763,
+        "output_tokens": 240,
+        "thoughts_tokens": null,
+        "total_tokens": 1003,
+        "model_eval_seconds": 36.5195,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986969",
+        "title": "Equivalence of pseudogap and pairing energy in a cuprate high-temperature superconductor.",
+        "abstract": "NA: The pseudogap stands out in the phase diagram of the cuprate high-temperature superconductors because its origin and relationship to superconductivity remain elusive. The origin of the pseudogap has been debated, with competing hypotheses attributing it to preformed electron pairs or local order, such as charge density waves. We present unambiguous evidence supporting the pairing scenario, using local shot-noise spectroscopy measurements in Bi2Sr2CaCu2O8+δ. Our data demonstrate that the pseudogap energy coincides with the onset of electron pairing and is spatially heterogeneous with values reaching up to 70 milli-electron volts. Our results exclude a pure local order origin of the pseudogap, link the pseudogap to Cooper pair formation, and suggest that the limiting factor for higher critical temperature in cuprates is phase coherence.",
+        "publication_types": [],
+        "doi": "10.1126/science.adt3444",
+        "doi_url": "https://doi.org/10.1126/science.adt3444",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986969/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the origin of the pseudogap in cuprate high-temperature superconductors using local shot-noise spectroscopy on Bi2Sr2CaCu2O8+δ. The research demonstrates that the pseudogap energy aligns with electron pairing onset and exhibits spatial heterogeneity up to 70 meV. The findings support a pairing mechanism over local order, indicating phase coherence limits critical temperature in cuprates.\",\n  \"key_findings\": [\n    \"The pseudogap energy coincides with electron pairing onset\",\n    \"The pseudogap exhibits spatial heterogeneity with values up to 70 milli-electron volts\",\n    \"The results exclude a pure local order origin for the pseudogap\"\n  ],\n  \"scientific_significance\": \"This work provides direct evidence linking pseudogap formation to Cooper pair dynamics in cuprates, advancing understanding of the interplay between superconductivity and pseudogap phenomena.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the origin of the pseudogap in cuprate high-temperature superconductors using local shot-noise spectroscopy on Bi2Sr2CaCu2O8+δ. The research demonstrates that the pseudogap energy aligns with electron pairing onset and exhibits spatial heterogeneity up to 70 meV. The findings support a pairing mechanism over local order, indicating phase coherence limits critical temperature in cuprates.",
+          "key_findings": [
+            "The pseudogap energy coincides with electron pairing onset",
+            "The pseudogap exhibits spatial heterogeneity with values up to 70 milli-electron volts",
+            "The results exclude a pure local order origin for the pseudogap"
+          ],
+          "scientific_significance": "This work provides direct evidence linking pseudogap formation to Cooper pair dynamics in cuprates, advancing understanding of the interplay between superconductivity and pseudogap phenomena."
+        },
+        "elapsed_seconds": 39.3996,
+        "input_tokens": 612,
+        "output_tokens": 198,
+        "thoughts_tokens": null,
+        "total_tokens": 810,
+        "model_eval_seconds": 30.081,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935453",
+        "title": "Photothermal Catalytic Dry Reforming of Methane With 1000-Hour Stability via Redox Shuttle of Metal Vanadate.",
+        "abstract": "NA: Photothermal catalytic dry reforming of methane (DRM) mediated by lattice oxygen (Ol) is promising for converting two major greenhouse gases into syngas. However, conventional oxide supports possess strong metal-oxygen bonds that restrict Ol migration, compromising stability, typically less than 200 h. Herein, we design a Rh/Mg2V1.33O4 catalyst with Rhδ +─Ov─Vn + interfacial sites (n = 3 or 4). The defective spinel vanadate support exhibits quasi-metallic properties, enabling efficient solar harvesting and photothermal conversion. Under 4 W cm-2 light irradiation without external heating, the redox flexibility of V species enables an interfacial redox shuttle (Rhδ +─Ov─Vn + ⇌ Rhδ +─Ol─V( n +1)+), which endows the catalyst with effective Ol migration and regeneration ability in the DRM reaction. This property steers the reaction along a coking-resistant CH3O* pathway and guarantees structural stability. As a result, the catalyst delivers long-term stability for 1000 h, outperforming state-of-the-art photothermal catalysts. It also achieves high syngas generation rates of 16.1 and 18.6 mol gRh -1 h-1 for H2 and CO, respectively, along with a light-to-chemical energy efficiency of ∼20.9%. This work establishes quasi-metallic, redox-active vanadate supports as a transformative platform for durable Ol-mediated photothermal catalysis.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75527",
+        "doi_url": "https://doi.org/10.1002/adma.75527",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935453/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates photothermal catalytic dry reforming of methane using a Rh/Mg2V1.33O4 catalyst with defective spinel vanadate. The catalyst leverages interfacial redox shuttling between Rh and vanadate species to enable lattice oxygen migration, achieving 1000-hour stability and high syng. The approach enhances coking resistance and light-to-chemical energy efficiency to ∼20.9% under solar irradiation.\",\n  \"key_findings\": [\n    \"1000-hour operational stability in photothermal methane dry reforming\",\n    \"Interfacial redox shuttle mechanism enabling lattice oxygen migration\",\n    \"High syngas production rates (16.1 mol gRh-1 h-1 H2, 18.6 mol gRh-1 h-1 CO) and 20.9% light-to-chemical energy efficiency\"\n  ],\n  \"scientific_significance\": \"This work establishes quasi-metallic vanadate supports as a durable platform for lattice oxygen-mediated photothermal catalysis, advancing stability and efficiency in greenhouse gas conversion.\"\n}",
+        "parsed": {
+          "summary": "This study investigates photothermal catalytic dry reforming of methane using a Rh/Mg2V1.33O4 catalyst with defective spinel vanadate. The catalyst leverages interfacial redox shuttling between Rh and vanadate species to enable lattice oxygen migration, achieving 1000-hour stability and high syng. The approach enhances coking resistance and light-to-chemical energy efficiency to ∼20.9% under solar irradiation.",
+          "key_findings": [
+            "1000-hour operational stability in photothermal methane dry reforming",
+            "Interfacial redox shuttle mechanism enabling lattice oxygen migration",
+            "High syngas production rates (16.1 mol gRh-1 h-1 H2, 18.6 mol gRh-1 h-1 CO) and 20.9% light-to-chemical energy efficiency"
+          ],
+          "scientific_significance": "This work establishes quasi-metallic vanadate supports as a durable platform for lattice oxygen-mediated photothermal catalysis, advancing stability and efficiency in greenhouse gas conversion."
+        },
+        "elapsed_seconds": 53.5897,
+        "input_tokens": 784,
+        "output_tokens": 238,
+        "thoughts_tokens": null,
+        "total_tokens": 1022,
+        "model_eval_seconds": 36.5199,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983086",
+        "title": "A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity.",
+        "abstract": "NA: Cancer cells show highly heterogeneous and plastic states in glioblastoma, an incurable brain tumour1-5. However, how these malignant states arise and whether they follow defined cellular trajectories across tumours is poorly understood. Here we generated a deep single-cell and spatial multi-omic atlas of human glioblastoma that pairs transcriptomic, epigenomic and genomic profiling of 12 tumours across many regions. We identify that glioblastoma heterogeneity is driven by spatially patterned transitions of cancer cells from developmental-like states towards those defined by a glial injury response and hypoxia. This cellular trajectory regionalizes tumours into distinct tissue microenvironments and manifests in a molecularly conserved manner across tumours as well as genetically distinct tumour subclones. Consistently, using a new deep-learning framework to map cancer cell states jointly with clones in situ, we show that tumour subclones are finely spatially intermixed through glioblastoma tissue microenvironments. We validate this cellular trajectory by using somatic mutation-based hierarchies in vivo and an experimental patient-derived organoid model ex vivo. Finally, we show that this cancer cell trajectory is intimately linked to myeloid heterogeneity and unfolds across regionalized myeloid signalling environments. Our findings define a stereotyped trajectory of cancer cells in glioblastoma and unify glioblastoma tumour heterogeneity into a tractable cellular and tissue framework.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11234-8",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11234-8",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983086/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated glioblastoma heterogeneity by generating a deep single-cell and spatial multi-omic atlas of 12 human tumours. It identified a spatiotemporal cancer cell trajectory where cells transition from developmental-like states to glial injury response and hypoxia-defined states. This trajectory regionalizes tumours into distinct microenvironments, shows molecular conservation across tumours, and links to myeloid heterogeneity through spatially intermixed subclones.\",\n  \"key_findings\": [\n    \"Glioblastoma heterogeneity arises from spatially patterned transitions of cancer cells from developmental-like states to glial injury response and hypoxia-defined states\",\n    \"The cellular trajectory regionalizes tumours into distinct tissue microenvironments with molecular conservation across tumours\",\n    \"Tumour subclones are spatially intermixed through microenvironments and linked to myeloid heterogeneity\"\n  ],\n  \"scientific_significance\": \"This work establishes a stereotyped spatiotemporal trajectory of cancer cells in glioblastoma, providing a unified framework for understanding tumour heterogeneity through cellular and tissue dynamics.\"\n}",
+        "parsed": {
+          "summary": "This study investigated glioblastoma heterogeneity by generating a deep single-cell and spatial multi-omic atlas of 12 human tumours. It identified a spatiotemporal cancer cell trajectory where cells transition from developmental-like states to glial injury response and hypoxia-defined states. This trajectory regionalizes tumours into distinct microenvironments, shows molecular conservation across tumours, and links to myeloid heterogeneity through spatially intermixed subclones.",
+          "key_findings": [
+            "Glioblastoma heterogeneity arises from spatially patterned transitions of cancer cells from developmental-like states to glial injury response and hypoxia-defined states",
+            "The cellular trajectory regionalizes tumours into distinct tissue microenvironments with molecular conservation across tumours",
+            "Tumour subclones are spatially intermixed through microenvironments and linked to myeloid heterogeneity"
+          ],
+          "scientific_significance": "This work establishes a stereotyped spatiotemporal trajectory of cancer cells in glioblastoma, providing a unified framework for understanding tumour heterogeneity through cellular and tissue dynamics."
+        },
+        "elapsed_seconds": 50.9466,
+        "input_tokens": 731,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 968,
+        "model_eval_seconds": 36.0527,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
