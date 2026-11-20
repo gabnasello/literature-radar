@@ -5,12 +5,15 @@ root <- "."
 website_dir <- file.path(root, "website")
 journal_dir <- file.path(website_dir, "journals")
 update_dir <- file.path(website_dir, "updates")
+keyword_dir <- file.path(website_dir, "keywords")
 
 dir.create(journal_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(update_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(keyword_dir, recursive = TRUE, showWarnings = FALSE)
 
 unlink(list.files(journal_dir, pattern = "\\.qmd$", full.names = TRUE))
 unlink(list.files(update_dir, pattern = "\\.qmd$", full.names = TRUE))
+unlink(list.files(keyword_dir, pattern = "\\.qmd$", full.names = TRUE))
 
 site <- load_literature_site_data(root)
 
@@ -41,6 +44,13 @@ for (journal in site$journals) {
     journal$name,
     paste0("site_render_journal_page(site, ", journal_id, ")")
   )
+}
+
+for (keyword in site$keywords) {
+  slug <- site_slug(keyword$id)
+  keyword_id <- as.character(jsonlite::toJSON(keyword$id, auto_unbox = TRUE))
+  path <- file.path(keyword_dir, paste0(slug, ".qmd"))
+  write_generated_page(path, keyword$name, paste0("site_render_keyword_page(site, ", keyword_id, ")"))
 }
 
 for (report in site$reports) {
