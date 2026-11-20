@@ -26,6 +26,7 @@ read_benchmark_articles <- function(root = project_root()) {
   for (path in paths) {
     report <- jsonlite::fromJSON(path, simplifyVector = FALSE)
     if (is.null(report$articles) || !length(report$articles)) next
+    is_keyword_report <- identical(report$channel, "keyword")
     journal_id <- if (is.null(report$journal$id)) basename(dirname(path)) else report$journal$id
     journal_name <- if (is.null(report$journal$name)) journal_id else report$journal$name
     for (article in report$articles) {
@@ -41,7 +42,7 @@ read_benchmark_articles <- function(root = project_root()) {
         doi_url = if (is.null(article$doi_url)) "" else as.character(article$doi_url),
         pubmed_url = if (is.null(article$pubmed_url)) "" else as.character(article$pubmed_url),
         journal_id = as.character(journal_id),
-        journal_name = as.character(journal_name),
+        journal_name = if (is_keyword_report && !is.null(article$journal)) as.character(article$journal) else as.character(journal_name),
         report_id = if (is.null(report$report_id)) basename(path) else as.character(report$report_id)
       )
     }
