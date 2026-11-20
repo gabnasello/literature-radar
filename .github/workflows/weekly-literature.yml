@@ -57,6 +57,12 @@ jobs:
             Rscript scripts/run_retrieval.R
           fi
 
+      - name: Retrieve keyword search results
+        env:
+          NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+        run: Rscript scripts/run_keyword_retrieval.R
+
       - name: Commit retrieval reports and state
         run: |
           git config user.name "github-actions[bot]"
