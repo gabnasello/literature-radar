@@ -187,6 +187,7 @@ load_literature_site_data <- function(root = ".") {
 
   for (path in report_paths) {
     report <- site_read_json(path)
+    if (identical(site_text(report$channel), "keyword")) next
     journal_id <- site_text(report$journal$id, basename(dirname(path)))
     journal_name <- site_text(report$journal$name, journal_id)
     generated <- site_text(report$generated_at_utc)
@@ -358,6 +359,7 @@ load_literature_site_data <- function(root = ".") {
     papers = papers,
     reports = report_records,
     journals = configured_journals,
+    keywords = load_keyword_site_data(root),
     paper_count = length(papers),
     report_count = length(report_records),
     summary_count = sum(vapply(papers, function(x) !is.null(x$summary), logical(1))),
@@ -569,4 +571,114 @@ site_render_update_page <- function(site, report_id) {
     return(invisible(NULL))
   }
   site_render_report_content(matches[[1]], show_journal_link = TRUE)
+}
+
+
+# Keyword-channel site data ------------------------------------------------
+
+load_keyword_site_data <- function(root = ".") {
+  paths <- sort(list.files(file.path(root, "reports", "keywords"),
+    pattern = "\\.json$", recursive = TRUE, full.names = TRUE))
+  config_path <- file.path(root, "config", "keywords.yml")
+  config <- if (file.exists(config_path)) yaml::read_yaml(config_path) else list()
+  summaries <- site_read_summary_files(root)
+  records <- list()
+  for (path in paths) {
+    report <- site_read_json(path)
+    keyword <- report$keyword
+    id <- site_text(keyword$id)
+    if (!nzchar(id)) next
+    articles <- report$articles %||% list()
+    for (i in seq_along(articles)) {
+      pmid <- site_text(articles[[i]]$pmid)
+      articles[[i]]$pmid <- pmid
+      articles[[i]]$summary <- summaries[[pmid]]
+      articles[[i]]$pubmed_url <- site_text(articles[[i]]$pubmed_url,
+        if (nzchar(pmid)) paste0("https://pubmed.ncbi.nlm.nih.gov/", pmid, "/") else "")
+    }
+    records[[length(records) + 1L]] <- list(
+      report_id = site_text(report$report_id, basename(path)),
+      keyword_id = id, keyword_name = site_text(keyword$name, id),
+      query = site_text(keyword$query),
+      generated_at_utc = site_text(report$generated_at_utc),
+      start_date = site_text(report$retrieval_window$query_start_inclusive),
+      end_date = site_text(report$retrieval_window$end_inclusive),
+      article_count = length(articles),
+      articles = articles
+    )
+  }
+  if (length(records)) {
+    ord <- order(vapply(records, function(x) site_timestamp_order(x$generated_at_utc), numeric(1)),
+                 decreasing = TRUE)
+    records <- records[ord]
+  }
+  configured <- config$keywords %||% list()
+  ids <- unique(c(vapply(configured, function(x) site_text(x$id), character(1)),
+                  vapply(records, function(x) x$keyword_id, character(1))))
+  priority <- config$priority %||% list()
+  preferred <- tolower(unlist(priority$journals %||% list(), use.names = FALSE))
+  groups <- priority$publisher_groups %||% list()
+  group_titles <- unlist(lapply(groups, function(x) x$journals %||% list()), use.names = FALSE)
+  group_titles <- tolower(group_titles)
+  for (i in seq_along(records)) {
+    articles <- records[[i]]$articles
+    if (length(articles)) {
+      journals <- tolower(vapply(articles, function(x) site_text(x$journal), character(1)))
+      dates <- vapply(articles, function(x) site_timestamp_order(site_text(x$pubmed_created_date,
+        site_text(x$publication_date))), numeric(1))
+      tier <- ifelse(journals %in% preferred, 0L,
+                     ifelse(journals %in% group_titles, 1L, 2L))
+      records[[i]]$articles <- articles[order(tier, -dates,
+        tolower(vapply(articles, function(x) site_text(x$title), character(1))))]
+    }
+  }
+  lapply(ids, function(id) {
+    matches <- Filter(function(x) identical(x$keyword_id, id), records)
+    cfg <- Filter(function(x) identical(site_text(x$id), id), configured)
+    list(id = id,
+      name = if (length(cfg)) site_text(cfg[[1]]$name, id) else if (length(matches)) matches[[1]]$keyword_name else id,
+      enabled = length(cfg) == 0L || isTRUE(cfg[[1]]$enabled),
+      reports = matches,
+      latest_report = if (length(matches)) matches[[1]] else NULL)
+  })
+}
+
+site_render_keyword_page <- function(site, keyword_id) {
+  matches <- Filter(function(x) identical(x$id, keyword_id), site$keywords)
+  if (!length(matches) || !length(matches[[1]]$reports)) {
+    cat("<p>No keyword results are available yet.</p>")
+    return(invisible(NULL))
+  }
+  keyword <- matches[[1]]
+  report <- keyword$reports[[1]]
+  cat(sprintf('<p class="update-meta">Updated %s · %d matching papers · PubMed Create Date %s – %s</p>',
+    site_html_escape(site_format_date(substr(report$generated_at_utc, 1, 10))),
+    report$article_count, site_html_escape(site_format_date(report$start_date)),
+    site_html_escape(site_format_date(report$end_date))))
+  for (article in report$articles) site_render_paper_card(article)
+  older <- if (length(keyword$reports) > 1L) keyword$reports[-1] else list()
+  if (length(older)) {
+    cat(sprintf('<details class="older-updates"><summary>Other and older updates (%d)</summary><div class="older-update-list">', length(older)))
+    for (item in older) {
+      cat(sprintf('<p>%s · %d papers</p>', site_html_escape(site_format_date(substr(item$generated_at_utc, 1, 10))),
+                  item$article_count))
+    }
+    cat("</div></details>")
+  }
+  invisible(NULL)
+}
+
+site_render_homepage_keyword_list <- function(keywords) {
+  visible <- Filter(function(x) isTRUE(x$enabled) && !is.null(x$latest_report), keywords)
+  if (!length(visible)) return('<p class="empty-journal-list">No keyword updates yet.</p>')
+  items <- vapply(visible, function(x) {
+    latest <- x$latest_report
+    sprintf(paste0('<li><a class="journal-card-link" href="keywords/%s.html">',
+      '<span class="journal-mark keyword-mark" aria-hidden="true">Aa</span>',
+      '<span class="journal-card-copy"><strong>%s</strong><span>%d papers · Updated %s</span></span>',
+      '<span class="journal-card-arrow" aria-hidden="true">›</span></a></li>'),
+      site_html_escape(site_slug(x$id)), site_html_escape(x$name), latest$article_count,
+      site_html_escape(site_format_date(substr(latest$generated_at_utc, 1, 10))))
+  }, character(1))
+  paste0('<ul class="journal-list">', paste(items, collapse = ""), '</ul>')
 }
