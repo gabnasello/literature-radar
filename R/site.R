@@ -1,5 +1,7 @@
 # Data preparation and rendering helpers for the Quarto website -----------
 
+if (!exists("%||%", mode = "function")) `%||%` <- function(x, y) if (is.null(x)) y else x
+
 site_text <- function(x, default = "") {
   if (is.null(x) || !length(x)) return(default)
   value <- as.character(x[[1]])
