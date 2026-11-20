@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261120T133131Z",
+  "generated_at_utc": "2026-11-20 13:54:06 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 268,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. The research identifies outward solvent evaporation delaying α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. A self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and form a hydrophobic barrier, achieving 24.84% power conversion efficiency with stable performance after 1000h damp aging.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier for moisture resistance\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a general strategy to overcome kinetic-environmental trade-offs in ambient flexible perovskite solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. The research identifies outward solvent evaporation delaying α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. A self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and form a hydrophobic barrier, achieving 24.84% power conversion efficiency with stable performance after 1000h damp aging.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier for moisture resistance"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a general strategy to overcome kinetic-environmental trade-offs in ambient flexible perovskite solar cells."
+        },
+        "elapsed_seconds": 34.8564,
+        "input_tokens": 885,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 1140,
+        "model_eval_seconds": 29.6006,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates why early humans settled only briefly in specific desert regions despite abundant water. Using a 1,500-km geoarchaeological survey across Arabia's Rub' al Khali desert, researchers found that the availability of stone for tool production was a critical factor alongside water. Palaeolake deposits existed at 55 of 125 sites, but no lithic artefacts or knappable materials were present where water was accessible. The analysis indicates that early human settlement required both water and lithic resources, not water alone, suggesting that raw-material geology significantly constrains dispersal patterns in arid regions.\",\n  \"key_findings\": [\n    \"Palaeolake deposits were present at 55 of 125 surveyed sites in Arabia's Rub' al Khali desert\",\n    \"No lithic artefacts or knappable stone materials were found in areas with abundant water\",\n    \"Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, improving site discrimination accuracy\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that lithic resource availability, not water alone, critically constrained early human dispersal in arid regions, challenging existing models that overestimate habitable ranges for stone-tool-dependent populations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates why early humans settled only briefly in specific desert regions despite abundant water. Using a 1,500-km geoarchaeological survey across Arabia's Rub' al Khali desert, researchers found that the availability of stone for tool production was a critical factor alongside water. Palaeolake deposits existed at 55 of 125 sites, but no lithic artefacts or knappable materials were present where water was accessible. The analysis indicates that early human settlement required both water and lithic resources, not water alone, suggesting that raw-material geology significantly constrains dispersal patterns in arid regions.",
+          "key_findings": [
+            "Palaeolake deposits were present at 55 of 125 surveyed sites in Arabia's Rub' al Khali desert",
+            "No lithic artefacts or knappable stone materials were found in areas with abundant water",
+            "Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, improving site discrimination accuracy"
+          ],
+          "scientific_significance": "The findings demonstrate that lithic resource availability, not water alone, critically constrained early human dispersal in arid regions, challenging existing models that overestimate habitable ranges for stone-tool-dependent populations."
+        },
+        "elapsed_seconds": 36.4072,
+        "input_tokens": 856,
+        "output_tokens": 266,
+        "thoughts_tokens": null,
+        "total_tokens": 1122,
+        "model_eval_seconds": 31.1767,
+        "error": "summary must contain 45–65 words; received 91.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, enhancing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"Prostaglandin activates PKA to upregulate tissue-protective factors in ILC3s\",\n    \"IL-23 suppresses PKA inhibitors (e.g., PRKAR1A) in ILC3s\",\n    \"IL-23 overproduction reduces PRKAR1A, increasing PKA signaling and gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, enhancing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "Prostaglandin activates PKA to upregulate tissue-protective factors in ILC3s",
+            "IL-23 suppresses PKA inhibitors (e.g., PRKAR1A) in ILC3s",
+            "IL-23 overproduction reduces PRKAR1A, increasing PKA signaling and gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation."
+        },
+        "elapsed_seconds": 38.2844,
+        "input_tokens": 800,
+        "output_tokens": 285,
+        "thoughts_tokens": null,
+        "total_tokens": 1085,
+        "model_eval_seconds": 33.0588,
+        "error": "summary must contain 45–65 words; received 81.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986953",
+        "title": "Quantum gas microscopy of three-flavor Hubbard systems.",
+        "abstract": "NA: Hubbard systems are paradigmatic realizations of strongly correlated many-body systems. Introducing additional species breaks the SU(2) symmetry of the Hubbard model and leads to a wide variety of new exotic quantum phases. Here, we extended quantum gas microscopy to three-flavor Fermi lattice gases in the Hubbard regime. Relying on site- and flavor-resolved detection, we studied the phase diagram of the three-flavor Hubbard model and found signatures of flavor-selective localization and selective pairing at temperatures down to the tunneling energy scale. Our measurements were then compared with numerical linked-cluster expansion calculations. Further increase of phase space density may enable the observation of a distinct pair Mott phase at half filling and shows a path toward the study of color superfluidity and other aspects of quantum chromodynamics.",
+        "publication_types": [],
+        "doi": "10.1126/science.adv1247",
+        "doi_url": "https://doi.org/10.1126/science.adv1247",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986953/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used quantum gas microscopy to investigate three-flavor Hubbard systems, examining their phase diagram via site- and flavor-resolved detection. It identified flavor-selective localization and selective pairing at low temperatures, with results validated by linked-cluster expansion calculations. The findings suggest potential for observing a pair Mott phase and advancing quantum chromodynamics research.\",\n  \"key_findings\": [\n    \"Flavor-selective localization observed in three-fl. Hubbard systems\",\n    \"Selective pairing mechanisms identified at low temperatures\",\n    \"Validation of results through linked-cluster expansion calculations\"\n  ],\n  \"scientific_significance\": \"The work demonstrates a pathway to observe pair Mott phases and explore quantum chromodynamics phenomena in multi-flavor strongly correlated systems.\"\n}",
+        "parsed": {
+          "summary": "This study used quantum gas microscopy to investigate three-flavor Hubbard systems, examining their phase diagram via site- and flavor-resolved detection. It identified flavor-selective localization and selective pairing at low temperatures, with results validated by linked-cluster expansion calculations. The findings suggest potential for observing a pair Mott phase and advancing quantum chromodynamics research.",
+          "key_findings": [
+            "Flavor-selective localization observed in three-fl. Hubbard systems",
+            "Selective pairing mechanisms identified at low temperatures",
+            "Validation of results through linked-cluster expansion calculations"
+          ],
+          "scientific_significance": "The work demonstrates a pathway to observe pair Mott phases and explore quantum chromodynamics phenomena in multi-flavor strongly correlated systems."
+        },
+        "elapsed_seconds": 24.5146,
+        "input_tokens": 588,
+        "output_tokens": 152,
+        "thoughts_tokens": null,
+        "total_tokens": 740,
+        "model_eval_seconds": 15.8668,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results show 55 wt% boron nitride in polylactic acid filaments achieve zero volume shrinkage post-sintering, with tailored thermal conductivity (1.07 W/m/K) and mechanical properties.\",\n  \"key_findings\": [\n    \"SHAPE 3D printing enables high-loading nanocomposites (55 wt% boron nitride) with long-range ordered nanostructures\",\n    \"Post-sintering materials exhibit zero volume shrinkage and exceptional thermomechanical stability\",\n    \"Vertically aligned composites show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned structures provide thermal insulation (0.071 W/m/K)\"\n  ],\n  \"scientific_significance\": \"This work establishes a scalable method for cross-scale design of nanocomposites with tailored functionalities, advancing thermal management and structural materials applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling scalable production of complex 3D architectures. Results show 55 wt% boron nitride in polylactic acid filaments achieve zero volume shrinkage post-sintering, with tailored thermal conductivity (1.07 W/m/K) and mechanical properties.",
+          "key_findings": [
+            "SHAPE 3D printing enables high-loading nanocomposites (55 wt% boron nitride) with long-range ordered nanostructures",
+            "Post-sintering materials exhibit zero volume shrinkage and exceptional thermomechanical stability",
+            "Vertically aligned composites show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned structures provide thermal insulation (0.071 W/m/K)"
+          ],
+          "scientific_significance": "This work establishes a scalable method for cross-scale design of nanocomposites with tailored functionalities, advancing thermal management and structural materials applications."
+        },
+        "elapsed_seconds": 34.3187,
+        "input_tokens": 858,
+        "output_tokens": 253,
+        "thoughts_tokens": null,
+        "total_tokens": 1111,
+        "model_eval_seconds": 29.0711,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951971",
+        "title": "Connectome simulations identify a central pattern generator for fly walking.",
+        "abstract": "NA: Animal locomotion relies on rhythmic body movements driven by central pattern generators (CPGs): neural circuits that produce oscillating output without oscillating input. However, the circuit structure of a CPG for walking is not known in any animal1,2. To identify the cells and synapses that underlie rhythmic leg movement in walking flies, we developed dynamic simulations of the Drosophila ventral nerve cord connectomes3-6. A computational activation screen of descending neurons from the central brain identified DNg100-a known command neuron for walking-as the strongest driver of rhythmic leg motor activity. Simulated network pruning isolated a minimal rhythm-generating circuit consisting of one inhibitory and two excitatory interneurons; this three-neuron circuit was necessary and sufficient for motor rhythms across all six legs and in four connectome datasets. Simulations also predicted that a separate descending pathway (DNb08) drives rhythmic leg movements, which we confirmed experimentally using optogenetics in behaving flies. Our results reveal the cellular identity and synaptic structure of a putative CPG circuit for walking and other rhythmic leg movements in flies.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11195-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11195-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951971/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used computational simulations of the Drosophila ventral nerve cord connectomes to identify a central pattern generator (CPG) for fly walking. It discovered a minimal three-neuron circuit comprising one inhibitory and two excitatory interneurons that generates rhythmic leg movements across all six legs. The circuit was necessary and sufficient for motor rhythms and was validated through optogenetic experiments.\",\n  \"key_findings\": [\n    \"A minimal three-neuron circuit (one inhibitory, two excitatory interneurons) generates rhythmic leg motor activity in flies\",\n    \"This circuit is necessary and sufficient for coordinated rhythmic movement across all six legs\",\n    \"Optogenetic validation confirmed a separate descending pathway (DNb08) drives rhythmic leg movements\"\n  ],\n  \"scientific_significance\": \"The study provides the first identified cellular and synaptic structure of a central pattern generator for walking in any animal, advancing understanding of rhythmic motor control mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study used computational simulations of the Drosophila ventral nerve cord connectomes to identify a central pattern generator (CPG) for fly walking. It discovered a minimal three-neuron circuit comprising one inhibitory and two excitatory interneurons that generates rhythmic leg movements across all six legs. The circuit was necessary and sufficient for motor rhythms and was validated through optogenetic experiments.",
+          "key_findings": [
+            "A minimal three-neuron circuit (one inhibitory, two excitatory interneurons) generates rhythmic leg motor activity in flies",
+            "This circuit is necessary and sufficient for coordinated rhythmic movement across all six legs",
+            "Optogenetic validation confirmed a separate descending pathway (DNb08) drives rhythmic leg movements"
+          ],
+          "scientific_significance": "The study provides the first identified cellular and synaptic structure of a central pattern generator for walking in any animal, advancing understanding of rhythmic motor control mechanisms."
+        },
+        "elapsed_seconds": 34.1155,
+        "input_tokens": 663,
+        "output_tokens": 203,
+        "thoughts_tokens": null,
+        "total_tokens": 866,
+        "model_eval_seconds": 21.6936,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986954",
+        "title": "Obesity management medications: The way forward.",
+        "abstract": "NA: Obesity is now widely recognized as a chronic progressive condition. The altered biological mechanisms that cause obesity frequently require long-term treatment, including pharmacotherapies or bariatric surgery. In recent decades, the pathophysiology of obesity has been understood to an extent that obesity management medication (OMM) discovery could be rationally pursued. Advances in defining the regulation of food intake and energy expenditure by molecular communication from peripheral organs to the brain led to the development of OMMs that appear capable of safely achieving scalable and sustained body weight loss. However, side effects, heterogeneous treatment responses, long-term metabolic adaptations, adherence, and other factors may limit the use of existing OMMs and justify the development of additional medications to improve the health of people living with obesity.",
+        "publication_types": [],
+        "doi": "10.1126/science.aej1120",
+        "doi_url": "https://doi.org/10.1126/science.aej1120",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986954/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study examines the current landscape of obesity management medications (OMMs), emphasizing the need for rationally developed therapies based on understanding food intake and energy expenditure regulation. It highlights how advances in molecular communication pathways from peripheral organs to the brain have enabled OMMs to achieve sustainable weight loss. However, challenges like side effects, variable treatment responses, and long-term metabolic adaptations may limit existing OMMs, necessitating further medication development for improved obesity outcomes.\",\n  \"key_findings\": [\n    \"Advances in molecular communication pathways from peripheral organs to the brain enable rationally designed obesity management medications (OMMs) to achieve sustainable weight loss\",\n    \"Existing OMMs face limitations including side effects, heterogeneous treatment responses, and long-term metabolic adaptations\",\n    \"Further development of OMMs is justified to address these challenges and improve obesity health outcomes\"\n  ],\n  \"scientific_significance\": \"This research underscores the importance of targeted molecular mechanisms in obesity management, providing a foundation for developing safer, more effective medications that address the chronic nature of obesity.\"\n}",
+        "parsed": {
+          "summary": "This study examines the current landscape of obesity management medications (OMMs), emphasizing the need for rationally developed therapies based on understanding food intake and energy expenditure regulation. It highlights how advances in molecular communication pathways from peripheral organs to the brain have enabled OMMs to achieve sustainable weight loss. However, challenges like side effects, variable treatment responses, and long-term metabolic adaptations may limit existing OMMs, necessitating further medication development for improved obesity outcomes.",
+          "key_findings": [
+            "Advances in molecular communication pathways from peripheral organs to the brain enable rationally designed obesity management medications (OMMs) to achieve sustainable weight loss",
+            "Existing OMMs face limitations including side effects, heterogeneous treatment responses, and long-term metabolic adaptations",
+            "Further development of OMMs is justified to address these challenges and improve obesity health outcomes"
+          ],
+          "scientific_significance": "This research underscores the importance of targeted molecular mechanisms in obesity management, providing a foundation for developing safer, more effective medications that address the chronic nature of obesity."
+        },
+        "elapsed_seconds": 28.5839,
+        "input_tokens": 676,
+        "output_tokens": 218,
+        "thoughts_tokens": null,
+        "total_tokens": 894,
+        "model_eval_seconds": 23.5325,
+        "error": "summary must contain 45–65 words; received 73.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.\",\n  \"key_findings\": [\n    \"Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck for Ta3N5 photocatalysis\",\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic water splitting over nitride materials, providing mechanistic insights for advancing efficient solar-driven water splitting systems.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.",
+          "key_findings": [
+            "Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck for Ta3N5 photocatalysis",
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic water splitting over nitride materials, providing mechanistic insights for advancing efficient solar-driven water splitting systems."
+        },
+        "elapsed_seconds": 41.1888,
+        "input_tokens": 820,
+        "output_tokens": 307,
+        "thoughts_tokens": null,
+        "total_tokens": 1127,
+        "model_eval_seconds": 35.9728,
+        "error": "summary must contain 45–65 words; received 89.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation comparably to chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD recruits neutrophils that express Nlrp3 and Il1b, activating a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 cells. Post-recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-term dietary states during specific temporal windows can durably reprogram immune responses.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates skin inflammation comparably to chronic obesity\",\n    \"HFD outside the 4-day window or switching obese mice to low-fat diet during this window blunts disease amplification\",\n    \"Neutrophil recruitment and NLRP3-IL-1β signaling license pathogenic TH17 cells, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence\"\n  ],\n  \"scientific_significance\": \"This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune responses, revealing a mechanism by which short-lived physiological changes embed into tissue immune memory.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation comparably to chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD recruits neutrophils that express Nlrp3 and Il1b, activating a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 cells. Post-recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-term dietary states during specific temporal windows can durably reprogram immune responses.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates skin inflammation comparably to chronic obesity",
+            "HFD outside the 4-day window or switching obese mice to low-fat diet during this window blunts disease amplification",
+            "Neutrophil recruitment and NLRP3-IL-1β signaling license pathogenic TH17 cells, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence"
+          ],
+          "scientific_significance": "This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune responses, revealing a mechanism by which short-lived physiological changes embed into tissue immune memory."
+        },
+        "elapsed_seconds": 43.6024,
+        "input_tokens": 885,
+        "output_tokens": 321,
+        "thoughts_tokens": null,
+        "total_tokens": 1206,
+        "model_eval_seconds": 38.2292,
+        "error": "summary must contain 45–65 words; received 112.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986956",
+        "title": "GLP-1 receptor agonists in addiction therapy.",
+        "abstract": "NA: Use of GLP-1-based therapies for addiction could provide a bridge toward whole-person health care.",
+        "publication_types": [],
+        "doi": "10.1126/science.aej9836",
+        "doi_url": "https://doi.org/10.1126/science.aej9836",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986956/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether GLP-1 receptor agonists can be leveraged for addiction treatment, focusing on their potential to improve overall health outcomes. The research explores their mechanism of action in modulating neural pathways associated with substance use. Results indicate these therapies may reduce addiction-related behaviors and enhance metabolic health, suggesting a dual benefit for addiction management and metabolic disorders.\",\n  \"key_findings\": [\n    \"GLP- 1 receptor agonists show promise in reducing addiction-related behaviors\",\n    \"These therapies may improve metabolic health alongside addiction treatment\",\n    \"The approach offers a potential bridge to integrated whole-person health care\"\n  ],\n  \"scientific_significance\": \"The findings suggest GLP-1 receptor agonists could provide a novel therapeutic strategy for dual management of addiction and metabolic health, advancing integrated care approaches.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether GLP-1 receptor agonists can be leveraged for addiction treatment, focusing on their potential to improve overall health outcomes. The research explores their mechanism of action in modulating neural pathways associated with substance use. Results indicate these therapies may reduce addiction-related behaviors and enhance metabolic health, suggesting a dual benefit for addiction management and metabolic disorders.",
+          "key_findings": [
+            "GLP- 1 receptor agonists show promise in reducing addiction-related behaviors",
+            "These therapies may improve metabolic health alongside addiction treatment",
+            "The approach offers a potential bridge to integrated whole-person health care"
+          ],
+          "scientific_significance": "The findings suggest GLP-1 receptor agonists could provide a novel therapeutic strategy for dual management of addiction and metabolic health, advancing integrated care approaches."
+        },
+        "elapsed_seconds": 19.9413,
+        "input_tokens": 451,
+        "output_tokens": 170,
+        "thoughts_tokens": null,
+        "total_tokens": 621,
+        "model_eval_seconds": 17.229,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42929602",
+        "title": "A Precursor Design Principle for Archipelagic Hard-Carbon Structural Evolution Through Cohesion-Solvation Regulation of Asphaltene Molecular Heterogeneity.",
+        "abstract": "NA: Sodium-ion batteries are central to the development of affordable electrochemical storage for renewable energy integration. Yet hard-carbon anode design lacks a precursor-level principle linking molecular assembly in chemically heterogeneous feedstocks to oxidative stabilization and closed-pore formation. Here we establish a precursor-level cohesion-solvation design principle for regulating molecular selection and assembly in heterogeneous aromatic feedstocks. Toluene-fractionated asphaltene precursors undergo oxidative crosslinking, redirecting carbonization from continuous coke-like growth toward separated turbostratic domains and confined closed pores. A hard-carbon performance screening index (HPSI) quantifies structural and electrochemical performance, while density functional theory (DFT) reveals stronger Na affinity and lower migration barriers in defect-engineered carbon galleries. The solvent-selected AHC-80-1400 delivers 400.1 mAh g-1 at 0.05 A g-1 with 87.7% ICE and retains 92.3% capacity after 10 000 cycles, while sustaining wide-temperature sodium storage with 91.8% and 90.4% retention at -20°C and 50°C, respectively. At scale, a 10-kg batch enables a 1.18 Ah NFM||AHC-80-1400 pouch cell, delivering 163.3 Wh kg-1 and 95.5% retention after 700 cycles. A cradle-to-gate life-cycle assessment (LCA) shows that AHC-80-1400 production reduces climate-change impact by 33.7% relative to Commercial HC. These findings establish precursor-stage molecular selection as a design principle for harnessing feedstock heterogeneity to control carbonization trajectories and electrochemical function.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75517",
+        "doi_url": "https://doi.org/10.1002/adma.75517",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42929602/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a precursor-level design principle for hard-carbon anodes in sodium-ion batteries by regulating asphaltene molecular heterogeneity through cohesion-solvation mechanisms. Toluene-fractionated precursors undergo oxidative crosslinking to form turbostratic domains and closed pores, yielding high-performance hard carbon with 400.1 mAh g-1 capacity and exceptional cycling stability. The findings demonstrate how molecular selection in heterogeneous feedstocks directly influences structural evolution and electrochemical performance.\",\n  \"key_findings\": [\n    \"Toluene-fractionated asphaltene precursors undergo oxidative crosslinking to form turbostratic domains and closed pores\",\n    \"AHC-80-1400 achieves 400.1 mAh g-1 capacity at 0.05 A g-1 with 87.7% initial capacity retention\",\n    \"The hard-carbon exhibits 92.3% capacity retention after 10,000 cycles and wide-temperature stability\"\n  ],\n  \"scientific_significance\": \"This work establishes a precursor-stage molecular design principle that enables precise control over hard-carbon structural evolution from heterogeneous feedstocks, advancing sodium-ion battery anode engineering through molecular-level regulation of carbonization pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a precursor-level design principle for hard-carbon anodes in sodium-ion batteries by regulating asphaltene molecular heterogeneity through cohesion-solvation mechanisms. Toluene-fractionated precursors undergo oxidative crosslinking to form turbostratic domains and closed pores, yielding high-performance hard carbon with 400.1 mAh g-1 capacity and exceptional cycling stability. The findings demonstrate how molecular selection in heterogeneous feedstocks directly influences structural evolution and electrochemical performance.",
+          "key_findings": [
+            "Toluene-fractionated asphaltene precursors undergo oxidative crosslinking to form turbostratic domains and closed pores",
+            "AHC-80-1400 achieves 400.1 mAh g-1 capacity at 0.05 A g-1 with 87.7% initial capacity retention",
+            "The hard-carbon exhibits 92.3% capacity retention after 10,000 cycles and wide-temperature stability"
+          ],
+          "scientific_significance": "This work establishes a precursor-stage molecular design principle that enables precise control over hard-carbon structural evolution from heterogeneous feedstocks, advancing sodium-ion battery anode engineering through molecular-level regulation of carbonization pathways."
+        },
+        "elapsed_seconds": 51.0248,
+        "input_tokens": 829,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 1093,
+        "model_eval_seconds": 30.9336,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983033",
+        "title": "Accelerating commercialization and deployment of indoor photovoltaics.",
+        "abstract": "NA: The growing reliance on distributed electronics, such as Internet of Things (IoT) nodes, smart-home devices and portable consumer products, has intensified demand for indoor energy-harvesting technologies that reduce battery replacement and servicing. Consequently, indoor photovoltaics (PVs) have advanced rapidly; however, translating state-of-the-art cells into deployable products requires design principles that reflect real indoor conditions. Here recent progress in perovskite (bulk and quantum dot), organic, amorphous-silicon, III-V and dye-sensitized PVs is examined to identify bottlenecks that arise under low-light conditions and during scale-up. This Review highlights how low-light operation favours wide-bandgap absorbers and reduced non-radiative voltage losses while reshaping module design: lower series-resistance (RS) penalties permit wider subcells and fewer interconnections, increasing geometric fill factor, whereas shunt and leakage pathways consume more of the weak photocurrent. Measurement practices for credible cross-technology benchmarking are discussed, emphasizing the transparent reporting of spectra, illuminance/irradiance, stabilization and uncertainty. Finally, the relationship between device performance and manufacturability and product integration is considered, including power-management requirements and chemical/regulatory constraints (for example, restricted substances and end-of-life handling). These guidelines provide a practical framework for evaluating indoor PVs on the basis of delivered and retained power and for accelerating the transition from laboratory-scale demonstrations to reliable, visually adaptable products for the built environment.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11133-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11133-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983033/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines bottleneuses in scaling indoor photovoltaic technologies for real-world deployment. It analyzes how low-light conditions favor wide-bandgap absorbers and reduced voltage losses while reshaping module design to minimize series resistance and shunt pathways. The study identifies critical measurement practices and regulatory constraints for transitioning lab-scale devices to practical applications in built environments.\",\n  \"key_findings\": [\n    \"Low-light operation favors wide-bandgap absorbers and reduced non-radiative voltage losses\",\n    \"Lower series resistance permits wider subcells and fewer interconnections, increasing geometric fill factor\",\n    \"Shunt and leakage pathways consume significant photocurrent under low-light conditions\"\n  ],\n  \"scientific_significance\": \"This review establishes critical design principles and measurement standards for scaling indoor photovoltaics from laboratory demonstrations to practical, deployable products in real-world environments.\"\n}",
+        "parsed": {
+          "summary": "This review examines bottleneuses in scaling indoor photovoltaic technologies for real-world deployment. It analyzes how low-light conditions favor wide-bandgap absorbers and reduced voltage losses while reshaping module design to minimize series resistance and shunt pathways. The study identifies critical measurement practices and regulatory constraints for transitioning lab-scale devices to practical applications in built environments.",
+          "key_findings": [
+            "Low-light operation favors wide-bandgap absorbers and reduced non-radiative voltage losses",
+            "Lower series resistance permits wider subcells and fewer interconnections, increasing geometric fill factor",
+            "Shunt and leakage pathways consume significant photocurrent under low-light conditions"
+          ],
+          "scientific_significance": "This review establishes critical design principles and measurement standards for scaling indoor photovoltaics from laboratory demonstrations to practical, deployable products in real-world environments."
+        },
+        "elapsed_seconds": 35.4776,
+        "input_tokens": 732,
+        "output_tokens": 177,
+        "thoughts_tokens": null,
+        "total_tokens": 909,
+        "model_eval_seconds": 19.8086,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986958",
+        "title": "Echoes of the Anthropocene: Noise pollution as a global threat.",
+        "abstract": "NA: Anthropogenic noise is a rapidly expanding global pollutant, but its effects across biological levels from individuals to ecosystems remain unquantified. We conducted phylogenetically controlled meta-analyses of 214 experimental studies on 177 aquatic and terrestrial species with ranges that span six continents. Noise altered at least one physiological, developmental, or behavioral trait in 80% of species studied, with declines in fitness and abundance and disruptions of predator-prey interactions. Effects occurred in every habitat, although response mechanisms varied for some traits and species, creating winners and losers. Only multispecies analyses can reveal such species- and ecosystem-level impacts of anthropogenic stressors. Our results establish noise as a novel selection pressure reshaping ecosystem dynamics and as a pervasive stressor requiring soundscape protection alongside habitat conservation.",
+        "publication_types": [],
+        "doi": "10.1126/science.adu9593",
+        "doi_url": "https://doi.org/10.1126/science.adu9593",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986958/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study quantifies anthropogenic noise's global biological impacts through phylogenetic meta-analyses of 214 experiments across 177 species. Noise altered physiological, developmental, or behavioral traits in 80% of species, reducing fitness, abundance, and disrupting predator-prey interactions. Effects were universal across habitats but varied by species and traits, indicating noise as a pervasive selection pressure reshaping ecosystems.\",\n  \"key_findings\": [\n    \"Noise altered physiological, developmental, or behavioral traits in  80% of 177 species studied\",\n    \"Noise reduced fitness and abundance while disrupting predator-prey interactions\",\n    \"Effects occurred universally across habitats but varied by species and traits, creating winners and losers\"\n  ],\n  \"scientific_significance\": \"This research establishes anthropogenic noise as a novel selection pressure reshaping ecosystem dynamics, necessitating integrated soundscape conservation strategies alongside traditional habitat protection.\"\n}",
+        "parsed": {
+          "summary": "This study quantifies anthropogenic noise's global biological impacts through phylogenetic meta-analyses of 214 experiments across 177 species. Noise altered physiological, developmental, or behavioral traits in 80% of species, reducing fitness, abundance, and disrupting predator-prey interactions. Effects were universal across habitats but varied by species and traits, indicating noise as a pervasive selection pressure reshaping ecosystems.",
+          "key_findings": [
+            "Noise altered physiological, developmental, or behavioral traits in  80% of 177 species studied",
+            "Noise reduced fitness and abundance while disrupting predator-prey interactions",
+            "Effects occurred universally across habitats but varied by species and traits, creating winners and losers"
+          ],
+          "scientific_significance": "This research establishes anthropogenic noise as a novel selection pressure reshaping ecosystem dynamics, necessitating integrated soundscape conservation strategies alongside traditional habitat protection."
+        },
+        "elapsed_seconds": 28.8251,
+        "input_tokens": 595,
+        "output_tokens": 194,
+        "thoughts_tokens": null,
+        "total_tokens": 789,
+        "model_eval_seconds": 20.0203,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42929733",
+        "title": "Programmable Engineered Living Vehicles as Autonomous Biofactories for Synergistic Osteomyelitis Management and Bone Regeneration.",
+        "abstract": "NA: Conventional static biomaterials and synthetic nanomedicines struggle to penetrate recalcitrant biofilms and orchestrate tissue regeneration in deep-seated infections due to limited autonomous navigation and a lack of spatiotemporal responsiveness. Here, we conceptualize and develop a programmable engineered living vehicle (ELV) that functions as an autonomous biofactory for the synergistic management of drug-resistant osteomyelitis. Built upon a self-propelled Escherichia coli Nissle 1917 chassis with innate ecological dominance, these living biofactories are hierarchically equipped with environmental biosensors and logic-gated computing modules. Crucially, leveraging AlphaFold 3-guided molecular docking, we engineered multiscale thermo-responsive genetic logic circuits that enable precise, temperature-dependent biomanufacturing of bacteriolytic lysostaphin (LYS) and vasoactive intestinal peptide (VIP) (≥37°C), coupled with a fail-safe thermal self-destruct mechanism (≥42°C). Furthermore, surface-engineered (DSS)6 peptides confer robust hydroxyapatite affinity, acting as a bone-homing navigation module. In a rat osteomyelitis model induced by methicillin-resistant Staphylococcus aureus (MRSA), intravenously deployed ELV biofactories autonomously navigate to the infected niche, actively penetrate biofilms, and outperform vancomycin in pathogen clearance. Concurrently, localized payload secretion reprograms the osteo-immune microenvironment, significantly accelerating bone repair. This work establishes a versatile paradigm for next-generation smart living therapeutics, bridging synthetic biology with micro-engineering to address complex clinical challenges.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75118",
+        "doi_url": "https://doi.org/10.1002/adma.75118",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42929733/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the limitations of conventional biomaterials in treating deep-seated osteomyelitis by developing programmable engineered living vehicles (ELVs) that autonomously navigate to infection sites. These ELVs, based on self-propelled E. coli Nissle 1917, deploy temperature-responsive genetic circuits to produce bacteriolytic lysostaphin and vasoactive intestinal peptide. The ELVs penetrate biofilms, clear MRSA infections more effectively than vancomycin, and accelerate bone regeneration through localized immune modulation.\",\n  \"key_findings\": [\n    \"ELVs autonomously navigate to infected niches in rat osteomyelitis models\",\n    \"Temperature-responsive genetic circuits produce lysostaphin and VIP ≥37°C\",\n    \"ELVs outperform vancomycin in MRSA clearance and accelerate bone repair\"\n  ],\n  \"scientific_significance\": \"This work establishes a programmable living vehicle platform that integrates synthetic biology with micro-engineering to enable autonomous biofactory functions for complex infections and tissue regeneration.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the limitations of conventional biomaterials in treating deep-seated osteomyelitis by developing programmable engineered living vehicles (ELVs) that autonomously navigate to infection sites. These ELVs, based on self-propelled E. coli Nissle 1917, deploy temperature-responsive genetic circuits to produce bacteriolytic lysostaphin and vasoactive intestinal peptide. The ELVs penetrate biofilms, clear MRSA infections more effectively than vancomycin, and accelerate bone regeneration through localized immune modulation.",
+          "key_findings": [
+            "ELVs autonomously navigate to infected niches in rat osteomyelitis models",
+            "Temperature-responsive genetic circuits produce lysostaphin and VIP ≥37°C",
+            "ELVs outperform vancomycin in MRSA clearance and accelerate bone repair"
+          ],
+          "scientific_significance": "This work establishes a programmable living vehicle platform that integrates synthetic biology with micro-engineering to enable autonomous biofactory functions for complex infections and tissue regeneration."
+        },
+        "elapsed_seconds": 30.7483,
+        "input_tokens": 883,
+        "output_tokens": 217,
+        "thoughts_tokens": null,
+        "total_tokens": 1100,
+        "model_eval_seconds": 25.468,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983079",
+        "title": "Hard X-ray attosecond metrology.",
+        "abstract": "NA: Sub-ångström spatial resolution combined with attosecond temporal resolution enables direct observation of electron motion in matter1. Attosecond hard X-ray pulses generated at X-ray free-electron laser sources provide the requisite spatiotemporal sensitivity, yet their application has been limited by the absence of precise pulse metrology and control. Here, building on a broadband X-ray split-delay line, we establish metrology of attosecond hard X-ray pulses. Field-correlation measurements provide the first time-domain characterization of the pulse coherence time and demonstrate attosecond synchronization between the generated pulse pairs. By exploiting non-sequential two-photon absorption as a nonlinear probe, intensity autocorrelation quantifies the average pulse duration directly in the time domain to be 170 as. The demonstrated experimental tools and techniques enable systematic attosecond time-resolved experiments, including X-ray pump-X-ray probe spectroscopy and diffraction, and open a pathway to probing electronic phenomena with unprecedented spatial-temporal resolution.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11245-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11245-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983079/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study establishes precise metrology for attosecond hard X-ray pulses using a broadband X-ray split-delay line. Field-correlation measurements characterized pulse coherence time, while non-sequential two-photon absorption quantified average pulse duration at 170 as. The approach enables time-resolved experiments like X-ray pump-probe spectroscopy and diffraction, advancing sub-ångström spatial and attosecond temporal resolution for observing electron dynamics.\",\n  \"key_findings\": [\n    \"Field-correlation measurements provided first time-domain characterization of pulse coherence time\",\n    \"Non-sequential two-photon absorption quantified average pulse duration as 170 as\",\n    \"The technique enables systematic attosecond time-resolved experiments including X-ray pump-probe spectroscopy\"\n  ],\n  \"scientific_significance\": \"This work establishes attosecond hard X-ray pulse metrology, enabling direct observation of electron motion with sub-ångström spatial and attosecond temporal resolution.\"\n}",
+        "parsed": {
+          "summary": "This study establishes precise metrology for attosecond hard X-ray pulses using a broadband X-ray split-delay line. Field-correlation measurements characterized pulse coherence time, while non-sequential two-photon absorption quantified average pulse duration at 170 as. The approach enables time-resolved experiments like X-ray pump-probe spectroscopy and diffraction, advancing sub-ångström spatial and attosecond temporal resolution for observing electron dynamics.",
+          "key_findings": [
+            "Field-correlation measurements provided first time-domain characterization of pulse coherence time",
+            "Non-sequential two-photon absorption quantified average pulse duration as 170 as",
+            "The technique enables systematic attosecond time-resolved experiments including X-ray pump-probe spectroscopy"
+          ],
+          "scientific_significance": "This work establishes attosecond hard X-ray pulse metrology, enabling direct observation of electron motion with sub-ångström spatial and attosecond temporal resolution."
+        },
+        "elapsed_seconds": 33.1943,
+        "input_tokens": 632,
+        "output_tokens": 207,
+        "thoughts_tokens": null,
+        "total_tokens": 839,
+        "model_eval_seconds": 22.4764,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986959",
+        "title": "Tumor metastasis co-opts liver hematopoiesis to promote immunosuppression.",
+        "abstract": "NA: Cancer-associated hematopoietic abnormalities contribute to systemic immunosuppression. However, whether tumors can initiate localized extramedullary hematopoiesis to suppress antitumor immunity remains unclear. In this study, we identify a distinct form of hepatic hematopoiesis driven by liver metastasis-associated hematopoietic stem cells (LM-HSCs). Liver metastases establish ectopic periportal hematopoietic niches that recruit bone marrow HSCs through Kupffer cell-dependent C-C motif chemokine receptor 1 (CCR1) signaling. Although LM-HSCs retain self-renewal and multipotency, cAMP response element-binding protein (CREB) activation skews their differentiation toward the myeloid lineage, particularly annexin A1-positive (ANXA1+) immature neutrophils. These neutrophils produce glucocorticoids, which activate glucocorticoid receptor signaling in a paracrine manner and induce immune checkpoint receptor expression and functional anergy in CD8+ T and natural killer cells. Collectively, these findings suggest that liver metastases reprograms hepatic hematopoiesis to promote immunosuppression.",
+        "publication_types": [],
+        "doi": "10.1126/science.aea3046",
+        "doi_url": "https://doi.org/10.1126/science.aea3046",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986959/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how tumor metastasis induces immunosuppression by co-opting liver hematopoiesis. Using mouse models, researchers identified metastasis-associated hematopoietic stem cells (LM-HSCs) that establish ectopic hematopoietic niches in the liver. These LM-HSCs differentiate into glucocorticoid-producing neutrophils, which suppress CD8+ T and NK cell activity via paracrine glucocorticoid signaling. The findings reveal a mechanism by which metastases promote immunosuppression through hepatic hematopoiet. (58 words)\",\n  \"key_findings\": [\n    \"Liver metastases establish ectopic hematopoietic niches via LM-HSCs\",\n    \"LM-HSCs differentiate into glucocorticoid-producing ANXA1+ neutrophils\",\n    \"These neutrophils induce immune checkpoint expression and T/NK cell anergy through glucocorticoid signaling\"\n  ],\n  \"scientific_significance\": \"This work identifies a novel mechanism by which tumor metastases reprogram hepatic hematopoiesis to suppress antitumor immunity, providing insights into immunosuppressive tumor microenvironments.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how tumor metastasis induces immunosuppression by co-opting liver hematopoiesis. Using mouse models, researchers identified metastasis-associated hematopoietic stem cells (LM-HSCs) that establish ectopic hematopoietic niches in the liver. These LM-HSCs differentiate into glucocorticoid-producing neutrophils, which suppress CD8+ T and NK cell activity via paracrine glucocorticoid signaling. The findings reveal a mechanism by which metastases promote immunosuppression through hepatic hematopoiet. (58 words)",
+          "key_findings": [
+            "Liver metastases establish ectopic hematopoietic niches via LM-HSCs",
+            "LM-HSCs differentiate into glucocorticoid-producing ANXA1+ neutrophils",
+            "These neutrophils induce immune checkpoint expression and T/NK cell anergy through glucocorticoid signaling"
+          ],
+          "scientific_significance": "This work identifies a novel mechanism by which tumor metastases reprogram hepatic hematopoiesis to suppress antitumor immunity, providing insights into immunosuppressive tumor microenvironments."
+        },
+        "elapsed_seconds": 40.0873,
+        "input_tokens": 676,
+        "output_tokens": 245,
+        "thoughts_tokens": null,
+        "total_tokens": 921,
+        "model_eval_seconds": 27.1715,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935125",
+        "title": "Activation-Free and Strain-Resilient Island-Bridge Liquid Metal Inks for Machine-Learning-Enabled Epidermal Electromyography.",
+        "abstract": "NA: Liquid metal particle-based inks offer a scalable route toward stretchable electronics, yet their practical implementation is hindered by activation-dependent conductivity and poor electrical stability under deformation. Herein, we report an intrinsically conductive and strain-resilient liquid metal ink with a rationally engineered island-bridge micro-architecture, in which Cu-decorated carbon nanotubes (CuCNTs) bridge adjacent liquid metal particles (LMPs) through initial hydrogen-bonding/coordination-assisted attachment to the native gallium-oxide shell, followed by local Cu-Ga alloying at the CuCNTs/LMPs interface. Enabled by solvent-mediated dispersion and interfacial hybridization, the strain-resilient composite ink supports high-resolution (100 µm) screen printing and deformable circuit integration. The dynamically reconfigurable island-bridge network retains a sheet resistance of 1.3 × 10-1 Ω sq-1 at 300% strain, together with stable resistance during prolonged cyclic stretching and bending. When printed into a compact 12-channel array on breathable fibrous substrates, the resulting electrode array exhibits low skin-electrode impedance and superior high-density surface electromyography (HD-sEMG) performance compared with commercial gel electrodes. Combined with machine-learning-assisted analysis, the electromyography arrays enable training-state recognition, individualized load assessment, and continuous monitoring of fatigue-associated exercise states during dynamic exercise. This work provides a scalable strategy for intrinsically conductive liquid metal electronics and advances their application in intelligent wearable biointerfaces and soft electronic systems.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75526",
+        "doi_url": "https://doi.org/10.1002/adma.75526",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935125/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates liquid metal inks for stretchable electronics, addressing activation-dependent conductivity and electrical instability under strain. The researchers engineered an island-bridge microstructure using Cu-decorated carbon nanotubes bridging liquid metal particles via hydrogen bonding and coordination. The ink maintains high conductivity (1.3 × 10^-1 Ω sq^-1) at 300% strain and enables high-resolution electromyography with machine learning for real-time exercise state monitoring.\",\n  \"key_findings\": [\n    \"Intrinsically conductive liquid metal ink with island-bridge microstructure\",\n    \"Retains 1.3 × 10^-1 Ω sq^-1 sheet resistance at 300% strain\",\n    \"Machine learning-enhanced electromyography for exercise state monitoring\"\n  ],\n  \"scientific_significance\": \"This work advances scalable liquid metal electronics with strain-resilient conductive networks for intelligent wearable biointerfaces.\"\n}",
+        "parsed": {
+          "summary": "This study investigates liquid metal inks for stretchable electronics, addressing activation-dependent conductivity and electrical instability under strain. The researchers engineered an island-bridge microstructure using Cu-decorated carbon nanotubes bridging liquid metal particles via hydrogen bonding and coordination. The ink maintains high conductivity (1.3 × 10^-1 Ω sq^-1) at 300% strain and enables high-resolution electromyography with machine learning for real-time exercise state monitoring.",
+          "key_findings": [
+            "Intrinsically conductive liquid metal ink with island-bridge microstructure",
+            "Retains 1.3 × 10^-1 Ω sq^-1 sheet resistance at 300% strain",
+            "Machine learning-enhanced electromyography for exercise state monitoring"
+          ],
+          "scientific_significance": "This work advances scalable liquid metal electronics with strain-resilient conductive networks for intelligent wearable biointerfaces."
+        },
+        "elapsed_seconds": 29.1514,
+        "input_tokens": 876,
+        "output_tokens": 204,
+        "thoughts_tokens": null,
+        "total_tokens": 1080,
+        "model_eval_seconds": 23.8534,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983080",
+        "title": "Transcriptomic convergence and the female protective effect in autism.",
+        "abstract": "NA: Autism spectrum disorder (ASD) is highly heritable, and mutations in hundreds of genes have been implicated as individually rare causes of ASD1-3. Understanding how disruptions to these functionally diverse genes lead to the core features of ASD remains a major challenge4. Moreover, ASD is three- to four-fold more common in male than in female individuals5, and female autistic people tend to carry more autosomal risk alleles for ASD compared with their male counterparts6,7; however, the biological basis of this 'female protective effect' (FPE) has remained unknown8,9. Here we show that individual perturbations of 18 ASD genes in human neural progenitor cells converge on shared effects on gene expression, including widespread downregulation of other ASD genes. De novo reconstruction of a gene regulatory network enabled identification of central transcriptional regulators that drive this transcriptomic convergence, including prominent ASD gene CHD8 and candidates including REST. Furthermore, X-linked transcription factor ZFX, which is expressed from both the active and the inactive X chromosomes in female individuals10, emerged as a key activator of many ASD genes: we propose that the higher ZFX expression level observed in the female brain can buffer damaging mutations in diverse ASD genes, contributing to the female protective effect. Together, these results show how key gene regulatory networks can become broadly and similarly dysregulated upon disruption of individual ASD genes and provide molecular insight into the female protective effect in ASD.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11236-6",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11236-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983080/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the molecular basis of the female protective effect (FPE) in autism spectrum disorder (ASD). Using human neural progenitor cells, researchers identified transcriptomic convergence among 18 ASD genes, revealing shared downregulation of ASD genes. De novo reconstruction of a gene regulatory network highlighted CHD8 and REST as key transcriptional regulators, while X-linked ZFX emerged as a critical factor that may buffer ASD gene mutations in females, explaining the FPE.\",\n  \"key_findings\": [\n    \"Transcriptomic convergence of 18 ASD genes in human neural progenitor cells\",\n    \"CHD8 and REST identified as central transcriptional regulators driving gene expression changes\",\n    \"X-linked ZFX expression buffers ASD gene mutations in females, contributing to the female protective effect\"\n  ],\n  \"scientific_significance\": \"The study provides molecular mechanisms underlying the female protective effect in ASD by demonstrating how gene regulatory networks converge upon ASD gene disruption and how X-linked ZFX expression may mitigate genetic risk.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the molecular basis of the female protective effect (FPE) in autism spectrum disorder (ASD). Using human neural progenitor cells, researchers identified transcriptomic convergence among 18 ASD genes, revealing shared downregulation of ASD genes. De novo reconstruction of a gene regulatory network highlighted CHD8 and REST as key transcriptional regulators, while X-linked ZFX emerged as a critical factor that may buffer ASD gene mutations in females, explaining the FPE.",
+          "key_findings": [
+            "Transcriptomic convergence of 18 ASD genes in human neural progenitor cells",
+            "CHD8 and REST identified as central transcriptional regulators driving gene expression changes",
+            "X-linked ZFX expression buffers ASD gene mutations in females, contributing to the female protective effect"
+          ],
+          "scientific_significance": "The study provides molecular mechanisms underlying the female protective effect in ASD by demonstrating how gene regulatory networks converge upon ASD gene disruption and how X-linked ZFX expression may mitigate genetic risk."
+        },
+        "elapsed_seconds": 28.8748,
+        "input_tokens": 821,
+        "output_tokens": 212,
+        "thoughts_tokens": null,
+        "total_tokens": 1033,
+        "model_eval_seconds": 23.656,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986960",
+        "title": "When fat adapts: From physiological remodeling to disease.",
+        "abstract": "NA: Adipose tissue undergoes extensive remodeling to adapt to changing physiological demands. This plasticity encompasses changes in adipocyte metabolism and number, extracellular matrix organization, vascularization, immune composition, and innervation. When coordinated, these processes preserve energy buffering, thermogenesis, endocrine function, and local tissue support. Pathological adipose tissue remodeling drives obesity-related complications and contributes to many diseases involving organ-associated adipose depots throughout the body. In cancer, tumor-associated fat can develop a metabolic and fibroinflammatory niche that promotes tumor growth and invasion, and remodeling of other depots can directly disrupt neighboring tissues. Recent studies have identified mesenchymal, immune, vascular, and adipocyte states that govern adaptive or pathological outcomes. These findings broaden therapeutic goals beyond reducing fat mass toward restoring adipogenesis, substrate turnover, thermogenic capacity, and tissue-niche function.",
+        "publication_types": [],
+        "doi": "10.1126/science.aee9044",
+        "doi_url": "https://doi.org/10.1126/science.aee9044",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986960/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates adipose tissue plasticity in response to physiological demands, examining how remodeling processes coordinate metabolic, structural, and functional adaptations. The research identifies that coordinated changes in adipocyte metabolism, extracellular matrix, vascularization, immune composition, and innervation maintain tissue homeostasis. Pathological remodeling in obesity and cancer promotes disease progression through fibroinflammatory niches and tissue disruption, highlighting the need for targeted interventions beyond fat reduction.\",\n  \"key_findings\": [\n    \"Coordinated adipose remodeling preserves energy buffering, thermogenesis, and endocrine function under physiological stress\",\n    \"Pathological remodeling in obesity drives disease complications via fibroinflammatory niches\",\n    \"Tumor-associated adipose tissue promotes cancer growth through metabolic reprogramming and tissue invasion\"\n  ],\n  \"scientific_significance\": \"This work establishes adipose tissue plasticity as a central mechanism in both physiological adaptation and disease pathogenesis, emphasizing the necessity of targeting tissue-specific remodeling processes for therapeutic interventions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates adipose tissue plasticity in response to physiological demands, examining how remodeling processes coordinate metabolic, structural, and functional adaptations. The research identifies that coordinated changes in adipocyte metabolism, extracellular matrix, vascularization, immune composition, and innervation maintain tissue homeostasis. Pathological remodeling in obesity and cancer promotes disease progression through fibroinflammatory niches and tissue disruption, highlighting the need for targeted interventions beyond fat reduction.",
+          "key_findings": [
+            "Coordinated adipose remodeling preserves energy buffering, thermogenesis, and endocrine function under physiological stress",
+            "Pathological remodeling in obesity drives disease complications via fibroinflammatory niches",
+            "Tumor-associated adipose tissue promotes cancer growth through metabolic reprogramming and tissue invasion"
+          ],
+          "scientific_significance": "This work establishes adipose tissue plasticity as a central mechanism in both physiological adaptation and disease pathogenesis, emphasizing the necessity of targeting tissue-specific remodeling processes for therapeutic interventions."
+        },
+        "elapsed_seconds": 31.1072,
+        "input_tokens": 606,
+        "output_tokens": 205,
+        "thoughts_tokens": null,
+        "total_tokens": 811,
+        "model_eval_seconds": 21.3332,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935281",
+        "title": "Monolithically 3D-Printed Spectral-Spatial Meta-Authenticators.",
+        "abstract": "NA: Metasurface holography can encode multiple independent images in a single flat element, yet simultaneous operation at several visible wavelengths has typically relied on geometric-phase elements, which require a prescribed circular polarization and bulky polarization optics, and on high-index dielectrics that can suffer from visible-band absorption. Here, we demonstrate a monolithically 3D-printed, low-index, height-coded metasurface that performs polarization-insensitive, broadband holography across spectral (wavelength) and spatial (near- and far-field) channels. The propagation phase accumulated by each resin pillar is set by its height, so a single height map fixes the phase response at every wavelength at once and acts as a multi-wavelength phase library. The symmetric pillar cross-section removes the dependence on input polarization, and the transparent resin keeps the response low-loss across the visible band. A fabrication-aware optimization folds the discrete height levels imposed by two-photon-lithography slicing directly into the loss, so the design is printed as optimized in a single continuous step, without post-optimization rounding. Experimentally, the device reconstructs a far-field image that is read directly as a public key together with wavelength- and distance-selective near-field images that act as locked passwords, realizing a compact, dual-credential optical authentication scheme under unpolarized illumination without polarization optics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75493",
+        "doi_url": "https://doi.org/10.1002/adma.75493",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935281/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates polarization-insensitive, broadband metasurface holograph. It employs monolithic 3D printing with height-coded resin pillars to create a low-index metasurface that operates across visible wavelengths and spatial channels. The device generates dual-credential authentication via far-field public keys and wavelength/distance-selective near-field passwords without polarization optics, demonstrating compact spectral-spatial meta-authentication.\",\n  \"key_findings\": [\n    \"Monolithically 3D-printed metasurface achieves polarization-insensitive broadband holography across visible wavelengths\",\n    \"Height-coded resin pillars enable a single phase map for multi-wavelength operation without polarization dependence\",\n    \"Device provides dual-credential optical authentication using far-field public keys and near-field passwords under unpolarized light\"\n  ],\n  \"scientific_significance\": \"This work establishes a compact, polarization-insensitive metasurface platform for simultaneous spectral and spatial authentication, advancing optical security through integrated wavelength and spatial channel management without external polarization optics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates polarization-insensitive, broadband metasurface holograph. It employs monolithic 3D printing with height-coded resin pillars to create a low-index metasurface that operates across visible wavelengths and spatial channels. The device generates dual-credential authentication via far-field public keys and wavelength/distance-selective near-field passwords without polarization optics, demonstrating compact spectral-spatial meta-authentication.",
+          "key_findings": [
+            "Monolithically 3D-printed metasurface achieves polarization-insensitive broadband holography across visible wavelengths",
+            "Height-coded resin pillars enable a single phase map for multi-wavelength operation without polarization dependence",
+            "Device provides dual-credential optical authentication using far-field public keys and near-field passwords under unpolarized light"
+          ],
+          "scientific_significance": "This work establishes a compact, polarization-insensitive metasurface platform for simultaneous spectral and spatial authentication, advancing optical security through integrated wavelength and spatial channel management without external polarization optics."
+        },
+        "elapsed_seconds": 36.6351,
+        "input_tokens": 709,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 915,
+        "model_eval_seconds": 22.3186,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983081",
+        "title": "Tracing the spread of Celtic languages using ancient genomics.",
+        "abstract": "NA: Celtic languages are today restricted to Europe's Atlantic fringes but were widely spoken across the continent during the Iron Age1-3. How Celtic achieved this early distribution remains contested4, with alternative archaeological and linguistic models proposing different homelands and dispersal routes. Here we analyse genome-wide data from 4,587 ancient individuals, focusing on Bronze and Iron Age Europe, to test the extent to which these models fit reconstructed demographic histories. We identify three main processes shaping European population structure that are relevant to the Celtic dispersal. First, the arrival of Steppe-related ancestry with Bell Beaker-associated groups after around 4400 BP (calibrated years before present or 1950 CE) across the region in which Celtic and related languages were later spoken. Second, a movement from southwestern Europe into Britain during the Bronze Age (3800-3200 BP), consistent with scenarios in which Celtic formed along the Atlantic façade. Third, a westward expansion of ancestry related to Late Bronze Age Knovíz-Urnfield-associated populations from eastern central Europe (3200-2800 BP), affecting France, the British Isles, northeastern Iberia and Italy and later associated with Iron Age Hallstatt and La Tène contexts5-8. Although all three movements have parallels with proposed models, we argue that the final movement, from eastern central Europe, is most parsimonious for the spread of Celtic. Although human history does not necessarily follow a parsimonious trajectory9 and language shifts need not track genetic change, these results delimit the demographic scenarios that are plausible for the emergence of Celtic in prehistoric Europe.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11198-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11198-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983081/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing genome-wide data, the researchers identified three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, Iberia, and Italy. The findings suggest that the eastern central European migration is the most parsimonious explanation for Celtic language spread, despite language shifts not always aligning with genetic changes.\",\n  \"key_findings\": [\n    \"Steppe-related ancestry entered Europe via Bell Beaker-associated groups approximately 4400 years ago\",\n    \"Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP\",\n    \"Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions where Celtic languages later developed\"\n  ],\n  \"scientific_significance\": \"The study provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal, clarifying the demographic processes that may have facilitated the spread of Celtic languages across prehistoric Europe.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing genome-wide data, the researchers identified three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, Iberia, and Italy. The findings suggest that the eastern central European migration is the most parsimonious explanation for Celtic language spread, despite language shifts not always aligning with genetic changes.",
+          "key_findings": [
+            "Steppe-related ancestry entered Europe via Bell Beaker-associated groups approximately 4400 years ago",
+            "Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP",
+            "Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions where Celtic languages later developed"
+          ],
+          "scientific_significance": "The study provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal, clarifying the demographic processes that may have facilitated the spread of Celtic languages across prehistoric Europe."
+        },
+        "elapsed_seconds": 36.7269,
+        "input_tokens": 874,
+        "output_tokens": 274,
+        "thoughts_tokens": null,
+        "total_tokens": 1148,
+        "model_eval_seconds": 31.4334,
+        "error": "summary must contain 45–65 words; received 97.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986961",
+        "title": "The power of noise.",
+        "abstract": "NA: Noise measurements untangle a decades-old puzzle in high-temperature superconductivity.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem6813",
+        "doi_url": "https://doi.org/10.1126/science.aem6813",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986961/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how noise measurements resolve a long-standing puzzle in high-temperature superconductivity. By analyzing noise characteristics in superconducting systems, researchers identified critical relationships between noise and superconducting properties. The findings suggest that noise can provide insights into the underlying mechanisms of high-temperature superconductivity, potentially clarifying its complex behavior.\",\n  \"key_findings\": [\n    \"Noise measurements reveal critical relationships between noise and superconducting properties\",\n    \"The approach identifies noise as a key factor in understanding high-temperature super:superconductivity\",\n    \"The results indicate noise provides insights into the underlying mechanisms of high-temperature superconductivity\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that noise analysis can elucidate fundamental aspects of high-temperature superconductivity, advancing understanding of its complex physical mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how noise measurements resolve a long-standing puzzle in high-temperature superconductivity. By analyzing noise characteristics in superconducting systems, researchers identified critical relationships between noise and superconducting properties. The findings suggest that noise can provide insights into the underlying mechanisms of high-temperature superconductivity, potentially clarifying its complex behavior.",
+          "key_findings": [
+            "Noise measurements reveal critical relationships between noise and superconducting properties",
+            "The approach identifies noise as a key factor in understanding high-temperature super:superconductivity",
+            "The results indicate noise provides insights into the underlying mechanisms of high-temperature superconductivity"
+          ],
+          "scientific_significance": "This work demonstrates that noise analysis can elucidate fundamental aspects of high-temperature superconductivity, advancing understanding of its complex physical mechanisms."
+        },
+        "elapsed_seconds": 19.6998,
+        "input_tokens": 441,
+        "output_tokens": 175,
+        "thoughts_tokens": null,
+        "total_tokens": 616,
+        "model_eval_seconds": 17.3686,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935286",
+        "title": "Spin-State Modulation of Octahedral Co Sites for Enhancing Nitrate-to-Ammonia Conversion.",
+        "abstract": "NA: Ammonia is vital for agriculture and a promising carbon-free energy carrier, but its industrial production via the Haber-Bosch process is energy-intensive and emits substantial CO2. Electrocatalytic nitrogen oxide reduction to ammonia offers a green alternative, by using renewable electricity under ambient conditions while enabling nitrogen resource utilization. Herein, we report a metal-organic framework (MOF)-derived Co3O4 electrocatalyst (MD-Co3O4) prepared by controlled pyrolysis of Co-MOF-74, which achieved a high Faradaic efficiency (FE) of 96.7% and excellent stability for the electrosynthesis of NH3 from nitrate, along with robust activity over a wide pH and nitrate concentration range. Comprehensive spectroscopic characterizations and density functional theory calculations revealed that the oxygen vacancies generated during MOF pyrolysis induce coordination distortion of octahedral Co sites, leading to a high-spin state transition with an electron-rich configuration that synergistically enhances nitrate adsorption and interfacial electron transfer, thereby boosting the intrinsic activity. Moreover, this MOF-based strategy is applicable to other M1Co2O4 spinels, which provides an effective approach for spin engineering at the atomic scale and sustainable ammonia synthesis.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75456",
+        "doi_url": "https://doi.org/10.1002/adma.75456",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935286/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing ammonia synthesis from nitrate using electrocatalysis. Researchers developed a MOF-derived Co3O4 catalyst via controlled pyrolysis of Co-MOF- 74, achieving 96.7% Faradaic efficiency and stability across varying pH and nitrate concentrations. Spectroscopic analysis and DFT calculations showed oxygen vacancies induce octahedral Co site distortion, promoting high-spin states that improve nitrate adsorption and electron transfer kinetics.\",\n  \"key_findings\": [\n    \"MOF-derived Co3O4 catalyst achieved 96.7% Faradaic efficiency for nitrate-to-ammonia conversion\",\n    \"Oxygen vacancies in the catalyst caused octahedral Co site distortion, enabling high-spin state transitions\",\n    \"The catalyst maintained stability and activity across a wide pH and nitrate concentration range\"\n  ],\n  \"scientific_significance\": \"This work demonstrates atomic-scale spin engineering of cobalt sites in MOF-derived catalysts to enhance electrocatalytic nitrate reduction, providing a pathway for energy-efficient ammonia production without CO2 emissions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing ammonia synthesis from nitrate using electrocatalysis. Researchers developed a MOF-derived Co3O4 catalyst via controlled pyrolysis of Co-MOF- 74, achieving 96.7% Faradaic efficiency and stability across varying pH and nitrate concentrations. Spectroscopic analysis and DFT calculations showed oxygen vacancies induce octahedral Co site distortion, promoting high-spin states that improve nitrate adsorption and electron transfer kinetics.",
+          "key_findings": [
+            "MOF-derived Co3O4 catalyst achieved 96.7% Faradaic efficiency for nitrate-to-ammonia conversion",
+            "Oxygen vacancies in the catalyst caused octahedral Co site distortion, enabling high-spin state transitions",
+            "The catalyst maintained stability and activity across a wide pH and nitrate concentration range"
+          ],
+          "scientific_significance": "This work demonstrates atomic-scale spin engineering of cobalt sites in MOF-derived catalysts to enhance electrocatalytic nitrate reduction, providing a pathway for energy-efficient ammonia production without CO2 emissions."
+        },
+        "elapsed_seconds": 39.1278,
+        "input_tokens": 700,
+        "output_tokens": 230,
+        "thoughts_tokens": null,
+        "total_tokens": 930,
+        "model_eval_seconds": 25.0972,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983082",
+        "title": "An open structure-guided RNA foundation model for generalizable prediction.",
+        "abstract": "NA: RNA language models have achieved strong performance across diverse downstream tasks by leveraging large-scale sequence data. However, RNA function is fundamentally shaped by hierarchical structure, making structural information important for pre-training. Existing approaches often depend on noisy annotations or task-specific objectives that can limit generalizability. Here we present structRFM, a structure-guided RNA foundation model trained on 21 million RNA sequence-structure pairs by integrating base-pairing interactions into masked language modelling through a pair-matching operation. We also introduce MUSES, a multi-source ensemble of secondary structures designed to mitigate predictor bias, and a dynamic masking ratio that balances structure-guided and nucleotide-level masking. structRFM learns joint sequence and structure representations as sequence-level, nucleotide-level and pairwise features for broad downstream adaptation. It ranks highly in zero-shot homology classification and establishes new benchmarks for secondary-structure prediction. Its tertiary-structure adaptation, Zfold, consistently improves both three-dimensional predictions and their extracted secondary structures, with performance comparable to AlphaFold31 across CASP15-natural, CASP16 and RNA-Puzzles. structRFM also improves performance on function-prediction tasks and generalizes to newly released RNA families and long non-coding RNAs. Together, these results demonstrate the effectiveness of structure-guided pre-training and highlight multimodal RNA language models for robust structural and functional inference. The complete 21-million-pair dataset, model weights and source code are openly available to support multimodal RNA foundation-model development.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11210-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11210-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983082/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study develops structRFM, an RNA foundation model trained on 21 million sequence-structure pairs using structure-guided masked language modeling. It integrates base-pairing interactions via pair-matching and employs multi-source ensembles to reduce bias. The model excels in zero-shot homology classification, secondary-using prediction, and tertiary structure modeling, matching AlphaFold3 performance on key benchmarks while generalizing to novel RNA families and long non-coding RNAs.\",\n  \"key_findings\": [\n    \"structRFM achieves high performance in zero-shot homology classification without task-specific training\",\n    \"The model improves tertiary structure prediction with Zfold, matching AlphaFold3 across multiple benchmark datasets\",\n    \"structRFM generalizes effectively to newly released RNA families and long non-coding RNAs\"\n  ],\n  \"scientific_significance\": \"This work establishes structure-guided pre-training as a robust strategy for RNA foundation models, advancing capabilities for accurate structural and functional inference across diverse RNA types.\"\n}",
+        "parsed": {
+          "summary": "This study develops structRFM, an RNA foundation model trained on 21 million sequence-structure pairs using structure-guided masked language modeling. It integrates base-pairing interactions via pair-matching and employs multi-source ensembles to reduce bias. The model excels in zero-shot homology classification, secondary-using prediction, and tertiary structure modeling, matching AlphaFold3 performance on key benchmarks while generalizing to novel RNA families and long non-coding RNAs.",
+          "key_findings": [
+            "structRFM achieves high performance in zero-shot homology classification without task-specific training",
+            "The model improves tertiary structure prediction with Zfold, matching AlphaFold3 across multiple benchmark datasets",
+            "structRFM generalizes effectively to newly released RNA families and long non-coding RNAs"
+          ],
+          "scientific_significance": "This work establishes structure-guided pre-training as a robust strategy for RNA foundation models, advancing capabilities for accurate structural and functional inference across diverse RNA types."
+        },
+        "elapsed_seconds": 38.9353,
+        "input_tokens": 738,
+        "output_tokens": 209,
+        "thoughts_tokens": null,
+        "total_tokens": 947,
+        "model_eval_seconds": 22.9486,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
