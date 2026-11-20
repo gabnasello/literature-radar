@@ -19,8 +19,13 @@ site <- load_literature_site_data("..")
 
 ::: {.home-layout}
 ::: {.journal-section}
+<div class="section-heading"><h2>Journals</h2></div>
 ```{r, results='asis'}
 cat(site_render_homepage_journal_list(site$journals))
+```
+<div class="section-heading keyword-heading"><h2>Keywords</h2></div>
+```{r, results='asis'}
+cat(site_render_homepage_keyword_list(site$keywords))
 ```
 :::
 
