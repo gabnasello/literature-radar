@@ -1,0 +1,34 @@
+# PubMed topic searches are independent of the monitored journal list.
+settings:
+  initial_backfill_days: 7
+  overlap_days: 2
+  pubmed_batch_size: 200
+  email: ""
+
+priority:
+  # Exact journal matches are ranked before publisher-group matches.
+  journals:
+    - Nature
+    - Science
+    - Cell
+    - Nature Biomedical Engineering
+    - Nature Biotechnology
+    - Nature Materials
+    - Nature Immunology
+    - Science Immunology
+    - Immunity
+    - Cell Biomaterials
+    - Biomaterials
+    - Advanced Materials
+  publishers:
+    - Springer Nature
+    - AAAS
+    - Cell Press
+    - Elsevier
+
+keywords:
+  - id: regulatory-t-cells
+    name: Regulatory T cells
+    # Broad PubMed query: MeSH indexing plus title/abstract wording and common abbreviation.
+    query: '("Regulatory T-Lymphocytes"[MeSH Terms] OR "regulatory T cell"[Title/Abstract] OR "regulatory T cells"[Title/Abstract] OR Treg[Title/Abstract] OR Tregs[Title/Abstract])'
+    enabled: true
