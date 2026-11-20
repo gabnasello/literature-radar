@@ -18,6 +18,11 @@ website:
   description: "A date-based archive of PubMed updates and AI-generated paper summaries from selected journals."
   favicon: images/icon.svg
   navbar:
+    left:
+      - text: Journals
+        href: index.qmd
+      - text: Keywords
+        href: keywords/regulatory-t-cells.html
     logo: images/logo.svg
     logo-alt: "Literature Radar"
     right:
