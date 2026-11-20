@@ -16,6 +16,9 @@ on:
       - "data/benchmarks/**"
       - "data/summaries/**"
       - "config/journals.yml"
+      - "config/keywords.yml"
+      - "R/keywords.R"
+      - "scripts/run_keyword_retrieval.R"
       - ".github/workflows/quarto-website.yml"
   workflow_dispatch:
   workflow_run:
