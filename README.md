@@ -4,7 +4,7 @@ Automated PubMed monitoring, Ollama-based paper summaries, and a compact journal
 
 ## How it works
 
-- **Retrieval:** every Sunday at 05:00 UTC, all enabled journals are queried using PubMed Create Date (`crdt`).
+- **Retrieval:** every Sunday at 05:00 UTC, enabled journals are queried using PubMed Create Date (`crdt`), alongside configured PubMed keyword searches across all journals.
 - **Tracking:** each journal has its own successful retrieval cursor; reports are immutable and papers are deduplicated by PMID.
 - **Summaries:** Ollama generates summaries in batches of 24 after successful retrieval and every six hours while papers remain in the queue. Manual dispatch is also available.
 - **Website:** GitHub Pages is rebuilt after retrieval, summarization, or relevant source changes.
@@ -14,6 +14,7 @@ The current registry contains 11 enabled journals, including Nature, Science, an
 ## Configuration
 
 - `config/journals.yml`: journal names, ISSNs, enabled status, and retrieval settings.
+- `config/keywords.yml`: PubMed keyword queries, initial backfill settings, and preferred journal/publisher-group ordering.
 - `config/llm.yml`: Ollama model and generation settings.
 - `prompts/`: versioned summary prompts.
 
@@ -26,7 +27,7 @@ The current registry contains 11 enabled journals, including Nature, Science, an
 
 ## Website
 
-The homepage lists only journals with completed AI summaries, ordered by latest retrieval date. Opening a journal shows its latest update immediately; older updates are available in a collapsed history. Each paper shows a short AI summary preview, with findings, study type, scientific significance, and the original abstract available in the expanded details.
+The homepage separates journal updates from keyword-search updates. Keyword searches cover all PubMed journals; preferred journals and configured publisher groups are shown first, while other matching papers remain included. Opening a journal shows its latest update immediately; older updates are available in a collapsed history. Each paper shows a short AI summary preview, with findings, study type, scientific significance, and the original abstract available in the expanded details.
 
 The site is published at <https://gabnasello.github.io/literature-radar/>.
 
