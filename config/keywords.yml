@@ -20,11 +20,15 @@ priority:
     - Cell Biomaterials
     - Biomaterials
     - Advanced Materials
-  publishers:
-    - Springer Nature
-    - AAAS
-    - Cell Press
-    - Elsevier
+  publisher_groups:
+    - name: Springer Nature
+      journals: [Nature, Nature Biomedical Engineering, Nature Biotechnology, Nature Materials, Nature Immunology]
+    - name: AAAS
+      journals: [Science, Science Immunology]
+    - name: Cell Press
+      journals: [Cell, Immunity, Cell Biomaterials]
+    - name: Elsevier
+      journals: [Biomaterials]
 
 keywords:
   - id: regulatory-t-cells
