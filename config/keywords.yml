@@ -6,7 +6,7 @@ settings:
   email: ""
 
 priority:
-  # Exact journal matches are ranked before publisher-group matches.
+  # Exact preferred titles rank first; other titles from these publishers rank next.
   journals:
     - Nature
     - Science
@@ -22,13 +22,35 @@ priority:
     - Advanced Materials
   publisher_groups:
     - name: Springer Nature
-      journals: [Nature, Nature Biomedical Engineering, Nature Biotechnology, Nature Materials, Nature Immunology]
+      journals:
+        - Nature Communications
+        - Nature Medicine
+        - Nature Cell Biology
+        - Nature Chemical Biology
+        - Nature Methods
+        - Nature Nanotechnology
+        - Nature Reviews Immunology
+        - Scientific Reports
     - name: AAAS
-      journals: [Science, Science Immunology]
+      journals:
+        - Science Advances
+        - Science Translational Medicine
+        - Science Signaling
     - name: Cell Press
-      journals: [Cell, Immunity, Cell Biomaterials]
+      journals:
+        - Cell Stem Cell
+        - Molecular Cell
+        - Cell Reports
+        - Cancer Cell
+        - Developmental Cell
+        - Trends in Immunology
     - name: Elsevier
-      journals: [Biomaterials]
+      journals:
+        - Acta Biomaterialia
+        - Journal of Controlled Release
+        - Biomaterials Advances
+        - Materials Today Bio
+        - Bioactive Materials
 
 keywords:
   - id: regulatory-t-cells
