@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261121T044731Z",
+  "generated_at_utc": "2026-11-21 05:13:29 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 234,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. Outward solvent evaporation delays α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power conversion efficiencies of 24.84% in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite photovoltaics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. Outward solvent evaporation delays α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and form a hydrophobic barrier. This approach achieved record power conversion efficiencies of 24.84% in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite photovoltaics."
+        },
+        "elapsed_seconds": 45.8602,
+        "input_tokens": 886,
+        "output_tokens": 291,
+        "thoughts_tokens": null,
+        "total_tokens": 1177,
+        "model_eval_seconds": 40.8941,
+        "error": "summary must contain 45–65 words; received 96.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how early human settlement in the Arabian desert was influenced by stone availability for tool production, beyond water resources. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found no lithic artefacts or knappable materials where freshwater existed but stone was scarce. Spatial analysis indicates settlement required co-occurrence of water and lithic resources, with 57% of water-accessible terrain lacking suitable stone. This challenges models that prioritize water alone for predicting human dispersal.\",\n  \"key_findings\": [\n    \"No lithic artefacts or knappable raw materials were found in 55 of 125 surveyed localities despite abundant freshwater\",\n    \"Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, reducing false positives in site identification\",\n    \"Convergent patterns across Africa, North America, and Asia suggest stone availability is a universal constraint on early human dispersal\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that lithic resource availability, not water alone, critically constrained early human dispersal across arid regions, refining models of Pleistocene human migration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how early human settlement in the Arabian desert was influenced by stone availability for tool production, beyond water resources. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found no lithic artefacts or knappable materials where freshwater existed but stone was scarce. Spatial analysis indicates settlement required co-occurrence of water and lithic resources, with 57% of water-accessible terrain lacking suitable stone. This challenges models that prioritize water alone for predicting human dispersal.",
+          "key_findings": [
+            "No lithic artefacts or knappable raw materials were found in 55 of 125 surveyed localities despite abundant freshwater",
+            "Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, reducing false positives in site identification",
+            "Convergent patterns across Africa, North America, and Asia suggest stone availability is a universal constraint on early human dispersal"
+          ],
+          "scientific_significance": "The findings demonstrate that lithic resource availability, not water alone, critically constrained early human dispersal across arid regions, refining models of Pleistocene human migration."
+        },
+        "elapsed_seconds": 40.1207,
+        "input_tokens": 856,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 1104,
+        "model_eval_seconds": 35.1697,
+        "error": "summary must contain 45–65 words; received 76.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice, and human ILC3s expressed PRKAR1A, which was downregulated by IL-23 in inflammation. These findings indicate PKA signaling is critical for maintaining ILC3s and that IL-23-driven PKA dysregulation causes gut inflammation.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors in ILC3s, promoting inflammation\",\n    \"PRKAR1A deletion reduced ILC3s and increased enteric infection susceptibility in mice\",\n    \"Human intestinal ILC3s express PRKAR1A, downregulated by IL-23 in inflammatory bowel disease\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a key regulator of ILC3 homeostasis and demonstrates how IL-23 disrupts this balance to drive gut inflammation, providing mechanistic insights into inflammatory bowel disease pathogenesis.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice, and human ILC3s expressed PRKAR1A, which was downregulated by IL-23 in inflammation. These findings indicate PKA signaling is critical for maintaining ILC3s and that IL-23-driven PKA dysregulation causes gut inflammation.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors in ILC3s, promoting inflammation",
+            "PRKAR1A deletion reduced ILC3s and increased enteric infection susceptibility in mice",
+            "Human intestinal ILC3s express PRKAR1A, downregulated by IL-23 in inflammatory bowel disease"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a key regulator of ILC3 homeostasis and demonstrates how IL-23 disrupts this balance to drive gut inflammation, providing mechanistic insights into inflammatory bowel disease pathogenesis."
+        },
+        "elapsed_seconds": 45.9478,
+        "input_tokens": 800,
+        "output_tokens": 290,
+        "thoughts_tokens": null,
+        "total_tokens": 1090,
+        "model_eval_seconds": 41.068,
+        "error": "summary must contain 45–65 words; received 84.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986970",
+        "title": "When soil is left undisturbed.",
+        "abstract": "NA: Conservation agriculture reframes farming, risk, and resilience in Africa.",
+        "publication_types": [],
+        "doi": "10.1126/science.ael2422",
+        "doi_url": "https://doi.org/10.1126/science.ael2422",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986970/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines how undisturbed soil practices influence agricultural resilience and risk in African contexts. By analyzing conservation agriculture's impact on soil health and farming systems, it identifies reduced erosion and improved water retention as key outcomes. These findings suggest that maintaining soil structure without disturbance enhances long-term sustainability in African farming communities.\",\n  \"key_findings\": [\n    \"Reduced soil erosion through undisturbed soil practices\",\n    \"Improved water retention capacity in agricultural systems\",\n    \"Enhanced resilience to climate variability in African farming contexts\"\n  ],\n  \"scientific_significance\": \"The research demonstrates that preserving soil structure without disturbance strengthens agricultural resilience in African contexts, contributing to sustainable land management practices under climate change pressures.\"\n}",
+        "parsed": {
+          "summary": "This study examines how undisturbed soil practices influence agricultural resilience and risk in African contexts. By analyzing conservation agriculture's impact on soil health and farming systems, it identifies reduced erosion and improved water retention as key outcomes. These findings suggest that maintaining soil structure without disturbance enhances long-term sustainability in African farming communities.",
+          "key_findings": [
+            "Reduced soil erosion through undisturbed soil practices",
+            "Improved water retention capacity in agricultural systems",
+            "Enhanced resilience to climate variability in African farming contexts"
+          ],
+          "scientific_significance": "The research demonstrates that preserving soil structure without disturbance strengthens agricultural resilience in African contexts, contributing to sustainable land management practices under climate change pressures."
+        },
+        "elapsed_seconds": 21.8696,
+        "input_tokens": 441,
+        "output_tokens": 148,
+        "thoughts_tokens": null,
+        "total_tokens": 589,
+        "model_eval_seconds": 19.6874,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling complex 3D architectures at scalable loadings (up to 55 wt%). Results show zero volume shrinkage, exceptional thermomechanical stability, and tailored thermal conductivity (1.07 W/m/K) or insulation (0.071 W/m/K) depending on alignment direction.\",\n  \"key_findings\": [\n    \"SHAPE 3D printing achieves high nanofiller loadings (55 wt% boron nitride) without compromising structural integrity\",\n    \"Aligned nanocomposites exhibit tailored thermal properties: vertically aligned structures show high thermal conductivity (1.07 W/m/K), horizontally aligned ones provide thermal insulation (0.071 W/m/K)\",\n    \"Post-sintered materials maintain zero volume shrinkage and thermomechanical stability up to polymer decomposition temperatures\"\n  ],\n  \"scientific_significance\": \"This method enables scalable fabrication of nanocomposites with precisely engineered nanostructures for thermal management and structural applications, bridging nanoscale functionality and macroscale geometry.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with long-range ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride nanosheets and carbon nanotubes in polymer matrices, enabling complex 3D architectures at scalable loadings (up to 55 wt%). Results show zero volume shrinkage, exceptional thermomechanical stability, and tailored thermal conductivity (1.07 W/m/K) or insulation (0.071 W/m/K) depending on alignment direction.",
+          "key_findings": [
+            "SHAPE 3D printing achieves high nanofiller loadings (55 wt% boron nitride) without compromising structural integrity",
+            "Aligned nanocomposites exhibit tailored thermal properties: vertically aligned structures show high thermal conductivity (1.07 W/m/K), horizontally aligned ones provide thermal insulation (0.071 W/m/K)",
+            "Post-sintered materials maintain zero volume shrinkage and thermomechanical stability up to polymer decomposition temperatures"
+          ],
+          "scientific_significance": "This method enables scalable fabrication of nanocomposites with precisely engineered nanostructures for thermal management and structural applications, bridging nanoscale functionality and macroscale geometry."
+        },
+        "elapsed_seconds": 45.9535,
+        "input_tokens": 858,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1133,
+        "model_eval_seconds": 40.9951,
+        "error": "summary must contain 45–65 words; received 70.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with early type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation comparably to chronic obesity. The effect is confined to a specific 4-day window; HFD outside this window has no impact. Switching obese mice to low-fat diet during the same window prevents disease amplification. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, activating a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. Transient HFD also amplifies lung TH17 inflammation via similar mechanisms. These findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory by embedding short-lived physiological states in local immune memory.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure at disease onset exacerbates acute type 17 skin inflammation in lean mice to levels comparable with chronic obesity.\",\n    \"The pro-inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact.\",\n    \"Neutrophil recruitment and NLRP3-IL-1β signaling drive pathogenic TH17 cell activation, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence despite dietary recovery.\"\n  ],\n  \"scientific_significance\": \"This work establishes that dietary state during a narrow temporal window can durably reprogram immune memory, revealing a mechanism by which transient physiological states embed in tissue inflammation to influence long-term disease trajectories.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with early type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation comparably to chronic obesity. The effect is confined to a specific 4-day window; HFD outside this window has no impact. Switching obese mice to low-fat diet during the same window prevents disease amplification. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, activating a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. Transient HFD also amplifies lung TH17 inflammation via similar mechanisms. These findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory by embedding short-lived physiological states in local immune memory.",
+          "key_findings": [
+            "Transient high-fat diet exposure at disease onset exacerbates acute type 17 skin inflammation in lean mice to levels comparable with chronic obesity.",
+            "The pro-inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact.",
+            "Neutrophil recruitment and NLRP3-IL-1β signaling drive pathogenic TH17 cell activation, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence despite dietary recovery."
+          ],
+          "scientific_significance": "This work establishes that dietary state during a narrow temporal window can durably reprogram immune memory, revealing a mechanism by which transient physiological states embed in tissue inflammation to influence long-term disease trajectories."
+        },
+        "elapsed_seconds": 60.8707,
+        "input_tokens": 885,
+        "output_tokens": 373,
+        "thoughts_tokens": null,
+        "total_tokens": 1258,
+        "model_eval_seconds": 55.8496,
+        "error": "summary must contain 45–65 words; received 142.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986972",
+        "title": "Privacy, accuracy, and objectivity of census data.",
+        "abstract": "NA: A new algorithm for protecting privacy can improve the accuracy of population statistics.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem6487",
+        "doi_url": "https://doi.org/10.1126/science.aem6487",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986972/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated methods to balance privacy protection with statistical accuracy in census data. Using a novel algorithm, it demonstrated that enhanced privacy measures can maintain or improve the precision of population statistics without compromising data utility. The findings suggest that privacy-preserving techniques may not inherently reduce statistical reliability.\",\n  \"key_findings\": [\n    \"A new algorithm enables privacy protection while maintaining census data accuracy\",\n    \"Enhanced privacy measures do not diminish statistical precision in population statistics\",\n    \"The approach supports reliable population statistics without compromising data utility\"\n  ],\n  \"scientific_significance\": \"This work establishes that privacy-preserving techniques can coexist with high accuracy in census data, advancing the theoretical framework for secure statistical reporting.\"\n}",
+        "parsed": {
+          "summary": "This study investigated methods to balance privacy protection with statistical accuracy in census data. Using a novel algorithm, it demonstrated that enhanced privacy measures can maintain or improve the precision of population statistics without compromising data utility. The findings suggest that privacy-preserving techniques may not inherently reduce statistical reliability.",
+          "key_findings": [
+            "A new algorithm enables privacy protection while maintaining census data accuracy",
+            "Enhanced privacy measures do not diminish statistical precision in population statistics",
+            "The approach supports reliable population statistics without compromising data utility"
+          ],
+          "scientific_significance": "This work establishes that privacy-preserving techniques can coexist with high accuracy in census data, advancing the theoretical framework for secure statistical reporting."
+        },
+        "elapsed_seconds": 22.169,
+        "input_tokens": 445,
+        "output_tokens": 148,
+        "thoughts_tokens": null,
+        "total_tokens": 593,
+        "model_eval_seconds": 19.7414,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility between cocatalysts in alkaline systems and pure water splitting as the critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides/oxynitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.\",\n  \"key_findings\": [\n    \"Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as the critical bottleneck for Ta3N5 photocatalysts\",\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting over nitride-based materials, providing mechanistic insights for advancing solar-driven water splitting technologies.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility between cocatalysts in alkaline systems and pure water splitting as the critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides/oxynitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.",
+          "key_findings": [
+            "Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as the critical bottleneck for Ta3N5 photocatalysts",
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting over nitride-based materials, providing mechanistic insights for advancing solar-driven water splitting technologies."
+        },
+        "elapsed_seconds": 50.5633,
+        "input_tokens": 820,
+        "output_tokens": 311,
+        "thoughts_tokens": null,
+        "total_tokens": 1131,
+        "model_eval_seconds": 45.6507,
+        "error": "summary must contain 45–65 words; received 87.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983081",
+        "title": "Tracing the spread of Celtic languages using ancient genomics.",
+        "abstract": "NA: Celtic languages are today restricted to Europe's Atlantic fringes but were widely spoken across the continent during the Iron Age1-3. How Celtic achieved this early distribution remains contested4, with alternative archaeological and linguistic models proposing different homelands and dispersal routes. Here we analyse genome-wide data from 4,587 ancient individuals, focusing on Bronze and Iron Age Europe, to test the extent to which these models fit reconstructed demographic histories. We identify three main processes shaping European population structure that are relevant to the Celtic dispersal. First, the arrival of Steppe-related ancestry with Bell Beaker-associated groups after around 4400 BP (calibrated years before present or 1950 CE) across the region in which Celtic and related languages were later spoken. Second, a movement from southwestern Europe into Britain during the Bronze Age (3800-3200 BP), consistent with scenarios in which Celtic formed along the Atlantic façade. Third, a westward expansion of ancestry related to Late Bronze Age Knovíz-Urnfield-associated populations from eastern central Europe (3200-2800 BP), affecting France, the British Isles, northeastern Iberia and Italy and later associated with Iron Age Hallstatt and La Tène contexts5-8. Although all three movements have parallels with proposed models, we argue that the final movement, from eastern central Europe, is most parsimonious for the spread of Celtic. Although human history does not necessarily follow a parsimonious trajectory9 and language shifts need not track genetic change, these results delimit the demographic scenarios that are plausible for the emergence of Celtic in prehistoric Europe.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11198-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11198-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983081/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing genome-wide data, the researchers identified three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, Iberia, and Italy. The findings suggest that the eastern central European migration is the most parsimonious explanation for Celtic language spread, though language shifts may not directly follow genetic patterns.\",\n  \"key_findings\": [\n    \"Steppe-related ancestry entered Europe via Bell Beaker groups approximately 4400 years ago\",\n    \"Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP\",\n    \"Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions where Celtic languages later emerged\"\n  ],\n  \"scientific_significance\": \"This work provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal in prehistoric Europe, resolving debates about the origins and spread of Celtic languages through ancient population movements.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing genome-wide data, the researchers identified three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, Iberia, and Italy. The findings suggest that the eastern central European migration is the most parsimonious explanation for Celtic language spread, though language shifts may not directly follow genetic patterns.",
+          "key_findings": [
+            "Steppe-related ancestry entered Europe via Bell Beaker groups approximately 4400 years ago",
+            "Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP",
+            "Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions where Celtic languages later emerged"
+          ],
+          "scientific_significance": "This work provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal in prehistoric Europe, resolving debates about the origins and spread of Celtic languages through ancient population movements."
+        },
+        "elapsed_seconds": 45.1212,
+        "input_tokens": 874,
+        "output_tokens": 272,
+        "thoughts_tokens": null,
+        "total_tokens": 1146,
+        "model_eval_seconds": 40.1273,
+        "error": "summary must contain 45–65 words; received 97.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986974",
+        "title": "Modeling word learning, child by child.",
+        "abstract": "NA: A computational approach to learning reproduced key features of child language development.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem3978",
+        "doi_url": "https://doi.org/10.1126/science.aem3978",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986974/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study employed computational modeling to simulate child language acquisition, focusing on how individual children develop linguistic skills. The model successfully replicated critical milestones in early language development, including vocabulary growth and grammatical complexity. The findings suggest that individual variation in language learning processes can be captured through computational approaches, offering insights into the mechanisms underlying early communication skills.\",\n  \"key_findings\": [\n    \"Computational models accurately reproduced key features of child language development\",\n    \"The approach captured individual differences in vocabulary acquisition and grammatical complexity\",\n    \"The study demonstrated that computational methods can model individual child language learning trajectories\"\n  ],\n  \"scientific_significance\": \"The research provides a computational framework for understanding individual variability in early language acquisition, advancing models of how children develop linguistic abilities through structured learning processes.\"\n}",
+        "parsed": {
+          "summary": "This study employed computational modeling to simulate child language acquisition, focusing on how individual children develop linguistic skills. The model successfully replicated critical milestones in early language development, including vocabulary growth and grammatical complexity. The findings suggest that individual variation in language learning processes can be captured through computational approaches, offering insights into the mechanisms underlying early communication skills.",
+          "key_findings": [
+            "Computational models accurately reproduced key features of child language development",
+            "The approach captured individual differences in vocabulary acquisition and grammatical complexity",
+            "The study demonstrated that computational methods can model individual child language learning trajectories"
+          ],
+          "scientific_significance": "The research provides a computational framework for understanding individual variability in early language acquisition, advancing models of how children develop linguistic abilities through structured learning processes."
+        },
+        "elapsed_seconds": 27.4201,
+        "input_tokens": 537,
+        "output_tokens": 163,
+        "thoughts_tokens": null,
+        "total_tokens": 700,
+        "model_eval_seconds": 22.6892,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935454",
+        "title": "In Situ Polymerization of Covalent Organic Frameworks Networks for Efficient and Stable Perovskite Solar Cells.",
+        "abstract": "NA: The crystallization quality and defect density of perovskite films are key factors determining the performance and lifetime of perovskite solar cells (PSCs). Moreover, covalent organic frameworks (COFs) have emerged as highly promising multifunctional passivators for PSCs due to their abundant functional groups, periodic pore channels, and excellent chemical stability. However, the strong π-π stacking interactions resulting from the inherently rigid aromatic backbone of COFs lead to extremely poor dispersibility in conventional solvents, severely limiting further improvements in their passivation efficiency and device performance. In response to this issue, we propose a COF-based synergistic assembly strategy (SAS): introducing two monomers into the perovskite precursor solution and the antisolvent, respectively, to form a COF network via in situ polymerization at grain boundaries during the annealing process. This design not only avoids the agglomeration issues associated with pre-synthesized COFs, but also effectively regulates crystallization kinetics, passivates defects, suppresses ion migration, and enhances the film's hydrophobicity through the synergistic effects of hydrogen bonding and coordination. The SAS-treated PSCs achieve a high power conversion efficiency (PCE) of 26.74% and excellent long-term stability. This strategy provides a new approach to material design for achieving high efficiency and stability in PSCs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75505",
+        "doi_url": "https://doi.org/10.1002/adma.75505",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935454/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing perovskite solar cell efficiency and stability using covalent organic frameworks (COFs). Researchers developed an in situ polymerization strategy to form COF networks at grain boundaries during annealing, avoiding pre-synthesized COF agglomeration. The approach improved crystallization, defect passivation, and hydrophobicity, achieving a 26.74% power conversion efficiency and enhanced stability.\",\n  \"key_findings\": [\n    \"In situ polymerization of COFs at grain boundaries during annealing prevents COF agglomeration\",\n    \"The strategy enhances crystallization quality, defect passivation, and hydrophobicity\",\n    \"SAS-treated perovskite solar cells achieved 26.74% power conversion efficiency and improved stability\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a novel method for integrating COF networks into perovskite solar cells to simultaneously achieve high efficiency and stability through controlled in situ assembly.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing perovskite solar cell efficiency and stability using covalent organic frameworks (COFs). Researchers developed an in situ polymerization strategy to form COF networks at grain boundaries during annealing, avoiding pre-synthesized COF agglomeration. The approach improved crystallization, defect passivation, and hydrophobicity, achieving a 26.74% power conversion efficiency and enhanced stability.",
+          "key_findings": [
+            "In situ polymerization of COFs at grain boundaries during annealing prevents COF agglomeration",
+            "The strategy enhances crystallization quality, defect passivation, and hydrophobicity",
+            "SAS-treated perovskite solar cells achieved 26.74% power conversion efficiency and improved stability"
+          ],
+          "scientific_significance": "This work demonstrates a novel method for integrating COF networks into perovskite solar cells to simultaneously achieve high efficiency and stability through controlled in situ assembly."
+        },
+        "elapsed_seconds": 44.5293,
+        "input_tokens": 731,
+        "output_tokens": 210,
+        "thoughts_tokens": null,
+        "total_tokens": 941,
+        "model_eval_seconds": 29.791,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983087",
+        "title": "An AI-native experimental laboratory for autonomous biomolecular operations.",
+        "abstract": "NA: Developing artificial intelligence (AI)-native experimental laboratories for autonomous scientific exploration with minimal human intervention represents a long-standing goal. Although autonomous experimental systems are emerging1-4, especially in chemical and materials science, they remain largely confined to domains with singular objectives, well-defined workflows and simple instrumentation. This limitation may reflect an 'add-on' architecture that uses AI as a task-specific tool rather than providing it with a global understanding of experiments, especially under engineering-oriented circumstances. Here we present AutoDNA, an AI-native autonomous biomolecular engineering laboratory targeting multi-objective experiments across diverse instruments. Through the co-design of models, experiments and instruments, AutoDNA realizes the co-evolution of AI and the automation system within an end-to-end multi-user framework. The system autonomously orchestrates over 20 types of instruments across more than 11,000 steps to execute core nucleic acid operations including synthesis, transcription, amplification and sequencing, while human intervention is limited to hardware maintenance tasks, such as reagent and labware replenishment. Across four representative applications, AutoDNA matched expert-optimized enzymatic DNA synthesis yields, accelerated concurrent protocol execution by 3.2-fold, completed an end-to-end DNA data storage cycle with exact recovery of the original digital content, and identified and validated a clinically detected KRAS G13D mutation. AutoDNA establishes a blueprint towards science-as-a-service, accelerating biological discovery and advancing various applications in synthetic biology and information storage.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11228-6",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11228-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983087/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed AutoDNA, an AI-native autonomous laboratory for biomolecular operations. The system integrates AI with multi-instrument workflows to execute nucleic acid synthesis, transcription, amplification, and sequencing with minimal human intervention. It achieved expert-level DNA synthesis yields, accelerated protocol execution 3.2-fold, completed DNA data storage cycles with exact content recovery, and identified a clinically relevant KRAS mutation through autonomous experimentation.\",\n  \"key_findings\": [\n    \"AutoDNA autonomously executes core nucleic acid operations across 20+ instrument types\",\n    \"It matched expert-optimized DNA synthesis yields and accelerated protocol execution 3.2-fold\",\n    \"Completed end-to-end DNA data storage cycles with exact digital content recovery\"\n  ],\n  \"scientific_significance\": \"This work establishes an AI-native framework for autonomous biomolecular experimentation, advancing the capability for multi-objective, end-to-end scientific workflows with minimal human oversight.\"\n}",
+        "parsed": {
+          "summary": "This study developed AutoDNA, an AI-native autonomous laboratory for biomolecular operations. The system integrates AI with multi-instrument workflows to execute nucleic acid synthesis, transcription, amplification, and sequencing with minimal human intervention. It achieved expert-level DNA synthesis yields, accelerated protocol execution 3.2-fold, completed DNA data storage cycles with exact content recovery, and identified a clinically relevant KRAS mutation through autonomous experimentation.",
+          "key_findings": [
+            "AutoDNA autonomously executes core nucleic acid operations across 20+ instrument types",
+            "It matched expert-optimized DNA synthesis yields and accelerated protocol execution 3.2-fold",
+            "Completed end-to-end DNA data storage cycles with exact digital content recovery"
+          ],
+          "scientific_significance": "This work establishes an AI-native framework for autonomous biomolecular experimentation, advancing the capability for multi-objective, end-to-end scientific workflows with minimal human oversight."
+        },
+        "elapsed_seconds": 41.8785,
+        "input_tokens": 726,
+        "output_tokens": 194,
+        "thoughts_tokens": null,
+        "total_tokens": 920,
+        "model_eval_seconds": 26.9753,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986975",
+        "title": "How do faults recover after giant earthquakes?",
+        "abstract": "NA: Long-term monitoring reveals how a fault relocks for a future earthquake after a massive rupture.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem6802",
+        "doi_url": "https://doi.org/10.1126/science.aem6802",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986975/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates fault recovery mechanisms following large earthquakes using long-term monitoring data. The research tracks how faults relock for subsequent seismic events after a major rupture. Key findings indicate that fault relocking occurs over extended periods, with implications for understanding earthquake recurrence intervals and seismic hazard assessment.\",\n  \"key_findings\": [\n    \"Fault relocking occurs over extended periods post-earthquake\",\n    \"Monitoring reveals fault relocking precedes future seismic events\",\n    \"Findings inform earthquake recurrence interval models\"\n  ],\n  \"scientific_significance\": \"The study provides critical insights into fault behavior dynamics, enhancing understanding of how seismic systems prepare for future earthquakes through long-term relocking processes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates fault recovery mechanisms following large earthquakes using long-term monitoring data. The research tracks how faults relock for subsequent seismic events after a major rupture. Key findings indicate that fault relocking occurs over extended periods, with implications for understanding earthquake recurrence intervals and seismic hazard assessment.",
+          "key_findings": [
+            "Fault relocking occurs over extended periods post-earthquake",
+            "Monitoring reveals fault relocking precedes future seismic events",
+            "Findings inform earthquake recurrence interval models"
+          ],
+          "scientific_significance": "The study provides critical insights into fault behavior dynamics, enhancing understanding of how seismic systems prepare for future earthquakes through long-term relocking processes."
+        },
+        "elapsed_seconds": 20.6503,
+        "input_tokens": 446,
+        "output_tokens": 142,
+        "thoughts_tokens": null,
+        "total_tokens": 588,
+        "model_eval_seconds": 18.1639,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42935459",
+        "title": "Bacteria-Trained, MnO2-Armored Dendritic Cells for Immunotherapy.",
+        "abstract": "NA: Precise control over the phenotypic state of immune cells is critical for overcoming the limitations of on-target off-tumor toxicity and inefficient tumor infiltration in cell-based cancer immunotherapy. Here, we developed an engineered DC platform-trained with inactivated bacteria and armored with MnO2 nanoparticles (designated MnArmL-trDCs)-endowed with immune reconfigurability and mechano-transformable characteristics to boost tumor penetration and remodel immune microenvironment. In circulation, the MnO2 armor enforces a stiff mechanical state and globally masks surface immunological ligands (such as CD80, CD86, MHC-II, and CCR7), rendering the DCs biologically silent and resistant to premature immune recognition or hepatic clearance. These engineered cells integrate selectively into lesion sites, enabling restoration of the deformability of dendritic cells and targeted intratumoral immune activation triggered by local pH and hydrogen peroxide. This transformation enables deep tumor penetration, robust activation of TLR, NLR, and cGAS-STING pathways, and efficient trafficking to tumor-draining lymph nodes. In vivo, MnArmL-trDCs induce a pro-inflammatory immune landscape, promote cytotoxic lymphocyte infiltration, reverse immunosuppression, and synergize with anti-PD-1 therapy to achieve sustained tumor regression. This nano-engineering cell armor-based strategy could also be possibly expanded to different cell types in other types of immunotherapies.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75405",
+        "doi_url": "https://doi.org/10.1002/adma.75405",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42935459/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered dendritic cells (DCs) trained with inactivated bacteria and armored with MnO2 nanoparticles (MnArmL-trDCs) to enhance tumor infiltration and immune activation. The MnO2 layer masks immunological ligands in circulation, rendering DCs biologically silent and resistant to clearance. Upon reaching tumors, the DCs undergo pH- and H2O2-triggered transformation, promoting TLR/NLR/cGAS-STING pathway activation, cytotoxic lymphocyte infiltration, and synergy with anti-PD-1 therapy for sustained tumor regression.\",\n  \"key_findings\": [\n    \"MnO2-armed DCs mask immunological ligands in circulation, reducing immune recognition and hepatic clearance\",\n    \"Tumor microenvironment triggers DC transformation via pH and hydrogen peroxide, enhancing tumor penetration\",\n    \"M's strategy synergizes with anti-PD-1 therapy to achieve sustained tumor regression\"\n  ],\n  \"scientific_significance\": \"This nano-engineered cell armor strategy provides a generalizable platform for enhancing immune cell functionality in cancer immunotherapy by enabling precise phenotypic control and mechano-responsive activation.\"\n}",
+        "parsed": {
+          "summary": "This study engineered dendritic cells (DCs) trained with inactivated bacteria and armored with MnO2 nanoparticles (MnArmL-trDCs) to enhance tumor infiltration and immune activation. The MnO2 layer masks immunological ligands in circulation, rendering DCs biologically silent and resistant to clearance. Upon reaching tumors, the DCs undergo pH- and H2O2-triggered transformation, promoting TLR/NLR/cGAS-STING pathway activation, cytotoxic lymphocyte infiltration, and synergy with anti-PD-1 therapy for sustained tumor regression.",
+          "key_findings": [
+            "MnO2-armed DCs mask immunological ligands in circulation, reducing immune recognition and hepatic clearance",
+            "Tumor microenvironment triggers DC transformation via pH and hydrogen peroxide, enhancing tumor penetration",
+            "M's strategy synergizes with anti-PD-1 therapy to achieve sustained tumor regression"
+          ],
+          "scientific_significance": "This nano-engineered cell armor strategy provides a generalizable platform for enhancing immune cell functionality in cancer immunotherapy by enabling precise phenotypic control and mechano-responsive activation."
+        },
+        "elapsed_seconds": 47.4304,
+        "input_tokens": 730,
+        "output_tokens": 239,
+        "thoughts_tokens": null,
+        "total_tokens": 969,
+        "model_eval_seconds": 32.844,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983088",
+        "title": "The neural basis of flavour-nutrient learning.",
+        "abstract": "NA: Animals learn about the external world in part through interoceptive signals1,2. For example, the nutrient content of food is first estimated in the mouth, in the form of flavour, and then it is measured again through slower signals from the gut. How these signals from the mouth and gut are integrated to drive learning is unclear. Here we identify a dopamine (DA) pathway that enables learning about the nutrient content of food. We show that DA neurons in the ventral tegmental area are necessary for associating nutrients with flavours, and that post-ingestive nutrients trigger DA release selectively in a small region of the anterior basolateral amygdala (BLA) but not in canonical DA targets in striatum. This nutrient-triggered DA release occurs preferentially in the left BLA in mice, and this same structure is preferentially activated by post-ingestive nutrients in humans. We identify the gut sensors that are responsible for nutrient-triggered DA release; show that they activate BLA-projecting DA neurons defined by expression of cholecystokinin; and demonstrate that stimulation of DA axon terminals in the anterior BLA drives flavour-nutrient learning but not other aspects of feeding behaviour. Two-photon imaging of neurons in the left anterior BLA reveals that they integrate gustatory and post-ingestive cues, and silencing these neurons prevents flavour-nutrient learning. These findings establish a neural basis for how animals learn about the nutrient content of their food.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11229-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11229-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983088/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how animals integrate oral flavour signals with post-ingestive nutrient cues to learn about food's nutritional content. Using mice and humans, researchers identified a dopamine pathway in the anterior basolateral amygdala that selectively responds to post-ingestive nutrients. This pathway is critical for flavour-nutrient learning, as disrupting it impairs the association between taste and nutrient content, revealing a neural mechanism for nutritional learning.\",\n  \"key_findings\": [\n    \"Dopamine neurons in the ventral tegmental area are necessary for associating nutrients with flavours\",\n    \"Post-ingestive nutrients trigger dopamine release selectively in the anterior basolateral amygdala\",\n    \"Silencing anterior basolateral amygdala neurons prevents flavour-nutrient learning\"\n  ],\n  \"scientific_significance\": \"The study establishes a specific neural circuit that integrates gustatory and post-ingestive signals to drive nutrient learning, advancing understanding of how animals assess food quality.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how animals integrate oral flavour signals with post-ingestive nutrient cues to learn about food's nutritional content. Using mice and humans, researchers identified a dopamine pathway in the anterior basolateral amygdala that selectively responds to post-ingestive nutrients. This pathway is critical for flavour-nutrient learning, as disrupting it impairs the association between taste and nutrient content, revealing a neural mechanism for nutritional learning.",
+          "key_findings": [
+            "Dopamine neurons in the ventral tegmental area are necessary for associating nutrients with flavours",
+            "Post-ingestive nutrients trigger dopamine release selectively in the anterior basolateral amygdala",
+            "Silencing anterior basolateral amygdala neurons prevents flavour-nutrient learning"
+          ],
+          "scientific_significance": "The study establishes a specific neural circuit that integrates gustatory and post-ingestive signals to drive nutrient learning, advancing understanding of how animals assess food quality."
+        },
+        "elapsed_seconds": 32.7863,
+        "input_tokens": 826,
+        "output_tokens": 202,
+        "thoughts_tokens": null,
+        "total_tokens": 1028,
+        "model_eval_seconds": 27.8859,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986976",
+        "title": "Obesity pharmacotherapies and cognition.",
+        "abstract": "NA: Pharmacotherapies for obesity and type 2 diabetes are increasingly being evaluated for their effects on cognition and brain health. Evidence from preclinical models, observational cohorts, and clinical trials has intensified interest, but findings remain mixed. A central challenge is to determine whether potential cognitive effects arise from direct actions on neural circuits, indirect consequences of improved cardiometabolic health, or both. This Review examines the evidence across cardiometabolic disease, aging, and Alzheimer's disease, focusing on glucagon-like peptide-1 (GLP-1)-based therapies and combination approaches that engage glucose-dependent insulinotropic polypeptide, glucagon, and amylin pathways. We assess how receptor pharmacology, brain exposure, metabolic context, and disease stage shape cognitive outcomes and discuss how mechanistic clarity could guide therapies aimed at preserving or improving cognition.",
+        "publication_types": [],
+        "doi": "10.1126/science.aek9987",
+        "doi_url": "https://doi.org/10.1126/science.aek9987",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986976/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review evaluates evidence on obesity pharmacotherapies' impact on cognition, focusing on GLP-1-based treatments and related pathways. It examines how cardiometabolic health improvements, direct neural effects, and disease stage influence cognitive outcomes. Findings indicate mixed results across studies, highlighting the complexity of cognitive effects in obesity treatments.\",\n  \"key_findings\": [\n    \"Mixed evidence from preclinical, observational, and clinical studies on cognitive effects of obesity pharmacotherapies\",\n    \"GLP- 1-based therapies and related pathways are central to understanding cognitive outcomes in obesity treatments\",\n    \"Cognitive effects may stem from direct neural actions or improved cardiometabolic health, depending on disease stage and metabolic context\"\n  ],\n  \"scientific_significance\": \"This review clarifies the mechanisms underlying cognitive effects of obesity pharmacotherapies, distinguishing between direct neural actions and indirect cardiometabolic benefits to inform targeted interventions.\"\n}",
+        "parsed": {
+          "summary": "This review evaluates evidence on obesity pharmacotherapies' impact on cognition, focusing on GLP-1-based treatments and related pathways. It examines how cardiometabolic health improvements, direct neural effects, and disease stage influence cognitive outcomes. Findings indicate mixed results across studies, highlighting the complexity of cognitive effects in obesity treatments.",
+          "key_findings": [
+            "Mixed evidence from preclinical, observational, and clinical studies on cognitive effects of obesity pharmacotherapies",
+            "GLP- 1-based therapies and related pathways are central to understanding cognitive outcomes in obesity treatments",
+            "Cognitive effects may stem from direct neural actions or improved cardiometabolic health, depending on disease stage and metabolic context"
+          ],
+          "scientific_significance": "This review clarifies the mechanisms underlying cognitive effects of obesity pharmacotherapies, distinguishing between direct neural actions and indirect cardiometabolic benefits to inform targeted interventions."
+        },
+        "elapsed_seconds": 33.8703,
+        "input_tokens": 593,
+        "output_tokens": 192,
+        "thoughts_tokens": null,
+        "total_tokens": 785,
+        "model_eval_seconds": 25.4364,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42936894",
+        "title": "3D Cuprous Iodide Cluster-Covalent Organic Framework for Ultrasensitive and Highly Selective Trace HF Detection at Room Temperature.",
+        "abstract": "NA: Hydrofluoric acid (HF) poses a serious and irreversible threat to human health necessitating the development of highly sensitive and selective detection materials. Herein, a three-dimensional cuprous iodide cluster-based covalent organic framework (CuI-MCOF), with diamond topology has been successfully prepared, which shows an ultrafast and highly sensitive response to HF gas. At room temperature, CuI-MCOF displays an exceptional response of 7188% toward 100 ppm HF, with remarkably rapid response/recovery times of 3 s/2 s at 4 ppm. Notably, the sensor achieves an ultralow detection limit of 21 ppb, outperforming previously reported HF sensors. Moreover, it demonstrates outstanding selectivity and anti-interference performance, maintaining stable responses to 4 ppm HF even in the presence of 16 interfering gases (100 ppm each). Experiments combined with density-functional theory calculations reveal that the imine-linker N atoms serve as reversible HF adsorption-desorption sites, while the electron-rich CuI clusters enhance dipole interactions and facilitate charge transfer. Leveraging these properties, an on-chip miniaturized perceptron system integrated with evaluation algorithms is developed for anti-interference HF discrimination, spatiotemporal distribution estimation, and leakage source prediction. This work provides a new strategy for designing high-performance HF sensors and expands the application of cluster-based COFs in gas sensing.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75550",
+        "doi_url": "https://doi.org/10.1002/adma.75550",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42936894/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a 3D cuprous iodide cluster covalent organic framework (CuI-MCOF) with diamond topology for ultrasensitive HF detection. The sensor exhibits a 7188% response to 100 ppm HF at room temperature, with 3-second response and 2-second recovery times at 4 ppm. It achieves a detection limit of 21 ppb and maintains selectivity against 16 interfering gases at 100 ppm each, enabling real-time monitoring applications.\",\n  \"key_findings\": [\n    \"CuI-MCOF demonstrates a 7188% response to 100 ppm HF at room temperature\",\n    \"The sensor achieves a 21 ppb detection limit and 3s/2s response/recovery times at 4 ppm\",\n    \"It maintains stable HF detection in the presence of 16 interfering gases at 100 ppm each\"\n  ],\n  \"scientific_significance\": \"This work advances HF sensing technology by establishing a cluster-based covalent organic framework with exceptional sensitivity, selectivity, and real-time performance for trace hydrogen fluoride detection.\"\n}",
+        "parsed": {
+          "summary": "This study developed a 3D cuprous iodide cluster covalent organic framework (CuI-MCOF) with diamond topology for ultrasensitive HF detection. The sensor exhibits a 7188% response to 100 ppm HF at room temperature, with 3-second response and 2-second recovery times at 4 ppm. It achieves a detection limit of 21 ppb and maintains selectivity against 16 interfering gases at 100 ppm each, enabling real-time monitoring applications.",
+          "key_findings": [
+            "CuI-MCOF demonstrates a 7188% response to 100 ppm HF at room temperature",
+            "The sensor achieves a 21 ppb detection limit and 3s/2s response/recovery times at 4 ppm",
+            "It maintains stable HF detection in the presence of 16 interfering gases at 100 ppm each"
+          ],
+          "scientific_significance": "This work advances HF sensing technology by establishing a cluster-based covalent organic framework with exceptional sensitivity, selectivity, and real-time performance for trace hydrogen fluoride detection."
+        },
+        "elapsed_seconds": 39.5188,
+        "input_tokens": 848,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 1092,
+        "model_eval_seconds": 34.5652,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983089",
+        "title": "Towards observing interstitial hydrogen in solution in metal lattices.",
+        "abstract": "NA: Hydrogen-bearing materials are central to low-carbon energy technologies1, but hydrogen itself is difficult to detect and localize at the nanoscale2-6. This hinders the development of advanced materials with better efficiency. Atom probe tomography (APT) can map hydrogen in three dimensions and at high resolution, yet characterization of dilute, mobile, interstitial hydrogen in metals has remained challenging because of low solubility, the ambiguity owing to hydrogen trapping by structural defects, as well as the artefacts introduced during hydrogen introduction4-6. Here we address whether interstitial hydrogen in solution in materials can be distinguished from defect-trapped hydrogen in APT. Using deuterium as a proxy for hydrogen, together with face-centred cubic (FCC) multi-principal-element alloys (MPEAs) containing coherent FCC precipitates, we show that deuterium atoms reproducibly concentrate in hydrogen-affinitive phases in a manner consistent with theoretical predictions. We further resolve differences in deuterium content between phases with distinct local chemistries and crystal structures, consistent with their different calculated hydrogen solution energies. These findings demonstrate that APT can move beyond identifying hydrides and solute-decorated defects to examine hydrogen in solid solution, providing new insights into hydrogen partitioning in structural alloys and informing materials design for hydrogen-related applications.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11238-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11238-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983089/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether atom probe tomography (APT) can distinguish interstitial hydrogen in solution from defect-trapped hydrogen in metals. Using deuterium in FCC multi-principal-element alloys with coherent precipitates, the researchers demonstrated reproducible deuterium concentration in hydrogen-affinitive phases, aligning with theoretical predictions. The findings confirm APT's capability to analyze hydrogen in solid solution, advancing understanding of hydrogen partitioning in structural alloys for hydrogen-related applications.\",\n  \"key_findings\": [\n    \"Deuterium atoms reproducibly concentrate in hydrogen-affinitive phases within FCC multi-principal-element alloys\",\n    \"Deuterium content differences correlate with distinct local chemistries and crystal structures\",\n    \"Results align with theoretical predictions of hydrogen solution energies\"\n  ],\n  \"scientific_significance\": \"This work establishes atom probe tomography as a viable method for characterizing interstitial hydrogen in solid solution, providing critical insights into hydrogen partitioning mechanisms in structural alloys relevant to hydrogen storage and energy technologies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether atom probe tomography (APT) can distinguish interstitial hydrogen in solution from defect-trapped hydrogen in metals. Using deuterium in FCC multi-principal-element alloys with coherent precipitates, the researchers demonstrated reproducible deuterium concentration in hydrogen-affinitive phases, aligning with theoretical predictions. The findings confirm APT's capability to analyze hydrogen in solid solution, advancing understanding of hydrogen partitioning in structural alloys for hydrogen-related applications.",
+          "key_findings": [
+            "Deuterium atoms reproducibly concentrate in hydrogen-affinitive phases within FCC multi-principal-element alloys",
+            "Deuterium content differences correlate with distinct local chemistries and crystal structures",
+            "Results align with theoretical predictions of hydrogen solution energies"
+          ],
+          "scientific_significance": "This work establishes atom probe tomography as a viable method for characterizing interstitial hydrogen in solid solution, providing critical insights into hydrogen partitioning mechanisms in structural alloys relevant to hydrogen storage and energy technologies."
+        },
+        "elapsed_seconds": 34.2065,
+        "input_tokens": 798,
+        "output_tokens": 210,
+        "thoughts_tokens": null,
+        "total_tokens": 1008,
+        "model_eval_seconds": 28.9064,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986978",
+        "title": "Seafloor geodesy delineates fast megathrust relocking after the giant 2011 Tohoku earthquake.",
+        "abstract": "NA: How and when the subduction megathrust recovers its locking state after a great earthquake is important to understanding earthquake-cycle physics and future hazards. Here we report the delineation of the relocking process after the 2011 magnitude 9 Tohoku earthquake with 14 years of postseismic seafloor geodetic observations. These data, combined with onshore geodetic observations, analyses of repeating earthquakes, and numerical modeling, reveal how the recovery of locking is interrupted by afterslip on the megathrust and accompanied by stress relaxation in the viscoelastic upper mantle. The results indicate that the megathrust has already arrived at a locking state today similar to that before the earthquake despite the ongoing stress relaxation. The acquired knowledge aids understanding of megathrust earthquake cycles at other subduction zones.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeg7301",
+        "doi_url": "https://doi.org/10.1126/science.aeg7301",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986978/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the relocking process of the megathrust following the 2011 Tohoku earthquake using 14 years of seafloor geodetic data, onshore observations, repeating earthquake analyses, and numerical modeling. It reveals that locking recovery was interrupted by afterslip and stress relaxation in the upper mantle, yet the megath. has reached a pre-earthquake locking state despite ongoing processes.\",\n  \"key_findings\": [\n    \"The megathrust relocking process was interrupted by afterslip on the megathrust\",\n    \"Stress relaxation occurred in the viscoelastic upper mantle during recovery\",\n    \"The megathrust has achieved a locking state comparable to pre-earthquake conditions despite ongoing stress relaxation\"\n  ],\n  \"scientific_significance\": \"The findings provide critical insights into the postseismic behavior of subduction zones, clarifying how megathrust locking states recover after great earthquakes through a combination of seismic and viscoelastic processes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the relocking process of the megathrust following the 2011 Tohoku earthquake using 14 years of seafloor geodetic data, onshore observations, repeating earthquake analyses, and numerical modeling. It reveals that locking recovery was interrupted by afterslip and stress relaxation in the upper mantle, yet the megath. has reached a pre-earthquake locking state despite ongoing processes.",
+          "key_findings": [
+            "The megathrust relocking process was interrupted by afterslip on the megathrust",
+            "Stress relaxation occurred in the viscoelastic upper mantle during recovery",
+            "The megathrust has achieved a locking state comparable to pre-earthquake conditions despite ongoing stress relaxation"
+          ],
+          "scientific_significance": "The findings provide critical insights into the postseismic behavior of subduction zones, clarifying how megathrust locking states recover after great earthquakes through a combination of seismic and viscoelastic processes."
+        },
+        "elapsed_seconds": 37.2781,
+        "input_tokens": 614,
+        "output_tokens": 207,
+        "thoughts_tokens": null,
+        "total_tokens": 821,
+        "model_eval_seconds": 27.7272,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42944617",
+        "title": "Breaking the Theoretical Capacity Limit of Fullerene Anode in Alkali-Ion Batteries Through Two-Dimensional Covalent Network Engineering.",
+        "abstract": "NA: Carbon-based anode materials offer compelling advantages for rechargeable ion batteries, and particularly fullerene C60 has a higher theoretical capacity of 446 mAh g-1 than the traditional graphite anode in lithium-ion batteries (LIBs). However, its zero-dimensional cage structure tends to spontaneously aggregate, and its alkali-metal intercalated intermediate (fulleride) facilely dissolves in organic electrolytes, severely limiting its practical anode capacity and deteriorating recyclability. Herein, for the first time, we apply metal-free two-dimensional C60 covalent network (2D-C60) with distinct bonding patterns, including tetragonal phase (TP-2D-C60) and hexagonal phase (HP-2D-C60) nanosheets, as novel anode materials for LIBs, achieving high anode capacity, breaking the theoretical limit of C60 molecule. TP-2D-C60 delivers a specific capacity of 522.0 mAh g-1 at 0.1 A g-1, outperforming HP-2D-C60 (408.6 mAh g-1) and pristine C60 (3.4 mAh g-1). This phenomenon is rationalized by DFT calculations, revealing that TP-2D-C60 exhibits a higher density of Li-ion binding sites and a lower Li-ion migration barrier than HP-2D-C60. To assess its universality across ion-battery chemistries, we further demonstrate the application of TP-2D-C60 as an anode for sodium-ion batteries (SIBs), achieving a high discharge capacity of 309.9 mAh g-1 at 0.1 A g-1.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75497",
+        "doi_url": "https://doi.org/10.1002/adma.75497",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42944617/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing fullerene C60's theoretical capacity in alkali-ion batteries by engineering two-dimensional covalent networks. The researchers synthesized tetragonal (TP-2D-C60) and hexagonal (HP-2D-C60) C60 nanosheets, achieving 522.0 mAh g-1 in lithium-ion batteries—exceeding pristine C60's 3.4 mAh g-1. DFT calculations indicate higher lithium binding sites and lower migration barriers in TP-2D-C60. The material also functions effectively in sodium-ion batteries.\",\n  \"key_findings\": [\n    \"TP-2D-C60 achieves 522.0 mAh g-1 in lithium-ion batteries, surpassing pristine C60's 3.4 mAh g-1\",\n    \"DFT calculations reveal TP-2D-C60 has higher lithium binding sites and lower migration barriers than HP-2D-C60\",\n    \"TP-2D-C60 demonstrates high capacity in sodium-ion batteries (309.9 mAh g-1)\"\n  ],\n  \"scientific_significance\": \"This work establishes a strategy to overcome fullerene's theoretical capacity limits in alkali-ion batteries through structural engineering, enabling higher capacities than the molecular limit.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing fullerene C60's theoretical capacity in alkali-ion batteries by engineering two-dimensional covalent networks. The researchers synthesized tetragonal (TP-2D-C60) and hexagonal (HP-2D-C60) C60 nanosheets, achieving 522.0 mAh g-1 in lithium-ion batteries—exceeding pristine C60's 3.4 mAh g-1. DFT calculations indicate higher lithium binding sites and lower migration barriers in TP-2D-C60. The material also functions effectively in sodium-ion batteries.",
+          "key_findings": [
+            "TP-2D-C60 achieves 522.0 mAh g-1 in lithium-ion batteries, surpassing pristine C60's 3.4 mAh g-1",
+            "DFT calculations reveal TP-2D-C60 has higher lithium binding sites and lower migration barriers than HP-2D-C60",
+            "TP-2D-C60 demonstrates high capacity in sodium-ion batteries (309.9 mAh g-1)"
+          ],
+          "scientific_significance": "This work establishes a strategy to overcome fullerene's theoretical capacity limits in alkali-ion batteries through structural engineering, enabling higher capacities than the molecular limit."
+        },
+        "elapsed_seconds": 57.226,
+        "input_tokens": 819,
+        "output_tokens": 282,
+        "thoughts_tokens": null,
+        "total_tokens": 1101,
+        "model_eval_seconds": 38.9623,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983090",
+        "title": "Twist-angle-dependent quantum phase diagrams in moiré bilayer MoTe2.",
+        "abstract": "NA: Two-dimensional semiconducting moiré superlattices provide a highly tunable platform for investigating strongly correlated and topological quantum phases1-5. As a prototypical example, twisted bilayer MoTe2 (tMoTe2) has been shown to host fractional topological phases at zero magnetic field6-20. However, their evolution with twist angle and competition with other correlated quantum states remain largely unexplored. Here we report a systematic transport study of twist-angle-dependent phase diagrams in tMoTe2 across a range of 3.79°-5.76°, revealing an evolution from valley-polarized, fractional topological states to valley-degenerate correlated states and superconductivity. At relatively small twist angles, partially filled Chern bands of tMoTe2 host fractional quantum anomalous Hall states following the Jain sequence, together with signatures of an anomalous composite Fermi liquid at moiré hole filling factor νh = 1/2. Increasing twist angle progressively suppresses fractional topological phases and reconstructs the half-filled Chern band into symmetry-breaking integer Chern insulating states. At νh = 1, we observe a transition from robust integer quantum anomalous Hall insulators at small angles to displacement-field-tuned, topologically trivial correlated insulators at larger angles. At twist angles above approximately 5.6°, superconductivity emerges adjacent to the νh = 1 correlated insulator, with a phase diagram closely resembling that recently reported in twisted bilayer WSe2 (refs. 21-24). Our results indicate a unified twist-angle-driven phase evolution linking fractional topology, symmetry breaking, magnetic order and superconductivity, providing new insight into the emergent quantum phenomena in moiré systems.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11274-0",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11274-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983090/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how the twist angle in twisted bilayer MoTe2 influences quantum phase transitions. Using transport measurements across 3.79°-5.76° twist angles, researchers observed an evolution from valley-polarized fractional topological states to valley-degenerate correlated states and superconductivity. The phase diagram reveals transitions between fractional quantum anomalous Hall states, integer quantum anomalous Hall insulators, and superconductivity as twist angle increases.\",\n  \"key_findings\": [\n    \"Evolution from valley-polarized fractional topological states to valley-degenerate correlated states and superconductivity across 3.79°-5.76° twist angles\",\n    \"At small twist angles, partially filled Chern bands host fractional quantum anomalous Hall states following the Jain sequence\",\n    \"Superconductivity emerges near νh = 1 at twist angles above ~5.6°, resembling twisted bilayer WSe2 phase diagrams\"\n  ],\n  \"scientific_significance\": \"This work establishes a unified mechanism for twist-angle-driven quantum phase evolution in moiré systems, linking fractional topology, symmetry breaking, and superconductivity through systematic phase diagram mapping.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how the twist angle in twisted bilayer MoTe2 influences quantum phase transitions. Using transport measurements across 3.79°-5.76° twist angles, researchers observed an evolution from valley-polarized fractional topological states to valley-degenerate correlated states and superconductivity. The phase diagram reveals transitions between fractional quantum anomalous Hall states, integer quantum anomalous Hall insulators, and superconductivity as twist angle increases.",
+          "key_findings": [
+            "Evolution from valley-polarized fractional topological states to valley-degenerate correlated states and superconductivity across 3.79°-5.76° twist angles",
+            "At small twist angles, partially filled Chern bands host fractional quantum anomalous Hall states following the Jain sequence",
+            "Superconductivity emerges near νh = 1 at twist angles above ~5.6°, resembling twisted bilayer WSe2 phase diagrams"
+          ],
+          "scientific_significance": "This work establishes a unified mechanism for twist-angle-driven quantum phase evolution in moiré systems, linking fractional topology, symmetry breaking, and superconductivity through systematic phase diagram mapping."
+        },
+        "elapsed_seconds": 53.2206,
+        "input_tokens": 804,
+        "output_tokens": 249,
+        "thoughts_tokens": null,
+        "total_tokens": 1053,
+        "model_eval_seconds": 35.3704,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42986982",
+        "title": "Quantum gases below 10 picokelvin in space.",
+        "abstract": "NA: Ultracold atom platforms enable low temperatures and long free evolution times, which are crucial for fundamental physics tests and atom interferometry. The lowest equivalent temperature reported in such a system is 38 pK with a free expansion time of 2 s, achieved in atom-chip-based magnetic traps in microgravity. Optical dipole trap (ODT) systems offer better optical access and the flexibility to condense both magnetic and non-magnetic atoms, but have not been used to prepare quantum degenerate gases under microgravity conditions. Here we report an ODT-based Bose-Einstein condensate created aboard the China Space Station, containing 2.0 × 104 atoms, reaching an equivalent temperature of [Formula: see text] pK with a free expansion time of 7.0 s. This record-low temperature could stimulate a new generation of ODT-based experiments in quantum simulation and precision measurements in space.",
+        "publication_types": [],
+        "doi": "10.1126/science.aea5324",
+        "doi_url": "https://doi.org/10.1126/science.aea5324",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42986982/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates ultracold quantum gases in microgravity using optical dipole traps. Researchers created a Bose-Einstein condensate aboard the China Space Station with 20,000 atoms at an equivalent temperature of 10 pK, achieving a free expansion time of 7 seconds. The record-low temperature enables advanced quantum simulations and precision measurements in space environments.\",\n  \"key_findings\": [\n    \"Bose-Einstein condensate achieved at 10 picokelvin equivalent temperature\",\n    \"Free expansion time of 7.0 seconds in microgravity\",\n    \"20,00:00 atoms in optical dipole trap system\"\n  ],\n  \"scientific_significance\": \"This work establishes a new benchmark for ultracold quantum gas temperatures in space, advancing capabilities for quantum simulation and precision measurements under microgravity conditions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates ultracold quantum gases in microgravity using optical dipole traps. Researchers created a Bose-Einstein condensate aboard the China Space Station with 20,000 atoms at an equivalent temperature of 10 pK, achieving a free expansion time of 7 seconds. The record-low temperature enables advanced quantum simulations and precision measurements in space environments.",
+          "key_findings": [
+            "Bose-Einstein condensate achieved at 10 picokelvin equivalent temperature",
+            "Free expansion time of 7.0 seconds in microgravity",
+            "20,00:00 atoms in optical dipole trap system"
+          ],
+          "scientific_significance": "This work establishes a new benchmark for ultracold quantum gas temperatures in space, advancing capabilities for quantum simulation and precision measurements under microgravity conditions."
+        },
+        "elapsed_seconds": 34.767,
+        "input_tokens": 620,
+        "output_tokens": 183,
+        "thoughts_tokens": null,
+        "total_tokens": 803,
+        "model_eval_seconds": 25.0329,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42944631",
+        "title": "Magnetically-Gated Haptic Locomotion Display Enabled by Motion-Coupled Light Emission.",
+        "abstract": "NA: Magnetic actuation is a powerful strategy in robotics for tactile feedback, navigation, and biomedical applications and can be extended to interactive displays by coupling mechanical motion with optical emission. Here, we present a magnetically-gated haptic locomotion display (MHLD) that integrates a flexible alternating-current (AC)-driven quantum-dot light-emitting diode (QLED) with a magnetoresponsive elastomeric soft actuator. Under external magnetic fields, the soft actuator deforms and modulates its contact with the AC display, triggering electroluminescence (EL) whose emission area and intensity are directly coupled to mechanical displacement. A maximum luminance of 396 cd m- 2 was achieved, with emission area and intensity varying with deformation. The device maintains stable output under repeated actuation, with directional motion programmable via magnetization profiles. Demonstrations include a 3 × 3 haptic feedback array visualizing pixel displacement and a maze-navigating locomotive display with path-dependent emission. Finite element simulations support the contact-mediated formation of the vertical electric field underlying motion-coupled light emission.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75491",
+        "doi_url": "https://doi.org/10.1002/adma.75491",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42944631/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a magnetically-gated haptic locomotion display (MHLD) using a flexible AC-driven quantum-dot LED coupled with a magnetoresponsive elastom. External magnetic fields induce actuator deformation, modulating contact with the display to trigger motion-coupled electroluminescence. Emission area and intensity scale with mechanical displacement, achieving 396 cd m-2 luminance. The system enables programmable directional motion and stable operation for haptic feedback applications.\",\n  \"key_findings\": [\n    \"Magnetic fields induce actuator deformation that modulates contact with the quantum-dot LED\",\n    \"Emission area and intensity directly correlate with mechanical displacement magnitude\",\n    \"The device achieves 396 cd m-2 luminance with programmable directional motion\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a novel mechanism for motion-coupled light emission in haptic displays, enabling direct mechanical displacement-to-light emission coupling without external electronics.\"\n}",
+        "parsed": {
+          "summary": "This study developed a magnetically-gated haptic locomotion display (MHLD) using a flexible AC-driven quantum-dot LED coupled with a magnetoresponsive elastom. External magnetic fields induce actuator deformation, modulating contact with the display to trigger motion-coupled electroluminescence. Emission area and intensity scale with mechanical displacement, achieving 396 cd m-2 luminance. The system enables programmable directional motion and stable operation for haptic feedback applications.",
+          "key_findings": [
+            "Magnetic fields induce actuator deformation that modulates contact with the quantum-dot LED",
+            "Emission area and intensity directly correlate with mechanical displacement magnitude",
+            "The device achieves 396 cd m-2 luminance with programmable directional motion"
+          ],
+          "scientific_significance": "This work demonstrates a novel mechanism for motion-coupled light emission in haptic displays, enabling direct mechanical displacement-to-light emission coupling without external electronics."
+        },
+        "elapsed_seconds": 40.7916,
+        "input_tokens": 668,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 874,
+        "model_eval_seconds": 28.8311,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983091",
+        "title": "Ecological and social cues orchestrate concerted courtship in Drosophila.",
+        "abstract": "NA: Mating decisions are often attributed to the sensory signalling between prospective sexual partners. Yet these interactions are also shaped by the broader environmental context in which they unfold, to appropriately align sexual arousal with reproductive opportunities1-6. Here we show that in Drosophila erecta mating is strictly contingent on the ecological and social environment generated as flies densely aggregate in groups on a food patch. We find that food volatiles directly promote male sexual arousal, triggering individuals to sample and pursue potential mates, giving rise to dynamic interactions across the group. The ensuing visual motion transforms each male's visual field, which in turn further amplifies his arousal, generating a multisensory feedback loop that coordinately promotes courtship across individuals. D. erecta's strict dependence on environmental cues appears latent in related species, such as Drosophila melanogaster, where food odour can promote arousal7 but is dispensable for vigorous courtship. Comparative circuit analyses show that species-specific thresholds for sexual arousal reflect variation in how olfactory input modulates conserved nodes controlling courtship drive, rendering food volatiles a strict sensory gate only in D. erecta. Together, our findings highlight how environmental cues not directly tied to sexual signalling can profoundly influence reproductive behaviour and reorganize the social landscape to ensure mating occurs in contexts where reproductive opportunities are abundant.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11209-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11209-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983091/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how ecological and social factors influence courtship behavior in Drosophila erecta. Using group aggregation on food patches, researchers demonstrated that food volatiles trigger male sexual arousal, initiating courtship sequences. Visual motion from group dynamics further amplifies arousal, creating a multisensory feedback loop that coordinates courtship across individuals. The findings suggest environmental cues act as critical gatekeepers for mating success in this species.\",\n  \"key_findings\": [\n    \"Food volatiles directly promote male sexual arousal in Drosophila erecta\",\n    \"Visual motion from group dynamics amplifies male arousal through multisensory feedback\",\n    \"Drosophila erecta requires environmental cues for courtship, unlike Drosophila melanogaster where food odors are dispensable\"\n  ],\n  \"scientific_significance\": \"The study reveals how environmental cues can act as strict sensory gatekeepers for courtship behavior, highlighting a mechanism by which ecological context coordinates reproductive opportunities within social groups.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how ecological and social factors influence courtship behavior in Drosophila erecta. Using group aggregation on food patches, researchers demonstrated that food volatiles trigger male sexual arousal, initiating courtship sequences. Visual motion from group dynamics further amplifies arousal, creating a multisensory feedback loop that coordinates courtship across individuals. The findings suggest environmental cues act as critical gatekeepers for mating success in this species.",
+          "key_findings": [
+            "Food volatiles directly promote male sexual arousal in Drosophila erecta",
+            "Visual motion from group dynamics amplifies male arousal through multisensory feedback",
+            "Drosophila erecta requires environmental cues for courtship, unlike Drosophila melanogaster where food odors are dispensable"
+          ],
+          "scientific_significance": "The study reveals how environmental cues can act as strict sensory gatekeepers for courtship behavior, highlighting a mechanism by which ecological context coordinates reproductive opportunities within social groups."
+        },
+        "elapsed_seconds": 42.9858,
+        "input_tokens": 704,
+        "output_tokens": 208,
+        "thoughts_tokens": null,
+        "total_tokens": 912,
+        "model_eval_seconds": 29.5831,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
