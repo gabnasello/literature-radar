@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261121T135625Z",
+  "generated_at_utc": "2026-11-21 14:24:25 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 221,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. The research identifies outward solvent evaporation delaying α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage and defects. A self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and create a hydrophobic barrier, achieving 24.84% power conversion efficiency in small cells and 21.46% in mini-modules with stable performance after 1000h damp aging.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite photovoltaics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during processing. The research identifies outward solvent evaporation delaying α-phase conversion at the buried interface, causing kinetic mismatch that worsens moisture damage and defects. A self-segregating molecule (NFA) was designed to synchronize crystallization, passivate defects, and create a hydrophobic barrier, achieving 24.84% power conversion efficiency in small cells and 21.46% in mini-modules with stable performance after 1000h damp aging.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture damage",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite photovoltaics."
+        },
+        "elapsed_seconds": 41.4652,
+        "input_tokens": 885,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1153,
+        "model_eval_seconds": 36.3997,
+        "error": "summary must contain 45–65 words; received 87.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates why early humans settled only briefly in 'Green Arabia' despite abundant freshwater. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artifacts or knappable stone at 55 of 125 sites with paleolake deposits. The results indicate that early human settlement was constrained by the availability of stone for tool production, not water alone, suggesting a dual requirement of water and lithic resources for habitation.\",\n  \"key_findings\": [\n    \"No lithic artifacts or knappable stone were found at 55 of 125 sites with paleolake deposits\",\n    \"Spatial modeling shows 57% of water-accessible terrain lacks knappable stone\",\n    \"Convergent patterns across Africa, North America, and Asia indicate stone availability, not water, was the primary constraint on early human dispersal\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that early human settlement in arid regions required both water and lithic raw materials, challenging models that prioritize water availability alone and highlighting the role of geological constraints in human dispersal.\"\n}",
+        "parsed": {
+          "summary": "This study investigates why early humans settled only briefly in 'Green Arabia' despite abundant freshwater. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artifacts or knappable stone at 55 of 125 sites with paleolake deposits. The results indicate that early human settlement was constrained by the availability of stone for tool production, not water alone, suggesting a dual requirement of water and lithic resources for habitation.",
+          "key_findings": [
+            "No lithic artifacts or knappable stone were found at 55 of 125 sites with paleolake deposits",
+            "Spatial modeling shows 57% of water-accessible terrain lacks knappable stone",
+            "Convergent patterns across Africa, North America, and Asia indicate stone availability, not water, was the primary constraint on early human dispersal"
+          ],
+          "scientific_significance": "The study demonstrates that early human settlement in arid regions required both water and lithic raw materials, challenging models that prioritize water availability alone and highlighting the role of geological constraints in human dispersal."
+        },
+        "elapsed_seconds": 38.1992,
+        "input_tokens": 856,
+        "output_tokens": 245,
+        "thoughts_tokens": null,
+        "total_tokens": 1101,
+        "model_eval_seconds": 33.2904,
+        "error": "summary must contain 45–65 words; received 73.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and inflammation in the gut. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"Prostaglandin activates PKA to upregulate tissue-protective factors in ILC3s\",\n    \"IL-23 decreases PRKAR1A, a PKA inhibitor, in ILC3s\",\n    \"IL-23 overproduction reduces ILC3s and triggers gut inflammation via PKA hyperactivity\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and inflammation in the gut. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "Prostaglandin activates PKA to upregulate tissue-protective factors in ILC3s",
+            "IL-23 decreases PRKAR1A, a PKA inhibitor, in ILC3s",
+            "IL-23 overproduction reduces ILC3s and triggers gut inflammation via PKA hyperactivity"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation."
+        },
+        "elapsed_seconds": 41.8777,
+        "input_tokens": 800,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1075,
+        "model_eval_seconds": 37.013,
+        "error": "summary must contain 45–65 words; received 77.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43000118",
+        "title": "Melting and resistivity of iron at Earth core conditions using pulsed Joule heating.",
+        "abstract": "NA: The melting temperature and electrical resistivity of iron at high pressure are essential for understanding Earth's core. Here we use a new high-pressure method - microsecond pulsed Joule heating in diamond anvil cells - to identify melting and measure resistivity of solid and liquid iron. More than 300 reproducible melting measurements indicate a surprisingly shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. Extrapolating in pressure and iron alloy composition, and combining with our 76 [Formula: see text] cm measurement of liquid iron's resistivity, we infer a relatively cold core-mantle boundary (3430 K) with a low adiabatic outer core heat flow (9.8 TW). This suggests thermal convection alone could have powered the geodynamo prior to inner core formation and that today's lowermost mantle is fully solid.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh5267",
+        "doi_url": "https://doi.org/10.1126/science.aeh5267",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43000118/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates iron's melting temperature and resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. The findings suggest a cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), implying thermal convection could power the geodynamo before inner core formation.\",\n  \"key_findings\": [\n    \"A shallow melting curve for iron at 200 GPa, reaching 4160 ± 80 K\",\n    \"Inferred cold core-mantle boundary at 3430 K\",\n    \"Low adiabatic outer core heat flow of 9.8 TW\"\n  ],\n  \"scientific_significance\": \"The study provides critical constraints on Earth's core thermal structure, suggesting thermal convection alone could drive the geodynamo prior to inner core formation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates iron's melting temperature and resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. The findings suggest a cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), implying thermal convection could power the geodynamo before inner core formation.",
+          "key_findings": [
+            "A shallow melting curve for iron at 200 GPa, reaching 4160 ± 80 K",
+            "Inferred cold core-mantle boundary at 3430 K",
+            "Low adiabatic outer core heat flow of 9.8 TW"
+          ],
+          "scientific_significance": "The study provides critical constraints on Earth's core thermal structure, suggesting thermal convection alone could drive the geodynamo prior to inner core formation."
+        },
+        "elapsed_seconds": 35.3487,
+        "input_tokens": 726,
+        "output_tokens": 233,
+        "thoughts_tokens": null,
+        "total_tokens": 959,
+        "model_eval_seconds": 30.5108,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920384",
+        "title": "Shear Alignment Polymer Extrusion 3D Printing of High-Loading Nanocomposites With Long-Range Ordered Nanostructures.",
+        "abstract": "NA: Additive manufacturing has long struggled to bridge nanoscale functionalities with complex macroscale geometries, particularly for nanocomposites with high nanofiller loadings and ordered structures. Herein, we report shear alignment polymer extrusion (SHAPE) three-dimensional (3D) printing, a strategy that uses high shear forces to align highly loaded nanomaterials (e.g., boron nitride (BN) nanosheets and carbon nanotubes) along defined directions in polymer matrices, enabling the scalable fabrication of macroscopic nanocomposites with complex 3D architectures. A key advancement is the development of high-loading filaments (e.g., 55 wt% BN in polylactic acid) and a high-shear extrusion system, overcoming the traditional challenges of poor processability and structural integrity in high-filler composites. Post-sintering yields pure nanomaterial architectures that fully replicate the 3D printed geometry with zero volume shrinkage and exceptional thermomechanical stability-withstanding temperatures above the polymer melting and decomposition without structural failure. These materials exhibit tailored functionalities: vertically aligned BN composites show enhanced thermal conductivity (1.07 W/m/K); horizontally aligned BN structures offer efficient thermal insulation (0.071 W/m/K); and BN membranes display robust mechanical performance (a compressive strength of 3.4 MPa). Generalizable to diverse nanomaterials (0D to 2D), SHAPE opens new avenues for cross-scale design in thermal management, energy storage, and advanced structural materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202522591",
+        "doi_url": "https://doi.org/10.1002/adma.202522591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920384/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride and carbon nanotubes in polymer matrices, enabling scalable production of complex geometries. Results show 55 wt% boron nitride composites with zero volume shrinkage, exceptional thermal stability, and tailored thermal conductivity (1.07 W/m/K) and mechanical properties.\",\n  \"key_findings\": [\n    \"SHAPE 3D printing achieves 55 wt% boron nitride loading in polylactic acid composites\",\n    \"Aligned nanocomposites exhibit zero volume shrinkage and thermal stability above polymer melting temperatures\",\n    \"Vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned ones provide thermal insulation (0.071 W/m/K)\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a scalable method for creating nanocomposites with high nanofiller loadings and long-range ordered nanostructures, advancing cross-scale design for thermal management and structural applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates shear alignment polymer extrusion (SHAPE) 3D printing for fabricating high-loading nanocomposites with ordered nanostructures. The approach uses high shear forces to align nanofillers like boron nitride and carbon nanotubes in polymer matrices, enabling scalable production of complex geometries. Results show 55 wt% boron nitride composites with zero volume shrinkage, exceptional thermal stability, and tailored thermal conductivity (1.07 W/m/K) and mechanical properties.",
+          "key_findings": [
+            "SHAPE 3D printing achieves 55 wt% boron nitride loading in polylactic acid composites",
+            "Aligned nanocomposites exhibit zero volume shrinkage and thermal stability above polymer melting temperatures",
+            "Vertically aligned structures show enhanced thermal conductivity (1.07 W/m/K) while horizontally aligned ones provide thermal insulation (0.071 W/m/K)"
+          ],
+          "scientific_significance": "This work demonstrates a scalable method for creating nanocomposites with high nanofiller loadings and long-range ordered nanostructures, advancing cross-scale design for thermal management and structural applications."
+        },
+        "elapsed_seconds": 48.054,
+        "input_tokens": 762,
+        "output_tokens": 245,
+        "thoughts_tokens": null,
+        "total_tokens": 1007,
+        "model_eval_seconds": 32.2303,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window prevents amplification. Mechanistically, HFD recruits neutrophils, which express Nlrp3 and Il1b, activating a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states during specific temporal windows can durably reprogram immune responses.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute type 17 skin inflammation to chronic obesity levels\",\n    \"HFD outside this window or switching obese mice to low-fat diet during the window prevents inflammatory amplification\",\n    \"Neutrophil recruitment and NLRP3-IL-1β axis activation license pathogenic TH17 cells, persisting as chromatin-poised tissue-resident memory T cells\"\n  ],\n  \"scientific_significance\": \"This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune memory, revealing a mechanism by which short-lived physiological changes influence long-term inflammatory responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window prevents amplification. Mechanistically, HFD recruits neutrophils, which express Nlrp3 and Il1b, activating a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states during specific temporal windows can durably reprogram immune responses.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute type 17 skin inflammation to chronic obesity levels",
+            "HFD outside this window or switching obese mice to low-fat diet during the window prevents inflammatory amplification",
+            "Neutrophil recruitment and NLRP3-IL-1β axis activation license pathogenic TH17 cells, persisting as chromatin-poised tissue-resident memory T cells"
+          ],
+          "scientific_significance": "This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune memory, revealing a mechanism by which short-lived physiological changes influence long-term inflammatory responses."
+        },
+        "elapsed_seconds": 49.7945,
+        "input_tokens": 884,
+        "output_tokens": 323,
+        "thoughts_tokens": null,
+        "total_tokens": 1207,
+        "model_eval_seconds": 44.8445,
+        "error": "summary must contain 45–65 words; received 114.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019389",
+        "title": "Early epidemiological and spatial assessment of the Bundibugyo virus outbreak 2026.",
+        "abstract": "NA: A Bundibugyo virus outbreak was first reported on May 15th, 2026 in Ituri province, Democratic Republic of the Congo, with multiple cases reported across health zones during the early phase of the outbreak and suggestions of circulation weeks prior to detection. We pair highly resolved case and testing records with human mobility data to investigate the early outbreak dynamics of Bundibugyo virus disease (BVD). We show that human movement was a principle driver of early spatial expansion between May 10th and June 1st when the number of health zones and health areas reporting positive cases increased by 12 and 49, respectively. The early doubling time was estimated at ~10 days. Our work shows the rapid spatial expansion and growth of BVD with implications for intervention strategies.",
+        "publication_types": [],
+        "doi": "10.1126/science.aej4586",
+        "doi_url": "https://doi.org/10.1126/science.aej4586",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019389/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated early Bundibugyo virus disease outbreak dynamics in the Democratic Republic of the Congo during May 2026. Using case records and human mobility data, researchers analyzed spatial expansion from May 10th to June 1st. They found human movement drove the spread, increasing reported cases across 12 health zones and 49 health areas within ~10 days of doubling time. The rapid expansion highlights critical timing for intervention strategies.\",\n  \"key_findings\": [\n    \"Human mobility was a primary driver of early spatial expansion in the Bundibugyo virus outbreak\",\n    \"The outbreak expanded to 12 health zones and 49 health areas within 10 days of doubling time\",\n    \"Early outbreak dynamics showed rapid spatial growth with implications for timely intervention strategies\"\n  ],\n  \"scientific_significance\": \"This work demonstrates how human movement patterns critically influence early viral spread dynamics, providing insights for optimizing outbreak response timing in resource-limited settings.\"\n}",
+        "parsed": {
+          "summary": "This study investigated early Bundibugyo virus disease outbreak dynamics in the Democratic Republic of the Congo during May 2026. Using case records and human mobility data, researchers analyzed spatial expansion from May 10th to June 1st. They found human movement drove the spread, increasing reported cases across 12 health zones and 49 health areas within ~10 days of doubling time. The rapid expansion highlights critical timing for intervention strategies.",
+          "key_findings": [
+            "Human mobility was a primary driver of early spatial expansion in the Bundibugyo virus outbreak",
+            "The outbreak expanded to 12 health zones and 49 health areas within 10 days of doubling time",
+            "Early outbreak dynamics showed rapid spatial growth with implications for timely intervention strategies"
+          ],
+          "scientific_significance": "This work demonstrates how human movement patterns critically influence early viral spread dynamics, providing insights for optimizing outbreak response timing in resource-limited settings."
+        },
+        "elapsed_seconds": 31.5905,
+        "input_tokens": 699,
+        "output_tokens": 207,
+        "thoughts_tokens": null,
+        "total_tokens": 906,
+        "model_eval_seconds": 26.8233,
+        "error": "summary must contain 45–65 words; received 69.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting systems. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.\",\n  \"key_findings\": [\n    \"Identification of cocatalyst incompatibility as the critical bottleneck for stable pure water splitting over Ta3N5\",\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a fundamental design principle for efficient photocatalytic pure water splitting in nitride and oxynitride materials, providing mechanistic insights for advancing solar-driven water splitting technologies.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting systems. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.",
+          "key_findings": [
+            "Identification of cocatalyst incompatibility as the critical bottleneck for stable pure water splitting over Ta3N5",
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a fundamental design principle for efficient photocatalytic pure water splitting in nitride and oxynitride materials, providing mechanistic insights for advancing solar-driven water splitting technologies."
+        },
+        "elapsed_seconds": 45.8528,
+        "input_tokens": 820,
+        "output_tokens": 302,
+        "thoughts_tokens": null,
+        "total_tokens": 1122,
+        "model_eval_seconds": 40.9201,
+        "error": "summary must contain 45–65 words; received 85.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983081",
+        "title": "Tracing the spread of Celtic languages using ancient genomics.",
+        "abstract": "NA: Celtic languages are today restricted to Europe's Atlantic fringes but were widely spoken across the continent during the Iron Age1-3. How Celtic achieved this early distribution remains contested4, with alternative archaeological and linguistic models proposing different homelands and dispersal routes. Here we analyse genome-wide data from 4,587 ancient individuals, focusing on Bronze and Iron Age Europe, to test the extent to which these models fit reconstructed demographic histories. We identify three main processes shaping European population structure that are relevant to the Celtic dispersal. First, the arrival of Steppe-related ancestry with Bell Beaker-associated groups after around 4400 BP (calibrated years before present or 1950 CE) across the region in which Celtic and related languages were later spoken. Second, a movement from southwestern Europe into Britain during the Bronze Age (3800-3200 BP), consistent with scenarios in which Celtic formed along the Atlantic façade. Third, a westward expansion of ancestry related to Late Bronze Age Knovíz-Urnfield-associated populations from eastern central Europe (3200-2800 BP), affecting France, the British Isles, northeastern Iberia and Italy and later associated with Iron Age Hallstatt and La Tène contexts5-8. Although all three movements have parallels with proposed models, we argue that the final movement, from eastern central Europe, is most parsimonious for the spread of Celtic. Although human history does not necessarily follow a parsimonious trajectory9 and language shifts need not track genetic change, these results delimit the demographic scenarios that are plausible for the emergence of Celtic in prehistoric Europe.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11198-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11198-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983081/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing genome-wide data, the researchers identified three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, and Italy. The findings suggest that the eastern central European migration is the most parsimonious explanation for Celtic language spread, though language shifts may not directly correlate with genetic changes.\",\n  \"key_findings\": [\n    \"Steppe-related ancestry entered Europe via Bell Beaker groups approximately 4400 years ago\",\n    \"Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP\",\n    \"Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions where Celtic languages later emerged\"\n  ],\n  \"scientific_significance\": \"This research provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal in prehistoric Europe, clarifying the role of population movements in language spread despite potential decoupling between genetic and linguistic evolution.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing genome-wide data, the researchers identified three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, and Italy. The findings suggest that the eastern central European migration is the most parsimonious explanation for Celtic language spread, though language shifts may not directly correlate with genetic changes.",
+          "key_findings": [
+            "Steppe-related ancestry entered Europe via Bell Beaker groups approximately 4400 years ago",
+            "Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP",
+            "Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions where Celtic languages later emerged"
+          ],
+          "scientific_significance": "This research provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal in prehistoric Europe, clarifying the role of population movements in language spread despite potential decoupling between genetic and linguistic evolution."
+        },
+        "elapsed_seconds": 42.4444,
+        "input_tokens": 874,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1149,
+        "model_eval_seconds": 37.4846,
+        "error": "summary must contain 45–65 words; received 97.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019390",
+        "title": "The cryosphere beyond a planetary safe operating space.",
+        "abstract": "NA: The cryosphere plays a vital role in regulating planetary dynamics and habitability, yet it remains unclear whether its essential functions remain within a safe operating space (SOS) amid Anthropocene change. Here, we propose a cryosphere SOS and systematically evaluate its contributions to Earth system resilience using the planetary boundaries framework. Multiple lines of evidence indicate an accelerating and partly irreversible loss of cryospheric integrity, driven by amplifying feedbacks. Key cryospheric control variables either have left or are committed to departing from Holocene-like conditions. We conclude that the cryosphere has breached its SOS and is on a trajectory that locks in long-term risks for human societies and ecosystems. Safeguarding planetary resilience therefore requires explicit consideration of cryosphere change and its interactions across the Earth system.",
+        "publication_types": [],
+        "doi": "10.1126/science.aef5636",
+        "doi_url": "https://doi.org/10.1126/science.aef5636",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019390/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study assesses whether Earth's cryosphere remains within a safe operating space (SOS) under Anthropocene change using the planetary boundaries framework. It finds accelerating, partly irreversible cryospheric loss driven by feedbacks, with key variables departing Holocene conditions. The cryosphere has breached its SOS, posing long-term risks to human societies and ecosystems, necessitating integrated Earth system management.\",\n  \"key_findings\": [\n    \"Accelerating and partly irreversible loss of cryospheric integrity\",\n    \"Key cryospheric control variables have departed or are committed to departing Holocene-like conditions\",\n    \"The cryosphere has breached its safe operating space, increasing long-term risks for human societies and ecosystems\"\n  ],\n  \"scientific_significance\": \"This research establishes that cryosphere change has exceeded planetary safe operating limits, highlighting critical thresholds in Earth system resilience that require integrated management to prevent irreversible ecological and societal consequences.\"\n}",
+        "parsed": {
+          "summary": "This study assesses whether Earth's cryosphere remains within a safe operating space (SOS) under Anthropocene change using the planetary boundaries framework. It finds accelerating, partly irreversible cryospheric loss driven by feedbacks, with key variables departing Holocene conditions. The cryosphere has breached its SOS, posing long-term risks to human societies and ecosystems, necessitating integrated Earth system management.",
+          "key_findings": [
+            "Accelerating and partly irreversible loss of cryospheric integrity",
+            "Key cryospheric control variables have departed or are committed to departing Holocene-like conditions",
+            "The cryosphere has breached its safe operating space, increasing long-term risks for human societies and ecosystems"
+          ],
+          "scientific_significance": "This research establishes that cryosphere change has exceeded planetary safe operating limits, highlighting critical thresholds in Earth system resilience that require integrated management to prevent irreversible ecological and societal consequences."
+        },
+        "elapsed_seconds": 32.0231,
+        "input_tokens": 583,
+        "output_tokens": 190,
+        "thoughts_tokens": null,
+        "total_tokens": 773,
+        "model_eval_seconds": 23.7337,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42944643",
+        "title": "A Synergistic Hydrogel Strategy for the Treatment of Candida Vaginitis Through Pathogen Clearance and Microecosystem Restoration.",
+        "abstract": "NA: Microbial infections often disrupt the delicate balance of host commensal microbiota, leading to dysbiosis and recurrent infections, yet current therapies lack the capacity to simultaneously eradicate pathogens and restore ecological homeostasis. Here, we report a synergistic therapeutic strategy for Candida vaginitis that integrates targeted pathogen clearance with vaginal microecosystem restoration. We engineer a vaginal microenvironment-degradable hydrogel, HCS/FUC@LabPC, which self-assembles from highly deacetylated high molecular-weight chitosan oligosaccharide (HCS) and fucoidan (FUC) to encapsulate Lactobacillus (Lab) coated with procyanidine (PC). Within the vaginal microenvironment, the hydrogel gradually degrades and releases HCS, which efficiently eliminates Candida albicans (C. albicans) by disrupting cell wall integrity and interfering MAPK related signaling. FUC and PC further contribute to microenvironmental remodeling through their intrinsic anti-inflammatory and antioxidant activities. This remodeling facilitates stable colonization of Lab, which subsequently reinforces barrier integrity through competitive exclusion and metabolic modulation. In murine models, this approach effectively disrupts the infection-dysbiosis-recurrence vicious cycle, supporting an integrated therapeutic strategy that combines pathogen clearance, microenvironmental remodeling, and microecosystem restoration.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75465",
+        "doi_url": "https://doi.org/10.1002/adma.75465",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42944643/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a hydrogel strategy for Candida vaginitis treatment by integrating pathogen clearance with vaginal microecosystem restoration. The engineered HCS/FUC@LabPC hydrogel degrades in the vaginal microenvironment, releasing chitosan oligosaccharides to eliminate Candida albicans via cell wall disruption and MAPK signaling interference. Fucoidan and procyanidine reduce inflammation and promote Lactobacillus colonization, restoring microbial balance and barrier function in murine models.\",\n  \"key_findings\": [\n    \"The hydrogel degrades in vaginal microenvironments to release chitosan oligosaccharides that disrupt Candida albicans cell walls\",\n    \"Fucoidan and procyanidine reduce inflammation and support Lactobacillus colonization\",\n    \"The approach breaks the infection-dysbiosis-recurrence cycle by restoring microbial balance and barrier integrity\"\n  ],\n  \"scientific_significance\": \"This strategy provides a dual-action mechanism for eradicating pathogens while simultaneously restoring vaginal microbiome homeostasis, addressing a critical gap in treating recurrent candidiasis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a hydrogel strategy for Candida vaginitis treatment by integrating pathogen clearance with vaginal microecosystem restoration. The engineered HCS/FUC@LabPC hydrogel degrades in the vaginal microenvironment, releasing chitosan oligosaccharides to eliminate Candida albicans via cell wall disruption and MAPK signaling interference. Fucoidan and procyanidine reduce inflammation and promote Lactobacillus colonization, restoring microbial balance and barrier function in murine models.",
+          "key_findings": [
+            "The hydrogel degrades in vaginal microenvironments to release chitosan oligosaccharides that disrupt Candida albicans cell walls",
+            "Fucoidan and procyanidine reduce inflammation and support Lactobacillus colonization",
+            "The approach breaks the infection-dysbiosis-recurrence cycle by restoring microbial balance and barrier integrity"
+          ],
+          "scientific_significance": "This strategy provides a dual-action mechanism for eradicating pathogens while simultaneously restoring vaginal microbiome homeostasis, addressing a critical gap in treating recurrent candidiasis."
+        },
+        "elapsed_seconds": 35.7879,
+        "input_tokens": 814,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 1045,
+        "model_eval_seconds": 30.9085,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983092",
+        "title": "Synergy in viral-bacterial co-infection expedites algal bloom demise.",
+        "abstract": "NA: Algal bloom demise, often caused by viruses, is a major driver of carbon cycling in the surface ocean1,2. However, although blooms collapse synchronously, fewer than 30% of algal cells are actively infected by viruses3, indicating the involvement of additional mortality agents. Here we quantified tripartite interactions within a synthetic community composed of the abundant coccolithophore Gephyrocapsa huxleyi, bacteria and viruses isolated during a bloom. We found that bacteria significantly enhanced virus-induced algal mortality in G. huxleyi as well as in three other globally widespread microalgae. We quantified this interaction using two new metrics: the synergy index, which measures viral-bacterial interaction strength, and the benefit index, which assesses changes in bacterial fitness. We identified Alteromonas bacteria as drivers of viral-bacterial co-infection, with consistently high synergy index and benefit index. We found that during algal blooms, Alteromonas displayed high chemoattraction towards infected cell extracts, accumulated in aggregates derived from bloom demise, and increased in abundance during oceanic bloom collapse. Viral-bacterial synergy represents a previously unrecognized mortality agent that controls bloom termination, modulating the balance between the carbon-recycling viral shunt and the carbon-exporting viral shuttle pathways, which influence global carbon cycling4-6.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11243-7",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11243-7",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983092/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated viral-bacterial interactions during algal bloom collapse using a synthetic community model. Researchers quantified how bacteria enhance virus-induced mortality in coccolithophores and microalgae, identifying Alteromonas as a key player. The synergy index and benefit index revealed bacterial-viral co-infection drives bloom termination, impacting carbon cycling pathways by balancing viral shunt and shuttle processes.\",\n  \"key_findings\": [\n    \"Bacteria significantly increase virus-induced algal mortality in coccolithophores and microalgae\",\n    \"Alteromonas bacteria exhibit high chemoattraction to infected cells and accumulate during bloom collapse\",\n    \"Viral-bacterial synergy modulates carbon cycling by balancing viral shunt and shuttle pathways\"\n  ],\n  \"scientific_significance\": \"This work identifies bacterial-viral synergy as a previously unrecognized mechanism controlling algal bloom termination and carbon cycling dynamics in marine ecosystems.\"\n}",
+        "parsed": {
+          "summary": "This study investigated viral-bacterial interactions during algal bloom collapse using a synthetic community model. Researchers quantified how bacteria enhance virus-induced mortality in coccolithophores and microalgae, identifying Alteromonas as a key player. The synergy index and benefit index revealed bacterial-viral co-infection drives bloom termination, impacting carbon cycling pathways by balancing viral shunt and shuttle processes.",
+          "key_findings": [
+            "Bacteria significantly increase virus-induced algal mortality in coccolithophores and microalgae",
+            "Alteromonas bacteria exhibit high chemoattraction to infected cells and accumulate during bloom collapse",
+            "Viral-bacterial synergy modulates carbon cycling by balancing viral shunt and shuttle pathways"
+          ],
+          "scientific_significance": "This work identifies bacterial-viral synergy as a previously unrecognized mechanism controlling algal bloom termination and carbon cycling dynamics in marine ecosystems."
+        },
+        "elapsed_seconds": 38.2716,
+        "input_tokens": 710,
+        "output_tokens": 189,
+        "thoughts_tokens": null,
+        "total_tokens": 899,
+        "model_eval_seconds": 24.4318,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019391",
+        "title": "A cellular atlas of the preinvasive breast cancer microenvironment.",
+        "abstract": "NA: Ductal carcinoma in situ (DCIS) is the most common preinvasive breast cancer, however our knowledge of the DCIS tumor microenvironment (TME) remains limited. We constructed a comprehensive atlas of the TME in estrogen-receptor positive DCIS using fresh samples collected from normal breast tissues, DCIS and invasive breast cancers. We analyzed 854,911 cells from 159 patients by single cell RNA sequencing and 39 samples by spatial transcriptomics, which identified 9 cell types and 60 cell states. Our data shows remodeling of fibroblasts, vascular and basal cells that encircle the DCIS regions and immunosuppressive ducts that support the growth of the preinvasive cancer cells. This study delineates early alterations in the DCIS TME, including many changes that persist during invasive progression.",
+        "publication_types": [],
+        "doi": "10.1126/science.aef4622",
+        "doi_url": "https://doi.org/10.1126/science.aef4622",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019391/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study constructed a comprehensive atlas of the tumor microenvironment in estrogen-receptor positive ductal carcinoma in situ (DCIS) using single-cell RNA sequencing and spatial transcriptomics. Analyzing 854,911 cells from 159 patients and 39 samples, it identified 9 cell types and 60 cell states. The findings reveal remodeling of fibroblasts, vascular, and basal cells surrounding DCIS regions, along with immunosuppressive ducts that support preinvasive cancer growth, indicating early alterations persisting through invasive progression.\",\n  \"key_findings\": [\n    \"Identification of 9 cell types and 60 cell states in DCIS tumor microenvironment via single-cell RNA sequencing\",\n    \"Remodeling of fibroblasts, vascular, and basal cells encircling DCIS regions\",\n    \"Presence of immunosuppressive ducts supporting preinvasive cancer growth, with alterations persisting during invasive progression\"\n  ],\n  \"scientific_significance\": \"This work provides the first detailed cellular atlas of estrogen-receptor positive DCIS, revealing early microenvironmental changes that may inform understanding of preinvasive cancer progression and therapeutic targeting.\"\n}",
+        "parsed": {
+          "summary": "This study constructed a comprehensive atlas of the tumor microenvironment in estrogen-receptor positive ductal carcinoma in situ (DCIS) using single-cell RNA sequencing and spatial transcriptomics. Analyzing 854,911 cells from 159 patients and 39 samples, it identified 9 cell types and 60 cell states. The findings reveal remodeling of fibroblasts, vascular, and basal cells surrounding DCIS regions, along with immunosuppressive ducts that support preinvasive cancer growth, indicating early alterations persisting through invasive progression.",
+          "key_findings": [
+            "Identification of 9 cell types and 60 cell states in DCIS tumor microenvironment via single-cell RNA sequencing",
+            "Remodeling of fibroblasts, vascular, and basal cells encircling DCIS regions",
+            "Presence of immunosuppressive ducts supporting preinvasive cancer growth, with alterations persisting during invasive progression"
+          ],
+          "scientific_significance": "This work provides the first detailed cellular atlas of estrogen-receptor positive DCIS, revealing early microenvironmental changes that may inform understanding of preinvasive cancer progression and therapeutic targeting."
+        },
+        "elapsed_seconds": 37.489,
+        "input_tokens": 705,
+        "output_tokens": 250,
+        "thoughts_tokens": null,
+        "total_tokens": 955,
+        "model_eval_seconds": 32.6638,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947472",
+        "title": "Mechanically-Driven Reconstruction of Lithium Metal for Stable All-Solid-State Batteries.",
+        "abstract": "NA: Dendrite growth at lithium-metal anode remains a critical bottleneck in sulfide-based all-solid-state batteries (ASSBs). Current approaches often rely on alloy anodes that compromise energy density or artificial interlayers, introducing additional processing complexity. Herein, we show that accumulated deformation imposed by repeated folding and rolling mechanically reconstructs commercial Li from surface to bulk, replacing a rough carbonate-rich surface and mixed texture with a refined oxide-passivated surface and a strongly Li(200)-preferred texture. At low and medium folding degrees, surface refinement and renewal of the native passivation layer improve solid-solid contact and interfacial Li-ion transport, but remain insufficient to prevent short circuiting, whereas high-degree reconstruction drives texture homogenization, reduces spatial variations in local interfacial response, and synchronizes Li recession and advancement across the rigid Li | solid-state electrolyte interface. The synchronous interface motion suppresses differential recession and void formation during stripping, while mitigating dendritic Li growth during plating. As a result, Li | LPSCl1.5 | NMC811 full cells achieve 79.3% capacity retention after 1000 cycles at C/2 rate, support 7.4 mA h cm-2 operation with 0.05% decay per cycle, and cycle stably below 0.5 MPa. These findings establish mechanical reconstruction as a direct materials-level strategy for stabilizing Li metal in sulfide-based ASSBs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75548",
+        "doi_url": "https://doi.org/10.1002/adma.75548",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947472/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates mechanically-driven reconstruction of lithium metal in sulfide-based all-solid-state batteries to address dendrite growth. By folding and rolling commercial lithium, the research achieves surface refinement and texture homogenization, enhancing interfacial stability. At high folding degrees, it suppresses dendrites and void formation, enabling stable cycling with 79.3% capacity retention after 1000 cycles.\",\n  \"key_findings\": [\n    \"Mechanical folding and rolling of lithium metal refines surface texture and replaces carbonate-rich layers with oxide-passivated surfaces\",\n    \"High-degree reconstruction homogenizes texture, reduces interfacial spatial variations, and synchronizes lithium recession and advancement\",\n    \"Stable cycling with 79.3% capacity retention after 1000 cycles at C/2 rate and 0.05% per-cycle decay\"\n  ],\n  \"scientific_significance\": \"Mechanical reconstruction provides a direct materials-level strategy to stabilize lithium metal in sulfide-based all-solid-state batteries by suppressing dendrite growth and enhancing interfacial stability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates mechanically-driven reconstruction of lithium metal in sulfide-based all-solid-state batteries to address dendrite growth. By folding and rolling commercial lithium, the research achieves surface refinement and texture homogenization, enhancing interfacial stability. At high folding degrees, it suppresses dendrites and void formation, enabling stable cycling with 79.3% capacity retention after 1000 cycles.",
+          "key_findings": [
+            "Mechanical folding and rolling of lithium metal refines surface texture and replaces carbonate-rich layers with oxide-passivated surfaces",
+            "High-degree reconstruction homogenizes texture, reduces interfacial spatial variations, and synchronizes lithium recession and advancement",
+            "Stable cycling with 79.3% capacity retention after 1000 cycles at C/2 rate and 0.05% per-cycle decay"
+          ],
+          "scientific_significance": "Mechanical reconstruction provides a direct materials-level strategy to stabilize lithium metal in sulfide-based all-solid-state batteries by suppressing dendrite growth and enhancing interfacial stability."
+        },
+        "elapsed_seconds": 45.4688,
+        "input_tokens": 740,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 965,
+        "model_eval_seconds": 30.1707,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983093",
+        "title": "Aggression experience and observation drive shared behavioural and neural changes.",
+        "abstract": "NA: The ability to observe the social behaviour of others and use observed information to bias future action is a fundamental building block of social cognition1-3. Aggression observation activates hypothalamic neurons relevant for aggression control4,5, but whether observation and experience engage common circuit mechanisms that promote a new shared behavioural policy is unclear. Here we develop a strategy to perform large-scale cell-type-specific recordings across subcortical networks for social behaviour generation and learning. We record longitudinally while animals train through direct aggression experience or observation, then probe shared differences in behaviour and neural activity in a novel aggression context. After training, we detect unique signatures of a shared adaptive behavioural strategy that is absent in animals without training. During aggression observation, observed behaviour recruits widespread activation across subcortical networks for behavioural generation and mimics activity evoked by experienced behaviour, and shared neural changes persist into the novel aggression context. Multiregion modelling reveals shared changes to a core aggression network across both experience and observation, including a widespread reduction in inhibition, which we find is necessary for adaptive behavioural change. Together, this demonstrates that experience-like activity during aggression observation can recruit a shared inhibitory plasticity mechanism that biases behaviour toward adaptive proactive behavioural strategies.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11217-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11217-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983093/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether aggression experience and observation engage common neural mechanisms to shape behaviour. Using longitudinal cell-type-specific recordings in subcortical networks, researchers compared animals trained via direct aggression or observation. Results show both approaches induce shared adaptive behavioural strategies and neural changes, including reduced inhibition in a core aggression network, persisting even in novel contexts.\",\n  \"key_findings\": [\n    \"Aggression observation recruits widespread subcortical networks similar to experienced behaviour\",\n    \"Shared neural changes, including reduced inhibition in a core aggression network, persist across training types\",\n    \"Both experience and observation induce a common adaptive behavioural strategy absent in untrained animals\"\n  ],\n  \"scientific_significance\": \"The findings reveal a shared inhibitory plasticity mechanism that enables adaptive behavioural strategies through either aggression experience or observation, providing insight into the neural basis of social learning.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether aggression experience and observation engage common neural mechanisms to shape behaviour. Using longitudinal cell-type-specific recordings in subcortical networks, researchers compared animals trained via direct aggression or observation. Results show both approaches induce shared adaptive behavioural strategies and neural changes, including reduced inhibition in a core aggression network, persisting even in novel contexts.",
+          "key_findings": [
+            "Aggression observation recruits widespread subcortical networks similar to experienced behaviour",
+            "Shared neural changes, including reduced inhibition in a core aggression network, persist across training types",
+            "Both experience and observation induce a common adaptive behavioural strategy absent in untrained animals"
+          ],
+          "scientific_significance": "The findings reveal a shared inhibitory plasticity mechanism that enables adaptive behavioural strategies through either aggression experience or observation, providing insight into the neural basis of social learning."
+        },
+        "elapsed_seconds": 35.1952,
+        "input_tokens": 677,
+        "output_tokens": 179,
+        "thoughts_tokens": null,
+        "total_tokens": 856,
+        "model_eval_seconds": 23.0964,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019392",
+        "title": "Long-term local circulation of an Andes virus lineage in northern Patagonia is linked to the M/V Hondius outbreak.",
+        "abstract": "NA: In 2026, a hantavirus pulmonary syndrome (HPS) outbreak caused by Andes virus (ANDV) occurred on a cruise ship. Analyses revealed an unexpected relationship to an outbreak in Argentina in 2018. Retrospective investigation clarified the 2018 outbreak could involve person-to-person transmission and a common ANDV lineage spanned HPS cases from 2018 to 2025 in a geographically defined area in northern Patagonia, without widespread community transmission of ANDV. Route reconstruction for the index cases in the cruise ship outbreak identified geographically plausible exposures to viruses of this lineage in Argentina, but their timing was inconsistent with the expected ANDV incubation period. The infection source for the cruise ship outbreak cannot be resolved with current information, highlighting the need to expand viral surveillance in the ANDV endemic region.",
+        "publication_types": [],
+        "doi": "10.1126/science.aej1679",
+        "doi_url": "https://doi.org/10.1126/science.aej1679",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019392/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated the long-term circulation of an Andes virus (ANDV) lineage in northern Patagonia, linking it to a 2026 cruise ship hantavirus pulmonary syndrome (HPS) outbreak. Retrospective analysis showed a common ANDV lineage spanning HPS cases from 2018 to 2025 in a geographically defined region, with person-to-person transmission in the 2018 outbreak. The cruise ship outbreak's infection source remains unresolved due to inconsistent exposure timing with ANDV incubation periods, underscoring the need for enhanced viral surveillance in ANDV-endemic areas.\",\n  \"key_findings\": [\n    \"A single ANDV lineage persisted in northern Patagonia from 2018 to 2025, causing HPS cases.\",\n    \"The 2018 outbreak involved person-to-person transmission of ANDV.\",\n    \"The 2026 cruise ship outbreak's source could not be identified due to timing inconsistencies with ANDV incubation periods.\"\n  ],\n  \"scientific_significance\": \"The study demonstrates sustained ANDV circulation in a specific geographic region over seven years, revealing complex transmission dynamics that challenge assumptions about hantavirus epidemiology in endemic areas.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the long-term circulation of an Andes virus (ANDV) lineage in northern Patagonia, linking it to a 2026 cruise ship hantavirus pulmonary syndrome (HPS) outbreak. Retrospective analysis showed a common ANDV lineage spanning HPS cases from 2018 to 2025 in a geographically defined region, with person-to-person transmission in the 2018 outbreak. The cruise ship outbreak's infection source remains unresolved due to inconsistent exposure timing with ANDV incubation periods, underscoring the need for enhanced viral surveillance in ANDV-endemic areas.",
+          "key_findings": [
+            "A single ANDV lineage persisted in northern Patagonia from 2018 to 2025, causing HPS cases.",
+            "The 2018 outbreak involved person-to-person transmission of ANDV.",
+            "The 2026 cruise ship outbreak's source could not be identified due to timing inconsistencies with ANDV incubation periods."
+          ],
+          "scientific_significance": "The study demonstrates sustained ANDV circulation in a specific geographic region over seven years, revealing complex transmission dynamics that challenge assumptions about hantavirus epidemiology in endemic areas."
+        },
+        "elapsed_seconds": 40.3481,
+        "input_tokens": 720,
+        "output_tokens": 263,
+        "thoughts_tokens": null,
+        "total_tokens": 983,
+        "model_eval_seconds": 35.5346,
+        "error": "summary must contain 45–65 words; received 80.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947474",
+        "title": "In Situ Lab-on-Fiber Platform: A Versatile Tool for Dual-Mode Optoelectronic Tracking Photocorrosion Dynamics of Cadmium Sulfide.",
+        "abstract": "NA: As versatile catalysts, metal sulfides (MSs) unlock new possibilities for photocatalysis and electrocatalysis, driving innovations in clean energy production. However, they are prone to photocorrosion under illumination, which severely impairs their catalytic efficiency and recyclability, thus fundamentally compromising the stability of the catalytic reaction system. Therefore, critical to this effort is the elucidation of photocorrosion for the practical application of high-performance catalysts and long-lasting reactors. Herein, a lab-on-fiber sensing platform is developed for in situ, real-time monitoring of the photocorrosion of cadmium sulfide (CdS). Anchored by a tapered seven-core optical fiber, the platform facilitates dual-mode sensing by correlating transmission spectrum evolution with photocurrent dynamics, revealing that CdS photocorrosion exhibits a nonlinear dependence on light intensity. The photocorrosion rate is minimized at 0.8 mW∙cm-2 UV light and is further suppressed by applying a 0.4 V bias. Furthermore, the platform uncovers a protective, dynamic sulfur cycle enabled by sacrificial agents on the catalyst surface. Crucially, key structure-activity relationships of the CdS undergoing photocorrosion are established, enabling the optimization of catalysts and reactors. Beyond catalytic systems, the platform is applicable to the operando exploration of interfacial dynamic behaviors and mechanisms in various nanomaterials, thereby underpinning the design of micro-nano material interfaces and reaction systems.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75553",
+        "doi_url": "https://doi.org/10.1002/adma.75553",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947474/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed an in situ lab-on-fiber platform to monitor cadmium sulfide photocorrosion dynamics via dual-mode optoelectronic tracking. The platform correlated transmission spectra with photocurrent changes, revealing nonlinear light intensity dependence, minimal photocorrosion rates at 0.8 mW·cm⁻² UV, and suppression via 0.4 V bias. It also identified a protective sulfur cycle from sacrificial agents, enabling catalyst optimization and broader applications in nanomaterial interfacial studies.\",\n  \"key_findings\": [\n    \"CdS photocorrosion shows nonlinear dependence on light intensity\",\n    \"Photocorrosion rate is minimized at 0.8 mW·cm⁻² UV light\",\n    \"Applying 0.4 V bias suppresses photocorrosion and enables a protective sulfur cycle\"\n  ],\n  \"scientific_significance\": \"The platform provides real-time, dual-mode monitoring of photocorrosion dynamics in nanomaterials, advancing the design of stable catalysts and interfacial mechanisms for energy applications.\"\n}",
+        "parsed": {
+          "summary": "This study developed an in situ lab-on-fiber platform to monitor cadmium sulfide photocorrosion dynamics via dual-mode optoelectronic tracking. The platform correlated transmission spectra with photocurrent changes, revealing nonlinear light intensity dependence, minimal photocorrosion rates at 0.8 mW·cm⁻² UV, and suppression via 0.4 V bias. It also identified a protective sulfur cycle from sacrificial agents, enabling catalyst optimization and broader applications in nanomaterial interfacial studies.",
+          "key_findings": [
+            "CdS photocorrosion shows nonlinear dependence on light intensity",
+            "Photocorrosion rate is minimized at 0.8 mW·cm⁻² UV light",
+            "Applying 0.4 V bias suppresses photocorrosion and enables a protective sulfur cycle"
+          ],
+          "scientific_significance": "The platform provides real-time, dual-mode monitoring of photocorrosion dynamics in nanomaterials, advancing the design of stable catalysts and interfacial mechanisms for energy applications."
+        },
+        "elapsed_seconds": 46.0188,
+        "input_tokens": 763,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 989,
+        "model_eval_seconds": 30.0345,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983094",
+        "title": "Comprehensive mapping of essential-gene interactions in M. tuberculosis.",
+        "abstract": "NA: Mycobacterium tuberculosis, the causative agent of tuberculosis, remains the world's deadliest pathogen1. Despite intensive study, many of its genes remain uncharacterized, which limits the insight that can be gained into tuberculosis biology and constrains drug development. Genetic interaction (GI) mapping is a powerful strategy to define functional relationships between genes by quantifying how the phenotypic effects of combined perturbations deviate from expectations based on single-gene perturbations2,3. Here we develop a dual-sgRNA CRISPR-interference platform that enables high-throughput GI mapping in mycobacteria. We address key technical challenges in library construction and data interpretation by incorporating unique barcodes for each sgRNA pair and implementing a robust statistical pipeline for GI detection. Focusing on essential genes, we generate comprehensive GI maps in the model mycobacterium Mycobacterium smegmatis and the pathogen M. tuberculosis. These maps recapitulate known biology, uncover thousands of previously unrecognized interactions and identify functional connections between essential genes and drug targets. By generating AlphaFold3-based protein-protein interaction predictions4 for all gene pairs in our GI maps, we show that a subset of GIs is likely to reflect underlying physical associations. Validation of selected GIs confirms both novel biological relationships and opportunities for synergistic targeting. Overall, this work establishes a generalizable framework for dual-gene perturbation and defines the architecture of essential-gene networks in mycobacteria, advancing both our understanding of tuberculosis biology and the rational design of combination therapies.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11212-0",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11212-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983094/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used a dual-sgRNA CRISPR interference platform to map genetic interactions among essential genes in Mycobacter: M. smegmatis and M. tuberculosis. The approach overcame technical challenges in library construction and data analysis to generate comprehensive interaction maps. Results revealed known biological relationships, thousands of novel interactions, and functional links between essential genes and drug targets, with some interactions predicted to reflect physical protein associations.\",\n  \"key_findings\": [\n    \"Comprehensive genetic interaction maps of essential genes in Mycobacterium tuberculosis and M. smegmatis\",\n    \"Identification of thousands of previously unrecognized gene interactions\",\n    \"Functional connections between essential genes and drug targets, with AlphaFold3 predictions supporting physical protein associations\"\n  ],\n  \"scientific_significance\": \"This work establishes a generalizable framework for essential-gene network analysis in mycobacteria, advancing understanding of tuberculosis pathogenesis and informing combination therapy design through systematic genetic interaction mapping.\"\n}",
+        "parsed": {
+          "summary": "This study used a dual-sgRNA CRISPR interference platform to map genetic interactions among essential genes in Mycobacter: M. smegmatis and M. tuberculosis. The approach overcame technical challenges in library construction and data analysis to generate comprehensive interaction maps. Results revealed known biological relationships, thousands of novel interactions, and functional links between essential genes and drug targets, with some interactions predicted to reflect physical protein associations.",
+          "key_findings": [
+            "Comprehensive genetic interaction maps of essential genes in Mycobacterium tuberculosis and M. smegmatis",
+            "Identification of thousands of previously unrecognized gene interactions",
+            "Functional connections between essential genes and drug targets, with AlphaFold3 predictions supporting physical protein associations"
+          ],
+          "scientific_significance": "This work establishes a generalizable framework for essential-gene network analysis in mycobacteria, advancing understanding of tuberculosis pathogenesis and informing combination therapy design through systematic genetic interaction mapping."
+        },
+        "elapsed_seconds": 41.5284,
+        "input_tokens": 744,
+        "output_tokens": 200,
+        "thoughts_tokens": null,
+        "total_tokens": 944,
+        "model_eval_seconds": 26.39,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019393",
+        "title": "Hantavirus pulmonary syndrome outbreak linked to cruise ship travel in April-May 2026.",
+        "abstract": "NA: In April 2026, a hantavirus pulmonary syndrome (HPS) outbreak caused by Andes virus (ANDV) occurred on a cruise ship. ANDV genome sequences were obtained for 10 of the 13 identified cases during a cross-country investigation established to share initial raw data for joint analysis with reciprocal quality control. The genomic data, symptom onsets, and plausible contact patterns strongly support a tightly linked outbreak cluster compatible with a single or very few zoonotic spillover events prior to embarkment followed by human-to-human transmission onboard. The outbreak represents the international displacement of a virus already known to be capable, under specific conditions, to transmit among humans, and does not suggest emergence of a unusual viral strain.",
+        "publication_types": [],
+        "doi": "10.1126/science.aej1376",
+        "doi_url": "https://doi.org/10.1126/science.aej1376",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019393/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated a hantavirus pulmonary syndrome (HPS) outbreak linked to cruise ship travel in April-May 2026, caused by Andes virus (ANDV). Genomic analysis of 10 cases revealed a tightly clustered outbreak cluster, indicating a single or few zoonotic spillover events followed by human-to-human transmission onboard. The outbreak demonstrates ANDV's capacity for sustained human transmission under specific conditions without novel strain emergence.\",\n  \"key_findings\": [\n    \"Genomic sequencing of 10 cases confirmed a single or few zoonotic spillover events before the outbreak\",\n    \"Human-to-human transmission occurred onboard the cruise ship\",\n    \"The outbreak did not involve a novel viral strain but demonstrated ANDV's established capability for sustained human transmission\"\n  ],\n  \"scientific_significance\": \"This outbreak confirms Andes virus's ability to transmit among humans through multiple spillover events and sustained person-to-person transmission under specific conditions, without requiring viral adaptation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated a hantavirus pulmonary syndrome (HPS) outbreak linked to cruise ship travel in April-May 2026, caused by Andes virus (ANDV). Genomic analysis of 10 cases revealed a tightly clustered outbreak cluster, indicating a single or few zoonotic spillover events followed by human-to-human transmission onboard. The outbreak demonstrates ANDV's capacity for sustained human transmission under specific conditions without novel strain emergence.",
+          "key_findings": [
+            "Genomic sequencing of 10 cases confirmed a single or few zoonotic spillover events before the outbreak",
+            "Human-to-human transmission occurred onboard the cruise ship",
+            "The outbreak did not involve a novel viral strain but demonstrated ANDV's established capability for sustained human transmission"
+          ],
+          "scientific_significance": "This outbreak confirms Andes virus's ability to transmit among humans through multiple spillover events and sustained person-to-person transmission under specific conditions, without requiring viral adaptation."
+        },
+        "elapsed_seconds": 32.1159,
+        "input_tokens": 686,
+        "output_tokens": 209,
+        "thoughts_tokens": null,
+        "total_tokens": 895,
+        "model_eval_seconds": 27.3251,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947485",
+        "title": "Copper Surface Engineering Enables Uniform Zn Plating in Zn Batteries at Unity N/P Ratio.",
+        "abstract": "NA: Zinc (Zn) metal plating is notoriously sensitive to interfacial inefficiencies under Zn-limited conditions, where small losses of active Zn rapidly lead to premature cell failure. Here, we demonstrate a surface reconstruction strategy for copper (Cu) current collectors that enables exceptional performance at a negative-to-positive (N/P) capacity ratio of 1.0. By chemically etching Cu to create a sacrificial cuprous chloride (γ-CuCl) interface, we obtained a micro-textured Cu substrate with increased electrochemical surface area (ECSA). Upon initial electrochemical reduction, γ-CuCl converts to metallic Cu while releasing Cl- ions into the local interfacial region of the electrolyte. Density functional theory calculations indicate that localized Cl- ions favorably regulate Zn2+ adsorption energy while suppressing the hydrogen evolution reaction. Benefitting from the synergistic combination of enhanced ECSA and dynamic Cl- mediated interfacial engineering, Zn//Cu cells achieve stable plating/stripping cycling for 1654 h (69 days). Notably, Zn//MnO2 full cells using 3D-printed etched Cu substrate assembled under a nominal N/P ratio of 1.0 (determined by a reversible capacity at 10 mA cm-2) deliver a remarkable device volumetric capacity of 53.5 mAh cm-3. Under high-rate cycling (80 mA cm-2), the cell retains 70% of initial capacity over 500 cycles. This performance represents a benchmark for Zn reversibility under extreme material-limited conditions.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75514",
+        "doi_url": "https://doi.org/10.1002/adma.75514",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947485/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses zinc plating instability in zinc batteries by engineering copper current collectors with a sacrificial cuprous chloride interface. Chemical etching creates micro-textured copper that enhances electrochemical surface area and facilitates chloride-mediated interfacial regulation. The approach enables stable zinc plating at unity negative-to-positive capacity ratio, achieving 1654-hour cycling and high-rate performance with 70% capacity retention after 500 cycles.\",\n  \"key_findings\": [\n    \"Chemical etching of copper forms a micro-textured substrate with increased electrochemical surface area\",\n    \"Chloride ions regulate zinc ion adsorption and suppress hydrogen evolution reactions\",\n    \"Zn//Cu cells achieve 1654-hour cycling at unity N/P ratio with 70% capacity retention after 500 high-rate cycles\"\n  ],\n  \"scientific_significance\": \"This work establishes a surface engineering strategy to overcome zinc plating limitations under material-limited conditions, enabling long-term cycling stability in zinc batteries.\"\n}",
+        "parsed": {
+          "summary": "This study addresses zinc plating instability in zinc batteries by engineering copper current collectors with a sacrificial cuprous chloride interface. Chemical etching creates micro-textured copper that enhances electrochemical surface area and facilitates chloride-mediated interfacial regulation. The approach enables stable zinc plating at unity negative-to-positive capacity ratio, achieving 1654-hour cycling and high-rate performance with 70% capacity retention after 500 cycles.",
+          "key_findings": [
+            "Chemical etching of copper forms a micro-textured substrate with increased electrochemical surface area",
+            "Chloride ions regulate zinc ion adsorption and suppress hydrogen evolution reactions",
+            "Zn//Cu cells achieve 1654-hour cycling at unity N/P ratio with 70% capacity retention after 500 high-rate cycles"
+          ],
+          "scientific_significance": "This work establishes a surface engineering strategy to overcome zinc plating limitations under material-limited conditions, enabling long-term cycling stability in zinc batteries."
+        },
+        "elapsed_seconds": 34.543,
+        "input_tokens": 873,
+        "output_tokens": 214,
+        "thoughts_tokens": null,
+        "total_tokens": 1087,
+        "model_eval_seconds": 29.1834,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983095",
+        "title": "A conserved flowering-time module underlies double-season cropping.",
+        "abstract": "NA: Adapting crops to intensive cultivation systems under climate change requires varieties that combine yield potential with optimized flowering and maturation1,2. In central and eastern China, barley has long been cultivated in a double-season cropping system, in which early flowering and maturation are critical for escaping presummer terminal heat stress and enabling flexible rotation with summer crops3,4. Here we trace the genomic footprints of 80 years of modern breeding in China using 505 representative cultivars and identify a flowering-time module defined by a single amino acid substitution in PHYTOCHROME C in combination with a winter-type VERNALIZATION 1 haplotype that underpins this adaptation. The derived allele accelerates heading and maturity, and its frequency has risen sharply in modern autumn-sown varieties. Using base editing in barley and wheat, we confirm causality and demonstrate that this flowering-time combination module, PhyC-VRN1, is functionally conserved across Triticeae. Our results identify and experimentally validate a breeding-relevant flowering-time module that has been selected during modern breeding to enable intensive crop rotations, as well as demonstrate how precision genome editing can be used to reconstruct such adaptive modules for climate-resilient crop design.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11187-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11187-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983095/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study identifies a conserved flowering-time module in barley, defined by a PHYTOCHROME C amino acid substitution and a winter-type VERNALIZATION 1 hapl:otype, that accelerates heading and maturity. The module, PhyC-VRN1, was selected during modern breeding in China to enable double-season cropping by escaping summer heat stress. The findings demonstrate functional conservation across Triticeae and validate precision genome editing for reconstructing climate-resilient crop adaptations.\",\n  \"key_findings\": [\n    \"A single amino acid substitution in PHYTOCHROME C and winter-type VERNALIZATION 1 haplotype define a flowering-time module in barley\",\n    \"The PhyC-VRN1 module accelerates heading and maturity, enabling escape from summer heat stress in double-season cropping systems\",\n    \"The module is functionally conserved across Triticeae and can be reconstructed via precision genome editing for climate-resilient crop design\"\n  ],\n  \"scientific_significance\": \"The identification and validation of a conserved flowering-time module that enables climate-resilient double-season cropping through precise genomic selection provides a foundational mechanism for breeding heat-tolerant, rotationally flexible crop varieties.\"\n}",
+        "parsed": {
+          "summary": "This study identifies a conserved flowering-time module in barley, defined by a PHYTOCHROME C amino acid substitution and a winter-type VERNALIZATION 1 hapl:otype, that accelerates heading and maturity. The module, PhyC-VRN1, was selected during modern breeding in China to enable double-season cropping by escaping summer heat stress. The findings demonstrate functional conservation across Triticeae and validate precision genome editing for reconstructing climate-resilient crop adaptations.",
+          "key_findings": [
+            "A single amino acid substitution in PHYTOCHROME C and winter-type VERNALIZATION 1 haplotype define a flowering-time module in barley",
+            "The PhyC-VRN1 module accelerates heading and maturity, enabling escape from summer heat stress in double-season cropping systems",
+            "The module is functionally conserved across Triticeae and can be reconstructed via precision genome editing for climate-resilient crop design"
+          ],
+          "scientific_significance": "The identification and validation of a conserved flowering-time module that enables climate-resilient double-season cropping through precise genomic selection provides a foundational mechanism for breeding heat-tolerant, rotationally flexible crop varieties."
+        },
+        "elapsed_seconds": 45.4582,
+        "input_tokens": 683,
+        "output_tokens": 252,
+        "thoughts_tokens": null,
+        "total_tokens": 935,
+        "model_eval_seconds": 32.9769,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019403",
+        "title": "Quantitative measurement of viscosity in two-dimensional electron fluids.",
+        "abstract": "NA: Electron hydrodynamics is an emerging framework that describes dynamics of interacting electron systems as conventional fluids. Although evidence for hydrodynamic-like transport has been reported in a variety of two-dimensional materials, precise quantitative measurement of the core parameter, electron viscosity, remains challenging. In this work, we demonstrate that magnetoresistance in Corbino-shaped graphene devices offers a simultaneous ohmmeter and viscosometer capability, allowing us to disentangle the individual ohmic and viscous contributions to transport, even near viscous-ohmic crossover. In both monolayer and bilayer graphene, the effective electron-electron scattering rate scales linearly with temperature, deviating markedly from the T2 dependence expected in conventional Fermi liquids. Instead, it is consistent with a recently identified tomographic fluid regime, theoretically predicted to be generic for two-dimensional electron systems.",
+        "publication_types": [],
+        "doi": "10.1126/science.adr5469",
+        "doi_url": "https://doi.org/10.1126/science.adr5469",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019403/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates electron viscosity in two-dimensional electron fluids using magnetoresistance in Corbino-shaped graphene devices. The approach disentangles ohmic and viscous transport contributions, revealing that the effective electron-electron scattering rate scales linearly with temperature in monolayer and bilayer graphene. This finding contradicts conventional Fermi liquid predictions and aligns with a tomographic fluid regime, suggesting non-Fermi liquid behavior in 2D electron systems.\",\n  \"key_findings\": [\n    \"Magnetoresistance in Corbusing graphene devices simultaneously measures ohmic and viscous transport contributions\",\n    \"Effective electron-electron scattering rate scales linearly with temperature in monolayer and bilayer graphene\",\n    \"The linear temperature dependence aligns with a tomographic fluid regime, not conventional Fermi liquid behavior\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate non-Fermi liquid behavior in two-dimensional electron systems, providing quantitative evidence for a tomographic fluid regime that challenges conventional transport models.\"\n}",
+        "parsed": {
+          "summary": "This study investigates electron viscosity in two-dimensional electron fluids using magnetoresistance in Corbino-shaped graphene devices. The approach disentangles ohmic and viscous transport contributions, revealing that the effective electron-electron scattering rate scales linearly with temperature in monolayer and bilayer graphene. This finding contradicts conventional Fermi liquid predictions and aligns with a tomographic fluid regime, suggesting non-Fermi liquid behavior in 2D electron systems.",
+          "key_findings": [
+            "Magnetoresistance in Corbusing graphene devices simultaneously measures ohmic and viscous transport contributions",
+            "Effective electron-electron scattering rate scales linearly with temperature in monolayer and bilayer graphene",
+            "The linear temperature dependence aligns with a tomographic fluid regime, not conventional Fermi liquid behavior"
+          ],
+          "scientific_significance": "The findings demonstrate non-Fermi liquid behavior in two-dimensional electron systems, providing quantitative evidence for a tomographic fluid regime that challenges conventional transport models."
+        },
+        "elapsed_seconds": 35.6634,
+        "input_tokens": 600,
+        "output_tokens": 211,
+        "thoughts_tokens": null,
+        "total_tokens": 811,
+        "model_eval_seconds": 26.8056,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947628",
+        "title": "4f-Electron-Regulated Dual-Periodic Bonding Evolution Across the Lanthanide Series.",
+        "abstract": "NA: Lanthanide-based catalysts have attracted increasing attention due to their unique electronic structures, yet the relationship between 4f electron evolution and catalytic behavior remains unclear. Here, using structurally uniform lanthanide single-atom catalysts as a model platform, we systematically investigate the influence of 4f electron filling on bonding evolution across the lanthanide series. We reveal a dual-periodic trend in lanthanide-support binding energies and adsorbate bonding energies, which increases from La to Eu and from Gd to Yb. This behavior originates from progressive electron redistribution between 5d and 4f orbitals, which modulates the electron population of bonding orbitals. The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd. Furthermore, similar crystal-field splitting enables robust linear relationships between binding and bonding energies across diverse coordination environments. More importantly, the persistence of these electronic characteristics across diverse coordination environments demonstrates that the dual-periodic evolution represents an intrinsic feature of lanthanide chemistry rather than a system-specific phenomenon. These findings establish a 4f-electron-regulated bonding framework for understanding lanthanide reactivity and guiding catalyst design.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75541",
+        "doi_url": "https://doi.org/10.1002/adma.75541",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947628/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how 4f electron filling influences bonding evolution in lanthanide single-atom catalysts across the lanthanide series. Using structurally uniform catalysts, researchers identified a dual-periodic trend in binding energies, increasing from La to Eu and from Gd to Yb. The findings attribute this behavior to electron redistribution between 5d and 4f orbitals, with a sharp transition at the half-filled 4f7 configuration between Eu and Gd. The results demonstrate that this dual-periodic evolution is an intrinsic feature of lanthanide chemistry, providing a framework for understanding reactivity and catalyst design.\",\n  \"key_findings\": [\n    \"A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and from Gd to Yb\",\n    \"Electron redistribution between 5d and 4f orbitals modulates bonding energies, with a sharp transition at 4f7\",\n    \"The dual-periodic evolution is an intrinsic feature of lanthanide chemistry, persisting across diverse coordination environments\"\n  ],\n  \"scientific_significance\": \"This work establishes a 4f-electron-regulated bonding framework that explains lanthanide reactivity patterns and informs catalyst design strategies through intrinsic electronic characteristics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how 4f electron filling influences bonding evolution in lanthanide single-atom catalysts across the lanthanide series. Using structurally uniform catalysts, researchers identified a dual-periodic trend in binding energies, increasing from La to Eu and from Gd to Yb. The findings attribute this behavior to electron redistribution between 5d and 4f orbitals, with a sharp transition at the half-filled 4f7 configuration between Eu and Gd. The results demonstrate that this dual-periodic evolution is an intrinsic feature of lanthanide chemistry, providing a framework for understanding reactivity and catalyst design.",
+          "key_findings": [
+            "A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and from Gd to Yb",
+            "Electron redistribution between 5d and 4f orbitals modulates bonding energies, with a sharp transition at 4f7",
+            "The dual-periodic evolution is an intrinsic feature of lanthanide chemistry, persisting across diverse coordination environments"
+          ],
+          "scientific_significance": "This work establishes a 4f-electron-regulated bonding framework that explains lanthanide reactivity patterns and informs catalyst design strategies through intrinsic electronic characteristics."
+        },
+        "elapsed_seconds": 41.6463,
+        "input_tokens": 777,
+        "output_tokens": 263,
+        "thoughts_tokens": null,
+        "total_tokens": 1040,
+        "model_eval_seconds": 36.75,
+        "error": "summary must contain 45–65 words; received 89.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983096",
+        "title": "Observation of prethermal dynamical phase transitions and resonant melting.",
+        "abstract": "NA: The dynamics of isolated quantum systems following a sudden quench has a central role in many areas of material science, high-energy physics and quantum chemistry1-4. Such far-from-equilibrium quantum dynamics-which features complex phenomena with implications for thermalization, non-equilibrium phase transitions and Floquet phase engineering5-8-is challenging to study numerically, in particular, in high-dimensional systems9,10. Here we use a programmable neutral-atom quantum simulator11 to systematically explore quench dynamics in spin models with up to 180 qubits. By initializing the system in a product state and performing quenches across a broad parameter space, we discover several stable, qualitatively distinct dynamical regimes. We trace their robustness to Floquet-like prethermal steady states8 that are stabilized over exponentially long emergent timescales by strong dynamical constraints. We further observe sharp peaks in the dynamical response that are quantitatively explained by the structured melting of prethermalization through resonances. In two dimensions, we uncover a prethermally driven, first-order dynamical phase transition linked to the proliferation of Néel-order defects6,12, and probe it quantitatively using a generalized Clausius-Clapeyron test. Together, these results establish a programmable route to high-energy prethermal phase structure: long-lived dynamical phases, their resonant breakdown and a first-order dynamical phase transition that is not inherited from the equilibrium phase boundaries.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11225-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11225-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983096/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates quantum quench dynamics in neutral-atom simulators with up to 180 qubits. By quenching across parameter spaces, researchers identified stable dynamical regimes and prethermal steady states stabilized over exponentially long timescales. They observed resonant melting phenomena and a prethermally driven first-order dynamical phase transition in two dimensions, linked to Néel defect proliferation. These findings demonstrate programmable access to high-energy prethermal phase structures.\",\n  \"key_findings\": [\n    \"Identification of stable dynamical regimes and prethermal steady states stabilized over exponentially long timescales\",\n    \"Observation of resonant melting phenomena through sharp peaks in dynamical response\",\n    \"Discovery of a prethermally driven first-order dynamical phase transition in two dimensions, associated with Néel defect proliferation\"\n  ],\n  \"scientific_significance\": \"This work establishes a programmable method to explore high-energy prethermal phase structures, including long-lived dynamical phases and their resonant breakdown mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates quantum quench dynamics in neutral-atom simulators with up to 180 qubits. By quenching across parameter spaces, researchers identified stable dynamical regimes and prethermal steady states stabilized over exponentially long timescales. They observed resonant melting phenomena and a prethermally driven first-order dynamical phase transition in two dimensions, linked to Néel defect proliferation. These findings demonstrate programmable access to high-energy prethermal phase structures.",
+          "key_findings": [
+            "Identification of stable dynamical regimes and prethermal steady states stabilized over exponentially long timescales",
+            "Observation of resonant melting phenomena through sharp peaks in dynamical response",
+            "Discovery of a prethermally driven first-order dynamical phase transition in two dimensions, associated with Néel defect proliferation"
+          ],
+          "scientific_significance": "This work establishes a programmable method to explore high-energy prethermal phase structures, including long-lived dynamical phases and their resonant breakdown mechanisms."
+        },
+        "elapsed_seconds": 33.4478,
+        "input_tokens": 832,
+        "output_tokens": 212,
+        "thoughts_tokens": null,
+        "total_tokens": 1044,
+        "model_eval_seconds": 28.5072,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    }
+  ]
+}
