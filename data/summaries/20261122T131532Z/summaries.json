@@ -1,0 +1,951 @@
+{
+  "schema_version": 1,
+  "run_id": "20261122T131532Z",
+  "generated_at_utc": "2026-11-22 13:50:39 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 295,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and create a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% and 21.46% on mini-modules while maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite photovoltaics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. The researchers designed a self-segregating molecule (NFA) that enriches at the buried interface to synchronize crystallization, passivate defects, and create a hydrophobic barrier. This approach achieved record power-conversion efficiencies of 24.84% and 21.46% on mini-modules while maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and forms a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a rational strategy to overcome kinetic-environmental constraints in scalable flexible perovskite photovoltaics."
+        },
+        "elapsed_seconds": 65.3469,
+        "input_tokens": 886,
+        "output_tokens": 288,
+        "thoughts_tokens": null,
+        "total_tokens": 1174,
+        "model_eval_seconds": 61.6939,
+        "error": "summary must contain 45–65 words; received 90.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43034796",
+        "title": "Role of the Tregs-Endothelial Cell Interaction Network in Immune Microenvironment Remodeling and Targeted Intervention in Cardiovascular Diseases.",
+        "abstract": "NA: The pathogenesis of cardiovascular disease (CVD) involves immune and metabolic remodeling of the vascular microenvironment, in which interactions between regulatory T cells (Tregs) and endothelial cells are important. Tregs can support endothelial homeostasis through immunoregulatory cytokines, whereas endothelial signals may influence Treg activity. This network has context-dependent effects in CVD: Tregs suppress inflammation, preserve endothelial barrier integrity, and promote repair, whereas Treg dysfunction, metabolic dysregulation, or age-related changes can impair endothelial function and accelerate disease progression. This review examines how glycolysis-lactate signaling, hypoxic metabolic adaptation, mitochondrial dysfunction, and redox imbalance shape Treg-endothelial crosstalk and immune microenvironment remodeling in CVD. We also discuss molecularly targeted interventions, cell-based and engineering approaches, and metabolic therapies directed at this network. Finally, we consider how spatial and single-cell multi-omics can identify disease-associated Treg and endothelial states, map their interactions, and link transcriptional programs to metabolic dysfunction. This metabolic perspective may guide mechanistic studies and the development of targeted therapies for CVD.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.2147/DDDT.S625136",
+        "doi_url": "https://doi.org/10.2147/DDDT.S625136",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43034796/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Drug design, development and therapy",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review investigates Treg-endothelial cell interactions in cardiovascular disease pathogenesis. It examines how metabolic processes like glycolysis-lactate signaling, hypoxia, mitochondrial function, and redox balance influence immune microenvironment remodeling. The study highlights Tregs' role in suppressing inflammation and maintaining endothelial integrity while identifying metabolic interventions and multi-omics approaches for targeted therapies.\",\n  \"key_findings\": [\n    \"Treg-endothelial crosstalk is modulated by metabolic pathways including glycolysis-lactate signaling and hypoxic adaptation\",\n    \"Tregs suppress inflammation and preserve endothelial barrier function in cardiovascular disease\",\n    \"Metabolic therapies and spatial multi-omics approaches can target Treg-endoth:endothelial interactions for CVD treatment\"\n  ],\n  \"scientific_significance\": \"This review provides a metabolic framework for understanding Treg-endothelial interactions in cardiovascular disease, offering potential targets for mechanistic studies and precision therapies.\"\n}",
+        "parsed": {
+          "summary": "This review investigates Treg-endothelial cell interactions in cardiovascular disease pathogenesis. It examines how metabolic processes like glycolysis-lactate signaling, hypoxia, mitochondrial function, and redox balance influence immune microenvironment remodeling. The study highlights Tregs' role in suppressing inflammation and maintaining endothelial integrity while identifying metabolic interventions and multi-omics approaches for targeted therapies.",
+          "key_findings": [
+            "Treg-endothelial crosstalk is modulated by metabolic pathways including glycolysis-lactate signaling and hypoxic adaptation",
+            "Tregs suppress inflammation and preserve endothelial barrier function in cardiovascular disease",
+            "Metabolic therapies and spatial multi-omics approaches can target Treg-endoth:endothelial interactions for CVD treatment"
+          ],
+          "scientific_significance": "This review provides a metabolic framework for understanding Treg-endothelial interactions in cardiovascular disease, offering potential targets for mechanistic studies and precision therapies."
+        },
+        "elapsed_seconds": 49.2793,
+        "input_tokens": 688,
+        "output_tokens": 204,
+        "thoughts_tokens": null,
+        "total_tokens": 892,
+        "model_eval_seconds": 40.4226,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates factors influencing early human settlement in arid regions, focusing on the role of stone availability alongside water. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artefacts or knappable raw materials in areas with abundant freshwater, despite 55 of 125 surveyed localities having palaeolake deposits. The results indicate that early human settlement tracked co-occurrence of water and lithic resources rather than water alone, suggesting that raw-material geology constrains dispersal patterns.\",\n  \"key_findings\": [\n    \"No lithic artefacts or knappable raw materials were found in 95% of surveyed areas with abundant freshwater\",\n    \"Palaeolake deposits existed at 55 of 125 localities but settlement required both water and lithic resources\",\n    \"Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, improving site discrimination accuracy to 0.768\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that lithic resource availability, not water alone, critically constrained early human dispersal across arid landscapes, challenging existing models that prioritize hydrological factors in paleodemographic studies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates factors influencing early human settlement in arid regions, focusing on the role of stone availability alongside water. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no lithic artefacts or knappable raw materials in areas with abundant freshwater, despite 55 of 125 surveyed localities having palaeolake deposits. The results indicate that early human settlement tracked co-occurrence of water and lithic resources rather than water alone, suggesting that raw-material geology constrains dispersal patterns.",
+          "key_findings": [
+            "No lithic artefacts or knappable raw materials were found in 95% of surveyed areas with abundant freshwater",
+            "Palaeolake deposits existed at 55 of 125 localities but settlement required both water and lithic resources",
+            "Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, improving site discrimination accuracy to 0.768"
+          ],
+          "scientific_significance": "The findings demonstrate that lithic resource availability, not water alone, critically constrained early human dispersal across arid landscapes, challenging existing models that prioritize hydrological factors in paleodemographic studies."
+        },
+        "elapsed_seconds": 60.0169,
+        "input_tokens": 856,
+        "output_tokens": 267,
+        "thoughts_tokens": null,
+        "total_tokens": 1123,
+        "model_eval_seconds": 56.411,
+        "error": "summary must contain 45–65 words; received 79.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43039978",
+        "title": "Self-powered bubble motor microswarms for ultrasensitive detection, monitoring and prediction in cancer liquid biopsies.",
+        "abstract": "NA: Extracellular vesicles (EVs) have shown great potential for disease detection from liquid biopsies. However, the lack of optimized isolation and detection methods limited their clinical application. Here we engineer a bioinspired, reconfigurable, self-powered bubble motor (Butor) microswarm to streamline intelligent isolation and ultrasensitive profiling of circulating EVs for cancer liquid biopsies. Butor microswarm shows jellyfish-like, self-propelled lifting locomotion along lumen-like vertical or inclined tubular path in parallel, allowing rapid isolation (10 min, near 90%) of EV subtypes via three-dimensional directional scanning capture even in high-viscosity biofluids. Furthermore, the buoyancy-activated Butors achieve ultrasensitive EV profiling near a single-particle level, enable early diagnosis of non-small cell lung cancer with an accuracy of up to 94% (95% sensitivity) in a pilot cohort and improve the outcome in cancer staging (I-IV) discrimination, response monitoring of surgical treatment and efficacy prediction of immunotherapy in patients with non-small cell lung cancer. Our self-powered motor represents an intelligent, fast, inexpensive, sensitive and multiplexed liquid biopsy tool for accurate cancer diagnostics and treatment monitoring in clinical settings.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1038/s41551-026-01834-0",
+        "doi_url": "https://doi.org/10.1038/s41551-026-01834-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43039978/",
+        "journal_id": "nature-biomedical-engineering",
+        "journal_name": "Nature Biomedical Engineering",
+        "report_id": "nature-biomedical-engineering__20261114__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered a self-powered bubble motor microswarm (Butor) to isolate and profile circulating extracellular vesicles (EVs) from liquid biopsies. The system demonstrates jellyfish-like locomotion in biofluids, achieving rapid EV subtype isolation (near 90% in 10 minutes) and ultrasensitive detection at single-particle levels. It enables early non-small cell lung cancer diagnosis (94% accuracy) and improves cancer staging, treatment response monitoring, and immunotherapy prediction.\",\n  \"key_findings\": [\n    \"Butor microswarm achieves rapid isolation of EV subtypes in high-viscosity biofluids with 90% efficiency within 10 minutes\",\n    \"The system enables ultrasensitive EV profiling at single-particle resolution for early non-small cell lung cancer diagnosis (94% accuracy)\",\n    \"Butor improves cancer staging, surgical treatment response monitoring, and immunotherapy efficacy prediction in non-small cell lung cancer patients\"\n  ],\n  \"scientific_significance\": \"This approach provides an intelligent, multiplexed liquid biopsy tool for ultrasensitive cancer detection and monitoring with minimal sample preparation, advancing clinical translation of extracellular vesicle analysis.\"\n}",
+        "parsed": {
+          "summary": "This study engineered a self-powered bubble motor microswarm (Butor) to isolate and profile circulating extracellular vesicles (EVs) from liquid biopsies. The system demonstrates jellyfish-like locomotion in biofluids, achieving rapid EV subtype isolation (near 90% in 10 minutes) and ultrasensitive detection at single-particle levels. It enables early non-small cell lung cancer diagnosis (94% accuracy) and improves cancer staging, treatment response monitoring, and immunotherapy prediction.",
+          "key_findings": [
+            "Butor microswarm achieves rapid isolation of EV subtypes in high-viscosity biofluids with 90% efficiency within 10 minutes",
+            "The system enables ultrasensitive EV profiling at single-particle resolution for early non-small cell lung cancer diagnosis (94% accuracy)",
+            "Butor improves cancer staging, surgical treatment response monitoring, and immunotherapy efficacy prediction in non-small cell lung cancer patients"
+          ],
+          "scientific_significance": "This approach provides an intelligent, multiplexed liquid biopsy tool for ultrasensitive cancer detection and monitoring with minimal sample preparation, advancing clinical translation of extracellular vesicle analysis."
+        },
+        "elapsed_seconds": 55.0575,
+        "input_tokens": 800,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 1051,
+        "model_eval_seconds": 51.496,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s\",\n    \"Prkar1a deletion reduces ILC3 numbers and increases enteric infection susceptibility in mice\",\n    \"IL-23 overproduction decreases PRKAR1A, increasing PKA signaling and gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and IL-23-driven gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while IL-23 suppresses PKA inhibitors like PRKAR1A. Deletion of Prkar1a reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "IL-23 suppresses PKA inhibitors (PRKAR1A) in ILC3s",
+            "Prkar1a deletion reduces ILC3 numbers and increases enteric infection susceptibility in mice",
+            "IL-23 overproduction decreases PRKAR1A, increasing PKA signaling and gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23 disrupts this balance to drive intestinal inflammation through PRKAR1A modulation."
+        },
+        "elapsed_seconds": 61.0268,
+        "input_tokens": 800,
+        "output_tokens": 278,
+        "thoughts_tokens": null,
+        "total_tokens": 1078,
+        "model_eval_seconds": 57.566,
+        "error": "summary must contain 45–65 words; received 78.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43040049",
+        "title": "Maternal and early life obesity programs CD4+ T cell fate to impair vaccine immunity.",
+        "abstract": "NA: In their first 3 years, children experience an average of 14 infections and receive vaccines against roughly 15 pathogens, yet whether maternal and early life obesity alters adaptive immune responses during this critical period remains largely undefined. Using a mouse model that mirrored the epidemiological link between maternal and childhood obesity, we found that high-fat diet exposure during pregnancy or early postnatal life, but not adulthood, reshaped the epigenetic and transcriptional landscape of naive CD4+ T cells and impaired their ability to differentiate into T follicular helper (TFH) cells and support germinal center reactions in response to mRNA-based and protein-based vaccines. Mechanistically, epigenetic repression of the ubiquitin-editing enzyme A20 (Tnfaip3) was a central driver of these defects. Pediatric patients with haploinsufficiency of A20 displayed a marked reduction in circulating TFH cells. Altogether, these findings establish maternal and early life obesity as determinants of adaptive immunity during a critical developmental window.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1038/s41590-026-02700-6",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02700-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43040049/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261114__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how maternal and early life obesity affect adaptive immune responses during childhood vaccination. Using a mouse model replicating the obesity-epidemiological link, researchers found that high-fat diet exposure during pregnancy or early life, but not adulthood, altered naive CD4+ T cell epigenetics and transcriptional profiles. This impaired T follicular helper cell differentiation and germinal center reactions to mRNA and protein vaccines. Mechanistically, epigenetic repression of A20 (Tnfaip3) was central to these defects, with pediatric A20 haploinsufficiency correlating with reduced TFH cells. The findings establish maternal and early life obesity as critical determinants of vaccine immunity during development.\",\n  \"key_findings\": [\n    \"Maternal and early life obesity, but not adulthood, alter naive CD4+ T cell epigenetics and transcriptional profiles\",\n    \"High-fat diet exposure during pregnancy or early life impairs T follicular helper cell differentiation and germinal center reactions to vaccines\",\n    \"Epigenetic repression of A20 (Tnfaip3) drives immune defects, with pediatric A20 haploinsufficiency linked to reduced TFH cells\"\n  ],\n  \"scientific_significance\": \"This work identifies maternal and early life obesity as key determinants of adaptive immune responses during critical developmental windows, providing mechanistic insights into how obesity programs long-term vaccine immunity deficits.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how maternal and early life obesity affect adaptive immune responses during childhood vaccination. Using a mouse model replicating the obesity-epidemiological link, researchers found that high-fat diet exposure during pregnancy or early life, but not adulthood, altered naive CD4+ T cell epigenetics and transcriptional profiles. This impaired T follicular helper cell differentiation and germinal center reactions to mRNA and protein vaccines. Mechanistically, epigenetic repression of A20 (Tnfaip3) was central to these defects, with pediatric A20 haploinsufficiency correlating with reduced TFH cells. The findings establish maternal and early life obesity as critical determinants of vaccine immunity during development.",
+          "key_findings": [
+            "Maternal and early life obesity, but not adulthood, alter naive CD4+ T cell epigenetics and transcriptional profiles",
+            "High-fat diet exposure during pregnancy or early life impairs T follicular helper cell differentiation and germinal center reactions to vaccines",
+            "Epigenetic repression of A20 (Tnfaip3) drives immune defects, with pediatric A20 haploinsufficiency linked to reduced TFH cells"
+          ],
+          "scientific_significance": "This work identifies maternal and early life obesity as key determinants of adaptive immune responses during critical developmental windows, providing mechanistic insights into how obesity programs long-term vaccine immunity deficits."
+        },
+        "elapsed_seconds": 63.6481,
+        "input_tokens": 744,
+        "output_tokens": 295,
+        "thoughts_tokens": null,
+        "total_tokens": 1039,
+        "model_eval_seconds": 60.2628,
+        "error": "summary must contain 45–65 words; received 99.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43000118",
+        "title": "Melting and resistivity of iron at Earth core conditions using pulsed Joule heating.",
+        "abstract": "NA: The melting temperature and electrical resistivity of iron at high pressure are essential for understanding Earth's core. Here we use a new high-pressure method - microsecond pulsed Joule heating in diamond anvil cells - to identify melting and measure resistivity of solid and liquid iron. More than 300 reproducible melting measurements indicate a surprisingly shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. Extrapolating in pressure and iron alloy composition, and combining with our 76 [Formula: see text] cm measurement of liquid iron's resistivity, we infer a relatively cold core-mantle boundary (3430 K) with a low adiabatic outer core heat flow (9.8 TW). This suggests thermal convection alone could have powered the geodynamo prior to inner core formation and that today's lowermost mantle is fully solid.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh5267",
+        "doi_url": "https://doi.org/10.1126/science.aeh5267",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43000118/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates iron's melting temperature and resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. The findings suggest a cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), indicating thermal convection could power the geodynamo before inner core formation.\",\n  \"key_findings\": [\n    \"A shallow melting curve for iron at 200 GPa with a melting temperature of 4160 ± 80 K\",\n    \"Inferred core-mantle boundary temperature of 3430 K\",\n    \"Low adiabatic outer core heat flow of 9.8 TW\"\n  ],\n  \"scientific_significance\": \"The study provides critical constraints on iron's melting behavior and resistivity at high pressures, advancing understanding of Earth's core thermal evolution and geodynamo mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates iron's melting temperature and resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. The findings suggest a cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), indicating thermal convection could power the geodynamo before inner core formation.",
+          "key_findings": [
+            "A shallow melting curve for iron at 200 GPa with a melting temperature of 4160 ± 80 K",
+            "Inferred core-mantle boundary temperature of 3430 K",
+            "Low adiabatic outer core heat flow of 9.8 TW"
+          ],
+          "scientific_significance": "The study provides critical constraints on iron's melting behavior and resistivity at high pressures, advancing understanding of Earth's core thermal evolution and geodynamo mechanisms."
+        },
+        "elapsed_seconds": 51.7692,
+        "input_tokens": 726,
+        "output_tokens": 238,
+        "thoughts_tokens": null,
+        "total_tokens": 964,
+        "model_eval_seconds": 48.3701,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitride/oxynitride photocatalysts. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics, overcoming the bottleneck.\",\n  \"key_findings\": [\n    \"Identification of cocatalyst incompatibility as the critical bottleneck for stable pure water splitting over Ta3N5\",\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield at 420 nm for stoichiometric water splitting\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a key design principle for stable photocatalytic pure water splitting and provides mechanistic insights for advancing nitride and oxynitride photocatalysts.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitride/oxynitride photocatalysts. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics, overcoming the bottleneck.",
+          "key_findings": [
+            "Identification of cocatalyst incompatibility as the critical bottleneck for stable pure water splitting over Ta3N5",
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieved 0.72% apparent quantum yield at 420 nm for stoichiometric water splitting"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a key design principle for stable photocatalytic pure water splitting and provides mechanistic insights for advancing nitride and oxynitride photocatalysts."
+        },
+        "elapsed_seconds": 69.6296,
+        "input_tokens": 820,
+        "output_tokens": 313,
+        "thoughts_tokens": null,
+        "total_tokens": 1133,
+        "model_eval_seconds": 66.1744,
+        "error": "summary must contain 45–65 words; received 94.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43034965",
+        "title": "Regulatory T-Cell dysfunction in FOXP3-associated IPEX and selected phenocopies: mechanisms, diagnosis, and treatment.",
+        "abstract": "NA: Regulatory T cells (Tregs) maintain peripheral immune tolerance, with FOXP3 directing much of their differentiation and suppressive activity. Pathogenic FOXP3 variants cause immune dysregulation, polyendocrinopathy, enteropathy, X-linked (IPEX) syndrome. Although often described as Treg deficiency, IPEX can occur despite preserved circulating Treg numbers and detectable FOXP3 expression. This narrative review examines how FOXP3 variants disrupt regulatory function and compares IPEX with selected genetic disorders involving BACH2, IL2RA, STAT5B, CTLA4 or LRBA. Structural and epigenetic findings are considered alongside their implications for diagnosis and treatment. The disorders are grouped by transcriptional regulation, IL-2-dependent homeostasis and checkpoint function; an IPEX-like presentation is distinguished from a defined Tregopathy. Genetic testing is central to diagnosis, while immunophenotyping and selected functional or epigenetic studies provide supporting evidence. In severe disease, investigation, stabilization and hematopoietic stem cell transplantation (HSCT) assessment should proceed together. HSCT remains an established potentially curative treatment. Cellular and genetic therapies are at different stages of development, from preclinical studies to early human investigation, and must be assessed individually. Comparisons with other genetic disorders and common autoimmunity help explain shared biology, but treatment findings cannot be assumed to apply equally to IPEX.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1007/s11033-026-13170-2",
+        "doi_url": "https://doi.org/10.1007/s11033-026-13170-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43034965/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Molecular biology reports",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines how FOXP3 variants disrupt regulatory T-cell function in IPEX syndrome and related disorders, comparing genetic mechanisms involving BACH2, IL2RA, STAT5B, CTLA4, or LRBA. It highlights structural and epigenetic insights, diagnostic approaches including genetic testing and immunophenotyping, and treatment strategies from HSCT to emerging cellular therapies. The study emphasizes distinguishing IPEX-like presentations from true Tregopathies and underscores the need for tailored therapeutic assessments.\",\n  \"key_findings\": [\n    \"FOXP3 variants impair regulatory T-cell function despite normal circulating numbers in IPEX syndrome\",\n    \"Genetic testing and immunophenotyping are critical for diagnosis, with structural and epigenetic analyses supporting differentiation\",\n    \"Hematopoietic stem cell transplantation remains a curative option, while emerging cellular therapies require individualized assessment\"\n  ],\n  \"scientific_significance\": \"This work clarifies the molecular mechanisms underlying IPEX syndrome and related disorders, providing a framework for distinguishing functional Treg deficiencies from other immune dysregulation conditions.\"\n}",
+        "parsed": {
+          "summary": "This review examines how FOXP3 variants disrupt regulatory T-cell function in IPEX syndrome and related disorders, comparing genetic mechanisms involving BACH2, IL2RA, STAT5B, CTLA4, or LRBA. It highlights structural and epigenetic insights, diagnostic approaches including genetic testing and immunophenotyping, and treatment strategies from HSCT to emerging cellular therapies. The study emphasizes distinguishing IPEX-like presentations from true Tregopathies and underscores the need for tailored therapeutic assessments.",
+          "key_findings": [
+            "FOXP3 variants impair regulatory T-cell function despite normal circulating numbers in IPEX syndrome",
+            "Genetic testing and immunophenotyping are critical for diagnosis, with structural and epigenetic analyses supporting differentiation",
+            "Hematopoietic stem cell transplantation remains a curative option, while emerging cellular therapies require individualized assessment"
+          ],
+          "scientific_significance": "This work clarifies the molecular mechanisms underlying IPEX syndrome and related disorders, providing a framework for distinguishing functional Treg deficiencies from other immune dysregulation conditions."
+        },
+        "elapsed_seconds": 50.9373,
+        "input_tokens": 832,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 1061,
+        "model_eval_seconds": 47.4664,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes influence acute inflammatory responses and long-term tissue memory during disease onset. Using lean mice with acute type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window exacerbates disease severity comparably to chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces inflammation. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. After recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β signaling.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window exacerbates acute type 17 skin inflammation in lean mice comparably to chronic obesity\",\n    \"HFD outside the 4-day window or switching obese mice to low-fat diet during this window blunts disease amplification\",\n    \"Neutrophil recruitment and NLRP3-IL-1β signaling drive pathogenic TH17 cell activation, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence\"\n  ],\n  \"scientific_significance\": \"This work establishes that short-lived dietary states during specific temporal windows can durably reprogram immune memory, revealing a mechanism by which transient metabolic conditions influence long-term inflammatory disease trajectories.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes influence acute inflammatory responses and long-term tissue memory during disease onset. Using lean mice with acute type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window exacerbates disease severity comparably to chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces inflammation. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. After recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β signaling.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window exacerbates acute type 17 skin inflammation in lean mice comparably to chronic obesity",
+            "HFD outside the 4-day window or switching obese mice to low-fat diet during this window blunts disease amplification",
+            "Neutrophil recruitment and NLRP3-IL-1β signaling drive pathogenic TH17 cell activation, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence"
+          ],
+          "scientific_significance": "This work establishes that short-lived dietary states during specific temporal windows can durably reprogram immune memory, revealing a mechanism by which transient metabolic conditions influence long-term inflammatory disease trajectories."
+        },
+        "elapsed_seconds": 74.1041,
+        "input_tokens": 884,
+        "output_tokens": 330,
+        "thoughts_tokens": null,
+        "total_tokens": 1214,
+        "model_eval_seconds": 70.5897,
+        "error": "summary must contain 45–65 words; received 116.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43052497",
+        "title": "Designer mucin-responsive nanomedicine for enhanced solid tumour penetration and therapy.",
+        "abstract": "NA: While nanomedicines hold great promise for solid tumour therapy, their penetration and access to tumour cells is limited by large glycosylated proteins called mucins that are enriched in the tumour microenvironment. Here we show that mucins induce the disassembly of self-assembled mPEG-polyester micellar nanoparticles into smaller unimers. Leveraging this finding, we designed a mucin-responsive, paclitaxel-conjugated nanomedicine (mrPNM) whose unimers are capable of escaping the mucin-binding barrier. Following intravenous injection, this designer mucin-responsive nanomedicine exhibited markedly deeper penetration than the mucin-nonresponsive nanomedicine and albumin, resulting in 3.9- and 1.5-fold increases in tumour cell delivery, respectively, in a pancreatic mouse tumour model. The mrPNMs also achieved superior tumour growth inhibition compared to both the mucin-nonresponsive nanomedicine and Abraxane, the FDA-approved nanoparticle albumin-bound paclitaxel, in three solid tumour models. The mucin-responsive nanomedicine platform could provide a general strategy for improving the treatment of solid tumours.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1038/s41551-026-01843-z",
+        "doi_url": "https://doi.org/10.1038/s41551-026-01843-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43052497/",
+        "journal_id": "nature-biomedical-engineering",
+        "journal_name": "Nature Biomedical Engineering",
+        "report_id": "nature-biomedical-engineering__20261114__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated mucin-responsive nanomedicine design to overcome solid tumour penetration barriers. Researchers engineered paclitaxel-conjugated micelles that disassemble in mucin-rich environments, enabling deeper tumor cell delivery. In pancreatic tumors, the mucin-responsive nanomedicine achieved 3.9-fold higher delivery than non-responsive controls and superior tumor growth inhibition compared to standard treatments.\",\n  \"key_findings\": [\n    \"Mucin-responsive nanomedicine disassembles in mucin-rich tumor microenvironments\",\n    \"Enhanced tumor cell delivery (3.9-fold) in pancreatic tumors compared to non-responsive nanomedicine\",\n    \"Superior tumor growth inhibition versus Abraxane in multiple solid tumor models\"\n  ],\n  \"scientific_significance\": \"This platform demonstrates a generalizable strategy for improving nanomedicine penetration in solid tumors by exploiting mucin-induced nanoparticle disassembly.\"\n}",
+        "parsed": {
+          "summary": "This study investigated mucin-responsive nanomedicine design to overcome solid tumour penetration barriers. Researchers engineered paclitaxel-conjugated micelles that disassemble in mucin-rich environments, enabling deeper tumor cell delivery. In pancreatic tumors, the mucin-responsive nanomedicine achieved 3.9-fold higher delivery than non-responsive controls and superior tumor growth inhibition compared to standard treatments.",
+          "key_findings": [
+            "Mucin-responsive nanomedicine disassembles in mucin-rich tumor microenvironments",
+            "Enhanced tumor cell delivery (3.9-fold) in pancreatic tumors compared to non-responsive nanomedicine",
+            "Superior tumor growth inhibition versus Abraxane in multiple solid tumor models"
+          ],
+          "scientific_significance": "This platform demonstrates a generalizable strategy for improving nanomedicine penetration in solid tumors by exploiting mucin-induced nanoparticle disassembly."
+        },
+        "elapsed_seconds": 45.9358,
+        "input_tokens": 681,
+        "output_tokens": 189,
+        "thoughts_tokens": null,
+        "total_tokens": 870,
+        "model_eval_seconds": 37.3356,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43045751",
+        "title": "Fever-induced OR560 promotes antibacterial immunity through macrophage pseudopod formation and phagocytosis.",
+        "abstract": "NA: Fever is a conserved physiological response to pathogen infection. However, how fever promotes host defense remains poorly understood. Here we find that fever empowers antibacterial immunity by inducing olfactory receptor 560 (OR560) to promote macrophage phagocytosis. Through a genome-wide CRISPR screen, we discovered that OR560 is indispensable for macrophage phagocytosis. Febrile temperature drives the serum response factor-dependent OR560 induction in macrophages to boost phagocytosis. OR560 responds to bacteria-derived peptides and plays an essential role in mediating pseudopod formation-a key step required for target uptake. Modulation of body temperature in mice showed that the immune-amplifying effect of fever depends predominantly on OR560. We further demonstrated that the genetic ablation of either Olfr560 or serum response factor (Srf) in mice not only abolished fever-potentiated macrophage phagocytosis but also led to catastrophic defects in bacterial clearance and increased mortality upon infections. Thus, our work reveals that OR560 is a pivotal regulator of fever-enhanced antibacterial phagocytosis and integrates both pathogen-derived and febrile signals to ensure a robust response to infection.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1038/s41590-026-02709-x",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02709-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43045751/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261114__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how fever enhances antibacterial immunity by identifying olfactory receptor 560 (OR560) as a key mediator. Using CRISPR screening and temperature modulation in mice, researchers found fever induces OR560 expression in macrophages, promoting pseudopod formation and phagocytosis of bacteria. Genetic ablation of OR560 or serum response factor impaired bacterial clearance and increased mortality, indicating OR560's critical role in fever-driven immune responses.\",\n  \"key_findings\": [\n    \"Fever induces OR560 expression in macrophages via serum response factor\",\n    \"OR560 drives pseudopod formation necessary for bacterial phagocytosis\",\n    \"Genetic deletion of OR560 or serum response factor causes defective bacterial clearance and higher mortality\"\n  ],\n  \"scientific_significance\": \"This work identifies OR560 as a pivotal molecular link between fever and antibacterial phagocytosis, revealing how host temperature signals integrate with pathogen recognition to enhance immune defense.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how fever enhances antibacterial immunity by identifying olfactory receptor 560 (OR560) as a key mediator. Using CRISPR screening and temperature modulation in mice, researchers found fever induces OR560 expression in macrophages, promoting pseudopod formation and phagocytosis of bacteria. Genetic ablation of OR560 or serum response factor impaired bacterial clearance and increased mortality, indicating OR560's critical role in fever-driven immune responses.",
+          "key_findings": [
+            "Fever induces OR560 expression in macrophages via serum response factor",
+            "OR560 drives pseudopod formation necessary for bacterial phagocytosis",
+            "Genetic deletion of OR560 or serum response factor causes defective bacterial clearance and higher mortality"
+          ],
+          "scientific_significance": "This work identifies OR560 as a pivotal molecular link between fever and antibacterial phagocytosis, revealing how host temperature signals integrate with pathogen recognition to enhance immune defense."
+        },
+        "elapsed_seconds": 54.1822,
+        "input_tokens": 714,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 938,
+        "model_eval_seconds": 44.6872,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019412",
+        "title": "New Products.",
+        "abstract": "NA: A weekly roundup of information on newly offered instrumentation, apparatus, and laboratory materials of potential interest to researchers.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeo0226",
+        "doi_url": "https://doi.org/10.1126/science.aeo0226",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019412/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This Science journal article describes a weekly compilation of new laboratory instruments, apparatus, and materials potentially useful for researchers. The study provides a curated list of recently introduced scientific products without conducting experimental research. The main finding is the systematic listing of emerging research tools for the scientific community.\",\n  \"key_findings\": [\n    \"Weekly compilation of new laboratory instruments and apparatus\",\n    \"List of recently introduced scientific materials for researchers\",\n    \"Focus on products of potential interest to the scientific community\"\n  ],\n  \"scientific_significance\": \"This study contributes to the scientific ecosystem by facilitating access to emerging research tools through a structured, periodic update mechanism.\"\n}",
+        "parsed": {
+          "summary": "This Science journal article describes a weekly compilation of new laboratory instruments, apparatus, and materials potentially useful for researchers. The study provides a curated list of recently introduced scientific products without conducting experimental research. The main finding is the systematic listing of emerging research tools for the scientific community.",
+          "key_findings": [
+            "Weekly compilation of new laboratory instruments and apparatus",
+            "List of recently introduced scientific materials for researchers",
+            "Focus on products of potential interest to the scientific community"
+          ],
+          "scientific_significance": "This study contributes to the scientific ecosystem by facilitating access to emerging research tools through a structured, periodic update mechanism."
+        },
+        "elapsed_seconds": 26.1099,
+        "input_tokens": 444,
+        "output_tokens": 135,
+        "thoughts_tokens": null,
+        "total_tokens": 579,
+        "model_eval_seconds": 24.4077,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947628",
+        "title": "4f-Electron-Regulated Dual-Periodic Bonding Evolution Across the Lanthanide Series.",
+        "abstract": "NA: Lanthanide-based catalysts have attracted increasing attention due to their unique electronic structures, yet the relationship between 4f electron evolution and catalytic behavior remains unclear. Here, using structurally uniform lanthanide single-atom catalysts as a model platform, we systematically investigate the influence of 4f electron filling on bonding evolution across the lanthanide series. We reveal a dual-periodic trend in lanthanide-support binding energies and adsorbate bonding energies, which increases from La to Eu and from Gd to Yb. This behavior originates from progressive electron redistribution between 5d and 4f orbitals, which modulates the electron population of bonding orbitals. The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd. Furthermore, similar crystal-field splitting enables robust linear relationships between binding and bonding energies across diverse coordination environments. More importantly, the persistence of these electronic characteristics across diverse coordination environments demonstrates that the dual-periodic evolution represents an intrinsic feature of lanthanide chemistry rather than a system-specific phenomenon. These findings establish a 4f-electron-regulated bonding framework for understanding lanthanide reactivity and guiding catalyst design.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75541",
+        "doi_url": "https://doi.org/10.1002/adma.75541",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947628/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how 4f electron filling influences bonding evolution across the lanthanide series using structurally uniform single-atom catalysts. It reveals a dual-periodic trend in lanthanide-support and adsorbate binding energies, increasing from La to Eu and Gd to Yb. The half-filled 4f7 configuration causes a transition between Eu and Gd, with electron redistribution between 5d and 4f orbitals modulating bonding. These findings establish a 4f-electron-regulated framework for understanding lanthanide reactivity.\",\n  \"key_findings\": [\n    \"A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and Gd to Yb\",\n    \"The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd\",\n    \"Electron redistribution between 5d and 4f orbitals modulates bonding energies across the series\"\n  ],\n  \"scientific_significance\": \"The study identifies a fundamental 4f-electron-regulated bonding mechanism intrinsic to lanthanide chemistry, providing a unified framework for predicting and designing lanthanide-based catalysts.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how 4f electron filling influences bonding evolution across the lanthanide series using structurally uniform single-atom catalysts. It reveals a dual-periodic trend in lanthanide-support and adsorbate binding energies, increasing from La to Eu and Gd to Yb. The half-filled 4f7 configuration causes a transition between Eu and Gd, with electron redistribution between 5d and 4f orbitals modulating bonding. These findings establish a 4f-electron-regulated framework for understanding lanthanide reactivity.",
+          "key_findings": [
+            "A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and Gd to Yb",
+            "The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd",
+            "Electron redistribution between 5d and 4f orbitals modulates bonding energies across the series"
+          ],
+          "scientific_significance": "The study identifies a fundamental 4f-electron-regulated bonding mechanism intrinsic to lanthanide chemistry, providing a unified framework for predicting and designing lanthanide-based catalysts."
+        },
+        "elapsed_seconds": 52.9076,
+        "input_tokens": 777,
+        "output_tokens": 242,
+        "thoughts_tokens": null,
+        "total_tokens": 1019,
+        "model_eval_seconds": 49.4635,
+        "error": "summary must contain 45–65 words; received 70.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43035116",
+        "title": "Ampelopsis grossedentata restores the homeostasis of Th17/Treg cells to mitigate DSS-induced ulcerative colitis through TLR1-2/NF-κB signaling pathway.",
+        "abstract": "ETHNOPHARMACOLOGICAL RELEVANCE: Ampelopsis grossedentata (AG), a traditional medicine from Southwest China, is frequently used to treat inflammation, anemopyretic cold, pharyngitis, hepatitis, and dysentery. Pharmacological studies confirmed that primary active constituents of AG, including flavonoids, profoundly affect anti-inflammatory processes and immunomodulation. However, the therapeutic effect and mechanisms of AG for ulcerative colitis (UC) are still unclear.\nAIM OF THE STUDY: This study aimed to elucidate the mechanisms of AG treatment of UC.\nMATERIALS AND METHODS: UPLC-MS and network pharmacology were employed to identify the active components of AG and their potential anti-UC mechanisms. A 4% dextran sulfate sodium (DSS)-induced UC mouse model was established for assessing therapeutic efficacy of AG based on body weight, disease activity index, colon length, and histopathology of colon tissue. RT-qPCR, immunofluorescence assays and D-lactate levels were used to evaluate the inflammatory state and epithelial barrier integrity. Transcriptomic, proteomic, and flow cytometry analyses were performed to examine the underlying mechanisms. Molecular docking, molecular dynamics simulations, cellular thermal shift assay (CETSA), western blot and the TLR1/2 knockdown assays were used to identify and verify candidate targets.\nRESULTS: Five flavonoids in AG were characterized via UPLC-Q-TOF-MS/MS, with dihydromyricetin, taxifolin, myricitrin, and myricetin quantified by HPLC-DAD. Network pharmacology revealed 38 UC-related targets, enriched in IL-17/TNF signaling pathways. In vivo, AG alleviated UC-related symptoms, improved colon pathology, reduced the levels of pro-inflammatory cytokines (IL-1β, TNF-α, IL-6), upregulated tight junction proteins (ZO-1, claudin 5), and inhibited the nuclear translocation of NF-κB (P65 and P50). Transcriptomic, proteomic, and flow cytometry analyses indicated that AG regulated Th17/Treg balance via the NF-κB signaling pathway. Structure-based molecular docking, molecular dynamics simulations, CETSA western blot and the TLR1/2 knockdown assays revealed that AG may act through the TLR1-TLR2 heterodimer receptor.\nCONCLUSION: AG effectively attenuates DSS-induced UC, potentially by restoring Th17/Treg balance and inhibiting NF-κB signaling through the TLR1-TLR2 heterodimer. AG is thus a therapeutic candidate for UC treatment.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.jep.2026.122618",
+        "doi_url": "https://doi.org/10.1016/j.jep.2026.122618",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43035116/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of ethnopharmacology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how Ampelopsis grossedentata (AG) alleviates ulcerative colitis (UC) via Th17/Treg cell homeostasis and TLR1-2/NF-κB signaling. Using DSS-induced UC mice, AG reduced inflammation, improved colon pathology, and restored Th17/Treg balance. Molecular analyses confirmed AG targets TLR1-TLR2 heterodimers to inhibit NF-κB activation, suggesting a mechanism for UC treatment.\",\n  \"key_findings\": [\n    \"AG reduced pro-inflammatory cytokines (IL-1β, TNF-α, IL-6) and improved colon histopathology in DSS-induced UC mice\",\n    \"AG restored Th17/Treg cell balance through NF-κB signaling pathway inhibition\",\n    \"AG targets TLR1-TLR2 heterodimers to modulate NF-κB nuclear translocation\"\n  ],\n  \"scientific_significance\": \"This work identifies a specific molecular pathway (TLR1-2/NF-κB) by which a traditional Chinese medicine alleviates ulcerative colitis, advancing mechanistic understanding of immunomodulatory therapies for inflammatory bowel disease.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how Ampelopsis grossedentata (AG) alleviates ulcerative colitis (UC) via Th17/Treg cell homeostasis and TLR1-2/NF-κB signaling. Using DSS-induced UC mice, AG reduced inflammation, improved colon pathology, and restored Th17/Treg balance. Molecular analyses confirmed AG targets TLR1-TLR2 heterodimers to inhibit NF-κB activation, suggesting a mechanism for UC treatment.",
+          "key_findings": [
+            "AG reduced pro-inflammatory cytokines (IL-1β, TNF-α, IL-6) and improved colon histopathology in DSS-induced UC mice",
+            "AG restored Th17/Treg cell balance through NF-κB signaling pathway inhibition",
+            "AG targets TLR1-TLR2 heterodimers to modulate NF-κB nuclear translocation"
+          ],
+          "scientific_significance": "This work identifies a specific molecular pathway (TLR1-2/NF-κB) by which a traditional Chinese medicine alleviates ulcerative colitis, advancing mechanistic understanding of immunomodulatory therapies for inflammatory bowel disease."
+        },
+        "elapsed_seconds": 74.8738,
+        "input_tokens": 1024,
+        "output_tokens": 250,
+        "thoughts_tokens": null,
+        "total_tokens": 1274,
+        "model_eval_seconds": 55.5527,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983081",
+        "title": "Tracing the spread of Celtic languages using ancient genomics.",
+        "abstract": "NA: Celtic languages are today restricted to Europe's Atlantic fringes but were widely spoken across the continent during the Iron Age1-3. How Celtic achieved this early distribution remains contested4, with alternative archaeological and linguistic models proposing different homelands and dispersal routes. Here we analyse genome-wide data from 4,587 ancient individuals, focusing on Bronze and Iron Age Europe, to test the extent to which these models fit reconstructed demographic histories. We identify three main processes shaping European population structure that are relevant to the Celtic dispersal. First, the arrival of Steppe-related ancestry with Bell Beaker-associated groups after around 4400 BP (calibrated years before present or 1950 CE) across the region in which Celtic and related languages were later spoken. Second, a movement from southwestern Europe into Britain during the Bronze Age (3800-3200 BP), consistent with scenarios in which Celtic formed along the Atlantic façade. Third, a westward expansion of ancestry related to Late Bronze Age Knovíz-Urnfield-associated populations from eastern central Europe (3200-2800 BP), affecting France, the British Isles, northeastern Iberia and Italy and later associated with Iron Age Hallstatt and La Tène contexts5-8. Although all three movements have parallels with proposed models, we argue that the final movement, from eastern central Europe, is most parsimonious for the spread of Celtic. Although human history does not necessarily follow a parsimonious trajectory9 and language shifts need not track genetic change, these results delimit the demographic scenarios that are plausible for the emergence of Celtic in prehistoric Europe.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11198-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11198-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983081/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing population structure, it identifies three key processes: Steppe-related ancestry introduction via Bell Beaker groups around 4400 BP, Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) linked to Hallstatt and La Tène cultures. The findings suggest the eastern central European migration is most parsimonious for Celtic spread, though language shifts may not directly follow genetic patterns.\",\n  \"key_findings\": [\n    \"Steppe-related ancestry arrived via Bell Beaker groups around 4400 BP across Celtic-speaking regions\",\n    \"Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP\",\n    \"Eastern central European ancestry expanded westward from 3200-2800 BP, affecting France, the British Isles, northeastern Iberia, and Italy\"\n  ],\n  \"scientific_significance\": \"The study provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal in prehistoric Europe, refining models of how linguistic and genetic histories interacted during the Iron Age.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing population structure, it identifies three key processes: Steppe-related ancestry introduction via Bell Beaker groups around 4400 BP, Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) linked to Hallstatt and La Tène cultures. The findings suggest the eastern central European migration is most parsimonious for Celtic spread, though language shifts may not directly follow genetic patterns.",
+          "key_findings": [
+            "Steppe-related ancestry arrived via Bell Beaker groups around 4400 BP across Celtic-speaking regions",
+            "Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP",
+            "Eastern central European ancestry expanded westward from 3200-2800 BP, affecting France, the British Isles, northeastern Iberia, and Italy"
+          ],
+          "scientific_significance": "The study provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal in prehistoric Europe, refining models of how linguistic and genetic histories interacted during the Iron Age."
+        },
+        "elapsed_seconds": 61.3771,
+        "input_tokens": 874,
+        "output_tokens": 269,
+        "thoughts_tokens": null,
+        "total_tokens": 1143,
+        "model_eval_seconds": 57.8673,
+        "error": "summary must contain 45–65 words; received 89.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43064784",
+        "title": "Large-scale antibody reactome profiling identifies herpesvirus-autoantigen associations that underlie chronic diseases.",
+        "abstract": "NA: Herpesviruses infect nearly all humans and have long been implicated in autoimmune and chronic diseases, yet their interactions with host proteins have not been systematically characterized. We profiled immunoglobulin G reactivities to >4,600 herpesvirus peptides and >15,000 human proteins using multiplexed protein display in two Mass General Brigham Biobank cohorts (discovery n = 1,289; replication n = 763), with longitudinal electronic health record follow-up. We identified and replicated 4,943 FDR-significant associations across 106 autoantigens, including previously uncharacterized viral-autoantigen axes, such as PHLDA1 and ZNF550. Eleven autoantigens were predicted by viral reactivities with >85% accuracy in independent validation, two of which exhibited viral-host sequence homology consistent with possible molecular mimicry. Integrating immune reactivities with incident diseases revealed virus-specific networks. Cytomegalovirus formed the largest multimorbid network, Epstein-Barr virus converged on pleiotropic autoimmune hubs and herpes simplex viruses formed partially overlapping networks. These findings define a herpesvirus-autoantigen-disease network atlas and prioritize candidate viral-host immune axes for mechanistic investigation.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1038/s41590-026-02674-5",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02674-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43064784/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261114__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study systematically characterized herpesvirus-autoantigen interactions using immunoglobulin G reactivity profiling against viral peptides and host proteins in two biobank cohorts. By identifying 4,943 FDR-significant associations across 106 autoantigens, it revealed virus-specific disease networks, including cytomegalovirus's role in multimorbid conditions and Epstein-Barr virus's convergence on autoimmune hubs. The findings provide a framework for understanding viral contributions to chronic autoimmune diseases.\",\n  \"key_findings\": [\n    \"Identification of 4,94: FDR-significant herpesvirus-autoantigen associations across 106 autoantigens\",\n    \"Cytomegalovirus formed the largest multimorbid disease network, while Epstein-Barr virus converged on pleiotropic autoimmune hubs\",\n    \"Eleven autoantigens were predicted with >85% accuracy using viral reactivities, suggesting molecular mimicry potential\"\n  ],\n  \"scientific_significance\": \"This work establishes a comprehensive herpesvirus-autoantigen-disease network atlas, advancing understanding of how viral infections may drive chronic autoimmune conditions through molecular mimicry and immune cross-reactivity.\"\n}",
+        "parsed": {
+          "summary": "This study systematically characterized herpesvirus-autoantigen interactions using immunoglobulin G reactivity profiling against viral peptides and host proteins in two biobank cohorts. By identifying 4,943 FDR-significant associations across 106 autoantigens, it revealed virus-specific disease networks, including cytomegalovirus's role in multimorbid conditions and Epstein-Barr virus's convergence on autoimmune hubs. The findings provide a framework for understanding viral contributions to chronic autoimmune diseases.",
+          "key_findings": [
+            "Identification of 4,94: FDR-significant herpesvirus-autoantigen associations across 106 autoantigens",
+            "Cytomegalovirus formed the largest multimorbid disease network, while Epstein-Barr virus converged on pleiotropic autoimmune hubs",
+            "Eleven autoantigens were predicted with >85% accuracy using viral reactivities, suggesting molecular mimicry potential"
+          ],
+          "scientific_significance": "This work establishes a comprehensive herpesvirus-autoantigen-disease network atlas, advancing understanding of how viral infections may drive chronic autoimmune conditions through molecular mimicry and immune cross-reactivity."
+        },
+        "elapsed_seconds": 60.0053,
+        "input_tokens": 711,
+        "output_tokens": 249,
+        "thoughts_tokens": null,
+        "total_tokens": 960,
+        "model_eval_seconds": 50.6831,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019413",
+        "title": "The sideshow.",
+        "abstract": "NA: How an unpopular hypothesis linking Alzheimer's disease to the loss of crucial neurons made a comeback.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeo0622",
+        "doi_url": "https://doi.org/10.1126/science.aeo0622",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019413/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the resurgence of an unpopular hypothesis connecting Alzheimer's disease to neuronal loss. Using historical analysis and scientific reevaluation, it demonstrates how this theory regained traction despite initial skepticism. The findings suggest a potential reevaluation of Alzheimer's pathophysiology, highlighting the importance of revisiting established concepts in neurodegenerative research.\",\n  \"key_findings\": [\n    \"The hypothesis linking Alzheimer's disease to neuronal loss was previously dismissed but has since regained scientific credibility\",\n    \"The study employed historical analysis and reevaluation to demonstrate the hypothesis's resurgence\",\n    \"The findings indicate a need to reconsider established concepts in Alzheimer's pathophysiology\"\n  ],\n  \"scientific_significance\": \"The study contributes to understanding how scientific theories can be reevaluated and regain relevance despite prior dismissal, offering insights into the dynamics of hypothesis acceptance in neurodegenerative disease research.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the resurgence of an unpopular hypothesis connecting Alzheimer's disease to neuronal loss. Using historical analysis and scientific reevaluation, it demonstrates how this theory regained traction despite initial skepticism. The findings suggest a potential reevaluation of Alzheimer's pathophysiology, highlighting the importance of revisiting established concepts in neurodegenerative research.",
+          "key_findings": [
+            "The hypothesis linking Alzheimer's disease to neuronal loss was previously dismissed but has since regained scientific credibility",
+            "The study employed historical analysis and reevaluation to demonstrate the hypothesis's resurgence",
+            "The findings indicate a need to reconsider established concepts in Alzheimer's pathophysiology"
+          ],
+          "scientific_significance": "The study contributes to understanding how scientific theories can be reevaluated and regain relevance despite prior dismissal, offering insights into the dynamics of hypothesis acceptance in neurodegenerative disease research."
+        },
+        "elapsed_seconds": 35.7938,
+        "input_tokens": 442,
+        "output_tokens": 181,
+        "thoughts_tokens": null,
+        "total_tokens": 623,
+        "model_eval_seconds": 34.1164,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42952147",
+        "title": "Bioinspired Artificial Cilia and Applications.",
+        "abstract": "NA: Biological cilia are prevalent organelles found in a wide range of human organs. Despite their small size, natural cilia feature exquisite and intricate architecture and play an important role in human life. For example, motile cilia in the brain and lung are responsible for fluid propulsion and particle removal. Furthermore, primary cilia in the epidermis and inner ear have sensitive detection capabilities for pressure and sound. Over the last three decades, researchers have created various artificial cilia inspired by the architecture and multifunctional capabilities of natural cilia. Artificial cilia have evolved as a versatile biomimetic platform with promising applications in robotics, transportation, adhesion regulation, optical regulation, sensing, and drug delivery. This review provides a comprehensive overview of research advances in artificial cilia. First, the structural and functional features of natural cilia, as well as the key developments in artificial cilia, are outlined. Subsequently, various fabrication strategies, actuation mechanisms, and cutting-edge applications of artificial cilia are further explored. Finally, the main challenges and future research directions toward realizing artificial ciliary systems that more closely mimic the performance of their natural counterparts are discussed.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75464",
+        "doi_url": "https://doi.org/10.1002/adma.75464",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42952147/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines artificial cilia inspired by natural cilia's structure and functions. It outlines natural cilia's roles in fluid propulsion, particle removal, and sensory detection across human organs. The study details fabrication methods, actuation mechanisms, and applications in robotics, drug delivery, and sensing. It identifies key challenges in mimicking natural cilia's performance for future biomimetic systems.\",\n  \"key_findings\": [\n    \"Artificial cilia mimic natural cilia's roles in fluid propulsion and particle removal\",\n    \"Primary cilia in epidermis and inner ear enable pressure and sound detection\",\n    \"Fabrication strategies and actuation mechanisms enable applications in robotics and drug delivery\"\n  ],\n  \"scientific_significance\": \"This review advances understanding of biomimetic cilia design by synthesizing structural, functional, and application insights for next-generation artificial ciliary systems.\"\n}",
+        "parsed": {
+          "summary": "This review examines artificial cilia inspired by natural cilia's structure and functions. It outlines natural cilia's roles in fluid propulsion, particle removal, and sensory detection across human organs. The study details fabrication methods, actuation mechanisms, and applications in robotics, drug delivery, and sensing. It identifies key challenges in mimicking natural cilia's performance for future biomimetic systems.",
+          "key_findings": [
+            "Artificial cilia mimic natural cilia's roles in fluid propulsion and particle removal",
+            "Primary cilia in epidermis and inner ear enable pressure and sound detection",
+            "Fabrication strategies and actuation mechanisms enable applications in robotics and drug delivery"
+          ],
+          "scientific_significance": "This review advances understanding of biomimetic cilia design by synthesizing structural, functional, and application insights for next-generation artificial ciliary systems."
+        },
+        "elapsed_seconds": 44.695,
+        "input_tokens": 663,
+        "output_tokens": 184,
+        "thoughts_tokens": null,
+        "total_tokens": 847,
+        "model_eval_seconds": 36.6442,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43035126",
+        "title": "Guilty by marker? Reassessing the pro-tumor reputation of antigen-presenting M2-like macrophages.",
+        "abstract": "NA: M2-like tumor-associated macrophages (TAMs) are widely regarded as immunosuppressive on the basis of surface markers such as CD206 and CD163, an inference drawn largely from in vitro polarization studies rather than tested directly in the tumor-derived cells to which it is applied. This review asks what functional evidence, specifically assays of phagocytosis, antigen processing, cross-presentation, and CD8+ T cell activation, says about M2-like macrophages in cancer. A three-tier evidence framework is used to grade studies by whether they test function and whether that function is shown to be causal, applied equally to studies supporting and opposing an antitumor role for these cells. Functional evidence shows that some CD206+ or M2a-like macrophages, including ones sorted directly from tumors, can cross-present tumor antigen and activate CD8+ T cells at levels comparable with conventional type 1 dendritic cells, and that this capacity is associated with better outcomes in at least one setting. Counter-evidence shows that antigen-presenting macrophages, not always M2-like by the studies' own definitions, can instead retain cytotoxic T cells in tumor-promoting configurations or activate regulatory T cells. Across both bodies of evidence, antigen fate and co-stimulatory context are more informative about outcome than the M1/M2 marker itself. This review's claim is normative, not historical: a marker cannot by itself define function, so it cannot settle whether M2-like macrophages are pro-tumor or antitumor. Evidence is accordingly narrowed to antigen-presenting, largely CD206hi/M2a-like, macrophages, and a minimum reporting standard is proposed for future studies.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.critrevonc.2026.105702",
+        "doi_url": "https://doi.org/10.1016/j.critrevonc.2026.105702",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43035126/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Critical reviews in oncology/hematology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This review reassesses the pro-tumor role of M2-like tumor-associated macrophages (TAMs) by evaluating functional evidence from in vitro studies. It examines phagocytosis, antigen processing, cross-presentation, and CD8+ T cell activation. Findings indicate that some CD206+ TAMs can cross-present tumor antigens and activate CD8+ T cells comparably to dendritic cells, correlating with improved outcomes. Conversely, other macrophages may promote immunosuppression. The study emphasizes that antigen fate and co-stimulatory context, not M1/M2 markers, determine functional outcomes.\",\n  \"key_findings\": [\n    \"CD206+ tumor-associated macrophages can cross-present tumor antigens and activate CD8+ T cells at levels matching conventional dendritic cells\",\n    \"These macrophages correlate with better clinical outcomes in specific contexts\",\n    \"Antigen-presenting macrophages may either promote antitumor immunity or immunosuppression depending on co-stimulatory signals\"\n  ],\n  \"scientific_significance\": \"This review establishes that functional assays, not surface markers alone, are critical for determining the immunological role of tumor-associated macrophages in cancer.\"\n}",
+        "parsed": {
+          "summary": "This review reassesses the pro-tumor role of M2-like tumor-associated macrophages (TAMs) by evaluating functional evidence from in vitro studies. It examines phagocytosis, antigen processing, cross-presentation, and CD8+ T cell activation. Findings indicate that some CD206+ TAMs can cross-present tumor antigens and activate CD8+ T cells comparably to dendritic cells, correlating with improved outcomes. Conversely, other macrophages may promote immunosuppression. The study emphasizes that antigen fate and co-stimulatory context, not M1/M2 markers, determine functional outcomes.",
+          "key_findings": [
+            "CD206+ tumor-associated macrophages can cross-present tumor antigens and activate CD8+ T cells at levels matching conventional dendritic cells",
+            "These macrophages correlate with better clinical outcomes in specific contexts",
+            "Antigen-presenting macrophages may either promote antitumor immunity or immunosuppression depending on co-stimulatory signals"
+          ],
+          "scientific_significance": "This review establishes that functional assays, not surface markers alone, are critical for determining the immunological role of tumor-associated macrophages in cancer."
+        },
+        "elapsed_seconds": 59.402,
+        "input_tokens": 903,
+        "output_tokens": 260,
+        "thoughts_tokens": null,
+        "total_tokens": 1163,
+        "model_eval_seconds": 55.8501,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015459",
+        "title": "Validation of clinical and preclinical obesity across global cohorts.",
+        "abstract": "NA: In 2025, a Lancet Commission proposed distinguishing clinical obesity, defined by adiposity-related organ dysfunction, from preclinical obesity, defined by excess adiposity with preserved function, and recommended using anthropometric measures beyond body mass index (BMI) to confirm obesity status1. Here we report the comparative performance of this framework versus conventional BMI-based classification using prevalence, incidence and mortality data from 844,108 adults across four cohorts in China, the UK, the USA and Spain. Complementing BMI with waist circumference and waist-to-height ratio data showed that BMI alone overestimated obesity in 1.2-3.1% and underestimated it in 5.2-8.6% of participants across cohorts. The combined anthropometric definition increased overall obesity prevalence by 3.3-7.4% relative to BMI-based classification. Clinical obesity accounted for 22.7-31.3% of total obesity, with an overall population prevalence of 5.6-10.9%. A large proportion of individuals (between 77.4% and 91.3%) with preclinical obesity at baseline showed no progression to clinical obesity over 10 years. Increased mortality risk was associated with the combined anthropometric definition of obesity, but not with BMI-only obesity. Clinical obesity was associated with substantially higher all-cause mortality (hazard ratio 1.69, 95% confidence interval 1.64-1.73), whereas preclinical obesity conferred only modest risk (1.19, 1.14-1.24). These findings support the global adoption of the Lancet Commission diagnostic framework to improve obesity care and policy.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11237-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11237-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015459/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study evaluates the Lancet Commission's obesity classification framework against BMI-only methods using data from 844,108 adults across four global cohorts. It found BMI overestimates obesity in 1.2-3.1% and underestimates it in 5.2-8.6% of participants. The combined anthropometric definition increased obesity prevalence by 3.3-7.4% and showed clinical obesity (22.7-31.3% of total) carries significantly higher mortality risk than preclinical obesity.\",\n  \"key_findings\": [\n    \"BMI overestimates obesity prevalence by 1.2-3.1% and underestimates it by 5.2-8.6% across cohorts\",\n    \"Combined anthropometric definition increased obesity prevalence by 3.3-7.4% relative to BMI-only classification\",\n    \"Clinical obesity confers a hazard ratio of 1.69 for all-cause mortality versus 1.19 for preclinical obesity\"\n  ],\n  \"scientific_significance\": \"The study provides robust evidence supporting a more precise obesity classification system that better identifies high-risk individuals and improves mortality risk stratification globally.\"\n}",
+        "parsed": {
+          "summary": "This study evaluates the Lancet Commission's obesity classification framework against BMI-only methods using data from 844,108 adults across four global cohorts. It found BMI overestimates obesity in 1.2-3.1% and underestimates it in 5.2-8.6% of participants. The combined anthropometric definition increased obesity prevalence by 3.3-7.4% and showed clinical obesity (22.7-31.3% of total) carries significantly higher mortality risk than preclinical obesity.",
+          "key_findings": [
+            "BMI overestimates obesity prevalence by 1.2-3.1% and underestimates it by 5.2-8.6% across cohorts",
+            "Combined anthropometric definition increased obesity prevalence by 3.3-7.4% relative to BMI-only classification",
+            "Clinical obesity confers a hazard ratio of 1.69 for all-cause mortality versus 1.19 for preclinical obesity"
+          ],
+          "scientific_significance": "The study provides robust evidence supporting a more precise obesity classification system that better identifies high-risk individuals and improves mortality risk stratification globally."
+        },
+        "elapsed_seconds": 64.1171,
+        "input_tokens": 785,
+        "output_tokens": 255,
+        "thoughts_tokens": null,
+        "total_tokens": 1040,
+        "model_eval_seconds": 52.4152,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019415",
+        "title": "Neurons in a dish are the newest computing machines.",
+        "abstract": "NA: Brain organoids offer highly efficient processing-if researchers can learn how to harness their power.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeo0641",
+        "doi_url": "https://doi.org/10.1126/science.aeo0641",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019415/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates brain organoids as potential computational systems, focusing on their efficiency in information processing. Researchers assessed organoid capabilities to determine if they can serve as viable computing platforms. The findings indicate brain organoids demonstrate significant processing efficiency, suggesting they could become powerful computational tools with further optimization.\",\n  \"key_findings\": [\n    \"Brain organoids exhibit high processing efficiency\",\n    \"Organoids show potential as viable computational platforms\",\n    \"Further optimization may enhance their utility for computing applications\"\n  ],\n  \"scientific_significance\": \"This work advances understanding of brain organoids' computational potential, highlighting their efficiency as a foundation for future neuromorphic computing systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates brain organoids as potential computational systems, focusing on their efficiency in information processing. Researchers assessed organoid capabilities to determine if they can serve as viable computing platforms. The findings indicate brain organoids demonstrate significant processing efficiency, suggesting they could become powerful computational tools with further optimization.",
+          "key_findings": [
+            "Brain organoids exhibit high processing efficiency",
+            "Organoids show potential as viable computational platforms",
+            "Further optimization may enhance their utility for computing applications"
+          ],
+          "scientific_significance": "This work advances understanding of brain organoids' computational potential, highlighting their efficiency as a foundation for future neuromorphic computing systems."
+        },
+        "elapsed_seconds": 27.3283,
+        "input_tokens": 448,
+        "output_tokens": 140,
+        "thoughts_tokens": null,
+        "total_tokens": 588,
+        "model_eval_seconds": 25.4318,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42952169",
+        "title": "Scalable and Lithography-Free Fabrication of High-Aspect-Ratio Diamond Nanowires for Photonic and Electrochemical Applications.",
+        "abstract": "NA: The scalable integration of low-dimensional diamond nanostructures into advanced technologies is fundamentally bottlenecked by the complexity and high cost of conventional lithography. Here we report a highly scalable, lithography-free top-down etching approach to produce densely distributed high-aspect-ratio (HAR) diamond nanowires across polycrystalline (PCD), single-crystal (SCD), and boron-doped diamond (BDD) substrates, including continuous fabrication on a full 2-inch wafer. By correlating time-dependent surface characterizations, transmission electron microscopy (TEM), energy-dispersive x-ray spectroscopy (EDS) elemental mapping, and 3D femtosecond laser tomography, we elucidate an Ag-initiated, redeposition-sustained secondary inorganic micromasking process: self-assembled Ag nanoclusters initiate nanowire formation, while redeposited inorganic residues derived from the carrier wafer and chamber environment sustain anisotropic etching during prolonged reactive ion etching (RIE). The broad versatility of this method is validated through distinct functional demonstrations: PCD nanowires demonstrate a pronounced transition to hydrophobicity; SCD nanowires demonstrate spatial modulation and localized enhancement of ensemble nitrogen-vacancy (NV) photoluminescence, while finite-difference time-domain (FDTD) simulations support nanowire-assisted optical extraction; BDD nanowires provide an approximately 30-fold increase in electrochemical double-layer capacitance (Cdl)-derived accessible electrochemical surface area, achieving a 2.5-fold enhancement in pollutant-degradation kinetics with stable electrochemical operation. This study establishes a viable and scalable pathway for integrating diamond nanostructures into advanced sensing, photonics, and electrocatalysis.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75484",
+        "doi_url": "https://doi.org/10.1002/adma.75484",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42952169/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of scalable diamond nanowire production by developing a lithography-free top-down etching method. It produces high-aspect-ratio nanowires on various diamond substrates, including polycrystalline, single-crystal, and boron-doped diamond. The approach uses silver-initiated micromasking to enable anisotropic etching, resulting in functional applications in photonic sensing, electrocatalysis, and pollutant degradation.\",\n  \"key_findings\": [\n    \"High-aspect-ratio diamond nanowires fabricated across multiple diamond substrate types via scalable, lithography-free etching\",\n    \"Silver-initiated redeposition-sustained micromasking enables anisotropic etching for nanowire formation\",\n    \"BDD nanowires show a 30-fold increase in electrochemical accessible surface area and 2.5-fold improvement in pollutant degradation kinetics\"\n  ],\n  \"scientific_significance\": \"This work provides a scalable pathway for integrating diamond nanostructures into advanced photonic and electrochemical applications without conventional lithography constraints.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of scalable diamond nanowire production by developing a lithography-free top-down etching method. It produces high-aspect-ratio nanowires on various diamond substrates, including polycrystalline, single-crystal, and boron-doped diamond. The approach uses silver-initiated micromasking to enable anisotropic etching, resulting in functional applications in photonic sensing, electrocatalysis, and pollutant degradation.",
+          "key_findings": [
+            "High-aspect-ratio diamond nanowires fabricated across multiple diamond substrate types via scalable, lithography-free etching",
+            "Silver-initiated redeposition-sustained micromasking enables anisotropic etching for nanowire formation",
+            "BDD nanowires show a 30-fold increase in electrochemical accessible surface area and 2.5-fold improvement in pollutant degradation kinetics"
+          ],
+          "scientific_significance": "This work provides a scalable pathway for integrating diamond nanostructures into advanced photonic and electrochemical applications without conventional lithography constraints."
+        },
+        "elapsed_seconds": 58.7724,
+        "input_tokens": 808,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 1036,
+        "model_eval_seconds": 46.4261,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43036045",
+        "title": "Tolerogenic Immunotherapy for Type 1 Diabetes Through Sustained Autoantigen Delivery in a Transient Inflammatory Niche.",
+        "abstract": "NA: Type 1 diabetes (T1D) is a T-cell-mediated autoimmune disease characterized by destruction of pancreatic β-cells, resulting in lifelong insulin therapy dependence and risk of severe complications. Tolerogenic immunotherapies offer a promising strategy to restore antigen-specific immune tolerance and prevent T1D but have been limited by challenges in controlled spatiotemporal exposure of antigens and immunomodulators to achieve robust tolerance. Here, we report the development of injectable hydrogel depot formulations providing sustained co-delivery of insulin autoantigen and low-dose interleukin-2 (IL-2) and which form transient tolerogenic niches following subcutaneous administration. These treatments recruit and expand regulatory T cells both within the hydrogel niche and draining lymph nodes, inducing tolerance responses in the spleen and pancreas and increasing the median time to diabetes onset in non-obese diabetic mice from 20 to >40 weeks. These studies suggest that sustained co-exposure of autoantigen in the appropriate immune environment can promote durable tolerance for T1D prevention.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1002/advs.78758",
+        "doi_url": "https://doi.org/10.1002/advs.78758",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43036045/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated sustained autoantigen delivery for T1D immunotherapy using injectable hydrogel depots co-delivering insulin autoantigen and low-dose IL-2. The approach created transient tolerogenic niches that recruited regulatory T cells, delaying diabetes onset in non-obese diabetic mice from . The findings indicate that controlled antigen exposure in specific immune environments can induce durable immune tolerance.\",\n  \"key_findings\": [\n    \"Injectable hydrogel depots provided sustained co-delivery of insulin autoantigen and low-dose IL-2\",\n    \"Transient tolerogenic niches recruited and expanded regulatory T cells in lymph nodes and spleen\",\n    \"Median time to diabetes onset increased from 20 to >40 weeks in non-obese diabetic mice\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that sustained autoantigen exposure within transient inflammatory niches can induce durable immune tolerance in T1D, advancing strategies for antigen-specific immunotherapy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated sustained autoantigen delivery for T1D immunotherapy using injectable hydrogel depots co-delivering insulin autoantigen and low-dose IL-2. The approach created transient tolerogenic niches that recruited regulatory T cells, delaying diabetes onset in non-obese diabetic mice from . The findings indicate that controlled antigen exposure in specific immune environments can induce durable immune tolerance.",
+          "key_findings": [
+            "Injectable hydrogel depots provided sustained co-delivery of insulin autoantigen and low-dose IL-2",
+            "Transient tolerogenic niches recruited and expanded regulatory T cells in lymph nodes and spleen",
+            "Median time to diabetes onset increased from 20 to >40 weeks in non-obese diabetic mice"
+          ],
+          "scientific_significance": "This work demonstrates that sustained autoantigen exposure within transient inflammatory niches can induce durable immune tolerance in T1D, advancing strategies for antigen-specific immunotherapy."
+        },
+        "elapsed_seconds": 49.1138,
+        "input_tokens": 678,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 884,
+        "model_eval_seconds": 40.6385,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
