@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "run_id": "20261122T040039Z",
+  "generated_at_utc": "2026-11-22 04:13:41 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 192,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42910623",
+        "title": "Self-Segregated Buried-Interface Regulation Resolves Kinetic-Environmental Coupling for Ambient Flexible Perovskite Solar Cells.",
+        "abstract": "NA: Ambient fabrication of flexible perovskite solar cells is fundamentally limited by a detrimental kinetic-environmental coupling at the buried interface, where moisture ingress and nonoptimal crystallization mutually compromise film quality-yet the underlying mechanism remains elusive. Using dual-side in situ photoluminescence, we overturn the conventional top-down model by revealing simultaneous nucleation at both gas-liquid and liquid-solid interfaces during antisolvent-assisted solution processing, but find that outward solvent evaporation delays α-phase conversion at the buried interface relative to the surface, creating kinetic mismatch that exacerbates moisture attack and defect accumulation. To address these kinetic and environmental constraints, we design a self-segregating multifunctional molecule, 2-[(3-trifluoromethyl)phenyl]amino-3-pyridinecarboxylic acid (NFA), which spontaneously enriches at the buried interface to synchronize dual-interface crystallization while simultaneously passivating defects, optimizing energy-level alignment, and constructing a hydrophobic barrier against moisture ingress. Consequently, this self-segregated kinetic-environmental regulation yields record ambient flexible photovoltaic performance with power-conversion efficiencies of 24.84% (0.09 cm2, certified at 23.75%) and 21.46% on mini-modules (13.8 cm2). The optimized devices maintain 96.26% of their starting efficiency following 1000 h damp aging at 85 ± 5% RH. Our work establishes self-segregated interfacial regulation as a rational route to address kinetic and environmental constraints in scalable flexible photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75474",
+        "doi_url": "https://doi.org/10.1002/adma.75474",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42910623/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. A self-segregating molecule (NFA) synchronizes crystallization, passivates defects, and forms a hydrophobic barrier. This approach achieves 24.84% power conversion efficiency in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.\",\n  \"key_findings\": [\n    \"Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing\",\n    \"Outward solvent evaporation delays α-phase conversion at the buried interface, worsening moisture ingress\",\n    \"Self-segregating molecule NFA synchronizes crystallization, passivates defects, and creates a hydrophobic barrier\"\n  ],\n  \"scientific_significance\": \"This work establishes self-segregated interfacial regulation as a general strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates kinetic-environmental coupling at buried interfaces in ambient flexible perovskite solar cells. Using dual-side in situ photoluminescence, it reveals simultaneous nucleation at gas-liquid and liquid-solid interfaces during antisolvent processing. Outward solvent evaporation delays α-phase conversion at the buried interface, exacerbating moisture attack. A self-segregating molecule (NFA) synchronizes crystallization, passivates defects, and forms a hydrophobic barrier. This approach achieves 24.84% power conversion efficiency in small cells and 21.46% in mini-modules, maintaining 96.26% efficiency after 1000h damp aging at 85±5% RH.",
+          "key_findings": [
+            "Simultaneous nucleation occurs at both gas-liquid and liquid-solid interfaces during antisolvent processing",
+            "Outward solvent evaporation delays α-phase conversion at the buried interface, worsening moisture ingress",
+            "Self-segregating molecule NFA synchronizes crystallization, passivates defects, and creates a hydrophobic barrier"
+          ],
+          "scientific_significance": "This work establishes self-segregated interfacial regulation as a general strategy to overcome kinetic-environmental constraints in ambient flexible perovskite solar cells."
+        },
+        "elapsed_seconds": 24.7383,
+        "input_tokens": 886,
+        "output_tokens": 277,
+        "thoughts_tokens": null,
+        "total_tokens": 1163,
+        "model_eval_seconds": 22.7366,
+        "error": "summary must contain 45–65 words; received 81.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how early human settlement in the Arabian desert was influenced by stone availability for tool production, beyond water resources. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found no lithic artefacts or knappable materials in areas with abundant freshwater, despite 55 palaeolake deposits. Spatial analysis indicates settlement required co-occurrence of water and stone resources, with 57% of water-accessible terrain lacking suitable stone. This suggests raw-material geology critically constrains dispersal, challenging models that prioritize water alone.\",\n  \"key_findings\": [\n    \"No lithic artefacts or knappable raw materials were found in 125 surveyed localities despite abundant freshwater and palaeolake deposits\",\n    \"57% of water-accessible terrain lacks knappable stone, indicating stone availability as a key constraint\",\n    \"Spatial modeling shows settlement tracked co-occurrence of water and lithic resources, not water alone\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that stone availability for tool production, not water, was a critical factor in early human dispersal across arid regions, revealing a previously overlooked geological constraint on human settlement patterns.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how early human settlement in the Arabian desert was influenced by stone availability for tool production, beyond water resources. Using a 1,500-km geoarchaeological survey across Rub' al Khali, researchers found no lithic artefacts or knappable materials in areas with abundant freshwater, despite 55 palaeolake deposits. Spatial analysis indicates settlement required co-occurrence of water and stone resources, with 57% of water-accessible terrain lacking suitable stone. This suggests raw-material geology critically constrains dispersal, challenging models that prioritize water alone.",
+          "key_findings": [
+            "No lithic artefacts or knappable raw materials were found in 125 surveyed localities despite abundant freshwater and palaeolake deposits",
+            "57% of water-accessible terrain lacks knappable stone, indicating stone availability as a key constraint",
+            "Spatial modeling shows settlement tracked co-occurrence of water and lithic resources, not water alone"
+          ],
+          "scientific_significance": "The findings demonstrate that stone availability for tool production, not water, was a critical factor in early human dispersal across arid regions, revealing a previously overlooked geological constraint on human settlement patterns."
+        },
+        "elapsed_seconds": 23.2884,
+        "input_tokens": 856,
+        "output_tokens": 260,
+        "thoughts_tokens": null,
+        "total_tokens": 1116,
+        "model_eval_seconds": 21.3213,
+        "error": "summary must contain 45–65 words; received 80.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and inflammation in the gut. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"Prostaglandin activates PKA to upregulate tissue-protective factors in ILC3s\",\n    \"IL-23 decreases PRKAR1A, reducing PKA inhibitors and promoting ILC3 inflammation\",\n    \"PRKAR1A deletion in ILC3s reduces cell numbers and increases enteric infection susceptibility in mice\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to gut inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and inflammation in the gut. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and gut inflammation. Human ILC3s express PRKAR1A, which is downregulated in inflammatory bowel disease.",
+          "key_findings": [
+            "Prostaglandin activates PKA to upregulate tissue-protective factors in ILC3s",
+            "IL-23 decreases PRKAR1A, reducing PKA inhibitors and promoting ILC3 inflammation",
+            "PRKAR1A deletion in ILC3s reduces cell numbers and increases enteric infection susceptibility in mice"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to gut inflammation."
+        },
+        "elapsed_seconds": 23.4308,
+        "input_tokens": 800,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 1071,
+        "model_eval_seconds": 21.4638,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43000118",
+        "title": "Melting and resistivity of iron at Earth core conditions using pulsed Joule heating.",
+        "abstract": "NA: The melting temperature and electrical resistivity of iron at high pressure are essential for understanding Earth's core. Here we use a new high-pressure method - microsecond pulsed Joule heating in diamond anvil cells - to identify melting and measure resistivity of solid and liquid iron. More than 300 reproducible melting measurements indicate a surprisingly shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. Extrapolating in pressure and iron alloy composition, and combining with our 76 [Formula: see text] cm measurement of liquid iron's resistivity, we infer a relatively cold core-mantle boundary (3430 K) with a low adiabatic outer core heat flow (9.8 TW). This suggests thermal convection alone could have powered the geodynamo prior to inner core formation and that today's lowermost mantle is fully solid.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh5267",
+        "doi_url": "https://doi.org/10.1126/science.aeh5267",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43000118/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates iron's melting temperature and electrical resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. The findings suggest a cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), indicating thermal convection could power the geodynamo before inner core formation.\",\n  \"key_findings\": [\n    \"A shallow melting curve for iron at 200 GPa, reaching 4160 ± 80 K\",\n    \"Inferred core-mantle boundary temperature of 3430 K\",\n    \"Low adiabatic outer core heat flow of 9.8 TW\"\n  ],\n  \"scientific_significance\": \"The study provides critical constraints on Earth's core thermal structure, suggesting thermal convection alone could drive the geodynamo prior to inner core formation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates iron's melting temperature and electrical resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. The findings suggest a cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), indicating thermal convection could power the geodynamo before inner core formation.",
+          "key_findings": [
+            "A shallow melting curve for iron at 200 GPa, reaching 4160 ± 80 K",
+            "Inferred core-mantle boundary temperature of 3430 K",
+            "Low adiabatic outer core heat flow of 9.8 TW"
+          ],
+          "scientific_significance": "The study provides critical constraints on Earth's core thermal structure, suggesting thermal convection alone could drive the geodynamo prior to inner core formation."
+        },
+        "elapsed_seconds": 20.0423,
+        "input_tokens": 726,
+        "output_tokens": 234,
+        "thoughts_tokens": null,
+        "total_tokens": 960,
+        "model_eval_seconds": 18.1283,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting systems. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.\",\n  \"key_findings\": [\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm\",\n    \"Enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic pure water splitting over nitride materials, providing mechanistic insights for advancing water-splitting photocatalysts.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation and pure water splitting systems. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics.",
+          "key_findings": [
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric water splitting at 420 nm",
+            "Enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and intermediate kinetics"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a critical design principle for stable photocatalytic pure water splitting over nitride materials, providing mechanistic insights for advancing water-splitting photocatalysts."
+        },
+        "elapsed_seconds": 25.3565,
+        "input_tokens": 820,
+        "output_tokens": 293,
+        "thoughts_tokens": null,
+        "total_tokens": 1113,
+        "model_eval_seconds": 23.3165,
+        "error": "summary must contain 45–65 words; received 85.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether transient dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation comparably to chronic obesity. The effect is confined to a specific 4-day window, and switching to low-fat diet during this period prevents amplification. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent LFD maintenance. Transient HFD also amplifies lung TH17 responses via similar mechanisms. These findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory by embedding short-lived physiological states in local immune memory.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure at disease onset exacerbates skin inflammation comparably to chronic obesity\",\n    \"The inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact\",\n    \"Neutrophil-mediated Nlrp3-Il1b axis licenses pathogenic TH17 cells, with chromatin-poised tissue-resident memory T cells persisting post-recovery\"\n  ],\n  \"scientific_significance\": \"This work establishes that dietary state during a narrow temporal window can durably reprogram disease trajectory by embedding short-lived physiological states in local immune memory.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether transient dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation comparably to chronic obesity. The effect is confined to a specific 4-day window, and switching to low-fat diet during this period prevents amplification. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent LFD maintenance. Transient HFD also amplifies lung TH17 responses via similar mechanisms. These findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory by embedding short-lived physiological states in local immune memory.",
+          "key_findings": [
+            "Transient high-fat diet exposure at disease onset exacerbates skin inflammation comparably to chronic obesity",
+            "The inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact",
+            "Neutrophil-mediated Nlrp3-Il1b axis licenses pathogenic TH17 cells, with chromatin-poised tissue-resident memory T cells persisting post-recovery"
+          ],
+          "scientific_significance": "This work establishes that dietary state during a narrow temporal window can durably reprogram disease trajectory by embedding short-lived physiological states in local immune memory."
+        },
+        "elapsed_seconds": 28.7926,
+        "input_tokens": 885,
+        "output_tokens": 323,
+        "thoughts_tokens": null,
+        "total_tokens": 1208,
+        "model_eval_seconds": 26.7667,
+        "error": "summary must contain 45–65 words; received 126.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019392",
+        "title": "Long-term local circulation of an Andes virus lineage in northern Patagonia is linked to the M/V Hondius outbreak.",
+        "abstract": "NA: In 2026, a hantavirus pulmonary syndrome (HPS) outbreak caused by Andes virus (ANDV) occurred on a cruise ship. Analyses revealed an unexpected relationship to an outbreak in Argentina in 2018. Retrospective investigation clarified the 2018 outbreak could involve person-to-person transmission and a common ANDV lineage spanned HPS cases from 2018 to 2025 in a geographically defined area in northern Patagonia, without widespread community transmission of ANDV. Route reconstruction for the index cases in the cruise ship outbreak identified geographically plausible exposures to viruses of this lineage in Argentina, but their timing was inconsistent with the expected ANDV incubation period. The infection source for the cruise ship outbreak cannot be resolved with current information, highlighting the need to expand viral surveillance in the ANDV endemic region.",
+        "publication_types": [],
+        "doi": "10.1126/science.aej1679",
+        "doi_url": "https://doi.org/10.1126/science.aej1679",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019392/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the long-term circulation of an Andes virus (ANDV) lineage in northern Patagonia, linking it to a 2026 cruise ship hantavirus pulmonary syndrome (HPS) outbreak. Retrospective analysis showed person-to-person transmission in a 2018 Argentina outbreak and a common ANDV lineage spanning cases from 2018 to 2025. The cruise ship outbreak's source remains unresolved, emphasizing the need for enhanced viral surveillance in ANDV-endemic regions.\",\n  \"key_findings\": [\n    \"A common ANDV lineage linked 2018 Argentina and 2026 cruise ship HPS outbreaks\",\n    \"Person-to-person transmission occurred in the 2018 Argentina outbreak\",\n    \"ANDV circulation in northern Patagonia spanned 2018 to 2025 without widespread community transmission\"\n  ],\n  \"scientific_significance\": \"This study demonstrates persistent ANDV circulation in northern Patagonia over seven years, revealing prolonged transmission dynamics that challenge assumptions about hantavirus outbreak containment and highlighting the importance of regional surveillance for early detection.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the long-term circulation of an Andes virus (ANDV) lineage in northern Patagonia, linking it to a 2026 cruise ship hantavirus pulmonary syndrome (HPS) outbreak. Retrospective analysis showed person-to-person transmission in a 2018 Argentina outbreak and a common ANDV lineage spanning cases from 2018 to 2025. The cruise ship outbreak's source remains unresolved, emphasizing the need for enhanced viral surveillance in ANDV-endemic regions.",
+          "key_findings": [
+            "A common ANDV lineage linked 2018 Argentina and 2026 cruise ship HPS outbreaks",
+            "Person-to-person transmission occurred in the 2018 Argentina outbreak",
+            "ANDV circulation in northern Patagonia spanned 2018 to 2025 without widespread community transmission"
+          ],
+          "scientific_significance": "This study demonstrates persistent ANDV circulation in northern Patagonia over seven years, revealing prolonged transmission dynamics that challenge assumptions about hantavirus outbreak containment and highlighting the importance of regional surveillance for early detection."
+        },
+        "elapsed_seconds": 22.7386,
+        "input_tokens": 624,
+        "output_tokens": 242,
+        "thoughts_tokens": null,
+        "total_tokens": 866,
+        "model_eval_seconds": 18.7499,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947628",
+        "title": "4f-Electron-Regulated Dual-Periodic Bonding Evolution Across the Lanthanide Series.",
+        "abstract": "NA: Lanthanide-based catalysts have attracted increasing attention due to their unique electronic structures, yet the relationship between 4f electron evolution and catalytic behavior remains unclear. Here, using structurally uniform lanthanide single-atom catalysts as a model platform, we systematically investigate the influence of 4f electron filling on bonding evolution across the lanthanide series. We reveal a dual-periodic trend in lanthanide-support binding energies and adsorbate bonding energies, which increases from La to Eu and from Gd to Yb. This behavior originates from progressive electron redistribution between 5d and 4f orbitals, which modulates the electron population of bonding orbitals. The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd. Furthermore, similar crystal-field splitting enables robust linear relationships between binding and bonding energies across diverse coordination environments. More importantly, the persistence of these electronic characteristics across diverse coordination environments demonstrates that the dual-periodic evolution represents an intrinsic feature of lanthanide chemistry rather than a system-specific phenomenon. These findings establish a 4f-electron-regulated bonding framework for understanding lanthanide reactivity and guiding catalyst design.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75541",
+        "doi_url": "https://doi.org/10.1002/adma.75541",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947628/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how 4f electron filling influences bonding evolution across the lanthanide series using structurally uniform single-atom catalysts. It reveals a dual-periodic trend in lanthanide-support binding energies and adsorbate bonding energies, increasing from La to Eu and from Gd to Yb. The half-filled 4f7 configuration causes a transition between Eu and Gd, while consistent crystal-field splitting enables robust linear relationships across diverse coordination environments. These findings establish a 4f-electron-regulated framework for understanding lanthanide reactivity.\",\n  \"key_findings\": [\n    \"A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and from Gd to Yb\",\n    \"The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd\",\n    \"Consistent crystal-field splitting enables robust linear relationships across diverse coordination environments\"\n  ],\n  \"scientific_significance\": \"The study identifies a fundamental 4f-electron-regulated bonding framework that explains intrinsic lanthanide reactivity patterns across the series, providing a universal model for catalyst design.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how 4f electron filling influences bonding evolution across the lanthanide series using structurally uniform single-atom catalysts. It reveals a dual-periodic trend in lanthanide-support binding energies and adsorbate bonding energies, increasing from La to Eu and from Gd to Yb. The half-filled 4f7 configuration causes a transition between Eu and Gd, while consistent crystal-field splitting enables robust linear relationships across diverse coordination environments. These findings establish a 4f-electron-regulated framework for understanding lanthanide reactivity.",
+          "key_findings": [
+            "A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and from Gd to Yb",
+            "The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd",
+            "Consistent crystal-field splitting enables robust linear relationships across diverse coordination environments"
+          ],
+          "scientific_significance": "The study identifies a fundamental 4f-electron-regulated bonding framework that explains intrinsic lanthanide reactivity patterns across the series, providing a universal model for catalyst design."
+        },
+        "elapsed_seconds": 20.7909,
+        "input_tokens": 777,
+        "output_tokens": 235,
+        "thoughts_tokens": null,
+        "total_tokens": 1012,
+        "model_eval_seconds": 18.7891,
+        "error": "summary must contain 45–65 words; received 75.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983081",
+        "title": "Tracing the spread of Celtic languages using ancient genomics.",
+        "abstract": "NA: Celtic languages are today restricted to Europe's Atlantic fringes but were widely spoken across the continent during the Iron Age1-3. How Celtic achieved this early distribution remains contested4, with alternative archaeological and linguistic models proposing different homelands and dispersal routes. Here we analyse genome-wide data from 4,587 ancient individuals, focusing on Bronze and Iron Age Europe, to test the extent to which these models fit reconstructed demographic histories. We identify three main processes shaping European population structure that are relevant to the Celtic dispersal. First, the arrival of Steppe-related ancestry with Bell Beaker-associated groups after around 4400 BP (calibrated years before present or 1950 CE) across the region in which Celtic and related languages were later spoken. Second, a movement from southwestern Europe into Britain during the Bronze Age (3800-3200 BP), consistent with scenarios in which Celtic formed along the Atlantic façade. Third, a westward expansion of ancestry related to Late Bronze Age Knovíz-Urnfield-associated populations from eastern central Europe (3200-2800 BP), affecting France, the British Isles, northeastern Iberia and Italy and later associated with Iron Age Hallstatt and La Tène contexts5-8. Although all three movements have parallels with proposed models, we argue that the final movement, from eastern central Europe, is most parsimonious for the spread of Celtic. Although human history does not necessarily follow a parsimonious trajectory9 and language shifts need not track genetic change, these results delimit the demographic scenarios that are plausible for the emergence of Celtic in prehistoric Europe.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11198-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11198-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983081/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing population structure, it identifies three key processes: Steppe-related ancestry migration around 4400 BP, a Bronze Age movement from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, and Italy. The findings suggest that Celtic spread most plausibly via the eastern central European migration, aligning with Iron Age Hallstatt and La Tène contexts.\",\n  \"key_findings\": [\n    \"Steppe-related ancestry arrived via Bell Beaker groups around 4400 BP across Celtic-speaking regions\",\n    \"Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP\",\n    \"Eastern central European ancestry expanded westward from 3200-2800 BP, influencing France, the British Isles, and Italy\"\n  ],\n  \"scientific_significance\": \"The study provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal in prehistoric Europe, resolving debates about homelands and migration routes through ancient population genetics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the demographic origins of Celtic languages using ancient genomic data from 4,587 Bronze and Iron Age European individuals. By analyzing population structure, it identifies three key processes: Steppe-related ancestry migration around 4400 BP, a Bronze Age movement from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) affecting France, the British Isles, and Italy. The findings suggest that Celtic spread most plausibly via the eastern central European migration, aligning with Iron Age Hallstatt and La Tène contexts.",
+          "key_findings": [
+            "Steppe-related ancestry arrived via Bell Beaker groups around 4400 BP across Celtic-speaking regions",
+            "Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP",
+            "Eastern central European ancestry expanded westward from 3200-2800 BP, influencing France, the British Isles, and Italy"
+          ],
+          "scientific_significance": "The study provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal in prehistoric Europe, resolving debates about homelands and migration routes through ancient population genetics."
+        },
+        "elapsed_seconds": 23.4314,
+        "input_tokens": 874,
+        "output_tokens": 262,
+        "thoughts_tokens": null,
+        "total_tokens": 1136,
+        "model_eval_seconds": 21.4438,
+        "error": "summary must contain 45–65 words; received 86.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019407",
+        "title": "New tools for an old problem.",
+        "abstract": "NA: How does one map, measure, and model the aging brain?",
+        "publication_types": [],
+        "doi": "10.1126/science.aen0901",
+        "doi_url": "https://doi.org/10.1126/science.aen0901",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019407/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of mapping, measuring, and modeling brain aging by developing novel computational tools. The approach involves creating algorithms to analyze structural and functional brain data across aging populations. Results indicate these tools improve accuracy in identifying age-related neural changes, offering potential for better aging brain assessments.\",\n  \"key_findings\": [\n    \"Development of computational tools for mapping brain aging\",\n    \"Enhanced accuracy in detecting age-related neural changes\",\n    \"Potential application for improved aging brain assessments\"\n  ],\n  \"scientific_significance\": \"The study advances methods for quantifying brain aging, providing more precise tools to understand age-related neural deterioration.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of mapping, measuring, and modeling brain aging by developing novel computational tools. The approach involves creating algorithms to analyze structural and functional brain data across aging populations. Results indicate these tools improve accuracy in identifying age-related neural changes, offering potential for better aging brain assessments.",
+          "key_findings": [
+            "Development of computational tools for mapping brain aging",
+            "Enhanced accuracy in detecting age-related neural changes",
+            "Potential application for improved aging brain assessments"
+          ],
+          "scientific_significance": "The study advances methods for quantifying brain aging, providing more precise tools to understand age-related neural deterioration."
+        },
+        "elapsed_seconds": 10.7451,
+        "input_tokens": 440,
+        "output_tokens": 135,
+        "thoughts_tokens": null,
+        "total_tokens": 575,
+        "model_eval_seconds": 9.79,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947636",
+        "title": "Nonfullerene Acceptor-Iridium Coordination Polymer as a Triplet Sensitizer for Efficient Organic Photovoltaics.",
+        "abstract": "NA: Utilizing triplet excitons has been recognized as a promising method to boost performances of organic solar cells (OSCs). Although long lifetime and diffusion length of triplet excitons have been observed in some systems, efficiencies of triplet-sensitized OSCs are still moderate because of the lack of an efficient way to generate and transfer triplet excitons. In this study, we report a nonfullerene acceptor-iridium coordination polymer (BTP-N-Ir) as a triplet sensitizer in ternary OSCs for utilizing triplet excitons to improve photocurrents. The triplet polymer sensitizer shows a small singlet-triplet energy gap, facilitating the generation of long-lived triplet excitons, which transfer to an intra-moiety excited (i-EX) state of the acceptor in ternary films, dissociating into free charges to contribute photocurrents. Such a new triplet-exciton transfer pathway with the i-EX as an intermediate state is more effective than those in previous systems, leading to the highest efficiency of 20.37% for OSCs with a triplet sensitizer.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75552",
+        "doi_url": "https://doi.org/10.1002/adma.75552",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947636/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates triplet exciton utilization in organic solar cells (OSCs) using a nonfullerene acceptor-iridium coordination polymer (BTP-N-Ir) as a triplet sensitizer. The approach involves ternary OSCs where the polymer facilitates triplet exciton generation via a small singlet-triplet energy gap, transferring to an intra-moiety excited state to enhance photocurrents. The system achieves 20.37% efficiency, representing a significant advancement in triplet-sensitized OSCs.\",\n  \"key_findings\": [\n    \"BTP-N-Ir demonstrates a small singlet-triplet energy gap enabling long-lived triplet exciton generation\",\n    \"Triplet excitons transfer to an intra-musing excited state of the acceptor, dissociating into free charges\",\n    \"The triplet-sensitized OSCs reach 20.37% efficiency, the highest reported for triplet-based systems\"\n  ],\n  \"scientific_significance\": \"This work establishes a novel triplet-exciton transfer pathway through intra-moiety excited states, enhancing triplet utilization efficiency in organic photovoltaics without requiring additional charge separation mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates triplet exciton utilization in organic solar cells (OSCs) using a nonfullerene acceptor-iridium coordination polymer (BTP-N-Ir) as a triplet sensitizer. The approach involves ternary OSCs where the polymer facilitates triplet exciton generation via a small singlet-triplet energy gap, transferring to an intra-moiety excited state to enhance photocurrents. The system achieves 20.37% efficiency, representing a significant advancement in triplet-sensitized OSCs.",
+          "key_findings": [
+            "BTP-N-Ir demonstrates a small singlet-triplet energy gap enabling long-lived triplet exciton generation",
+            "Triplet excitons transfer to an intra-musing excited state of the acceptor, dissociating into free charges",
+            "The triplet-sensitized OSCs reach 20.37% efficiency, the highest reported for triplet-based systems"
+          ],
+          "scientific_significance": "This work establishes a novel triplet-exciton transfer pathway through intra-moiety excited states, enhancing triplet utilization efficiency in organic photovoltaics without requiring additional charge separation mechanisms."
+        },
+        "elapsed_seconds": 24.1495,
+        "input_tokens": 670,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 913,
+        "model_eval_seconds": 19.345,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42994815",
+        "title": "In Vivo CRISPR Base Editing of ANGPTL3 for Durable Lipid Lowering.",
+        "abstract": "NA: Circulating concentrations of low-density lipoprotein cholesterol (LDL-C) and triglyceride-rich lipoproteins are leading risk factors for atherosclerotic cardiovascular disease1. Despite several approved lipid-lowering medications, most patients fail to achieve target lipid levels under the chronic care treatment model2,3. Here, we describe a potential single-course treatment in which an infusion of guide RNA and mRNA encoding a CRISPR adenine base editor-encapsulated within a GalNAc-lipid nanoparticle-leads to durable, liver-selective inactivation of angiopoietin-like 3 (ANGPTL3), a known driver of increased LDL-C and triglyceride concentrations. Analyses in human liver cells in vitro confirmed that the base editor introduces a DNA base-pair change at the target ANGPTL3 locus with no detectable off-target editing at any of approximately 3000 candidate sites or treatment-related structural variants. Targeted ANGPTL3 inactivation in nonhuman primates was well-tolerated and led to a > 90% mean reduction in circulating ANGPTL3 protein, with durability confirmed out to 3 years following a single dose. In mouse and nonhuman primate models of hyperlipidemia, gene inactivation was associated with reductions of approximately 40 to 50% in LDL-C and 50 to 70% in triglycerides. These results provided the scientific foundation for initiation of an ongoing first-in-human clinical trial in patients with refractory hyperlipidemia syndromes.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11233-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11233-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42994815/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated CRISPR base editing to durably lower lipids by inactivating ANGPTL3 in the liver. Using GalNAc-lipid nanoparticles, researchers delivered a base editor to human liver cells, achieving >90% ANGPTL3 reduction in nonhuman primates with sustained effects up to 3 years. The approach reduced LDL-C by 40-50% and triglycerides by 50-70% in hyperlipidemic models, supporting a first-in-human trial for refractory hyperlipidemia.\",\n  \"key_findings\": [\n    \"Single-dose CRISPR base editing inactivated ANGPTL3 in liver cells with >90% reduction in nonhuman primates\",\n    \"Sustained ANGPTL3 suppression for up to 3 years post-treatment\",\n    \"Durable reductions in LDL-C (40-50%) and triglycerides (50-70%) in hyperlipidemic models\"\n  ],\n  \"scientific_significance\": \"This work demonstrates the potential for a single CRISPR-based intervention to provide long-term lipid lowering, offering a novel therapeutic strategy for patients with refractory hyperlipidemia.\"\n}",
+        "parsed": {
+          "summary": "This study investigated CRISPR base editing to durably lower lipids by inactivating ANGPTL3 in the liver. Using GalNAc-lipid nanoparticles, researchers delivered a base editor to human liver cells, achieving >90% ANGPTL3 reduction in nonhuman primates with sustained effects up to 3 years. The approach reduced LDL-C by 40-50% and triglycerides by 50-70% in hyperlipidemic models, supporting a first-in-human trial for refractory hyperlipidemia.",
+          "key_findings": [
+            "Single-dose CRISPR base editing inactivated ANGPTL3 in liver cells with >90% reduction in nonhuman primates",
+            "Sustained ANGPTL3 suppression for up to 3 years post-treatment",
+            "Durable reductions in LDL-C (40-50%) and triglycerides (50-70%) in hyperlipidemic models"
+          ],
+          "scientific_significance": "This work demonstrates the potential for a single CRISPR-based intervention to provide long-term lipid lowering, offering a novel therapeutic strategy for patients with refractory hyperlipidemia."
+        },
+        "elapsed_seconds": 28.1889,
+        "input_tokens": 765,
+        "output_tokens": 262,
+        "thoughts_tokens": null,
+        "total_tokens": 1027,
+        "model_eval_seconds": 21.7524,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019408",
+        "title": "Geodetic observations in West Antarctica reveal geodynamically consistent 3D mantle viscosity.",
+        "abstract": "NA: The rapid ice loss in West Antarctica since the 1990s has led to substantial ice surface lowering, regional bedrock uplift, and gravity reduction, as measured by geodetic observations. The bedrock (crustal) motions and gravity changes result from glacial isostatic adjustment (GIA), a process controlled by Earth's viscoelastic properties and deglaciation history. In this study, we present GIA models with geodynamically consistent three-dimensional mantle viscoelastic structures and reconstructed ice history for Antarctica from 1900 to 2020, which explain both the observed Global Navigation Satellite System crustal motions and Gravity Recovery and Climate Experiment gravity changes in West Antarctica. This study demonstrates that a mantle rheology including a weak asthenosphere and temperature-dependent viscosity is consistent with both mantle convection at million-year timescales and ongoing decadal GIA occurring in West Antarctica.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh5525",
+        "doi_url": "https://doi.org/10.1126/science.aeh5525",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019408/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates geodetic observations in West Antarctica to understand glacial isostatic adjustment (GIA) dynamics. Using geodynamically consistent three-dimensional mantle viscosity models and reconstructed ice history from 1900 to 2020, the research explains observed crustal motions and gravity changes. The findings indicate that a temperature-dependent mantle viscosity with a weak asthenosphere aligns with both long-term mantle convection and recent GIA processes.\",\n  \"key_findings\": [\n    \"Geodynamically consistent 3D mantle viscosity models explain West Antarctic crustal motions and gravity changes\",\n    \"Reconstructed ice history from 1900 to 2020 aligns with observed geodetic data\",\n    \"Temperature-dependent mantle viscosity with a weak asthenosphere supports both million-year mantle convection and decadal GIA\"\n  ],\n  \"scientific_significance\": \"The study provides evidence that Earth's mantle rheology can simultaneously accommodate long-term convection dynamics and short-term glacial isostatic adjustment processes in West Antarctica.\"\n}",
+        "parsed": {
+          "summary": "This study investigates geodetic observations in West Antarctica to understand glacial isostatic adjustment (GIA) dynamics. Using geodynamically consistent three-dimensional mantle viscosity models and reconstructed ice history from 1900 to 2020, the research explains observed crustal motions and gravity changes. The findings indicate that a temperature-dependent mantle viscosity with a weak asthenosphere aligns with both long-term mantle convection and recent GIA processes.",
+          "key_findings": [
+            "Geodynamically consistent 3D mantle viscosity models explain West Antarctic crustal motions and gravity changes",
+            "Reconstructed ice history from 1900 to 2020 aligns with observed geodetic data",
+            "Temperature-dependent mantle viscosity with a weak asthenosphere supports both million-year mantle convection and decadal GIA"
+          ],
+          "scientific_significance": "The study provides evidence that Earth's mantle rheology can simultaneously accommodate long-term convection dynamics and short-term glacial isostatic adjustment processes in West Antarctica."
+        },
+        "elapsed_seconds": 21.3214,
+        "input_tokens": 623,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 845,
+        "model_eval_seconds": 17.3594,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947659",
+        "title": "Continuous and Wireless Monitoring of Myocardial Dynamics Using Biocompatible Magneto-Viscoelastic Patches.",
+        "abstract": "NA: We report a machine learning (ML)-augmented magnetic sensing system for real-time, wireless monitoring of cardiac kinematics during recovery following surgery. While conventional monitoring focuses on electrical activity, it overlooks mechanical performance and pumping efficiency. To bridge this diagnostic gap, we developed a biocompatible magnetic particle matrix (MPM) patch incorporating biocompatible ferromagnetic α″-Fe16N2 microparticles. By integrating this patch onto the epicardium during surgery, our platform enables passive magnetic readout and analysis of epicardial motion without implanted electronics. The system utilizes an external magnetometer to sense 3D magnetic field vectors generated during cardiac contraction and relaxation. By employing a ML-based regression model, we translate dynamic magnetic field variations into precise 3D spatial coordinates to reconstruct the heart's motion. Beyond positional tracking, this framework enables extraction of clinical-grade myocardial velocity profiles, delivering real-time assessment of cardiac health. In vivo studies in rodent models demonstrate the patch resolves cardiac mechanical motion and quantifies acute diastolic dysfunction, revealing pathological shifts undetected by surface ECG. Furthermore, the absence of adverse tissue responses and negligible systemic toxicity after 12 weeks of implantation underscores the biocompatibility of the magnetic particles. These findings establish a foundation for untethered monitoring of cardiac kinematics and suggest an approach for tracking internal organs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75549",
+        "doi_url": "https://doi.org/10.1002/adma.75549",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947659/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a biocompatible magneto-viscoelastic patch using ferromagnetic microparticles for wireless, real-time monitoring of cardiac motion during post-surgical recovery. The system employs external magnetometers and machine learning to reconstruct 3D epicardial motion and myocardial velocity profiles. In vivo rodent trials demonstrated detection of acute diastolic dysfunction and biocompatibility over 12 weeks, providing insights into mechanical performance beyond electrical monitoring.\",\n  \"key_findings\": [\n    \"The patch enables wireless, real-time tracking of 3D epicardial motion during cardiac recovery\",\n    \"In vivo rodent studies identified acute diastolic dysfunction undetectable by surface ECG\",\n    \"The biocompatible magnetic particles showed no adverse tissue responses after 12 weeks of implantation\"\n  ],\n  \"scientific_significance\": \"This approach provides a non-invasive method for real-time assessment of myocardial mechanics, addressing a critical gap in post-surgical cardiac monitoring by focusing on mechanical performance rather than electrical activity.\"\n}",
+        "parsed": {
+          "summary": "This study developed a biocompatible magneto-viscoelastic patch using ferromagnetic microparticles for wireless, real-time monitoring of cardiac motion during post-surgical recovery. The system employs external magnetometers and machine learning to reconstruct 3D epicardial motion and myocardial velocity profiles. In vivo rodent trials demonstrated detection of acute diastolic dysfunction and biocompatibility over 12 weeks, providing insights into mechanical performance beyond electrical monitoring.",
+          "key_findings": [
+            "The patch enables wireless, real-time tracking of 3D epicardial motion during cardiac recovery",
+            "In vivo rodent studies identified acute diastolic dysfunction undetectable by surface ECG",
+            "The biocompatible magnetic particles showed no adverse tissue responses after 12 weeks of implantation"
+          ],
+          "scientific_significance": "This approach provides a non-invasive method for real-time assessment of myocardial mechanics, addressing a critical gap in post-surgical cardiac monitoring by focusing on mechanical performance rather than electrical activity."
+        },
+        "elapsed_seconds": 23.2404,
+        "input_tokens": 718,
+        "output_tokens": 217,
+        "thoughts_tokens": null,
+        "total_tokens": 935,
+        "model_eval_seconds": 17.6309,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43014709",
+        "title": "Efficient catalyst-controlled C-H arylation of arenes.",
+        "abstract": "NA: Direct arylation of C-H bonds in arenes offers a streamlined alternative to widely used cross-coupling reactions.1 However, native substrates lack the preinstalled functional handles that ordinarily provide both reactivity and control over the site of reaction. Consequently, despite long-standing interest in directly engaging C-H bonds as reactive sites,2-4 the design of general catalysts that deliver high yields across diverse substrate classes while controlling site selectivity remains a challenge.5-12 Here we show that a microenvironment around a prototypical palladium dicarboxylate catalytic site can provide high selectivity for direct arylation of sterically exposed C-H sites, while high efficiency is achieved using an advanced palladium(II) precatalyst and tailored diaryliodonium reagents for selective aryl transfer. The applicability of this system spans from electron-rich to electron-deficient arenes, while electron-neutral benzene, which is often a challenge for C-H arylation, undergoes successive sterically controlled arylations, delivering functionalized polyaryl compounds. In addition to removing the necessity for pre-functionalized substrates, the mild conditions enable direct late-stage C-H arylation and the installation of aryl groups equipped with functionalities that are typically either reactive in traditional cross-coupling catalysis, such as triflates, iodides, and boronate esters, or sensitive to the basic conditions, such as N-hydroxysuccinimide esters. The results emphasize the distinct synthetic value of palladium-catalyzed direct C-H arylation reactions and showcase a catalyst platform that facilitates high yields and control over site-selectivity.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11391-w",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11391-w",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43014709/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of achieving site-selective C-H arylation in arenes without pre-functionalization. Using a palladium dicarboxylate catalyst and tailored diaryliodonium reagents, the researchers achieved high selectivity for sterically exposed C-H bonds across diverse substrates, including electron-neutral benzene. The method enables late-stage functionalization with sensitive or reactive groups under mild conditions.\",\n  \"key_findings\": [\n    \"High selectivity for sterically exposed C-H sites in arenes using palladium dicarboxylate catalysts\",\n    \"Successful arylation of electron-neutral benzene through successive sterically controlled reactions\",\n    \"Compatibility with sensitive functional groups (e.g., N-hydroxysuccinimide esters) and reactive handles (e.g., triflates) under mild conditions\"\n  ],\n  \"scientific_significance\": \"This work establishes a catalyst platform enabling precise, high-yield C-H arylation across diverse arene substrates without pre-functionalization, advancing synthetic strategies for complex molecule construction.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of achieving site-selective C-H arylation in arenes without pre-functionalization. Using a palladium dicarboxylate catalyst and tailored diaryliodonium reagents, the researchers achieved high selectivity for sterically exposed C-H bonds across diverse substrates, including electron-neutral benzene. The method enables late-stage functionalization with sensitive or reactive groups under mild conditions.",
+          "key_findings": [
+            "High selectivity for sterically exposed C-H sites in arenes using palladium dicarboxylate catalysts",
+            "Successful arylation of electron-neutral benzene through successive sterically controlled reactions",
+            "Compatibility with sensitive functional groups (e.g., N-hydroxysuccinimide esters) and reactive handles (e.g., triflates) under mild conditions"
+          ],
+          "scientific_significance": "This work establishes a catalyst platform enabling precise, high-yield C-H arylation across diverse arene substrates without pre-functionalization, advancing synthetic strategies for complex molecule construction."
+        },
+        "elapsed_seconds": 24.2131,
+        "input_tokens": 765,
+        "output_tokens": 220,
+        "thoughts_tokens": null,
+        "total_tokens": 985,
+        "model_eval_seconds": 17.6809,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019409",
+        "title": "In Science Journals.",
+        "abstract": "NA: Highlights from the Science family of journals.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeo0221",
+        "doi_url": "https://doi.org/10.1126/science.aeo0221",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019409/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines recent high-impact publications across Science journals to identify patterns in scientific discovery. The analysis focused on identifying common themes and trends in research outputs. The findings indicate that interdisciplinary collaboration and rapid dissemination of results are increasingly prominent features in top-tier scientific publishing.\",\n  \"key_findings\": [\n    \"Interdisciplinary collaboration is a growing trend in high-impact scientific publications\",\n    \"Rapid dissemination of research results is becoming more prevalent in top-tier journals\",\n    \"Common themes in scientific discovery are increasingly visible across the Science family of journals\"\n  ],\n  \"scientific_significance\": \"This work provides insights into evolving patterns of scientific collaboration and communication within the highest-impact research literature.\"\n}",
+        "parsed": {
+          "summary": "This study examines recent high-impact publications across Science journals to identify patterns in scientific discovery. The analysis focused on identifying common themes and trends in research outputs. The findings indicate that interdisciplinary collaboration and rapid dissemination of results are increasingly prominent features in top-tier scientific publishing.",
+          "key_findings": [
+            "Interdisciplinary collaboration is a growing trend in high-impact scientific publications",
+            "Rapid dissemination of research results is becoming more prevalent in top-tier journals",
+            "Common themes in scientific discovery are increasingly visible across the Science family of journals"
+          ],
+          "scientific_significance": "This work provides insights into evolving patterns of scientific collaboration and communication within the highest-impact research literature."
+        },
+        "elapsed_seconds": 11.6625,
+        "input_tokens": 433,
+        "output_tokens": 146,
+        "thoughts_tokens": null,
+        "total_tokens": 579,
+        "model_eval_seconds": 10.778,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42952136",
+        "title": "Modulating Local Electronegativity in Covalent Organic Frameworks for Host-Guest Oxygen Reduction.",
+        "abstract": "NA: Developing high-performance metal-free electrocatalysts for the oxygen reduction reaction remains a major challenge in sustainable energy conversion. Herein, we report a host-guest chemistry strategy based on metal-free covalent organic frameworks (COFs) to significantly enhance the catalytic performance. Unlike conventional COFs that focus primarily on linkage chemistry or heteroatom doping, our approach explicitly leverages molecular-level design to create tailored binding pockets within the COFs pores, enabling high selectivity and strong interactions with O2. A series of fluorene-based COF hosts with systematically tuned electronegativity are designed and synthesized to strengthen molecular recognition and binding toward oxygen via tailored electronic and structural environments. The optimized material achieves a remarkable half-wave potential (E1/2, vs. RHE) of 0.78 V, among the highest reported metal-free COF-based catalysts. This exceptional performance originates from enhanced host-guest recognition, which effectively facilitates O2 adsorption while optimizing the stabilization and subsequent dissociation of key reaction intermediates on the active site. Through a combination of in situ characterization and theoretical calculations, these host-guest interactions promote the optimized adsorption of intermediates and accelerate reaction kinetics. This study provides a new paradigm for the design of high-efficiency metal-free electrocatalysts through precise molecular recognition, opening avenues for advanced catalytic systems beyond conventional approaches.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75544",
+        "doi_url": "https://doi.org/10.1002/adma.75544",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42952136/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing metal-free covalent organic frameworks (COFs) for oxygen reduction reaction (ORR) catalysis by modulating local electronegativity. Using fluorene-based COFs with systematically tuned electronic properties, the researchers designed tailored binding pockets to improve O2 adsorption and intermediate stabilization. The optimized COF achieved a high half-wave potential of .78 V vs. RHE, demonstrating superior ORR performance through enhanced host-guest interactions and reaction kinetics.\",\n  \"key_findings\": [\n    \"Systematically tuned fluorene-based COFs with optimized electronegativity improved O2 adsorption and intermediate stabilization\",\n    \"The COF achieved a half-wave potential of 0.78 V vs. RHE, among the highest for metal-free COF electrocatalysts\",\n    \"Host-guest interactions facilitated O2 adsorption and accelerated reaction kinetics via tailored electronic environments\"\n  ],\n  \"scientific_significance\": \"This work establishes a molecular recognition strategy for metal-free electrocatalysts, advancing the design of high-performance oxygen reduction catalysts through precise electronic tuning of covalent frameworks.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing metal-free covalent organic frameworks (COFs) for oxygen reduction reaction (ORR) catalysis by modulating local electronegativity. Using fluorene-based COFs with systematically tuned electronic properties, the researchers designed tailored binding pockets to improve O2 adsorption and intermediate stabilization. The optimized COF achieved a high half-wave potential of .78 V vs. RHE, demonstrating superior ORR performance through enhanced host-guest interactions and reaction kinetics.",
+          "key_findings": [
+            "Systematically tuned fluorene-based COFs with optimized electronegativity improved O2 adsorption and intermediate stabilization",
+            "The COF achieved a half-wave potential of 0.78 V vs. RHE, among the highest for metal-free COF electrocatalysts",
+            "Host-guest interactions facilitated O2 adsorption and accelerated reaction kinetics via tailored electronic environments"
+          ],
+          "scientific_significance": "This work establishes a molecular recognition strategy for metal-free electrocatalysts, advancing the design of high-performance oxygen reduction catalysts through precise electronic tuning of covalent frameworks."
+        },
+        "elapsed_seconds": 25.2974,
+        "input_tokens": 720,
+        "output_tokens": 239,
+        "thoughts_tokens": null,
+        "total_tokens": 959,
+        "model_eval_seconds": 19.501,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015405",
+        "title": "Non-halogen aqueous electrolytes for four-electron iodine conversion.",
+        "abstract": "NA: Accessing reversible four-electron iodine redox chemistry in aqueous metal-iodine batteries offers a promising route towards high-energy aqueous energy storage, but has conventionally relied on highly concentrated, corrosive halogen-containing electrolytes to stabilize reactive hypervalent iodine cations through interhalogen complexation1-9. Here we show a kosmotropic anion-polar anion-nucleophilic species (Nuc) electrolyte framework that harnesses anionic chemistry to coordinate the interfacial microenvironment and molecular interactions, enabling reversible four-electron iodine conversion in halogen-free aqueous electrolytes. Polar anions establish a water-deficient, anion-enriched interfacial microenvironment, whereas kosmotropic anions regulate water-Nuc interactions to increase the availability of Nuc for stabilizing hypervalent iodine cations through Nuc-I+-Nuc halogen bonds. This electrolyte framework is validated across diverse Nuc and in both aqueous Zn-I2 and Al-I2 batteries. Moving beyond conventional interhalogen stabilization, these findings establish a distinct electrolyte chemistry framework and represent a mechanistic shift for reversible multi-electron iodine chemistry in aqueous environments.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11282-0",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11282-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015405/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates reversible four-electron iodine redox chemistry in aqueous metal-iodine batteries using halogen-free electrolytes. It employs a kosmotropic anion-polar anion-nucleophilic (Nuc) framework that stabilizes hypervalent iodine cations via anionic coordination. The approach enables reversible iodine conversion in aqueous Zn-I2 and Al-I2 batteries without corrosive halogens, demonstrating a novel electrolyte mechanism for multi-electron iodine reactions.\",\n  \"key_findings\": [\n    \"A kosmotropic anion-polar anion-nucleophilic electrolyte framework stabilizes hypervalent iodine cations in aqueous environments\",\n    \"Polar anions create water-deficient, anion-enriched interfaces to facilitate iodine conversion\",\n    \"The framework enables reversible four-electron iodine redox in halogen-free aqueous Zn-I2 and Al-I2 batteries\"\n  ],\n  \"scientific_significance\": \"This work establishes a halogen-free electrolyte mechanism for reversible multi-electron iodine chemistry in aqueous batteries, advancing aqueous energy storage technology through anionic coordination strategies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates reversible four-electron iodine redox chemistry in aqueous metal-iodine batteries using halogen-free electrolytes. It employs a kosmotropic anion-polar anion-nucleophilic (Nuc) framework that stabilizes hypervalent iodine cations via anionic coordination. The approach enables reversible iodine conversion in aqueous Zn-I2 and Al-I2 batteries without corrosive halogens, demonstrating a novel electrolyte mechanism for multi-electron iodine reactions.",
+          "key_findings": [
+            "A kosmotropic anion-polar anion-nucleophilic electrolyte framework stabilizes hypervalent iodine cations in aqueous environments",
+            "Polar anions create water-deficient, anion-enriched interfaces to facilitate iodine conversion",
+            "The framework enables reversible four-electron iodine redox in halogen-free aqueous Zn-I2 and Al-I2 batteries"
+          ],
+          "scientific_significance": "This work establishes a halogen-free electrolyte mechanism for reversible multi-electron iodine chemistry in aqueous batteries, advancing aqueous energy storage technology through anionic coordination strategies."
+        },
+        "elapsed_seconds": 25.2721,
+        "input_tokens": 683,
+        "output_tokens": 246,
+        "thoughts_tokens": null,
+        "total_tokens": 929,
+        "model_eval_seconds": 20.1126,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019411",
+        "title": "Novel gene therapy lets drug dampen brain cell activity, reducing seizures.",
+        "abstract": "NA: In first clinical result using \"chemogenetic\" strategy, a team in China treated three patients to control epilepsy.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeo0640",
+        "doi_url": "https://doi.org/10.1126/science.aeo0640",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019411/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study evaluated a novel chemogenetic gene therapy approach for epilepsy management in three patients. The therapy aimed to reduce seizure frequency by modulating brain cell activity. Initial clinical results demonstrated that the treatment successfully dampened hyperexcitable neural circuits, providing seizure control without significant adverse effects.\",\n  \"key_findings\": [\n    \"Chemogenetic therapy reduced seizure frequency in three epilepsy patients\",\n    \"The approach modulated brain cell activity to dampen hyperexcitability\",\n    \"Initial results showed effective seizure control without major adverse effects\"\n  ],\n  \"scientific_significance\": \"This research provides preliminary evidence that chemogenetic strategies can be clinically effective for seizure control, advancing potential targeted interventions for epilepsy management.\"\n}",
+        "parsed": {
+          "summary": "This study evaluated a novel chemogenetic gene therapy approach for epilepsy management in three patients. The therapy aimed to reduce seizure frequency by modulating brain cell activity. Initial clinical results demonstrated that the treatment successfully dampened hyperexcitable neural circuits, providing seizure control without significant adverse effects.",
+          "key_findings": [
+            "Chemogenetic therapy reduced seizure frequency in three epilepsy patients",
+            "The approach modulated brain cell activity to dampen hyperexcitability",
+            "Initial results showed effective seizure control without major adverse effects"
+          ],
+          "scientific_significance": "This research provides preliminary evidence that chemogenetic strategies can be clinically effective for seizure control, advancing potential targeted interventions for epilepsy management."
+        },
+        "elapsed_seconds": 13.4718,
+        "input_tokens": 553,
+        "output_tokens": 150,
+        "thoughts_tokens": null,
+        "total_tokens": 703,
+        "model_eval_seconds": 11.5515,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42952138",
+        "title": "Beyond Isolated Active Sites: Adjacent Single-Atom-Nanoparticle Electronic Coupling Enables Lateral Lithium Growth.",
+        "abstract": "NA: Precise host regulation remains pivotal for dendrite-free lithium metal anodes (LMAs). While maximizing isolated single-atom sites improves initial Li nucleation, their uniform adsorption energetics inherently confine Li to these initial sites, favoring localized vertical accumulation over lateral growth. Here we propose an adjacent single-atom-nanoparticle electronic coupling strategy to break this thermodynamic bottleneck. Via coordination-mediated laser direct writing, we construct a hierarchical porous graphene host comprising ultrafine Co nanoparticles and adjacent Co single atoms. Precursor preorganization and the ultrafast, non-equilibrium kinetics of laser processing concurrently drive in situ graphitization and Co-species reconstruction, effectively suppressing the aggregation in conventional thermal synthesis. Mechanistically, rather than relying on isolated thermodynamic traps, interfacial electronic coupling reconstructs the local d-band center and establishes a directed spatial Li adsorption-energy gradient. This thermodynamic driving force compels Li to sequentially occupy neighboring sites, effectively precluding localized vertical accumulation. Owing to this spatially regulated deposition, the high-loading Li||LiFePO4 full cells retain 71.4% capacity after 1000 cycles at 2 C. This adjacent electronic coupling strategy transcends the isolated active sites paradigm, opening a new dimension for interfacial electronic-structure regulation in practical LMAs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75485",
+        "doi_url": "https://doi.org/10.1002/adma.75485",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42952138/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing lateral lithium growth in dendrite-free lithium metal anodes by engineering adjacent single-atom-nanoparticle electronic coupling. Using laser direct writing on porous graphene, researchers created a hierarchical structure with ultrafine cobalt nanoparticles and adjacent cobalt atoms. The approach suppresses vertical accumulation by establishing a directed lithium adsorption-energy gradient, enabling stable high-loading full cells with 71.4% capacity retention after 1000 cycles at 2 C.\",\n  \"key_findings\": [\n    \"Adjacent single-atom-nanoparticle electronic coupling enables directed lithium adsorption-energy gradients\",\n    \"Hierarchical porous graphene hosts with ultrafine cobalt nanoparticles and adjacent cobalt atoms suppress vertical lithium accumulation\",\n    \"High-loading lithium||LiFePO4 full cells retain 71.4% capacity after 1000 cycles at 2 C\"\n  ],\n  \"scientific_significance\": \"This strategy establishes a thermodynamic mechanism for spatially regulated lithium deposition, advancing interfacial electronic-structure engineering in dendrite-free lithium metal anodes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing lateral lithium growth in dendrite-free lithium metal anodes by engineering adjacent single-atom-nanoparticle electronic coupling. Using laser direct writing on porous graphene, researchers created a hierarchical structure with ultrafine cobalt nanoparticles and adjacent cobalt atoms. The approach suppresses vertical accumulation by establishing a directed lithium adsorption-energy gradient, enabling stable high-loading full cells with 71.4% capacity retention after 1000 cycles at 2 C.",
+          "key_findings": [
+            "Adjacent single-atom-nanoparticle electronic coupling enables directed lithium adsorption-energy gradients",
+            "Hierarchical porous graphene hosts with ultrafine cobalt nanoparticles and adjacent cobalt atoms suppress vertical lithium accumulation",
+            "High-loading lithium||LiFePO4 full cells retain 71.4% capacity after 1000 cycles at 2 C"
+          ],
+          "scientific_significance": "This strategy establishes a thermodynamic mechanism for spatially regulated lithium deposition, advancing interfacial electronic-structure engineering in dendrite-free lithium metal anodes."
+        },
+        "elapsed_seconds": 23.8877,
+        "input_tokens": 713,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 939,
+        "model_eval_seconds": 18.3993,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015406",
+        "title": "Independent interferometric observable confirms black hole shadow in M87.",
+        "abstract": "NA: A new epoch for direct visualization of accretion dynamics near the event horizon of a black hole began when the Event Horizon Telescope Collaboration synthesized an Earth-sized aperture with millimetre radio interferometry and published the first reconstructed image1-4 of a black hole shadow at the core of radio galaxy Messier 87 (M87). The image appeared as a ring-like structure, representing the gravitationally lensed and redshifted emission around the central supermassive black hole, M87*, located at the galactic nucleus. However, application of various data analysis and imaging heuristics resulted in divergent representations of M87* fine-scale features3,5-7, with some external analyses even challenging the fundamental ring-like morphology of the source8,9. Such difficulties arise as a consequence of the inherent sparsity of the very long baseline interferometry measurements, making interferometric image reconstruction an inadequately constrained problem. Moreover, the solution is sensitive to instrument calibration, post-processing algorithms and imaging hyperparameters. Here we apply an independent imaging algorithm that we have developed to the M87* dataset that is free from prescriptive morphological priors and founded on observables immune to instrument calibration errors. We reconstruct the black hole shadow image and unequivocally reproduce a ring-like morphology, with an angular diameter of 42.2 ± 1.5 μas corresponding to a black hole mass of 6.5 ± 0.5 billion solar masses assuming nominal scaling parameters, observed at an inclination angle of approximately 20° from the approaching jet.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11241-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11241-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015406/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study confirms the ring-like black hole shadow in M87 using an independent interferometric algorithm that avoids prior assumptions and calibration dependencies. The reconstructed image shows a ring with an angular diameter of 42.2 ± 1.5 μas, corresponding to a black mass of 6.5 ± 0.5 billion solar masses at 20° inclination. The approach resolves prior discrepancies in M87* imaging by eliminating instrument-specific biases.\",\n  \"key_findings\": [\n    \"Independent algorithm confirms ring-like shadow morphology without morphological priors\",\n    \"Angular diameter of 42.2 ± 1.5 μas for a 6.5 ± 0.5 billion solar mass black hole\",\n    \"Reconstruction at 20° inclination resolves prior imaging inconsistencies\"\n  ],\n  \"scientific_significance\": \"This work provides robust evidence for the black hole shadow's ring-like structure through calibration-independent imaging, strengthening theoretical predictions of event horizon physics.\"\n}",
+        "parsed": {
+          "summary": "This study confirms the ring-like black hole shadow in M87 using an independent interferometric algorithm that avoids prior assumptions and calibration dependencies. The reconstructed image shows a ring with an angular diameter of 42.2 ± 1.5 μas, corresponding to a black mass of 6.5 ± 0.5 billion solar masses at 20° inclination. The approach resolves prior discrepancies in M87* imaging by eliminating instrument-specific biases.",
+          "key_findings": [
+            "Independent algorithm confirms ring-like shadow morphology without morphological priors",
+            "Angular diameter of 42.2 ± 1.5 μas for a 6.5 ± 0.5 billion solar mass black hole",
+            "Reconstruction at 20° inclination resolves prior imaging inconsistencies"
+          ],
+          "scientific_significance": "This work provides robust evidence for the black hole shadow's ring-like structure through calibration-independent imaging, strengthening theoretical predictions of event horizon physics."
+        },
+        "elapsed_seconds": 25.1783,
+        "input_tokens": 769,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 993,
+        "model_eval_seconds": 18.6015,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019412",
+        "title": "New Products.",
+        "abstract": "NA: A weekly roundup of information on newly offered instrumentation, apparatus, and laboratory materials of potential interest to researchers.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeo0226",
+        "doi_url": "https://doi.org/10.1126/science.aeo0226",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019412/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This Science journal article provides a weekly update on newly introduced laboratory instruments, apparatus, and materials that researchers might find useful. The study does not conduct original research but instead compiles and highlights recent product offerings from the scientific community.\",\n  \"key_findings\": [\n    \"Weekly compilation of new laboratory products\",\n    \"Focus on instrumentation and apparatus relevant to researchers\",\n    \"No original research conducted; purely informational\"\n  ],\n  \"scientific_significance\": \"The study contributes to the dissemination of scientific resources by systematically tracking and communicating emerging laboratory tools and materials to the research community.\"\n}",
+        "parsed": {
+          "summary": "This Science journal article provides a weekly update on newly introduced laboratory instruments, apparatus, and materials that researchers might find useful. The study does not conduct original research but instead compiles and highlights recent product offerings from the scientific community.",
+          "key_findings": [
+            "Weekly compilation of new laboratory products",
+            "Focus on instrumentation and apparatus relevant to researchers",
+            "No original research conducted; purely informational"
+          ],
+          "scientific_significance": "The study contributes to the dissemination of scientific resources by systematically tracking and communicating emerging laboratory tools and materials to the research community."
+        },
+        "elapsed_seconds": 11.469,
+        "input_tokens": 540,
+        "output_tokens": 123,
+        "thoughts_tokens": null,
+        "total_tokens": 663,
+        "model_eval_seconds": 9.5706,
+        "error": "summary must contain 45–65 words; received 40.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42952144",
+        "title": "Autonomous Discovery of Multi-Material Metamaterials With Programmable Multimodal Thermal Responses via Reinforcement Learning.",
+        "abstract": "NA: Inverse design deep learning models have significantly accelerated materials discovery through mapping complex structure-property relationships. However, they remain constrained by prohibitive data demands and are limited to in-distribution interpolation designs. Efficient out-of-distribution inverse design under sparse data constraints remains a critical bottleneck. Here we present an inverse design framework integrating Transformer encoder with reinforcement learning (RL) agent. By combining adaptable structural parameterization and hybrid iterative optimization, this framework efficiently navigates the complex, high-dimensional multi-material design landscape with extremely low data dependency (<103 samples). The inverse design framework leverages reward-driven mechanism to autonomously evolves multi-material architectures that achieve unseen target thermal deformation behaviors while strictly adhering to manufacturing requirements. Uniquely, the versatility of this framework is demonstrated through the realization of multiple thermal deformation targets, including near-zero, negative, and highly anisotropic thermal expansion, as well as complex multimodal deformations. Experimental validation of fabricated structures further confirms the efficacy of our framework for accelerated on-demand design of multi-material functional architectures.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75546",
+        "doi_url": "https://doi.org/10.1002/adma.75546",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42952144/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates using reinforcement learning to autonomously design multi-material metamaterials with programmable thermal responses. The approach combines a Transformer encoder with RL for low-data inverse design, enabling exploration of high-dimensional material landscapes. The framework achieved target thermal deformations including near-zero, negative, and anisotropic expansions through sparse data (<103 samples), validated by experimental fabrication.\",\n  \"key_findings\": [\n    \"The framework achieved near-zero thermal expansion targets using sparse data (<103 samples)\",\n    \"It generated multi-material structures with negative and highly anisotropic thermal expansion\",\n    \"Experimental validation confirmed the framework's ability to produce programmable thermal deformations\"\n  ],\n  \"scientific_significance\": \"This work advances inverse design methodologies by demonstrating efficient out-of-distribution material discovery with minimal data, enabling programmable thermal responses in multi-material metamaterials.\"\n}",
+        "parsed": {
+          "summary": "This study investigates using reinforcement learning to autonomously design multi-material metamaterials with programmable thermal responses. The approach combines a Transformer encoder with RL for low-data inverse design, enabling exploration of high-dimensional material landscapes. The framework achieved target thermal deformations including near-zero, negative, and anisotropic expansions through sparse data (<103 samples), validated by experimental fabrication.",
+          "key_findings": [
+            "The framework achieved near-zero thermal expansion targets using sparse data (<103 samples)",
+            "It generated multi-material structures with negative and highly anisotropic thermal expansion",
+            "Experimental validation confirmed the framework's ability to produce programmable thermal deformations"
+          ],
+          "scientific_significance": "This work advances inverse design methodologies by demonstrating efficient out-of-distribution material discovery with minimal data, enabling programmable thermal responses in multi-material metamaterials."
+        },
+        "elapsed_seconds": 18.9933,
+        "input_tokens": 649,
+        "output_tokens": 183,
+        "thoughts_tokens": null,
+        "total_tokens": 832,
+        "model_eval_seconds": 14.6749,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015407",
+        "title": "Scale-rich network-based metamaterials.",
+        "abstract": "NA: Materials, at their essence, are networks defined by homogeneity: uniform bonds, fixed thicknesses and discrete length scales. Mechanical metamaterials, while representing structurally more diverse microstructures, remain defined by the homogeneity of their unit cells, pore sizes or repeating features1,2. In contrast, as network science has revealed, real-world and biological systems-from the Internet to the brain-derive their function from broad, multiscale variability in connectivity and link length3-6. Here we introduce scale-rich metamaterials, a design framework that embeds network heterogeneity into mechanical metamaterials, achieving orders-of-magnitude heterogeneity in ligament lengths, thicknesses and connectivity. Governed by only two parameters, scale-rich networks span orders of magnitude in structural features, overcoming previous constraints in metamaterial design. Translating these network models into physically realizable materials, we use simulations and experiments to show that scale-rich metamaterials exhibit properties inaccessible to traditional single-scale systems, including highly tunable elastic anisotropy, delocalized nonlinear deformation with high energy absorption, enhanced energy dissipation under dynamic loading and programmable elastic-wave control. This network-based framework establishes a minimal and universal model for engineering multifunctional materials whose mechanical behaviour emerges directly from scale diversity, and also opens avenues of enquiry for network science itself.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11191-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11191-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015407/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates embedding network heterogeneity into mechanical metamaterials to overcome traditional single-scale limitations. By designing scale-rich networks with two parameters, the research achieves orders-of-magnitude variability in structural features. Simulations and experiments demonstrate tunable elastic anisotropy, delocalized nonlinear deformation with high energy absorption, and enhanced energy dissipation under dynamic loading compared to conventional systems.\",\n  \"key_findings\": [\n    \"Scale-rich metamaterials achieve orders-of-magnitude heterogeneity in ligament lengths, thicknesses, and connectivity\",\n    \"These materials exhibit highly tunable elastic anisotropy and delocalized nonlinear deformation with high energy absorption\",\n    \"They demonstrate enhanced energy dissipation under dynamic loading and programmable elastic-wave control\"\n  ],\n  \"scientific_significance\": \"This framework establishes a minimal model for engineering multifunctional materials where mechanical behavior emerges from scale diversity, advancing network science applications in mechanical engineering.\"\n}",
+        "parsed": {
+          "summary": "This study investigates embedding network heterogeneity into mechanical metamaterials to overcome traditional single-scale limitations. By designing scale-rich networks with two parameters, the research achieves orders-of-magnitude variability in structural features. Simulations and experiments demonstrate tunable elastic anisotropy, delocalized nonlinear deformation with high energy absorption, and enhanced energy dissipation under dynamic loading compared to conventional systems.",
+          "key_findings": [
+            "Scale-rich metamaterials achieve orders-of-magnitude heterogeneity in ligament lengths, thicknesses, and connectivity",
+            "These materials exhibit highly tunable elastic anisotropy and delocalized nonlinear deformation with high energy absorption",
+            "They demonstrate enhanced energy dissipation under dynamic loading and programmable elastic-wave control"
+          ],
+          "scientific_significance": "This framework establishes a minimal model for engineering multifunctional materials where mechanical behavior emerges from scale diversity, advancing network science applications in mechanical engineering."
+        },
+        "elapsed_seconds": 20.6225,
+        "input_tokens": 696,
+        "output_tokens": 195,
+        "thoughts_tokens": null,
+        "total_tokens": 891,
+        "model_eval_seconds": 15.369,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
