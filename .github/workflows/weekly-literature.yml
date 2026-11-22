@@ -1,6 +1,12 @@
 name: Weekly PubMed retrieval
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "config/keywords.yml"
+      - "R/keywords.R"
+      - "scripts/run_keyword_retrieval.R"
   workflow_dispatch:
     inputs:
       journal_ids:
