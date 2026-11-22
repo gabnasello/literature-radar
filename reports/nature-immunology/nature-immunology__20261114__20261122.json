@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "report_id": "nature-immunology__20261114__20261122",
+  "generated_at_utc": "2026-11-22 13:10:49 UTC",
+  "journal": {
+    "id": "nature-immunology",
+    "name": "Nature Immunology",
+    "issn": "1529-2908",
+    "enabled": true
+  },
+  "retrieval_window": {
+    "field": "PubMed Create Date (crdt)",
+    "query_start_inclusive": "2026-11-14",
+    "new_records_start": "2026-11-16",
+    "end_inclusive": "2026-11-22",
+    "previous_successful_end_date": "2026-11-15",
+    "overlap_days": 2
+  },
+  "search": {
+    "term": "\"1529-2908\"[ISSN] AND (2026/11/14[crdt] : 2026/11/22[crdt])",
+    "total_count": 6,
+    "fetched_count": 6,
+    "overlap_or_previously_seen_count": 0,
+    "new_count": 6
+  },
+  "articles": [
+    {
+      "pmid": "43064786",
+      "title": "Author Correction: The malate shuttle detoxifies ammonia in exhausted T cells by producing 2-ketoglutarate.",
+      "abstract": "",
+      "doi": "10.1038/s41590-026-02755-5",
+      "doi_url": "https://doi.org/10.1038/s41590-026-02755-5",
+      "journal": "Nature immunology",
+      "journal_issn": "1529-2916",
+      "authors": [
+        "Nina Weisshaar",
+        "Sicong Ma",
+        "Yanan Ming",
+        "Alaa Madi",
+        "Alessa Mieg",
+        "Marvin Hering",
+        "Ferdinand Zettl",
+        "Kerstin Mohr",
+        "Nora Ten Bosch",
+        "Diana Stichling",
+        "Michael Buettner",
+        "Gernot Poschet",
+        "Glynis Klinke",
+        "Michael Schulz",
+        "Nina Kunze-Rohrbach",
+        "Carolin Kerber",
+        "Isabel Madeleine Klein",
+        "Jingxia Wu",
+        "Xi Wang",
+        "Guoliang Cui"
+      ],
+      "publication_types": [
+        "Published Erratum"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43064786/"
+    },
+    {
+      "pmid": "43064785",
+      "title": "Herpesvirus exposures map to self-reactivity networks in chronic disease.",
+      "abstract": "",
+      "doi": "10.1038/s41590-026-02679-0",
+      "doi_url": "https://doi.org/10.1038/s41590-026-02679-0",
+      "journal": "Nature immunology",
+      "journal_issn": "1529-2916",
+      "authors": [],
+      "publication_types": [
+        "Journal Article"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43064785/"
+    },
+    {
+      "pmid": "43064784",
+      "title": "Large-scale antibody reactome profiling identifies herpesvirus-autoantigen associations that underlie chronic diseases.",
+      "abstract": "NA: Herpesviruses infect nearly all humans and have long been implicated in autoimmune and chronic diseases, yet their interactions with host proteins have not been systematically characterized. We profiled immunoglobulin G reactivities to >4,600 herpesvirus peptides and >15,000 human proteins using multiplexed protein display in two Mass General Brigham Biobank cohorts (discovery n = 1,289; replication n = 763), with longitudinal electronic health record follow-up. We identified and replicated 4,943 FDR-significant associations across 106 autoantigens, including previously uncharacterized viral-autoantigen axes, such as PHLDA1 and ZNF550. Eleven autoantigens were predicted by viral reactivities with >85% accuracy in independent validation, two of which exhibited viral-host sequence homology consistent with possible molecular mimicry. Integrating immune reactivities with incident diseases revealed virus-specific networks. Cytomegalovirus formed the largest multimorbid network, Epstein-Barr virus converged on pleiotropic autoimmune hubs and herpes simplex viruses formed partially overlapping networks. These findings define a herpesvirus-autoantigen-disease network atlas and prioritize candidate viral-host immune axes for mechanistic investigation.",
+      "doi": "10.1038/s41590-026-02674-5",
+      "doi_url": "https://doi.org/10.1038/s41590-026-02674-5",
+      "journal": "Nature immunology",
+      "journal_issn": "1529-2916",
+      "authors": [
+        "Sanghun Lee",
+        "Nicole Prince",
+        "Qingwen Chen",
+        "Xueying Chen",
+        "Junwei Lu",
+        "Kevin M Mendez",
+        "Rachel S Kelly",
+        "Julian Hecker",
+        "Dmitry Prokopenko",
+        "Michael J McGeachie",
+        "Rinku Sharma",
+        "Yulu Chen",
+        "Andrea Aparicio",
+        "Tao Guo",
+        "Ofer Levy",
+        "Nicholas J W Rattray",
+        "Zahra Rattray",
+        "Christoph Lange",
+        "H Benjamin Larman",
+        "Jessica A Lasky-Su"
+      ],
+      "publication_types": [
+        "Journal Article"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43064784/"
+    },
+    {
+      "pmid": "43045751",
+      "title": "Fever-induced OR560 promotes antibacterial immunity through macrophage pseudopod formation and phagocytosis.",
+      "abstract": "NA: Fever is a conserved physiological response to pathogen infection. However, how fever promotes host defense remains poorly understood. Here we find that fever empowers antibacterial immunity by inducing olfactory receptor 560 (OR560) to promote macrophage phagocytosis. Through a genome-wide CRISPR screen, we discovered that OR560 is indispensable for macrophage phagocytosis. Febrile temperature drives the serum response factor-dependent OR560 induction in macrophages to boost phagocytosis. OR560 responds to bacteria-derived peptides and plays an essential role in mediating pseudopod formation-a key step required for target uptake. Modulation of body temperature in mice showed that the immune-amplifying effect of fever depends predominantly on OR560. We further demonstrated that the genetic ablation of either Olfr560 or serum response factor (Srf) in mice not only abolished fever-potentiated macrophage phagocytosis but also led to catastrophic defects in bacterial clearance and increased mortality upon infections. Thus, our work reveals that OR560 is a pivotal regulator of fever-enhanced antibacterial phagocytosis and integrates both pathogen-derived and febrile signals to ensure a robust response to infection.",
+      "doi": "10.1038/s41590-026-02709-x",
+      "doi_url": "https://doi.org/10.1038/s41590-026-02709-x",
+      "journal": "Nature immunology",
+      "journal_issn": "1529-2916",
+      "authors": [
+        "Hong Cai",
+        "Jun-Xi Yi",
+        "Jing-Yi Sun",
+        "Jin Li",
+        "Min-Yi Feng",
+        "Zhe-Han Liu",
+        "Shuai Jiang",
+        "Li-Ming Sun",
+        "Xin-Ran Zhang",
+        "Jie Pan",
+        "Tong Wang",
+        "Jia-Qing Xing",
+        "Ya-Song Yi",
+        "Ling-Mei Qin",
+        "Xue-Qing Zhou",
+        "Hui-Zi Yue",
+        "Xue-Han Wang",
+        "Liu-Bing Yu",
+        "Chen-Xin Liu",
+        "Ling Chen",
+        "Qiu-Ying Han",
+        "Ming Zhao",
+        "Tian Xia",
+        "Yu Yu",
+        "Tao Zhou",
+        "Xue-Min Zhang",
+        "Ai-Ling Li",
+        "Wen Xue",
+        "Tao Li"
+      ],
+      "publication_types": [
+        "Journal Article"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43045751/"
+    },
+    {
+      "pmid": "43040049",
+      "title": "Maternal and early life obesity programs CD4+ T cell fate to impair vaccine immunity.",
+      "abstract": "NA: In their first 3 years, children experience an average of 14 infections and receive vaccines against roughly 15 pathogens, yet whether maternal and early life obesity alters adaptive immune responses during this critical period remains largely undefined. Using a mouse model that mirrored the epidemiological link between maternal and childhood obesity, we found that high-fat diet exposure during pregnancy or early postnatal life, but not adulthood, reshaped the epigenetic and transcriptional landscape of naive CD4+ T cells and impaired their ability to differentiate into T follicular helper (TFH) cells and support germinal center reactions in response to mRNA-based and protein-based vaccines. Mechanistically, epigenetic repression of the ubiquitin-editing enzyme A20 (Tnfaip3) was a central driver of these defects. Pediatric patients with haploinsufficiency of A20 displayed a marked reduction in circulating TFH cells. Altogether, these findings establish maternal and early life obesity as determinants of adaptive immunity during a critical developmental window.",
+      "doi": "10.1038/s41590-026-02700-6",
+      "doi_url": "https://doi.org/10.1038/s41590-026-02700-6",
+      "journal": "Nature immunology",
+      "journal_issn": "1529-2916",
+      "authors": [
+        "Michaël F Michieletto",
+        "Monica T Jimenez",
+        "Atishay Jay",
+        "Michelle Y Y Lee",
+        "Jean-Christophe Beltra",
+        "Corentin Le Saos-Patrinos",
+        "Samir U Sayed",
+        "Megan L Clark",
+        "Niklas Blank",
+        "Wallace P Bezerra",
+        "Clemence Queriault",
+        "Ceire Hay",
+        "Diego A Espinoza",
+        "Isabel R Erickson",
+        "Ethan A Mack",
+        "Leonel Joannas",
+        "Enrique Olguín-Martínez",
+        "Hiromi Muramatsu",
+        "Mate Z Nagy",
+        "Sajad Ahmad Bhat",
+        "Guido H Falduto",
+        "Ying K Tam",
+        "Zoltan Lipinszki",
+        "Michela Locci",
+        "Diana Castano",
+        "Christoph A Thaiss",
+        "Golnaz Vahedi",
+        "Adam Williams",
+        "Norbert Pardi",
+        "Daniella M Schwartz",
+        "Tiphanie P Vogel",
+        "Sarah E Henrickson",
+        "Jorge Henao-Mejia"
+      ],
+      "publication_types": [
+        "Journal Article"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43040049/"
+    },
+    {
+      "pmid": "43040048",
+      "title": "Early-life obesity edits T cell fate.",
+      "abstract": "",
+      "doi": "10.1038/s41590-026-02710-4",
+      "doi_url": "https://doi.org/10.1038/s41590-026-02710-4",
+      "journal": "Nature immunology",
+      "journal_issn": "1529-2916",
+      "authors": [
+        "Danish Umar",
+        "Deepshika Ramanan"
+      ],
+      "publication_types": [
+        "Journal Article"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43040048/"
+    }
+  ]
+}

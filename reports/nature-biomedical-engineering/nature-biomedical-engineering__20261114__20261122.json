@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "report_id": "nature-biomedical-engineering__20261114__20261122",
+  "generated_at_utc": "2026-11-22 13:10:47 UTC",
+  "journal": {
+    "id": "nature-biomedical-engineering",
+    "name": "Nature Biomedical Engineering",
+    "issn": "2157-846X",
+    "enabled": true
+  },
+  "retrieval_window": {
+    "field": "PubMed Create Date (crdt)",
+    "query_start_inclusive": "2026-11-14",
+    "new_records_start": "2026-11-16",
+    "end_inclusive": "2026-11-22",
+    "previous_successful_end_date": "2026-11-15",
+    "overlap_days": 2
+  },
+  "search": {
+    "term": "\"2157-846X\"[ISSN] AND (2026/11/14[crdt] : 2026/11/22[crdt])",
+    "total_count": 2,
+    "fetched_count": 2,
+    "overlap_or_previously_seen_count": 0,
+    "new_count": 2
+  },
+  "articles": [
+    {
+      "pmid": "43052497",
+      "title": "Designer mucin-responsive nanomedicine for enhanced solid tumour penetration and therapy.",
+      "abstract": "NA: While nanomedicines hold great promise for solid tumour therapy, their penetration and access to tumour cells is limited by large glycosylated proteins called mucins that are enriched in the tumour microenvironment. Here we show that mucins induce the disassembly of self-assembled mPEG-polyester micellar nanoparticles into smaller unimers. Leveraging this finding, we designed a mucin-responsive, paclitaxel-conjugated nanomedicine (mrPNM) whose unimers are capable of escaping the mucin-binding barrier. Following intravenous injection, this designer mucin-responsive nanomedicine exhibited markedly deeper penetration than the mucin-nonresponsive nanomedicine and albumin, resulting in 3.9- and 1.5-fold increases in tumour cell delivery, respectively, in a pancreatic mouse tumour model. The mrPNMs also achieved superior tumour growth inhibition compared to both the mucin-nonresponsive nanomedicine and Abraxane, the FDA-approved nanoparticle albumin-bound paclitaxel, in three solid tumour models. The mucin-responsive nanomedicine platform could provide a general strategy for improving the treatment of solid tumours.",
+      "doi": "10.1038/s41551-026-01843-z",
+      "doi_url": "https://doi.org/10.1038/s41551-026-01843-z",
+      "journal": "Nature biomedical engineering",
+      "journal_issn": "2157-846X",
+      "authors": [
+        "Na Yu",
+        "Ningqiang Gong",
+        "Juan Liu",
+        "Haiping Zhong",
+        "Xingwei Li",
+        "Qi Wang",
+        "Tao Liu",
+        "Jingqing Mu",
+        "Zunkai Xu",
+        "Xianlei Li",
+        "Yaxin Zhou",
+        "Yanliang Dong",
+        "Xi Zhang",
+        "Yongchao Wang",
+        "Xiaoguang Shi",
+        "Leaf Huang",
+        "Xing-Jie Liang",
+        "Shutao Guo"
+      ],
+      "publication_types": [
+        "Journal Article"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43052497/"
+    },
+    {
+      "pmid": "43039978",
+      "title": "Self-powered bubble motor microswarms for ultrasensitive detection, monitoring and prediction in cancer liquid biopsies.",
+      "abstract": "NA: Extracellular vesicles (EVs) have shown great potential for disease detection from liquid biopsies. However, the lack of optimized isolation and detection methods limited their clinical application. Here we engineer a bioinspired, reconfigurable, self-powered bubble motor (Butor) microswarm to streamline intelligent isolation and ultrasensitive profiling of circulating EVs for cancer liquid biopsies. Butor microswarm shows jellyfish-like, self-propelled lifting locomotion along lumen-like vertical or inclined tubular path in parallel, allowing rapid isolation (10 min, near 90%) of EV subtypes via three-dimensional directional scanning capture even in high-viscosity biofluids. Furthermore, the buoyancy-activated Butors achieve ultrasensitive EV profiling near a single-particle level, enable early diagnosis of non-small cell lung cancer with an accuracy of up to 94% (95% sensitivity) in a pilot cohort and improve the outcome in cancer staging (I-IV) discrimination, response monitoring of surgical treatment and efficacy prediction of immunotherapy in patients with non-small cell lung cancer. Our self-powered motor represents an intelligent, fast, inexpensive, sensitive and multiplexed liquid biopsy tool for accurate cancer diagnostics and treatment monitoring in clinical settings.",
+      "doi": "10.1038/s41551-026-01834-0",
+      "doi_url": "https://doi.org/10.1038/s41551-026-01834-0",
+      "journal": "Nature biomedical engineering",
+      "journal_issn": "2157-846X",
+      "authors": [
+        "Hao Lu",
+        "Xiaojie Qin",
+        "Cuiyun Su",
+        "Binqi Wei",
+        "Kai Liang",
+        "Zhanyu Xu",
+        "Yuyuan Zhang",
+        "Yu Yang",
+        "Min Fang",
+        "Xinchun Li",
+        "Fan Yang"
+      ],
+      "publication_types": [
+        "Journal Article"
+      ],
+      "publication_date": "2026",
+      "pubmed_created_date": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43039978/"
+    }
+  ]
+}
