@@ -93,7 +93,8 @@ site_timestamp_order <- function(x) {
       "%Y-%m-%dT%H:%M:%OSZ",
       "%Y-%m-%dT%H:%M:%SZ",
       "%Y-%m-%d %H:%M:%S",
-      "%Y-%m-%d"
+      "%Y-%m-%d",
+      "%Y"
     )
   ))
   if (is.na(parsed)) 0 else as.numeric(parsed)
