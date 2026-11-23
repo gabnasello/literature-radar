@@ -48,3 +48,9 @@ h1,h2,h3,h4,.navbar{font-family:"Manrope",sans-serif}.navbar{background:rgba(255
 .top-five-item .paper-card{margin:.4rem 0 .55rem;max-width:none}
 .read-more{margin:.5rem 0 1rem;text-align:right;font-size:.85rem}
 .read-more a{color:var(--radar-blue);font-weight:700;text-decoration:none}
+
+.top-five-group{margin:.25rem 0 .9rem}
+.top-five-group-heading{margin:.6rem 0 .25rem;font-size:1rem;font-weight:750}
+.top-five-group-heading a{color:var(--radar-blue);text-decoration:none}
+.top-five-group-heading a:hover{text-decoration:underline}
+.top-five-item .top-five-source{display:none}
