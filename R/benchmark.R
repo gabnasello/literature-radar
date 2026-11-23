@@ -138,7 +138,7 @@ safe_ollama_call <- function(prompt, config, max_attempts = 2L) {
         "Your previous response did not pass validation for these reasons:",
         paste0("- ", validation$errors, collapse = "\n"),
         "Return a corrected JSON object using exactly the three requested fields.",
-        "The summary must contain 45–65 words. Proofread every field for spelling errors, malformed words, fragments, duplicated phrases, and punctuation mistakes.",
+        "The summary must contain 45–90 words. Proofread every field for spelling errors, malformed words, fragments, duplicated phrases, and punctuation mistakes.",
         "Do not add a relevance assessment, limitations, caveats, or any other fields.",
         sep = "\n"
       )
