@@ -1,0 +1,945 @@
+{
+  "schema_version": 1,
+  "run_id": "20261123T044256Z",
+  "generated_at_utc": "2026-11-23 05:16:16 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 263,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides/oxynitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.\",\n  \"key_findings\": [\n    \"Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a critical bottleneck for Ta3N5 photocatalysts\",\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric pure water splitting at 420 nm\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting over nitride-based materials, providing mechanistic insights for advancing solar-driven water splitting technologies.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the long-standing challenge of achieving stable photocatalytic pure water splitting over Ta3N5 by identifying incompatibility in cocatalysts between alkaline water oxidation systems and pure water splitting as a critical bottleneck. The researchers developed a highly dispersed RuCoOx cocatalyst using a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx photocatalyst achieved stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, the highest reported for Ta-based nitrides/oxynitrides. Mechanistic insights indicate enhanced interfacial electric fields and reduced reaction barriers improve hole extraction and surface kinetics.",
+          "key_findings": [
+            "Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a critical bottleneck for Ta3N5 photocatalysts",
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves 0.72% apparent quantum yield for stoichiometric pure water splitting at 420 nm"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic water splitting over nitride-based materials, providing mechanistic insights for advancing solar-driven water splitting technologies."
+        },
+        "elapsed_seconds": 52.6922,
+        "input_tokens": 820,
+        "output_tokens": 315,
+        "thoughts_tokens": null,
+        "total_tokens": 1135,
+        "model_eval_seconds": 47.8065,
+        "error": "summary must contain 45–65 words; received 90.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43035126",
+        "title": "Guilty by marker? Reassessing the pro-tumor reputation of antigen-presenting M2-like macrophages.",
+        "abstract": "NA: M2-like tumor-associated macrophages (TAMs) are widely regarded as immunosuppressive on the basis of surface markers such as CD206 and CD163, an inference drawn largely from in vitro polarization studies rather than tested directly in the tumor-derived cells to which it is applied. This review asks what functional evidence, specifically assays of phagocytosis, antigen processing, cross-presentation, and CD8+ T cell activation, says about M2-like macrophages in cancer. A three-tier evidence framework is used to grade studies by whether they test function and whether that function is shown to be causal, applied equally to studies supporting and opposing an antitumor role for these cells. Functional evidence shows that some CD206+ or M2a-like macrophages, including ones sorted directly from tumors, can cross-present tumor antigen and activate CD8+ T cells at levels comparable with conventional type 1 dendritic cells, and that this capacity is associated with better outcomes in at least one setting. Counter-evidence shows that antigen-presenting macrophages, not always M2-like by the studies' own definitions, can instead retain cytotoxic T cells in tumor-promoting configurations or activate regulatory T cells. Across both bodies of evidence, antigen fate and co-stimulatory context are more informative about outcome than the M1/M2 marker itself. This review's claim is normative, not historical: a marker cannot by itself define function, so it cannot settle whether M2-like macrophages are pro-tumor or antitumor. Evidence is accordingly narrowed to antigen-presenting, largely CD206hi/M2a-like, macrophages, and a minimum reporting standard is proposed for future studies.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.critrevonc.2026.105702",
+        "doi_url": "https://doi.org/10.1016/j.critrevonc.2026.105702",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43035126/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Critical reviews in oncology/hematology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This review reassesses the pro-tumor role of M2-like tumor-associated macrophages (TAMs) by evaluating functional evidence from tumor-derived cells. It examines phagocytosis, antigen processing, cross-presentation, and CD8+ T cell activation. Findings indicate that some CD206+ TAMs can cross-present tumor antigens and activate CD8+ T cells comparably to dendritic cells, correlating with improved outcomes. Conversely, other antigen-presenting macrophages may promote immunosuppression. The study emphasizes that antigen fate and co-stimulatory context, not M1/M2 markers, determine functional outcomes.\",\n  \"key_findings\": [\n    \"CD206+ tumor-associated macrophages can cross-present tumor antigens and activate CD8+ T cells at levels matching conventional dendritic cells\",\n    \"These macrophages correlate with better clinical outcomes in specific contexts\",\n    \"Antigen-presenting macrophages may retain cytotoxic T cells in tumor-promoting configurations or activate regulatory T cells\"\n  ],\n  \"scientific_significance\": \"This review establishes that functional capacity, not M1/M2 markers, dictates macrophage roles in tumor immunity, shifting focus from surface markers to antigen processing and co-stimulatory signals for accurate immunotherapeutic targeting.\"\n}",
+        "parsed": {
+          "summary": "This review reassesses the pro-tumor role of M2-like tumor-associated macrophages (TAMs) by evaluating functional evidence from tumor-derived cells. It examines phagocytosis, antigen processing, cross-presentation, and CD8+ T cell activation. Findings indicate that some CD206+ TAMs can cross-present tumor antigens and activate CD8+ T cells comparably to dendritic cells, correlating with improved outcomes. Conversely, other antigen-presenting macrophages may promote immunosuppression. The study emphasizes that antigen fate and co-stimulatory context, not M1/M2 markers, determine functional outcomes.",
+          "key_findings": [
+            "CD206+ tumor-associated macrophages can cross-present tumor antigens and activate CD8+ T cells at levels matching conventional dendritic cells",
+            "These macrophages correlate with better clinical outcomes in specific contexts",
+            "Antigen-presenting macrophages may retain cytotoxic T cells in tumor-promoting configurations or activate regulatory T cells"
+          ],
+          "scientific_significance": "This review establishes that functional capacity, not M1/M2 markers, dictates macrophage roles in tumor immunity, shifting focus from surface markers to antigen processing and co-stimulatory signals for accurate immunotherapeutic targeting."
+        },
+        "elapsed_seconds": 46.5384,
+        "input_tokens": 903,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1178,
+        "model_eval_seconds": 41.5685,
+        "error": "summary must contain 45–65 words; received 74.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how early human settlement in the Arabian desert was influenced by both water availability and stone resources for toolmaking. Using a 1,500-km geoarchaeological survey across the Rub' al Khali, researchers found no lithic artifacts or knappable materials in areas with abundant freshwater but lacking stone. The analysis indicates that early humans required co-occurrence of water and lithic resources to settle, challenging models that prioritize water alone. This suggests raw-material geology significantly constrains dispersal patterns.\",\n  \"key_findings\": [\n    \"Palaeolake deposits were present at 55 of 125 surveyed localities but no lithic artifacts or knappable materials were found in areas with abundant freshwater.\",\n    \"Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, with raw-material availability improving site discrimination from an area under the curve of 0.695 to 0.768.\",\n    \"Convergent patterns across Africa, North America, and Asia indicate that stone resource constraints, not water availability alone, limited early human dispersal.\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that lithic resource availability, not water, was a critical constraint on early human dispersal into arid regions, refining models of Pleistocene human migration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how early human settlement in the Arabian desert was influenced by both water availability and stone resources for toolmaking. Using a 1,500-km geoarchaeological survey across the Rub' al Khali, researchers found no lithic artifacts or knappable materials in areas with abundant freshwater but lacking stone. The analysis indicates that early humans required co-occurrence of water and lithic resources to settle, challenging models that prioritize water alone. This suggests raw-material geology significantly constrains dispersal patterns.",
+          "key_findings": [
+            "Palaeolake deposits were present at 55 of 125 surveyed localities but no lithic artifacts or knappable materials were found in areas with abundant freshwater.",
+            "Spatial modeling shows 57% of water-accessible terrain lacks knappable stone, with raw-material availability improving site discrimination from an area under the curve of 0.695 to 0.768.",
+            "Convergent patterns across Africa, North America, and Asia indicate that stone resource constraints, not water availability alone, limited early human dispersal."
+          ],
+          "scientific_significance": "The study demonstrates that lithic resource availability, not water, was a critical constraint on early human dispersal into arid regions, refining models of Pleistocene human migration."
+        },
+        "elapsed_seconds": 46.7593,
+        "input_tokens": 856,
+        "output_tokens": 281,
+        "thoughts_tokens": null,
+        "total_tokens": 1137,
+        "model_eval_seconds": 41.8483,
+        "error": "summary must contain 45–65 words; received 77.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015493",
+        "title": "PKA signaling controls ILC3 homeostasis and IL-23-mediated inflammation in the gut.",
+        "abstract": "NA: Group 3 innate lymphoid cells (ILC3s) are tissue-protective lymphocytes that are enriched in the healthy gut and depleted in gastrointestinal disorders. Here we created a single-cell atlas to define how ILC3s respond to distinct stimuli, observing that prostaglandin engages protein kinase A (PKA) to upregulate tissue-protective factors. In contrast, the canonical activator interleukin-23 (IL-23) decreased negative regulators of PKA, including PRKAR1A. Lineage-specific Prkar1a deletion reduced ILC3s and increased susceptibility to enteric infection in mice. PRKAR1A was not required in early life but continuously preserved ILC3 homeostasis in adults by restraining PKA activity. Overproduction of IL-23 was sufficient to reduce PRKAR1A in ILC3s and increase PKA signaling that provoked gut inflammation. Finally, ILC3s from the healthy human intestine expressed PRKAR1A, which was downregulated by IL-23 or in inflammatory bowel disease. These results demonstrate that regulated PKA signaling is essential for tissue-protective ILC3s, while IL-23 drives aberrant PKA signaling to elicit intestinal inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41590-026-02703-3",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02703-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015493/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.\",\n  \"key_findings\": [\n    \"ILC3s maintain tissue-protective functions via PKA signaling regulated by prostaglandin\",\n    \"IL-23 suppresses PKA inhibitors, reducing ILC3 numbers and increasing infection susceptibility\",\n    \"IL-23 overproduction decreases PRKAR1A, elevating PKA activity and triggering gut inflammation\"\n  ],\n  \"scientific_significance\": \"This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how protein kinase A (PKA) signaling regulates group 3 innate lymphoid cell (ILC3) homeostasis and its role in gut inflammation. Using a single-cell atlas, researchers found that prostaglandin activates PKA to promote tissue-protective functions, while interleukin-23 (IL-23) suppresses PKA inhibitors. Deletion of PRKAR1A reduced ILC3s and increased infection susceptibility in mice. IL-23 overproduction decreased PRKAR1A, increasing PKA signaling and causing gut inflammation. Human ILC3s express PRKAR1A, which is downregulated by IL-23 or in inflammatory bowel disease.",
+          "key_findings": [
+            "ILC3s maintain tissue-protective functions via PKA signaling regulated by prostaglandin",
+            "IL-23 suppresses PKA inhibitors, reducing ILC3 numbers and increasing infection susceptibility",
+            "IL-23 overproduction decreases PRKAR1A, elevating PKA activity and triggering gut inflammation"
+          ],
+          "scientific_significance": "This work establishes PKA signaling as a critical regulator of ILC3 homeostasis, revealing how IL-23-driven PKA dysregulation contributes to intestinal inflammation."
+        },
+        "elapsed_seconds": 46.7421,
+        "input_tokens": 800,
+        "output_tokens": 276,
+        "thoughts_tokens": null,
+        "total_tokens": 1076,
+        "model_eval_seconds": 41.8514,
+        "error": "summary must contain 45–65 words; received 79.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43040049",
+        "title": "Maternal and early life obesity programs CD4+ T cell fate to impair vaccine immunity.",
+        "abstract": "NA: In their first 3 years, children experience an average of 14 infections and receive vaccines against roughly 15 pathogens, yet whether maternal and early life obesity alters adaptive immune responses during this critical period remains largely undefined. Using a mouse model that mirrored the epidemiological link between maternal and childhood obesity, we found that high-fat diet exposure during pregnancy or early postnatal life, but not adulthood, reshaped the epigenetic and transcriptional landscape of naive CD4+ T cells and impaired their ability to differentiate into T follicular helper (TFH) cells and support germinal center reactions in response to mRNA-based and protein-based vaccines. Mechanistically, epigenetic repression of the ubiquitin-editing enzyme A20 (Tnfaip3) was a central driver of these defects. Pediatric patients with haploinsufficiency of A20 displayed a marked reduction in circulating TFH cells. Altogether, these findings establish maternal and early life obesity as determinants of adaptive immunity during a critical developmental window.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1038/s41590-026-02700-6",
+        "doi_url": "https://doi.org/10.1038/s41590-026-02700-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43040049/",
+        "journal_id": "nature-immunology",
+        "journal_name": "Nature Immunology",
+        "report_id": "nature-immunology__20261114__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated how maternal and early life obesity affect adaptive immune responses during childhood vaccination. Using a mouse model replicating the obesity-epidemiological link, researchers found that high-fat diet exposure during pregnancy or early postnatal life, but not adulthood, altered naive CD4+ T cell epigenetics and transcriptional profiles. This impaired T follicular helper cell differentiation and germinal center reactions to mRNA and protein vaccines. Mechanistically, epigenetic repression of A20 (Tnfaip3) drove these defects, with pediatric A20 haploinsufficiency correlating with reduced TFH cells. These findings establish maternal and early life obesity as critical determinants of vaccine immunity during development.\",\n  \"key_findings\": [\n    \"High-fat diet exposure during pregnancy or early postnatal life, but not adulthood, reshaped naive CD4+ T cell epigenetics and transcriptional profiles\",\n    \"Epigenetic repression of A20 (Tnfaip3) impaired T follicular helper cell differentiation and germinal center reactions to vaccines\",\n    \"Pediatric A20 haploinsufficiency correlated with reduced circulating T follicular helper cells\"\n  ],\n  \"scientific_significance\": \"This work identifies maternal and early life obesity as key determinants of adaptive immune responses during a critical developmental window, providing mechanistic insights into how obesity programs CD4+ T cell fate to impair vaccine efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how maternal and early life obesity affect adaptive immune responses during childhood vaccination. Using a mouse model replicating the obesity-epidemiological link, researchers found that high-fat diet exposure during pregnancy or early postnatal life, but not adulthood, altered naive CD4+ T cell epigenetics and transcriptional profiles. This impaired T follicular helper cell differentiation and germinal center reactions to mRNA and protein vaccines. Mechanistically, epigenetic repression of A20 (Tnfaip3) drove these defects, with pediatric A20 haploinsufficiency correlating with reduced TFH cells. These findings establish maternal and early life obesity as critical determinants of vaccine immunity during development.",
+          "key_findings": [
+            "High-fat diet exposure during pregnancy or early postnatal life, but not adulthood, reshaped naive CD4+ T cell epigenetics and transcriptional profiles",
+            "Epigenetic repression of A20 (Tnfaip3) impaired T follicular helper cell differentiation and germinal center reactions to vaccines",
+            "Pediatric A20 haploinsufficiency correlated with reduced circulating T follicular helper cells"
+          ],
+          "scientific_significance": "This work identifies maternal and early life obesity as key determinants of adaptive immune responses during a critical developmental window, providing mechanistic insights into how obesity programs CD4+ T cell fate to impair vaccine efficacy."
+        },
+        "elapsed_seconds": 47.4086,
+        "input_tokens": 744,
+        "output_tokens": 296,
+        "thoughts_tokens": null,
+        "total_tokens": 1040,
+        "model_eval_seconds": 42.596,
+        "error": "summary must contain 45–65 words; received 98.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43000118",
+        "title": "Melting and resistivity of iron at Earth core conditions using pulsed Joule heating.",
+        "abstract": "NA: The melting temperature and electrical resistivity of iron at high pressure are essential for understanding Earth's core. Here we use a new high-pressure method - microsecond pulsed Joule heating in diamond anvil cells - to identify melting and measure resistivity of solid and liquid iron. More than 300 reproducible melting measurements indicate a surprisingly shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. Extrapolating in pressure and iron alloy composition, and combining with our 76 [Formula: see text] cm measurement of liquid iron's resistivity, we infer a relatively cold core-mantle boundary (3430 K) with a low adiabatic outer core heat flow (9.8 TW). This suggests thermal convection alone could have powered the geodynamo prior to inner core formation and that today's lowermost mantle is fully solid.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh5267",
+        "doi_url": "https://doi.org/10.1126/science.aeh5267",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43000118/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates iron's melting temperature and electrical resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve at 6 K/GPa, reaching 4160 ± 80 K at 200 GPa. The findings suggest a cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), indicating thermal convection could power the geodynamo before inner core formation.\",\n  \"key_findings\": [\n    \"A shallow melting curve for iron at 6 K/GPa, reaching 4160 ± 80 K at 200 GPa\",\n    \"Inferred core-mantle boundary temperature of 3430 K\",\n    \"Low adiabatic outer core heat flow of 9.8 TW\"\n  ],\n  \"scientific_significance\": \"The study provides critical constraints on Earth's core thermal evolution, suggesting thermal convection alone could drive the geodynamo prior to inner core formation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates iron's melting temperature and electrical resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve at 6 K/GPa, reaching 4160 ± 80 K at 200 GPa. The findings suggest a cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), indicating thermal convection could power the geodynamo before inner core formation.",
+          "key_findings": [
+            "A shallow melting curve for iron at 6 K/GPa, reaching 4160 ± 80 K at 200 GPa",
+            "Inferred core-mantle boundary temperature of 3430 K",
+            "Low adiabatic outer core heat flow of 9.8 TW"
+          ],
+          "scientific_significance": "The study provides critical constraints on Earth's core thermal evolution, suggesting thermal convection alone could drive the geodynamo prior to inner core formation."
+        },
+        "elapsed_seconds": 39.2866,
+        "input_tokens": 726,
+        "output_tokens": 240,
+        "thoughts_tokens": null,
+        "total_tokens": 966,
+        "model_eval_seconds": 34.4817,
+        "error": "summary must contain 45–65 words; received 72.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947628",
+        "title": "4f-Electron-Regulated Dual-Periodic Bonding Evolution Across the Lanthanide Series.",
+        "abstract": "NA: Lanthanide-based catalysts have attracted increasing attention due to their unique electronic structures, yet the relationship between 4f electron evolution and catalytic behavior remains unclear. Here, using structurally uniform lanthanide single-atom catalysts as a model platform, we systematically investigate the influence of 4f electron filling on bonding evolution across the lanthanide series. We reveal a dual-periodic trend in lanthanide-support binding energies and adsorbate bonding energies, which increases from La to Eu and from Gd to Yb. This behavior originates from progressive electron redistribution between 5d and 4f orbitals, which modulates the electron population of bonding orbitals. The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd. Furthermore, similar crystal-field splitting enables robust linear relationships between binding and bonding energies across diverse coordination environments. More importantly, the persistence of these electronic characteristics across diverse coordination environments demonstrates that the dual-periodic evolution represents an intrinsic feature of lanthanide chemistry rather than a system-specific phenomenon. These findings establish a 4f-electron-regulated bonding framework for understanding lanthanide reactivity and guiding catalyst design.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75541",
+        "doi_url": "https://doi.org/10.1002/adma.75541",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947628/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how 4f electron filling influences bonding evolution in lanthanide single-atom catalysts across the series. Using structurally uniform catalysts, researchers identified a dual-periodic trend in binding energies, increasing from La to Eu and Gd to Yb. The half-filled 4f7 configuration at Eu-Gd transition drives abrupt changes, while consistent crystal-field effects enable robust linear relationships across coordination environments. These findings establish a 4f-electron-regulated framework for lanthanide reactivity.\",\n  \"key_findings\": [\n    \"A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and Gd to Yb\",\n    \"The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd\",\n    \"Consistent crystal-field effects enable linear relationships between binding and bonding energies across diverse coordination environments\"\n  ],\n  \"scientific_significance\": \"This work establishes a fundamental 4f-electron-regulated bonding framework for understanding lanthanide reactivity, providing intrinsic electronic principles for catalyst design across the lanthanide series.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how 4f electron filling influences bonding evolution in lanthanide single-atom catalysts across the series. Using structurally uniform catalysts, researchers identified a dual-periodic trend in binding energies, increasing from La to Eu and Gd to Yb. The half-filled 4f7 configuration at Eu-Gd transition drives abrupt changes, while consistent crystal-field effects enable robust linear relationships across coordination environments. These findings establish a 4f-electron-regulated framework for lanthanide reactivity.",
+          "key_findings": [
+            "A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and Gd to Yb",
+            "The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd",
+            "Consistent crystal-field effects enable linear relationships between binding and bonding energies across diverse coordination environments"
+          ],
+          "scientific_significance": "This work establishes a fundamental 4f-electron-regulated bonding framework for understanding lanthanide reactivity, providing intrinsic electronic principles for catalyst design across the lanthanide series."
+        },
+        "elapsed_seconds": 37.6425,
+        "input_tokens": 777,
+        "output_tokens": 230,
+        "thoughts_tokens": null,
+        "total_tokens": 1007,
+        "model_eval_seconds": 32.7359,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43036170",
+        "title": "Regulatory T-Cell Dynamics During and After Direct Acting Antivirals in Cirrhotic HCV Genotype 4 Patients.",
+        "abstract": "NA: We previously conducted longitudinal immunological studies in non-cirrhotic chronic hepatitis C patients treated with direct-acting antivirals (DAAs). However, whether cirrhosis alters these immunological dynamics remains unclear. We aimed to characterize regulatory T cells in HCV cirrhotic patients and evaluate their longitudinal changes during and following successful antiviral therapy in HCV cirrhotic patients. Fifty cirrhotic HCV genotype 4 patients and fifty age-matched healthy controls were enrolled. Peripheral blood mononuclear cells were analysed at baseline, week 4, end of treatment, and 1 year post-SVR using multicolour flow cytometry to quantify CD3+, CD4+, CD8+, PD-1+, and CD38+ exhausted/activated CD8+ T cells, TH1, TH2, TH17 subsets, and CD4+CD25+FoxP3+ regulatory T cells (Tregs). Longitudinal changes were assessed using linear mixed-effects models with FDR correction. At baseline, cirrhotic patients demonstrated marked immune dysregulation versus controls, with reduced CD3+ T cells, profound CD8+ T-cell exhaustion (PD-1+ 71.0% vs. 11.1%; p < 0.001), elevated CD38+ activation, depleted TH1 cells, and significant expansion of TH17 (25.8% vs. 14.0%; p < 0.001) and Tregs (52.7% vs. 15.1%; p < 0.001). Exhausted PD-1+ CD8+ cells declined by 66.2% at 1 year (q < 0.001), CD38+ CD8+ cells decreased by 31.3% (q < 0.001), and Tregs normalized (52.7%-9.6%; q < 0.001). TH1 and TH2 subsets increased, TH17 declined, and total CD3+/CD4+ T cells rose significantly by 1 year. In this single-centre cohort of compensated genotype 4 HCV-related cirrhosis, successful DAA therapy was associated with changes in circulating T-cell phenotypes, including reductions in Tregs, TH17 cells, and PD-1/CD38-expressing CD8+ T cells. These findings suggest partial improvement in peripheral immune dysregulation after viral clearance, but require confirmation in larger multicentre studies with functional assays and longer follow-up.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1111/jvh.70273",
+        "doi_url": "https://doi.org/10.1111/jvh.70273",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43036170/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of viral hepatitis",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigated regulatory T-cell dynamics in cirrhotic HCV genotype 4 patients during and after direct-acting antiviral therapy. Using longitudinal flow cytometry, researchers assessed T-cell subsets at baseline, week 4, treatment end, and 1 year post-SVR. Results showed baseline immune dysregulation with reduced T cells, exhausted CD8+ T cells, and expanded Tregs and TH17 cells. After successful therapy, Tregs normalized, exhausted CD8+ T cells decreased, and immune dysregulation partially improved, though further validation is needed.\",\n  \"key_findings\": [\n    \"Cirrhotic patients exhibited reduced CD3+ T cells and profound CD8+ T-cell exhaustion at baseline\",\n    \"Tregs and TH17 cells were significantly elevated in cirrhotic patients compared to healthy controls\",\n    \"Successful DAA therapy led to normalization of Tregs and reduction in exhausted CD8+ T cells by 1 year post-SVR\"\n  ],\n  \"scientific_significance\": \"This study demonstrates that successful HCV antiviral therapy in cirrhotic patients partially corrects peripheral immune dysregulation, providing insights into the immunological recovery post-viral clearance in chronic liver disease.\"\n}",
+        "parsed": {
+          "summary": "This study investigated regulatory T-cell dynamics in cirrhotic HCV genotype 4 patients during and after direct-acting antiviral therapy. Using longitudinal flow cytometry, researchers assessed T-cell subsets at baseline, week 4, treatment end, and 1 year post-SVR. Results showed baseline immune dysregulation with reduced T cells, exhausted CD8+ T cells, and expanded Tregs and TH17 cells. After successful therapy, Tregs normalized, exhausted CD8+ T cells decreased, and immune dysregulation partially improved, though further validation is needed.",
+          "key_findings": [
+            "Cirrhotic patients exhibited reduced CD3+ T cells and profound CD8+ T-cell exhaustion at baseline",
+            "Tregs and TH17 cells were significantly elevated in cirrhotic patients compared to healthy controls",
+            "Successful DAA therapy led to normalization of Tregs and reduction in exhausted CD8+ T cells by 1 year post-SVR"
+          ],
+          "scientific_significance": "This study demonstrates that successful HCV antiviral therapy in cirrhotic patients partially corrects peripheral immune dysregulation, providing insights into the immunological recovery post-viral clearance in chronic liver disease."
+        },
+        "elapsed_seconds": 45.8383,
+        "input_tokens": 1112,
+        "output_tokens": 261,
+        "thoughts_tokens": null,
+        "total_tokens": 1373,
+        "model_eval_seconds": 40.7088,
+        "error": "summary must contain 45–65 words; received 75.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states during specific temporal windows can durably reprogram immune responses.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute type 17 skin inflammation to chronic obesity levels\",\n    \"HFD outside this window or switching obese mice to low-fat diet during the window blunts disease amplification\",\n    \"Neutrophil-mediated Nlrp3-Il1b axis licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence\"\n  ],\n  \"scientific_significance\": \"This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune memory, revealing a mechanism by which short-lived physiological changes impact long-term inflammatory responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states during specific temporal windows can durably reprogram immune responses.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute type 17 skin inflammation to chronic obesity levels",
+            "HFD outside this window or switching obese mice to low-fat diet during the window blunts disease amplification",
+            "Neutrophil-mediated Nlrp3-Il1b axis licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence"
+          ],
+          "scientific_significance": "This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune memory, revealing a mechanism by which short-lived physiological changes impact long-term inflammatory responses."
+        },
+        "elapsed_seconds": 52.4241,
+        "input_tokens": 884,
+        "output_tokens": 310,
+        "thoughts_tokens": null,
+        "total_tokens": 1194,
+        "model_eval_seconds": 47.4639,
+        "error": "summary must contain 45–65 words; received 113.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019428",
+        "title": "Giant elastoresistance in magic-angle twisted bilayer graphene.",
+        "abstract": "NA: Strongly correlated and topological phases in moiré materials are exquisitely sensitive to lattice geometry at both atomic and superlattice length scales. Twist angle, pressure, and strain directly modify the lattice and thus act as highly effective tuning parameters. Here, we examined electrical transport in twisted bilayer graphene subjected to continuous uniaxial strain. Near the magic angle (≈1.1°), devices exhibited a pronounced elastoresistance that depended on band filling and temperature, with a gauge factor more than two orders of magnitude larger than that of conventional metals. In selected doping regimes, the elastoresistance exhibited a Curie-Weiss-like temperature divergence. We discuss possible microscopic origins, including nematic fluctuations and enhanced electronic entropy from fluctuating isospin moments. Our work establishes uniaxial strain as a versatile probe of correlated physics in a moiré material.",
+        "publication_types": [],
+        "doi": "10.1126/science.adz0597",
+        "doi_url": "https://doi.org/10.1126/science.adz0597",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019428/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how uniaxial strain affects electrical transport in magic-angle twisted bilayer graphene. By applying continuous strain near the magic angle (≈1.1°), researchers observed pronounced elastoresistance dependent on band filling and temperature. The gauge factor exceeded conventional metals by two orders of magnitude, with temperature-dependent behavior resembling Curie-. We discuss potential origins including nematic fluctuations and enhanced electronic entropy.\",\n  \"key_findings\": [\n    \"Elastoresistance in magic-angle twisted bilayer graphene exceeded conventional metals by two orders of magnitude\",\n    \"Elastoresistance exhibited temperature dependence resembling Curie-Weiss behavior in specific doping regimes\",\n    \"Potential origins include nematic fluctuations and enhanced electronic entropy from fluctuating isospin moments\"\n  ],\n  \"scientific_significance\": \"This work establishes uniaxial strain as a versatile probe for studying correlated electronic phenomena in moiré materials.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how uniaxial strain affects electrical transport in magic-angle twisted bilayer graphene. By applying continuous strain near the magic angle (≈1.1°), researchers observed pronounced elastoresistance dependent on band filling and temperature. The gauge factor exceeded conventional metals by two orders of magnitude, with temperature-dependent behavior resembling Curie-. We discuss potential origins including nematic fluctuations and enhanced electronic entropy.",
+          "key_findings": [
+            "Elastoresistance in magic-angle twisted bilayer graphene exceeded conventional metals by two orders of magnitude",
+            "Elastoresistance exhibited temperature dependence resembling Curie-Weiss behavior in specific doping regimes",
+            "Potential origins include nematic fluctuations and enhanced electronic entropy from fluctuating isospin moments"
+          ],
+          "scientific_significance": "This work establishes uniaxial strain as a versatile probe for studying correlated electronic phenomena in moiré materials."
+        },
+        "elapsed_seconds": 36.0564,
+        "input_tokens": 610,
+        "output_tokens": 192,
+        "thoughts_tokens": null,
+        "total_tokens": 802,
+        "model_eval_seconds": 26.6947,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42952297",
+        "title": "Dual Neuromodulation Remodels Neuro-Immune Crosstalk and Chemokine Network for Combating Postoperative Progression of Prostate Cancer.",
+        "abstract": "NA: The autonomic nerves drive prostate cancer (PCa) progression, yet a strategy for dual modulation of sympathetic and parasympathetic nerves remains undeveloped. Here, building on the multicenter clinical findings, we develop a personalized nanotechnology-enabled dual neurotherapy (denoted as ADNT) for PCa. The ADNT employs hybrid nanovesicles composed of autologous tumor cell membranes and functionalized liposomes to codeliver the β-blocker and the muscarinic receptor antagonist to autonomic nerves in residual tumor. In refractory, highly invasive, and orthotopic murine PCa models, the ADNT effectively delays postoperative recurrence and metastasis. Light-sheet fluorescence microscopy visually confirms the downregulation of autonomic nerve infiltration. Cytometry by time-of-flight reveals that ADNT remodels neuro-immune crosstalk and the chemokine network, promoting antitumor immune response and suppressing tumor progression. Additionally, ADNT also alleviates cancer-associated cachexia and anxiety. Combined with immune checkpoint blockade, ADNT induces complete responses in 100% of mice. Immunofluorescence staining of human PCa specimens confirms the clinical translatability of ADNT, establishing ADNT as a promising therapeutic strategy for PCa.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75452",
+        "doi_url": "https://doi.org/10.1002/adma.75452",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42952297/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates dual sympathetic and parasympathetic nerve modulation to combat postoperative prostate cancer progression. Using personalized nanotechnology-enabled dual neurotherapy (ADNT), the researchers developed hybrid nanovesicles for codelivering β-blockers and muscarinic receptor antagonists. In murine models, ADNT delayed recurrence and metastasis, reduced autonomic nerve infiltration, and remodelled neuro-immune crosstalk and chemokine networks to promote antitumor immunity. It also alleviated cachexia and anxiety, achieving complete responses when combined with immune checkpoint blockade.\",\n  \"key_findings\": [\n    \"ADNT delays postoperative recurrence and metastasis in highly invasive murine prostate cancer models\",\n    \"ADNT reduces autonomic nerve infiltration and remodels neuro-immune crosstalk and chemokine networks\",\n    \"ADNT alleviates cancer-associated cachexia and anxiety, achieving complete responses with immune checkpoint blockade\"\n  ],\n  \"scientific_significance\": \"This approach demonstrates a novel dual neuromodulation strategy that effectively remodels the tumor microenvironment to enhance antitumor immunity and suppress progression in prostate cancer.\"\n}",
+        "parsed": {
+          "summary": "This study investigates dual sympathetic and parasympathetic nerve modulation to combat postoperative prostate cancer progression. Using personalized nanotechnology-enabled dual neurotherapy (ADNT), the researchers developed hybrid nanovesicles for codelivering β-blockers and muscarinic receptor antagonists. In murine models, ADNT delayed recurrence and metastasis, reduced autonomic nerve infiltration, and remodelled neuro-immune crosstalk and chemokine networks to promote antitumor immunity. It also alleviated cachexia and anxiety, achieving complete responses when combined with immune checkpoint blockade.",
+          "key_findings": [
+            "ADNT delays postoperative recurrence and metastasis in highly invasive murine prostate cancer models",
+            "ADNT reduces autonomic nerve infiltration and remodels neuro-immune crosstalk and chemokine networks",
+            "ADNT alleviates cancer-associated cachexia and anxiety, achieving complete responses with immune checkpoint blockade"
+          ],
+          "scientific_significance": "This approach demonstrates a novel dual neuromodulation strategy that effectively remodels the tumor microenvironment to enhance antitumor immunity and suppress progression in prostate cancer."
+        },
+        "elapsed_seconds": 40.1404,
+        "input_tokens": 806,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 1042,
+        "model_eval_seconds": 35.2409,
+        "error": "summary must contain 45–65 words; received 71.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43038106",
+        "title": "Histopathological and Transcriptomic Features of Immune Checkpoint Inhibitor-related T-cell-mediated Rejection in Liver Transplantation.",
+        "abstract": "BACKGROUND: Immune checkpoint inhibitor-related T-cell-mediated rejection (irTCMR) leads to greater steroid resistance and graft loss compared with conventional T-cell-mediated rejection (cTCMR) in liver transplant recipients. However, their histopathological and transcriptomic features remain poorly understood.\nMETHODS: Thirty-one adult recipients with biopsy-proven T-cell-mediated rejection (12 irTCMR and 19 cTCMR) were enrolled. Biopsies were assessed using the Banff and Ishak scoring systems, with immunohistochemical staining for CD3, CD4, CD8, CD20, programmed death-ligand 1, and C4d. Spatial transcriptomic analysis was performed on the CD45-enriched portal areas.\nRESULTS: irTCMR showed higher alanine aminotransferase/aspartate aminotransferase peaks, steroid-resistant rejection (33.3% versus 0%; P = 0.016), and graft loss (41.7% versus 0%; P = 0.005). IrTCMR had a higher rejection activity index (median 6 versus 5; P = 0.020), driven by more severe bile duct inflammation and venous endothelialitis. Ishak scoring revealed a higher histological activity index with greater confluent necrosis (P = 0.046). Both groups showed CD8+ predominant T-cell aggregates with sparse CD20+ B cells; CD4+ abundance (P = 0.079) and the CD4/CD8 ratio (P = 0.096) tended to be higher in irTCMR. Portal C4d deposition and programmed death-ligand 1 expression showed no significant differences. Spatial transcriptomics revealed distinct transcriptomic profiles in irTCMR, with 75 differentially expressed genes and enrichment of allograft rejection and antigen processing pathways. Immune deconvolution demonstrated increased CD4+ T cells, dendritic cells, and M1 macrophages but reduced regulatory T cells in irTCMR.\nCONCLUSIONS: irTCMR is a distinct aggressive rejection phenotype with severe bile duct inflammation, venous endothelialitis, confluent necrosis, and transcriptomic features distinct from cTCMR. These features underscore the need for further research on the pathogenesis of irTCMR.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1097/TP.0000000000005970",
+        "doi_url": "https://doi.org/10.1097/TP.0000000000005970",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43038106/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Transplantation",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study compared histopathological and transcriptomic features of immune checkpoint inhibitor-related T-cell-mediated rejection (irTCMR) versus conventional T-cell-mediated rejection (cTCMR) in liver transplant recipients. Using biopsy analysis and spatial transcriptomics, it found irTCMR exhibits higher steroid resistance (33.3% vs 0%), graft loss (41.7% vs 0%), and distinct transcriptomic profiles with 75 differentially expressed genes. These findings highlight irTCMR's aggressive phenotype and potential for targeted therapeutic strategies.\",\n  \"key_findings\": [\n    \"irTCMR demonstrates significantly higher steroid resistance (33.3% vs 0%) and graft loss (41.7% vs 0%) compared to cTCMR\",\n    \"irTCMR shows increased rejection activity index with more severe bile duct inflammation and venous endothelialitis\",\n    \"Spatial transcriptomics identified 75 differentially expressed genes in irTCMR, enriched for allograft rejection and antigen processing pathways\"\n  ],\n  \"scientific_significance\": \"This research establishes irTCMR as a distinct aggressive rejection phenotype with unique histopathological and transcriptomic characteristics, advancing understanding of immune checkpoint inhibitor-related rejection mechanisms in liver transplantation.\"\n}",
+        "parsed": {
+          "summary": "This study compared histopathological and transcriptomic features of immune checkpoint inhibitor-related T-cell-mediated rejection (irTCMR) versus conventional T-cell-mediated rejection (cTCMR) in liver transplant recipients. Using biopsy analysis and spatial transcriptomics, it found irTCMR exhibits higher steroid resistance (33.3% vs 0%), graft loss (41.7% vs 0%), and distinct transcriptomic profiles with 75 differentially expressed genes. These findings highlight irTCMR's aggressive phenotype and potential for targeted therapeutic strategies.",
+          "key_findings": [
+            "irTCMR demonstrates significantly higher steroid resistance (33.3% vs 0%) and graft loss (41.7% vs 0%) compared to cTCMR",
+            "irTCMR shows increased rejection activity index with more severe bile duct inflammation and venous endothelialitis",
+            "Spatial transcriptomics identified 75 differentially expressed genes in irTCMR, enriched for allograft rejection and antigen processing pathways"
+          ],
+          "scientific_significance": "This research establishes irTCMR as a distinct aggressive rejection phenotype with unique histopathological and transcriptomic characteristics, advancing understanding of immune checkpoint inhibitor-related rejection mechanisms in liver transplantation."
+        },
+        "elapsed_seconds": 66.2154,
+        "input_tokens": 955,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 1214,
+        "model_eval_seconds": 40.4885,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983081",
+        "title": "Tracing the spread of Celtic languages using ancient genomics.",
+        "abstract": "NA: Celtic languages are today restricted to Europe's Atlantic fringes but were widely spoken across the continent during the Iron Age1-3. How Celtic achieved this early distribution remains contested4, with alternative archaeological and linguistic models proposing different homelands and dispersal routes. Here we analyse genome-wide data from 4,587 ancient individuals, focusing on Bronze and Iron Age Europe, to test the extent to which these models fit reconstructed demographic histories. We identify three main processes shaping European population structure that are relevant to the Celtic dispersal. First, the arrival of Steppe-related ancestry with Bell Beaker-associated groups after around 4400 BP (calibrated years before present or 1950 CE) across the region in which Celtic and related languages were later spoken. Second, a movement from southwestern Europe into Britain during the Bronze Age (3800-3200 BP), consistent with scenarios in which Celtic formed along the Atlantic façade. Third, a westward expansion of ancestry related to Late Bronze Age Knovíz-Urnfield-associated populations from eastern central Europe (3200-2800 BP), affecting France, the British Isles, northeastern Iberia and Italy and later associated with Iron Age Hallstatt and La Tène contexts5-8. Although all three movements have parallels with proposed models, we argue that the final movement, from eastern central Europe, is most parsimonious for the spread of Celtic. Although human history does not necessarily follow a parsimonious trajectory9 and language shifts need not track genetic change, these results delimit the demographic scenarios that are plausible for the emergence of Celtic in prehistoric Europe.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11198-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11198-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983081/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study used genome-wide data from 4,587 ancient individuals across Bronze and Iron Age Europe to investigate Celtic language dispersal models. It identified three key demographic processes: Steppe-related ancestry arrival via Bell Beaker groups (4400 BP), Bronze Age migration from southwestern Europe to Britain, and westward expansion of Knovíz-Urnfield-related ancestry (3200-2800 BP). The analysis suggests eastern central European origins as the most parsimonious route for Celtic spread, though language shifts may not directly track genetic changes.\",\n  \"key_findings\": [\n    \"Steppe-related ancestry entered Europe via Bell Beaker-associated groups around 4400 BP\",\n    \"Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP\",\n    \"Knovíz-Urnfield-related ancestry expanded westward from eastern central Europe (3200-2800 BP) affecting France, the British Isles, northeastern Iberia, and Italy\"\n  ],\n  \"scientific_significance\": \"The study provides genomic evidence supporting eastern central European origins as the most parsimonious demographic pathway for Celtic language dispersal in prehistoric Europe.\"\n}",
+        "parsed": {
+          "summary": "This study used genome-wide data from 4,587 ancient individuals across Bronze and Iron Age Europe to investigate Celtic language dispersal models. It identified three key demographic processes: Steppe-related ancestry arrival via Bell Beaker groups (4400 BP), Bronze Age migration from southwestern Europe to Britain, and westward expansion of Knovíz-Urnfield-related ancestry (3200-2800 BP). The analysis suggests eastern central European origins as the most parsimonious route for Celtic spread, though language shifts may not directly track genetic changes.",
+          "key_findings": [
+            "Steppe-related ancestry entered Europe via Bell Beaker-associated groups around 4400 BP",
+            "Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP",
+            "Knovíz-Urnfield-related ancestry expanded westward from eastern central Europe (3200-2800 BP) affecting France, the British Isles, northeastern Iberia, and Italy"
+          ],
+          "scientific_significance": "The study provides genomic evidence supporting eastern central European origins as the most parsimonious demographic pathway for Celtic language dispersal in prehistoric Europe."
+        },
+        "elapsed_seconds": 45.2494,
+        "input_tokens": 874,
+        "output_tokens": 260,
+        "thoughts_tokens": null,
+        "total_tokens": 1134,
+        "model_eval_seconds": 39.8629,
+        "error": "summary must contain 45–65 words; received 76.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019429",
+        "title": "Atmospheric O2 reveals a strengthening ocean carbon sink and a stagnant net land sink since 1990.",
+        "abstract": "NA: The global ocean and land biosphere absorb roughly half of fossil fuel carbon dioxide (CO2) emissions. The temporal evolution of these sinks remains difficult to quantify owing to data sparsity. Leveraging 30+ years of atmospheric oxygen (O2) and CO2 observations, we find that the ocean carbon sink increased by 0.63 ± 0.19 petagrams of carbon per year per decade (Pg C year-1 decade-1) (a mean of 2.8 ± 0.4 Pg C year-1), accounting for 35% of fossil emissions between 1990 and 2019. The net land sink shows no robust trend (with a mean of 1.0 ± 0.5 Pg C year-1, accounting for 13% of fossil emissions), despite large decadal variability. These results challenge many process-based model simulations of the land and ocean sinks, questioning their ability to accurately predict future climate states.",
+        "publication_types": [],
+        "doi": "10.1126/science.aed9544",
+        "doi_url": "https://doi.org/10.1126/science.aed9544",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019429/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study analyzed atmospheric oxygen and carbon dioxide data from 1990 to 2019 to quantify global carbon sinks. It found the ocean carbon sink strengthened by 0.63 ± 0.19 Pg C year-1 decade-1, accounting for 35% of fossil emissions. The net land sink showed no significant trend despite high variability, contributing 13% of emissions. These results contradict many process-based models, suggesting current models may underestimate future climate impacts.\",\n  \"key_findings\": [\n    \"The ocean carbon sink increased by 0.63 ± 0.19 Pg C year-1 decade-1 between 1990 and 2019\",\n    \"The net land sink exhibited no robust trend, with a mean of 1.0 ± 0.5 Pg C year-1\",\n    \"These findings challenge process-based models' accuracy in predicting future climate states\"\n  ],\n  \"scientific_significance\": \"The study provides critical evidence that ocean carbon sinks have strengthened while land sinks remain stagnant, revealing a key gap in climate models that could impact future carbon cycle projections.\"\n}",
+        "parsed": {
+          "summary": "This study analyzed atmospheric oxygen and carbon dioxide data from 1990 to 2019 to quantify global carbon sinks. It found the ocean carbon sink strengthened by 0.63 ± 0.19 Pg C year-1 decade-1, accounting for 35% of fossil emissions. The net land sink showed no significant trend despite high variability, contributing 13% of emissions. These results contradict many process-based models, suggesting current models may underestimate future climate impacts.",
+          "key_findings": [
+            "The ocean carbon sink increased by 0.63 ± 0.19 Pg C year-1 decade-1 between 1990 and 2019",
+            "The net land sink exhibited no robust trend, with a mean of 1.0 ± 0.5 Pg C year-1",
+            "These findings challenge process-based models' accuracy in predicting future climate states"
+          ],
+          "scientific_significance": "The study provides critical evidence that ocean carbon sinks have strengthened while land sinks remain stagnant, revealing a key gap in climate models that could impact future carbon cycle projections."
+        },
+        "elapsed_seconds": 40.837,
+        "input_tokens": 742,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 986,
+        "model_eval_seconds": 35.9962,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42952370",
+        "title": "Wafer-Scale Direct Growth of Ultraclean Monolayer Amorphous Carbon on c-Sapphire by Remote Catalytic Dehydrogenation.",
+        "abstract": "NA: Atomically thin amorphous carbon holds considerable promise for application in data storage, microelectronics, protective coatings, and flexible electronics. However, its device integration has been hindered by existing direct growth routes that rely on metal catalysts in contact with the substrate, causing metallic residue, film non-uniformity, and the need for post-growth processing. Here, we report the direct growth of monolayer amorphous carbon on a 2-inch sapphire wafer via thermal chemical vapor deposition, in which a remotely positioned catalyst decomposes the carbon precursor into active carbon feedstock, keeping the growth substrate free of metallic contamination. X-ray photoelectron spectroscopy detects no catalyst residue across the wafer and confirms a highly sp2-hybridized carbon network, while electron microscopy reveals a random polygonal carbon network lacking long-range periodicity. Raman and atomic force microscopy mapping confirm uniform and atomically smooth monolayer coverage, while electrical measurements establish its insulating character with ambipolar, gate-tunable hopping transport. This synthesis approach provides precise control over thickness and uniformity at the wafer scale, enabling direct device integration of amorphous carbon for a wide range of applications, particularly as an interlayer for epitaxial growth of freestanding semiconductor membranes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75569",
+        "doi_url": "https://doi.org/10.1002/adma.75569",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42952370/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates direct growth of ultraclean monolayer amorphous carbon on sapphire substrates without metal catalysts. Using remote catalytic dehydrogenation in thermal chemical vapor deposition, the method achieves wafer-scale uniformity with no metallic residue. XPS confirms sp2-hybridized carbon networks, while Raman and AFM show atomically smooth monolayers exhibiting insulating behavior with gate-tunable transport. The approach enables device integration for applications like semiconductor membranes.\",\n  \"key_findings\": [\n    \"Wafer-scale monolayer amorphous carbon grown without metallic contamination\",\n    \"XPS confirms sp2-hybridized carbon network with no catalyst residue\",\n    \"Atomically smooth monolayers show insulating behavior with gate-tunable transport\"\n  ],\n  \"scientific_significance\": \"This method provides a contamination-free pathway for scalable production of ultraclean amorphous carbon films, enabling direct integration in electronic and optoelectronic devices without post-processing.\"\n}",
+        "parsed": {
+          "summary": "This study investigates direct growth of ultraclean monolayer amorphous carbon on sapphire substrates without metal catalysts. Using remote catalytic dehydrogenation in thermal chemical vapor deposition, the method achieves wafer-scale uniformity with no metallic residue. XPS confirms sp2-hybridized carbon networks, while Raman and AFM show atomically smooth monolayers exhibiting insulating behavior with gate-tunable transport. The approach enables device integration for applications like semiconductor membranes.",
+          "key_findings": [
+            "Wafer-scale monolayer amorphous carbon grown without metallic contamination",
+            "XPS confirms sp2-hybridized carbon network with no catalyst residue",
+            "Atomically smooth monolayers show insulating behavior with gate-tunable transport"
+          ],
+          "scientific_significance": "This method provides a contamination-free pathway for scalable production of ultraclean amorphous carbon films, enabling direct integration in electronic and optoelectronic devices without post-processing."
+        },
+        "elapsed_seconds": 43.9386,
+        "input_tokens": 707,
+        "output_tokens": 209,
+        "thoughts_tokens": null,
+        "total_tokens": 916,
+        "model_eval_seconds": 30.5513,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43038762",
+        "title": "Gamma-delta T cells in neuroblastoma: Exploiting MHC-independent recognition to overcome the barriers of high-risk disease.",
+        "abstract": "NA: Neuroblastoma is the most frequent extracranial solid tumor in children and the main cause of early childhood cancer deaths. Relapse occurs in more than half of high-risk patients despite rigorous multimodal therapy, and four-year overall survival in relapsed disease is approximately 20%. Anti-GD2 monoclonal antibodies and GD2-directed CAR T cell treatment have advanced the field, although neither has eliminated neuroblastoma's immune resistance. Current immunotherapy has three interrelated challenges. GD2 heterogeneity lets antigen-negative subclones escape and cause recurrence. Inhibitory cytokines, regulatory T cells, and myeloid-derived suppressor cells dominate the TME. MHC class I downregulation frequently renders traditional αβ T cell methods ineffective, even with the target antigen present. Gamma-delta (γδ) T cells offer a distinct mechanism. They recognize tumor targets without antigen presentation by sensing stress-induced ligands through NKG2D and DNAM-1 and phosphoantigens through butyrophilin proteins BTN3A1 and BTN2A1. This recognition holds regardless of MHC class I status. In conjunction with anti-GD2 antibodies, CD16 expression boosts antibody-dependent cellular cytotoxicity. In neuroblastoma lesions, γδ T cells are the primary antitumoral fraction in tumor-infiltrating lymphocyte products, indicating compatibility with the disease's immune system. This study examines neuroblastoma immunotherapy failure mechanisms and innovative γδ T cell platforms, such as non-engineered allogeneic products, composite γδ T plus NK cell techniques, and CAR- and AbTCR-modified designs. A biomarker-driven patient selection paradigm and product standardization, in vivo persistence, and TME suppression are examined. NCT05400603, the first trial of adoptive transfer of ex vivo-expanded allogeneic γδ T cells in a population that includes pediatric neuroblastoma patients, is crucial for proving the mechanism.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.tranon.2026.103122",
+        "doi_url": "https://doi.org/10.1016/j.tranon.2026.103122",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43038762/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Translational oncology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates how gamma-delta T cells overcome immunotherapy barriers in high-risk neuroblastoma by leveraging MHC-independent recognition mechanisms. The research examines γδ T cell platforms including non-engineered allogeneic products, composite γδ T-NK cell approaches, and CAR/AbTCR modifications. Key findings include γδ T cells being the primary antitumoral fraction in neuroblastoma lesions, their compatibility with the tumor immune microenvironment, and the potential of biomarker-driven patient selection to enhance efficacy.\",\n  \"key_findings\": [\n    \"γδ T cells constitute the primary antitumoral fraction in neuroblastoma lesions\",\n    \"γδ T cells maintain efficacy regardless of MHC class I status through stress-induced ligand and phosphoantigen recognition\",\n    \"Biomarker-driven patient selection improves γδ T cell therapy outcomes in neuroblastoma\"\n  ],\n  \"scientific_significance\": \"This work establishes γδ T cells as a promising immunotherapeutic strategy for neuroblastoma by bypassing MHC-dependent immune resistance mechanisms, offering a novel pathway to target tumors despite immunosuppressive microenvironments.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how gamma-delta T cells overcome immunotherapy barriers in high-risk neuroblastoma by leveraging MHC-independent recognition mechanisms. The research examines γδ T cell platforms including non-engineered allogeneic products, composite γδ T-NK cell approaches, and CAR/AbTCR modifications. Key findings include γδ T cells being the primary antitumoral fraction in neuroblastoma lesions, their compatibility with the tumor immune microenvironment, and the potential of biomarker-driven patient selection to enhance efficacy.",
+          "key_findings": [
+            "γδ T cells constitute the primary antitumoral fraction in neuroblastoma lesions",
+            "γδ T cells maintain efficacy regardless of MHC class I status through stress-induced ligand and phosphoantigen recognition",
+            "Biomarker-driven patient selection improves γδ T cell therapy outcomes in neuroblastoma"
+          ],
+          "scientific_significance": "This work establishes γδ T cells as a promising immunotherapeutic strategy for neuroblastoma by bypassing MHC-dependent immune resistance mechanisms, offering a novel pathway to target tumors despite immunosuppressive microenvironments."
+        },
+        "elapsed_seconds": 41.7762,
+        "input_tokens": 954,
+        "output_tokens": 239,
+        "thoughts_tokens": null,
+        "total_tokens": 1193,
+        "model_eval_seconds": 36.3489,
+        "error": "summary must contain 45–65 words; received 68.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015464",
+        "title": "Domain-alteration chimeras rewire oncogenic complexes in prostate cancer.",
+        "abstract": "NA: Transcriptional addiction to the androgen receptor (AR) underlies metastatic castration-resistant prostate cancer1, in which AR maintains oncogenic programs through domain-specific interactions with the acetyltransferases p300 and CBP (collectively p300/CBP)2. Here we describe a novel therapeutic modality, domain-alteration chimeras (DALTACs), that rewire endogenous protein complexes by enforcing non-native domain-domain interactions. Our first-in-class AR-p300/CBP DALTAC-1 induces synthetic proximity between the ligand-binding domain of AR and the bromodomain of p300/CBP, misconfiguring their native interface and locking the complex in a non-productive state. DALTAC-1 triggers a 'super-inhibitory' effect, suppressing AR-driven transcription and proliferation more potently than combined AR and p300/CBP inhibition. Mechanistically, DALTAC-1 reprograms p300/CBP substrate engagement, abolishing the histone mark H2B N-terminal acetylation and inducing neomorphic acetylation of AR and coactivators, ultimately collapsing the AR neo-enhanceosome. Chromatin profiling revealed redistribution of AR and p300/CBP towards palindromic androgen response elements, accompanied by disruption of cofactor and transcriptional machinery recruitment at oncogenic AR and ERG neo-enhancers. DALTAC-1 exhibits exquisite lineage selectivity, displaying potent activity in AR-p300/CBP dual-dependent cells and sparing AR-negative cells. In multiple in vivo models, DALTAC-1 induces deep and durable tumour regressions. Together, these findings establish DALTACs as a broadly applicable strategy to rewire disease-defining complexes through domain-topology alteration, expanding induced-proximity therapies, and the precise lineage selectivity of DALTAC-1 supports its translational potential in AR-driven prostate cancer.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11262-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11262-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015464/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates domain-alteration chimeras (DALTACs) as a therapeutic strategy for castration-resistant prostate cancer. By engineering synthetic interactions between the androgen receptor (AR) ligand-binding domain and p300/CBP bromodomain, DALTAC-1 reprograms oncogenic complexes, suppressing AR-driven transcription and tumor growth more effectively than dual inhibition. It induces histone modifications and disrupts AR neo-enhancers, showing lineage-specific efficacy in preclinical models.\",\n  \"key_findings\": [\n    \"DALTAC-1 reprograms AR-p300/CBP interactions by enforcing non-native domain proximity, locking the complex in a non-productive state\",\n    \"DALTAC-1 suppresses AR-driven transcription and proliferation more potently than combined AR and p300/CBP inhibition\",\n    \"DALTAC-1 induces histone H2B N-terminal deacetylation and neomorphic AR acetylation, collapsing oncogenic AR neo-enhanceosomes\"\n  ],\n  \"scientific_significance\": \"This approach demonstrates a novel mechanism to disrupt oncogenic protein complexes through engineered domain-topology alterations, offering a targeted strategy for castration-resistant prostate cancer with potential broader applications in complex-driven diseases.\"\n}",
+        "parsed": {
+          "summary": "This study investigates domain-alteration chimeras (DALTACs) as a therapeutic strategy for castration-resistant prostate cancer. By engineering synthetic interactions between the androgen receptor (AR) ligand-binding domain and p300/CBP bromodomain, DALTAC-1 reprograms oncogenic complexes, suppressing AR-driven transcription and tumor growth more effectively than dual inhibition. It induces histone modifications and disrupts AR neo-enhancers, showing lineage-specific efficacy in preclinical models.",
+          "key_findings": [
+            "DALTAC-1 reprograms AR-p300/CBP interactions by enforcing non-native domain proximity, locking the complex in a non-productive state",
+            "DALTAC-1 suppresses AR-driven transcription and proliferation more potently than combined AR and p300/CBP inhibition",
+            "DALTAC-1 induces histone H2B N-terminal deacetylation and neomorphic AR acetylation, collapsing oncogenic AR neo-enhanceosomes"
+          ],
+          "scientific_significance": "This approach demonstrates a novel mechanism to disrupt oncogenic protein complexes through engineered domain-topology alterations, offering a targeted strategy for castration-resistant prostate cancer with potential broader applications in complex-driven diseases."
+        },
+        "elapsed_seconds": 58.1517,
+        "input_tokens": 834,
+        "output_tokens": 261,
+        "thoughts_tokens": null,
+        "total_tokens": 1095,
+        "model_eval_seconds": 38.7957,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019430",
+        "title": "Direct monitoring of breaching in deltaic submarine landslides.",
+        "abstract": "NA: Submarine landslides threaten seabed infrastructure and trigger the transport of globally important amounts of sediment, carbon, and pollutants to deep-sea environments. However, fully submarine landslides have never been directly monitored in nature. Past hypotheses for their failure mechanism and dynamics therefore remain unvalidated for natural settings, including that prolonged upslope-migrating failures (breaching) occur in sandy seafloor environments. In this work, we present direct underwater monitoring of fully submarine landslides at Homathko Delta in western Canada that retrogress slowly upslope, indicating breaching-type failure. Their prolonged rather than instantaneous nature has important implications for the stress that seabed structures must be designed to withstand. Prolonged landslides also initiate sustained sediment flows (turbidity currents) that efficiently transport sediment, carbon, and pollutants further offshore.",
+        "publication_types": [],
+        "doi": "10.1126/science.aef8444",
+        "doi_url": "https://doi.org/10.1126/science.aef8444",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019430/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study directly monitored fully submarine landslides at Homathko Delta, Canada, revealing slow upslope migration (breaching) rather than instantaneous failure. The findings indicate prolonged landslides generate sustained turbidity currents, transporting sediment, carbon, and pollutants offshore. This challenges previous assumptions about landslide dynamics and implications for seabed infrastructure design.\",\n  \"key_findings\": [\n    \"Direct underwater monitoring confirmed slow upslope migration (breaching) in fully submarine lands. \",\n    \"Prolonged landslides initiate sustained turbidity currents that transport sediment, carbon, and pollutants offshore. \",\n    \"The findings challenge assumptions about landslide failure mechanisms and stress requirements for seabed infrastructure.\"\n  ],\n  \"scientific_significance\": \"The study provides direct evidence of breaching-type failure in natural submarine landslides, advancing understanding of their prolonged dynamics and implications for sediment transport and infrastructure resilience.\"\n}",
+        "parsed": {
+          "summary": "This study directly monitored fully submarine landslides at Homathko Delta, Canada, revealing slow upslope migration (breaching) rather than instantaneous failure. The findings indicate prolonged landslides generate sustained turbidity currents, transporting sediment, carbon, and pollutants offshore. This challenges previous assumptions about landslide dynamics and implications for seabed infrastructure design.",
+          "key_findings": [
+            "Direct underwater monitoring confirmed slow upslope migration (breaching) in fully submarine lands. ",
+            "Prolonged landslides initiate sustained turbidity currents that transport sediment, carbon, and pollutants offshore. ",
+            "The findings challenge assumptions about landslide failure mechanisms and stress requirements for seabed infrastructure."
+          ],
+          "scientific_significance": "The study provides direct evidence of breaching-type failure in natural submarine landslides, advancing understanding of their prolonged dynamics and implications for sediment transport and infrastructure resilience."
+        },
+        "elapsed_seconds": 34.9659,
+        "input_tokens": 603,
+        "output_tokens": 187,
+        "thoughts_tokens": null,
+        "total_tokens": 790,
+        "model_eval_seconds": 25.9231,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42952371",
+        "title": "Ionic-Ligand-Assisted Transport in Fluorinated Poly(ionic liquid) Electrolytes Enables 515 Wh Kg-1 Solid-State Lithium Metal Batteries.",
+        "abstract": "NA: Decoupling ionic conductivity from polymer segmental relaxation while maintaining interfacial stability remains a pivotal challenge for solid polymer electrolytes (SPEs). In this study, we construct an ionic-ligand-assisted transport framework by copolymerizing a fluorinated acrylate polymer with a poly(ionic liquid) (PIL) and optimizing the lithium bis(fluorosulfonyl)imide (LiFSI) salt concentration. Density functional theory and molecular dynamics simulations reveal that cationic PIL moieties strongly anchor FSI- anions, creating anion-rich, spatially correlated coordination pathways that facilitate efficient Li+ hopping. The optimized electrolyte exhibits a high ionic conductivity (0.38 mS cm-1) and an exceptional Li+ transference number (0.77) at 30°C. The fluorinated backbone and PIL synergistically expand the oxidative stability window to 4.94 V and promote an inorganic-rich solid electrolyte interphase (SEI) on the Li-metal anode. Consequently, Li||Cu cells cycle stably for over 400 cycles with 99.1% average Coulombic efficiency. Solid-state Li||LiNi0.9Co0.05Mn0.05O2 (NCM90) cells retain ≈81.0% capacity after 600 cycles at 4.3 V, and ≈83.1% capacity after 200 cycles at 4.5 V. Moreover, a high-energy-density (515 Wh kg-1) solid-state pouch cell with an ultrathin Li anode (50 µm) and a high-loading NCM90 cathode (≈56 mg cm-2) delivers stable cycling and exceptional safety. This ionic-ligand regulation paradigm provides critical mechanistic insights for designing high-performance and high-safety solid-state batteries.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75524",
+        "doi_url": "https://doi.org/10.1002/adma.75524",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42952371/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of decoupling ionic conductivity from polymer segmental relaxation in solid polymer electrolytes (SPEs) by designing an ionic-ligand-assisted transport framework. Copolymerizing fluorinated acrylate with poly(ionic liquid) (PIL) and optimizing LiFSI salt concentration enhances Li+ conductivity to 0.38 mS cm-1 and transference number to 0.77 at 30°C. The electrolyte achieves 515 Wh kg-1 energy density with stable cycling in solid-state Li||NCM90 cells.\",\n  \"key_findings\": [\n    \"High ionic conductivity (0.38 mS cm-1) and transference number (0.77) at 30°C\",\n    \"Fluorinated backbone and PIL synergistically expand oxidative stability to 4.94 V and form an inorganic-rich SEI\",\n    \"Solid-state pouch cells achieve 515 Wh kg-1 energy density with stable cycling at 4.3 V for 600 cycles\"\n  ],\n  \"scientific_significance\": \"This work establishes an ionic-ligand-assisted transport mechanism for high-performance solid-state lithium batteries, enabling high energy density and stability without compromising interfacial integrity.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of decoupling ionic conductivity from polymer segmental relaxation in solid polymer electrolytes (SPEs) by designing an ionic-ligand-assisted transport framework. Copolymerizing fluorinated acrylate with poly(ionic liquid) (PIL) and optimizing LiFSI salt concentration enhances Li+ conductivity to 0.38 mS cm-1 and transference number to 0.77 at 30°C. The electrolyte achieves 515 Wh kg-1 energy density with stable cycling in solid-state Li||NCM90 cells.",
+          "key_findings": [
+            "High ionic conductivity (0.38 mS cm-1) and transference number (0.77) at 30°C",
+            "Fluorinated backbone and PIL synergistically expand oxidative stability to 4.94 V and form an inorganic-rich SEI",
+            "Solid-state pouch cells achieve 515 Wh kg-1 energy density with stable cycling at 4.3 V for 600 cycles"
+          ],
+          "scientific_significance": "This work establishes an ionic-ligand-assisted transport mechanism for high-performance solid-state lithium batteries, enabling high energy density and stability without compromising interfacial integrity."
+        },
+        "elapsed_seconds": 48.8301,
+        "input_tokens": 962,
+        "output_tokens": 279,
+        "thoughts_tokens": null,
+        "total_tokens": 1241,
+        "model_eval_seconds": 43.7877,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43039022",
+        "title": "Spatial and transcriptomic analyses reveal the adverse prognostic impact of regulatory T cells in follicular lymphoma treated with rituximab-lenalidomide.",
+        "abstract": "NA: The prognostic impact of the tumour microenvironment in follicular lymphoma (FL) remains controversial. To adress this, we analysed FL samples from patients enrolled in the rituximab lenalidomide versus any chemotherapy (RELEVANCE) trial using RNA-sequencing (RNA-seq) and multiplex immunofluorescence (mIF). RNA-seq analysis (n = 354) showed that regulatory T-cell (Treg) signatures were associated with shorter PFS in the whole cohort (HR = 1.56, 95% CI: 1.01-2.41, p = 0.044), particularly in patients treated with rituximab-lenalidomide (LEN) (R2, HR= 1.84, 95% CI: 1-3.37, p = 0.046) but not with rituximab-chemotherapy (R-chemo, HR = 1.33, 95% CI: 0.71-2.48, p = 0.365). mIF analysis on tissue microarrays (TMA) (n = 394) showed that high infiltration of CD3+/CD4+/FOXP3+ Tregs was associated with shorter PFS in the overall cohort (HR = 1.951, CI: 1.259-3.024, p = 0.0023 log-rank test), particularly in the R2 arm (HR = 2.3, CI: 1.2-4.5, p = 0.0097 log-rank test) and remained significant after FL-International Prognostic Index (FLIPI) adjustment (HR = 1.843; 95% CI: 1.1-2.8, p = 0.006). Whole-slide mIF (WSI) performed in 64 selected cases confirmed the adverse prognostic impact of Tregs in R2-treated patients and further showed that extra-follicular Treg localization was specifically associated with shorter PFS (HR = 2.87, 95% CI: 1.13-7.28, p = 0.020). These data suggest that high Treg infiltration by mIF is associated with inferior outcome in lenalidomide-treated FL patients and may have potential value for risk stratification.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1111/bjh.70934",
+        "doi_url": "https://doi.org/10.1111/bjh.70934",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43039022/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "British journal of haematology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the prognostic role of regulatory T cells (Tregs) in follicular lymphoma (FL) patients treated with rituximab-lenalidomide. Using RNA-seq and multiplex immunofluorescence on clinical samples, it found Treg signatures and high infiltration correlated with shorter progression-free survival, particularly in the lenalidomide treatment arm. The results suggest Tregs may serve as a biomarker for risk stratification in FL.\",\n  \"key_findings\": [\n    \"RNA-seq identified Treg signatures associated with shorter progression-free survival in FL patients, especially those receiving rituximab-lenalidomide\",\n    \"Multiplex immunofluorescence showed high CD3+/CD4+/FOXP3+ Treg infiltration correlated with inferior progression-free survival in lenalidomide-treated patients\",\n    \"Extra-follicular Treg localization was specifically linked to shorter progression-free survival in lenalidomide-treated FL patients\"\n  ],\n  \"scientific_significance\": \"The study provides evidence that regulatory T cell infiltration in follicular lymphoma may serve as an adverse prognostic biomarker for patients receiving rituximab-lenalidomide therapy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the prognostic role of regulatory T cells (Tregs) in follicular lymphoma (FL) patients treated with rituximab-lenalidomide. Using RNA-seq and multiplex immunofluorescence on clinical samples, it found Treg signatures and high infiltration correlated with shorter progression-free survival, particularly in the lenalidomide treatment arm. The results suggest Tregs may serve as a biomarker for risk stratification in FL.",
+          "key_findings": [
+            "RNA-seq identified Treg signatures associated with shorter progression-free survival in FL patients, especially those receiving rituximab-lenalidomide",
+            "Multiplex immunofluorescence showed high CD3+/CD4+/FOXP3+ Treg infiltration correlated with inferior progression-free survival in lenalidomide-treated patients",
+            "Extra-follicular Treg localization was specifically linked to shorter progression-free survival in lenalidomide-treated FL patients"
+          ],
+          "scientific_significance": "The study provides evidence that regulatory T cell infiltration in follicular lymphoma may serve as an adverse prognostic biomarker for patients receiving rituximab-lenalidomide therapy."
+        },
+        "elapsed_seconds": 69.2914,
+        "input_tokens": 1043,
+        "output_tokens": 258,
+        "thoughts_tokens": null,
+        "total_tokens": 1301,
+        "model_eval_seconds": 40.7815,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015465",
+        "title": "Suppression of epithelial proliferation and tumorigenesis by IgA.",
+        "abstract": "NA: Immunoglobulin A (IgA) is the most abundant antibody isotype produced by mammals, and has a specialized role in mucosal homeostasis1. IgA is constantly secreted into the intestinal lumen and binds to commensal microorganisms to regulate their colonization and function2,3, with unclear implications for health. IgA deficiency is common in humans, but difficult to study, because of its complex aetiology and comorbidities4-8. Here we use genetically and environmentally controlled mice to show that various models of IgA deficiency result in increased susceptibility to several models of endogenous colorectal cancer. Cellular and molecular analyses revealed that, in the absence of IgA, colonic epithelial cells induce antibacterial factors and accelerate cell cycling in response to the microbiota. Oral treatment with IgA was sufficient to reduce steady-state proliferation and protect mice from tumours; however, this function was due to the structure of the antibody rather than to binding specificity. In a reductionist culture system, IgA directly suppressed epithelial growth. Co-immunoprecipitation mass spectrometry and targeted CRISPR screening identified DMBT1 as an IgA-binding epithelial surface protein that is required for IgA-mediated suppression of proliferation. Together, IgA and DMBT1 tune the normal cycling of absorptive colonocyte progenitors. In IgA-knockout mice, deleting the transmembrane and cytoplasmic signalling portions of DMBT1 was sufficient to reverse both the increased epithelial cell proliferation and the increased tumour susceptibility seen in these mice. These experiments establish a homeostatic function for IgA in tempering physiological epithelial responses to the microbiota to maintain mucosal health.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11264-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11264-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015465/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates IgA's role in mucosal homeostasis by demonstrating that IgA deficiency in mice increases susceptibility to colorectal cancer. Using genetically controlled models, researchers found that IgA suppresses epithelial proliferation via DMBT1, an epithelial surface protein. IgA treatment reduced proliferation and tumor formation, with effects dependent on IgA's structural properties rather than specific binding. The findings reveal a mechanism by which IgA maintains mucosal health through microbiota-responsive epithelial regulation.\",\n  \"key_findings\": [\n    \"IgA deficiency in mice elevates colorectal cancer susceptibility\",\n    \"IgA suppresses epithelial proliferation through DMBT1\",\n    \"IgA's structural properties, not binding specificity, mediate tumor protection\"\n  ],\n  \"scientific_significance\": \"This work establishes IgA as a critical regulator of epithelial homeostasis by modulating microbiota-induced proliferation, providing a mechanistic basis for mucosal health maintenance.\"\n}",
+        "parsed": {
+          "summary": "This study investigates IgA's role in mucosal homeostasis by demonstrating that IgA deficiency in mice increases susceptibility to colorectal cancer. Using genetically controlled models, researchers found that IgA suppresses epithelial proliferation via DMBT1, an epithelial surface protein. IgA treatment reduced proliferation and tumor formation, with effects dependent on IgA's structural properties rather than specific binding. The findings reveal a mechanism by which IgA maintains mucosal health through microbiota-responsive epithelial regulation.",
+          "key_findings": [
+            "IgA deficiency in mice elevates colorectal cancer susceptibility",
+            "IgA suppresses epithelial proliferation through DMBT1",
+            "IgA's structural properties, not binding specificity, mediate tumor protection"
+          ],
+          "scientific_significance": "This work establishes IgA as a critical regulator of epithelial homeostasis by modulating microbiota-induced proliferation, providing a mechanistic basis for mucosal health maintenance."
+        },
+        "elapsed_seconds": 35.431,
+        "input_tokens": 883,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 1089,
+        "model_eval_seconds": 30.4635,
+        "error": "summary must contain 45–65 words; received 70.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019431",
+        "title": "Building a cell engineering toolbox.",
+        "abstract": "NA: Biological diversity and deep learning are harnessed for discovery.",
+        "publication_types": [],
+        "doi": "10.1126/science.aen0898",
+        "doi_url": "https://doi.org/10.1126/science.aen0898",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019431/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates leveraging biological diversity and deep learning to construct a cell engineering toolkit. By integrating these approaches, the research aims to accelerate cellular engineering discoveries. The findings indicate a novel framework for efficient cell manipulation, potentially enhancing precision in biological applications without specifying exact mechanisms or outcomes.\",\n  \"key_findings\": [\n    \"Integration of biological diversity with deep learning for cell engineering\",\n    \"Development of a framework enabling efficient cellular manipulation\",\n    \"Potential enhancement of precision in biological applications\"\n  ],\n  \"scientific_significance\": \"The study advances the field by demonstrating a synergistic approach combining biological complexity and machine learning to create adaptable cell engineering solutions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates leveraging biological diversity and deep learning to construct a cell engineering toolkit. By integrating these approaches, the research aims to accelerate cellular engineering discoveries. The findings indicate a novel framework for efficient cell manipulation, potentially enhancing precision in biological applications without specifying exact mechanisms or outcomes.",
+          "key_findings": [
+            "Integration of biological diversity with deep learning for cell engineering",
+            "Development of a framework enabling efficient cellular manipulation",
+            "Potential enhancement of precision in biological applications"
+          ],
+          "scientific_significance": "The study advances the field by demonstrating a synergistic approach combining biological complexity and machine learning to create adaptable cell engineering solutions."
+        },
+        "elapsed_seconds": 20.102,
+        "input_tokens": 438,
+        "output_tokens": 136,
+        "thoughts_tokens": null,
+        "total_tokens": 574,
+        "model_eval_seconds": 18.054,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42952375",
+        "title": "Biointerface-Customized Nanomodulators Induce Mitochondria-Specific Dysfunction to Reprogram Tumor Immunity.",
+        "abstract": "NA: Tumor mitochondria regulate cancer progression and immune evasion. However, current therapeutic strategies lack the subcellular precision required to selectively induce immune-beneficial mitochondrial dysfunction without causing systemic toxicity. Here, we report a biointerface-customized nanomodulator (C/C-HP@M2M-TPP), developed through a biointerface-engineered strategy (BES), that integrates sequential targeting and controlled activation to induce mitochondria-specific dysfunction and reprogram tumor immunity. Through a customized biointerface coating, the nanomodulators achieve preferential tumor accumulation and mitochondria-directed subcellular localization. Co-delivered calcium ion donors and efflux inhibitors cooperatively induce mitochondrial ion interference and dysfunction, which is further amplified by photothermal activation. This localized mitochondrial interference promotes immunogenic cell death and robust antitumor immune activation, resulting in potent tumor regression in mice. Integrated single-cell transcriptomic and proteomic analyses further identify mitochondrial disruption as a key mechanistic driver of tumor immune reprogramming. This work establishes biointerface-customized nanomodulation as a subcellular immunomodulatory therapeutic strategy in vivo.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75542",
+        "doi_url": "https://doi.org/10.1002/adma.75542",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42952375/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated a biointerface-customized nanomodulator designed to induce mitochondria-specific dysfunction for tumor immunity reprogramming. The approach involved engineering nanomodulators with sequential targeting and controlled activation to achieve preferential tumor accumulation and mitochondria-directed localization. Co-delivered calcium donors and efflux inhibitors, amplified by photothermal activation, induced mitochondrial dysfunction, promoting immunogenic cell death and antitumor immune responses in mice.\",\n  \"key_findings\": [\n    \"Nanomodulators achieved mitochondria-specific dysfunction via biointer:engineered targeting and photothermal activation\",\n    \"Co-delivered calcium donors and efflux inhibitors induced mitochondrial ion interference\",\n    \"The strategy promoted immunogenic cell death and tumor regression in murine models\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a subcellular precision strategy for inducing immune-beneficial mitochondrial dysfunction without systemic toxicity, advancing targeted immunomodulation in cancer therapy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated a biointerface-customized nanomodulator designed to induce mitochondria-specific dysfunction for tumor immunity reprogramming. The approach involved engineering nanomodulators with sequential targeting and controlled activation to achieve preferential tumor accumulation and mitochondria-directed localization. Co-delivered calcium donors and efflux inhibitors, amplified by photothermal activation, induced mitochondrial dysfunction, promoting immunogenic cell death and antitumor immune responses in mice.",
+          "key_findings": [
+            "Nanomodulators achieved mitochondria-specific dysfunction via biointer:engineered targeting and photothermal activation",
+            "Co-delivered calcium donors and efflux inhibitors induced mitochondrial ion interference",
+            "The strategy promoted immunogenic cell death and tumor regression in murine models"
+          ],
+          "scientific_significance": "This work demonstrates a subcellular precision strategy for inducing immune-beneficial mitochondrial dysfunction without systemic toxicity, advancing targeted immunomodulation in cancer therapy."
+        },
+        "elapsed_seconds": 41.5072,
+        "input_tokens": 679,
+        "output_tokens": 200,
+        "thoughts_tokens": null,
+        "total_tokens": 879,
+        "model_eval_seconds": 29.2783,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43039088",
+        "title": "Short-chain fatty acids as tumor microenvironment modulators: Mechanisms and therapeutic opportunities.",
+        "abstract": "NA: Short-chain fatty acids (SCFAs) are microbial metabolites generated through the fermentation of microbiota-accessible carbohydrates (MACs), including dietary fiber, resistant starch, resistant dextrins, non-digestible oligosaccharides, and other fermentable substrates. SCFAs can modulate tumor cell metabolism and the tumor microenvironment (TME), with reported effects on glycolysis, lipid biosynthesis, and oxidative phosphorylation that vary according to SCFA and cellular context. Simultaneously, they modulate innate and adaptive immunity, potentially enhancing cytotoxic T lymphocyte and NK cell function while also promoting regulatory T-cell responses and myeloid-derived suppressor cell activity under certain conditions. Epigenetically, SCFAs can inhibit histone deacetylases and modulate non-coding RNA networks, including changes in the expression of oncogenic and tumor-suppressive microRNAs (miRNAs) and long non-coding RNAs (lncRNAs). These three axes-metabolic, immune, and epigenetic-converge to reshape the TME, but their net effects vary with SCFA identity, concentration, tumor type, and local microenvironmental cues, and may be either tumor-suppressive or tumor-promoting. Although preclinical studies support the therapeutic potential of SCFA modulation, rapid metabolism and poor bioavailability limit systemic application, while clinical evidence for direct antitumor efficacy remains limited. Key unanswered questions include which cancer profiles are most responsive, whether SCFAs may induce unintended immunological effects, and how targeted delivery systems might enhance therapeutic utility. In this review, we survey the biology and therapeutic potential of SCFAs within the TME, highlighting their context-dependent effects and the challenges that must be addressed before clinical translation.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.bbadis.2026.168540",
+        "doi_url": "https://doi.org/10.1016/j.bbadis.2026.168540",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43039088/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Biochimica et biophysica acta. Molecular basis of disease",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines short-chain fatty acids (SCFAs) as modulators of the tumor microenvironment (TME). SCFAs influence metabolic pathways, immune responses, and epigenetic mechanisms in cancer cells, with effects varying by SCFA type, concentration, tumor context, and microenvironment. While preclinical studies suggest therapeutic potential, clinical efficacy remains limited due to poor bioavailability and rapid metabolism. The study highlights context-dependent outcomes and unresolved challenges for clinical translation.\",\n  \"key_findings\": [\n    \"SCFAs modulate tumor metabolism through glycolysis, lipid biosynthesis, and oxidative phosphorylation\",\n    \"SCFAs affect immune cell function by enhancing cytotoxic T lymphocytes and NK cells while promoting regulatory T cells and myeloid-derived suppressor cells\",\n    \"SCFAs epigenetically regulate gene expression via histone deacetylase inhibition and microRNA/lncRNA modulation\"\n  ],\n  \"scientific_significance\": \"This review clarifies the context-dependent dual roles of SCFAs in tumor microenvironments, providing a foundation for targeted therapeutic strategies despite current bioavailability and clinical translation challenges.\"\n}",
+        "parsed": {
+          "summary": "This review examines short-chain fatty acids (SCFAs) as modulators of the tumor microenvironment (TME). SCFAs influence metabolic pathways, immune responses, and epigenetic mechanisms in cancer cells, with effects varying by SCFA type, concentration, tumor context, and microenvironment. While preclinical studies suggest therapeutic potential, clinical efficacy remains limited due to poor bioavailability and rapid metabolism. The study highlights context-dependent outcomes and unresolved challenges for clinical translation.",
+          "key_findings": [
+            "SCFAs modulate tumor metabolism through glycolysis, lipid biosynthesis, and oxidative phosphorylation",
+            "SCFAs affect immune cell function by enhancing cytotoxic T lymphocytes and NK cells while promoting regulatory T cells and myeloid-derived suppressor cells",
+            "SCFAs epigenetically regulate gene expression via histone deacetylase inhibition and microRNA/lncRNA modulation"
+          ],
+          "scientific_significance": "This review clarifies the context-dependent dual roles of SCFAs in tumor microenvironments, providing a foundation for targeted therapeutic strategies despite current bioavailability and clinical translation challenges."
+        },
+        "elapsed_seconds": 41.7432,
+        "input_tokens": 906,
+        "output_tokens": 235,
+        "thoughts_tokens": null,
+        "total_tokens": 1141,
+        "model_eval_seconds": 36.7155,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    }
+  ]
+}
