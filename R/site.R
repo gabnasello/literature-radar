@@ -785,13 +785,37 @@ site_top_five <- function(site) {
 site_render_top_five <- function(site) {
   papers <- site_top_five(site)
   if (!length(papers)) return('<p class="empty-journal-list">The weekly selection will appear after the next journal retrieval.</p>')
+
+  groups <- list()
+  for (article in papers) {
+    source <- site_text(article$selection_source, "Keyword selection")
+    key <- if (identical(source, "Flexible selection")) "Keyword selection" else source
+    if (identical(key, "Flexible selection")) key <- "Keyword selection"
+    if (is.null(groups[[key]])) groups[[key]] <- list()
+    groups[[key]][[length(groups[[key]]) + 1L]] <- article
+  }
+
   cat('<div class="top-five-list">')
-  for (index in seq_along(papers)) {
-    article <- papers[[index]]
-    cat(sprintf('<div class="top-five-item"><span class="top-five-number">%d</span><div class="top-five-copy"><p class="top-five-source">%s</p>',
-      index, site_html_escape(site_text(article$selection_source))))
-    site_render_paper_card(article)
-    cat('</div></div>')
+  index <- 0L
+  for (source in names(groups)) {
+    is_keyword <- identical(source, "Keyword selection")
+    if (is_keyword) {
+      href <- "keywords/regulatory-t-cells.html"
+    } else {
+      journal <- Filter(function(x) identical(x$name, source), site$journals)
+      journal_id <- if (length(journal)) journal[[1]]$id else site_slug(source)
+      href <- paste0("journals/", site_html_escape(site_slug(journal_id)), ".html")
+    }
+    cat(sprintf('<section class="top-five-group"><h3 class="top-five-group-heading"><a href="%s">%s</a></h3>',
+      href, site_html_escape(source)))
+    for (article in groups[[source]]) {
+      index <- index + 1L
+      cat(sprintf('<div class="top-five-item"><span class="top-five-number">%d</span><div class="top-five-copy">',
+        index))
+      site_render_paper_card(article)
+      cat('</div></div>')
+    }
+    cat('</section>')
   }
   cat('</div>')
   invisible(NULL)
