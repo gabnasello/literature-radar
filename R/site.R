@@ -585,6 +585,9 @@ load_keyword_site_data <- function(root = ".") {
     pattern = "\\.json$", recursive = TRUE, full.names = TRUE))
   config_path <- file.path(root, "config", "keywords.yml")
   config <- if (file.exists(config_path)) yaml::read_yaml(config_path) else list()
+  journal_config_path <- file.path(root, "config", "journals.yml")
+  journal_config <- if (file.exists(journal_config_path)) yaml::read_yaml(journal_config_path) else list()
+  monitored_journals <- journal_config$journals %||% list()
   summaries <- site_read_summary_files(root)
   records <- list()
   for (path in paths) {
@@ -632,10 +635,7 @@ load_keyword_site_data <- function(root = ".") {
         site_text(x$publication_date))), numeric(1))
       tier <- ifelse(journals %in% preferred, 0L,
                      ifelse(journals %in% group_titles, 1L, 2L))
-      records[[i]]$articles <- site_rank_keyword_articles(articles, list(
-        journals = lapply(config$journals %||% list(), function(x) list(name = site_text(x$name), enabled = isTRUE(x$enabled)))
-      ))
-      # Apply configured publisher/journal preference after monitored-journal and TReg-title priority.
+      # Apply monitored-journal and explicit TReg-title priority before configured journal/publisher tiers.
       ranked <- records[[i]]$articles
       ranked_journals <- tolower(vapply(ranked, function(x) site_text(x$journal), character(1)))
       ranked_tier <- ifelse(ranked_journals %in% preferred, 0L,
@@ -644,12 +644,15 @@ load_keyword_site_data <- function(root = ".") {
         x$pubmed_created_date, site_text(x$publication_date)
       )), numeric(1))
       monitored_title <- vapply(ranked, function(x) {
-        is_monitored <- any(vapply(config$journals %||% list(), function(j) {
+        is_monitored <- any(vapply(monitored_journals, function(j) {
           isTRUE(j$enabled) && identical(tolower(site_text(j$name)), tolower(site_text(x$journal)))
         }, logical(1)))
         is_monitored && site_is_treg_title_match(x)
       }, logical(1))
-      records[[i]]$articles <- ranked[order(-as.integer(monitored_title),
+      monitored <- vapply(ranked, function(x) any(vapply(monitored_journals, function(j) {
+        isTRUE(j$enabled) && identical(tolower(site_text(j$name)), tolower(site_text(x$journal)))
+      }, logical(1))), logical(1))
+      records[[i]]$articles <- ranked[order(-as.integer(monitored),
         -as.integer(vapply(ranked, site_is_treg_title_match, logical(1))),
         ranked_tier, -vapply(ranked, site_relevance_score, numeric(1)), -ranked_dates)]
     }
