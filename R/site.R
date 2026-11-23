@@ -450,7 +450,8 @@ site_visible_journals <- function(journals) {
     site_timestamp_order(journal$latest_report$generated_at_utc)
   }, numeric(1))
   names <- vapply(visible, function(journal) site_text(journal$name), character(1))
-  visible[order(-update_times, names)]
+  visible <- visible[order(-update_times, names)]
+  head(visible, 2L)
 }
 
 site_journal_mark <- function(journal) {
@@ -631,8 +632,26 @@ load_keyword_site_data <- function(root = ".") {
         site_text(x$publication_date))), numeric(1))
       tier <- ifelse(journals %in% preferred, 0L,
                      ifelse(journals %in% group_titles, 1L, 2L))
-      records[[i]]$articles <- articles[order(tier, -dates,
-        tolower(vapply(articles, function(x) site_text(x$title), character(1))))]
+      records[[i]]$articles <- site_rank_keyword_articles(articles, list(
+        journals = lapply(config$journals %||% list(), function(x) list(name = site_text(x$name), enabled = isTRUE(x$enabled)))
+      ))
+      # Apply configured publisher/journal preference after monitored-journal and TReg-title priority.
+      ranked <- records[[i]]$articles
+      ranked_journals <- tolower(vapply(ranked, function(x) site_text(x$journal), character(1)))
+      ranked_tier <- ifelse(ranked_journals %in% preferred, 0L,
+                            ifelse(ranked_journals %in% group_titles, 1L, 2L))
+      ranked_dates <- vapply(ranked, function(x) site_timestamp_order(site_text(
+        x$pubmed_created_date, site_text(x$publication_date)
+      )), numeric(1))
+      monitored_title <- vapply(ranked, function(x) {
+        is_monitored <- any(vapply(config$journals %||% list(), function(j) {
+          isTRUE(j$enabled) && identical(tolower(site_text(j$name)), tolower(site_text(x$journal)))
+        }, logical(1)))
+        is_monitored && site_is_treg_title_match(x)
+      }, logical(1))
+      records[[i]]$articles <- ranked[order(-as.integer(monitored_title),
+        -as.integer(vapply(ranked, site_is_treg_title_match, logical(1))),
+        ranked_tier, -vapply(ranked, site_relevance_score, numeric(1)), -ranked_dates)]
     }
   }
   lapply(ids, function(id) {
@@ -644,6 +663,120 @@ load_keyword_site_data <- function(root = ".") {
       reports = matches,
       latest_report = if (length(matches)) matches[[1]] else NULL)
   })
+}
+
+site_is_treg_title_match <- function(article) {
+  title <- tolower(site_text(article$title))
+  grepl("regulatory[ -]t[ -]cells?|tregs?", title, perl = TRUE)
+}
+
+site_is_monitored_journal <- function(article, site) {
+  journal <- tolower(site_text(article$journal_name, site_text(article$journal)))
+  any(vapply(site$journals, function(x) {
+    isTRUE(x$enabled) && identical(journal, tolower(site_text(x$name)))
+  }, logical(1)))
+}
+
+site_relevance_score <- function(article) {
+  title <- tolower(site_text(article$title))
+  abstract <- tolower(site_text(article$abstract))
+  text <- paste(title, abstract)
+  score <- 0
+  patterns <- list(
+    c("immune modulation|immunomodulat|immunoregul|immune response|inflamm", 5),
+    c("regulatory t[ -]?cells?|tregs?", 4),
+    c("biomaterial|hydrogel|scaffold|material[- ]based|nanoparticle|nanoplatform", 5),
+    c("bone regeneration|bone repair|skeletal|osteogen|cartilage|fracture", 5),
+    c("tissue engineering|tissue regeneration|regenerative medicine|wound healing", 4),
+    c("organoid|organ[- ]on[- ]chip|microphysiological|in vitro model", 4),
+    c("stem cell|mesenchymal stromal|cell therapy|cellular therapy", 3),
+    c("single[- ]cell|spatial transcript|multiomics|machine learning|artificial intelligence", 2)
+  )
+  for (item in patterns) {
+    if (grepl(item[[1]], text, perl = TRUE)) score <- score + as.numeric(item[[2]])
+  }
+  if (grepl(patterns[[1]][[1]], title, perl = TRUE)) score <- score + 2
+  if (grepl(patterns[[3]][[1]], title, perl = TRUE)) score <- score + 2
+  if (grepl(patterns[[4]][[1]], title, perl = TRUE)) score <- score + 2
+  score
+}
+
+site_rank_keyword_articles <- function(articles, site) {
+  if (length(articles) < 2L) return(articles)
+  monitored <- vapply(articles, site_is_monitored_journal, logical(1), site = site)
+  title_match <- vapply(articles, site_is_treg_title_match, logical(1))
+  relevance <- vapply(articles, site_relevance_score, numeric(1))
+  dates <- vapply(articles, function(x) site_timestamp_order(site_text(
+    x$pubmed_created_date, site_text(x$publication_date)
+  )), numeric(1))
+  articles[order(-as.integer(monitored), -as.integer(title_match), -relevance, -dates)]
+}
+
+site_top_five <- function(site) {
+  reports <- site$reports
+  if (!length(reports)) return(list())
+  latest_by_journal <- list()
+  for (report in reports) {
+    if (is.null(latest_by_journal[[report$journal_id]])) {
+      latest_by_journal[[report$journal_id]] <- report
+    }
+  }
+  recent <- head(latest_by_journal, 2L)
+  selected <- list()
+  selected_pmids <- character()
+  for (report in recent) {
+    articles <- report$articles
+    if (length(articles)) {
+      ranked <- articles[order(-vapply(articles, site_relevance_score, numeric(1)),
+                               -vapply(articles, function(x) site_timestamp_order(site_text(x$publication_date)), numeric(1)))]
+      chosen <- head(ranked, 2L)
+      for (article in chosen) {
+        article$selection_source <- report$journal_name
+        selected[[length(selected) + 1L]] <- article
+        selected_pmids <- c(selected_pmids, site_text(article$pmid))
+      }
+    }
+  }
+  pool <- list()
+  for (keyword in site$keywords) {
+    if (length(keyword$reports)) {
+      pool <- c(pool, keyword$reports[[1]]$articles)
+    }
+  }
+  for (journal in site$journals) {
+    if (length(journal$reports)) pool <- c(pool, journal$reports[[1]]$articles)
+  }
+  if (length(pool)) {
+    ids <- vapply(pool, function(x) site_text(x$pmid), character(1))
+    pool <- pool[!duplicated(ids) & !ids %in% selected_pmids]
+    if (length(pool)) {
+      monitored <- vapply(pool, site_is_monitored_journal, logical(1), site = site)
+      title_match <- vapply(pool, site_is_treg_title_match, logical(1))
+      relevance <- vapply(pool, site_relevance_score, numeric(1))
+      dates <- vapply(pool, function(x) site_timestamp_order(site_text(x$publication_date)), numeric(1))
+      pool <- pool[order(-as.integer(monitored), -as.integer(title_match), -relevance, -dates)]
+      if (length(pool)) {
+        pool[[1]]$selection_source <- "Flexible selection"
+        selected[[length(selected) + 1L]] <- pool[[1]]
+      }
+    }
+  }
+  head(selected, 5L)
+}
+
+site_render_top_five <- function(site) {
+  papers <- site_top_five(site)
+  if (!length(papers)) return('<p class="empty-journal-list">The weekly selection will appear after the next journal retrieval.</p>')
+  cat('<div class="top-five-list">')
+  for (index in seq_along(papers)) {
+    article <- papers[[index]]
+    cat(sprintf('<div class="top-five-item"><span class="top-five-number">%d</span><div class="top-five-copy"><p class="top-five-source">%s</p>',
+      index, site_html_escape(site_text(article$selection_source))))
+    site_render_paper_card(article)
+    cat('</div></div>')
+  }
+  cat('</div>')
+  invisible(NULL)
 }
 
 site_render_keyword_page <- function(site, keyword_id) {
@@ -677,7 +810,7 @@ site_render_homepage_keyword_list <- function(keywords) {
   items <- vapply(visible, function(x) {
     latest <- x$latest_report
     sprintf(paste0('<li><a class="journal-card-link" href="keywords/%s.html">',
-      '<span class="journal-mark keyword-mark" aria-hidden="true">Aa</span>',
+      '<span class="journal-mark keyword-mark" aria-hidden="true"><span class="treg-mark">T<sub>Reg</sub></span></span>',
       '<span class="journal-card-copy"><strong>%s</strong><span>%d papers · Updated %s</span></span>',
       '<span class="journal-card-arrow" aria-hidden="true">›</span></a></li>'),
       site_html_escape(site_slug(x$id)), site_html_escape(x$name), latest$article_count,
