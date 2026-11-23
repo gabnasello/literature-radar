@@ -1,0 +1,942 @@
+{
+  "schema_version": 1,
+  "run_id": "20261123T165307Z",
+  "generated_at_utc": "2026-11-23 17:19:20 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 194,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42957568",
+        "title": "Fundamental Inhibition of Polyiodide Formation by a Site-Separated Binder for Highly Stable Aqueous Zinc-Iodine Batteries.",
+        "abstract": "NA: Aqueous Zn-I2 batteries are promising for sustainable energy storage systems, yet their practical performance is severely limited by the formation and shuttling of polyiodide intermediates. Here, we report a site separation strategy to block the generation paths of polyiodides and address the related issues from the source. This is realized with a site-separated polymer (SSP) binder that strongly and selectively confines I2 and I- at varied functional groups on different side chains. It disrupts their coupling to generate polyiodides chemically. Meanwhile, these effective interactions regulate the thermodynamic features of iodine species, which disfavors the formation of polyiodide intermediates and promotes direct I2/I- conversion during electrochemical reactions. The binder also reinforces cathode integrity at different iodine loadings. Therefore, the I2/SSP cathode delivers 212 mAh g-1 capacity at 0.2 A g-1 and retains 102 mAh g-1 at 50 A g-1, superior to 172 mAh g-1/11 mAh g-1 with the conventional polyvinylidene fluoride (PVDF) binder. I2/SSP also realizes 97.1% capacity retention over 31000 cycles at 20 A g-1, again far exceeding 46.8% after 20000 cycles for I2/PVDF. Under a high iodine loading of 50 mg cm-2, the I2/SSP cathode further achieves 10.1 mAh cm-2 capacity with 97.9% retention over 400 cycles.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75534",
+        "doi_url": "https://doi.org/10.1002/adma.75534",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957568/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates strategies to stabilize aqueous zinc-iodine batteries by inhibiting polyiodide formation, a key limitation. Using a site-separated polymer (SSP) binder, the researchers selectively confined iodine and iodide ions at distinct functional groups, disrupting polyiodide generation pathways. The SSP cathode achieved high capacity retention (97.1% over 31,000 cycles) and superior performance at high currents and iodine loadings compared to conventional binders.\",\n  \"key_findings\": [\n    \"SSP binder selectively confines I2 and I- at different functional groups to disrupt polyiodide formation\",\n    \"I2/SSP cathode retains 97.1% capacity over 31,000 cycles at 20 A g-1\",\n    \"At 50 mg cm-2 iodine loading, SSP cathode maintains 10.1 mAh cm-2 with 97.9% retention over 400 cycles\"\n  ],\n  \"scientific_significance\": \"The site-separated polymer binder provides a fundamental mechanism to suppress polyiodide shuttling in aqueous zinc-iodine batteries, enhancing long-term stability and high-rate performance without compromising capacity.\"\n}",
+        "parsed": {
+          "summary": "This study investigates strategies to stabilize aqueous zinc-iodine batteries by inhibiting polyiodide formation, a key limitation. Using a site-separated polymer (SSP) binder, the researchers selectively confined iodine and iodide ions at distinct functional groups, disrupting polyiodide generation pathways. The SSP cathode achieved high capacity retention (97.1% over 31,000 cycles) and superior performance at high currents and iodine loadings compared to conventional binders.",
+          "key_findings": [
+            "SSP binder selectively confines I2 and I- at different functional groups to disrupt polyiodide formation",
+            "I2/SSP cathode retains 97.1% capacity over 31,000 cycles at 20 A g-1",
+            "At 50 mg cm-2 iodine loading, SSP cathode maintains 10.1 mAh cm-2 with 97.9% retention over 400 cycles"
+          ],
+          "scientific_significance": "The site-separated polymer binder provides a fundamental mechanism to suppress polyiodide shuttling in aqueous zinc-iodine batteries, enhancing long-term stability and high-rate performance without compromising capacity."
+        },
+        "elapsed_seconds": 85.5254,
+        "input_tokens": 803,
+        "output_tokens": 262,
+        "thoughts_tokens": null,
+        "total_tokens": 1065,
+        "model_eval_seconds": 47.8396,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43043010",
+        "title": "Spatial Immune Organization Associates with Response to CD40 Agonism in BCG-Unresponsive Non-Muscle-Invasive Bladder Cancer: A Phase I Trial.",
+        "abstract": "PURPOSE: CD40 agonists activate dendritic cells (DCs) and promote T-cell antitumor immunity, but clinical development has been limited by systemic toxicity and incomplete understanding of determinants of response. In this phase I study (NCT05126472), we evaluated the safety, preliminary clinical activity, and spatial immune correlates of response to intravesical Fc-optimized CD40 agonist 2141-V11 in 25 patients with Bacillus Calmette-Guérin (BCG)-unresponsive non-muscle invasive bladder cancer (NMIBC).\nPATIENTS AND METHODS: Patients received weekly intravesical instillations for 3 weeks, with retreatment at weeks 13 and 25 based on disease status. Primary objectives were safety, tolerability, and determination of the maximum tolerated dose (MTD) and/or recommended phase 2 dose (RP2D). Secondary endpoints included pharmacokinetics and preliminary clinical activity. Exploratory endpoints including multiplex spatial profiling on tumor specimens to define correlates of response.\nRESULTS: Intravesical 2141-V11 was well tolerated, and the MTD was not reached. The RP2D was established at 70 mg. Preliminary clinical activity was observed in 40% of patients, with a median response duration of 20 months. Clinical response was associated with distinct organization of tertiary lymphoid structures, characterized by the presence of DC-CXCL13+ CD4+ and CD8+ T cell triads. Following treatment, responders exhibited decreased proximity between DCs and regulatory T cells (Tregs), whereas non-responders exhibited increased DC-Treg proximity.\nCONCLUSIONS: Intravesical 2141-V11 demonstrated a favorable safety profile and preliminary antitumor activity. Spatial profiling revealed immune-cell organizations associated with clinical response, identifying candidate biomarkers and potential strategies for therapeutic combinations. These findings support further clinical evaluation of intravesical 2141-V11 in phase II studies.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1158/1078-0432.CCR-26-3256",
+        "doi_url": "https://doi.org/10.1158/1078-0432.CCR-26-3256",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43043010/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Clinical cancer research : an official journal of the American Association for Cancer Research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This phase I trial evaluated intravesical CD40 agonist 2141-V11 in BCG-unresponsive non-muscle-invasive bladder cancer patients. The study assessed safety, preliminary clinical activity, and spatial immune correlates using multiplex spatial profiling. Results showed a 40% clinical response rate with median duration of 20 months. Responders exhibited distinct tertiary lymphoid structures with reduced DC-Treg proximity, while non-responders had increased DC-Treg proximity, indicating spatial immune organization as a predictor of response.\",\n  \"key_findings\": [\n    \"Intravesical 2141-V11 achieved a 40% clinical response rate with median response duration of 20 months\",\n    \"Responders displayed reduced proximity between dendritic cells and regulatory T cells\",\n    \"Non-responders showed increased dendritic cell-regulatory T cell proximity\"\n  ],\n  \"scientific_significance\": \"This study identifies spatial immune organization as a key determinant of response to CD40 agonist therapy in bladder cancer, providing a mechanistic basis for predicting clinical outcomes and guiding future immunotherapeutic strategies.\"\n}",
+        "parsed": {
+          "summary": "This phase I trial evaluated intravesical CD40 agonist 2141-V11 in BCG-unresponsive non-muscle-invasive bladder cancer patients. The study assessed safety, preliminary clinical activity, and spatial immune correlates using multiplex spatial profiling. Results showed a 40% clinical response rate with median duration of 20 months. Responders exhibited distinct tertiary lymphoid structures with reduced DC-Treg proximity, while non-responders had increased DC-Treg proximity, indicating spatial immune organization as a predictor of response.",
+          "key_findings": [
+            "Intravesical 2141-V11 achieved a 40% clinical response rate with median response duration of 20 months",
+            "Responders displayed reduced proximity between dendritic cells and regulatory T cells",
+            "Non-responders showed increased dendritic cell-regulatory T cell proximity"
+          ],
+          "scientific_significance": "This study identifies spatial immune organization as a key determinant of response to CD40 agonist therapy in bladder cancer, providing a mechanistic basis for predicting clinical outcomes and guiding future immunotherapeutic strategies."
+        },
+        "elapsed_seconds": 70.5016,
+        "input_tokens": 891,
+        "output_tokens": 241,
+        "thoughts_tokens": null,
+        "total_tokens": 1132,
+        "model_eval_seconds": 48.7389,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with acute type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window prevents amplification. Mechanistically, HFD recruits neutrophils expressing Nlrp3 and Il1b, which license pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent LFD. The findings demonstrate that short-lived dietary states can durably reprogram immune responses when coinciding with tissue inflammation.\",\n  \"key_findings\": [\n    \"Transient HFD exposure within a 4-day window at disease onset exacerbates acute skin inflammation to chronic obesity levels\",\n    \"HFD outside this window or switching obese mice to LFD during the window prevents inflammatory amplification\",\n    \"Neutrophil-derived Nlrp3-Il1b signaling licenses pathogenic TH17 cells, leading to persistent tissue-resident memory T cells\"\n  ],\n  \"scientific_significance\": \"This work establishes that transient dietary states during acute inflammation can durably reprogram immune memory, revealing a critical temporal window for dietary interventions to modulate inflammatory disease trajectories.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with acute type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window prevents amplification. Mechanistically, HFD recruits neutrophils expressing Nlrp3 and Il1b, which license pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent LFD. The findings demonstrate that short-lived dietary states can durably reprogram immune responses when coinciding with tissue inflammation.",
+          "key_findings": [
+            "Transient HFD exposure within a 4-day window at disease onset exacerbates acute skin inflammation to chronic obesity levels",
+            "HFD outside this window or switching obese mice to LFD during the window prevents inflammatory amplification",
+            "Neutrophil-derived Nlrp3-Il1b signaling licenses pathogenic TH17 cells, leading to persistent tissue-resident memory T cells"
+          ],
+          "scientific_significance": "This work establishes that transient dietary states during acute inflammation can durably reprogram immune memory, revealing a critical temporal window for dietary interventions to modulate inflammatory disease trajectories."
+        },
+        "elapsed_seconds": 59.9946,
+        "input_tokens": 884,
+        "output_tokens": 294,
+        "thoughts_tokens": null,
+        "total_tokens": 1178,
+        "model_eval_seconds": 54.9786,
+        "error": "summary must contain 45–90 words; received 110.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019443",
+        "title": "The devastating impact of humans on elephants' social life.",
+        "abstract": "NA: Human-driven habitat changes threaten the social behavior and survival of endangered species.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem6415",
+        "doi_url": "https://doi.org/10.1126/science.aem6415",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019443/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how human activities impact elephant social structures. Using habitat change analysis, it assessed behavioral shifts in endangered elephant populations. Results indicate significant disruption to social networks due to human-induced habitat fragmentation, threatening population viability. The findings highlight critical conservation challenges for elephant societies.\",\n  \"key_findings\": [\n    \"Human-driven habitat fragmentation disrupts elephant social networks\",\n    \"Endangered elephant populations face reduced social cohesion\",\n    \"Habitat changes threaten elephant survival through social behavior impacts\"\n  ],\n  \"scientific_significance\": \"The research underscores the critical role of intact social structures in elephant conservation, emphasizing habitat protection as essential for maintaining viable populations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how human activities impact elephant social structures. Using habitat change analysis, it assessed behavioral shifts in endangered elephant populations. Results indicate significant disruption to social networks due to human-induced habitat fragmentation, threatening population viability. The findings highlight critical conservation challenges for elephant societies.",
+          "key_findings": [
+            "Human-driven habitat fragmentation disrupts elephant social networks",
+            "Endangered elephant populations face reduced social cohesion",
+            "Habitat changes threaten elephant survival through social behavior impacts"
+          ],
+          "scientific_significance": "The research underscores the critical role of intact social structures in elephant conservation, emphasizing habitat protection as essential for maintaining viable populations."
+        },
+        "elapsed_seconds": 25.6825,
+        "input_tokens": 445,
+        "output_tokens": 138,
+        "thoughts_tokens": null,
+        "total_tokens": 583,
+        "model_eval_seconds": 23.227,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957576",
+        "title": "Supramolecular Stabilization of Wide-Bandgap Perovskites Enables Durable Perovskite-Organic Tandem Solar Cells.",
+        "abstract": "NA: Perovskite-organic tandem solar cells (PO-TSCs) offer a compelling platform for flexible photovoltaics by combining wide-bandgap (WBG) perovskite top cells with mechanically compliant organic rear cells. However, their long-term stability is critically limited by the intrinsic instability of WBG mixed-halide perovskites. Here, through systematic ageing and mechanistic analyses, we identify halide phase segregation in the WBG perovskite sub-cell under photothermal stress as the dominant degradation pathway that dictates the operational stability of the PO-TSC investigated here. To address this challenge, we develop a halogenated cyclodextrin-based supramolecular strategy that enables precise regulation of perovskite crystallization, defect passivation and halide distribution. Synergistic host-guest, hydrogen-bonding, halogen-bonding and coordination interactions simultaneously regulate crystallization and suppress ion migration to result in stabilized halide homogeneity. Consequently, 1.80-eV WBG devices achieve 20.60% efficiency with improved operational stability. Integrated PO-TSCs deliver an efficiency of 27.17% (certified 26.3%) together with T80 lifetimes of 1100 h under maximum power point tracking (MPPT) operation and T85 lifetimes of 1128 h under thermal stress of 85°C, while flexible PO-TSCs reach an efficiency of 24.00%. This work defines a general supramolecular design paradigm for efficient, durable and flexible tandem photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75558",
+        "doi_url": "https://doi.org/10.1002/adma.75558",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957576/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the long-term stability challenges in perovskite-organic tandem solar cells (PO-TSCs) caused by halide phase segregation in wide-bandgap perovskite subcells. Using systematic aging and mechanistic analyses, the research identifies photothermal stress-induced halide phase segregation as the primary degradation pathway. The authors develop a halogenated cyclodextrin-based supramolecular strategy that stabilizes halide homogeneity through synergistic interactions, achieving 20.60% efficiency in 1.80-eV devices with T80 lifetimes of 1100 h under MPPT and T85 lifetimes of 1128 h under 85°C thermal stress.\",\n  \"key_findings\": [\n    \"Halide phase segregation in wide-bandgap perovskites under photothermal stress is the dominant degradation mechanism in PO-TSCs\",\n    \"A halogenated cyclodextrin supramolecular strategy enables precise regulation of crystallization, defect passivation, and halide distribution\",\n    \"The approach achieves 20.60% efficiency in 1.80-eV devices with T80 lifetimes of 1100 h under MPPT and T85 lifetimes of 1128 h under 85°C thermal stress\"\n  ],\n  \"scientific_significance\": \"This work establishes a supramolecular design strategy for stabilizing wide-bandgap perovskites in tandem solar cells, addressing a critical stability bottleneck while maintaining high efficiency and flexibility.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the long-term stability challenges in perovskite-organic tandem solar cells (PO-TSCs) caused by halide phase segregation in wide-bandgap perovskite subcells. Using systematic aging and mechanistic analyses, the research identifies photothermal stress-induced halide phase segregation as the primary degradation pathway. The authors develop a halogenated cyclodextrin-based supramolecular strategy that stabilizes halide homogeneity through synergistic interactions, achieving 20.60% efficiency in 1.80-eV devices with T80 lifetimes of 1100 h under MPPT and T85 lifetimes of 1128 h under 85°C thermal stress.",
+          "key_findings": [
+            "Halide phase segregation in wide-bandgap perovskites under photothermal stress is the dominant degradation mechanism in PO-TSCs",
+            "A halogenated cyclodextrin supramolecular strategy enables precise regulation of crystallization, defect passivation, and halide distribution",
+            "The approach achieves 20.60% efficiency in 1.80-eV devices with T80 lifetimes of 1100 h under MPPT and T85 lifetimes of 1128 h under 85°C thermal stress"
+          ],
+          "scientific_significance": "This work establishes a supramolecular design strategy for stabilizing wide-bandgap perovskites in tandem solar cells, addressing a critical stability bottleneck while maintaining high efficiency and flexibility."
+        },
+        "elapsed_seconds": 79.496,
+        "input_tokens": 785,
+        "output_tokens": 327,
+        "thoughts_tokens": null,
+        "total_tokens": 1112,
+        "model_eval_seconds": 62.6169,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43043756",
+        "title": "Lactate-induced histone lactylation drives PRMT5-mediated Foxp3 symmetric dimethylation to promote Treg differentiation and sepsis immunopathology.",
+        "abstract": "NA: Sepsis is characterized by persistent immune dysfunction but how metabolic alterations contribute to immunosuppression remains unclear. Here, we identify lactate as a regulator of regulatory T cell (Treg) differentiation and show that Treg accumulation contributes to persistent organ injury during sepsis. In patients with sepsis, plasma lactate correlates with circulating Treg frequencies and disease severity. Lactate uptake through MCT1 increases H3K9 and H3K18 lactylation and Prmt5 transcription. Lactate also increases S-adenosylmethionine, supporting PRMT5-mediated symmetric dimethylation of Foxp3 at R51 and R146, which stabilizes Foxp3 and promotes Treg differentiation and suppressive function. CD4+ T cell-specific Prmt5 deletion attenuates lactate-induced Treg responses and improves outcomes in septic mice. Dexmedetomidine binds the PRMT5/MEP50 complex, reduces Treg accumulation and organ injury, and improves host defense against secondary infection. These findings link lactate metabolism to PRMT5-dependent Foxp3 stabilization and suggest a potential therapeutic pathway for sepsis-associated immunosuppression.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.celrep.2026.118322",
+        "doi_url": "https://doi.org/10.1016/j.celrep.2026.118322",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43043756/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Cell reports",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates lactate's role in regulatory T cell (Treg) differentiation during sepsis. Using human sepsis patient data and murine models, researchers found plasma lactate correlates with Treg frequencies and disease severity. Lactate uptake via MCT1 increases histone lactylation and PRMT5 expression, driving symmetric dimethylation of Foxp3 at R51/R146. This stabilizes Foxp3, promoting Treg differentiation and suppressing immune responses, which exacerbates organ injury in sepsis. Targeting PRMT5 with dexmedetomidine reduced Treg accumulation and improved outcomes.\",\n  \"key_findings\": [\n    \"Plasma lactate levels correlate with Treg frequencies and sepsis severity in patients\",\n    \"Lactate uptake via MCT1 enhances histone lactylation and PRMT5-mediated Foxp3 symmetric dimethylation\",\n    \"PRMT5 inhibition with dexmedetomidine reduces Treg accumulation and improves sepsis outcomes\"\n  ],\n  \"scientific_significance\": \"This work establishes lactate metabolism as a critical regulator of Treg differentiation through epigenetic mechanisms, providing a mechanistic link between metabolic dysregulation and immunosuppression in sepsis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates lactate's role in regulatory T cell (Treg) differentiation during sepsis. Using human sepsis patient data and murine models, researchers found plasma lactate correlates with Treg frequencies and disease severity. Lactate uptake via MCT1 increases histone lactylation and PRMT5 expression, driving symmetric dimethylation of Foxp3 at R51/R146. This stabilizes Foxp3, promoting Treg differentiation and suppressing immune responses, which exacerbates organ injury in sepsis. Targeting PRMT5 with dexmedetomidine reduced Treg accumulation and improved outcomes.",
+          "key_findings": [
+            "Plasma lactate levels correlate with Treg frequencies and sepsis severity in patients",
+            "Lactate uptake via MCT1 enhances histone lactylation and PRMT5-mediated Foxp3 symmetric dimethylation",
+            "PRMT5 inhibition with dexmedetomidine reduces Treg accumulation and improves sepsis outcomes"
+          ],
+          "scientific_significance": "This work establishes lactate metabolism as a critical regulator of Treg differentiation through epigenetic mechanisms, providing a mechanistic link between metabolic dysregulation and immunosuppression in sepsis."
+        },
+        "elapsed_seconds": 64.1571,
+        "input_tokens": 700,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 964,
+        "model_eval_seconds": 50.8599,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983081",
+        "title": "Tracing the spread of Celtic languages using ancient genomics.",
+        "abstract": "NA: Celtic languages are today restricted to Europe's Atlantic fringes but were widely spoken across the continent during the Iron Age1-3. How Celtic achieved this early distribution remains contested4, with alternative archaeological and linguistic models proposing different homelands and dispersal routes. Here we analyse genome-wide data from 4,587 ancient individuals, focusing on Bronze and Iron Age Europe, to test the extent to which these models fit reconstructed demographic histories. We identify three main processes shaping European population structure that are relevant to the Celtic dispersal. First, the arrival of Steppe-related ancestry with Bell Beaker-associated groups after around 4400 BP (calibrated years before present or 1950 CE) across the region in which Celtic and related languages were later spoken. Second, a movement from southwestern Europe into Britain during the Bronze Age (3800-3200 BP), consistent with scenarios in which Celtic formed along the Atlantic façade. Third, a westward expansion of ancestry related to Late Bronze Age Knovíz-Urnfield-associated populations from eastern central Europe (3200-2800 BP), affecting France, the British Isles, northeastern Iberia and Italy and later associated with Iron Age Hallstatt and La Tène contexts5-8. Although all three movements have parallels with proposed models, we argue that the final movement, from eastern central Europe, is most parsimonious for the spread of Celtic. Although human history does not necessarily follow a parsimonious trajectory9 and language shifts need not track genetic change, these results delimit the demographic scenarios that are plausible for the emergence of Celtic in prehistoric Europe.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11198-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11198-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983081/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the demographic processes underlying the spread of Celtic languages during the Iron Age using ancient genomic data from 4,587 individuals across Bronze and Iron Age Europe. By analyzing Steppe-related ancestry migration, a southwestern European to British movement, and a westward expansion from eastern central Europe, the research identifies three key population shifts relevant to Celtic dispersal. The findings suggest that the eastern central European migration (3200-2800 BP) most parsimoniously explains Celtic language spread, though linguistic and genetic histories may not align directly.\",\n  \"key_findings\": [\n    \"Steppe-related ancestry arrived via Bell Beaker groups around 4400 BP across Celtic-speaking regions\",\n    \"Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP\",\n    \"Westward expansion of eastern central European ancestry (Knovíz-Urnfield) affected France, the British Isles, northeastern Iberia, and Italy from 3200-2800 BP\"\n  ],\n  \"scientific_significance\": \"This work provides genomic evidence for the most parsimonious demographic pathway in Celtic language dispersal across prehistoric Europe, clarifying the interplay between population movements and linguistic expansion.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the demographic processes underlying the spread of Celtic languages during the Iron Age using ancient genomic data from 4,587 individuals across Bronze and Iron Age Europe. By analyzing Steppe-related ancestry migration, a southwestern European to British movement, and a westward expansion from eastern central Europe, the research identifies three key population shifts relevant to Celtic dispersal. The findings suggest that the eastern central European migration (3200-2800 BP) most parsimoniously explains Celtic language spread, though linguistic and genetic histories may not align directly.",
+          "key_findings": [
+            "Steppe-related ancestry arrived via Bell Beaker groups around 4400 BP across Celtic-speaking regions",
+            "Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP",
+            "Westward expansion of eastern central European ancestry (Knovíz-Urnfield) affected France, the British Isles, northeastern Iberia, and Italy from 3200-2800 BP"
+          ],
+          "scientific_significance": "This work provides genomic evidence for the most parsimonious demographic pathway in Celtic language dispersal across prehistoric Europe, clarifying the interplay between population movements and linguistic expansion."
+        },
+        "elapsed_seconds": 68.128,
+        "input_tokens": 778,
+        "output_tokens": 267,
+        "thoughts_tokens": null,
+        "total_tokens": 1045,
+        "model_eval_seconds": 51.2023,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019444",
+        "title": "Budding without an ESCRT.",
+        "abstract": "NA: Condensates help drive the budding of vesicles from the tips of cilia.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem8354",
+        "doi_url": "https://doi.org/10.1126/science.aem8354",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019444/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether ESCRT machinery is required for ciliary vesicle budding. Using live-cell imaging and genetic perturbations in model organisms, researchers observed that vesicle budding occurs independently of ESCRT proteins. The findings indicate that ciliary vesicle formation can proceed without ESCRT, challenging previous assumptions about the role of this complex in membrane trafficking.\",\n  \"key_findings\": [\n    \"Ciliary vesicle budding occurs without ESCRT proteins\",\n    \"ESCRT machinery is not essential for ciliary vesicle formation\",\n    \"Vesicle budding from ciliary tips proceeds independently of ESCRT\"\n  ],\n  \"scientific_significance\": \"These results demonstrate that ESCRT complexes are not universally required for membrane budding events, expanding understanding of the mechanisms governing ciliary membrane dynamics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether ESCRT machinery is required for ciliary vesicle budding. Using live-cell imaging and genetic perturbations in model organisms, researchers observed that vesicle budding occurs independently of ESCRT proteins. The findings indicate that ciliary vesicle formation can proceed without ESCRT, challenging previous assumptions about the role of this complex in membrane trafficking.",
+          "key_findings": [
+            "Ciliary vesicle budding occurs without ESCRT proteins",
+            "ESCRT machinery is not essential for ciliary vesicle formation",
+            "Vesicle budding from ciliary tips proceeds independently of ESCRT"
+          ],
+          "scientific_significance": "These results demonstrate that ESCRT complexes are not universally required for membrane budding events, expanding understanding of the mechanisms governing ciliary membrane dynamics."
+        },
+        "elapsed_seconds": 30.3743,
+        "input_tokens": 444,
+        "output_tokens": 165,
+        "thoughts_tokens": null,
+        "total_tokens": 609,
+        "model_eval_seconds": 27.9479,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42960603",
+        "title": "Fundamental Design Principles and Engineering Strategies of Liquid-Phase Electrolytes for Highly Durable Rechargeable Lithium Metal Batteries.",
+        "abstract": "NA: Lithium (Li) metal has emerged as the premier anode candidate in next-generation high-energy-density batteries due to its ultrahigh theoretical capacity and ultralow electrochemical potential. However, critical technical barriers persist in Li metal anode implementation, such as uncontrolled Li dendrite growth and persistent interfacial side reactions. Acting as the mediating agent between cathodes and anodes, electrolytes critically determine battery overall performance. Taking solvent-salt-additive components as the entry point, adopting liquid-phase electrolyte engineering strategies to optimize electrolyte composition and regulate solvation structure can not only address the inherent issues of Li metal anodes, but also endow Li metal batteries with desired performances, including high safety, high-voltage tolerance, fast-charging capability, and wide-temperature operation. In this review, the design principles of reliable liquid-phase electrolytes for Li metal batteries are discussed in detail. The essential liquid-phase electrolyte engineering strategies, including designing new-type salt/solvent molecular architectures, restructuring salt-solvent combination systems, incorporating electrolyte additives with various functions, utilizing (localized) high-concentration electrolytes, and developing brand-new electrolyte formulations for adapting to different temperature ranges, are comprehensively summarized. Moreover, emerging design strategies, future design considerations, and remaining challenges in electrolyte engineering are highlighted, with the aim of pointing out potential opportunities to propel the practical development of Li metal batteries.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75533",
+        "doi_url": "https://doi.org/10.1002/adma.75533",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42960603/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines design principles and engineering strategies for liquid-phase electrolytes in lithium metal batteries to overcome dendrite growth and interfacial instability. It details approaches like molecular architecture design, solvent-salt reconfiguration, additive incorporation, high-concentration electrolytes, and temperature-adaptive formulations. These strategies aim to enhance safety, voltage tolerance, fast charging, and thermal stability while addressing key technical barriers in Li metal anode implementation.\",\n  \"key_findings\": [\n    \"Molecular architecture design of salt-solvent systems improves interfacial stability\",\n    \"High-concentration electrolytes enhance dendrite suppression and thermal resilience\",\n    \"Temperature-adaptive electrolyte formulations enable wide-temperature operation\"\n  ],\n  \"scientific_significance\": \"This work provides a systematic framework for developing liquid-phase electrolytes that overcome critical limitations in lithium metal batteries, advancing the field toward practical high-energy-density applications.\"\n}",
+        "parsed": {
+          "summary": "This review examines design principles and engineering strategies for liquid-phase electrolytes in lithium metal batteries to overcome dendrite growth and interfacial instability. It details approaches like molecular architecture design, solvent-salt reconfiguration, additive incorporation, high-concentration electrolytes, and temperature-adaptive formulations. These strategies aim to enhance safety, voltage tolerance, fast charging, and thermal stability while addressing key technical barriers in Li metal anode implementation.",
+          "key_findings": [
+            "Molecular architecture design of salt-solvent systems improves interfacial stability",
+            "High-concentration electrolytes enhance dendrite suppression and thermal resilience",
+            "Temperature-adaptive electrolyte formulations enable wide-temperature operation"
+          ],
+          "scientific_significance": "This work provides a systematic framework for developing liquid-phase electrolytes that overcome critical limitations in lithium metal batteries, advancing the field toward practical high-energy-density applications."
+        },
+        "elapsed_seconds": 49.7846,
+        "input_tokens": 732,
+        "output_tokens": 187,
+        "thoughts_tokens": null,
+        "total_tokens": 919,
+        "model_eval_seconds": 35.0697,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43043788",
+        "title": "ITK deficiency protects against autoimmune pulmonary hemorrhage in mice by promoting amphiregulin-producing regulatory T cells.",
+        "abstract": "NA: Pulmonary hemorrhage (PH) is a life-threatening manifestation of systemic autoimmunity caused by immune-mediated disruption of the alveolar capillary barrier. Despite high mortality, the molecular checkpoints that shift destructive inflammation toward protective immune regulation remain poorly defined. Here, using a pristane-induced PH mouse model, we identify interleukin-2-inducible T-cell kinase (ITK) as a critical regulator of autoimmune lung injury. ITK deficiency (Itk⁻/⁻) conferred near-complete protection from PH and associated multiorgan injury, accompanied by reduced proinflammatory monocytes and neutrophils and increased Foxp3+ regulatory T cells (Tregs). Adoptive transfer of Itk⁻/⁻ Tregs protected wild-type recipients from PH and suppressed systemic proinflammatory cytokines, identifying Tregs as key mediators of tissue protection. Mechanistically, lung Itk⁻/⁻ Tregs exhibited increased amphiregulin, a mediator of tissue repair. Transcriptomic profiling further showed that ITK loss reprogrammed Tregs toward a metabolically and functionally enhanced state, with enrichment of oxidative phosphorylation, mTORC1, and STAT5 signaling, and tissue-repair programs. These findings establish ITK as a regulator of the balance between pulmonary injury and reparative immunity and support targeting the ITK axis in severe inflammatory lung disease.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.7554/eLife.111915",
+        "doi_url": "https://doi.org/10.7554/eLife.111915",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43043788/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "eLife",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how interleuk.2-inducible T-cell kinase (ITK) deficiency protects against pulmonary hemorrhage in mice. Using a pristane-induced model, researchers found ITK knockout mice showed near-complete resistance to pulmonary hemorrhage and multiorgan injury. Key mechanisms include reduced inflammatory cells, increased Foxp3+ regulatory T cells, and elevated amphiregulin production by Tregs. The findings suggest ITK modulates the balance between tissue damage and repair in autoimmune lung injury.\",\n  \"key_findings\": [\n    \"ITK deficiency conferred near-complete protection from pulmonary hemorrhage and multiorgan injury in mice\",\n    \"ITK loss increased Foxp3+ regulatory T cells and amphiregulin production in the lungs\",\n    \"Transcriptomic analysis revealed ITK deficiency reprogrammed Tregs toward enhanced metabolic and tissue-repair pathways\"\n  ],\n  \"scientific_significance\": \"This work identifies ITK as a critical regulator of the immune response balance in autoimmune pulmonary injury, providing a mechanistic basis for targeting ITK to promote tissue repair in severe inflammatory lung diseases.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how interleuk.2-inducible T-cell kinase (ITK) deficiency protects against pulmonary hemorrhage in mice. Using a pristane-induced model, researchers found ITK knockout mice showed near-complete resistance to pulmonary hemorrhage and multiorgan injury. Key mechanisms include reduced inflammatory cells, increased Foxp3+ regulatory T cells, and elevated amphiregulin production by Tregs. The findings suggest ITK modulates the balance between tissue damage and repair in autoimmune lung injury.",
+          "key_findings": [
+            "ITK deficiency conferred near-complete protection from pulmonary hemorrhage and multiorgan injury in mice",
+            "ITK loss increased Foxp3+ regulatory T cells and amphiregulin production in the lungs",
+            "Transcriptomic analysis revealed ITK deficiency reprogrammed Tregs toward enhanced metabolic and tissue-repair pathways"
+          ],
+          "scientific_significance": "This work identifies ITK as a critical regulator of the immune response balance in autoimmune pulmonary injury, providing a mechanistic basis for targeting ITK to promote tissue repair in severe inflammatory lung diseases."
+        },
+        "elapsed_seconds": 58.2318,
+        "input_tokens": 717,
+        "output_tokens": 229,
+        "thoughts_tokens": null,
+        "total_tokens": 946,
+        "model_eval_seconds": 44.3391,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015472",
+        "title": "Epigenetic heterogeneity in breast tumours informs diagnosis and prognosis.",
+        "abstract": "NA: Breast cancer, the most diagnosed cancer among women, is stratified by gene expression patterns into luminal and basal-like subtypes, and the latter is associated with worse prognosis1-3. Recent advances in single-cell technologies have underscored the presence of intratumour heterogeneity, which poses substantial challenges in cancer treatment and achieving long-term disease-free survival4-7. Here we extensively profile epigenetic heterogeneity in a cohort of treatment-naive human luminal tumours, which were obtained directly after surgical resection. By applying a single-cell epigenetic approach based on cytometry by time-of-flight, we identify a recurrent subpopulation of basal-like cells in luminal tumours with a conserved epigenetic signature across patients. These basal-like cells, also identified by deconvolution of whole-genome DNA methylation patterns, are characterized by high expression of aggressive oncogenic traits and downregulation of hormone receptor signalling. Direct comparison of single-cell proteomic and genomic profiling of monomethylation and trimethylation of histone 3 on lysine 4 revealed that these marks are key features associated with loss of luminal identity. Finally, we highlight the potential of concomitant single-molecule profiling of histone modifications on cell-free nucleosomes in blood as an epigenetic liquid biopsy approach for early diagnosis of breast cancer. Moreover, the epigenetic basal signature measured in blood is linked to prognosis, which enables the identification of patients at increased risk for disease relapse.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11230-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11230-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015472/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates epigenetic heterogeneity in breast tumours, focusing on luminal subtypes. Using single-cell cytometry by time-of-flight, researchers identified a recurrent basal-like subpopulation within luminal tumours with a conserved epusing epigenetic signature. These cells exhibit aggressive oncogenic traits and reduced hormone receptor signaling. The findings suggest potential epigenetic liquid biopsies in blood for early diagnosis and prognosis, linking specific epigenetic markers to relapse risk.\",\n  \"key_findings\": [\n    \"Identification of a recurrent basal-like subpopulation in luminal breast tumours with a conserved epigenetic signature\",\n    \"Basal-like cells show high expression of aggressive oncogenic traits and downregulation of hormone receptor signaling\",\n    \"Epigenetic markers in blood correlate with disease relapse risk, enabling prognostic prediction\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that epigenetic heterogeneity within luminal breast tumours can be detected via single-cell profiling and linked to clinical outcomes, providing a foundation for epigenetic liquid biopsies in breast cancer diagnosis and prognosis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates epigenetic heterogeneity in breast tumours, focusing on luminal subtypes. Using single-cell cytometry by time-of-flight, researchers identified a recurrent basal-like subpopulation within luminal tumours with a conserved epusing epigenetic signature. These cells exhibit aggressive oncogenic traits and reduced hormone receptor signaling. The findings suggest potential epigenetic liquid biopsies in blood for early diagnosis and prognosis, linking specific epigenetic markers to relapse risk.",
+          "key_findings": [
+            "Identification of a recurrent basal-like subpopulation in luminal breast tumours with a conserved epigenetic signature",
+            "Basal-like cells show high expression of aggressive oncogenic traits and downregulation of hormone receptor signaling",
+            "Epigenetic markers in blood correlate with disease relapse risk, enabling prognostic prediction"
+          ],
+          "scientific_significance": "The study demonstrates that epigenetic heterogeneity within luminal breast tumours can be detected via single-cell profiling and linked to clinical outcomes, providing a foundation for epigenetic liquid biopsies in breast cancer diagnosis and prognosis."
+        },
+        "elapsed_seconds": 62.0067,
+        "input_tokens": 738,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 974,
+        "model_eval_seconds": 46.8901,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42960604",
+        "title": "Near-Infrared Imaging of H2O2 in Plants With Nanosensors Under Environmentally Changing Conditions.",
+        "abstract": "NA: Optical sensors are powerful tools to monitor biological systems. However, their practical deployment is often limited by environmental interferences such as autofluorescence, mechanical motion, and fluctuating illumination. These challenges are particularly pronounced in plants because they require and use light, which has impaired the use of (fluorescent) sensors for plant stress signals such as H2O2. Here, we present a ratiometric sensing platform that overcomes these limitations by integrating three spectrally distinct components: 1) an H2O2 sensor based on aptamer modified near infrared (NIR) fluorescent single walled carbon nanotubes (SWCNTs, ∼1000 nm), 2) a stable NIR reference based on polyethyleneglycol modified Egyptian Blue nanosheets (EB-NS, 900-955 nm) and 3) a visible (VIS) signal (∼641 nm) to correct for the NIR autofluorescence tail of plants (>835 nm). This ratiometric approach enables robust signal correction under relevant perturbations, including leaf rotation and wind-induced motion. Furthermore, it allows continuous H2O2 monitoring under dynamically varying illumination conditions (>300%), resulting in a 75% enhancement in signal contrast compared to single-channel detection. By spectrally resolving nanosensor signals and endogenous plant autofluorescence, this strategy enables in vivo monitoring of stress-induced H2O2 under realistic environmental conditions. It establishes interference-resistant optical sensing and advances field-deployable nanosensor technologies for precision agriculture.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75513",
+        "doi_url": "https://doi.org/10.1002/adma.75513",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42960604/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a ratiometric near-infrared (NIR) sensing platform to monitor hydrogen peroxide (H2O2) in plants under environmental stress. The platform integrates an H2O2-sensitive aptamer-modified NIR fluorescent single-walled carbon nanotubes (SWCNTs), a stable NIR reference using polyethylene glycol-modified Egyptian Blue nanosheets (EB-NS), and a visible light signal for autofluorescence correction. It overcomes challenges like leaf motion and fluctuating light by enabling robust H2O2 detection with 75% higher signal contrast than single-channel methods, facilitating real-time in vivo monitoring of stress responses in field conditions.\",\n  \"key_findings\": [\n    \"A ratiometric NIR sensing platform integrates H2O2-specific SWCNTs, a stable NIR reference (EB-NS), and a visible light signal for autofluorescence correction\",\n    \"The platform achieves 75% higher signal contrast than single-channel detection under dynamic environmental conditions\",\n    \"It enables continuous H2O2 monitoring despite leaf motion and fluctuating illumination, supporting field-deployable stress response assessment\"\n  ],\n  \"scientific_significance\": \"This work advances interference-resistant optical sensing for plant stress monitoring, providing a scalable method for real-time H2O2 detection in natural environments without compromising signal accuracy.\"\n}",
+        "parsed": {
+          "summary": "This study developed a ratiometric near-infrared (NIR) sensing platform to monitor hydrogen peroxide (H2O2) in plants under environmental stress. The platform integrates an H2O2-sensitive aptamer-modified NIR fluorescent single-walled carbon nanotubes (SWCNTs), a stable NIR reference using polyethylene glycol-modified Egyptian Blue nanosheets (EB-NS), and a visible light signal for autofluorescence correction. It overcomes challenges like leaf motion and fluctuating light by enabling robust H2O2 detection with 75% higher signal contrast than single-channel methods, facilitating real-time in vivo monitoring of stress responses in field conditions.",
+          "key_findings": [
+            "A ratiometric NIR sensing platform integrates H2O2-specific SWCNTs, a stable NIR reference (EB-NS), and a visible light signal for autofluorescence correction",
+            "The platform achieves 75% higher signal contrast than single-channel detection under dynamic environmental conditions",
+            "It enables continuous H2O2 monitoring despite leaf motion and fluctuating illumination, supporting field-deployable stress response assessment"
+          ],
+          "scientific_significance": "This work advances interference-resistant optical sensing for plant stress monitoring, providing a scalable method for real-time H2O2 detection in natural environments without compromising signal accuracy."
+        },
+        "elapsed_seconds": 71.4831,
+        "input_tokens": 775,
+        "output_tokens": 282,
+        "thoughts_tokens": null,
+        "total_tokens": 1057,
+        "model_eval_seconds": 54.9588,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43044181",
+        "title": "Hyperinsulinemia contributes to regulatory T-cell dysfunction and disease activity in multiple sclerosis.",
+        "abstract": "NA: We examined relationships among obesity, hyperinsulinemia, regulatory T-cell (Treg) function, and activity in multiple sclerosis (MS), and investigated insulin signaling as a candidate mechanism. We prospectively followed 131 patients with relapsing-remitting MS, stratified by body mass index, for at least 36 months. Clinical and MRI outcomes were assessed longitudinally, whereas metabolic parameters and Treg phenotype and function were evaluated at baseline. Mechanistic studies examined insulin receptor signaling in purified Tregs using insulin stimulation, pharmacological inhibition, insulin receptor silencing, and functional assays. In a separate, non-overlapping cohort, 28 obese hyperinsulinemic patients with relapsing-remitting MS underwent a 24-week metformin intervention with longitudinal metabolic and immunological assessments. Obese patients had higher fasting insulin, more relapses, disability progression, and MRI activity. Hyperinsulinemia correlated with reduced FoxP3 and IL-10, impaired Treg suppression, and increased IFN-γ and IL-17 in Treg-enriched cultures. Insulin stimulation altered AKT-mTOR signaling and Treg function; AKT inhibition or insulin receptor silencing reversed these effects. Obese-patient Tregs suppressed myelin-reactive responses less effectively. During metformin treatment, reductions in fasting insulin and AKT-mTOR signaling were accompanied by improvements in Treg phenotype and suppressive function and attenuation of myelin-specific inflammatory responses. These immunological changes correlated with insulin reductions, but the single-arm design and metformin's direct effects preclude causal attribution. These findings support an association between hyperinsulinemia, altered Treg function, and inflammatory disease activity in MS and identify insulin signaling as a candidate pathway for further mechanistic investigation.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.jneuroim.2026.579132",
+        "doi_url": "https://doi.org/10.1016/j.jneuroim.2026.579132",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43044181/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of neuroimmunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated hyperinsulinemia's role in regulatory T-cell dysfunction and disease activity in multiple sclerosis (MS). Researchers prospectively followed 131 relapsing-remitting MS patients stratified by BMI for 36+ months, assessing clinical outcomes, MRI activity, metabolic parameters, and Treg function at baseline. Mechanistic studies used insulin receptor signaling assays in Tregs. Results showed hyperinsulinemia correlated with reduced FoxP3, impaired Treg suppression, and increased inflammatory cytokines. Metformin treatment reduced insulin levels and improved Treg function, though causality could not be established due to the study design.\",\n  \"key_findings\": [\n    \"Hyperinsulinemia correlated with reduced FoxP3 and IL-10 in regulatory T-cells\",\n    \"Insulin stimulation impaired Treg suppression via AKT-mTOR signaling\",\n    \"Metformin treatment reduced fasting insulin and improved Treg function in obese MS patients\"\n  ],\n  \"scientific_significance\": \"This work establishes hyperinsulinemia as a modifiable factor linked to regulatory T-cell dysfunction in multiple sclerosis, providing a potential therapeutic target for mitigating disease activity through insulin signaling pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigated hyperinsulinemia's role in regulatory T-cell dysfunction and disease activity in multiple sclerosis (MS). Researchers prospectively followed 131 relapsing-remitting MS patients stratified by BMI for 36+ months, assessing clinical outcomes, MRI activity, metabolic parameters, and Treg function at baseline. Mechanistic studies used insulin receptor signaling assays in Tregs. Results showed hyperinsulinemia correlated with reduced FoxP3, impaired Treg suppression, and increased inflammatory cytokines. Metformin treatment reduced insulin levels and improved Treg function, though causality could not be established due to the study design.",
+          "key_findings": [
+            "Hyperinsulinemia correlated with reduced FoxP3 and IL-10 in regulatory T-cells",
+            "Insulin stimulation impaired Treg suppression via AKT-mTOR signaling",
+            "Metformin treatment reduced fasting insulin and improved Treg function in obese MS patients"
+          ],
+          "scientific_significance": "This work establishes hyperinsulinemia as a modifiable factor linked to regulatory T-cell dysfunction in multiple sclerosis, providing a potential therapeutic target for mitigating disease activity through insulin signaling pathways."
+        },
+        "elapsed_seconds": 62.4825,
+        "input_tokens": 808,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 1056,
+        "model_eval_seconds": 44.3319,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015473",
+        "title": "Low-power 2D CFETs using single-crystal high-κ dielectrics.",
+        "abstract": "NA: Aggressive scaling in silicon electronics-although essential for improving power, performance, area and cost-faces increasing challenges in further reducing power consumption due to electrostatic and leakage constraints1,2. Achieving efficient operation at low supply voltages therefore requires new materials and gate-stack engineering strategies. Two-dimensional (2D) semiconductors offer intrinsic advantages because their atomic thickness affords excellent gate control, and their sizable bandgaps suppress off-state current. However, a major obstacle is the imperfect interface between 2D channels and gate dielectrics, which degrades subthreshold swing, hysteresis and bias-temperature instability3. Here we demonstrate that a wafer-scale, transferable, single-crystal anatase titanium dioxide dielectric can be van der Waals integrated with 2D transition metal dichalcogenides. The obtained pristine 2D-dielectric interface enables subthreshold swing close to the thermal limit, record-low hysteresis and well-matched transfer characteristics for both n- and p-type enhancement-mode field-effect transistors. Building on this, we demonstrate complementary field-effect transistors, whose inverters achieve high voltage gain and large noise margins with subpicowatt static power consumption. These results highlight the promise of 2D semiconductors for ultra-low-power operation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11272-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11272-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015473/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing ultra-low-power 2D transistor performance using single-crystal high-κ dielectrics. Researchers integrated van der Waals-attached anatase titanium dioxide with 2D transition metal dichalcogenides to achieve a pristine interface. The approach yielded subthreshold swing near thermal limits, minimal hysteresis, and balanced n/p-type transistor characteristics. Complementary inverters demonstrated subpicowatt static power consumption, indicating significant potential for energy-efficient electronics.\",\n  \"key_findings\": [\n    \"Pristine 2D-dielectric interface enabled subthreshold swing close to thermal limit\",\n    \"Record-low hysteresis and well-matched n/p-type transfer characteristics\",\n    \"Complementary inverters achieved subpicowatt static power consumption\"\n  ],\n  \"scientific_significance\": \"This work establishes single-crystal high-κ dielectrics as a viable strategy for achieving near-ideal 2D transistor interfaces, advancing ultra-low-power electronics through minimized leakage and enhanced gate control.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing ultra-low-power 2D transistor performance using single-crystal high-κ dielectrics. Researchers integrated van der Waals-attached anatase titanium dioxide with 2D transition metal dichalcogenides to achieve a pristine interface. The approach yielded subthreshold swing near thermal limits, minimal hysteresis, and balanced n/p-type transistor characteristics. Complementary inverters demonstrated subpicowatt static power consumption, indicating significant potential for energy-efficient electronics.",
+          "key_findings": [
+            "Pristine 2D-dielectric interface enabled subthreshold swing close to thermal limit",
+            "Record-low hysteresis and well-matched n/p-type transfer characteristics",
+            "Complementary inverters achieved subpicowatt static power consumption"
+          ],
+          "scientific_significance": "This work establishes single-crystal high-κ dielectrics as a viable strategy for achieving near-ideal 2D transistor interfaces, advancing ultra-low-power electronics through minimized leakage and enhanced gate control."
+        },
+        "elapsed_seconds": 52.524,
+        "input_tokens": 707,
+        "output_tokens": 215,
+        "thoughts_tokens": null,
+        "total_tokens": 922,
+        "model_eval_seconds": 39.0429,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42960617",
+        "title": "Kirigami-Inspired Stretchable Silicon Solar Cell Modules as Portable Power Sources.",
+        "abstract": "NA: The integration of photovoltaic modules into wearable electronic devices represents a pivotal advancement for enhancing portability and sustainability. Despite their high efficiency and stability, traditional silicon solar modules are brittle, preventing their applications in mechanically flexible and impact-resistant wearable devices. Herein, we present a novel approach to deformable silicon solar cell modules of different sizes utilizing flexible kirigami-structured substrates integrating commercial silicon cells, enabling durability against continuous deformations caused by body movements. For instance, our Module-14-7S2P, consisting of 14 silicon solar cells, exhibits a power output of 37.50 mW while maintaining > 95% power retention of its original power output after 5000 deformation cycles and > 94% power retention after 120 h of water immersion. Furthermore, upon deformation to a 13% strain, this module retains ∼80% of the initial power output, data supported by FEA simulations. Our study provides new possibilities for employing silicon solar cells in wearable applications, accelerating the adoption of sustainable and portable wearable electronic devices powered by solar energy.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75500",
+        "doi_url": "https://doi.org/10.1002/adma.75500",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42960617/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates stretchable silicon solar cell modules using kirigami-structured substrates to address the brittleness of traditional silicon photovoltaics for wearable applications. The approach integrates commercial silicon cells with flexible kirig.ami substrates, enabling modules to withstand repeated deformations from body movements. Module-14-7S2P demonstrates 37.50 mW power output with >95% retention after 5000 cycles and >94% retention after 120 h water immersion, retaining ∼80% power at 13% strain. These results indicate enhanced durability for portable solar-powered wearables.\",\n  \"key_findings\": [\n    \"Module-14-7S2P achieves 37.50 mW power output\",\n    \"Modules retain >95% power after 5000 deformation cycles\",\n    \"Modules maintain >94% power retention after 120 h water immersion\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that kirigami-structured silicon solar cells can maintain high performance under mechanical stress, enabling practical solar power for wearable electronics without compromising durability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates stretchable silicon solar cell modules using kirigami-structured substrates to address the brittleness of traditional silicon photovoltaics for wearable applications. The approach integrates commercial silicon cells with flexible kirig.ami substrates, enabling modules to withstand repeated deformations from body movements. Module-14-7S2P demonstrates 37.50 mW power output with >95% retention after 5000 cycles and >94% retention after 120 h water immersion, retaining ∼80% power at 13% strain. These results indicate enhanced durability for portable solar-powered wearables.",
+          "key_findings": [
+            "Module-14-7S2P achieves 37.50 mW power output",
+            "Modules retain >95% power after 5000 deformation cycles",
+            "Modules maintain >94% power retention after 120 h water immersion"
+          ],
+          "scientific_significance": "This work demonstrates that kirigami-structured silicon solar cells can maintain high performance under mechanical stress, enabling practical solar power for wearable electronics without compromising durability."
+        },
+        "elapsed_seconds": 55.1584,
+        "input_tokens": 667,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 915,
+        "model_eval_seconds": 43.1651,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43044186",
+        "title": "An Ii-Key-containing HPV16/18 E7 epitope peptide vaccine promotes dendritic cell activation and T-cell immunity in a murine HPV16 tumor model, with greater tumor control upon PD-1 blockade.",
+        "abstract": "BACKGROUND: Therapeutic vaccines targeting human papillomavirus (HPV) E6/E7 oncoproteins represent a promising strategy for cervical cancer immunotherapy, yet most candidates remain constrained by insufficient antigen presentation efficiency and suboptimal T-cell responses. The Ii-Key strategy, which links the invariant chain (Ii) core motif to epitope peptides to facilitate MHC class II loading, may overcome this limitation by amplifying CD4+ T helper responses.\nMETHODS: HPV16/18 E7 epitopes restricted by murine H-2 class I/II molecules were predicted using immunoinformatics tools. Ii-Key-modified MHC class II peptides (LRMK-PEG2-epitope) and unmodified MHC class I peptides were synthesized and evaluated in vitro using bone marrow-derived dendritic cell (BMDC) stimulation assays with flow cytometry, ELISA, and western blotting. In vivo immunogenicity was assessed in C57BL/6 mice through immune phenotyping of lymphoid organs and plasma cytokine profiling. Anti-tumor activity was tested in an early-intervention subcutaneous TC-1 tumor model (HPV16 E6/E7-positive) with histopathological and flow cytometric analyses of tumor-infiltrating lymphocytes. Combination treatment with anti-PD-1 monoclonal antibody was also examined.\nRESULTS: The peptide pool promoted BMDC maturation, as evidenced by increased frequencies of CD80+CD86+ and I-A/I-E+ BMDCs, NF-κB pathway activation, and increased proinflammatory cytokine secretion; these readouts indicate DC activation. In C57BL/6 mice, peptide immunization induced DC activation in draining lymph nodes, enhanced CD4+ and CD8+ T-cell activation (CD8+ increase significant only in non-tumor-bearing mice), reduced Treg proportions in tumor-bearing mice (with a non-significant decline in non-tumor-bearing mice), elicited direct ex vivo splenocyte cytotoxicity against TC-1 cells, and altered memory-phenotype T-cell frequencies, increasing TCM frequency in non-tumor-bearing mice and TEM frequency in tumor-bearing mice. In the TC-1 model, peptide treatment suppressed tumor growth and qualitatively reduced tumor Ki67 staining, accompanied by non-significant trends toward increased intratumoral CD4+ and CD8+ T-cell frequencies. Combination with anti-PD-1 produced greater tumor control than either monotherapy. Safety assessments by histopathology and serum biochemistry indicated acceptable tolerability under the conditions and observation period tested.\nCONCLUSIONS: The Ii-Key-containing HPV16/18 E7 peptide formulation promoted dendritic cell activation and T-cell immunity, achieving anti-tumor activity in an early-intervention TC-1 model with acceptable tolerability. The combination with PD-1 blockade produced greater tumor control than either monotherapy; this comparison does not establish additivity or synergy. These preclinical findings support further evaluation of the formulation incorporating direct antigen-presentation assays and matched unmodified MHC-II peptide controls.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.intimp.2026.117694",
+        "doi_url": "https://doi.org/10.1016/j.intimp.2026.117694",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43044186/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "International immunopharmacology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study evaluated an Ii-Key-modified HPV16/18 E7 epitope peptide vaccine in a murine TC-1 tumor model. The vaccine, designed to enhance MHC class II loading, induced dendritic cell maturation and T-cell activation, including increased CD4+ and CD8+ T-cell responses. It suppressed tumor growth and reduced Ki67 staining, with combination therapy using anti-PD-1 antibody showing superior tumor control compared to monotherapy. The approach demonstrates potential for improving HPV-targeted immunotherapy efficacy.\",\n  \"key_findings\": [\n    \"Ii-Key-modified E7 peptides enhanced dendritic cell maturation and proinflammatory cytokine secretion\",\n    \"Peptide immunization increased tumor-infiltrating CD4+ and CD8+ T-cell frequencies and reduced regulatory T cells in tumor-bearing mice\",\n    \"Combination with anti-PD-1 antibody achieved greater tumor suppression than either treatment alone\"\n  ],\n  \"scientific_significance\": \"This work provides preclinical evidence that Ii-Key-enhanced HPV E7 epitope vaccines can stimulate robust T-cell immunity and tumor control, offering a strategy to overcome antigen presentation limitations in cervical cancer immunotherapy.\"\n}",
+        "parsed": {
+          "summary": "This study evaluated an Ii-Key-modified HPV16/18 E7 epitope peptide vaccine in a murine TC-1 tumor model. The vaccine, designed to enhance MHC class II loading, induced dendritic cell maturation and T-cell activation, including increased CD4+ and CD8+ T-cell responses. It suppressed tumor growth and reduced Ki67 staining, with combination therapy using anti-PD-1 antibody showing superior tumor control compared to monotherapy. The approach demonstrates potential for improving HPV-targeted immunotherapy efficacy.",
+          "key_findings": [
+            "Ii-Key-modified E7 peptides enhanced dendritic cell maturation and proinflammatory cytokine secretion",
+            "Peptide immunization increased tumor-infiltrating CD4+ and CD8+ T-cell frequencies and reduced regulatory T cells in tumor-bearing mice",
+            "Combination with anti-PD-1 antibody achieved greater tumor suppression than either treatment alone"
+          ],
+          "scientific_significance": "This work provides preclinical evidence that Ii-Key-enhanced HPV E7 epitope vaccines can stimulate robust T-cell immunity and tumor control, offering a strategy to overcome antigen presentation limitations in cervical cancer immunotherapy."
+        },
+        "elapsed_seconds": 83.0972,
+        "input_tokens": 1102,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 1353,
+        "model_eval_seconds": 51.5006,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015474",
+        "title": "NRF2 is a mechanosensitive checkpoint for NLRP3 inflammasome activation.",
+        "abstract": "NA: Disconnects between in vitro and in vivo results in experimental biology have long been recognized as potential hurdles to understanding health and disease. A prototypical example of such a disconnect is the NLRP3 inflammasome, which mediates inflammation in diverse settings of disease and protective immunity1,2. Activation of the NLRP3 inflammasome in vitro requires two signals: (1) priming by pathogen-associated molecular patterns such as bacterial lipopolysaccharides and (2) activation by molecules that disrupt cellular homeostasis1,3. By contrast, the NLRP3 inflammasome in vivo is activated by lipopolysaccharide alone. The mechanisms that underlie the difference between in vitro and in vivo activation of the NLRP3 inflammasome are undefined. Here we report that extracellular matrix (ECM) stiffness is a determinant of NLRP3 activities and that in vitro systems using physiological ECM stiffness enable one-signal in vivo-like NLRP3 activities to occur in human and mouse phagocytes. Physiological ECM stiffness induced expression of the transcription factor NRF2, which was found to be necessary for one-signal NLRP3 activation. Mechanistically, we identify Panx1 as an NRF2-regulated gene that promotes NLRP3 activity. Macrophages derived from the stiff matrix of the bone-osteoclasts-had reduced NRF2 levels and impaired NLRP3 activity. Moreover, alveolar macrophages from patients with pulmonary fibrosis displayed reduced NRF2 activity. Finally, NRF2 was required for antitumour immunity induced by cancer vaccines consisting of NLRP3 agonistic adjuvants. These findings indicate that NRF2 may be a transcriptional checkpoint that controls NLRP3 inflammasome activity.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11324-7",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11324-7",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015474/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the mechanistic disconnect between in vitro and in vivo NLRP3 inflammasome activation. It demonstrates that physiological extracellular matrix stiffness induces NRF2 expression, which is necessary for one-signal NLRP3 activation in human and mouse phagocytes. The research identifies Panx1 as an NRF2-regulated gene promoting NLRP3 activity. Macrophages from stiff bone-osteoclast matrices and pulmonary fibrosis patients show reduced NRF2 and impaired NLRP3 function. NRF2 also supports antitumour immunity via NLRP3 agonistic cancer vaccines.\",\n  \"key_findings\": [\n    \"Physiological ECM stiffness induces NRF2 expression required for one-signal NLRP3 activation\",\n    \"Panx1 is an NRF2-regulated gene that promotes NLRP3 activity\",\n    \"Macrophages from stiff bone-osteoclast matrices and pulmonary fibrosis patients exhibit reduced NRF2 and impaired NLRP3 function\"\n  ],\n  \"scientific_significance\": \"This work establishes NRF2 as a mechanosensitive transcriptional checkpoint that bridges in vitro and in vivo NLRP3 inflammasome activation, resolving a long-standing discrepancy in experimental models.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the mechanistic disconnect between in vitro and in vivo NLRP3 inflammasome activation. It demonstrates that physiological extracellular matrix stiffness induces NRF2 expression, which is necessary for one-signal NLRP3 activation in human and mouse phagocytes. The research identifies Panx1 as an NRF2-regulated gene promoting NLRP3 activity. Macrophages from stiff bone-osteoclast matrices and pulmonary fibrosis patients show reduced NRF2 and impaired NLRP3 function. NRF2 also supports antitumour immunity via NLRP3 agonistic cancer vaccines.",
+          "key_findings": [
+            "Physiological ECM stiffness induces NRF2 expression required for one-signal NLRP3 activation",
+            "Panx1 is an NRF2-regulated gene that promotes NLRP3 activity",
+            "Macrophages from stiff bone-osteoclast matrices and pulmonary fibrosis patients exhibit reduced NRF2 and impaired NLRP3 function"
+          ],
+          "scientific_significance": "This work establishes NRF2 as a mechanosensitive transcriptional checkpoint that bridges in vitro and in vivo NLRP3 inflammasome activation, resolving a long-standing discrepancy in experimental models."
+        },
+        "elapsed_seconds": 68.256,
+        "input_tokens": 813,
+        "output_tokens": 257,
+        "thoughts_tokens": null,
+        "total_tokens": 1070,
+        "model_eval_seconds": 49.4429,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42960618",
+        "title": "Engineering Li+ Transport in Ni-Rich Layered Cathodes Toward Homogenization.",
+        "abstract": "NA: Nickel-rich layered oxide (NRLO) cathodes (Ni≥80%) are promising for next-generation lithium-ion batteries with energy densities exceeding 300 Wh kg-1, but suffer from rapid degradation under deep delithiation, including phase transitions, microcracking, and surface reconstruction. These failure modes are increasingly recognized to be coupled through heterogeneous Li+ transport across multiple length scales. Here we show that spatial variations in Li+ transport originate from atomic, structural, and interfacial factors and ultimately evolve into macroscopic chemo-mechanical degradation. On this basis, we introduce transport homogenization as a unifying design principle for regulating Li+ transport in NRLO cathodes. Within this framework, diverse material engineering strategies, including bulk structural design, interfacial transport engineering, and dynamic transport regulation, are interpreted from a common transport-centered perspective. We further summarize emerging characterization approaches for quantifying transport heterogeneity and discuss future opportunities for establishing predictive cross-scale design principles. Overall, this review establishes a transport-centered framework that unifies degradation in NRLO cathodes and provides a mechanistic basis for rational design of next-generation high-energy-density cathode materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75335",
+        "doi_url": "https://doi.org/10.1002/adma.75335",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42960618/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review investigates degradation mechanisms in nickel-rich layered oxide (NRLO) cathodes by linking heterogeneous Li+ transport across atomic to macroscopic scales to phase transitions, microcracking, and surface reconstruction. It proposes 'transport homogenization' as a unifying design principle to mitigate degradation through bulk structural, interfacial, and dynamic strategies. The study establishes a framework for rational cathode design targeting high-energy-density batteries.\",\n  \"key_findings\": [\n    \"Heterogeneous Li+ transport across multiple length scales drives NRLO cathode degradation\",\n    \"Transport homogenization unifies degradation mechanisms and enables rational design strategies\",\n    \"Emerging characterization methods quantify transport heterogeneity for cross-scale design\"\n  ],\n  \"scientific_significance\": \"This work provides a mechanistic framework for understanding and mitigating degradation in high-energy-density nickel-rich cathodes by unifying transport heterogeneity with structural stability.\"\n}",
+        "parsed": {
+          "summary": "This review investigates degradation mechanisms in nickel-rich layered oxide (NRLO) cathodes by linking heterogeneous Li+ transport across atomic to macroscopic scales to phase transitions, microcracking, and surface reconstruction. It proposes 'transport homogenization' as a unifying design principle to mitigate degradation through bulk structural, interfacial, and dynamic strategies. The study establishes a framework for rational cathode design targeting high-energy-density batteries.",
+          "key_findings": [
+            "Heterogeneous Li+ transport across multiple length scales drives NRLO cathode degradation",
+            "Transport homogenization unifies degradation mechanisms and enables rational design strategies",
+            "Emerging characterization methods quantify transport heterogeneity for cross-scale design"
+          ],
+          "scientific_significance": "This work provides a mechanistic framework for understanding and mitigating degradation in high-energy-density nickel-rich cathodes by unifying transport heterogeneity with structural stability."
+        },
+        "elapsed_seconds": 45.7273,
+        "input_tokens": 674,
+        "output_tokens": 190,
+        "thoughts_tokens": null,
+        "total_tokens": 864,
+        "model_eval_seconds": 32.9998,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43044482",
+        "title": "Acid-triggered carboxymethyl chitosan-stabilized synchronously mineralized collagen modified implants: Osteoimmunity regulation of bone defect repair in osteoporosis.",
+        "abstract": "NA: Carboxymethyl chitosan (CMC)-stabilized amorphous strontium carbonate was integrated into synchronously mineralized collagen and covalently immobilized on polyetheretherketone (PEEK) to construct an acid-responsive osteoimmunomodulatory interface (GP-SSMC) for osteoporotic bone repair. In the acidic osteoporotic microenvironment, the protonation of carboxyl groups on CMC molecules accelerated Sr2+ release in situ while enabling adaptive modulation of interfacial properties. This response reprogrammed macrophages toward a c-Maf-associated M2 phenotype, increased IL-10 production, suppressed osteoclastogenesis, and shifted the TH17/Treg balance toward a regenerative immune state. GP-SSMC also promoted osteogenic differentiation of BMSCs and enhanced peri-implant bone formation in vivo. In an osteoporotic rabbit femoral defect model, GP-SSMC increased BV/TV by 97.3% compared with unmodified PEEK at 8 weeks. These findings demonstrate that a CMC-directed synchronously mineralized collagen interface can translate pathological acidity into adaptive Sr2+ delivery and coordinated osteoimmune regulation, providing a promising strategy for osseointegration in osteoporotic bone defects.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.bioadv.2026.215303",
+        "doi_url": "https://doi.org/10.1016/j.bioadv.2026.215303",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43044482/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Biomaterials advances",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated an acid-responsive biomaterial designed for osteoporotic bone repair. The researchers created a composite implant using carboxymethyl chitosan-stabilized strontium carbonate integrated into synchronously mineralized collagen, covalently attached to PEEK. In acidic osteoporotic conditions, protonation of CMC accelerated strontium release, reprogramming macrophages to an M2 phenotype, increasing IL-1:0 production, suppressing osteoclastogenesis, and shifting immune balance toward regeneration. The implant enhanced bone formation in vivo, increasing bone volume fraction by 97.3% compared to unmodified PEEK in rabbit femoral defects at 8 weeks.\",\n  \"key_findings\": [\n    \"Acid-triggered strontium release from CMC-stabilized strontium carbonate in osteoporotic microenvironments\",\n    \"Reprogramming of macrophages toward an M2 phenotype and increased IL-10 production\",\n    \"97.3% increase in bone volume fraction compared to unmodified PEEK in osteoporotic rabbit femoral defects\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a mechanism for translating pathological acidity into targeted osteoimmune regulation and strontium delivery, offering a novel strategy for enhancing bone repair in osteoporosis.\"\n}",
+        "parsed": {
+          "summary": "This study investigated an acid-responsive biomaterial designed for osteoporotic bone repair. The researchers created a composite implant using carboxymethyl chitosan-stabilized strontium carbonate integrated into synchronously mineralized collagen, covalently attached to PEEK. In acidic osteoporotic conditions, protonation of CMC accelerated strontium release, reprogramming macrophages to an M2 phenotype, increasing IL-1:0 production, suppressing osteoclastogenesis, and shifting immune balance toward regeneration. The implant enhanced bone formation in vivo, increasing bone volume fraction by 97.3% compared to unmodified PEEK in rabbit femoral defects at 8 weeks.",
+          "key_findings": [
+            "Acid-triggered strontium release from CMC-stabilized strontium carbonate in osteoporotic microenvironments",
+            "Reprogramming of macrophages toward an M2 phenotype and increased IL-10 production",
+            "97.3% increase in bone volume fraction compared to unmodified PEEK in osteoporotic rabbit femoral defects"
+          ],
+          "scientific_significance": "This work demonstrates a mechanism for translating pathological acidity into targeted osteoimmune regulation and strontium delivery, offering a novel strategy for enhancing bone repair in osteoporosis."
+        },
+        "elapsed_seconds": 64.9747,
+        "input_tokens": 725,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 996,
+        "model_eval_seconds": 50.4533,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015475",
+        "title": "Human land use drives microplastic abundance in terrestrial wildlife.",
+        "abstract": "NA: Plastic pollution is a defining feature of the Anthropocene1, and microplastics are dispersed by air and water into even remote terrestrial habitats2-7, yet the ecological and landscape-level processes that shape microplastic accumulation in terrestrial ecosystems remain poorly understood. Human land-use change is rapidly transforming landscapes worldwide, but the influence of this expanding human footprint on the microplastic burdens in wildlife remains largely unknown. This knowledge gap is particularly pressing in regions that are facing escalating environmental pressures, such as Brazil. Here we pair in vivo microplastic measurements with high-resolution tracking data from lowland tapirs and giant anteaters across Brazil and show that the microplastic burdens carried by free-ranging mammals increase with both the magnitude of their human footprint exposure and their proximity to development and waste management infrastructure. Microplastics were also detected in the blood of individuals occupying seemingly pristine habitats far from development, suggesting that direct exposure to human-modified landscapes is unlikely to be the sole driver of systemic microplastic burdens. In a period of accelerating global land-use change, these findings reveal how individual habitat use and anthropogenic land-use change interact to shape wildlife exposure to microplastics and suggest that managing animals' proximity to development and waste management infrastructure may reduce the microplastic burdens carried by terrestrial wildlife.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11285-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11285-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015475/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how human land use affects microplastic accumulation in terrestrial wildlife. Using in vivo microplastic measurements and tracking data from lowland tapirs and giant anteaters across Brazil, researchers found that microplastic burdens increase with human footprint exposure and proximity to development infrastructure. Microplastics were also detected in remote areas, indicating indirect pathways beyond direct human landscape exposure. The findings highlight the interaction between habitat use and land-use change in shaping wildlife microplastic exposure.\",\n  \"key_findings\": [\n    \"Microplastic burdens in free-ranging mammals rise with human footprint exposure and proximity to development infrastructure\",\n    \"Microplastics detected in remote habitats far from development, suggesting indirect exposure pathways\",\n    \"Individual habitat use and anthropogenic land-use change jointly influence wildlife microplastic accumulation\"\n  ],\n  \"scientific_significance\": \"This research identifies critical interactions between human land-use change and wildlife microplastic exposure, providing foundational insights into the ecological mechanisms driving microplastic accumulation in terrestrial ecosystems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how human land use affects microplastic accumulation in terrestrial wildlife. Using in vivo microplastic measurements and tracking data from lowland tapirs and giant anteaters across Brazil, researchers found that microplastic burdens increase with human footprint exposure and proximity to development infrastructure. Microplastics were also detected in remote areas, indicating indirect pathways beyond direct human landscape exposure. The findings highlight the interaction between habitat use and land-use change in shaping wildlife microplastic exposure.",
+          "key_findings": [
+            "Microplastic burdens in free-ranging mammals rise with human footprint exposure and proximity to development infrastructure",
+            "Microplastics detected in remote habitats far from development, suggesting indirect exposure pathways",
+            "Individual habitat use and anthropogenic land-use change jointly influence wildlife microplastic accumulation"
+          ],
+          "scientific_significance": "This research identifies critical interactions between human land-use change and wildlife microplastic exposure, providing foundational insights into the ecological mechanisms driving microplastic accumulation in terrestrial ecosystems."
+        },
+        "elapsed_seconds": 51.464,
+        "input_tokens": 689,
+        "output_tokens": 210,
+        "thoughts_tokens": null,
+        "total_tokens": 899,
+        "model_eval_seconds": 38.1741,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42961030",
+        "title": "Multi-Hydrogen Adsorption as a Dynamic Electronic Gate for Ultrafast Interfacial Charge Transfer.",
+        "abstract": "NA: Reactive materials operate under dynamically evolving adsorption environments, yet how cooperative adsorbates reshape interfacial electronic structure and charge-transfer kinetics remains poorly understood. Here we show that multi-hydrogen adsorption can function as a dynamic electronic gate that reprograms interfacial charge-transfer energetics. Using a sulfur-rich amorphous CoReS2+x cocatalyst as a model system, we demonstrate that abundant unsaturated sulfur sites enable cooperative multi-hydrogen adsorption, which induces spontaneous electron delocalization and generates an electron-deficient interfacial state. This adsorption-driven electronic redistribution reverses the thermodynamic directionality of electron injection from CdZnS, converting an originally endothermic process into a spontaneous one. Femtosecond transient absorption spectroscopy further reveals that the gated interface accelerates interfacial electron transfer to the ultrafast regime, in agreement with first-principles calculations. The resulting a-CoReS2+x/CdZnS system achieves highly efficient photocatalytic hydrogen evolution from biomass-derived formic acid with an apparent quantum efficiency of 67.8%. More broadly, these findings establish multi-adsorbate-induced electronic gating as a general mechanism for dynamically programming interfacial charge transfer in catalytic and energy-conversion materials operating under realistic reactive environments.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75551",
+        "doi_url": "https://doi.org/10.1002/adma.75551",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42961030/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how cooperative multi-hydrogen adsorption dynamically modulates interfacial charge transfer in catalytic systems. Using a sulfur-rich CoReS2+x cocatalyst, the researchers demonstrated that abundant unsaturated sulfur sites facilitate multi-hydrogen adsorption, inducing electron delocalization and creating an electron-deficient inter. This adsorption-driven electronic redistribution reverses electron injection thermodynamics from endothermic to spontaneous, accelerating charge transfer to ultrafast timescales. The system achieves 67.8% apparent quantum efficiency for hydrogen evolution from formic acid.\",\n  \"key_findings\": [\n    \"Cooperative multi-hydrogen adsorption on sulfur-rich CoReS2+x cocatalyst enables dynamic electronic gating\",\n    \"Adsorption-induced electron delocalization creates an electron-deficient interfacial state\",\n    \"The gated interface converts endothermic electron injection into spontaneous transfer with ultrafast kinetics\"\n  ],\n  \"scientific_significance\": \"This work establishes multi-adsorbate-induced electronic gating as a general mechanism for dynamically programming interfacial charge transfer in catalytic and energy-conversion materials under reactive conditions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how cooperative multi-hydrogen adsorption dynamically modulates interfacial charge transfer in catalytic systems. Using a sulfur-rich CoReS2+x cocatalyst, the researchers demonstrated that abundant unsaturated sulfur sites facilitate multi-hydrogen adsorption, inducing electron delocalization and creating an electron-deficient inter. This adsorption-driven electronic redistribution reverses electron injection thermodynamics from endothermic to spontaneous, accelerating charge transfer to ultrafast timescales. The system achieves 67.8% apparent quantum efficiency for hydrogen evolution from formic acid.",
+          "key_findings": [
+            "Cooperative multi-hydrogen adsorption on sulfur-rich CoReS2+x cocatalyst enables dynamic electronic gating",
+            "Adsorption-induced electron delocalization creates an electron-deficient interfacial state",
+            "The gated interface converts endothermic electron injection into spontaneous transfer with ultrafast kinetics"
+          ],
+          "scientific_significance": "This work establishes multi-adsorbate-induced electronic gating as a general mechanism for dynamically programming interfacial charge transfer in catalytic and energy-conversion materials under reactive conditions."
+        },
+        "elapsed_seconds": 58.2912,
+        "input_tokens": 705,
+        "output_tokens": 238,
+        "thoughts_tokens": null,
+        "total_tokens": 943,
+        "model_eval_seconds": 44.6791,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43044626",
+        "title": "Neoadjuvant nivolumab plus ipilimumab in surgically resectable hepatocellular carcinoma (PRIME-HCC): a prospective, phase 1b, single-arm trial and translational analyses.",
+        "abstract": "BACKGROUND: Nivolumab plus ipilimumab improves survival in advanced hepatocellular carcinoma. We evaluated this combination as neoadjuvant therapy and investigated its effect on peripheral immunity and the tumour microenvironment.\nMETHODS: PRIME-HCC is a single-arm, phase 1b trial in adults (aged ≥18 years) with early-stage resectable hepatocellular carcinoma, Child-Pugh A liver function, and Eastern Cooperative Oncology Group performance status 0-1. Patients received nivolumab (3 mg/kg intravenously on days 1 and 22 of the first and second cycle) and ipilimumab (1 mg/kg intravenously on day 1 of the first cycle only) before liver resection. The primary endpoint was safety, assessed by treatment-related delays to surgery and adverse events in the intention-to-treat population. Translational analyses included imaging mass cytometry and spatial transcriptomics on paired tumour samples, peripheral immunophenotyping, T-cell receptor (TCR) β sequencing, and longitudinal tumour-agnostic circulating tumour DNA (ctDNA) profiling. This trial was registered with EudraCT (2018-000987-27) and ClinicalTrials.gov (NCT03682276); follow-up is currently ongoing.\nFINDINGS: Between Sept 18, 2019, and Sept 28, 2023, of 43 patients assessed for eligibility, 33 patients were enrolled (25 [76%] male and 8 [24%] female; median age 68 years [range 38-80; IQR 63-73]); median follow-up was 25·7 months (95% CI 21·2-30·1). Any-grade adverse events occurred in 31 (94%) of patients, with treatment-related adverse events (trAEs) in 25 (76%) patients. Grade 3 trAEs occurred in three (9%) patients (transaminase elevation, anaemia, and dyspnoea). Serious adverse events were recorded in three (9%) patients, and no grade 4-5 events or treatment-related deaths occurred. 30 (91%) patients underwent surgery, including two (6%) who had immune checkpoint inhibitor-related surgical delays. Objective response rate by RECIST 1.1 was noted in eight (25%; 95% CI 13-42) patients (one complete response and seven partial responses), with 31 (97%; 84-100) patients achieving disease control. The absence of ctDNA after surgery was associated with improved 2-year recurrence-free survival (nine [82%] of 11 patients vs two [29%] of seven; p=0·049), as was at least 50% ctDNA reduction (median not reached [95% CI not reached] vs 20·9 months [95% CI 16·3-25·4]; HR 0·14 [95% CI 0·02-0·91]; p=0·039). Patients with objective responses showed expansion of peripheral PD-1-positive, Ki-67-positive, CD8-positive T cells (T-responding exhausted cells [Tresp]), associated with higher baseline intratumoral progenitor-exhausted T cells (Tpex) and increased Tresp infiltration. Patients whose disease did not respond to treatment exhibited enrichment of terminally exhausted CD8-positive T cells (Tex-term; CD8-positive PD-1-positive TOX-positive cells) and regulatory T cells.\nINTERPRETATION: Neoadjuvant nivolumab plus ipilimumab is feasible in early-stage resectable hepatocellular carcinoma, and later-phase randomised trials are needed to confirm the efficacy of this treatment strategy. Longitudinal ctDNA monitoring could support detection of minimal residual disease and warrants further prospective validation.\nFUNDING: Bristol Myers Squibb, Cancer Research UK, Associazione Italiana per la Ricerca sul Cancro, and Foundation for Liver Research.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/S1470-2045(26)00331-1",
+        "doi_url": "https://doi.org/10.1016/S1470-2045(26)00331-1",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43044626/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "The Lancet. Oncology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This phase 1b trial assessed neoadjuvant nivolumab and ipilimumab in resectable hepatocellular carcinoma. Patients received the combination before surgery to evaluate safety, immune responses, and tumor microenvironment changes. The regimen was feasible with 91% surgical completion and 25% objective response rate. ctDNA clearance post-surgery correlated with improved recurrence-free survival, while T-cell responses linked to treatment efficacy.\",\n  \"key_findings\": [\n    \"Neoadjuvant nivolumab plus ipilimumab was feasible with 91% of patients undergoing surgery\",\n    \"Objective response rate was 25% (8/33 patients) with disease control in 97%\",\n    \"Absence of circulating tumor DNA after surgery predicted 2-year recurrence-free survival\"\n  ],\n  \"scientific_significance\": \"This study provides early evidence that neoadjuvant immune checkpoint inhibition can modify tumor immunity and predict recurrence in hepatocellular carcinoma, supporting the potential for ctDNA monitoring in post-resection surveillance.\"\n}",
+        "parsed": {
+          "summary": "This phase 1b trial assessed neoadjuvant nivolumab and ipilimumab in resectable hepatocellular carcinoma. Patients received the combination before surgery to evaluate safety, immune responses, and tumor microenvironment changes. The regimen was feasible with 91% surgical completion and 25% objective response rate. ctDNA clearance post-surgery correlated with improved recurrence-free survival, while T-cell responses linked to treatment efficacy.",
+          "key_findings": [
+            "Neoadjuvant nivolumab plus ipilimumab was feasible with 91% of patients undergoing surgery",
+            "Objective response rate was 25% (8/33 patients) with disease control in 97%",
+            "Absence of circulating tumor DNA after surgery predicted 2-year recurrence-free survival"
+          ],
+          "scientific_significance": "This study provides early evidence that neoadjuvant immune checkpoint inhibition can modify tumor immunity and predict recurrence in hepatocellular carcinoma, supporting the potential for ctDNA monitoring in post-resection surveillance."
+        },
+        "elapsed_seconds": 91.7099,
+        "input_tokens": 1357,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 1581,
+        "model_eval_seconds": 47.3351,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015476",
+        "title": "Transient nuclear softening for zygotic gene activation in mice.",
+        "abstract": "NA: Nuclei in early mammalian embryos undergo epigenetic reprogramming that enables the zygote to develop into a complete organism. Whereas changes in chromatin state during this critical transition period have been extensively studied1-3, changes in the nucleus that houses chromatin remain poorly understood. Here, using direct organelle capture and biophysical manipulation methods, we find that nuclei attain profound softness and plasticity during the two-cell embryonic stage in mice, facilitating major zygotic gene activation. The prominent nuclear deformability is attributable to the rapid clearance of lamin B1 from the nuclear envelope by the autophagy factor LC3. Nuclear stiffening by lamin B1 retention or its overloading results in incomplete activation of zygotic genes and impaired development. However, embryos that maintain nuclear deformability escape from this transcriptional interference. High-resolution microscopy and sequential three-dimensional fluorescence in situ hybridization analyses revealed an accumulation of active RNA polymerase II and coordinated positioning of key genomic loci near the deformable nuclear envelope. An engineered molecular tether that stiffens the nuclei restricts these nuclear activities and suppresses expression of key zygotic gene activation genes. Together, our study identifies a distinct physical nuclear state that embryos acquire at the beginning of life that supports the initiation of the zygotic transcription program.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11240-w",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11240-w",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015476/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated nuclear physical properties during early mouse embryonic development, focusing on zygotic gene activation. Using direct organelle capture and biophysical methods, researchers discovered transient nuclear softening at the two-cell stage. This softness, driven by rapid lamin B1 clearance via autophagy, enables efficient zygotic gene activation. Nuclei that remain stiff due to lamin B1 retention show incomplete gene activation and developmental failure. The findings highlight a critical physical state necessary for initiating embryonic transcription.\",\n  \"key_findings\": [\n    \"Nuclei exhibit transient softening at the two-cell stage in mice\",\n    \"Lamin B1 clearance via autophagy (LC3) enables nuclear deformability\",\n    \"Nuclear stiffening from lamin B1 retention impairs zygotic gene activation\"\n  ],\n  \"scientific_significance\": \"The study establishes a physical mechanism linking nuclear mechanics to zygotic gene activation, revealing how transient nuclear softening facilitates embryonic development.\"\n}",
+        "parsed": {
+          "summary": "This study investigated nuclear physical properties during early mouse embryonic development, focusing on zygotic gene activation. Using direct organelle capture and biophysical methods, researchers discovered transient nuclear softening at the two-cell stage. This softness, driven by rapid lamin B1 clearance via autophagy, enables efficient zygotic gene activation. Nuclei that remain stiff due to lamin B1 retention show incomplete gene activation and developmental failure. The findings highlight a critical physical state necessary for initiating embryonic transcription.",
+          "key_findings": [
+            "Nuclei exhibit transient softening at the two-cell stage in mice",
+            "Lamin B1 clearance via autophagy (LC3) enables nuclear deformability",
+            "Nuclear stiffening from lamin B1 retention impairs zygotic gene activation"
+          ],
+          "scientific_significance": "The study establishes a physical mechanism linking nuclear mechanics to zygotic gene activation, revealing how transient nuclear softening facilitates embryonic development."
+        },
+        "elapsed_seconds": 51.0774,
+        "input_tokens": 697,
+        "output_tokens": 209,
+        "thoughts_tokens": null,
+        "total_tokens": 906,
+        "model_eval_seconds": 37.8179,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42963326",
+        "title": "Thermodynamically Guided Antisite Ordering Stabilizes Cobalt-Free Ultrahigh-Ni Cathodes.",
+        "abstract": "NA: Eliminating Co from ultrahigh-Ni layered cathodes often exacerbates Li/Ni mixing, impeding Li+ transport, amplifying reaction heterogeneity, and accelerating structural degradation. Most strategies focus on minimizing the overall degree of cation mixing, whereas thermodynamic control of antisite spatial organization remains underexplored. Here, we address this central stability challenge by developing a thermodynamics-guided defect-engineering strategy that stabilizes spatially correlated Li/Ni antisite configurations in cobalt-free ultrahigh-Ni cathodes. Density functional theory screening of high-valence dopants reveals that Te6+ exhibits the strongest energetic preference for spatially correlated antisite configurations. This prediction guides the synthesis of LiNi0.948Al0.045Te0.007O2 containing coherent local antisite-ordered superlattice domains. These ordered domains persist after prolonged cycling, strengthen interlayer coupling, suppress H2-H3 phase separation and c-axis contraction, and preserve low-barrier Li+ migration pathways. Local Te-O coordination further stabilizes lattice oxygen and mitigates oxygen-loss-induced surface reconstruction. Consequently, the cathode delivers 185 mAh g-1 at 10 C, retains 96.7% of its initial capacity after 200 cycles at 1 C with a 4.4 V cutoff, and retains 92% of its initial capacity after 100 cycles with a 4.6 V cutoff. These findings establish the spatial organization of defects as a critical design variable for mitigating the stability-transport trade-off in cobalt-free ultrahigh-Ni layered cathodes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75568",
+        "doi_url": "https://doi.org/10.1002/adma.75568",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42963326/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates stabilizing cobalt-free ultrahigh-nickel layered cathodes by thermodynamically guiding antisite ordering. Using density functional theory, researchers identified tellurium as a dopant that promotes spatially correlated Li/Ni antisite configurations. The synthesized cathode, LiNi0.948Al0.045Te0.007O2, exhibits ordered domains that enhance structural stability, suppress phase transitions, and maintain high capacity retention (96.7% after 200 cycles at 1 C) and Li+ transport. The approach demonstrates defect spatial organization as a key strategy to balance stability and electrochemical performance.\",\n  \"key_findings\": [\n    \"Tellurium doping induces spatially correlated Li/Ni antisite configurations in cobalt-free ultrahigh-nickel cathodes\",\n    \"Ordered domains persist during cycling, suppressing phase separation and c-axis contraction\",\n    \"The cathode maintains 96.7% capacity retention after 200 cycles at 1 C with a 4.4 V cutoff\"\n  ],\n  \"scientific_significance\": \"This work establishes defect spatial organization as a critical design principle for stabilizing high-nickel cathodes without cobalt, addressing the stability-transport trade-off through thermodynamic control of antisite configurations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates stabilizing cobalt-free ultrahigh-nickel layered cathodes by thermodynamically guiding antisite ordering. Using density functional theory, researchers identified tellurium as a dopant that promotes spatially correlated Li/Ni antisite configurations. The synthesized cathode, LiNi0.948Al0.045Te0.007O2, exhibits ordered domains that enhance structural stability, suppress phase transitions, and maintain high capacity retention (96.7% after 200 cycles at 1 C) and Li+ transport. The approach demonstrates defect spatial organization as a key strategy to balance stability and electrochemical performance.",
+          "key_findings": [
+            "Tellurium doping induces spatially correlated Li/Ni antisite configurations in cobalt-free ultrahigh-nickel cathodes",
+            "Ordered domains persist during cycling, suppressing phase separation and c-axis contraction",
+            "The cathode maintains 96.7% capacity retention after 200 cycles at 1 C with a 4.4 V cutoff"
+          ],
+          "scientific_significance": "This work establishes defect spatial organization as a critical design principle for stabilizing high-nickel cathodes without cobalt, addressing the stability-transport trade-off through thermodynamic control of antisite configurations."
+        },
+        "elapsed_seconds": 67.4909,
+        "input_tokens": 784,
+        "output_tokens": 278,
+        "thoughts_tokens": null,
+        "total_tokens": 1062,
+        "model_eval_seconds": 50.4163,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
