@@ -1,0 +1,944 @@
+{
+  "schema_version": 1,
+  "run_id": "20261123T121304Z",
+  "generated_at_utc": "2026-11-23 12:34:04 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 217,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42920390",
+        "title": "Bridging the Gap Between Photocatalytic Water Oxidation Half-Reaction and Stoichiometric Pure Water Splitting Over Ta3N5 via Cocatalyst Engineering.",
+        "abstract": "NA: Despite significant progress in photocatalytic half-reactions and photoelectrochemical water oxidation, achieving stable photocatalytic pure water splitting over Ta3N5 remains a long-standing challenge. Herein, the incompatibility of cocatalysts between alkaline photocatalytic water oxidation systems and pure water splitting is identified as a critical bottleneck, leading to serious N2 generation through photocorrosion. To address this challenge, a highly dispersed RuCoOx cocatalyst is developed via a multi-step incipient wetness impregnation strategy. The optimized Pt@Cr2O3/Ta3N5/RuCoOx achieves stoichiometric pure water splitting with an apparent quantum yield of 0.72% at 420 nm, representing the highest value reported for Ta-based nitride/oxynitride photocatalysts to date. Mechanistic studies reveal that an enhanced interfacial electric field facilitates hole extraction, while a reduced formation barrier of key intermediates accelerates surface reaction kinetics, thereby overcoming the long-standing bottleneck in photocatalytic pure water splitting over Ta3N5. This work establishes cocatalyst compatibility as a key design consideration for stable photocatalytic pure water splitting and provides mechanistic insight for the rational design of advanced nitride and oxynitride photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75490",
+        "doi_url": "https://doi.org/10.1002/adma.75490",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42920390/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of achieving stable stoichiometric pure water splitting over Ta3N5 by identifying incompatibility between cocatalysts in alkaline water oxidation and pure water splitting as a critical bottleneck. Using a multi-step incipient wetness impregnation strategy, researchers developed a highly dispersed RuCoOx cocatalyst. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved 0.72% apparent quantum yield at 420 nm for pure water splitting, overcoming photocorrosion-induced N2 generation through enhanced hole extraction and reduced reaction barriers at the interface.\",\n  \"key_findings\": [\n    \"Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck causing photocorrosion and N2 generation\",\n    \"Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation\",\n    \"Achievement of 0.72% apparent quantum yield at 420 nm for stoichiometric pure water splitting with Pt@Cr2O3/Ta3N5/RuCoOx\"\n  ],\n  \"scientific_significance\": \"This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic pure water splitting, providing mechanistic insights for advancing nitride and oxynitride photocatalysts.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of achieving stable stoichiometric pure water splitting over Ta3N5 by identifying incompatibility between cocatalysts in alkaline water oxidation and pure water splitting as a critical bottleneck. Using a multi-step incipient wetness impregnation strategy, researchers developed a highly dispersed RuCoOx cocatalyst. The optimized Pt@Cr2O3/Ta3N5/RuCoOx system achieved 0.72% apparent quantum yield at 420 nm for pure water splitting, overcoming photocorrosion-induced N2 generation through enhanced hole extraction and reduced reaction barriers at the interface.",
+          "key_findings": [
+            "Identification of cocatalyst incompatibility between alkaline water oxidation and pure water splitting as a bottleneck causing photocorrosion and N2 generation",
+            "Development of a highly dispersed RuCoOx cocatalyst via multi-step incipient wetness impregnation",
+            "Achievement of 0.72% apparent quantum yield at 420 nm for stoichiometric pure water splitting with Pt@Cr2O3/Ta3N5/RuCoOx"
+          ],
+          "scientific_significance": "This work establishes cocatalyst compatibility as a fundamental design principle for stable photocatalytic pure water splitting, providing mechanistic insights for advancing nitride and oxynitride photocatalysts."
+        },
+        "elapsed_seconds": 60.841,
+        "input_tokens": 724,
+        "output_tokens": 293,
+        "thoughts_tokens": null,
+        "total_tokens": 1017,
+        "model_eval_seconds": 47.3955,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43035126",
+        "title": "Guilty by marker? Reassessing the pro-tumor reputation of antigen-presenting M2-like macrophages.",
+        "abstract": "NA: M2-like tumor-associated macrophages (TAMs) are widely regarded as immunosuppressive on the basis of surface markers such as CD206 and CD163, an inference drawn largely from in vitro polarization studies rather than tested directly in the tumor-derived cells to which it is applied. This review asks what functional evidence, specifically assays of phagocytosis, antigen processing, cross-presentation, and CD8+ T cell activation, says about M2-like macrophages in cancer. A three-tier evidence framework is used to grade studies by whether they test function and whether that function is shown to be causal, applied equally to studies supporting and opposing an antitumor role for these cells. Functional evidence shows that some CD206+ or M2a-like macrophages, including ones sorted directly from tumors, can cross-present tumor antigen and activate CD8+ T cells at levels comparable with conventional type 1 dendritic cells, and that this capacity is associated with better outcomes in at least one setting. Counter-evidence shows that antigen-presenting macrophages, not always M2-like by the studies' own definitions, can instead retain cytotoxic T cells in tumor-promoting configurations or activate regulatory T cells. Across both bodies of evidence, antigen fate and co-stimulatory context are more informative about outcome than the M1/M2 marker itself. This review's claim is normative, not historical: a marker cannot by itself define function, so it cannot settle whether M2-like macrophages are pro-tumor or antitumor. Evidence is accordingly narrowed to antigen-presenting, largely CD206hi/M2a-like, macrophages, and a minimum reporting standard is proposed for future studies.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.critrevonc.2026.105702",
+        "doi_url": "https://doi.org/10.1016/j.critrevonc.2026.105702",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43035126/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Critical reviews in oncology/hematology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review reassesses the pro-tumor role of M2-like tumor-associated macrophages (TAMs) by evaluating functional evidence from in vitro and tumor-derived studies. It examines phagocytosis, antigen processing, cross-presentation, and CD8+ T cell activation. Findings indicate that some CD206+ TAMs can cross-present tumor antigens and activate CD8+ T cells comparably to dendritic cells, correlating with improved outcomes. Conversely, other macrophages may promote immunosuppression. The study emphasizes that antigen fate and co-stimulatory context, not M1/M2 markers, determine functional outcomes.\",\n  \"key_findings\": [\n    \"CD206+ tumor-associated macrophages can cross-present tumor antigens and activate CD8+ T cells at levels comparable to conventional dendritic cells\",\n    \"These macrophages correlate with better clinical outcomes in specific contexts\",\n    \"Antigen-presenting macrophages may either activate cytotoxic T cells or promote regulatory T cell activity depending on co-stimulatory context\"\n  ],\n  \"scientific_significance\": \"This review establishes that functional capacity, not M1/M2 marker expression, determines the immunological role of tumor-associated macrophages in cancer, shifting the focus from static markers to dynamic antigen-presenting mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This review reassesses the pro-tumor role of M2-like tumor-associated macrophages (TAMs) by evaluating functional evidence from in vitro and tumor-derived studies. It examines phagocytosis, antigen processing, cross-presentation, and CD8+ T cell activation. Findings indicate that some CD206+ TAMs can cross-present tumor antigens and activate CD8+ T cells comparably to dendritic cells, correlating with improved outcomes. Conversely, other macrophages may promote immunosuppression. The study emphasizes that antigen fate and co-stimulatory context, not M1/M2 markers, determine functional outcomes.",
+          "key_findings": [
+            "CD206+ tumor-associated macrophages can cross-present tumor antigens and activate CD8+ T cells at levels comparable to conventional dendritic cells",
+            "These macrophages correlate with better clinical outcomes in specific contexts",
+            "Antigen-presenting macrophages may either activate cytotoxic T cells or promote regulatory T cell activity depending on co-stimulatory context"
+          ],
+          "scientific_significance": "This review establishes that functional capacity, not M1/M2 marker expression, determines the immunological role of tumor-associated macrophages in cancer, shifting the focus from static markers to dynamic antigen-presenting mechanisms."
+        },
+        "elapsed_seconds": 54.4473,
+        "input_tokens": 807,
+        "output_tokens": 278,
+        "thoughts_tokens": null,
+        "total_tokens": 1085,
+        "model_eval_seconds": 47.32,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42951957",
+        "title": "Stone and water governed early human settlement of the desert.",
+        "abstract": "NA: Models of early human dispersal rely on climate to predict where populations could settle, with freshwater assumed to govern the timing and geography1,2, particularly across the Saharo-Arabian arid belt, where humid windows episodically opened corridors into the desert interior3. Yet Pleistocene dispersals into 'Green Arabia' were brief and geographically constrained4,5, a pattern not explained by water availability alone. Here we show, from an approximately 1,500-km geoarchaeological survey through the Rub' al Khali of Arabia, the largest sand sea in the world, that the availability of stone for tool manufacture operated as an independent factor on early human settlement. Palaeolake deposits were recorded at 55 of 125 localities investigated, yet no lithic artefacts and no knappable raw materials were found along the transect, with ground-surface visibility exceeding 95%, despite abundant freshwater and contemporary occupation at the desert margins. Spatial modelling of the Peninsula supports the inference that settlement tracked the co-occurrence of water and lithic raw materials rather than water alone. Across the Peninsula, 57% of water-accessible terrain lies on formations that lack knappable stone and adding raw-material availability raises discrimination of known site locations from an area under the curve of 0.695 to 0.768. Convergent patterns from Africa, North America and Asia indicate that the constraint is not peculiar to Arabia. Dispersal models that omit raw-material geology may systematically overestimate the habitable range of stone-tool-dependent populations.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11180-5",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11180-5",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42951957/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the factors influencing early human settlement in desert regions, focusing on the role of lithic raw materials beyond water availability. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no stone tools or knappable materials despite abundant freshwater at 55 of 125 sites. Spatial modeling indicates settlement required co-occurrence of water and lithic resources, with 57% of water-accessible terrain lacking suitable stone. The findings suggest that raw-material geology critically constrains early human dispersal, challenging models that prioritize water alone.\",\n  \"key_findings\": [\n    \"No lithic artefacts or knappable raw materials were found along a 1,500-k:km survey transect despite abundant freshwater\",\n    \"57% of water-accessible terrain lacks knappable stone, indicating lithic resource constraints\",\n    \"Spatial modeling shows settlement tracked co-occurrence of water and lithic resources, not water alone\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that lithic raw material availability, not water, was a critical constraint on early human dispersal across arid regions, revealing a previously overlooked geological factor in human migration models.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the factors influencing early human settlement in desert regions, focusing on the role of lithic raw materials beyond water availability. Using a 1,500-km geoarchaeological survey across the Rub' al Khali desert, researchers found no stone tools or knappable materials despite abundant freshwater at 55 of 125 sites. Spatial modeling indicates settlement required co-occurrence of water and lithic resources, with 57% of water-accessible terrain lacking suitable stone. The findings suggest that raw-material geology critically constrains early human dispersal, challenging models that prioritize water alone.",
+          "key_findings": [
+            "No lithic artefacts or knappable raw materials were found along a 1,500-k:km survey transect despite abundant freshwater",
+            "57% of water-accessible terrain lacks knappable stone, indicating lithic resource constraints",
+            "Spatial modeling shows settlement tracked co-occurrence of water and lithic resources, not water alone"
+          ],
+          "scientific_significance": "The study demonstrates that lithic raw material availability, not water, was a critical constraint on early human dispersal across arid regions, revealing a previously overlooked geological factor in human migration models."
+        },
+        "elapsed_seconds": 49.8644,
+        "input_tokens": 760,
+        "output_tokens": 263,
+        "thoughts_tokens": null,
+        "total_tokens": 1023,
+        "model_eval_seconds": 43.6108,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43000118",
+        "title": "Melting and resistivity of iron at Earth core conditions using pulsed Joule heating.",
+        "abstract": "NA: The melting temperature and electrical resistivity of iron at high pressure are essential for understanding Earth's core. Here we use a new high-pressure method - microsecond pulsed Joule heating in diamond anvil cells - to identify melting and measure resistivity of solid and liquid iron. More than 300 reproducible melting measurements indicate a surprisingly shallow melting curve, reaching 6 K/GPa and 4160 ± 80 K at 200 GPa. Extrapolating in pressure and iron alloy composition, and combining with our 76 [Formula: see text] cm measurement of liquid iron's resistivity, we infer a relatively cold core-mantle boundary (3430 K) with a low adiabatic outer core heat flow (9.8 TW). This suggests thermal convection alone could have powered the geodynamo prior to inner core formation and that today's lowermost mantle is fully solid.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeh5267",
+        "doi_url": "https://doi.org/10.1126/science.aeh5267",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43000118/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates iron's melting temperature and electrical resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve, reaching 6 K/GPa and  4160 ± 80 K at 200 GPa. The findings suggest a relatively cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), indicating thermal convection alone could power the geodynamo before inner core formation and that the lowermost mantle remains fully solid.\",\n  \"key_findings\": [\n    \"A shallow melting curve for iron at 200 GPa, reaching 4160 ± 80 K\",\n    \"Inferred core-mantle boundary temperature of 3430 K\",\n    \"Low adiabatic outer core heat flow of 9.8 TW\"\n  ],\n  \"scientific_significance\": \"The study provides critical constraints on iron's melting behavior and resistivity at high pressures, advancing understanding of Earth's core thermal evolution and geodynamo mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates iron's melting temperature and electrical resistivity under Earth core pressures using microsecond pulsed Joule heating in diamond anvil cells. Over 300 reproducible melting measurements reveal a shallow melting curve, reaching 6 K/GPa and  4160 ± 80 K at 200 GPa. The findings suggest a relatively cold core-mantle boundary (3430 K) and low adiabatic outer core heat flow (9.8 TW), indicating thermal convection alone could power the geodynamo before inner core formation and that the lowermost mantle remains fully solid.",
+          "key_findings": [
+            "A shallow melting curve for iron at 200 GPa, reaching 4160 ± 80 K",
+            "Inferred core-mantle boundary temperature of 3430 K",
+            "Low adiabatic outer core heat flow of 9.8 TW"
+          ],
+          "scientific_significance": "The study provides critical constraints on iron's melting behavior and resistivity at high pressures, advancing understanding of Earth's core thermal evolution and geodynamo mechanisms."
+        },
+        "elapsed_seconds": 42.9285,
+        "input_tokens": 630,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 878,
+        "model_eval_seconds": 38.8998,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42947628",
+        "title": "4f-Electron-Regulated Dual-Periodic Bonding Evolution Across the Lanthanide Series.",
+        "abstract": "NA: Lanthanide-based catalysts have attracted increasing attention due to their unique electronic structures, yet the relationship between 4f electron evolution and catalytic behavior remains unclear. Here, using structurally uniform lanthanide single-atom catalysts as a model platform, we systematically investigate the influence of 4f electron filling on bonding evolution across the lanthanide series. We reveal a dual-periodic trend in lanthanide-support binding energies and adsorbate bonding energies, which increases from La to Eu and from Gd to Yb. This behavior originates from progressive electron redistribution between 5d and 4f orbitals, which modulates the electron population of bonding orbitals. The half-filled 4f7 configuration induces an abrupt transition between Eu and Gd. Furthermore, similar crystal-field splitting enables robust linear relationships between binding and bonding energies across diverse coordination environments. More importantly, the persistence of these electronic characteristics across diverse coordination environments demonstrates that the dual-periodic evolution represents an intrinsic feature of lanthanide chemistry rather than a system-specific phenomenon. These findings establish a 4f-electron-regulated bonding framework for understanding lanthanide reactivity and guiding catalyst design.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75541",
+        "doi_url": "https://doi.org/10.1002/adma.75541",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42947628/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how 4f electron filling influences bonding evolution in lanthanide single-atom catalysts across the lanthanide series. Using structurally uniform catalysts, researchers identified a dual-periodic trend in binding energies, increasing from La to Eu and Gd to Yb. The trend arises from electron redistribution between 5d and 4f orbitals, with a sharp transition at the half-filled 4f7 configuration (Eu to Gd). The findings demonstrate intrinsic electronic behavior across coordination environments, providing a framework for understanding lanthanide reactivity and catalyst design.\",\n  \"key_findings\": [\n    \"A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and Gd to Yb\",\n    \"Half-filled 4f7 configuration causes an abrupt transition between Eu and Gd\",\n    \"Electron redistribution between 5d and 4f orbitals modulates bonding energies across diverse coordination environments\"\n  ],\n  \"scientific_significance\": \"The study establishes a fundamental 4f-electron-regulated bonding framework that explains intrinsic reactivity patterns in lanthanides, advancing understanding of how electronic structure governs catalytic behavior across the series.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how 4f electron filling influences bonding evolution in lanthanide single-atom catalysts across the lanthanide series. Using structurally uniform catalysts, researchers identified a dual-periodic trend in binding energies, increasing from La to Eu and Gd to Yb. The trend arises from electron redistribution between 5d and 4f orbitals, with a sharp transition at the half-filled 4f7 configuration (Eu to Gd). The findings demonstrate intrinsic electronic behavior across coordination environments, providing a framework for understanding lanthanide reactivity and catalyst design.",
+          "key_findings": [
+            "A dual-periodic trend in lanthanide-support binding energies increases from La to Eu and Gd to Yb",
+            "Half-filled 4f7 configuration causes an abrupt transition between Eu and Gd",
+            "Electron redistribution between 5d and 4f orbitals modulates bonding energies across diverse coordination environments"
+          ],
+          "scientific_significance": "The study establishes a fundamental 4f-electron-regulated bonding framework that explains intrinsic reactivity patterns in lanthanides, advancing understanding of how electronic structure governs catalytic behavior across the series."
+        },
+        "elapsed_seconds": 44.4842,
+        "input_tokens": 681,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 932,
+        "model_eval_seconds": 39.6674,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43036170",
+        "title": "Regulatory T-Cell Dynamics During and After Direct Acting Antivirals in Cirrhotic HCV Genotype 4 Patients.",
+        "abstract": "NA: We previously conducted longitudinal immunological studies in non-cirrhotic chronic hepatitis C patients treated with direct-acting antivirals (DAAs). However, whether cirrhosis alters these immunological dynamics remains unclear. We aimed to characterize regulatory T cells in HCV cirrhotic patients and evaluate their longitudinal changes during and following successful antiviral therapy in HCV cirrhotic patients. Fifty cirrhotic HCV genotype 4 patients and fifty age-matched healthy controls were enrolled. Peripheral blood mononuclear cells were analysed at baseline, week 4, end of treatment, and 1 year post-SVR using multicolour flow cytometry to quantify CD3+, CD4+, CD8+, PD-1+, and CD38+ exhausted/activated CD8+ T cells, TH1, TH2, TH17 subsets, and CD4+CD25+FoxP3+ regulatory T cells (Tregs). Longitudinal changes were assessed using linear mixed-effects models with FDR correction. At baseline, cirrhotic patients demonstrated marked immune dysregulation versus controls, with reduced CD3+ T cells, profound CD8+ T-cell exhaustion (PD-1+ 71.0% vs. 11.1%; p < 0.001), elevated CD38+ activation, depleted TH1 cells, and significant expansion of TH17 (25.8% vs. 14.0%; p < 0.001) and Tregs (52.7% vs. 15.1%; p < 0.001). Exhausted PD-1+ CD8+ cells declined by 66.2% at 1 year (q < 0.001), CD38+ CD8+ cells decreased by 31.3% (q < 0.001), and Tregs normalized (52.7%-9.6%; q < 0.001). TH1 and TH2 subsets increased, TH17 declined, and total CD3+/CD4+ T cells rose significantly by 1 year. In this single-centre cohort of compensated genotype 4 HCV-related cirrhosis, successful DAA therapy was associated with changes in circulating T-cell phenotypes, including reductions in Tregs, TH17 cells, and PD-1/CD38-expressing CD8+ T cells. These findings suggest partial improvement in peripheral immune dysregulation after viral clearance, but require confirmation in larger multicentre studies with functional assays and longer follow-up.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1111/jvh.70273",
+        "doi_url": "https://doi.org/10.1111/jvh.70273",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43036170/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of viral hepatitis",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated regulatory T-cell dynamics in cirrhotic HCV genotype 4 patients during and after direct-acting antiviral (DAA) therapy. Using longitudinal flow cytometry, researchers compared 50 cirrhotic patients and 50 healthy controls at baseline, week 4, end of treatment, and 1 year post-SVR. Findings revealed baseline immune dysregulation with reduced T cells, profound CD8+ exhaustion, elevated activation markers, and expanded Tregs and TH17 cells. By 1 year post-SVR, exhausted CD8+ cells decreased by 66.2%, Tregs normalized, and TH1/TH2 subsets increased, indicating partial immune recovery after viral clearance.\",\n  \"key_findings\": [\n    \"Baseline cirrhotic patients showed reduced CD3+ T cells and profound CD8+ T-cell exhaustion (PD-1+ 71.0% vs. 11.1%)\",\n    \"Tregs and TH17 cells were significantly elevated at baseline (52.7% vs. 15.1% and 25.8% vs. 14.0%)\",\n    \"By 1 year post-SVR, exhausted PD-1+ CD8+ cells declined by 66.2%, Tregs normalized, and TH1/TH2 subsets increased\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that successful DAA therapy in cirrhotic HCV genotype 4 patients induces partial correction of peripheral T-cell dysregulation, providing insights into immune recovery mechanisms post-viral clearance in chronic liver disease.\"\n}",
+        "parsed": {
+          "summary": "This study investigated regulatory T-cell dynamics in cirrhotic HCV genotype 4 patients during and after direct-acting antiviral (DAA) therapy. Using longitudinal flow cytometry, researchers compared 50 cirrhotic patients and 50 healthy controls at baseline, week 4, end of treatment, and 1 year post-SVR. Findings revealed baseline immune dysregulation with reduced T cells, profound CD8+ exhaustion, elevated activation markers, and expanded Tregs and TH17 cells. By 1 year post-SVR, exhausted CD8+ cells decreased by 66.2%, Tregs normalized, and TH1/TH2 subsets increased, indicating partial immune recovery after viral clearance.",
+          "key_findings": [
+            "Baseline cirrhotic patients showed reduced CD3+ T cells and profound CD8+ T-cell exhaustion (PD-1+ 71.0% vs. 11.1%)",
+            "Tregs and TH17 cells were significantly elevated at baseline (52.7% vs. 15.1% and 25.8% vs. 14.0%)",
+            "By 1 year post-SVR, exhausted PD-1+ CD8+ cells declined by 66.2%, Tregs normalized, and TH1/TH2 subsets increased"
+          ],
+          "scientific_significance": "The study demonstrates that successful DAA therapy in cirrhotic HCV genotype 4 patients induces partial correction of peripheral T-cell dysregulation, providing insights into immune recovery mechanisms post-viral clearance in chronic liver disease."
+        },
+        "elapsed_seconds": 74.7541,
+        "input_tokens": 1016,
+        "output_tokens": 345,
+        "thoughts_tokens": null,
+        "total_tokens": 1361,
+        "model_eval_seconds": 64.1097,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether transient dietary changes at disease onset influence acute inflammatory responses and long-term tissue memory. Using lean mice with acute type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure during a specific peri-initiation window exacerbated disease severity to levels comparable with chronic obesity. HFD outside this window had no effect, while switching obese mice to a low-fat diet during the window reduced inflammation. Mechanistically, HFD rapidly recruited neutrophils, which expressed Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Neutrophil depletion, Nlrp3 deficiency, or NLRP3 inhibition suppressed inflammation. Post-recovery, a chromatin-poised tissue-resident memory T cell population persisted, causing exaggerated inflammation upon recurrence despite LFD maintenance. The findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β mechanisms.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure during a 4-day peri-initiation window exacerbates acute type 17 skin inflammation in lean mice to chronic obesity levels.\",\n    \"Switching obese mice to low-fat diet during the same window blunts disease amplification, indicating dietary intervention timing is critical.\",\n    \"Neutrophil recruitment and NLRP3-IL-1β signaling drive pathogenic TH17 cell activation, with post-recovery tissue-resident memory T cells causing recurrent inflammation.\"\n  ],\n  \"scientific_significance\": \"This work establishes that short-lived dietary states during specific temporal windows can durably reprogram immune memory, revealing a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether transient dietary changes at disease onset influence acute inflammatory responses and long-term tissue memory. Using lean mice with acute type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure during a specific peri-initiation window exacerbated disease severity to levels comparable with chronic obesity. HFD outside this window had no effect, while switching obese mice to a low-fat diet during the window reduced inflammation. Mechanistically, HFD rapidly recruited neutrophils, which expressed Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Neutrophil depletion, Nlrp3 deficiency, or NLRP3 inhibition suppressed inflammation. Post-recovery, a chromatin-poised tissue-resident memory T cell population persisted, causing exaggerated inflammation upon recurrence despite LFD maintenance. The findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β mechanisms.",
+          "key_findings": [
+            "Transient high-fat diet exposure during a 4-day peri-initiation window exacerbates acute type 17 skin inflammation in lean mice to chronic obesity levels.",
+            "Switching obese mice to low-fat diet during the same window blunts disease amplification, indicating dietary intervention timing is critical.",
+            "Neutrophil recruitment and NLRP3-IL-1β signaling drive pathogenic TH17 cell activation, with post-recovery tissue-resident memory T cells causing recurrent inflammation."
+          ],
+          "scientific_significance": "This work establishes that short-lived dietary states during specific temporal windows can durably reprogram immune memory, revealing a neutrophil-NLRP3-IL-1β axis that licenses pathogenic TH17 responses."
+        },
+        "elapsed_seconds": 69.4573,
+        "input_tokens": 885,
+        "output_tokens": 370,
+        "thoughts_tokens": null,
+        "total_tokens": 1255,
+        "model_eval_seconds": 67.1547,
+        "error": "summary must contain 45–90 words; received 130.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019429",
+        "title": "Atmospheric O2 reveals a strengthening ocean carbon sink and a stagnant net land sink since 1990.",
+        "abstract": "NA: The global ocean and land biosphere absorb roughly half of fossil fuel carbon dioxide (CO2) emissions. The temporal evolution of these sinks remains difficult to quantify owing to data sparsity. Leveraging 30+ years of atmospheric oxygen (O2) and CO2 observations, we find that the ocean carbon sink increased by 0.63 ± 0.19 petagrams of carbon per year per decade (Pg C year-1 decade-1) (a mean of 2.8 ± 0.4 Pg C year-1), accounting for 35% of fossil emissions between 1990 and 2019. The net land sink shows no robust trend (with a mean of 1.0 ± 0.5 Pg C year-1, accounting for 13% of fossil emissions), despite large decadal variability. These results challenge many process-based model simulations of the land and ocean sinks, questioning their ability to accurately predict future climate states.",
+        "publication_types": [],
+        "doi": "10.1126/science.aed9544",
+        "doi_url": "https://doi.org/10.1126/science.aed9544",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019429/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study quantifies the global carbon sinks using atmospheric oxygen and CO2 data from 1990 to 2019. It reveals a strengthening ocean carbon sink at 2.8 ± 0.4 Pg C year-1, accounting for 35% of fossil emissions, while the net land sink shows no significant trend (1.3 ± 0.5 Pg C year-1). The findings challenge existing model simulations, indicating potential inaccuracies in predicting future climate responses.\",\n  \"key_findings\": [\n    \"The ocean carbon sink strengthened by 2.8 ± 0.4 Pg C year-1 between 1990 and 2019\",\n    \"The net land sink exhibited no robust trend despite large decadal variability\",\n    \"The results contradict process-based model simulations of land and ocean sinks\"\n  ],\n  \"scientific_significance\": \"The study provides critical empirical constraints on carbon sink dynamics, enhancing understanding of how natural systems absorb anthropogenic CO2 emissions and challenging model projections for climate mitigation strategies.\"\n}",
+        "parsed": {
+          "summary": "This study quantifies the global carbon sinks using atmospheric oxygen and CO2 data from 1990 to 2019. It reveals a strengthening ocean carbon sink at 2.8 ± 0.4 Pg C year-1, accounting for 35% of fossil emissions, while the net land sink shows no significant trend (1.3 ± 0.5 Pg C year-1). The findings challenge existing model simulations, indicating potential inaccuracies in predicting future climate responses.",
+          "key_findings": [
+            "The ocean carbon sink strengthened by 2.8 ± 0.4 Pg C year-1 between 1990 and 2019",
+            "The net land sink exhibited no robust trend despite large decadal variability",
+            "The results contradict process-based model simulations of land and ocean sinks"
+          ],
+          "scientific_significance": "The study provides critical empirical constraints on carbon sink dynamics, enhancing understanding of how natural systems absorb anthropogenic CO2 emissions and challenging model projections for climate mitigation strategies."
+        },
+        "elapsed_seconds": 39.6703,
+        "input_tokens": 646,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 870,
+        "model_eval_seconds": 35.5122,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42953939",
+        "title": "Life-Cycle-Sustainable Capacitive Deionization Enabled by Organic Molecular Engineering for Selective Ammonium Capture.",
+        "abstract": "NA: Selective ammonium (NH4 +) recovery from complex wastewater streams remains a pivotal challenge in sustainable nitrogen management. Capacitive deionization (CDI) offers an energy-efficient electrochemical route for ion separation, yet its practical application is constrained by the inherent trade-off between NH4 + adsorption capacity and selectivity. Herein, we circumvent this fundamental limitation through the rational molecular engineering of an organic electroactive material, 1,4-bis(1H-imidazo[4,5-b]phenazin-2-yl)benzene (IPB), which features extended electron delocalization and abundant C═N moieties for NH4 +-specific redox-coupled capture. The resulting IPB-based CDI prototype delivers a high NH4 + adsorption capacity of 267.23 mg g-1 and a fast rate of 62.51 mg g-1 min-1, while sustaining remarkable selectivity in complex multi-ion matrices, thereby effectively surpassing the conventional capacity-selectivity trade-off. Notably, CDI adsorption reduces wastewater NH4 + levels to below 3 mg L-1 and achieves 82.3% direct recovery as liquid fertilizer during CDI desorption, as demonstrated by isotope tracing experiments. The CDI process exhibits a low carbon footprint of only 4.66 × 10-2 t CO2-equivalent per tonne of NH4 + treated, underscoring its superior life-cycle sustainability. Therefore, this work proposes a molecularly engineered organic electrode material for high-performance wastewater remediation and circular nutrient recovery, paving the way toward carbon-neutral electrochemical water treatment technologies.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75566",
+        "doi_url": "https://doi.org/10.1002/adma.75566",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42953939/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing capacitive deionization (CDI) for selective ammonium recovery from wastewater using molecularly engineered organic materials. Researchers designed 1,4-bis(1H-imidazo[4,5-b]phenazin-2-yl)benzene (IPB) to overcome the capacity-selectivity trade-off in CDI. The IPB-based CDI achieved high ammonium adsorption capacity (267.23 mg g⁻¹) and selectivity in complex streams, reducing ammonium to below 3 mg L⁻¹ and enabling 82.3% recovery as fertilizer. It also demonstrated low carbon emissions (4.66 × 10⁻² t CO₂-eq per tonne NH₄⁺ treated).\",\n  \"key_findings\": [\n    \"IPB-based CDI achieved 267.23 mg g⁻¹ ammonium adsorption capacity\",\n    \"The system maintained high selectivity in complex wastewater matrices\",\n    \"CDI reduced ammonium to below 3 mg L⁻¹ with 82.3% fertilizer recovery\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a molecularly engineered organic electrode material that enables high-capacity, selective ammonium capture from wastewater with low carbon footprint, advancing sustainable electrochemical water treatment technologies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing capacitive deionization (CDI) for selective ammonium recovery from wastewater using molecularly engineered organic materials. Researchers designed 1,4-bis(1H-imidazo[4,5-b]phenazin-2-yl)benzene (IPB) to overcome the capacity-selectivity trade-off in CDI. The IPB-based CDI achieved high ammonium adsorption capacity (267.23 mg g⁻¹) and selectivity in complex streams, reducing ammonium to below 3 mg L⁻¹ and enabling 82.3% recovery as fertilizer. It also demonstrated low carbon emissions (4.66 × 10⁻² t CO₂-eq per tonne NH₄⁺ treated).",
+          "key_findings": [
+            "IPB-based CDI achieved 267.23 mg g⁻¹ ammonium adsorption capacity",
+            "The system maintained high selectivity in complex wastewater matrices",
+            "CDI reduced ammonium to below 3 mg L⁻¹ with 82.3% fertilizer recovery"
+          ],
+          "scientific_significance": "This work demonstrates a molecularly engineered organic electrode material that enables high-capacity, selective ammonium capture from wastewater with low carbon footprint, advancing sustainable electrochemical water treatment technologies."
+        },
+        "elapsed_seconds": 55.1949,
+        "input_tokens": 791,
+        "output_tokens": 283,
+        "thoughts_tokens": null,
+        "total_tokens": 1074,
+        "model_eval_seconds": 48.1668,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43041744",
+        "title": "Safeguarding functionality of ATMPs: in-depth characterization of cryopreserved GMP-compliant nTreg products for therapeutic use.",
+        "abstract": "INTRODUCTION: Regulatory T cell (Treg) therapy has emerged as a promising therapeutic strategy for restoring immune tolerance. However, its broader clinical implementation requires cryopreservation strategies that reliably preserve the biological integrity of therapeutic Treg products during Good Manufacturing Practice (GMP) manufacturing. The feasibility of reduced dimethyl sulfoxide (DMSO) cryopreservation, including in our previous study, has been demonstrated. Yet its effects on the functional, metabolic, epigenetic, and molecular characteristics of therapeutic natural Treg (nTreg) products remain incompletely defined. Here, we investigated the biological responses of GMP-compliant nTreg products to cryopreservation and determined whether reducing DMSO from 10% to 5% preserves key product characteristics after thawing.\nMETHODS: Human GMP-compliant CD4+CD25+FOXP3+ nTreg products were cryopreserved using serum- and xeno-free formulations containing DMSO at different concentration. Fresh and cryopreserved cells were evaluated immediately (0 h) and 24 h after thawing by integrated viability, phenotypic, functional, metabolic, FOXP3 Treg-specific demethylation region (TSDR) analysis, and single-cell transcriptomic and chromatin accessibility analyses.\nRESULTS: High-resolution respirometry demonstrated a transient mitochondrial activation following cryopreservation, while TSDR analysis confirmed maintenance of epigenetic lineage identity. Single-cell transcriptomic profiling revealed modest, donor-dependent responses to cryopreservation, with no significant differentially expressed genes between the 10% and 5% DMSO conditions under the predefined criteria. Single-cell chromatin-accessibility analysis showed broadly comparable accessibility-defined population architecture and preservation of accessibility at the assessed Treg lineage-associated loci FOXP3, IKZF2, and IL2RA. Reduction of DMSO to 5% in cryopreservation attenuated delayed cellular impairment, while maintaining phenotypic purity, cytokine quiescence, suppressive function, TSDR status, and high viability across 0 h and 24 h after thawing.\nCONCLUSION: This study provides biological insight into the cellular responses of therapeutic Tregs to cryopreservation, while demonstrating that reduced DMSO cryopreservation preserves the investigated phenotypic, functional and molecular charactersitics of GMP-compliant nTreg products. By minimizing cryopreservation-associated cellular stress and reducing DMSO exposure to patients, this study supports the clincial applicability of reduced-DMSO cryopreservation within the investigated GMP manufacturing workflow, and may facilitate future implementation of cryopreserved Treg products by providing greater flexibility for product release, storage, and distribution.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.3389/fcell.2026.1961610",
+        "doi_url": "https://doi.org/10.3389/fcell.2026.1961610",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43041744/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in cell and developmental biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether reducing dimethyl sulfoxide (DMSO) concentration from 10% to 5% during cryopreservation preserves the biological integrity of GMP-compliant natural regulatory T (nTreg) products. Using integrated analyses, the researchers evaluated cryopreserved cells for viability, phenotypic purity, functional activity, epigenetic markers, and transcriptomic profiles. Results showed that reduced DMSO cryopreservation maintained key functional and molecular characteristics without significant adverse effects, supporting its clinical applicability for therapeutic Treg products.\",\n  \"key_findings\": [\n    \"Reduced DMSO cryopreservation (5% vs. 10%) preserved phenotypic purity and suppressive function of nTreg products after thawing\",\n    \"Epigenetic lineage identity was maintained through FOXP3 Treg-specific demethylation region (TSDR) analysis\",\n    \"No significant differences in transcriptomic profiles were observed between 5% and 10% DMSO conditions\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that reduced-DMSO cryopreservation strategies can maintain critical functional and molecular characteristics of therapeutic nTreg products, advancing the feasibility of cryopreserved Treg therapies for clinical use.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether reducing dimethyl sulfoxide (DMSO) concentration from 10% to 5% during cryopreservation preserves the biological integrity of GMP-compliant natural regulatory T (nTreg) products. Using integrated analyses, the researchers evaluated cryopreserved cells for viability, phenotypic purity, functional activity, epigenetic markers, and transcriptomic profiles. Results showed that reduced DMSO cryopreservation maintained key functional and molecular characteristics without significant adverse effects, supporting its clinical applicability for therapeutic Treg products.",
+          "key_findings": [
+            "Reduced DMSO cryopreservation (5% vs. 10%) preserved phenotypic purity and suppressive function of nTreg products after thawing",
+            "Epigenetic lineage identity was maintained through FOXP3 Treg-specific demethylation region (TSDR) analysis",
+            "No significant differences in transcriptomic profiles were observed between 5% and 10% DMSO conditions"
+          ],
+          "scientific_significance": "This work demonstrates that reduced-DMSO cryopreservation strategies can maintain critical functional and molecular characteristics of therapeutic nTreg products, advancing the feasibility of cryopreserved Treg therapies for clinical use."
+        },
+        "elapsed_seconds": 59.3475,
+        "input_tokens": 1010,
+        "output_tokens": 265,
+        "thoughts_tokens": null,
+        "total_tokens": 1275,
+        "model_eval_seconds": 48.985,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42983081",
+        "title": "Tracing the spread of Celtic languages using ancient genomics.",
+        "abstract": "NA: Celtic languages are today restricted to Europe's Atlantic fringes but were widely spoken across the continent during the Iron Age1-3. How Celtic achieved this early distribution remains contested4, with alternative archaeological and linguistic models proposing different homelands and dispersal routes. Here we analyse genome-wide data from 4,587 ancient individuals, focusing on Bronze and Iron Age Europe, to test the extent to which these models fit reconstructed demographic histories. We identify three main processes shaping European population structure that are relevant to the Celtic dispersal. First, the arrival of Steppe-related ancestry with Bell Beaker-associated groups after around 4400 BP (calibrated years before present or 1950 CE) across the region in which Celtic and related languages were later spoken. Second, a movement from southwestern Europe into Britain during the Bronze Age (3800-3200 BP), consistent with scenarios in which Celtic formed along the Atlantic façade. Third, a westward expansion of ancestry related to Late Bronze Age Knovíz-Urnfield-associated populations from eastern central Europe (3200-2800 BP), affecting France, the British Isles, northeastern Iberia and Italy and later associated with Iron Age Hallstatt and La Tène contexts5-8. Although all three movements have parallels with proposed models, we argue that the final movement, from eastern central Europe, is most parsimonious for the spread of Celtic. Although human history does not necessarily follow a parsimonious trajectory9 and language shifts need not track genetic change, these results delimit the demographic scenarios that are plausible for the emergence of Celtic in prehistoric Europe.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11198-9",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11198-9",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42983081/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates the demographic processes behind the spread of Celtic languages during the Iron Age using ancient genomic data from 4,587 individuals across Bronze and Iron Age Europe. By analyzing genome-wide data, the researchers identified three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) linked to Hallstatt and La Tène cultures. The findings suggest that Celtic language dispersal most plausibly followed the eastern central European migration, though the study emphasizes that genetic patterns do not always align with linguistic shifts.\",\n  \"key_findings\": [\n    \"Steppe-related ancestry entered Europe via Bell Beaker-associated groups around 4400 BP\",\n    \"Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP\",\n    \"Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions associated with Iron Age Celtic cultures\"\n  ],\n  \"scientific_significance\": \"This work provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal, clarifying the interplay between population movements and linguistic spread in prehistoric Europe.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the demographic processes behind the spread of Celtic languages during the Iron Age using ancient genomic data from 4,587 individuals across Bronze and Iron Age Europe. By analyzing genome-wide data, the researchers identified three key population movements: Steppe-related ancestry arriving via Bell Beaker groups around 4400 BP, a Bronze Age migration from southwestern Europe to Britain, and a westward expansion of eastern central European ancestry (3200-2800 BP) linked to Hallstatt and La Tène cultures. The findings suggest that Celtic language dispersal most plausibly followed the eastern central European migration, though the study emphasizes that genetic patterns do not always align with linguistic shifts.",
+          "key_findings": [
+            "Steppe-related ancestry entered Europe via Bell Beaker-associated groups around 4400 BP",
+            "Bronze Age migration from southwestern Europe to Britain occurred between 3800-3200 BP",
+            "Eastern central European ancestry expanded westward from 3200-2800 BP, influencing regions associated with Iron Age Celtic cultures"
+          ],
+          "scientific_significance": "This work provides genomic evidence supporting a specific demographic pathway for Celtic language dispersal, clarifying the interplay between population movements and linguistic spread in prehistoric Europe."
+        },
+        "elapsed_seconds": 50.4378,
+        "input_tokens": 874,
+        "output_tokens": 277,
+        "thoughts_tokens": null,
+        "total_tokens": 1151,
+        "model_eval_seconds": 48.1825,
+        "error": "summary must contain 45–90 words; received 106.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019438",
+        "title": "Differentiation of stem-like CD4+ T cells modulates early effector responses in colorectal cancer.",
+        "abstract": "NA: Strategies to improve cancer immunotherapy have largely focused on the intratumor immunosuppressive microenvironment, whereas approaches to amplify peripheral T cells and promote tumor recruitment have not been thoroughly explored. Using imaging mass cytometry in patients with colorectal cancer (CRC), we observed T helper 1 (TH1)-like immune architectures in mismatch repair-deficient tumors associated with response to anti-programmed cell death protein 1 (PD-1) immunotherapy. By contrast, mismatch repair-proficient (pMMR) tumors showed regulatory T-dominant spatial interactions. Clonal analyses revealed that stem-like CD4+ T cells differentiated into TH1-like cells after PD-1 blockade. In pMMR CRC mouse models, combined OX40 agonist and PD-1 blockade suppressed tumor progression by expanding Il7r+ early effector CD4+ intermediates in tumor-draining lymph nodes, promoting migration and connection with TH1-like cells. This was accompanied by interferon-γ-dependent induction of immunostimulatory monocyte-macrophages and CD8+ effector T cells. These findings suggest that leveraging peripheral CD4+ T cell amplification may improve immunotherapy responses.",
+        "publication_types": [],
+        "doi": "10.1126/science.ady7788",
+        "doi_url": "https://doi.org/10.1126/science.ady7788",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019438/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how stem-like CD4+ T cells differentiate in colorectal cancer (CRC) to influence early immune responses. Using imaging mass cytometry in CRC patients and mouse models, researchers observed TH1-like immune architectures in mismatch repair-deficient tumors linked to PD-1 immunotherapy response. In mismatch repair-proficient tumors, regulatory T cells dominated. PD-1 blockade induced stem-like CD4+ T cells to become TH1-like cells, which, when combined with OX4.0 agonist, suppressed tumor growth by expanding early effector CD4+ intermediates and promoting interferon-γ-dependent immune activation.\",\n  \"key_findings\": [\n    \"Mismatch repair-deficient CRC tumors exhibit TH1-like immune architectures associated with PD-1 immunotherapy response\",\n    \"PD-1 blockade drives stem-like CD4+ T cells to differentiate into TH1-like cells\",\n    \"Combined OX40 agonist and PD-1 blockade suppresses tumor progression by expanding Il7r+ early effector CD4+ intermediates\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate that amplifying peripheral CD4+ T cell differentiation can enhance immunotherapy efficacy in colorectal cancer by promoting tumor-infiltrating TH1-like responses and associated immune activation.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how stem-like CD4+ T cells differentiate in colorectal cancer (CRC) to influence early immune responses. Using imaging mass cytometry in CRC patients and mouse models, researchers observed TH1-like immune architectures in mismatch repair-deficient tumors linked to PD-1 immunotherapy response. In mismatch repair-proficient tumors, regulatory T cells dominated. PD-1 blockade induced stem-like CD4+ T cells to become TH1-like cells, which, when combined with OX4.0 agonist, suppressed tumor growth by expanding early effector CD4+ intermediates and promoting interferon-γ-dependent immune activation.",
+          "key_findings": [
+            "Mismatch repair-deficient CRC tumors exhibit TH1-like immune architectures associated with PD-1 immunotherapy response",
+            "PD-1 blockade drives stem-like CD4+ T cells to differentiate into TH1-like cells",
+            "Combined OX40 agonist and PD-1 blockade suppresses tumor progression by expanding Il7r+ early effector CD4+ intermediates"
+          ],
+          "scientific_significance": "The findings demonstrate that amplifying peripheral CD4+ T cell differentiation can enhance immunotherapy efficacy in colorectal cancer by promoting tumor-infiltrating TH1-like responses and associated immune activation."
+        },
+        "elapsed_seconds": 47.2766,
+        "input_tokens": 681,
+        "output_tokens": 265,
+        "thoughts_tokens": null,
+        "total_tokens": 946,
+        "model_eval_seconds": 42.4394,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42954773",
+        "title": "Nb5+-Induced-CeO2 Lattice Strain for Robust and Scalable Solar-Driven Ammonia Synthesis.",
+        "abstract": "NA: Ammonia (NH3) underpins fertilizer production and is emerging as a renewable-energy carrier. Solar-driven gas-phase N2/H2 conversion requires catalysts that couple efficient light utilization with structural stability under H2-rich conditions. Here, Nb5+ incorporation into CeO2 contracts the lattice and induces compressive microstrain, suppressing excessive oxygen-sublattice reduction and preserving Ru dispersion. In situ NAP-XPS and computational results show that Nb-CeO2 maintains an electron-enriched Ru working state under reaction conditions, which is further promoted by illumination. Accordingly, 5 wt% Ru/Nb-CeO2 achieves an NH3 synthesis rate of 7.4 mmol g-1 h-1 at 350°C and 0.1 MPa and remains stable for 144 h. Kinetic analyses and in situ DRIFTS indicate that the electronically promoted Ru state alleviates N2-activation limitations and facilitates subsequent *NHx hydrogenation and NH3 desorption. Scale-up synthesis affords a 3 wt% Ru/Nb-CeO2-L catalyst stable for 480 h and operable under outdoor concentrated sunlight. A screening-level analysis estimates a catalyst-and-feedstock cost of 286-322 USD tNH3 -1 under the lower-bound electricity scenario, 42%-51% below the selected Cs-Ru/MgO benchmark within the same framework. These results identify lattice strain as a promising strategy for simultaneously stabilizing the oxygen sublattice and electronically promoting Ru for efficient solar-driven ammonia synthesis.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75565",
+        "doi_url": "https://doi.org/10.1002/adma.75565",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42954773/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates solar-driven ammonia synthesis using a 5 wt% Ru/Nb-CeO2 catalyst. By incorporating Nb5+ into CeO2, the catalyst induces compressive microstrain, suppressing oxygen sublattice reduction and maintaining Ru dispersion. In situ spectroscopy and computational analyses confirm an electron-enriched Ru state under reaction conditions. The catalyst achieves 7.4 mmol g-1 h-1 NH3 synthesis at 350°C with 144 h stability, demonstrating enhanced N2 activation and hydrogenation kinetics. The findings highlight lattice strain engineering as a viable strategy for robust, scalable solar ammonia production.\",\n  \"key_findings\": [\n    \"Nb5+ incorporation into CeO2 induces compressive microstrain, suppressing oxygen sublattice reduction\",\n    \"In situ results confirm an electron-enriched Ru state under reaction conditions\",\n    \"5 wt% Ru/Nb-CeO2 achieves 7.4 mmol g-1 h-1 NH3 synthesis with 144 h stability\"\n  ],\n  \"scientific_significance\": \"The study establishes lattice strain engineering as a strategy to simultaneously stabilize oxygen sublattice and electronically promote Ru for efficient solar-driven ammonia synthesis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates solar-driven ammonia synthesis using a 5 wt% Ru/Nb-CeO2 catalyst. By incorporating Nb5+ into CeO2, the catalyst induces compressive microstrain, suppressing oxygen sublattice reduction and maintaining Ru dispersion. In situ spectroscopy and computational analyses confirm an electron-enriched Ru state under reaction conditions. The catalyst achieves 7.4 mmol g-1 h-1 NH3 synthesis at 350°C with 144 h stability, demonstrating enhanced N2 activation and hydrogenation kinetics. The findings highlight lattice strain engineering as a viable strategy for robust, scalable solar ammonia production.",
+          "key_findings": [
+            "Nb5+ incorporation into CeO2 induces compressive microstrain, suppressing oxygen sublattice reduction",
+            "In situ results confirm an electron-enriched Ru state under reaction conditions",
+            "5 wt% Ru/Nb-CeO2 achieves 7.4 mmol g-1 h-1 NH3 synthesis with 144 h stability"
+          ],
+          "scientific_significance": "The study establishes lattice strain engineering as a strategy to simultaneously stabilize oxygen sublattice and electronically promote Ru for efficient solar-driven ammonia synthesis."
+        },
+        "elapsed_seconds": 49.5201,
+        "input_tokens": 780,
+        "output_tokens": 257,
+        "thoughts_tokens": null,
+        "total_tokens": 1037,
+        "model_eval_seconds": 43.0854,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43041756",
+        "title": "Lactylation-mediated remodeling of spatial immunometabolic niches in lung cancer: metabolic origins, cellular interactions, and molecular mechanisms.",
+        "abstract": "NA: Hypoxia, abnormal perfusion, and oncogenic signaling increase lactate production in lung cancer and create intercellular fluxes mediated by monocarboxylate transporters. Circulating lactate can be taken up by lung tumors and enter the tricarboxylic acid (TCA) cycle. Lactate therefore acts as a carbon source, a regulator of redox and acid-base homeostasis, and a precursor for lysine L-lactylation. Representative validated modifications include histone H3 lysine 18 lactylation (H3K18la) and histone H4 lysine 5 lactylation (H4K5la) together with nonhistone substrates such as programmed death ligand 1 (PD-L1), hexokinase 2 (HK2), mitochondrial cristae-organizing protein Mic60, and replication protein A1 (RPA1), linking lactylation to transcriptional regulation, protein stability, metabolic adaptation, immune evasion, DNA repair, and treatment resistance in lung cancer. Tumor-derived lactate also reprograms cluster of differentiation 8-positive (CD8+) T cells, regulatory T cells, macrophages, dendritic cells, and cancer-associated fibroblasts across hypoxic cores, invasive fronts, perivascular regions, and tertiary lymphoid structure-associated areas. This review integrates lactate-pool formation, lactylation writers and erasers, intracellular reprogramming, immune-stromal interactions, and spatial niches. It distinguishes metabolic and acidification effects of lactate from covalent lactylation and separates direct causal evidence in lung cancer from spatial associations and cross-cancer mechanistic support. This framework defines a source-to-site chain for studying regional lactate activity and lactylation-dependent phenotypes in lung cancer.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.3389/fonc.2026.1967572",
+        "doi_url": "https://doi.org/10.3389/fonc.2026.1967572",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43041756/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in oncology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review investigates lactate's role in lung cancer by examining lactylation-mediated remodeling of spatial immunometabolic niches. It explores how lactate, produced under hypoxia and oncogenic signaling, acts as a carbon source, redox regulator, and precursor for lysine lactylation. The study identifies key lactylation modifications in histones and proteins that influence transcription, immune evasion, metabolic adaptation, and treatment resistance. Lactate also reprograms immune and stromal cells across tumor microenvironments, highlighting metabolic origins and cellular interactions in lung cancer progression.\",\n  \"key_findings\": [\n    \"Lactate serves as a carbon source and redox regulator in lung cancer cells\",\n    \"Lactylation modifications (e.g., H3K18la, PD-L1) impact transcription, immune evasion, and treatment resistance\",\n    \"Tumor-derived lactate reprograms CD8+ T cells, macrophages, and cancer-associated fibroblasts across spatial niches\"\n  ],\n  \"scientific_significance\": \"This work establishes lactate-driven lactylation as a critical mechanism linking metabolic reprogramming to immunometabolic crosstalk in lung cancer, providing a framework for targeted therapeutic interventions.\"\n}",
+        "parsed": {
+          "summary": "This review investigates lactate's role in lung cancer by examining lactylation-mediated remodeling of spatial immunometabolic niches. It explores how lactate, produced under hypoxia and oncogenic signaling, acts as a carbon source, redox regulator, and precursor for lysine lactylation. The study identifies key lactylation modifications in histones and proteins that influence transcription, immune evasion, metabolic adaptation, and treatment resistance. Lactate also reprograms immune and stromal cells across tumor microenvironments, highlighting metabolic origins and cellular interactions in lung cancer progression.",
+          "key_findings": [
+            "Lactate serves as a carbon source and redox regulator in lung cancer cells",
+            "Lactylation modifications (e.g., H3K18la, PD-L1) impact transcription, immune evasion, and treatment resistance",
+            "Tumor-derived lactate reprograms CD8+ T cells, macrophages, and cancer-associated fibroblasts across spatial niches"
+          ],
+          "scientific_significance": "This work establishes lactate-driven lactylation as a critical mechanism linking metabolic reprogramming to immunometabolic crosstalk in lung cancer, providing a framework for targeted therapeutic interventions."
+        },
+        "elapsed_seconds": 50.8518,
+        "input_tokens": 817,
+        "output_tokens": 252,
+        "thoughts_tokens": null,
+        "total_tokens": 1069,
+        "model_eval_seconds": 43.6702,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015468",
+        "title": "Evolutionary dynamics in the years preceding acute myeloid leukaemia.",
+        "abstract": "NA: Somatic evolution in ageing tissues underlies many cancers1,2. However, our quantitative understanding of the rules governing this pre-cancerous evolution remains incomplete. Here we exploit a unique collection of serial blood samples3, collected annually for up to a decade and beginning as early as 15 years before diagnosis of acute myeloid leukaemia, to provide a quantitative description of pre-cancerous evolutionary dynamics. Using deep duplex sequencing and evolutionary theory, we quantify the acquisition ages and fitness effects of the key driver events in acute myeloid leukaemia development. The first driver mutations are typically acquired in the first few decades of life, when the blood remains highly polyclonal. These early slow-growing clones subsequently acquire multiple further driver mutations that confer selective advantages up to 100-fold larger than the early drivers. These faster-growing clones harbouring multiple driver mutations can cause complete somatic sweeps of the blood decades before diagnosis, a feature strongly associated with future acute myeloid leukaemia. Our data show that the clonal dynamics of blood are consistent with a set of remarkably simple evolutionary rules that strike a balance between chance and determinism.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11269-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11269-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015468/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study quantifies pre-cancerous evolutionary dynamics in acute myeloid leukaemia using serial blood samples collected up to 15 years before diagnosis. By deep duplex sequencing and evolutionary modeling, it identifies early driver mutations occurring in the first few decades of life within highly polyclonal blood. These slow-growing clones later acquire multiple driver mutations with up to 100-fold greater selective advantages, leading to somatic sweeps decades prior to diagnosis. The findings reveal simple evolutionary rules balancing stochastic and deterministic processes in pre-leukaemic evolution.\",\n  \"key_findings\": [\n    \"Early driver mutations arise in the first few decades of life within highly polyclonal blood\",\n    \"Subsequent driver mutations confer up to 100-fold greater selective advantages than early drivers\",\n    \"Clonal sweeps of blood occur decades before diagnosis, strongly linked to future acute myeloid leukaemia\"\n  ],\n  \"scientific_significance\": \"This work establishes simple evolutionary rules governing pre-cancerous dynamics in acute myeloid leukaemia, revealing how stochastic and deterministic processes balance to drive clonal expansion prior to malignancy.\"\n}",
+        "parsed": {
+          "summary": "This study quantifies pre-cancerous evolutionary dynamics in acute myeloid leukaemia using serial blood samples collected up to 15 years before diagnosis. By deep duplex sequencing and evolutionary modeling, it identifies early driver mutations occurring in the first few decades of life within highly polyclonal blood. These slow-growing clones later acquire multiple driver mutations with up to 100-fold greater selective advantages, leading to somatic sweeps decades prior to diagnosis. The findings reveal simple evolutionary rules balancing stochastic and deterministic processes in pre-leukaemic evolution.",
+          "key_findings": [
+            "Early driver mutations arise in the first few decades of life within highly polyclonal blood",
+            "Subsequent driver mutations confer up to 100-fold greater selective advantages than early drivers",
+            "Clonal sweeps of blood occur decades before diagnosis, strongly linked to future acute myeloid leukaemia"
+          ],
+          "scientific_significance": "This work establishes simple evolutionary rules governing pre-cancerous dynamics in acute myeloid leukaemia, revealing how stochastic and deterministic processes balance to drive clonal expansion prior to malignancy."
+        },
+        "elapsed_seconds": 43.351,
+        "input_tokens": 670,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 906,
+        "model_eval_seconds": 38.4016,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019440",
+        "title": "Researchers have a wish list. Can the new Congress deliver?",
+        "abstract": "NA: Despite a healthy majority, Democrats face limits on what they can achieve.",
+        "publication_types": [],
+        "doi": "10.1126/science.aeo0637",
+        "doi_url": "https://doi.org/10.1126/science.aeo0637",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019440/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examines political dynamics within the U.S. Congress, focusing on Democratic representation and legislative capacity. The analysis reveals that despite a majority Democratic presence, structural constraints significantly limit achievable policy outcomes. The research highlights persistent challenges in translating majority support into concrete legislative results, emphasizing systemic barriers to effective governance.\",\n  \"key_findings\": [\n    \"Democrats hold a majority but face structural constraints on legislative outcomes\",\n    \"Majority representation does not guarantee policy achievements\",\n    \"Systemic barriers impede the translation of political majority into legislative results\"\n  ],\n  \"scientific_significance\": \"The study provides insight into the interplay between political representation and legislative efficacy, contributing to understanding how majority presence can be constrained by institutional structures in democratic governance.\"\n}",
+        "parsed": {
+          "summary": "This study examines political dynamics within the U.S. Congress, focusing on Democratic representation and legislative capacity. The analysis reveals that despite a majority Democratic presence, structural constraints significantly limit achievable policy outcomes. The research highlights persistent challenges in translating majority support into concrete legislative results, emphasizing systemic barriers to effective governance.",
+          "key_findings": [
+            "Democrats hold a majority but face structural constraints on legislative outcomes",
+            "Majority representation does not guarantee policy achievements",
+            "Systemic barriers impede the translation of political majority into legislative results"
+          ],
+          "scientific_significance": "The study provides insight into the interplay between political representation and legislative efficacy, contributing to understanding how majority presence can be constrained by institutional structures in democratic governance."
+        },
+        "elapsed_seconds": 24.5919,
+        "input_tokens": 446,
+        "output_tokens": 155,
+        "thoughts_tokens": null,
+        "total_tokens": 601,
+        "model_eval_seconds": 23.36,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42954782",
+        "title": "Programmable Microgel Degradation in Dynamic Granular Hydrogels Guides Extracellular Matrix Assembly During Tissue Repair.",
+        "abstract": "NA: Granular hydrogels have attracted widespread interest for wound healing applications, yet their static design, in which microstructure and void space remain fixed, contrasts with the dynamic nature of tissue repair where processes like provisional extracellular matrix (pECM) assembly, cell organization, and nascent tissue formation evolve over time. Here, this disparity is addressed by designing dynamic granular hydrogels that are modularly assembled using microgels with pre-programmed and precise degradation rates ranging from a few days to several weeks. Microgel degradation is controlled via modulation of hydrolytic susceptibility of hyaluronic acid polymers. The biological significance of timed pore expansion in dynamic granular hydrogels is investigated in a mouse muscle crush injury model. While slow-degrading hydrogels support a distinct spatial assembly of cell-instructive interstitial matrix and basement membrane proteins in the expanded pore space, this pECM remodeling is adversely altered in non-degrading or fast-degrading hydrogels. Slow-degrading dynamic granular hydrogels also show long-term therapeutic benefits on muscle wound healing, evidenced by reduced fibrosis, enhanced myogenesis, and improved functional force recovery. Collectively, these striking results demonstrate the profound significance of incorporating dynamicity through controlled microgel degradation in advanced granular biomaterials to improve tissue repair outcomes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75574",
+        "doi_url": "https://doi.org/10.1002/adma.75574",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42954782/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates dynamic granular hydrogels with programmable microgel degradation for tissue repair. By engineering microgels with tunable hydrolytic susceptibility of hyaluronic acid polymers, the researchers created hydrogels that degrade over specific timeframes (days to weeks). In a mouse muscle injury model, slow-degrading hydrogels promoted organized extracellular matrix assembly, reduced fibrosis, enhanced muscle regeneration, and improved functional recovery compared to non-degrading or fast-degrading counterparts. The findings highlight the critical role of timed pore expansion in guiding tissue repair processes.\",\n  \"key_findings\": [\n    \"Slow-degrading hydrogels supported spatial organization of cell-instructive interstitial matrix and basement membrane proteins\",\n    \"Slow-degrading hydrogels reduced fibrosis and enhanced myogenesis in muscle repair\",\n    \"Slow-degrading hydrogels improved functional force recovery compared to non-degrading or fast-degrading hydrogels\"\n  ],\n  \"scientific_significance\": \"This work establishes that controlled microgel degradation kinetics in granular hydrogels can precisely guide extracellular matrix assembly and tissue regeneration, providing a tunable biomaterial strategy for dynamic wound healing processes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates dynamic granular hydrogels with programmable microgel degradation for tissue repair. By engineering microgels with tunable hydrolytic susceptibility of hyaluronic acid polymers, the researchers created hydrogels that degrade over specific timeframes (days to weeks). In a mouse muscle injury model, slow-degrading hydrogels promoted organized extracellular matrix assembly, reduced fibrosis, enhanced muscle regeneration, and improved functional recovery compared to non-degrading or fast-degrading counterparts. The findings highlight the critical role of timed pore expansion in guiding tissue repair processes.",
+          "key_findings": [
+            "Slow-degrading hydrogels supported spatial organization of cell-instructive interstitial matrix and basement membrane proteins",
+            "Slow-degrading hydrogels reduced fibrosis and enhanced myogenesis in muscle repair",
+            "Slow-degrading hydrogels improved functional force recovery compared to non-degrading or fast-degrading hydrogels"
+          ],
+          "scientific_significance": "This work establishes that controlled microgel degradation kinetics in granular hydrogels can precisely guide extracellular matrix assembly and tissue regeneration, providing a tunable biomaterial strategy for dynamic wound healing processes."
+        },
+        "elapsed_seconds": 45.441,
+        "input_tokens": 711,
+        "output_tokens": 247,
+        "thoughts_tokens": null,
+        "total_tokens": 958,
+        "model_eval_seconds": 40.2959,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43041809",
+        "title": "Regulatory T cell therapy and immune tolerance in heart transplantation: a translational evidence framework for regulatory T cells-cell characterization and recipient-graft monitoring.",
+        "abstract": "NA: Regulatory T cell (Treg) therapy is a candidate strategy for improving donor-specific immune regulation after heart transplantation and, in the long term, may reduce reliance on lifelong immunosuppression. This Review separates mechanistic and preclinical evidence from human case observations, prospective clinical-trial protocols, manufacturing studies, and translational hypotheses. We summarize pathways that support Treg function in experimental transplantation and evaluate context-dependent outputs, including amphiregulin and CXCL15-related signaling, as potential safety signals rather than validated clinical biomarkers. We then compare peripheral-blood-derived and thymus-derived Treg-cell preparations, focusing on source material, manufacturing, cryopreservation, cell identity and potency, and infusion timing. Human evidence for Thy-Tregs in heart transplantation includes one fully reported index case and preliminary, incompletely reported data on the first four THYTECH recipients. ATT-Heart provides a prospective phase I evaluation framework. Finally, we assess allogeneic Thy-Treg banks, thymic organoids, and thymic transplantation as exploratory routes for adult recipients. The central translational question is whether a defined Treg-cell therapy can persist, remain functionally stable, and be monitored safely in the inflammatory environment of cardiac transplantation.",
+        "publication_types": [
+          "Journal Article",
+          "Review",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "doi": "10.3389/fimmu.2026.1977203",
+        "doi_url": "https://doi.org/10.3389/fimmu.2026.1977203",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43041809/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in immunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines regulatory T cell (Treg) therapy for heart transplantation, evaluating mechanistic evidence, clinical trials, and translational approaches. It compares peripheral-blood and thymus-derived Treg preparations, assesses their stability and monitoring in cardiac transplants, and identifies potential safety signals like amphiregulin and CXCL1. The study highlights challenges in ensuring long-term Treg persistence and functional stability post-transplantation.\",\n  \"key_findings\": [\n    \"Peripheral-blood and thymus-derived Treg cells differ in source, manufacturing, and potency for heart transplantation\",\n    \"Amphiregulin and CXCL15-related signaling may serve as safety indicators rather than validated clinical biomarkers\",\n    \"Human evidence for thymus-derived Tregs in heart transplantation includes limited case reports and preliminary data from early trials\"\n  ],\n  \"scientific_significance\": \"This work establishes a translational framework for evaluating regulatory T cell therapy in cardiac transplantation, emphasizing persistent, stable, and monitorable Treg function as critical factors for clinical translation.\"\n}",
+        "parsed": {
+          "summary": "This review examines regulatory T cell (Treg) therapy for heart transplantation, evaluating mechanistic evidence, clinical trials, and translational approaches. It compares peripheral-blood and thymus-derived Treg preparations, assesses their stability and monitoring in cardiac transplants, and identifies potential safety signals like amphiregulin and CXCL1. The study highlights challenges in ensuring long-term Treg persistence and functional stability post-transplantation.",
+          "key_findings": [
+            "Peripheral-blood and thymus-derived Treg cells differ in source, manufacturing, and potency for heart transplantation",
+            "Amphiregulin and CXCL15-related signaling may serve as safety indicators rather than validated clinical biomarkers",
+            "Human evidence for thymus-derived Tregs in heart transplantation includes limited case reports and preliminary data from early trials"
+          ],
+          "scientific_significance": "This work establishes a translational framework for evaluating regulatory T cell therapy in cardiac transplantation, emphasizing persistent, stable, and monitorable Treg function as critical factors for clinical translation."
+        },
+        "elapsed_seconds": 40.8812,
+        "input_tokens": 703,
+        "output_tokens": 220,
+        "thoughts_tokens": null,
+        "total_tokens": 923,
+        "model_eval_seconds": 35.6824,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015470",
+        "title": "The molecular basis of replication fork restart via repriming by PRIMPOL.",
+        "abstract": "NA: Eukaryotic genomes are exposed to numerous sources of DNA damage that impede replication. Only a decade ago, repriming by the primase-polymerase PRIMPOL was identified as a pathway that enables cells to tolerate DNA damage1-4. However, the molecular mechanism that underlies repriming remains poorly understood, and it is unclear how PRIMPOL is precisely targeted to stalled forks, where along single-stranded DNA PRIMPOL binds and how PRIMPOL is regulated to minimize error-prone DNA synthesis. Here, to dissect the molecular basis of repriming, we perform real-time single-molecule imaging in nuclear extracts that recapitulate genome maintenance. We directly visualize how stalled forks restart through repriming. We show that PRIMPOL is recruited to stalled forks through an interaction with the replicative helicase CDC45-MCM2-7-GINS (CMG). This facilitates primer handover from PRIMPOL to the high-fidelity polymerase ε, minimizing mutagenic DNA synthesis. At near-physiological concentrations, PRIMPOL reprimes leading strands in a CMG-dependent manner and polymerase ε extends those primers. This primary mode of repriming does not require DNA damage checkpoint signalling. PRIMPOL overexpression and checkpoint activation promote a secondary mode of repriming, whereby PRIMPOL restarts DNA synthesis far from CMG and polymerase δ extends those primers. Our data reveal a simple yet effective mechanism that directs PRIMPOL's activity to stalled forks awaiting restart, and suggest a strategy to inhibit the repriming pathway.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11276-y",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11276-y",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015470/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the molecular mechanism of replication fork restart via repriming by PRIMPOL in eukaryotic cells. Using real-time single-molecule imaging in nuclear extracts, the researchers visualized how stalled forks restart through PRIMPOL-mediated repriming. Key findings include PRIMPOL recruitment via CMG interaction, primer handover to polymerase ε, and a CMG-dependent primary repriming pathway that minimizes mutagenic synthesis without checkpoint activation. The study identifies a simple mechanism for targeted repriming and suggests potential inhibition strategies.\",\n  \"key_findings\": [\n    \"PRIMPOL is recruited to stalled replication forks through interaction with the CMG complex\",\n    \"PRIMPOL facilitates primer handover to high-fidelity polymerase ε, minimizing mutagenic DNA synthesis\",\n    \"A CMG-dependent primary repriming pathway operates without DNA damage checkpoint activation\"\n  ],\n  \"scientific_significance\": \"This work elucidates a precise molecular mechanism for replication fork restart via repriming, providing insights into how cells maintain genomic integrity during replication stress without error-prone repair pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the molecular mechanism of replication fork restart via repriming by PRIMPOL in eukaryotic cells. Using real-time single-molecule imaging in nuclear extracts, the researchers visualized how stalled forks restart through PRIMPOL-mediated repriming. Key findings include PRIMPOL recruitment via CMG interaction, primer handover to polymerase ε, and a CMG-dependent primary repriming pathway that minimizes mutagenic synthesis without checkpoint activation. The study identifies a simple mechanism for targeted repriming and suggests potential inhibition strategies.",
+          "key_findings": [
+            "PRIMPOL is recruited to stalled replication forks through interaction with the CMG complex",
+            "PRIMPOL facilitates primer handover to high-fidelity polymerase ε, minimizing mutagenic DNA synthesis",
+            "A CMG-dependent primary repriming pathway operates without DNA damage checkpoint activation"
+          ],
+          "scientific_significance": "This work elucidates a precise molecular mechanism for replication fork restart via repriming, providing insights into how cells maintain genomic integrity during replication stress without error-prone repair pathways."
+        },
+        "elapsed_seconds": 45.4975,
+        "input_tokens": 762,
+        "output_tokens": 231,
+        "thoughts_tokens": null,
+        "total_tokens": 993,
+        "model_eval_seconds": 39.1986,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019441",
+        "title": "Oxygen tells the tale of Earth's carbon sinks.",
+        "abstract": "NA: New observations suggest more carbon absorption by ocean but less by land.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem7174",
+        "doi_url": "https://doi.org/10.1126/science.aem7174",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019441/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates Earth's carbon sink capacity using observational data. It found that oceans absorb more carbon than previously estimated, while land sinks show reduced carbon uptake. The results indicate a shift in global carbon absorption dynamics, with implications for understanding climate change mechanisms and carbon cycle feedbacks.\",\n  \"key_findings\": [\n    \"Oceans absorb more carbon than previously estimated\",\n    \"Land carbon sinks show reduced uptake\",\n    \"Global carbon absorption dynamics have shifted\"\n  ],\n  \"scientific_significance\": \"The findings provide critical insights into recent changes in Earth's carbon sink capacity, enhancing understanding of how natural systems respond to climate change.\"\n}",
+        "parsed": {
+          "summary": "This study investigates Earth's carbon sink capacity using observational data. It found that oceans absorb more carbon than previously estimated, while land sinks show reduced carbon uptake. The results indicate a shift in global carbon absorption dynamics, with implications for understanding climate change mechanisms and carbon cycle feedbacks.",
+          "key_findings": [
+            "Oceans absorb more carbon than previously estimated",
+            "Land carbon sinks show reduced uptake",
+            "Global carbon absorption dynamics have shifted"
+          ],
+          "scientific_significance": "The findings provide critical insights into recent changes in Earth's carbon sink capacity, enhancing understanding of how natural systems respond to climate change."
+        },
+        "elapsed_seconds": 21.5075,
+        "input_tokens": 443,
+        "output_tokens": 134,
+        "thoughts_tokens": null,
+        "total_tokens": 577,
+        "model_eval_seconds": 20.2727,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42954802",
+        "title": "\"Activation-Resistance Elimination\" Regulation by Lanthanide/Transition Metal Ion-Coordinated Nanostructures Intensifies Cuproptosis and Tumor Immunotherapy.",
+        "abstract": "NA: The therapeutic efficacy of cuproptosis is constrained by its insufficient activation and resistance mechanisms. Here, a lanthanide/transition metal ion-coordinated nanoparticle, La-Cu@Lap/IWR-1, with optimized coordination, has been proven to achieve remarkable results in realizing comprehensive resistance-eliminating cuproptosis activation. La3+ not only enhances Cu2+-mediated multiple enzyme-mimetic activities via coordination to amplify oxidative stress but also disrupts lysosomal acidification to improve copper ion availability. Moreover, combined with lapatinib (Lap), it alleviates the shielding effect of mediator of cell motility 1 (MEMO1) on Cu2+, significantly strengthening the cuproptosis activation efficacy. Meanwhile, the released Wnt inhibitor IWR-1 can not only inhibit the Wnt/β-catenin signaling pathway that is concomitantly activated during cuproptosis induction to weaken the oxidative stress tolerance of tumor cells but also synergize with Lap to downregulate hypoxia-inducible factor 1α (HIF-1α) expression, thereby effectively eliminating cuproptosis resistance. This comprehensive cuproptosis not only triggers significant immunogenic cell death but also synchronously inhibits key steps of tumor metastasis, such as epithelial-mesenchymal transition and extracellular matrix remodeling. This work proposes a therapeutic strategy for achieving comprehensive resistance-eliminating cuproptosis activation using lanthanide/transition metal ion coordination nanomaterials, providing a new entry point for tumor therapy.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75535",
+        "doi_url": "https://doi.org/10.1002/adma.75535",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42954802/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing cuproptosis efficacy by eliminating resistance mechanisms using lanthanide/transition metal ion-coordinated nanoparticles. The researchers designed La-Cu@Lap/IWR-1, which leverages La3+ to boost Cu2+-mediated oxidative stress and disrupt lysosomal acidification, while lapatinib and Wnt inhibitor IWR-1 counteract tumor resistance pathways. The approach significantly intensifies cuproptosis, triggering immunogenic cell death and inhibiting metastasis. The findings demonstrate a novel strategy for overcoming cuproptosis resistance in tumor therapy.\",\n  \"key_findings\": [\n    \"La3+ enhances Cu2+-mediated oxidative stress and disrupts lysosomal acidification\",\n    \"Lapatinib and Wnt inhibitor IWR-1 synergistically suppress tumor resistance pathways\",\n    \"The nanoparticle strategy induces immunogenic cell death and inhibits metastasis\"\n  ],\n  \"scientific_significance\": \"This work establishes lanthanide/transition metal coordination as a mechanism to overcome cuproptosis resistance, advancing targeted tumor therapy through dual modulation of oxidative stress and metastatic pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing cuproptosis efficacy by eliminating resistance mechanisms using lanthanide/transition metal ion-coordinated nanoparticles. The researchers designed La-Cu@Lap/IWR-1, which leverages La3+ to boost Cu2+-mediated oxidative stress and disrupt lysosomal acidification, while lapatinib and Wnt inhibitor IWR-1 counteract tumor resistance pathways. The approach significantly intensifies cuproptosis, triggering immunogenic cell death and inhibiting metastasis. The findings demonstrate a novel strategy for overcoming cuproptosis resistance in tumor therapy.",
+          "key_findings": [
+            "La3+ enhances Cu2+-mediated oxidative stress and disrupts lysosomal acidification",
+            "Lapatinib and Wnt inhibitor IWR-1 synergistically suppress tumor resistance pathways",
+            "The nanoparticle strategy induces immunogenic cell death and inhibits metastasis"
+          ],
+          "scientific_significance": "This work establishes lanthanide/transition metal coordination as a mechanism to overcome cuproptosis resistance, advancing targeted tumor therapy through dual modulation of oxidative stress and metastatic pathways."
+        },
+        "elapsed_seconds": 46.9944,
+        "input_tokens": 773,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 1009,
+        "model_eval_seconds": 40.508,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43041962",
+        "title": "Continuous in situ production of CAR T cells from in vivo-transduced HSCs is safe and delays growth of mouse HER2high tumors.",
+        "abstract": "NA: Clinical trials with CAR T cells for solid tumors have suggested a number of problems, including critical autoimmune reactions caused by high-affinity CAR T cells, development of CAR T cell exhaustion, poor trafficking to tumor sites after intravenous CAR T cell injection, and high costs. To address these problems, we tested an in vivo HSC gene therapy approach, resulting in in situ production of low-affinity mHER2-CAR-expressing T-cells in physiologically relevant immunocompetent mouse models with tumors derived from mouse HER2high tumor cell lines, KPmHER2 and B16F10mHER2. After intravenous injection of integrating helper-dependent adenovirus (HDAd) vectors expressing mHER2-CAR under T cell restricted transcriptional and miRNA control into mobilized C57BL/6-based mice and in vivo enrichment of stably transduced HSCs, we demonstrated that mHER2-CAR T cells significantly delayed tumor growth. Additional Treg depletion by systemic administration of low-dose cyclophosphamide further extended the time of tumor relapse driven by mHER2-negative cells. Despite continuous mHER2-CAR T cell production, the in vivo approach had an excellent safety profile. Our study also revealed a number of obstacles that limit the efficacy of the in vivo approach and have to be addressed in the future.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.omton.2026.201373",
+        "doi_url": "https://doi.org/10.1016/j.omton.2026.201373",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43041962/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Molecular therapy. Oncology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether in vivo transduction of hematopoietic stem cells (HSCs) could safely produce CAR T cells targeting HER2high tumors. Using helper-dependent adenovirus vectors to express mHER2-CAR in mobilized mice, researchers demonstrated that continuously generated low-affinity CAR T cells significantly delayed tumor growth in immunocompetent models. Treg depletion further prolonged tumor-free periods. The approach showed minimal safety concerns but identified obstacles limiting efficacy that require future resolution.\",\n  \"key_findings\": [\n    \"In vivo transduction of HSCs produced mHER2-CAR T cells that delayed HER2high tumor growth in mice\",\n    \"Treg depletion extended tumor-free periods by reducing relapse from mHER2-negative cells\",\n    \"The approach maintained an excellent safety profile despite continuous CAR T cell production\"\n  ],\n  \"scientific_significance\": \"This work establishes a safe in vivo strategy for generating tumor-targeting CAR T cells, providing a foundation for overcoming limitations in solid tumor immunotherapy through continuous, low-affinity T cell production.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether in vivo transduction of hematopoietic stem cells (HSCs) could safely produce CAR T cells targeting HER2high tumors. Using helper-dependent adenovirus vectors to express mHER2-CAR in mobilized mice, researchers demonstrated that continuously generated low-affinity CAR T cells significantly delayed tumor growth in immunocompetent models. Treg depletion further prolonged tumor-free periods. The approach showed minimal safety concerns but identified obstacles limiting efficacy that require future resolution.",
+          "key_findings": [
+            "In vivo transduction of HSCs produced mHER2-CAR T cells that delayed HER2high tumor growth in mice",
+            "Treg depletion extended tumor-free periods by reducing relapse from mHER2-negative cells",
+            "The approach maintained an excellent safety profile despite continuous CAR T cell production"
+          ],
+          "scientific_significance": "This work establishes a safe in vivo strategy for generating tumor-targeting CAR T cells, providing a foundation for overcoming limitations in solid tumor immunotherapy through continuous, low-affinity T cell production."
+        },
+        "elapsed_seconds": 43.7353,
+        "input_tokens": 729,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 953,
+        "model_eval_seconds": 37.7035,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015471",
+        "title": "Flexible rubber blades for tidal turbines.",
+        "abstract": "NA: The global transition towards sustainable energy systems has identified tidal power as a uniquely predictable and substantial renewable energy resource1. However, the highly unsteady sea environment subjects turbines to severe hydrodynamic loads, greatly increasing capital and maintenance costs2,3. Large-scale state-of-the-art turbines at present rely on complex, expensive active pitch systems to mitigate these fluctuations. Here we present a reliable, passive alternative: flexible rubber blades featuring chordwise trailing-edge deformation. We experimentally demonstrate that these flexible blades achieve an equivalent total energy yield over simulated tidal cycles compared with rigid blades with active pitch control, while mitigating high-frequency fatigue-inducing load fluctuations by up to one-third. This passive load regulation arises from aeroelastic deformation that flattens blade camber under load, enabling structural robustness without added mechanical complexity. These findings suggest that chordwise-flexible blades can enhance the durability and performance of tidal turbines, offering a promising pathway towards more reliable and cost-effective tidal energy generation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11278-w",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11278-w",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015471/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates passive load regulation in tidal turbines using flexible rubber blades with chordwise trailing-edge deformation. The researchers experimentally compared flexible blades to rigid blades with active pitch control under simulated tidal cycles. Results show equivalent energy yield while reducing high-frequency fatigue loads by up to one-third through aeroelastic deformation that flattens blade camber. This passive approach offers improved durability without added mechanical complexity.\",\n  \"key_findings\": [\n    \"Flexible rubber blades achieve equivalent total energy yield compared to rigid blades with active pitch control\",\n    \"High-frequency fatigue-inducing load fluctuations are mitigated by up to one-third via aeroelastic deformation\",\n    \"Chordwise trailing-edge deformation flattens blade camber under load, enabling structural robustness\"\n  ],\n  \"scientific_significance\": \"Passive load regulation through flexible blade design provides a cost-effective pathway for enhancing tidal turbine durability and performance without complex mechanical systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates passive load regulation in tidal turbines using flexible rubber blades with chordwise trailing-edge deformation. The researchers experimentally compared flexible blades to rigid blades with active pitch control under simulated tidal cycles. Results show equivalent energy yield while reducing high-frequency fatigue loads by up to one-third through aeroelastic deformation that flattens blade camber. This passive approach offers improved durability without added mechanical complexity.",
+          "key_findings": [
+            "Flexible rubber blades achieve equivalent total energy yield compared to rigid blades with active pitch control",
+            "High-frequency fatigue-inducing load fluctuations are mitigated by up to one-third via aeroelastic deformation",
+            "Chordwise trailing-edge deformation flattens blade camber under load, enabling structural robustness"
+          ],
+          "scientific_significance": "Passive load regulation through flexible blade design provides a cost-effective pathway for enhancing tidal turbine durability and performance without complex mechanical systems."
+        },
+        "elapsed_seconds": 34.1386,
+        "input_tokens": 620,
+        "output_tokens": 190,
+        "thoughts_tokens": null,
+        "total_tokens": 810,
+        "model_eval_seconds": 30.1888,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43019442",
+        "title": "Tuning the immune ecosystem to treat cancer.",
+        "abstract": "NA: Engineering the immune cell milieu around tumors could make them more sensitive to immunotherapy.",
+        "publication_types": [],
+        "doi": "10.1126/science.aem4781",
+        "doi_url": "https://doi.org/10.1126/science.aem4781",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43019442/",
+        "journal_id": "science",
+        "journal_name": "Science",
+        "report_id": "science__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing tumor sensitivity to immunotherapy by engineering the immune cell environment surrounding cancers. The approach focuses on modulating the immune ecosystem to improve therapeutic responses. Results indicate that strategic manipulation of the immune milieu increases tumor vulnerability to immunotherapeutic interventions, suggesting potential for improved cancer treatment efficacy through immune-targeted strategies.\",\n  \"key_findings\": [\n    \"Strategic manipulation of the immune cell environment enhances tumor sensitivity to immunotherapy\",\n    \"Engineering the immune ecosystem increases tumor vulnerability to immunotherapeutic interventions\",\n    \"The approach improves therapeutic efficacy through immune-targeted strategies\"\n  ],\n  \"scientific_significance\": \"This work advances understanding of how immune ecosystem engineering can overcome immunotherapy resistance mechanisms in cancer treatment.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing tumor sensitivity to immunotherapy by engineering the immune cell environment surrounding cancers. The approach focuses on modulating the immune ecosystem to improve therapeutic responses. Results indicate that strategic manipulation of the immune milieu increases tumor vulnerability to immunotherapeutic interventions, suggesting potential for improved cancer treatment efficacy through immune-targeted strategies.",
+          "key_findings": [
+            "Strategic manipulation of the immune cell environment enhances tumor sensitivity to immunotherapy",
+            "Engineering the immune ecosystem increases tumor vulnerability to immunotherapeutic interventions",
+            "The approach improves therapeutic efficacy through immune-targeted strategies"
+          ],
+          "scientific_significance": "This work advances understanding of how immune ecosystem engineering can overcome immunotherapy resistance mechanisms in cancer treatment."
+        },
+        "elapsed_seconds": 24.2351,
+        "input_tokens": 445,
+        "output_tokens": 151,
+        "thoughts_tokens": null,
+        "total_tokens": 596,
+        "model_eval_seconds": 23.0032,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
