@@ -19,13 +19,20 @@ site <- load_literature_site_data("..")
 
 ::: {.home-layout}
 ::: {.journal-section}
+<div class="section-heading"><h2>Top 5 this week</h2></div>
+```{r, results='asis'}
+site_render_top_five(site)
+```
+<div class="section-heading"><h2>Latest updates</h2></div>
 <div class="section-heading"><h2>Journals</h2></div>
 ```{r, results='asis'}
 cat(site_render_homepage_journal_list(site$journals))
+cat('<p class="read-more"><a href="journals/nature-biomedical-engineering.html">Read more journals</a></p>')
 ```
 <div class="section-heading keyword-heading"><h2>Keywords</h2></div>
 ```{r, results='asis'}
 cat(site_render_homepage_keyword_list(site$keywords))
+cat('<p class="read-more"><a href="keywords/regulatory-t-cells.html">Read more keywords</a></p>')
 ```
 :::
 
