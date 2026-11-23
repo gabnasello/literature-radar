@@ -391,8 +391,10 @@ site_render_paper_card <- function(article) {
     cat(sprintf("<h3>%s</h3>", title))
   }
 
+  journal_name <- site_text(article$journal_name, site_text(article$journal))
   metadata <- c(
     if (nzchar(author_text)) site_html_escape(author_text) else NULL,
+    if (nzchar(journal_name) && !identical(tolower(journal_name), "unknown journal")) site_html_escape(journal_name) else NULL,
     if (nzchar(publication_date) && publication_date != "Date unavailable") publication_date else NULL
   )
   if (length(metadata)) cat(sprintf('<p class="paper-meta">%s</p>', paste(metadata, collapse = " · ")))
