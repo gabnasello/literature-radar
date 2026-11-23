@@ -474,6 +474,21 @@ site_journal_mark <- function(journal) {
          '" aria-hidden="true">', site_html_escape(mark), '</span>')
 }
 
+site_render_journal_directory <- function(journals) {
+  visible <- Filter(function(journal) isTRUE(journal$enabled) && length(journal$reports), journals)
+  if (!length(visible)) return(invisible(cat("<p>No monitored journals yet.</p>")))
+  cat('<ul class="journal-list">')
+  for (journal in visible) {
+    latest <- journal$latest_report
+    date <- site_format_date(substr(site_text(latest$generated_at_utc), 1, 10))
+    cat(sprintf('<li><a class="journal-card-link" href="%s.html">%s<span class="journal-card-copy"><strong>%s</strong><span>Last update %s</span></span><span class="journal-card-arrow" aria-hidden="true">›</span></a></li>',
+      site_html_escape(site_slug(journal$id)), site_journal_mark(journal),
+      site_html_escape(journal$name), site_html_escape(date)))
+  }
+  cat("</ul>")
+  invisible(NULL)
+}
+
 site_render_homepage_journal_list <- function(journals) {
   visible <- site_visible_journals(journals)
   if (!length(visible)) return('<p class="empty-journal-list">No journal updates yet.</p>')
