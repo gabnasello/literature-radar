@@ -35,6 +35,16 @@ write_generated_page <- function(path, title, render_call) {
   writeLines(content, path, useBytes = TRUE)
 }
 
+writeLines(c(
+  "---", 'title: "Monitored journals"', "---", "",
+  "```{r, results='asis'}",
+  "source(\"../R/site.R\")",
+  "source(\"../R/llm.R\")",
+  "site <- load_literature_site_data(\"..\")",
+  "site_render_journal_directory(site$journals)",
+  "```", ""
+), file.path(journal_dir, "index.qmd"), useBytes = TRUE)
+
 for (journal in site$journals) {
   slug <- site_slug(journal$id)
   journal_id <- as.character(jsonlite::toJSON(journal$id, auto_unbox = TRUE))
