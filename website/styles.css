@@ -37,3 +37,14 @@ h1,h2,h3,h4,.navbar{font-family:"Manrope",sans-serif}.navbar{background:rgba(255
 }
 
 .keyword-mark{background:linear-gradient(145deg,#e3f5ef,#d2eee5);color:#17664f;font:700 .9rem 'DM Sans',sans-serif}.keyword-heading{margin-top:1.25rem}
+
+.treg-mark{font-size:1.25rem;line-height:1;font-weight:800;letter-spacing:-.04em}
+.treg-mark sub{font-size:.48em;vertical-align:sub;line-height:0;margin-left:.02em}
+.top-five-list{display:grid;gap:.35rem}
+.top-five-item{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:.45rem;align-items:start}
+.top-five-number{display:grid;place-items:center;width:1.8rem;height:1.8rem;margin-top:.9rem;border-radius:50%;background:#e8f2fc;color:#145b98;font-weight:800}
+.top-five-copy{min-width:0}
+.top-five-source{margin:.55rem 0 -.25rem;color:var(--radar-muted);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.top-five-item .paper-card{margin:.4rem 0 .55rem;max-width:none}
+.read-more{margin:.5rem 0 1rem;text-align:right;font-size:.85rem}
+.read-more a{color:var(--radar-blue);font-weight:700;text-decoration:none}
