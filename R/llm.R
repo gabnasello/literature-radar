@@ -32,7 +32,7 @@ parse_summary_response <- function(text) {
   list(valid_json = !is.null(parsed) && is.list(parsed), parsed = parsed, cleaned_text = cleaned)
 }
 
-validate_summary_payload <- function(parsed, min_words = 45L, max_words = 65L) {
+validate_summary_payload <- function(parsed, min_words = 45L, max_words = 90L) {
   errors <- character()
   required <- c("summary", "key_findings", "scientific_significance")
 
