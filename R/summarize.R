@@ -33,10 +33,15 @@ summarization_batch_outcome <- function(successful, failed) {
   "failed"
 }
 
-pending_summarization_articles <- function(records, completed_pmids = character()) {
+pending_summarization_articles <- function(records, completed_pmids = character(), priority_pmids = character()) {
   if (!length(records)) return(list())
   pending <- Filter(function(article) !article$pmid %in% completed_pmids, records)
-  if (length(pending) < 2L) return(pending)
+  if (!length(pending)) return(list())
+
+  # Put the current weekly Top 5 first, then round-robin the remaining backlog.
+  priority <- Filter(function(article) article$pmid %in% priority_pmids, pending)
+  pending <- Filter(function(article) !article$pmid %in% priority_pmids, pending)
+  if (length(pending) < 2L) return(c(priority, pending))
 
   # Round-robin across immutable report windows so one large journal update
   # does not monopolize the queue while other journal pages remain empty.
@@ -59,7 +64,7 @@ pending_summarization_articles <- function(records, completed_pmids = character(
     }
     groups <- remaining
   }
-  ordered
+  c(priority, ordered)
 }
 
 run_paper_summarization <- function(
@@ -80,7 +85,18 @@ run_paper_summarization <- function(
   articles <- read_benchmark_articles(root)
   completed <- read_completed_summary_pmids(root)
   eligible <- Filter(article_is_summarizable, articles)
-  pending <- pending_summarization_articles(eligible, completed)
+  priority_pmids <- character()
+  if (exists("load_literature_site_data", mode = "function") &&
+      exists("site_top_five", mode = "function")) {
+    current_site <- tryCatch(load_literature_site_data(root), error = function(e) NULL)
+    if (!is.null(current_site)) {
+      top_five <- tryCatch(site_top_five(current_site), error = function(e) list())
+      if (length(top_five)) {
+        priority_pmids <- unique(vapply(top_five, function(x) as.character(x$pmid), character(1)))
+      }
+    }
+  }
+  pending <- pending_summarization_articles(eligible, completed, priority_pmids)
   if (!length(pending)) {
     message("No papers are waiting for an AI summary.")
     return(invisible(list(processed = 0L, remaining = 0L, output_dir = NULL)))
