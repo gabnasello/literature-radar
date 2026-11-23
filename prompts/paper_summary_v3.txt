@@ -4,7 +4,7 @@ Produce a concise, scientifically faithful summary that helps a reader quickly u
 
 Return exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:
 {
-  "summary": "A direct overview in 45-65 words, covering the scientific question, approach, main result, and implication where available.",
+  "summary": "A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.",
   "key_findings": [
     "Up to three concise, concrete findings reported in the abstract."
   ],
@@ -12,7 +12,7 @@ Return exactly one valid JSON object. Do not use Markdown fences or add commenta
 }
 
 Rules:
-- The summary must contain 45-65 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.
+- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.
 - Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.
 - Preserve uncertainty and avoid overstating causality.
 - Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.
