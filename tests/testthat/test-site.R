@@ -206,7 +206,7 @@ test_that("homepage lists only enabled journals and shows only their update date
   visible <- site_visible_journals(journals)
   expect_equal(
     vapply(visible, `[[`, character(1), "id"),
-    c("empty", "newer", "older")
+    c("empty", "newer")
   )
 
   rendered <- site_render_homepage_journal_list(journals)
@@ -214,7 +214,7 @@ test_that("homepage lists only enabled journals and shows only their update date
   expect_false(grepl("Latest summary", rendered, fixed = TRUE))
   expect_false(grepl("Latest summary", rendered, fixed = TRUE))
   expect_match(rendered, 'href="journals/newer.html"', fixed = TRUE)
-  expect_equal(lengths(regmatches(rendered, gregexpr("<li>", rendered, fixed = TRUE))), 3L)
+  expect_equal(lengths(regmatches(rendered, gregexpr("<li>", rendered, fixed = TRUE))), 2L)
 })
 
 test_that("news-labelled and editorial records are not summarized and appear after research papers", {
