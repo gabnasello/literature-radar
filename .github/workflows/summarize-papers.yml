@@ -8,6 +8,7 @@ on:
       - "R/llm.R"
       - "R/benchmark.R"
       - "scripts/run_summarization.R"
+      - "scripts/send_telegram_digest.R"
       - "prompts/**"
       - "config/llm.yml"
       - "reports/**"
@@ -114,6 +115,27 @@ jobs:
             echo "No new summaries to commit."
           else
             git commit -m "chore: add automatic paper summaries $(date -u +%Y-%m-%d)"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+
+      - name: Send weekly Telegram digest when Top 5 summaries are ready
+        if: success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SITE_URL: https://gabnasello.github.io/literature-radar/
+        run: Rscript scripts/send_telegram_digest.R
+
+      - name: Commit Telegram notification state
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/telegram
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: record weekly Telegram digest"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
