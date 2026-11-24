@@ -1,0 +1,954 @@
+{
+  "schema_version": 1,
+  "run_id": "20261124T102859Z",
+  "generated_at_utc": "2026-11-24 10:52:49 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 102,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42974761",
+        "title": "Ultra-Broad-Temperature Mechanoluminescence Enabled by Intrinsic Lattice Disorder.",
+        "abstract": "NA: Mechanoluminescent (ML) materials convert mechanical stimuli into light through carrier excitation and radiative recombination, enabling external-power-free stress sensing and visualization. The strict energy matching required for carrier release, transport, and recombination restricts ML to narrow thermal windows. Their application at extreme temperatures, however, is constrained by discrete defect levels arising from relatively uniform local atomic environments. Here, we use intrinsic lattice disorder to engineer a quasi-continuous trap landscape in Sr3Gd2(Ge3O9)2:Mn2+. Diverse local crystal-field environments, together with dynamically generated defects, create energetically adjacent traps that support a trap-relay process. Charge carriers are continuously redistributed across this trap manifold, sustaining stable ML over an ultrabroad temperature range from 133 to 433 K. We further demonstrate a human-machine interaction system based on this material under simulated extreme-temperature conditions. These results establish intrinsic lattice disorder as a strategy for broadening the thermal operating window of ML materials and provide a general design principle for thermally robust, energy-storing luminescent materials for extreme environments.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75612",
+        "doi_url": "https://doi.org/10.1002/adma.75612",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974761/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing mechanoluminescence (ML) thermal stability by engineering intrinsic lattice disorder in Sr3Gd2(Ge3O9)2:Mn2+. The researchers created a quasi-continuous trap landscape using diverse local crystal-field environments and dynamically generated defects, enabling a trap-relay process. This approach sustains stable ML across an ultrabroad temperature range (133–433 K), demonstrating potential for extreme-temperature applications without external power. The findings address the limitation of narrow thermal windows in conventional ML materials.\",\n  \"key_findings\": [\n    \"Engineered intrinsic lattice disorder in Sr3G:Gd2(Ge3O9)2:Mn2+ enables a quasi-continuous trap landscape\",\n    \"Trap-relay process sustains stable mechanoluminescence across 133–433 K\",\n    \"Demonstrated human-machine interaction under simulated extreme-temperature conditions\"\n  ],\n  \"scientific_significance\": \"This work establishes intrinsic lattice disorder as a general strategy to broaden the thermal operating window of mechanoluminescent materials, advancing the design of thermally robust, energy-storing luminescent systems for extreme environments.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing mechanoluminescence (ML) thermal stability by engineering intrinsic lattice disorder in Sr3Gd2(Ge3O9)2:Mn2+. The researchers created a quasi-continuous trap landscape using diverse local crystal-field environments and dynamically generated defects, enabling a trap-relay process. This approach sustains stable ML across an ultrabroad temperature range (133–433 K), demonstrating potential for extreme-temperature applications without external power. The findings address the limitation of narrow thermal windows in conventional ML materials.",
+          "key_findings": [
+            "Engineered intrinsic lattice disorder in Sr3G:Gd2(Ge3O9)2:Mn2+ enables a quasi-continuous trap landscape",
+            "Trap-relay process sustains stable mechanoluminescence across 133–433 K",
+            "Demonstrated human-machine interaction under simulated extreme-temperature conditions"
+          ],
+          "scientific_significance": "This work establishes intrinsic lattice disorder as a general strategy to broaden the thermal operating window of mechanoluminescent materials, advancing the design of thermally robust, energy-storing luminescent systems for extreme environments."
+        },
+        "elapsed_seconds": 65.7317,
+        "input_tokens": 666,
+        "output_tokens": 249,
+        "thoughts_tokens": null,
+        "total_tokens": 915,
+        "model_eval_seconds": 44.2759,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43053602",
+        "title": "Modified Fangji Huangqi Decoction ameliorates IgA nephropathy by enriching Fusicatenibacter saccharivorans to rebalance Th17/Treg.",
+        "abstract": "BACKGROUND: Abnormalities in mucosal immunity caused by gut microbiota dysbiosis are one of the key factors in the pathogenesis of IgA nephropathy (IgAN). Modified Fangji Huangqi Decoction (MFHD) is an effective treatment for IgAN, but it remains unclear whether its therapeutic effect is mediated by modulating the gut microbiota and thereby influencing mucosal immunity.\nMETHODS: The chemical composition of MFHD was analyzed using UPLC-MS/MS. The renoprotective effects of different doses of MFHD on IgAN mice were evaluated by examining renal pathology and laboratory parameters. Additionally, a combination of metagenomics, flow cytometry, ELISA, and Western blot techniques was used to evaluate the effects of MFHD on the gut microbiota-mucosal immune axis. Potential functional bacterial species were identified through correlation analysis, and their effects were validated through strain transplantation experiments in a pseudo-germ-free mouse model.\nRESULTS: MFHD reduces urinary protein and improves renal pathological damage in IgAN mice. MFHD significantly increases gut microbiota diversity, enriches beneficial bacteria, and reverses the Th17/Treg immune imbalance, thereby reducing IgA+ plasma cells and serum IgA and IgG levels. Correlation analyses and strain transplantation experiment further confirmed that intestinal colonization by Fusicatenibacter saccharivorans restores the Th17/Treg balance and inhibits the differentiation of IgA+ plasma cells, thereby exerting a renoprotective effect. Additionally, both MFHD and Fusicatenibacter saccharivorans increase the expression of occludin and ZO-1, thereby improving histopathological damage in the small intestine.\nCONCLUSION: MFHD improves IgAN by regulating the gut microbiota-particularly by enriching Fusicatenibacter saccharivorans-thereby restoring the Th17/Treg immune balance and reducing IgA secretion.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1080/0886022X.2026.2751280",
+        "doi_url": "https://doi.org/10.1080/0886022X.2026.2751280",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43053602/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Renal failure",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated whether Modified Fangji Huangqi Decoction (MFHD) alleviates IgA nephropathy (IgAN) through gut microbiota modulation. Using UPLC-MS/MS, metagenomics, and immune profiling in IgAN mice, MFHD reduced urinary protein and renal damage while increasing gut microbiota diversity. It enriched Fusicatenibacter saccharivorans, which restored Th17/Treg balance, decreased IgA+ plasma cells, and improved intestinal barrier function via occludin/ZO-1 upregulation.\",\n  \"key_findings\": [\n    \"MFHD reduces urinary protein and renal pathology in IgAN mice\",\n    \"MFHD enriches Fusicatenibacter saccharivorans to rebalance Th17/Treg immune cells\",\n    \"Fusicatenibacter saccharivorans suppresses IgA+ plasma cell differentiation and enhances intestinal barrier integrity\"\n  ],\n  \"scientific_significance\": \"The study identifies a specific gut bacterium that mediates MFHD's renoprotective effects in IgAN, providing mechanistic insights into microbiota-immune axis modulation for this kidney disease.\"\n}",
+        "parsed": {
+          "summary": "This study investigated whether Modified Fangji Huangqi Decoction (MFHD) alleviates IgA nephropathy (IgAN) through gut microbiota modulation. Using UPLC-MS/MS, metagenomics, and immune profiling in IgAN mice, MFHD reduced urinary protein and renal damage while increasing gut microbiota diversity. It enriched Fusicatenibacter saccharivorans, which restored Th17/Treg balance, decreased IgA+ plasma cells, and improved intestinal barrier function via occludin/ZO-1 upregulation.",
+          "key_findings": [
+            "MFHD reduces urinary protein and renal pathology in IgAN mice",
+            "MFHD enriches Fusicatenibacter saccharivorans to rebalance Th17/Treg immune cells",
+            "Fusicatenibacter saccharivorans suppresses IgA+ plasma cell differentiation and enhances intestinal barrier integrity"
+          ],
+          "scientific_significance": "The study identifies a specific gut bacterium that mediates MFHD's renoprotective effects in IgAN, providing mechanistic insights into microbiota-immune axis modulation for this kidney disease."
+        },
+        "elapsed_seconds": 58.9462,
+        "input_tokens": 851,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 1095,
+        "model_eval_seconds": 46.1869,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window prevents amplification. Mechanistically, HFD recruits neutrophils that express Nlrp3 and Il1b, driving pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. These findings demonstrate that short-lived dietary states can durably reprogram immune responses when coinciding with tissue inflammation.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute inflammation to chronic obesity levels in lean mice\",\n    \"HFD outside this temporal window or switching obese mice to low-fat diet during the window prevents inflammatory amplification\",\n    \"Neutrophil-mediated Nlrp3-Il1b signaling licenses pathogenic TH17 cells, with persistent chromatin-poised tissue-resident memory T cells after recovery\"\n  ],\n  \"scientific_significance\": \"This work establishes a dietary window mechanism where transient metabolic states can durably reprogram immune memory during tissue inflammation, providing insights into how short-lived physiological changes impact long-term immune responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window prevents amplification. Mechanistically, HFD recruits neutrophils that express Nlrp3 and Il1b, driving pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. These findings demonstrate that short-lived dietary states can durably reprogram immune responses when coinciding with tissue inflammation.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute inflammation to chronic obesity levels in lean mice",
+            "HFD outside this temporal window or switching obese mice to low-fat diet during the window prevents inflammatory amplification",
+            "Neutrophil-mediated Nlrp3-Il1b signaling licenses pathogenic TH17 cells, with persistent chromatin-poised tissue-resident memory T cells after recovery"
+          ],
+          "scientific_significance": "This work establishes a dietary window mechanism where transient metabolic states can durably reprogram immune memory during tissue inflammation, providing insights into how short-lived physiological changes impact long-term immune responses."
+        },
+        "elapsed_seconds": 62.9351,
+        "input_tokens": 884,
+        "output_tokens": 307,
+        "thoughts_tokens": null,
+        "total_tokens": 1191,
+        "model_eval_seconds": 59.6763,
+        "error": "summary must contain 45–90 words; received 110.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42974849",
+        "title": "Additives and Relaxation Fluidize Molecular Transport Within Covalent Adaptable Networks.",
+        "abstract": "NA: Incorporating dynamic covalent bonds into polymer networks could offer stimuli-responsive control over molecular transport, often requiring additives to facilitate bond rearrangement. Here super-resolution localization microscopy was employed to examine fluorescent probe transport in unhydrated, elastic networks containing thiol-thioester dynamic covalent chemistry (DCC). In static, DCC-free networks, displacement distributions revealed frequent trapping and slow, anomalous, and heterogeneous diffusion. Introducing a dynamic catalyst additive markedly increased mobile fraction and produced diffusivity that was more fluid-like. These effects were observed with several classes of fluorescent probes, two distinct additives, and for networks with or without DCC. Experiments with a photo-releasable catalyst (NPPOC-TMG) separated additive effects from those of activated exchange. Catalyst release conferred additional fluidization of the network. Importantly, these changes were not accompanied by macroscopic plasticization, suggesting that small additive concentrations can strongly affect transport in confining environments. Spatial analysis further indicated that transport enhancement was primarily due to restructuring of an initially heterogeneous network rather than local bond exchange near the diffusing probes. Additive incorporation and post-cure exchange likely reduced defects and homogenized the crosslink density. In sum, these results demonstrate how DCC modulates transport, emphasize the importance of the activation method, and highlight its potential in separation and controlled-release systems.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75573",
+        "doi_url": "https://doi.org/10.1002/adma.75573",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974849/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how dynamic covalent bonds in polymer networks influence molecular transport using super-resolution microscopy. The research compared unhydrated networks with and without thiol-thioester dynamic covalent chemistry (DCC), adding catalysts to observe effects on probe diffusion. Results showed that catalyst additives significantly increased mobile fraction and produced more fluid-like diffusivity without macroscopic plasticization. The findings indicate that small additive concentrations can enhance transport by restructuring heterogeneous networks, potentially aiding separation and controlled-release applications.\",\n  \"key_findings\": [\n    \"Catalyst additives increased mobile fraction and diffusivity in DCC networks\",\n    \"Enhanced transport occurred without macroscopic plasticization\",\n    \"Restructuring of heterogeneous networks, not local bond exchange, drove transport improvements\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that strategic additive incorporation can fluidize molecular transport in covalent adaptable networks through network restructuring, providing insights for stimuli-responsive materials design.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how dynamic covalent bonds in polymer networks influence molecular transport using super-resolution microscopy. The research compared unhydrated networks with and without thiol-thioester dynamic covalent chemistry (DCC), adding catalysts to observe effects on probe diffusion. Results showed that catalyst additives significantly increased mobile fraction and produced more fluid-like diffusivity without macroscopic plasticization. The findings indicate that small additive concentrations can enhance transport by restructuring heterogeneous networks, potentially aiding separation and controlled-release applications.",
+          "key_findings": [
+            "Catalyst additives increased mobile fraction and diffusivity in DCC networks",
+            "Enhanced transport occurred without macroscopic plasticization",
+            "Restructuring of heterogeneous networks, not local bond exchange, drove transport improvements"
+          ],
+          "scientific_significance": "This work demonstrates that strategic additive incorporation can fluidize molecular transport in covalent adaptable networks through network restructuring, providing insights for stimuli-responsive materials design."
+        },
+        "elapsed_seconds": 45.3912,
+        "input_tokens": 713,
+        "output_tokens": 202,
+        "thoughts_tokens": null,
+        "total_tokens": 915,
+        "model_eval_seconds": 36.4966,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43053642",
+        "title": "Single-Cell and Transcriptomic Analyses Identify the Regulatory T Cell-Associated Gene MED10 as a Prognostic Predictor in Colorectal Cancer.",
+        "abstract": "NA: Tregs significantly shape the colorectal cancer (CRC) immune microenvironment, yet the roles of specific Treg-associated genes remain poorly understood. Treg-related genes were screened from scRNA-seq data (GSE161277), followed by expression and prognostic validation in several independent cohorts (TCGA, GSE87211, GSE44076, and GSE17538). GSEA and CellChat characterized regulatory pathways and intercellular communication. MED10 expression was verified in CRC tissues and cell lines by qRT-PCR and western blotting. Functional assays (CCK-8, colony formation, wound healing, flow cytometry) evaluated MED10's impact on tumor behavior. Finally, the in vivo relevance of MED10 to tumor growth and immune microenvironmental changes was assessed using a syngeneic mouse model. MED10 was identified as a critical Treg-related gene in CRC, with high expression correlating with shortened survival. GSEA revealed that high MED10 expression was associated with enrichment of the Wnt/β-catenin signaling pathway. Furthermore, intercellular communication analysis suggested that elevated MED10 expression may be associated with increased interaction strengths between cell populations, potentially contributing to the remodeling of an immunosuppressive tumor microenvironment. In vitro functional assays revealed that MED10 knockdown significantly impaired CRC cell proliferation and migration while inducing apoptosis. MED10 knockdown also reduced Wnt/β-catenin transcriptional activity, which was partially restored by LiCl treatment. Finally, in vivo, MED10 silencing suppressed tumor growth and was accompanied by reduced Treg infiltration and enhanced effector T-cell activity. MED10 is associated with CRC progression, Wnt/β-catenin signaling alterations, and a Treg-enriched immunosuppressive immune context, supporting its potential value as a prognostic indicator and candidate therapeutic target.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1002/jcp.70254",
+        "doi_url": "https://doi.org/10.1002/jcp.70254",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43053642/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of cellular physiology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the role of regulatory T cell (Treg)-associated genes in colorectal cancer (CRC) using single-cell RNA sequencing and multi-omics approaches. Researchers identified MED10 as a critical Treg-related gene, with high expression correlating with shortened survival. Functional assays demonstrated MED10 knockdown impaired CRC cell proliferation, migration, and Wnt/β-catenin signaling, while in vivo models showed reduced tumor growth and enhanced Treg infiltration following MED10 silencing. These findings suggest MED10's role in CRC progression and immunosuppression.\",\n  \"key_findings\": [\n    \"MED10 expression correlates with shortened survival in colorectal cancer\",\n    \"MED10 knockdown impairs CRC cell proliferation, migration, and Wnt/β-catenin signaling\",\n    \"MED10 silencing reduces tumor growth and enhances effector T-cell activity in vivo\"\n  ],\n  \"scientific_significance\": \"This study identifies MED10 as a key regulator in colorectal cancer immune evasion, linking Treg activity to Wnt/β-catenin signaling and immunosuppressive microenvironment remodeling.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the role of regulatory T cell (Treg)-associated genes in colorectal cancer (CRC) using single-cell RNA sequencing and multi-omics approaches. Researchers identified MED10 as a critical Treg-related gene, with high expression correlating with shortened survival. Functional assays demonstrated MED10 knockdown impaired CRC cell proliferation, migration, and Wnt/β-catenin signaling, while in vivo models showed reduced tumor growth and enhanced Treg infiltration following MED10 silencing. These findings suggest MED10's role in CRC progression and immunosuppression.",
+          "key_findings": [
+            "MED10 expression correlates with shortened survival in colorectal cancer",
+            "MED10 knockdown impairs CRC cell proliferation, migration, and Wnt/β-catenin signaling",
+            "MED10 silencing reduces tumor growth and enhances effector T-cell activity in vivo"
+          ],
+          "scientific_significance": "This study identifies MED10 as a key regulator in colorectal cancer immune evasion, linking Treg activity to Wnt/β-catenin signaling and immunosuppressive microenvironment remodeling."
+        },
+        "elapsed_seconds": 58.552,
+        "input_tokens": 855,
+        "output_tokens": 240,
+        "thoughts_tokens": null,
+        "total_tokens": 1095,
+        "model_eval_seconds": 45.422,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42974853",
+        "title": "Crystallinity-Governed Liquid Wettability and Mobility on Solid Surface.",
+        "abstract": "NA: Control over liquid wettability and droplet mobility is essential for several emerging applications including open microfluidics, anti-icing, self-cleaning, and heat transfer. Existing strategies generally rely on permanent chemical modification or continuous external stimuli to regulate droplet spreading, pinning, and sliding. Here, we report a unified approach for reconfiguring wettability states and droplet mobility by regulating crystalline packing of a semicrystalline polymer. A phase-transitioning polymer, poly(octadecyl acrylate) (PODAc), was incorporated into a porous polymeric coating, where melting and subsequent cooling pathways determine the extent of alkyl-chain crystallization and interfacial polar functionality. Cooling in air or underwater generates reversibly switchable hydrophilic (θW ∼ 85°), hydrophobic (θW ∼ 104°), and amphiphobic slippery states across liquids with surface tensions of 22-72 mN m-1. These distinct regimes enable programmable droplet spreading, pinning, and low-friction transport without post-synthetic chemical treatment or sustained external stimulation. Furthermore, reconfigurable wettability patterns enable guided liquid transport through spatially selective complete wetting or customized contact line frictional force.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75587",
+        "doi_url": "https://doi.org/10.1002/adma.75587",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974853/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how crystalline packing in semicrystalline polymers affects liquid wettability and droplet mobility. By incorporating poly(octadecyl acrylate) into a porous polymer coating, researchers controlled crystallization through melting and cooling pathways. The approach generated reversible hydrophilic, hydrophobic, and amphiphobic states with surface tensions of 22-72 mN m-1, enabling programmable droplet spreading, pinning, and low-friction transport without post-synthetic modifications or external stimuli.\",\n  \"key_findings\": [\n    \"Reversible switching between hydrophilic (θW ∼ 85°), hydrophobic (θW ∼ 104°), and amphiphobic slippery states via crystalline packing control\",\n    \"Programmable droplet spreading, pinning, and low-friction transport across surface tensions of 22-72 mN m-1\",\n    \"Reconfigurable wettability patterns enabling guided liquid transport through spatially selective wetting\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a crystallinity-driven mechanism for dynamically tuning liquid wettability and mobility, providing a versatile platform for applications requiring reversible, stimulus-free control of liquid behavior on solid surfaces.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how crystalline packing in semicrystalline polymers affects liquid wettability and droplet mobility. By incorporating poly(octadecyl acrylate) into a porous polymer coating, researchers controlled crystallization through melting and cooling pathways. The approach generated reversible hydrophilic, hydrophobic, and amphiphobic states with surface tensions of 22-72 mN m-1, enabling programmable droplet spreading, pinning, and low-friction transport without post-synthetic modifications or external stimuli.",
+          "key_findings": [
+            "Reversible switching between hydrophilic (θW ∼ 85°), hydrophobic (θW ∼ 104°), and amphiphobic slippery states via crystalline packing control",
+            "Programmable droplet spreading, pinning, and low-friction transport across surface tensions of 22-72 mN m-1",
+            "Reconfigurable wettability patterns enabling guided liquid transport through spatially selective wetting"
+          ],
+          "scientific_significance": "This work demonstrates a crystallinity-driven mechanism for dynamically tuning liquid wettability and mobility, providing a versatile platform for applications requiring reversible, stimulus-free control of liquid behavior on solid surfaces."
+        },
+        "elapsed_seconds": 58.127,
+        "input_tokens": 702,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 973,
+        "model_eval_seconds": 49.4485,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43053968",
+        "title": "SIM0278, an IL-2 mutein that selectively expands regulatory T cells for the treatment of autoimmune disorders.",
+        "abstract": "BACKGROUND: Regulatory T cells (Tregs) are essential for maintaining immune tolerance, and their dysfunction contributes to autoimmune diseases. Interleukin-2 (IL-2)-based therapies aiming to expand Tregs are limited by a short half-life and broad immune activation. This study aims to develop a long-acting IL-2 variant with enhanced Treg selectivity for the treatment of autoimmune diseases.\nMETHODS: Using a computation-driven protein engineering strategy, we designed an optimized IL-2 mutein to attenuate binding to IL-2 receptor (IL-2R) βγ while preserving high-affinity engagement with IL-2Rαβγ. The mutein was fused to a human Fc fragment to generate SIM0278. Its receptor binding profile, downstream signaling, and cellular selectivity were characterized in vitro. In vivo pharmacodynamics and therapeutic efficacy were evaluated in healthy mice, multiple autoimmune disease models and cynomolgus monkeys.\nRESULTS: Compared with wild type IL-2, SIM0278 maintained comparable activity toward IL-2Rαβγ while showing reduced activity toward IL-2Rβγ. This receptor response profile translated into preferential STAT5 activation in Tregs, with substantially reduced activation of conventional T cells and CD8+ T cells. In healthy mice, SIM0278 potently expanded Tregs. In models of delayed-type hypersensitivity, atopic dermatitis, graft-versus-host disease, and systemic lupus erythematosus, SIM0278 demonstrated robust, dose-dependent therapeutic effects, reducing inflammation, autoantibody production, and mortality. In cynomolgus monkeys, SIM0278 showed prolonged half-life with sustained and selective Treg expansion.\nCONCLUSION: SIM0278 is a selective and long-acting Treg-biased IL-2 mutein fusion protein with promising therapeutic potential for various autoimmune diseases.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.3389/fimmu.2026.2004590",
+        "doi_url": "https://doi.org/10.3389/fimmu.2026.2004590",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43053968/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in immunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study engineered SIM0278, an IL-2 mutein fused to a human Fc fragment, to enhance regulatory T cell (Treg) selectivity while minimizing conventional T cell activation. The variant demonstrated reduced binding to IL-2Rβγ, preferential STAT5 activation in Tregs, and robust therapeutic efficacy across multiple autoimmune disease models and cynomolgus monkeys. It expanded Tregs and reduced inflammation, autoantibodies, and mortality in preclinical models without significant off-target effects.\",\n  \"key_findings\": [\n    \"SIM0278 selectively expands Tregs over conventional T cells by attenuating IL-2Rβγ binding\",\n    \"The mutein showed dose-dependent therapeutic effects in multiple autoimmune disease models\",\n    \"SIM0278 exhibited prolonged half-life and sustained Treg expansion in cynomolgus monkeys\"\n  ],\n  \"scientific_significance\": \"This study provides a proof-of-concept for engineering IL-2 variants with enhanced Treg selectivity and prolonged half-life, advancing targeted immunomodulation for autoimmune disorders.\"\n}",
+        "parsed": {
+          "summary": "This study engineered SIM0278, an IL-2 mutein fused to a human Fc fragment, to enhance regulatory T cell (Treg) selectivity while minimizing conventional T cell activation. The variant demonstrated reduced binding to IL-2Rβγ, preferential STAT5 activation in Tregs, and robust therapeutic efficacy across multiple autoimmune disease models and cynomolgus monkeys. It expanded Tregs and reduced inflammation, autoantibodies, and mortality in preclinical models without significant off-target effects.",
+          "key_findings": [
+            "SIM0278 selectively expands Tregs over conventional T cells by attenuating IL-2Rβγ binding",
+            "The mutein showed dose-dependent therapeutic effects in multiple autoimmune disease models",
+            "SIM0278 exhibited prolonged half-life and sustained Treg expansion in cynomolgus monkeys"
+          ],
+          "scientific_significance": "This study provides a proof-of-concept for engineering IL-2 variants with enhanced Treg selectivity and prolonged half-life, advancing targeted immunomodulation for autoimmune disorders."
+        },
+        "elapsed_seconds": 55.0153,
+        "input_tokens": 835,
+        "output_tokens": 228,
+        "thoughts_tokens": null,
+        "total_tokens": 1063,
+        "model_eval_seconds": 42.7783,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42974889",
+        "title": "Flexible High-Speed Low-Noise Organic Photodiode Arrays for Dynamic Near-Infrared Imaging.",
+        "abstract": "NA: Organic photodiodes (OPDs) hold significant promise for next-generation IoT optical sensing and low-power imaging applications. However, widespread application of OPD in flexible and dynamic imaging has been constrained by high dark current, poor stability, and the lack of a cost-effective imaging system. In this work, we present an integrated solution through tailoring pseudo-planar heterojunction (PPHJ) OPD arrays and a customized, rapidly accessible imaging system, the dynamic organic photonics imaging system (DOIS). The resulting PPHJ OPD exhibited a high responsivity (0.6 A W-1 at 868 nm), low dark current (1.5 × 10-8 A cm-2 at -1 V) and fast response time (480 ns), benefiting from optimal vertical phase separation and donor-acceptor interface morphology. Moreover, flexible photodetector exhibits superior mechanical stability, photostability and storage stability. Crucially, a pixel-shifting strategy was incorporated into conventional convolutional neural network (CNN) based machine learning algorithms to capture dynamic images and enhance resolution by leveraging sub-pixel information sampling. This work demonstrates a significant potential for the extensive application of organic photovoltaic materials in image sensing and flexible electronics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75605",
+        "doi_url": "https://doi.org/10.1002/adma.75605",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974889/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates flexible, high-speed organic photodiode arrays for near-infrared imaging. Researchers developed pseudo-planar heterojunction (PPHJ) OPD arrays with tailored vertical phase separation and donor-acceptor interfaces, achieving high responsivity (0.6 A/W at .868 μm), low dark current (1.5 × 10^-8 A/cm² at -1 V), and fast response (480 ns). The integrated dynamic organic photonics imaging system (DOIS) enabled dynamic imaging with enhanced resolution via pixel-shifting in CNN algorithms. The work addresses key constraints in flexible organic imaging systems.\",\n  \"key_findings\": [\n    \"PPHJ OPD arrays achieved high responsivity (0.6 A/W at 868 nm)\",\n    \"Low dark current (1.5 × 10^-8 A/cm² at -1 V) and fast response (480 ns)\",\n    \"Pixel-shifting in CNN algorithms improved dynamic imaging resolution\"\n  ],\n  \"scientific_significance\": \"This work advances organic photodetector technology for flexible, low-noise near-infrared imaging by integrating optimized material design with machine learning-enhanced imaging systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates flexible, high-speed organic photodiode arrays for near-infrared imaging. Researchers developed pseudo-planar heterojunction (PPHJ) OPD arrays with tailored vertical phase separation and donor-acceptor interfaces, achieving high responsivity (0.6 A/W at .868 μm), low dark current (1.5 × 10^-8 A/cm² at -1 V), and fast response (480 ns). The integrated dynamic organic photonics imaging system (DOIS) enabled dynamic imaging with enhanced resolution via pixel-shifting in CNN algorithms. The work addresses key constraints in flexible organic imaging systems.",
+          "key_findings": [
+            "PPHJ OPD arrays achieved high responsivity (0.6 A/W at 868 nm)",
+            "Low dark current (1.5 × 10^-8 A/cm² at -1 V) and fast response (480 ns)",
+            "Pixel-shifting in CNN algorithms improved dynamic imaging resolution"
+          ],
+          "scientific_significance": "This work advances organic photodetector technology for flexible, low-noise near-infrared imaging by integrating optimized material design with machine learning-enhanced imaging systems."
+        },
+        "elapsed_seconds": 55.5445,
+        "input_tokens": 697,
+        "output_tokens": 258,
+        "thoughts_tokens": null,
+        "total_tokens": 955,
+        "model_eval_seconds": 47.0716,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43054090",
+        "title": "Exploration of neuroimmune and brain network mechanisms of Jin's three-needle therapy in promoting ischemic stroke recovery: a randomized controlled trial protocol.",
+        "abstract": "BACKGROUND: Functional impairment during the recovery phase of ischemic stroke (IS) substantially diminishes patients' long-term quality of life. Although rehabilitation therapy promotes functional recovery, some patients still face persistent functional limitations, underscoring the need for effective adjuvant interventions. Acupuncture is widely used in stroke rehabilitation, and Jin's three-needle therapy has shown potential benefits for post-stroke motor dysfunction. However, high-quality randomized controlled trial evidence regarding its clinical efficacy and neuroimmunomodulatory mechanisms remains limited.\nOBJECTIVE: This study aims to evaluate the clinical efficacy of Jin's three-needle therapy for functional impairment during the recovery phase of ischemic stroke, and to explore potential associations between brain functional network changes and peripheral immune alterations using resting-state functional magnetic resonance imaging (rs-fMRI) and immune marker assessments.\nMETHODS: This randomized, controlled, assessor-blinded trial will enroll 70 patients with ischemic stroke in the recovery phase from The First Affiliated Hospital of Guangzhou University of Chinese Medicine. Participants will be randomly assigned to receive either Jin's three-needle therapy or non-penetrating sham acupuncture, while both groups receive the same standardized conventional rehabilitation and guideline-based basic treatment. The intervention will be administered for 3 weeks (5 treatment days per week). Treatment providers will not be blinded, whereas patients, outcome assessors, and data analysts will remain blinded. The primary outcome is the change in the National Institutes of Health Stroke Scale (NIHSS) score. Secondary outcomes include the Modified Barthel Index (MBI) and modified Rankin Scale (mRS). Exploratory outcomes include peripheral immune-related markers, including regulatory T cell proportion, CD39 expression on Tregs, plasma plasminogen activator inhibitor-1 (PAI-1) levels, and rs-fMRI-based functional connectivity changes. Associations among changes in clinical outcomes, brain functional connectivity, and peripheral biomarkers will be explored. Follow-up assessments will be conducted at 1 and 3 months after discharge.\nDISCUSSION: This study integrates clinical assessments, peripheral biomarker measurements, and brain functional imaging to investigate the multidimensional effects of Jin's three-needle therapy on functional impairment during the recovery phase of ischemic stroke. The findings may provide objective evidence for evaluating this therapy and characterize treatment-associated changes in peripheral immune-related biomarkers and brain functional connectivity, as well as their associations with clinical recovery.\nCLINICAL TRIAL REGISTRATION: https://itmctr.ccebtcm.org.cn/mgt/search, identifier ITMCTR2026001598.",
+        "publication_types": [
+          "Journal Article",
+          "Clinical Trial Protocol"
+        ],
+        "doi": "10.3389/fneur.2026.1964349",
+        "doi_url": "https://doi.org/10.3389/fneur.2026.1964349",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43054090/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in neurology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This randomized controlled trial protocol evaluates Jin's three-needle acupuncture for functional recovery in ischemic stroke patients. The study compares this therapy against sham acupuncture, measuring clinical outcomes via NIHSS, MBI, and mRS scores, alongside peripheral immune markers and rs-fMRI functional connectivity changes. The protocol aims to establish links between neuroimmune mechanisms and clinical improvement during stroke recovery.\",\n  \"key_findings\": [\n    \"Assessment of clinical efficacy using NIHSS, MBI, and mRS scores\",\n    \"Measurement of peripheral immune markers including regulatory T cell proportion and PAI-1 levels\",\n    \"Exploration of rs-fMRI functional connectivity changes associated with clinical outcomes\"\n  ],\n  \"scientific_significance\": \"This protocol provides a methodological framework for investigating neuroimmune mechanisms underlying acupuncture-induced functional recovery in ischemic stroke, advancing understanding of multimodal therapeutic interventions.\"\n}",
+        "parsed": {
+          "summary": "This randomized controlled trial protocol evaluates Jin's three-needle acupuncture for functional recovery in ischemic stroke patients. The study compares this therapy against sham acupuncture, measuring clinical outcomes via NIHSS, MBI, and mRS scores, alongside peripheral immune markers and rs-fMRI functional connectivity changes. The protocol aims to establish links between neuroimmune mechanisms and clinical improvement during stroke recovery.",
+          "key_findings": [
+            "Assessment of clinical efficacy using NIHSS, MBI, and mRS scores",
+            "Measurement of peripheral immune markers including regulatory T cell proportion and PAI-1 levels",
+            "Exploration of rs-fMRI functional connectivity changes associated with clinical outcomes"
+          ],
+          "scientific_significance": "This protocol provides a methodological framework for investigating neuroimmune mechanisms underlying acupuncture-induced functional recovery in ischemic stroke, advancing understanding of multimodal therapeutic interventions."
+        },
+        "elapsed_seconds": 53.7585,
+        "input_tokens": 978,
+        "output_tokens": 182,
+        "thoughts_tokens": null,
+        "total_tokens": 1160,
+        "model_eval_seconds": 36.0733,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42974896",
+        "title": "Ultra-Long Helical CNFs 3D-Networks as High-Conductivity Current Collectors for Efficient Sodium Deposition.",
+        "abstract": "NA: Aluminum (Al) current collectors are crucial for sodium metal batteries (SMBs), yet sodium (Na) dendrite suppression and uniform Na deposition remain challenges. Surface modification could significantly optimize Na deposition behavior. Herein, a 20 nm copper (Cu) layer is designed to confine NiY diatomic catalyst (DAC) for Al surface modification via magnetron sputtering and heat treatment. The adjacent NiY atoms, with low single-point energy (-228.05 eV), minimum segregation energy (-0.67 eV), and maximum aggregation energy (5.84 eV), synergistically stabilize diatomic dispersion in the Cu nanolayer. Benefiting from the tailored acetylene adsorption energy (-1.16 eV) and favorable formation energies of C2H (-13.58 eV) and C2 (-11.44 eV), NiY-DAC exhibits excellent catalytic activity, in-situ growth ultra-long helical CNFs 3D-networks with a thickness of 46.3 µm on Al current collectors, enabling efficient Na storage and remarkable inhibition Na dendrite formation. The modified current collector delivers outstanding electrochemical performance. The coulombic efficiency is up to 99.49% over 3000 h of half-cells at 1.0 mA cm-2/1.0 mAh cm-2 with a low overpotential (3.1 mV), and the CNFs-Na||Na3V2(PO4)3 full-cells achieve stable cycling over 1500 cycles at 10.0 C. This diatomic catalyst confinement strategy provides new insight into designing high-performance carbon-modified current collectors.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75582",
+        "doi_url": "https://doi.org/10.1002/adma.75582",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974896/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates optimizing aluminum current collectors for sodium metal batteries using a tailored copper layer with nickel-yttrium diatomic catalyst (NiY-DAC). The approach involves magnetron sputtering and heat treatment to create ultra-long helical carbon nanofiber (CNF) 3D-networks on Al. Results show efficient sodium deposition, dendrite suppression, and high electrochemical stability with 99.49% coulombic efficiency over 3000 hours and stable cycling in full cells.\",\n  \"key_findings\": [\n    \"NiY-DAC confined in a 20 nm copper layer enables ultra-long helical CNF 3D-networks on Al current collectors\",\n    \"The modified collector achieves 99.49% coulombic efficiency over 3000 hours at 1.0 mA cm-2\",\n    \"Full cells demonstrate stable cycling for 1500 cycles at 10 C with low overpotential (3.1 mV)\"\n  ],\n  \"scientific_significance\": \"This work establishes a diatomic catalyst confinement strategy for designing high-conductivity current collectors that enhance sodium deposition kinetics and suppress dendrite formation in sodium metal batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates optimizing aluminum current collectors for sodium metal batteries using a tailored copper layer with nickel-yttrium diatomic catalyst (NiY-DAC). The approach involves magnetron sputtering and heat treatment to create ultra-long helical carbon nanofiber (CNF) 3D-networks on Al. Results show efficient sodium deposition, dendrite suppression, and high electrochemical stability with 99.49% coulombic efficiency over 3000 hours and stable cycling in full cells.",
+          "key_findings": [
+            "NiY-DAC confined in a 20 nm copper layer enables ultra-long helical CNF 3D-networks on Al current collectors",
+            "The modified collector achieves 99.49% coulombic efficiency over 3000 hours at 1.0 mA cm-2",
+            "Full cells demonstrate stable cycling for 1500 cycles at 10 C with low overpotential (3.1 mV)"
+          ],
+          "scientific_significance": "This work establishes a diatomic catalyst confinement strategy for designing high-conductivity current collectors that enhance sodium deposition kinetics and suppress dendrite formation in sodium metal batteries."
+        },
+        "elapsed_seconds": 60.909,
+        "input_tokens": 823,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 1082,
+        "model_eval_seconds": 48.7909,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43054456",
+        "title": "Transcriptional Landscape of Immune Cells and Key Gene Expression in Esophageal Squamous Cell Carcinoma: A Single-Cell RNA Sequencing Approach.",
+        "abstract": "BACKGROUND: Esophageal squamous cell carcinoma (ESCC) is a common malignancy with considerable heterogeneity and complex interactions within the tumor microenvironment. Information about the transcriptional heterogeneity of immune cells and expression profiles of important genes can shed light on disease progression and identify potential therapeutic targets.\nMETHODS: We employed single-cell RNA sequencing to characterize the immune cell landscape in ESCC. We analyzed cellular composition and transcriptional heterogeneity using dimensionality reduction methodologies including UMAP and t-SNE. To further identify active biological processes and signaling pathways in the immune microenvironment, we determined Gene Ontology (GO) and pathway enrichment.\nRESULTS: We identified a complex structure of immune cell subpopulations, demonstrating distinct transcriptional patterns. Specific expression patterns of some key genes were evident among the cell types, including high expression in regulatory T cells and natural killer T cells. The SPP1 signaling pathway emerged as a potentially important candidate in computationally inferred immune cell communication. Pseudotime analysis showed dynamic changes in representative gene expression, indicating transcriptional state variation.\nCONCLUSION: The complex immune response in the ESCC microenvironment is revealed in this study through the exploration of immune cells and key gene activity at single-cell transcriptional resolution. This knowledge may help guide the development of personalized immunotherapies by revealing the roles of specific immune cells and potential therapeutic targets.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1155/ijog/5395200",
+        "doi_url": "https://doi.org/10.1155/ijog/5395200",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43054456/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "International journal of genomics",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used single-cell RNA sequencing to characterize immune cell heterogeneity and key gene expression in esophageal squamous cell carcinoma (ESCC). It identified distinct transcriptional patterns across immune subpopulations, including elevated expression of specific genes in regulatory T cells and natural killer T cells. The SPP1 signaling pathway was computationally inferred as a potential mediator of immune cell communication. Pseudotime analysis revealed dynamic transcriptional states, suggesting temporal changes in gene expression within the tumor microenvironment.\",\n  \"key_findings\": [\n    \"Distinct transcriptional patterns in immune cell subpop: regulatory T cells and natural killer T cells showed elevated expression of specific genes\",\n    \"SPP1 signaling pathway identified as a potential mediator of immune cell communication in ESCC\",\n    \"Pseudotime analysis revealed dynamic transcriptional state changes indicating temporal gene expression variation\"\n  ],\n  \"scientific_significance\": \"This work provides single-cell resolution insights into immune cell heterogeneity and key signaling pathways in esophageal squamous cell carcinoma, advancing understanding of tumor microenvironment dynamics for potential immunotherapeutic targeting.\"\n}",
+        "parsed": {
+          "summary": "This study used single-cell RNA sequencing to characterize immune cell heterogeneity and key gene expression in esophageal squamous cell carcinoma (ESCC). It identified distinct transcriptional patterns across immune subpopulations, including elevated expression of specific genes in regulatory T cells and natural killer T cells. The SPP1 signaling pathway was computationally inferred as a potential mediator of immune cell communication. Pseudotime analysis revealed dynamic transcriptional states, suggesting temporal changes in gene expression within the tumor microenvironment.",
+          "key_findings": [
+            "Distinct transcriptional patterns in immune cell subpop: regulatory T cells and natural killer T cells showed elevated expression of specific genes",
+            "SPP1 signaling pathway identified as a potential mediator of immune cell communication in ESCC",
+            "Pseudotime analysis revealed dynamic transcriptional state changes indicating temporal gene expression variation"
+          ],
+          "scientific_significance": "This work provides single-cell resolution insights into immune cell heterogeneity and key signaling pathways in esophageal squamous cell carcinoma, advancing understanding of tumor microenvironment dynamics for potential immunotherapeutic targeting."
+        },
+        "elapsed_seconds": 50.746,
+        "input_tokens": 727,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 953,
+        "model_eval_seconds": 41.3366,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42977291",
+        "title": "Over 95% Optical Reflectance From Structurally Modulated All-Biopolymer Multilayers.",
+        "abstract": "NA: Sustainable photonics aims to replace conventional optical materials with environmentally benign alternatives, yet its development is fundamentally constrained by the narrow intrinsic refractive-index variability of biopolymers. Here we show that a dense-porous periodic architecture yields nearly perfect optical reflection using only polysaccharides. By exploiting the difference in skeletal rigidity between amorphous pectin and crystalline cellulose nanofibers (CNFs), we form alternating dense, high-refractive-index pectin layers and porous, low-refractive-index CNF layers through a combination of electrodeposition with solvent exchange. This dense-porous periodic architecture yields reflectivities exceeding 97% in the visible range and 95% in the near-infrared-a range unprecedented for biopolymer-based optical materials. Moreover, the strategy is simple, scalable, and highly versatile, enabling free spectral design across the visible and near-infrared regions, broadband metallic-like reflection, and planar patterning within a single fabrication process. Combined with the low thermal conductivity arising from porous layers and the coexistence of visible transparency and near-infrared reflection, the resulting films show potential as transparent thermal-management materials. This work establishes a new materials design principle for biodegradable, polysaccharide-based photonic systems and advances the field of sustainable photonics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75473",
+        "doi_url": "https://doi.org/10.1002/adma.75473",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42977291/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates creating highly reflective optical materials using only biopolymers. Researchers developed a dense-porous periodic architecture with alternating dense pectin layers and porous cellulose nanofiber layers. The approach leveraged differences in skeletal rigidity between pectin and cellulose nanofibers. The resulting films achieved reflectivities exceeding 97% in visible light and 95% in near-infrared, representing a significant advancement for sustainable photonics with potential applications in thermal management.\",\n  \"key_findings\": [\n    \"Achieved reflectivities exceeding 97% in visible light and 95% in near-infrared using polysaccharide-based multilayers\",\n    \"Utilized alternating dense pectin and porous cellulose nanofiber layers to create the periodic architecture\",\n    \"Demonstrated scalable fabrication with potential for thermal management applications\"\n  ],\n  \"scientific_significance\": \"This work establishes a novel design principle for highly reflective, biodegradable photonic materials using biopolymers, advancing sustainable photonics by overcoming refractive index limitations inherent to biopolymers.\"\n}",
+        "parsed": {
+          "summary": "This study investigates creating highly reflective optical materials using only biopolymers. Researchers developed a dense-porous periodic architecture with alternating dense pectin layers and porous cellulose nanofiber layers. The approach leveraged differences in skeletal rigidity between pectin and cellulose nanofibers. The resulting films achieved reflectivities exceeding 97% in visible light and 95% in near-infrared, representing a significant advancement for sustainable photonics with potential applications in thermal management.",
+          "key_findings": [
+            "Achieved reflectivities exceeding 97% in visible light and 95% in near-infrared using polysaccharide-based multilayers",
+            "Utilized alternating dense pectin and porous cellulose nanofiber layers to create the periodic architecture",
+            "Demonstrated scalable fabrication with potential for thermal management applications"
+          ],
+          "scientific_significance": "This work establishes a novel design principle for highly reflective, biodegradable photonic materials using biopolymers, advancing sustainable photonics by overcoming refractive index limitations inherent to biopolymers."
+        },
+        "elapsed_seconds": 50.9718,
+        "input_tokens": 707,
+        "output_tokens": 233,
+        "thoughts_tokens": null,
+        "total_tokens": 940,
+        "model_eval_seconds": 42.3956,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43054799",
+        "title": "LDHA-mediated metabolic reprogramming: a key driver of tumor malignancy.",
+        "abstract": "NA: Metabolic reprogramming is one of the core hallmarks of malignant tumors, among which the abnormally enhanced glycolysis driven by the Warburg effect constitutes a critical aspect of tumor metabolic remodeling. LDHA is abnormally highly expressed in various tumors, and its expression level is closely related to tumor malignancy. The high expression of LDHA is not limited to overall elevation but also exhibits spatial heterogeneity. LDHA expression is significantly higher in highly invasive tumor edge regions compared to low-invasive regions. LDHA maintains high glycolytic flux by catalyzing the conversion of pyruvate to lactate while regenerating NAD+, rapidly producing ATP to meet the energy demands of rapid tumor cell proliferation. Lactate produced through high glycolytic flux can be taken up by cancer-associated fibroblasts (CAFs) via MCT1 and enter the tricarboxylic acid cycle, promoting CAF proliferation. LDHA expression levels are positively and significantly correlated with intracellular lactate concentrations, and lactate, as the direct substrate source for histone lactylation modifications, changes in its abundance directly regulate histone lactylation levels. Lactate acts as an alternative energy substrate, providing fuel for oxidative tumor cells or tumor-associated stromal cells via monocarboxylate transporter (MCT1/4)-mediated lactate shuttle, forming a metabolic symbiosis network. The acidification of the tumor microenvironment, directly inhibiting T cell function, promoting T cell differentiation toward regulatory T cells, upregulating the expression of inhibitory receptors on the T cell surface to induce T cell exhaustion, and interfering with the formation of memory T cells. It also promotes macrophage polarization from the pro-inflammatory M1 type to the immunosuppressive M2 type, enhancing their tumor-promoting growth, angiogenesis, and tissue remodeling functions. Currently, LDHA inhibitors (e.g., FX-11 and GSK2837808A) and MCT1 inhibitors (e.g., AZD3965) have shown preclinical potential in suppressing tumor growth, reversing immunosuppression, and sensitizing conventional therapies. Some of these agents have already advanced into early-stage clinical trials. However, this strategy still faces challenges including enhanced tumor metabolic plasticity, on-target toxicity, and a lack of predictive biomarkers. Future research should focus on optimizing combination therapy strategies, elucidating mechanisms of metabolic adaptation, and enabling precise patient selection, thereby advancing novel therapeutic approaches based on lactate metabolism intervention toward clinical translation.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.3389/fonc.2026.1993212",
+        "doi_url": "https://doi.org/10.3389/fonc.2026.1993212",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43054799/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in oncology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates LDHA's role in tumor metabolic reprogramming, focusing on its spatial heterogeneity and correlation with tumor malignancy. Using biochemical and immunohistochemical analyses, it demonstrates LDHA's elevated expression at invasive tumor edges, driving lactate production that fuels glycolysis, suppresses immune responses, and promotes immunosuppressive stromal cell functions. The findings highlight LD. HA's contribution to tumor progression and potential therapeutic targeting.\",\n  \"key_findings\": [\n    \"LDHA expression is significantly higher at invasive tumor edges compared to less invasive regions\",\n    \"Lactate produced by LDHA drives immunosuppression by inhibiting T cell function and promoting M2 macrophage polarization\",\n    \"LDHA-mediated metabolic reprogramming correlates with tumor malignancy and offers targets for therapeutic intervention\"\n  ],\n  \"scientific_significance\": \"This work establishes LDHA as a central regulator of tumor metabolic symbiosis and immunosuppression, providing a mechanistic basis for targeting lactate metabolism to overcome therapeutic resistance.\"\n}",
+        "parsed": {
+          "summary": "This study investigates LDHA's role in tumor metabolic reprogramming, focusing on its spatial heterogeneity and correlation with tumor malignancy. Using biochemical and immunohistochemical analyses, it demonstrates LDHA's elevated expression at invasive tumor edges, driving lactate production that fuels glycolysis, suppresses immune responses, and promotes immunosuppressive stromal cell functions. The findings highlight LD. HA's contribution to tumor progression and potential therapeutic targeting.",
+          "key_findings": [
+            "LDHA expression is significantly higher at invasive tumor edges compared to less invasive regions",
+            "Lactate produced by LDHA drives immunosuppression by inhibiting T cell function and promoting M2 macrophage polarization",
+            "LDHA-mediated metabolic reprogramming correlates with tumor malignancy and offers targets for therapeutic intervention"
+          ],
+          "scientific_significance": "This work establishes LDHA as a central regulator of tumor metabolic symbiosis and immunosuppression, providing a mechanistic basis for targeting lactate metabolism to overcome therapeutic resistance."
+        },
+        "elapsed_seconds": 58.8878,
+        "input_tokens": 955,
+        "output_tokens": 216,
+        "thoughts_tokens": null,
+        "total_tokens": 1171,
+        "model_eval_seconds": 42.394,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42978229",
+        "title": "Hydro-Gated Photonic Actuators With Programmable Color and Shape.",
+        "abstract": "NA: Structural color actuators integrating visual readout with motion are prized for biomimicry, yet typically operate in a coupled, color-gradient mode with limited freedom. Here we report a photonic liquid crystal network that decouples these responses via a scattering-gated mechanism. The material hides its structural color in the dry state but, upon water uptake, simultaneously switches on vivid coloration and executes programmable three-dimensional deformation. Crucially, we achieve stimulus-selective control: ethanol turns on color without motion, while heat induces motion without color. This independent, on-demand manipulation of optical and mechanical outputs offers a transformative platform for multi-responsive soft robotics, adaptive camouflage, and smart displays.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75591",
+        "doi_url": "https://doi.org/10.1002/adma.75591",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42978229/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates photonic liquid crystal networks capable of decoupling structural color and mechanical motion responses. The material remains colorless when dry but, upon water absorption, exhibits vivid coloration and programmable 3D deformation. Ethanol selectively triggers color without motion, while heat induces motion without color. This stimulus-selective control enables independent manipulation of optical and mechanical outputs for applications in soft robotics, adaptive camouflage, and smart displays.\",\n  \"key_findings\": [\n    \"Photonic liquid crystal networks decouple structural color and mechanical motion responses\",\n    \"Water absorption triggers simultaneous vivid coloration and programmable 3D deformation\",\n    \"Ethanol selectively activates color without motion, while heat induces motion without color\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a stimulus-selective mechanism for independently controlling optical and mechanical outputs in a single material, advancing multi-responsive soft matter systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates photonic liquid crystal networks capable of decoupling structural color and mechanical motion responses. The material remains colorless when dry but, upon water absorption, exhibits vivid coloration and programmable 3D deformation. Ethanol selectively triggers color without motion, while heat induces motion without color. This stimulus-selective control enables independent manipulation of optical and mechanical outputs for applications in soft robotics, adaptive camouflage, and smart displays.",
+          "key_findings": [
+            "Photonic liquid crystal networks decouple structural color and mechanical motion responses",
+            "Water absorption triggers simultaneous vivid coloration and programmable 3D deformation",
+            "Ethanol selectively activates color without motion, while heat induces motion without color"
+          ],
+          "scientific_significance": "This work demonstrates a stimulus-selective mechanism for independently controlling optical and mechanical outputs in a single material, advancing multi-responsive soft matter systems."
+        },
+        "elapsed_seconds": 36.9788,
+        "input_tokens": 571,
+        "output_tokens": 187,
+        "thoughts_tokens": null,
+        "total_tokens": 758,
+        "model_eval_seconds": 32.0961,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43056023",
+        "title": "Bone Marrow Dendritic Cells-derived Exosomes Alleviate Ovariectomy-induced Depression in Rats by Suppressing NF-κB-mediated Neuroinflammation and Restoring T-cell Homeostasis.",
+        "abstract": "NA: Depression is a prevalent neuropsychiatric disorder, particularly among post-menopausal women, and is strongly linked to neuroinflammation and immune dysregulation. Emerging evidence suggests that exosomes derived from bone marrow dendritic cells (BMDCs) possess potent immunomodulatory properties. The present study investigated their therapeutic efficacy in an ovariectomy-induced rat model of post-menopausal depression. BMDCs were prepared and identified, and then the exosomes were isolated by differential ultracentrifugation. Forty-five female rats were randomly allocated into three groups (n = 15): sham-operated rats (SO), ovariectomized rats (OVX), and ovariectomized rats treated with BMDCs-derived exosomes (EXO), administered intravenously via the tail vein at a dose of 200 µg/kg/dose in 0.2 mL PBS on days 7 and 14 post-ovariectomy. Behavioral, neurochemical, and immunological assessments were subsequently performed. Ovariectomy-induced depression was associated with increased hippocampal neuronal apoptosis, enhanced microglial activation, and elevated levels of pro-inflammatory cytokines. In addition, ovariectomy disrupted T-cell homeostasis, as evidenced by alterations in CD4, CD8, and regulatory T-cell populations, and activated NF-κB signaling, thereby promoting a shift toward the pro-inflammatory M1 microglial phenotype. Administration of BMDCs-derived exosomes significantly attenuated these alterations by suppressing M1 polarization, enhancing the M2 phenotype, restoring T-cell balance, and inhibiting NF-κB activation. BMDCs-derived exosomes can be considered as a promising candidate for the management of post-menopausal depression and similar neuropsychiatric disorders through modulation of neuroinflammation and immune responses.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1007/s11064-026-04937-x",
+        "doi_url": "https://doi.org/10.1007/s11064-026-04937-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43056023/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Neurochemical research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study examined BMDC-derived exosomes' efficacy in alleviating ovariectomy-induced depression in rats. Using an intravenous exosome treatment regimen, researchers observed reduced neuronal apoptosis, normalized microglial activation, and restored T-cell homeostasis. The exosomes suppressed NF-κB-mediated neuroinflammation, shifting microglia from pro-inflammatory M1 to anti-inflammatory M2 phenotypes. These findings suggest exosomes may offer a targeted immunomodulatory approach for post-menopausal depression.\",\n  \"key_findings\": [\n    \"BMDC-derived exosomes suppressed NF-κB activation and reduced pro-inflammatory cytokines in ovariectomized rats\",\n    \"Exosomes restored T-cell homeostasis by normalizing CD4, CD8, and regulatory T-cell populations\",\n    \"Exosome treatment shifted microglial phenotype from M1 to M2, alleviating depression symptoms\"\n  ],\n  \"scientific_significance\": \"This work identifies BMDC-derived exosomes as a potential immunomodulatory mechanism for mitigating neuroinflammation-driven depression in post-menopausal models.\"\n}",
+        "parsed": {
+          "summary": "This study examined BMDC-derived exosomes' efficacy in alleviating ovariectomy-induced depression in rats. Using an intravenous exosome treatment regimen, researchers observed reduced neuronal apoptosis, normalized microglial activation, and restored T-cell homeostasis. The exosomes suppressed NF-κB-mediated neuroinflammation, shifting microglia from pro-inflammatory M1 to anti-inflammatory M2 phenotypes. These findings suggest exosomes may offer a targeted immunomodulatory approach for post-menopausal depression.",
+          "key_findings": [
+            "BMDC-derived exosomes suppressed NF-κB activation and reduced pro-inflammatory cytokines in ovariectomized rats",
+            "Exosomes restored T-cell homeostasis by normalizing CD4, CD8, and regulatory T-cell populations",
+            "Exosome treatment shifted microglial phenotype from M1 to M2, alleviating depression symptoms"
+          ],
+          "scientific_significance": "This work identifies BMDC-derived exosomes as a potential immunomodulatory mechanism for mitigating neuroinflammation-driven depression in post-menopausal models."
+        },
+        "elapsed_seconds": 56.0777,
+        "input_tokens": 840,
+        "output_tokens": 232,
+        "thoughts_tokens": null,
+        "total_tokens": 1072,
+        "model_eval_seconds": 43.6556,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42978236",
+        "title": "Engineering Topological Phases in Two-Dimensional Materials: A Path from Preparation to Device Applications.",
+        "abstract": "NA: Owing to their topologically protected edge or surface states, rapid electronic transport, and highly tunable physical properties, two-dimensional topological materials (2D TMs) have garnered significant attention in condensed matter physics and materials science, and are regarded as potential candidates for quantum computing. Since the first observation of the quantum Hall effect, fundamental research on the physics of TMs has made remarkable progress. To better utilize the unique properties of TMs, the importance of material fabrication and phase engineering of topological states has become increasingly prominent. This review systematically discusses phase engineering in 2D TMs, from their growth to device applications. First, various topological phases and related 2D materials are introduced briefly. Next, the growth methods for 2D TMs are summarized. It then discusses progress and limitations in growth, driven by the requirements of characterization and application. Furthermore, the general approaches for modulating topological phases are reviewed, alongside the current applications in electronic devices. Finally, the review outlines future directions and challenges in phase engineering of 2D topological materials, aiming to promote the transition of 2D TMs from fundamental physics research to phase-engineered material platforms.",
+        "publication_types": [],
+        "doi": "10.1002/adma.202513813",
+        "doi_url": "https://doi.org/10.1002/adma.202513813",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42978236/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines phase engineering strategies for two-dimensional topological materials (2D TMs), covering growth techniques, phase modulation methods, and device applications. It highlights the progression from fundamental physics to practical implementations, emphasizing challenges in scaling up synthesis and integrating topological phases into functional electronics. The study underscores the critical role of material fabrication in realizing 2D TMs' potential for quantum computing and advanced electronics.\",\n  \"key_findings\": [\n    \"Systematic discussion of growth methods for 2D topological materials\",\n    \"Review of phase modulation techniques enabling topological state engineering\",\n    \"Identification of key barriers in transitioning 2D TMs from research to device applications\"\n  ],\n  \"scientific_significance\": \"This work provides a comprehensive framework for advancing two-dimensional topological materials from synthesis to functional devices, addressing critical gaps in phase engineering for quantum computing applications.\"\n}",
+        "parsed": {
+          "summary": "This review examines phase engineering strategies for two-dimensional topological materials (2D TMs), covering growth techniques, phase modulation methods, and device applications. It highlights the progression from fundamental physics to practical implementations, emphasizing challenges in scaling up synthesis and integrating topological phases into functional electronics. The study underscores the critical role of material fabrication in realizing 2D TMs' potential for quantum computing and advanced electronics.",
+          "key_findings": [
+            "Systematic discussion of growth methods for 2D topological materials",
+            "Review of phase modulation techniques enabling topological state engineering",
+            "Identification of key barriers in transitioning 2D TMs from research to device applications"
+          ],
+          "scientific_significance": "This work provides a comprehensive framework for advancing two-dimensional topological materials from synthesis to functional devices, addressing critical gaps in phase engineering for quantum computing applications."
+        },
+        "elapsed_seconds": 41.232,
+        "input_tokens": 678,
+        "output_tokens": 183,
+        "thoughts_tokens": null,
+        "total_tokens": 861,
+        "model_eval_seconds": 33.1699,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43056154",
+        "title": "Targeting CGRP signaling reverses maladaptive neurogenic immunosuppression in head and neck squamous cell carcinoma models.",
+        "abstract": "NA: Neurogenic inflammation is one component that sculpts the immune milieu of solid tumors. However, it remains unclear how the sensory-neuroimmune axis shapes the immune microenvironment in cold tumors to bolster treatment resistance. Using orthotopic head and neck squamous cell carcinoma (HNSCC) models, we demonstrate tumor growth-induced sensory hyperexcitability, and that surgical sensory signaling interruption reduced tumor growth. Genetic knockout of a key neuropeptide released by sensory neurons, calcitonin gene-related peptide (CGRP), encoded by Calca, produced eradication when paired with radioimmunotherapy. Such treatment reduced Treg infiltration and immunosuppressive function in Calca knockout mice. We also observed that high-dose psilocybin functions as a CGRP inhibitor and transiently reduces tumor growth by increasing antitumor immunity. Additionally, psilocybin increased circulating serotonin, which was partially reversed with platelet activation inhibitor, clopidogrel. We observed differential effects on CD8 and Treg functionality by psilocin in vitro. Correlational analyses in plasma from human subjects following a single-dose psilocybin corroborated these findings. Together, this work underscores the complex interaction of neurogenic inflammation and the tumor immune microenvironment, highlighting a potential therapeutic avenue for HNSCC and other solid tumors.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1172/JCI204965",
+        "doi_url": "https://doi.org/10.1172/JCI204965",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43056154/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "The Journal of clinical investigation",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how sensory-neuroimmune interactions influence the immune microenvironment in cold head and neck squamous cell carcinoma (HNSCC) tumors. Using orthotopic HNSCC models, researchers found sensory hyperexcitability promotes tumor growth, and interrupting sensory signaling reduced tumor progression. Genetic deletion of calcitonin gene-related peptide (CGRP) enhanced radioimmunotherapy efficacy by decreasing regulatory T cell infiltration and immunosuppressive activity. High-dose psilocybin temporarily suppressed tumor growth by inhibiting CGRP and boosting antitumor immunity, with effects partially reversed by clopidogrel and linked to serotonin changes.\",\n  \"key_findings\": [\n    \"Sensory hyperexcitability in HNSCC models drives tumor growth and is reversible via sensory signaling interruption\",\n    \"CGRP genetic knockout with radioimmunotherapy eradicated tumors by reducing regulatory T cell infiltration\",\n    \"High-dose psilocybin transiently inhibits tumor growth through CGRP suppression and enhanced antitumor immunity\"\n  ],\n  \"scientific_significance\": \"This work identifies neurogenic inflammation as a modifiable factor in cold tumors, providing a mechanistic basis for targeting sensory-neuroimmune crosstalk to overcome immunosuppression in solid tumors.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how sensory-neuroimmune interactions influence the immune microenvironment in cold head and neck squamous cell carcinoma (HNSCC) tumors. Using orthotopic HNSCC models, researchers found sensory hyperexcitability promotes tumor growth, and interrupting sensory signaling reduced tumor progression. Genetic deletion of calcitonin gene-related peptide (CGRP) enhanced radioimmunotherapy efficacy by decreasing regulatory T cell infiltration and immunosuppressive activity. High-dose psilocybin temporarily suppressed tumor growth by inhibiting CGRP and boosting antitumor immunity, with effects partially reversed by clopidogrel and linked to serotonin changes.",
+          "key_findings": [
+            "Sensory hyperexcitability in HNSCC models drives tumor growth and is reversible via sensory signaling interruption",
+            "CGRP genetic knockout with radioimmunotherapy eradicated tumors by reducing regulatory T cell infiltration",
+            "High-dose psilocybin transiently inhibits tumor growth through CGRP suppression and enhanced antitumor immunity"
+          ],
+          "scientific_significance": "This work identifies neurogenic inflammation as a modifiable factor in cold tumors, providing a mechanistic basis for targeting sensory-neuroimmune crosstalk to overcome immunosuppression in solid tumors."
+        },
+        "elapsed_seconds": 57.4993,
+        "input_tokens": 716,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 980,
+        "model_eval_seconds": 48.6033,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42978290",
+        "title": "Planar Focusing of Anisotropic Plasmon Polaritons in MoOCl2/Au.",
+        "abstract": "NA: Hyperbolic polaritons offer a promising approach for subwavelength light confinement and manipulation. While extensively explored across mid-infrared to terahertz bands, achieving long-distance focusing at visible frequencies remains challenging due to the trade-off between long propagation and strong compression. In this work, we demonstrate planar focusing of anisotropic plasmon polaritons with an extended focal length in a MoOCl2/Au heterostructure. By integrating an Au metastructure with the natural hyperbolic material MoOCl2, we convert surface plasmon polaritons (SPPs) into surface plasmon hyperbolic polaritons (SPHPs), enabling excitation and focusing of the low-momentum hybrid anisotropic polariton in the heterostructure. Furthermore, by optimizing the thickness of the MoOCl2 layer, we synergistically enhance both the propagation distance and the field compression. Using transmission-mode scanning near-field optical microscopy (SNOM) and quantitative methods, we demonstrate a focal length of 2.5λ and a focal spot with a full width at half maximum (FWHM) of λ/5 under 633 nm excitation, accompanied by a threefold energy enhancement. This visible-frequency long-focus system offers significant potential for noncontact nanoscale probing, integrated photonics, and optical interconnects. The proposed heterostructure engineering approach provides a versatile design paradigm for coupling hyperbolic polaritons with multiple plasmonic excitations, paving the way for advanced photonic applications.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75622",
+        "doi_url": "https://doi.org/10.1002/adma.75622",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42978290/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates planar focusing of anisotropic plasmon polaritons using a MoOCl2/Au heterostructure. The researchers converted surface plasmon polaras (SPPs) into surface plasmon hyperbolic polaritons (SPHPs) by integrating an Au metastructure with MoOCl2, a hyperbolic material. They optimized MoOCl2 thickness to enhance propagation distance and field compression. Using SNOM, they achieved a focal length of 2.5λ and a focal spot FWHM of λ/5 at 633 nm, with threefold energy enhancement. This visible-frequency system enables long-distance nanoscale focusing for applications in noncontact probing, integrated photonics, and optical interconnects.\",\n  \"key_findings\": [\n    \"Conversion of surface plasmon polaritons to surface plasmon hyperbolic polaritons in MoOCl2/Au heterostructure\",\n    \"Optimized MoOCl2 thickness achieved focal length of 2.5λ and focal spot FWHM of λ/5 at 633 nm\",\n    \"Threefold energy enhancement in the focusing process\"\n  ],\n  \"scientific_significance\": \"This work demonstrates visible-frequency planar focusing of anisotropic plasmon polaritons with extended focal length, advancing hyperbolic polariton applications in nanoscale optical manipulation beyond mid-infrared and terahertz regimes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates planar focusing of anisotropic plasmon polaritons using a MoOCl2/Au heterostructure. The researchers converted surface plasmon polaras (SPPs) into surface plasmon hyperbolic polaritons (SPHPs) by integrating an Au metastructure with MoOCl2, a hyperbolic material. They optimized MoOCl2 thickness to enhance propagation distance and field compression. Using SNOM, they achieved a focal length of 2.5λ and a focal spot FWHM of λ/5 at 633 nm, with threefold energy enhancement. This visible-frequency system enables long-distance nanoscale focusing for applications in noncontact probing, integrated photonics, and optical interconnects.",
+          "key_findings": [
+            "Conversion of surface plasmon polaritons to surface plasmon hyperbolic polaritons in MoOCl2/Au heterostructure",
+            "Optimized MoOCl2 thickness achieved focal length of 2.5λ and focal spot FWHM of λ/5 at 633 nm",
+            "Threefold energy enhancement in the focusing process"
+          ],
+          "scientific_significance": "This work demonstrates visible-frequency planar focusing of anisotropic plasmon polaritons with extended focal length, advancing hyperbolic polariton applications in nanoscale optical manipulation beyond mid-infrared and terahertz regimes."
+        },
+        "elapsed_seconds": 67.7951,
+        "input_tokens": 757,
+        "output_tokens": 307,
+        "thoughts_tokens": null,
+        "total_tokens": 1064,
+        "model_eval_seconds": 57.6919,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43056170",
+        "title": "CD4+ T cell anergy in transplantation tolerance requires continuous Treg-dependent control of IL-2 availability.",
+        "abstract": "NA: Donor-specific transplantation tolerance promises to free recipients from complications associated with lifelong immunosuppression. Anergy, a CD4+ conventional T cell (Tconv)-intrinsic state of long-term hypofunction, is thought to arise when T cells encounter cognate antigen in the absence of costimulation. Anti-CD154 (αCD154), an antibody that blocks T cell costimulation and is currently in clinical trials, can induce donor-specific transplantation tolerance in mice in association with anergy of Tconvs recognizing persistently expressed alloantigens. Using murine models of fully mismatched cardiac allograft tolerance or repeated alloantigen exposure, we demonstrate that αCD154 is not sufficient and regulatory T cells (Tregs) are necessary to induce and sustain αCD154-mediated alloreactive Tconv anergy. Transient depletion of Tregs disrupted the induction of αCD154-mediated Tconv anergy, and in mice with established tolerance, Treg depletion transcriptionally and functionally reinvigorated previously anergic Tconvs. Mechanistically, Treg depletion increased IL-2 availability and IL-2R signaling in Tconvs, and exogenous IL-2 could bypass Treg-mediated control to partially restore Tconv function. Thus, the state of αCD154-mediated Tconv anergy is less cell-intrinsic than previously thought and requires Tregs to limit IL-2 availability for both its induction and its continuous enforcement. Selecting immunosuppressive drugs that preserve this Treg function may be critical for achieving stable clinical transplantation tolerance.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1172/JCI206638",
+        "doi_url": "https://doi.org/10.1172/JCI206638",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43056170/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "The Journal of clinical investigation",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether CD4+ T cell anergy in transplantation tolerance requires continuous regulatory T cell (Treg)-dependent control of IL-2 availability. Using murine models of cardiac allograft tolerance and repeated alloantigen exposure, researchers found that anti-CD154-induced Tconv anergy depends on Tregs to sustain IL-2 limitation. Treg depletion reinvigorated anergic Tconvs by increasing IL-2 availability, indicating anergy maintenance requires ongoing Treg-mediated IL-2 regulation.\",\n  \"key_findings\": [\n    \"Anti-CD154-mediated Tconv anergy requires continuous Treg-dependent control of IL-2 availability for maintenance\",\n    \"Treg depletion reinvigorated previously anergic Tconvs by increasing IL-2 availability\",\n    \"Exogenous IL-2 can partially restore Tconv function by bypassing Treg-mediated IL-2 regulation\"\n  ],\n  \"scientific_significance\": \"This work establishes that Treg-mediated IL-2 limitation is essential for sustaining CD4+ T cell anergy in transplantation tolerance, revealing a critical mechanism for long-term immune quiescence without cell-intrinsic anergy.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether CD4+ T cell anergy in transplantation tolerance requires continuous regulatory T cell (Treg)-dependent control of IL-2 availability. Using murine models of cardiac allograft tolerance and repeated alloantigen exposure, researchers found that anti-CD154-induced Tconv anergy depends on Tregs to sustain IL-2 limitation. Treg depletion reinvigorated anergic Tconvs by increasing IL-2 availability, indicating anergy maintenance requires ongoing Treg-mediated IL-2 regulation.",
+          "key_findings": [
+            "Anti-CD154-mediated Tconv anergy requires continuous Treg-dependent control of IL-2 availability for maintenance",
+            "Treg depletion reinvigorated previously anergic Tconvs by increasing IL-2 availability",
+            "Exogenous IL-2 can partially restore Tconv function by bypassing Treg-mediated IL-2 regulation"
+          ],
+          "scientific_significance": "This work establishes that Treg-mediated IL-2 limitation is essential for sustaining CD4+ T cell anergy in transplantation tolerance, revealing a critical mechanism for long-term immune quiescence without cell-intrinsic anergy."
+        },
+        "elapsed_seconds": 56.4202,
+        "input_tokens": 773,
+        "output_tokens": 247,
+        "thoughts_tokens": null,
+        "total_tokens": 1020,
+        "model_eval_seconds": 45.8151,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42978306",
+        "title": "Orthogonal Passivation of Polar Facets for Efficient InSb Quantum Dot SWIR Photodetectors.",
+        "abstract": "NA: Indium antimonide (InSb) colloidal quantum dots (CQDs) offer a heavy-metal-free route to short-wave infrared (SWIR) photodetection, but their performance still lags behind lead- and mercury-based CQD systems, and the surface chemistry that limits their performance is not well understood. Here, we identify two independent oxide-derived trap pathways on the polar terminations of zincblende InSb: oxidation of the In-terminated {111}A and Sb-terminated {111}B facets creates chemically distinct mid-gap states, each of which degrades carrier transport. Density functional theory calculations show that metal halides bind strongly to Sb-terminated facets, but weakly to In-terminated facets, while thiolates show the opposite preference; this asymmetry leaves single-ligand passivation incomplete. Exploiting this orthogonality, we develop a facet-specific exchange that passivates both terminations and removes their surface oxides in a single step. The resulting CQD films show a fivefold reduction in hole-trap density and a sixfold improvement in hole mobility relative to thiol-only controls. The photodetectors achieve 50% external quantum efficiency under 1 V reverse bias at 1390 nm, to the best of our knowledge, the highest reported for InSb CQD photodetectors in the 1300-1500 nm range, along with a 580 ns fall time and 95% photocurrent retention after 100 h of continuous operation.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75563",
+        "doi_url": "https://doi.org/10.1002/adma.75563",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42978306/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates surface passivation strategies for InSb colloidal quantum dots to enhance short-wave infrared photodetection. Using density functional theory and facet-specific exchange, researchers identified two distinct oxide-derived trap pathways on polar {111} facets. They developed orthogonal passivation that simultaneously targets In- and Sb-terminated facets, reducing hole-trap density by fivefold and improving hole mobility sixfold. The resulting photodetectors achieved 50% external quantum efficiency at 1390 nm with high stability.\",\n  \"key_findings\": [\n    \"Orthogonal passivation of In- and Sb-terminated {111} facets eliminates two distinct oxide-derived trap pathways\",\n    \"Fivefold reduction in hole-trap density and sixfold improvement in hole mobility compared to thiol-only controls\",\n    \"50% external quantum efficiency at 1390 nm with 580 ns fall time and 95% photocurrent retention after 100 hours\"\n  ],\n  \"scientific_significance\": \"This work establishes a facet-specific passivation strategy that overcomes surface trap limitations in InSb quantum dots, enabling high-performance short-wave infrared photodetectors without heavy metals.\"\n}",
+        "parsed": {
+          "summary": "This study investigates surface passivation strategies for InSb colloidal quantum dots to enhance short-wave infrared photodetection. Using density functional theory and facet-specific exchange, researchers identified two distinct oxide-derived trap pathways on polar {111} facets. They developed orthogonal passivation that simultaneously targets In- and Sb-terminated facets, reducing hole-trap density by fivefold and improving hole mobility sixfold. The resulting photodetectors achieved 50% external quantum efficiency at 1390 nm with high stability.",
+          "key_findings": [
+            "Orthogonal passivation of In- and Sb-terminated {111} facets eliminates two distinct oxide-derived trap pathways",
+            "Fivefold reduction in hole-trap density and sixfold improvement in hole mobility compared to thiol-only controls",
+            "50% external quantum efficiency at 1390 nm with 580 ns fall time and 95% photocurrent retention after 100 hours"
+          ],
+          "scientific_significance": "This work establishes a facet-specific passivation strategy that overcomes surface trap limitations in InSb quantum dots, enabling high-performance short-wave infrared photodetectors without heavy metals."
+        },
+        "elapsed_seconds": 58.7326,
+        "input_tokens": 781,
+        "output_tokens": 257,
+        "thoughts_tokens": null,
+        "total_tokens": 1038,
+        "model_eval_seconds": 47.8832,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43056766",
+        "title": "Targeting immune cells in type 2 diabetes: Immunoregulatory mechanisms of natural products.",
+        "abstract": "NA: Type 2 diabetes mellitus (T2DM) is no longer viewed solely as a disorder of insulin secretion and insulin action. Three decades of work have established that a chronic, low-grade, non-resolving immune response - metaflammation - operates in adipose tissue, liver, skeletal muscle, pancreatic islets and the gut, and that this response is both a consequence and a cause of metabolic failure. Every major leukocyte lineage participates. Adipose tissue macrophages accumulate, change phenotype and form crown-like structures; dendritic cells prime pathogenic T helper responses; neutrophils release elastase and extracellular traps; eosinophils and group 2 innate lymphoid cells sustain the type 2 cytokine tone that protects insulin sensitivity; natural killer cells sense adipocyte stress and license macrophage activation; CD8+ and T helper 1 cells drive effector inflammation while regulatory T cells restrain it; and B cells contribute pathogenic immunoglobulin G. Against this background, natural products have attracted sustained interest because many of them act on precisely the nodes - nuclear factor-κB, the NLRP3 inflammasome, AMP-activated protein kinase, sirtuin 1, nuclear factor erythroid 2-related factor 2, Janus kinase/signal transducer and activator of transcription signalling - that govern immune cell fate in metabolic tissue. This review first maps the immune cell landscape of T2DM lineage by lineage, then examines ten natural products with the most developed immunological data sets: curcumin, charantin, silybin, cinnamaldehyde, resveratrol, quercetin, alpha-lipoic acid, 4-hydroxyisoleucine, berberine and avenanthramide C. We then take a deliberately sceptical view of translation, addressing pharmacokinetics and achievable tissue exposure, the gap between surrogate and true immune endpoints in human trials, drug interactions, and the biomarker and trial-design work that inflammation-stratified studies will require.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.intimp.2026.117704",
+        "doi_url": "https://doi.org/10.1016/j.intimp.2026.117704",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43056766/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "International immunopharmacology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines immune dysregulation in type 2 diabetes mellitus (T2DM), highlighting metaflammation across multiple tissues. It details how various leukocyte lineages contribute to metabolic dysfunction, including adipose macrophages, dendritic cells, and T cells. The study evaluates ten natural products targeting key immune pathways like NF-κB and NLRP3 inflammasome. It emphasizes translation challenges, such as pharmacokinetics and biomarker validation, without claiming specific therapeutic efficacy.\",\n  \"key_findings\": [\n    \"Metaflammation in T2DM involves multiple immune cell types across metabolic tissues\",\n    \"Ten natural products target specific immune pathways implicated in T2DM pathogenesis\",\n    \"Significant barriers exist for translating natural products into clinical applications due to pharmacokinetics and biomarker limitations\"\n  ],\n  \"scientific_significance\": \"This review clarifies the immunological mechanisms underlying T2DM and identifies natural products as potential modulators of immune-mediated metabolic dysfunction, though clinical translation requires addressing pharmacokinetic and biomarker challenges.\"\n}",
+        "parsed": {
+          "summary": "This review examines immune dysregulation in type 2 diabetes mellitus (T2DM), highlighting metaflammation across multiple tissues. It details how various leukocyte lineages contribute to metabolic dysfunction, including adipose macrophages, dendritic cells, and T cells. The study evaluates ten natural products targeting key immune pathways like NF-κB and NLRP3 inflammasome. It emphasizes translation challenges, such as pharmacokinetics and biomarker validation, without claiming specific therapeutic efficacy.",
+          "key_findings": [
+            "Metaflammation in T2DM involves multiple immune cell types across metabolic tissues",
+            "Ten natural products target specific immune pathways implicated in T2DM pathogenesis",
+            "Significant barriers exist for translating natural products into clinical applications due to pharmacokinetics and biomarker limitations"
+          ],
+          "scientific_significance": "This review clarifies the immunological mechanisms underlying T2DM and identifies natural products as potential modulators of immune-mediated metabolic dysfunction, though clinical translation requires addressing pharmacokinetic and biomarker challenges."
+        },
+        "elapsed_seconds": 54.939,
+        "input_tokens": 860,
+        "output_tokens": 222,
+        "thoughts_tokens": null,
+        "total_tokens": 1082,
+        "model_eval_seconds": 41.7307,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42978319",
+        "title": "Nanoscale Thermal Imaging of Dislocation-Mediated Heat Transport.",
+        "abstract": "NA: Dislocations are widely used to tailor lattice thermal conductivity in semiconductors and thermoelectrics, yet the local thermal resistance of individual buried dislocations and their spatial extent remain experimentally unresolved. Here, operando scanning transmission electron microscopy-electron energy-loss spectroscopy thermometry, atomic-resolution imaging, vibrational spectroscopy, and nonequilibrium molecular dynamics are combined to map heat transport across a dislocation array within a 5°SrTiO3 low-angle grain boundary. The effective thermal conductance of the dislocation array is estimated to be ∼35.4 MW m- 2 K- 1 using the bulk reference conductivity, corresponding to a Kapitza length of ∼339 nm. Nanoscale temperature maps reveal a spatially heterogeneous resistance landscape: reconstructed dislocation cores act as sharp thermal bottlenecks over ∼2.14-5.17 nm, with steeper local temperature gradients than inter-core regions, whereas inter-core regions show weaker but more extended modulation over ∼8.34-11.57 nm. Correlative structural and vibrational analyses show that Ti─O bond distortion, Ti valence change, P4 optical-phonon blueshift, and reduced local-bulk phonon density-of-states overlap create a core-specific vibrational environment. These results uncover the underlying mechanism whereby atomic-scale core reconstruction generates nanoscale localized thermal resistance, and offer quantitative descriptors for defect-structure-guided thermal design.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75575",
+        "doi_url": "https://doi.org/10.1002/adma.75575",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42978319/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates dislocation-mediated heat transport in 5°SrTiO3 low-angle grain boundaries using operando scanning transmission electron microscopy with electron energy-loss spectroscopy thermometry. The approach combines atomic-resolution imaging, vibrational spectroscopy, and nonequilibrium molecular dynamics to map thermal resistance across dislocation arrays. Results show an effective thermal conductance of ∼35.4 MW m-2 K-1, corresponding to a Kapitza length of ∼339 nm. Dislocation cores act as sharp thermal bottlenecks over 2.14-5.17 nm, while inter-core regions exhibit weaker modulation over 8.34-11.57 nm. The findings reveal how atomic-scale core reconstruction creates nanoscale thermal resistance.\",\n  \"key_findings\": [\n    \"Dislocation cores function as sharp thermal bottlenecks over 2.14-5.17 nm\",\n    \"Inter-core regions show weaker thermal modulation over 8.34-11.57 nm\",\n    \"Atomic-scale core reconstruction generates nanoscale localized thermal resistance\"\n  ],\n  \"scientific_significance\": \"This work provides quantitative descriptors for defect-structure-guided thermal design by elucidating the nanoscale mechanisms of dislocation-mediated thermal resistance.\"\n}",
+        "parsed": {
+          "summary": "This study investigates dislocation-mediated heat transport in 5°SrTiO3 low-angle grain boundaries using operando scanning transmission electron microscopy with electron energy-loss spectroscopy thermometry. The approach combines atomic-resolution imaging, vibrational spectroscopy, and nonequilibrium molecular dynamics to map thermal resistance across dislocation arrays. Results show an effective thermal conductance of ∼35.4 MW m-2 K-1, corresponding to a Kapitza length of ∼339 nm. Dislocation cores act as sharp thermal bottlenecks over 2.14-5.17 nm, while inter-core regions exhibit weaker modulation over 8.34-11.57 nm. The findings reveal how atomic-scale core reconstruction creates nanoscale thermal resistance.",
+          "key_findings": [
+            "Dislocation cores function as sharp thermal bottlenecks over 2.14-5.17 nm",
+            "Inter-core regions show weaker thermal modulation over 8.34-11.57 nm",
+            "Atomic-scale core reconstruction generates nanoscale localized thermal resistance"
+          ],
+          "scientific_significance": "This work provides quantitative descriptors for defect-structure-guided thermal design by elucidating the nanoscale mechanisms of dislocation-mediated thermal resistance."
+        },
+        "elapsed_seconds": 60.0606,
+        "input_tokens": 739,
+        "output_tokens": 273,
+        "thoughts_tokens": null,
+        "total_tokens": 1012,
+        "model_eval_seconds": 50.4377,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43056847",
+        "title": "Precision CAR-Tregs for autoimmunity: Engineering tissue-adapted immune regulation.",
+        "abstract": "NA: Chimeric antigen receptor regulatory T cells (CAR-Tregs) offer a strategy to concentrate immune regulation within diseased tissues while limiting systemic immunosuppression. Their application to autoimmunity, however, introduces design requirements that differ from those in transplantation. Autoimmune lesions are heterogeneous, dynamic, and often shaped by epitope spreading, inflammatory disruption of Treg identity, and a narrow tolerance for off-target immune suppression. Here, we examine CAR-Treg development through four interconnected design requirements: target architecture, context-dependent function, lineage stability and persistence, and clinical control. Target selection must consider not only antigen specificity, but also native presentation, accessibility, tissue distribution, and the ability to support productive CAR engagement. Functional programming is increasingly extending beyond constitutive suppression toward inducible and locally restricted regulatory outputs. Durable activity further depends on maintaining Treg identity under inflammatory and repeated antigenic challenge, requiring coordinated control of FOXP3 expression, receptor signaling, cytokine support, and tissue fitness. Finally, therapeutic activity cannot be inferred from blood persistence alone; tissue localization, local phenotype, target engagement, manufacturability, and reversibility are integral to the pharmacology of these products. Using type 1 diabetes as a benchmark and drawing on evidence from neuroinflammation, inflammatory bowel disease, antibody-mediated autoimmunity, and early clinical development, we show how different targeting and engineering strategies address distinct biological constraints. The emerging principle is that successful autoimmune CAR-Tregs will depend less on maximizing suppressive potency than on matching recognition, function, stability, and persistence to the biology of the affected tissue.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.jaut.2026.103661",
+        "doi_url": "https://doi.org/10.1016/j.jaut.2026.103661",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43056847/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of autoimmunity",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the design requirements for chimeric antigen receptor regulatory T cells (CAR-Tregs) targeting autoimmunity. It addresses how autoimmune lesions' heterogeneity, dynamic nature, and inflammatory challenges necessitate tailored engineering strategies. The research emphasizes matching CAR-Treg recognition, function, stability, and persistence to tissue-specific biological constraints rather than maximizing suppressive potency. Key findings include the critical role of target architecture, context-dependent regulatory outputs, and maintaining Treg identity under inflammatory conditions.\",\n  \"key_findings\": [\n    \"Target selection must account for antigen presentation, accessibility, tissue distribution, and productive CAR engagement.\",\n    \"Functional programming requires inducible and locally restricted regulatory outputs beyond constitutive suppression.\",\n    \"Durable Treg activity depends on maintaining identity under inflammatory stress through coordinated FOXP3 expression and receptor signaling.\"\n  ],\n  \"scientific_significance\": \"This work establishes that effective CAR-Tregs for autoimmunity must align with tissue-specific disease biology rather than universal suppressive capacity, advancing precision immunotherapy design.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the design requirements for chimeric antigen receptor regulatory T cells (CAR-Tregs) targeting autoimmunity. It addresses how autoimmune lesions' heterogeneity, dynamic nature, and inflammatory challenges necessitate tailored engineering strategies. The research emphasizes matching CAR-Treg recognition, function, stability, and persistence to tissue-specific biological constraints rather than maximizing suppressive potency. Key findings include the critical role of target architecture, context-dependent regulatory outputs, and maintaining Treg identity under inflammatory conditions.",
+          "key_findings": [
+            "Target selection must account for antigen presentation, accessibility, tissue distribution, and productive CAR engagement.",
+            "Functional programming requires inducible and locally restricted regulatory outputs beyond constitutive suppression.",
+            "Durable Treg activity depends on maintaining identity under inflammatory stress through coordinated FOXP3 expression and receptor signaling."
+          ],
+          "scientific_significance": "This work establishes that effective CAR-Tregs for autoimmunity must align with tissue-specific disease biology rather than universal suppressive capacity, advancing precision immunotherapy design."
+        },
+        "elapsed_seconds": 49.9306,
+        "input_tokens": 761,
+        "output_tokens": 215,
+        "thoughts_tokens": null,
+        "total_tokens": 976,
+        "model_eval_seconds": 39.7147,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42978323",
+        "title": "Transforming Pathological H2S Into a Photodynamic Amplifier: In Vivo Formation of Bi2O2CO3@Bi2S3 Heterojunction for Microenvironment-Adaptive Periodontitis Treatment.",
+        "abstract": "NA: Current periodontitis management is hindered by the inability to effectively reverse the dysbiotic microenvironment of persistent infection and restore immune homeostasis. Although photodynamic therapy (PDT) presents a promising non-invasive antibacterial strategy, its clinical efficacy remains limited by poor microenvironmental selectivity and insufficient immunomodulatory capacity. Herein, we engineer a microenvironment-responsive \"trash-to-treasure\" PDT strategy based on Bi2O2CO3 nanosheet-assembled microspheres. This platform actively scavenges excess hydrogen sulfide (H2S) within the periodontal pocket, triggering an in situ transformation into Bi2O2CO3@Bi2S3 heterojunctions. This H2S-triggered conversion neutralizes the pro-inflammatory gasotransmitter and establishes an S-scheme heterojunction with enhanced photocatalytic activity. The resulting reactive oxygen species (ROS)-mediated oxidative stress, together with targeted disruption of bacterial iron metabolism, enables highly efficient photodynamic eradication of major periodontopathogens such as Porphyromonas gingivalis. Moreover, Bi2O2CO3-mediated scavenging of pathological H2S alleviates inflammatory responses in human gingival fibroblasts and reactivates macrophage respiratory burst for intracellular bacterial clearance. In vivo evaluations in a rat periodontitis model demonstrate effective inflammation resolution, suppression of alveolar bone loss, and robust tissue regeneration. This work introduces an intelligent therapeutic strategy that hijacks pathological H2S as a photodynamic amplifier, establishing a microenvironment-adaptive PDT paradigm for periodontal infection.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75577",
+        "doi_url": "https://doi.org/10.1002/adma.75577",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42978323/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses periodontitis treatment limitations by engineering a microenvironment-responsive photodynamic therapy (PDT) strategy. The approach utilizes Bi2O2CO3 nanosheet-assembled microspheres that scavenge pathological hydrogen sulfide (H2S) in periodontal pockets, triggering in situ formation of Bi2O2CO3@Bi2S3 heterojunctions. This H2S-triggered conversion neutralizes pro-inflammatory H2S and enhances photocatalytic activity, leading to efficient eradication of periodontopathogens like Porphyromonas gingivalis through ROS-mediated oxidative stress and bacterial iron metabolism disruption. In vivo rat models showed reduced inflammation, bone loss, and improved tissue regeneration.\",\n  \"key_findings\": [\n    \"H2S scavenging by Bi2O2CO3 microspheres triggers in situ formation of Bi2O2CO3@Bi2S3 heterojunctions\",\n    \"The heterojunction neutralizes pro-inflammatory H2S and enhances photocatalytic activity for ROS production\",\n    \"In vivo treatment reduced inflammation, alveolar bone loss, and promoted tissue regeneration in periodontitis models\"\n  ],\n  \"scientific_significance\": \"This work establishes a microenvironment-adaptive photodynamic therapy strategy that converts pathological hydrogen sulfide into a therapeutic amplifier, offering a novel approach to address periodontitis through targeted immunomodulation and pathogen eradication.\"\n}",
+        "parsed": {
+          "summary": "This study addresses periodontitis treatment limitations by engineering a microenvironment-responsive photodynamic therapy (PDT) strategy. The approach utilizes Bi2O2CO3 nanosheet-assembled microspheres that scavenge pathological hydrogen sulfide (H2S) in periodontal pockets, triggering in situ formation of Bi2O2CO3@Bi2S3 heterojunctions. This H2S-triggered conversion neutralizes pro-inflammatory H2S and enhances photocatalytic activity, leading to efficient eradication of periodontopathogens like Porphyromonas gingivalis through ROS-mediated oxidative stress and bacterial iron metabolism disruption. In vivo rat models showed reduced inflammation, bone loss, and improved tissue regeneration.",
+          "key_findings": [
+            "H2S scavenging by Bi2O2CO3 microspheres triggers in situ formation of Bi2O2CO3@Bi2S3 heterojunctions",
+            "The heterojunction neutralizes pro-inflammatory H2S and enhances photocatalytic activity for ROS production",
+            "In vivo treatment reduced inflammation, alveolar bone loss, and promoted tissue regeneration in periodontitis models"
+          ],
+          "scientific_significance": "This work establishes a microenvironment-adaptive photodynamic therapy strategy that converts pathological hydrogen sulfide into a therapeutic amplifier, offering a novel approach to address periodontitis through targeted immunomodulation and pathogen eradication."
+        },
+        "elapsed_seconds": 68.5766,
+        "input_tokens": 795,
+        "output_tokens": 300,
+        "thoughts_tokens": null,
+        "total_tokens": 1095,
+        "model_eval_seconds": 57.1815,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
