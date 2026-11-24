@@ -134,7 +134,7 @@ for (group_name in names(groups)) {
     significance <- paste(summary_values(article$summary$parsed, "scientific_significance"), collapse = " ")
     paste0(
       '<a href="', html_escape(card_url), '"><b>', html_escape(article$title), '</b></a>',
-      "\n", html_escape(author_text), " · ", html_escape(journal_name),
+      "\n<i>", html_escape(author_text), " · ", html_escape(journal_name), "</i>",
       "\n", html_escape(significance)
     )
   }, character(1))
