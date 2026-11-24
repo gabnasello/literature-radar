@@ -1,0 +1,956 @@
+{
+  "schema_version": 1,
+  "run_id": "20261124T164516Z",
+  "generated_at_utc": "2026-11-24 16:56:38 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 79,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42978337",
+        "title": "Unlocking the Potential of Magnesium-Based Hydrogen Storage Composites via Advanced Thermodynamic and Kinetic Tuning Strategies.",
+        "abstract": "NA: The development of efficient and safe solid-state hydrogen storage technologies is pivotal for the transition toward sustainable clean energy. Magnesium is a promising hydrogen carrier due to its high gravimetric (7.6 wt.% for MgH2) and volumetric storage capacity (110 kg m-3), abundance, and excellent reversibility. However, the practical application of Mg-based materials is hindered by their high thermodynamic stability (ΔH  =    -74.7 kJ mol-1 H2) and sluggish sorption kinetics. Here, we overview the latest advances in Mg-based composites for high hydrogen storage performance. We discuss key material modification strategies, including catalysis, nanostructuring, alloying, and external field assistance to tune the thermodynamic and kinetic properties of Mg-based materials. We stress the emerging role of machine learning in accelerating material design, performance prediction, and optimization. We also critically assess the techno-economic viability of Mg-based hydrogen storage within integrated hydrogen value chains. This assessment considers how storage connects with hydrogen production, transport, and end-use applications. Finally, we outline challenges and future research directions, aiming to guide the rational design of next-generation Mg-based hydrogen storage materials and systems toward commercial applications.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75618",
+        "doi_url": "https://doi.org/10.1002/adma.75618",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42978337/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates strategies to enhance magnesium-based hydrogen storage composites by optimizing thermodynamic and kinetic properties. The research reviews material modifications like catalysis, nanostructuring, alloying, and external field assistance to improve hydrogen storage capacity and reversibility. Key findings include improved gravimetric storage, reduced thermodynamic stability barriers, and accelerated sorption kinetics through tailored composite designs. These advances address critical challenges for practical hydrogen storage applications.\",\n  \"key_findings\": [\n    \"Enhanced gravimetric hydrogen storage capacity via composite engineering\",\n    \"Reduced thermodynamic stability barriers through kinetic tuning\",\n    \"Accelerated sorption kinetics using tailored material modifications\"\n  ],\n  \"scientific_significance\": \"This work advances the understanding of thermodynamic and kinetic optimization in magnesium-based hydrogen storage systems, providing a framework for designing efficient, reversible solid-state hydrogen storage materials.\"\n}",
+        "parsed": {
+          "summary": "This study investigates strategies to enhance magnesium-based hydrogen storage composites by optimizing thermodynamic and kinetic properties. The research reviews material modifications like catalysis, nanostructuring, alloying, and external field assistance to improve hydrogen storage capacity and reversibility. Key findings include improved gravimetric storage, reduced thermodynamic stability barriers, and accelerated sorption kinetics through tailored composite designs. These advances address critical challenges for practical hydrogen storage applications.",
+          "key_findings": [
+            "Enhanced gravimetric hydrogen storage capacity via composite engineering",
+            "Reduced thermodynamic stability barriers through kinetic tuning",
+            "Accelerated sorption kinetics using tailored material modifications"
+          ],
+          "scientific_significance": "This work advances the understanding of thermodynamic and kinetic optimization in magnesium-based hydrogen storage systems, providing a framework for designing efficient, reversible solid-state hydrogen storage materials."
+        },
+        "elapsed_seconds": 24.5515,
+        "input_tokens": 698,
+        "output_tokens": 178,
+        "thoughts_tokens": null,
+        "total_tokens": 876,
+        "model_eval_seconds": 12.7021,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43056978",
+        "title": "MALT1 is upregulated and its inhibition improves neural injury, behavioral abnormalities, and inflammation in major depressive disorder.",
+        "abstract": "BACKGROUND: This study aimed to investigate the correlation between mucosa-associated lymphoid tissue lymphoma translocation protein 1 (MALT1) expression and major depressive disorder (MDD) risk, and MALT1 inhibition's effects on symptoms, neural injury and inflammation in MDD mice.\nMETHODS: Blood samples were obtained from 85 MDD patients and 101 healthy controls, and subjected to reverse transcription-quantitative polymerase chain reaction for MALT1 measurement. Unpredictable chronic mild stress (UCMS) method was applied to mimic MDD in mice. Afterwards, MDD mice were treated by low-dose (15 mg/kg), moderate-dose (25 mg/kg), and high-dose (35 mg/kg) MI-2 (MALT1 inhibitor), respectively.\nRESULTS: MALT1 expression was elevated in MDD patients versus healthy controls (median 3.41 versus 1.10, P<0.001), which also disclosed a high area under curve of 0.856 for the diagnosis of MDD by receiver operating characteristic curve. Moreover, after adjustment by multivariable logistic regression, MALT1 expression was independently correlated with MDD risk (P<0.001). MALT1 inhibition by high-dose MI-2 decreased amygdala neuronal apoptosis (P<0.01) while increased Nissl number (P<0.05) in MDD mice. MALT1 inhibition by high-dose MI-2 also improved behavioral abnormalities including open arms entries (P<0.05), time in open arms (P<0.05), time in light area (P<0.05), and immobility time (P<0.05) in MDD mice. In addition, MALT1 inhibition by high-dose MI-2 reduced spleen Th17/Treg ratio (P<0.05), serum IL-17A (P<0.05) and TNF-α (P<0.05) in MDD mice. However, moderate-dose MI-2 appeared less effect, and low-dose MI-2 had no effect, on the abovementioned indices in MDD mice.\nCONCLUSION: MALT1 appears the potency as both biomarker and therapeutic target for MDD.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.psychres.2026.117586",
+        "doi_url": "https://doi.org/10.1016/j.psychres.2026.117586",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43056978/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Psychiatry research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated MALT1 expression in major depressive disorder (MDD) patients and MDD mouse models. Using blood samples from MDD patients and healthy controls, and unpredictable chronic mild stress to induce MDD in mice, researchers found elevated MALT1 expression in MDD patients. MALT1 inhibition with high-dose MI-2 reduced neural injury, improved behavioral abnormalities, and decreased inflammation in MDD mice, while lower doses showed minimal effects.\",\n  \"key_findings\": [\n    \"MALT1 expression was significantly elevated in MDD patients compared to healthy controls (median 3.41 vs. 1.10, P<0.001).\",\n    \"High-dose MALT1 inhibition (35 mg/kg MI-2) reduced amygdala neuronal apoptosis and increased Nissl number in MDD mice.\",\n    \"MALT1 inhibition decreased spleen Th17/Treg ratio, serum IL-17A, and TNF-α levels in MDD mice, improving behavioral outcomes.\"\n  ],\n  \"scientific_significance\": \"This study identifies MALT1 as a potential biomarker and therapeutic target for major depressive disorder, demonstrating that its inhibition alleviates neural injury, behavioral deficits, and inflammatory markers in preclinical models.\"\n}",
+        "parsed": {
+          "summary": "This study investigated MALT1 expression in major depressive disorder (MDD) patients and MDD mouse models. Using blood samples from MDD patients and healthy controls, and unpredictable chronic mild stress to induce MDD in mice, researchers found elevated MALT1 expression in MDD patients. MALT1 inhibition with high-dose MI-2 reduced neural injury, improved behavioral abnormalities, and decreased inflammation in MDD mice, while lower doses showed minimal effects.",
+          "key_findings": [
+            "MALT1 expression was significantly elevated in MDD patients compared to healthy controls (median 3.41 vs. 1.10, P<0.001).",
+            "High-dose MALT1 inhibition (35 mg/kg MI-2) reduced amygdala neuronal apoptosis and increased Nissl number in MDD mice.",
+            "MALT1 inhibition decreased spleen Th17/Treg ratio, serum IL-17A, and TNF-α levels in MDD mice, improving behavioral outcomes."
+          ],
+          "scientific_significance": "This study identifies MALT1 as a potential biomarker and therapeutic target for major depressive disorder, demonstrating that its inhibition alleviates neural injury, behavioral deficits, and inflammatory markers in preclinical models."
+        },
+        "elapsed_seconds": 28.5111,
+        "input_tokens": 932,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1200,
+        "model_eval_seconds": 20.362,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils expressing Nlrp3 and Il1b, which license pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states during specific temporal windows can durably reprogram immune responses.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates skin inflammation to chronic obesity levels\",\n    \"Neutrophil recruitment and Nlrp3-Il1b signaling license pathogenic TH17 cells during acute inflammation\",\n    \"Chromatin-poised tissue-resident memory T cells persist post-recovery, causing exaggerated inflammation upon recurrence despite low-fat diet\"\n  ],\n  \"scientific_significance\": \"This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune memory, revealing a mechanism by which short-lived physiological changes impact long-term inflammatory disease trajectories.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils expressing Nlrp3 and Il1b, which license pathogenic TH17 cells. After recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states during specific temporal windows can durably reprogram immune responses.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates skin inflammation to chronic obesity levels",
+            "Neutrophil recruitment and Nlrp3-Il1b signaling license pathogenic TH17 cells during acute inflammation",
+            "Chromatin-poised tissue-resident memory T cells persist post-recovery, causing exaggerated inflammation upon recurrence despite low-fat diet"
+          ],
+          "scientific_significance": "This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune memory, revealing a mechanism by which short-lived physiological changes impact long-term inflammatory disease trajectories."
+        },
+        "elapsed_seconds": 26.2295,
+        "input_tokens": 885,
+        "output_tokens": 295,
+        "thoughts_tokens": null,
+        "total_tokens": 1180,
+        "model_eval_seconds": 24.4589,
+        "error": "summary must contain 45–90 words; received 111.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42984317",
+        "title": "Structure-Encoded Magnetic Anisotropy in Super-Tough Magnetoelastic Aramid-Silk-Magnetite Fibers.",
+        "abstract": "NA: Magnetic anisotropy is essential for controlling magnetic responses in soft matter, yet it is conventionally imposed using external magnetic fields. Here, we show that magnetic anisotropy can instead be intrinsically encoded and continuously tuned through hierarchical structural organization, establishing a route by which anisotropic dipolar interactions, rather than conventional shape effects, dominate the magnetic energy landscape. This mechanism is achieved by engineering composite nanofibrils in which magnetite nanoparticles are grown in situ within an aligned aramid-silk matrix, inspired by biomineralization in chiton teeth. The resulting aramid-silk-magnetite fibers combine high strength and modulus with exceptional toughness up to 820 MJ m- 3, while exhibiting tunable magnetic anisotropy spanning axial to radial easy-axis configurations through structural relaxation. Quantitative analysis reveals that collective dipolar coupling dominates magnetic anisotropy by orders of magnitude over demagnetization-field contributions, identifying nanoparticle interaction networks as the primary origin of anisotropy. This built-in anisotropy enables strain-mediated reconfiguration of magnetic properties, giving rise to magnetoelastic coupling that scales with fiber modulus and reflects the available structural mobility for magnetic reorientation. By amplifying structure-defined anisotropy under mechanical loading, we further demonstrate strain-controlled magnetic torque for actuation. These findings establish a structural design principle for programming magnetic anisotropy in mechanically robust magnetoelastic materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75589",
+        "doi_url": "https://doi.org/10.1002/adma.75589",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42984317/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how hierarchical structural organization can intrinsically encode magnetic anisotropy in composite fibers. Researchers engineered aramid-silk-magnetite nanofibrils by growing magnetite nanoparticles within an aligned matrix, inspired by biomineralization. The fibers achieved high strength, modulus, and toughness (820 MJ m-3) while exhibiting tunable magnetic anisotropy from axial to radial easy axes. Collective dipolar coupling dominated magnetic anisotropy, enabling strain-mediated reconfiguration of magnetic properties and magnetoelastic actuation.\",\n  \"key_findings\": [\n    \"Composite fibers with aramid-silk-magnetite structure achieved exceptional toughness (820 MJ m-3)\",\n    \"Tunable magnetic anisotropy spanned axial to radial easy-axis configurations via structural relaxation\",\n    \"Collective dipolar coupling dominated magnetic anisotropy by orders of magnitude over demagnetization effects\"\n  ],\n  \"scientific_significance\": \"This work establishes a structural design principle for programming intrinsic magnetic anisotropy in mechanically robust magnetoelastic materials, enabling strain-controlled magnetic reconfiguration.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how hierarchical structural organization can intrinsically encode magnetic anisotropy in composite fibers. Researchers engineered aramid-silk-magnetite nanofibrils by growing magnetite nanoparticles within an aligned matrix, inspired by biomineralization. The fibers achieved high strength, modulus, and toughness (820 MJ m-3) while exhibiting tunable magnetic anisotropy from axial to radial easy axes. Collective dipolar coupling dominated magnetic anisotropy, enabling strain-mediated reconfiguration of magnetic properties and magnetoelastic actuation.",
+          "key_findings": [
+            "Composite fibers with aramid-silk-magnetite structure achieved exceptional toughness (820 MJ m-3)",
+            "Tunable magnetic anisotropy spanned axial to radial easy-axis configurations via structural relaxation",
+            "Collective dipolar coupling dominated magnetic anisotropy by orders of magnitude over demagnetization effects"
+          ],
+          "scientific_significance": "This work establishes a structural design principle for programming intrinsic magnetic anisotropy in mechanically robust magnetoelastic materials, enabling strain-controlled magnetic reconfiguration."
+        },
+        "elapsed_seconds": 23.5154,
+        "input_tokens": 741,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 978,
+        "model_eval_seconds": 18.183,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43057412",
+        "title": "CENPT Promotes Pancreatic Cancer Progression by Activating the RAF/MEK/ERK Signaling Pathway and Triggering MIF-Mediated Immunosuppression.",
+        "abstract": "NA: Pancreatic ductal adenocarcinoma (PDAC) is one of the most devastating malignancies, with its incidence and mortality rates remaining particularly discouraging. Elucidating the molecular mechanisms driving PDAC progression and identifying potential therapeutic targets are critical to improve the clinical prognosis of PDAC patients. Accumulating evidence has highlighted the pivotal functions of centromere proteins (CENPs) in tumor progression. Accordingly, this study aimed to screen and identify key CENP family members implicated in PDAC pathogenesis. Through systematic analysis of CENP family proteins in PDAC, we identified CENPT as a critical regulator involved in disease progression. We further validated that CENPT promoted the proliferation and metastasis of PDAC cells via activating the RAF/MEK/ERK signaling pathway through a series of in vitro and in vivo experiments. In addition, CENPT was also found to be implicated in tumor microenvironment remodeling. Single-cell and bulk transcriptomic analyses demonstrated that CENPT expression was positively correlated with Treg cell abundance and an immunosuppressive tumor microenvironment. Further experiments suggested that CENPT upregulated the synthesis and secretion of MIF in PDAC cells, which acted on naive CD4+ T cells to promote the differentiation into Treg cells. This process ultimately induced the formation of an immunosuppressive tumor microenvironment and facilitated PDAC progression, whereas blockade of MIF enhanced the efficacy of immune checkpoint blockade for PDAC. In conclusion, this study revealed the crucial role of CENPT in PDAC progression, and targeting CENPT may serve as one of the potential therapeutic strategies for PDAC.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.canlet.2026.218966",
+        "doi_url": "https://doi.org/10.1016/j.canlet.2026.218966",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43057412/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Cancer letters",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated CENPT's role in pancreatic ductal adenocarcinoma (PDAC) progression. Using in vitro and in vivo experiments, the researchers identified CENPT as a critical regulator that activates the RAF/MEK/ERK pathway, promoting cell proliferation and metastasis. Transcriptomic analyses revealed CENPT correlates with increased regulatory T cells and immunosuppressive microenvironments. CENPT upregulates MIF secretion, which drives Treg differentiation and immunosuppression, suggesting CENPT inhibition could enhance immune checkpoint therapy efficacy.\",\n  \"key_findings\": [\n    \"CENPT activates the RAF/MEK/ERK pathway to drive PDAC proliferation and metastasis\",\n    \"CENPT correlates with elevated regulatory T cells and immunosuppressive tumor microenvironments\",\n    \"CENPT upregulates MIF secretion, promoting Treg differentiation and immunosuppression\"\n  ],\n  \"scientific_significance\": \"This work establishes CENPT as a key molecular driver in PDAC progression with dual roles in oncogenic signaling and immunosuppression, providing a potential target for combination immunotherapies.\"\n}",
+        "parsed": {
+          "summary": "This study investigated CENPT's role in pancreatic ductal adenocarcinoma (PDAC) progression. Using in vitro and in vivo experiments, the researchers identified CENPT as a critical regulator that activates the RAF/MEK/ERK pathway, promoting cell proliferation and metastasis. Transcriptomic analyses revealed CENPT correlates with increased regulatory T cells and immunosuppressive microenvironments. CENPT upregulates MIF secretion, which drives Treg differentiation and immunosuppression, suggesting CENPT inhibition could enhance immune checkpoint therapy efficacy.",
+          "key_findings": [
+            "CENPT activates the RAF/MEK/ERK pathway to drive PDAC proliferation and metastasis",
+            "CENPT correlates with elevated regulatory T cells and immunosuppressive tumor microenvironments",
+            "CENPT upregulates MIF secretion, promoting Treg differentiation and immunosuppression"
+          ],
+          "scientific_significance": "This work establishes CENPT as a key molecular driver in PDAC progression with dual roles in oncogenic signaling and immunosuppression, providing a potential target for combination immunotherapies."
+        },
+        "elapsed_seconds": 23.5062,
+        "input_tokens": 793,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 1036,
+        "model_eval_seconds": 17.5046,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42984321",
+        "title": "High-Entropy Complementary d-Band Decoupling of Redox Kinetics for Bidirectional Catalysis in Lithium-Sulfur Batteries.",
+        "abstract": "NA: The reversible conversion of sulfur and Li2S in lithium-sulfur (Li-S) batteries is limited by the bidirectional redox kinetics. A single-component catalyst is difficult to simultaneously meet the differentiated adsorption and catalytic requirements in the multi-step conversion of polysulfides. We propose a high-entropy complementary d-band center model, extending the classical d-band center theory to multi-metal systems. The complementary d-band centers of multiple metals align the HOMO and LUMO of sulfur species, coordinating the electron transfer balance and accelerating the redox kinetics. The multi-metal sites collaboratively construct a \"highly efficient capture → cascade conversion → rapid desorption\" closed-loop pathway, with the d-p hybridization network regulating the adsorption energy and effectively suppressing the shuttle effect. Based on this design, the high-entropy selenide catalyst with a customized electronic structure and strong synergy effect has achieved excellent cycle stability and rate performance in Li-S batteries.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75620",
+        "doi_url": "https://doi.org/10.1002/adma.75620",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42984321/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing bidirectional redox kinetics in lithium-sulfur batteries using a high-entropy complementary d-band center model. The approach involves designing multi-metal catalysts that align sulfur species' HOMO and Lusing the d-band center theory. The catalyst facilitates efficient capture, cascade conversion, and rapid desorption of polysulfides while suppressing the shuttle effect. Results show improved cycle stability and rate performance in Li-S batteries.\",\n  \"key_findings\": [\n    \"Multi-metal catalysts align sulfur species' HOMO and LUMO via complementary d-band centers\",\n    \"The catalyst enables a closed-loop pathway for efficient polysulfide conversion\",\n    \"The design suppresses the shuttle effect and enhances cycle stability and rate performance\"\n  ],\n  \"scientific_significance\": \"This work extends d-band center theory to multi-metal systems, providing a mechanism for optimizing redox kinetics in lithium-sulfur batteries through tailored electronic structures.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing bidirectional redox kinetics in lithium-sulfur batteries using a high-entropy complementary d-band center model. The approach involves designing multi-metal catalysts that align sulfur species' HOMO and Lusing the d-band center theory. The catalyst facilitates efficient capture, cascade conversion, and rapid desorption of polysulfides while suppressing the shuttle effect. Results show improved cycle stability and rate performance in Li-S batteries.",
+          "key_findings": [
+            "Multi-metal catalysts align sulfur species' HOMO and LUMO via complementary d-band centers",
+            "The catalyst enables a closed-loop pathway for efficient polysulfide conversion",
+            "The design suppresses the shuttle effect and enhances cycle stability and rate performance"
+          ],
+          "scientific_significance": "This work extends d-band center theory to multi-metal systems, providing a mechanism for optimizing redox kinetics in lithium-sulfur batteries through tailored electronic structures."
+        },
+        "elapsed_seconds": 16.9571,
+        "input_tokens": 643,
+        "output_tokens": 198,
+        "thoughts_tokens": null,
+        "total_tokens": 841,
+        "model_eval_seconds": 13.4716,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43057867",
+        "title": "Only CD8+ T cell-derived IFN-γ is required to drive PD-1 immunotherapy efficacy.",
+        "abstract": "BACKGROUND: Interferon gamma (IFN-γ) is a pleiotropic cytokine with a central yet complex role in anti-programmed cell death protein 1 (PD-1) immunotherapy. However, the key cellular sources of IFN-γ that are required for therapeutic efficacy remain undefined.\nMETHODS: We generated novel genetic models enabling cell type-specific Ifng deletion to selectively ablate IFN-γ production in CD8+ T cells, CD4+ conventional T cells (Tconvs), regulatory T cells (Tregs), or natural killer (NK) cells. MC38 and YUMMER1.7 tumor growth, survival, and responder ratios were assessed following anti-PD-1 or IgG control treatment. Tumor-infiltrating lymphocytes were immunophenotyped by flow cytometry for evaluation of effector T-cell, exhaustion and activation markers. Two-way analysis of variance with mixed-effects modeling was used to compare tumor growth curves, and log-rank (Mantel-Cox) tests were performed for survival analysis. For flow cytometry analysis, statistical comparisons used two-tailed Mann-Whitney tests (multiple comparisons, 5% false discovery rate). Fisher’s exact tests were used for responder-class distributions.\nRESULTS: We demonstrated that IFN-γ derived specifically from CD8+ T cells was required to drive anti-PD-1-mediated tumor control. This effect was not observed on deletion of Ifng in CD4+ Tconvs, Tregs, or NK cells. Additionally, IFN-γ from CD8+ T cells was critical to promote TCF1+ and CXCR3+ CD8+ T cells while restricting terminally exhausted-like T-cell subset driven by anti-PD-1 treatment. Cell-intrinsic IFN-γ responsiveness by CD8+ T cells, via IFN-γ receptor 1 (IFNγR1), was dispensable for therapeutic efficacy.\nCONCLUSIONS: Our findings highlight CD8+ T cells as the critical source of IFN-γ for anti-PD-1 efficacy, highlighting an obligate paracrine mechanism within the tumor microenvironment.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1136/jitc-2026-015140",
+        "doi_url": "https://doi.org/10.1136/jitc-2026-015140",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43057867/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal for immunotherapy of cancer",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the cellular sources of IFN-γ required for anti-PD-1 immunotherapy efficacy using genetic models to ablate Ifng in specific immune cell types. By assessing tumor growth and survival in MC38 and YUMMER1.7 models, the research demonstrated that CD8+ T cell-derived IFN-γ is essential for therapeutic response, while deletion in other cells (CD4+ Tconvs, Tregs, NK cells) did not impair efficacy. The findings indicate IFN-γ from CD8+ T cells promotes TCF1+ and CXCR3+ effector subsets and restricts terminal exhaustion during anti-PD-1 treatment.\",\n  \"key_findings\": [\n    \"CD8+ T cell-derived IFN-γ is necessary for anti-PD-1-mediated tumor control\",\n    \"Deletion of Ifng in CD4+ Tconvs, Tregs, or NK cells does not affect anti-PD-1 efficacy\",\n    \"CD8+ T cell IFN-γ drives TCF1+ and CXCR3+ effector T-cell subsets while limiting terminal exhaustion\"\n  ],\n  \"scientific_significance\": \"This work establishes CD8+ T cells as the obligate source of IFN-γ for anti-PD-1 immunotherapy, revealing a critical paracrine mechanism within the tumor microenvironment that underpins therapeutic response.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the cellular sources of IFN-γ required for anti-PD-1 immunotherapy efficacy using genetic models to ablate Ifng in specific immune cell types. By assessing tumor growth and survival in MC38 and YUMMER1.7 models, the research demonstrated that CD8+ T cell-derived IFN-γ is essential for therapeutic response, while deletion in other cells (CD4+ Tconvs, Tregs, NK cells) did not impair efficacy. The findings indicate IFN-γ from CD8+ T cells promotes TCF1+ and CXCR3+ effector subsets and restricts terminal exhaustion during anti-PD-1 treatment.",
+          "key_findings": [
+            "CD8+ T cell-derived IFN-γ is necessary for anti-PD-1-mediated tumor control",
+            "Deletion of Ifng in CD4+ Tconvs, Tregs, or NK cells does not affect anti-PD-1 efficacy",
+            "CD8+ T cell IFN-γ drives TCF1+ and CXCR3+ effector T-cell subsets while limiting terminal exhaustion"
+          ],
+          "scientific_significance": "This work establishes CD8+ T cells as the obligate source of IFN-γ for anti-PD-1 immunotherapy, revealing a critical paracrine mechanism within the tumor microenvironment that underpins therapeutic response."
+        },
+        "elapsed_seconds": 28.2956,
+        "input_tokens": 884,
+        "output_tokens": 292,
+        "thoughts_tokens": null,
+        "total_tokens": 1176,
+        "model_eval_seconds": 21.1038,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42984329",
+        "title": "Non-Selective Suppression of Cation and Anion Crosstalk from an Anode Perspective.",
+        "abstract": "NA: Metal fluoride and sulfur cathodes are appealing for their abundance and high capacity but are plagued by severe electrode crosstalk. This occurs when transition metal cations or polysulfide anions dissolve and shuttle to the anode, causing corrosion and rapid capacity fade. Herein, we propose an anode-centric mechanism utilizing a Na-rich nanoalloy (NaxSn) anode that achieves simultaneous kinetic regulation and physical shielding, suppressing cation and anion crosstalk at both the source and destination. The ultrafast kinetics of the NaxSn alloy elevate the Damköhler number (Da), a descriptor quantifying the competition between conversion and diffusion, thereby ensuring these species are rapidly reduced at the cathode prior to outward diffusion. Concurrently, this nanoalloy induces the formation of an ultrathin, robust Na2O-rich solid electrolyte interphase that non-selectively blocks residual cation and anion crossovers. This mechanism enables an FeF2||NaxSn full cell to achieve a Coulombic efficiency of 99.93% over 200 cycles. Additionally, the S/C||NaxSn system supports extreme rate capabilities (630 mAh g-1 at 20C) and transitions to practical pouch cell configurations, yielding an excellent capacity retention of 91.95% after 1000 cycles at 0.5C. Ultimately, Na-rich nanoalloy anodes offer a compelling pathway toward high-energy, sustainable batteries by transforming electrode crosstalk into a spatiotemporally synergistic anode-cathode coupling.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75632",
+        "doi_url": "https://doi.org/10.1002/adma.75632",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42984329/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates suppressing electrode crosstalk in metal fluoride and sulfur batteries by designing a Na-rich nanoalloy (NaxSn) anode. The approach combines kinetic regulation via elevated Damköhler numbers and physical shielding through an ultrathin Na2O-rich solid electrolyte interphase. Results show 99.93% Coulombic efficiency over 200 cycles and 91.95% capacity retention after 1000 cycles at 0.5C in FeF2||NaxSn and S/C||NaxSn systems, demonstrating effective suppression of cation and anion crosstalk.\",\n  \"key_findings\": [\n    \"NaxSn anodes achieve 99.93% Coulombic efficiency over 200 cycles\",\n    \"S/C||NaxSn systems retain 91.95% capacity after 1000 cycles at 0.5C\",\n    \"The Na2O-rich solid electrolyte interphase non-selectively blocks cation and anion crossovers\"\n  ],\n  \"scientific_significance\": \"This work establishes a dual mechanism for suppressing electrode crosstalk in high-energy batteries, enabling long-term cycling stability through spatiotemporally synergistic anode-cathode coupling.\"\n}",
+        "parsed": {
+          "summary": "This study investigates suppressing electrode crosstalk in metal fluoride and sulfur batteries by designing a Na-rich nanoalloy (NaxSn) anode. The approach combines kinetic regulation via elevated Damköhler numbers and physical shielding through an ultrathin Na2O-rich solid electrolyte interphase. Results show 99.93% Coulombic efficiency over 200 cycles and 91.95% capacity retention after 1000 cycles at 0.5C in FeF2||NaxSn and S/C||NaxSn systems, demonstrating effective suppression of cation and anion crosstalk.",
+          "key_findings": [
+            "NaxSn anodes achieve 99.93% Coulombic efficiency over 200 cycles",
+            "S/C||NaxSn systems retain 91.95% capacity after 1000 cycles at 0.5C",
+            "The Na2O-rich solid electrolyte interphase non-selectively blocks cation and anion crossovers"
+          ],
+          "scientific_significance": "This work establishes a dual mechanism for suppressing electrode crosstalk in high-energy batteries, enabling long-term cycling stability through spatiotemporally synergistic anode-cathode coupling."
+        },
+        "elapsed_seconds": 25.1193,
+        "input_tokens": 769,
+        "output_tokens": 276,
+        "thoughts_tokens": null,
+        "total_tokens": 1045,
+        "model_eval_seconds": 19.5196,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43058389",
+        "title": "NGF-TRKA Facilitates the Activation of Lung Fibroblasts and Modulates the Immune Response in Pulmonary Fibrosis Via the FAK/ERK Signaling Pathway.",
+        "abstract": "NA: A growing body of evidence suggests that immune dysregulation plays a pivotal role in the pathogenesis of idiopathic pulmonary fibrosis (IPF); however, the precise regulatory mechanisms remain unclear. We aim to identify key inflammatory factors and immune cells that significantly contribute to the onset and progression of IPF, and to elucidate their specific mechanisms of action. The potential causal relationships between 731 immunocyte phenotype, 41 inflammatory cytokines and IPF were conducted using bidirectional two-sample Mendelian randomization (TwoSampleMR) analysis. The candidate targets were further screened in the peripheral blood of patients with IPF, as well as in both in vivo and in vitro models of pulmonary fibrosis (PF). In vitro experiments were performed by treating MRC5 cells with nerve growth factor (NGF) and the tropomyosin receptor kinase A (TRKA) inhibitor K-252a, or by transfecting the cells with siRNA targeting TRKA. Fibroblast activation was assessed using CCK-8 assays, wound healing assays, transwell migration assays, reverse transcription quantitative PCR (RT-qPCR), and western blot analysis. Additionally, co-immunoprecipitation (CoIP) was employed to verify the interaction between NGF and TRKA in MRC5 cells. In vivo studies examined the impact of NGF on immune responses and PF, as well as the antifibrotic effects of K-252a on these parameters. These evaluations were performed through histopathological examination, immunohistochemical analysis, immunofluorescence analysis, western blotting, and enzyme-linked immunosorbent assay (ELISA). The genetically predicted onset of IPF has been correlated with the expression of NGF, which is significantly upregulated in the peripheral blood of individuals diagnosed with IPF. Furthermore, genetic analyses have implicated the involvement of two distinct immune cell populations in the initiation of IPF, with a particularly strong association observed between CD4 on CD39+ regulatory T cells (Tregs) and the risk of developing IPF (odds ratio [OR] = 1.13, 95% confidence interval [CI] = 1.00 - 1.28, false discovery rate-adjusted p-value [PFDR] = 0.0476). The cellular markers CD4, CD39 and Forkhead box P3 (FOXP3) exhibit elevated expression in murine models of PF. A positive correlation between NGF and the expression levels of CD4 and FOXP3 was also identified in patients with IPF. Mechanistically, NGF binds to its receptor TRKA, thereby activating the focal adhesion kinase / extracellular signal-regulated kinase (FAK / ERK) signaling pathway, which induces endoplasmic reticulum stress (ER stress) in pulmonary fibroblasts and promotes their activation. Additionally, NGF exacerbates bleomycin (BLM)-induced PF and enhances the expression of cellular markers characteristic of CD4+Foxp3+CD39+ activated Tregs, including CD4, CD39, FOXP3, interleukin-10 (IL-10), granzyme B (GZMB), and interleukin-2 receptor alpha (IL-2RA). Conversely, treatment with K-252a significantly inhibits the progression of PF and attenuates associated immunological responses.In murine models of pulmonary fibrosis, there is an increased co-localization of NGF with CD4, CD39, and FOXP3, whereas treatment with K-252a reduces this co-localization. Our findings indicate that the NGF-TRKA signaling pathway contributes to fibroblast activation and the cellular immune response in IPF. Consequently, targeting NGF-TRKA may constitute a promising therapeutic strategy for the treatment of pulmonary fibrosis.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1007/s10753-026-02595-3",
+        "doi_url": "https://doi.org/10.1007/s10753-026-02595-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43058389/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Inflammation",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the role of nerve growth factor (NGF) and its receptor TRKA in idiopathic pulmonary fibrosis (IPF) pathogenesis. Using Mendelian randomization, in vitro models with MRC5 cells, and murine pulmonary fibrosis models, the research demonstrates NGF-TRKA signaling activates fibroblasts via FAK/ERK pathway, induces endoplasmic reticulum stress, and promotes immune dysregulation. Key findings include NGF upregulation in IPF patients, CD4+CD39+FOXP3+ Treg involvement, and K-252a's antifibrotic effects.\",\n  \"key_findings\": [\n    \"NGF is significantly upregulated in peripheral blood of IPF patients\",\n    \"CD4+CD39+FOXP3+ regulatory T cells show elevated expression in IPF and correlate with disease risk\",\n    \"NGF-TRKA signaling via FAK/ERK pathway drives fibroblast activation and exacerbates pulmonary fibrosis\"\n  ],\n  \"scientific_significance\": \"The study identifies NGF-TRKA signaling as a mechanistic link between immune dysregulation and fibroblast activation in IPF, suggesting a novel therapeutic target for pulmonary fibrosis.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the role of nerve growth factor (NGF) and its receptor TRKA in idiopathic pulmonary fibrosis (IPF) pathogenesis. Using Mendelian randomization, in vitro models with MRC5 cells, and murine pulmonary fibrosis models, the research demonstrates NGF-TRKA signaling activates fibroblasts via FAK/ERK pathway, induces endoplasmic reticulum stress, and promotes immune dysregulation. Key findings include NGF upregulation in IPF patients, CD4+CD39+FOXP3+ Treg involvement, and K-252a's antifibrotic effects.",
+          "key_findings": [
+            "NGF is significantly upregulated in peripheral blood of IPF patients",
+            "CD4+CD39+FOXP3+ regulatory T cells show elevated expression in IPF and correlate with disease risk",
+            "NGF-TRKA signaling via FAK/ERK pathway drives fibroblast activation and exacerbates pulmonary fibrosis"
+          ],
+          "scientific_significance": "The study identifies NGF-TRKA signaling as a mechanistic link between immune dysregulation and fibroblast activation in IPF, suggesting a novel therapeutic target for pulmonary fibrosis."
+        },
+        "elapsed_seconds": 34.4677,
+        "input_tokens": 1276,
+        "output_tokens": 269,
+        "thoughts_tokens": null,
+        "total_tokens": 1545,
+        "model_eval_seconds": 21.0421,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42985839",
+        "title": "Coordination Bridges in Confined-Water Domains Enable Partially Desolvated Zn2 + Transport in Aqueous Zinc-Ion Batteries.",
+        "abstract": "NA: Zinc-ion batteries (ZIBs), owing to their intrinsic safety and cost competitiveness, are attracting significant interest as next-generation energy storage system (ESS) technologies. However, their commercialization is severely hindered by poor cycle stability, primarily originating from dendritic Zn growth and parasitic hydrogen evolution. To address these challenges simultaneously, we design and integrate a multifunctional polymeric protective layer incorporating amide and imidazolium functional groups. The zincophilic amide groups facilitate ion transport by providing stable Zn2+ binding sites, whereas the hygroscopic imidazolium groups establish a confined-water domain that regulates local solvation dynamics. Within this domain, water molecules transiently stabilize Zn2+ and act as a coordination bridge during ion migration, yet their mobility toward the electrode surface is restricted. This dual functionality increases the Zn2+ single-ion conductivity 6.55-fold and reduces the hydrogen evolution rate by 79.1%. Consequently, Zn//Zn symmetric cells exhibit markedly extended cycling lifetimes of up to 2200 h at 1 mA cm-2 and 1 mAh cm-2. When applied to Zn-I2 full cells, the protective layer enables stable operation over 4000 cycles with >85% capacity retention, even under a practical areal capacity of 3.6 mAh cm-2. These findings highlight a robust interfacial strategy to realize long-duration, high-capacity aqueous ZIBs for grid-scale energy storage.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75498",
+        "doi_url": "https://doi.org/10.1002/adma.75498",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42985839/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing zinc-ion battery performance by designing a polymeric protective layer with amide and imidazolium groups. The amide groups stabilize Zn2+ transport via binding sites, while imidazolium groups create confined-water domains that regulate solvation. Water molecules act as transient coordination bridges during Zn2+ migration, improving single-ion conductivity by 6.55-fold and reducing hydrogen evolution by 79.1%. The approach extends cycling lifetimes to 2200 hours in symmetric cells and enables 4000 cycles with >85% capacity retention in full cells.\",\n  \"key_findings\": [\n    \"The polymeric layer with amide and imidazolium groups increases Zn2+ single-ion conductivity by 6.55-fold\",\n    \"Hydrogen evolution rate is reduced by 79.1% due to confined-water domain regulation\",\n    \"Zn//Zn symmetric cells achieve 2200-hour cycling with 1 mA cm-2 and 1 mAh cm-2\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a dual-functional interfacial strategy that enhances aqueous zinc-ion battery longevity through controlled water-mediated ion transport, advancing the design of stable, high-capacity grid-scale energy storage systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing zinc-ion battery performance by designing a polymeric protective layer with amide and imidazolium groups. The amide groups stabilize Zn2+ transport via binding sites, while imidazolium groups create confined-water domains that regulate solvation. Water molecules act as transient coordination bridges during Zn2+ migration, improving single-ion conductivity by 6.55-fold and reducing hydrogen evolution by 79.1%. The approach extends cycling lifetimes to 2200 hours in symmetric cells and enables 4000 cycles with >85% capacity retention in full cells.",
+          "key_findings": [
+            "The polymeric layer with amide and imidazolium groups increases Zn2+ single-ion conductivity by 6.55-fold",
+            "Hydrogen evolution rate is reduced by 79.1% due to confined-water domain regulation",
+            "Zn//Zn symmetric cells achieve 2200-hour cycling with 1 mA cm-2 and 1 mAh cm-2"
+          ],
+          "scientific_significance": "This work demonstrates a dual-functional interfacial strategy that enhances aqueous zinc-ion battery longevity through controlled water-mediated ion transport, advancing the design of stable, high-capacity grid-scale energy storage systems."
+        },
+        "elapsed_seconds": 25.4884,
+        "input_tokens": 768,
+        "output_tokens": 279,
+        "thoughts_tokens": null,
+        "total_tokens": 1047,
+        "model_eval_seconds": 20.084,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43059271",
+        "title": "Ascites-derived interleukin-10 drives tumor invasion in advanced epithelial ovarian cancer via STAT3 and ERK1/2 signaling.",
+        "abstract": "OBJECTIVE: Interleukin-10 (IL-10) is a key immunoregulatory cytokine in ovarian cancer; however, its functional role and underlying mechanisms within the ascitic tumor microenvironment remain incompletely understood.\nMETHODS: We collected malignant ascites from 21 patients with advanced epithelial ovarian cancer (EOC). IL-10 concentrations were quantified using enzyme-linked immunosorbent assay. The association between ascitic IL-10 levels and clinicopathological parameters was analyzed. The effects of ascites-derived IL-10 on OC cell migration and invasion were evaluated in vitro, while in vivo experiments were conducted to assess the therapeutic potential of IL-10 neutralization. Regulatory T cells (Tregs) and M2 macrophages in ascites were characterized by flow cytometry and immunomagnetic bead sorting.\nRESULTS: IL-10 levels in malignant ascites varied markedly among patients (134.38±84.80 pg/mL) and were positively correlated with serum cancer antigen 125 levels (r=0.553, p=0.014), while no statistically significant association was observed between ascitic IL-10 levels and ascites volume (r=0.312, p=0.207). Ascites-derived IL-10 significantly promoted EOC cell migration and invasion through activation of the signal transducer and activator of transcription 3 and extracellular signal-regulated kinase 1/2 signaling pathways. In addition, Tregs (3.95±2.07%) and M2 macrophages (12.57±7.78%) were enriched in malignant ascites and served as important sources of IL-10, further enhancing the pro-invasive phenotype of EOC cells. Notably, IL-10 neutralization attenuated tumor progression in vivo.\nCONCLUSION: These findings identify IL-10 as a biologically relevant immunosuppressive mediator within the EOC ascitic microenvironment that contributes to tumor invasiveness through immune cell-tumor cell crosstalk. Targeting ascites-derived IL-10 may represent a potential microenvironment-modulating strategy for controlling malignant ascites and invasive behavior in advanced EOC.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.3802/jgo.2027.38.e33",
+        "doi_url": "https://doi.org/10.3802/jgo.2027.38.e33",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43059271/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of gynecologic oncology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the role of ascites-derived interleukin-10 (IL-10) in advanced epithelial ovarian cancer (EOC) invasion. Using malignant ascites from 21 EOC patients, the researchers quantified IL-10 levels and assessed its correlation with clinical markers. In vitro and in vivo experiments demonstrated that ascites IL-10 promotes EOC cell migration and invasion via STAT3 and ERK1/2 signaling, with regulatory T cells and M2 macrophages as key IL-10 sources. IL-10 neutralization reduced tumor progression in vivo.\",\n  \"key_findings\": [\n    \"Ascites-derived IL-10 levels correlated with serum cancer antigen 125 levels (r=0.553, p=0.014) but not ascites volume\",\n    \"IL-10 significantly enhanced EOC cell migration and invasion through STAT3 and ERK1/2 signaling pathways\",\n    \"Regulatory T cells and M2 macrophages in ascites were major sources of IL-10, driving pro-invasive tumor behavior\"\n  ],\n  \"scientific_significance\": \"This work establishes IL-10 as a critical immunosuppressive mediator in the EOC ascitic microenvironment that promotes tumor invasion through immune cell-tumor interactions, highlighting a potential target for microenvironment-modulating therapies in advanced ovarian cancer.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the role of ascites-derived interleukin-10 (IL-10) in advanced epithelial ovarian cancer (EOC) invasion. Using malignant ascites from 21 EOC patients, the researchers quantified IL-10 levels and assessed its correlation with clinical markers. In vitro and in vivo experiments demonstrated that ascites IL-10 promotes EOC cell migration and invasion via STAT3 and ERK1/2 signaling, with regulatory T cells and M2 macrophages as key IL-10 sources. IL-10 neutralization reduced tumor progression in vivo.",
+          "key_findings": [
+            "Ascites-derived IL-10 levels correlated with serum cancer antigen 125 levels (r=0.553, p=0.014) but not ascites volume",
+            "IL-10 significantly enhanced EOC cell migration and invasion through STAT3 and ERK1/2 signaling pathways",
+            "Regulatory T cells and M2 macrophages in ascites were major sources of IL-10, driving pro-invasive tumor behavior"
+          ],
+          "scientific_significance": "This work establishes IL-10 as a critical immunosuppressive mediator in the EOC ascitic microenvironment that promotes tumor invasion through immune cell-tumor interactions, highlighting a potential target for microenvironment-modulating therapies in advanced ovarian cancer."
+        },
+        "elapsed_seconds": 30.7202,
+        "input_tokens": 924,
+        "output_tokens": 297,
+        "thoughts_tokens": null,
+        "total_tokens": 1221,
+        "model_eval_seconds": 22.6709,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42985841",
+        "title": "Buried CdSe Sacrificial Layer Driving Phase Evolution and Crystallization Kinetics Enables 14.78%-Efficient DMF-Based Kesterite Solar Cells.",
+        "abstract": "NA: During selenization, the inherent transport lag of Se from the film surface to the buried Mo/precursor interface causes early-stage Se deficiency in the bottom region, creating a depth-dependent crystallization lag that limits the homogeneity of Cu2ZnSn(S,Se)4 (CZTSSe) absorbers. Here, we evaporate an ultrathin CdSe sacrificial layer at the Mo/precursor interface of N,N-dimethylformamide (DMF)-derived CZTSSe absorbers. This layer is rapidly consumed at the onset of selenization, providing an in-situ Se supply at the buried interface and effectively bypassing the intrinsic transport delay from the surface. The locally supplied Se initiates early-stage bottom selenization and promotes the conversion of Cu2SnSe3-related intermediates toward CZTSSe while suppressing their persistent accumulation, enabling rear-side nucleation and grain growth to commence substantially earlier than in the conventional surface-dominated process. Meanwhile, the redistributed Cd2+ partially substitutes Zn2+ sites, reducing defect-assisted recombination and enhancing carrier transport and extraction. The optimized device achieves a champion efficiency of 14.78% with a certified efficiency of 14.30%, establishing a new benchmark for DMF-derived kesterite solar cells. This work demonstrates that prepositioning a sacrificial Se-containing component at the buried interface to enable in situ release of Se offers a viable pathway for coordinating phase evolution and improving multinary chalcogenide absorber quality.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75623",
+        "doi_url": "https://doi.org/10.1002/adma.75623",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42985841/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates phase evolution and crystallization kinetics in DMF-derived kesterite solar cells by introducing an ultrathin CdSe sacrificial layer at the Mo/precursor interface during selenization. The layer rapidly consumes to provide in-situ Se supply, overcoming surface transport delays and enabling early bottom selenization. This promotes CZTSSe formation, suppresses intermediate accumulation, and enhances grain growth. The approach achieved 14.78% certified efficiency, demonstrating a viable strategy for improving kesterite absorber quality through interface engineering.\",\n  \"key_findings\": [\n    \"Ultrathin CdSe layer at Mo/precursor interface provides in-situ Se supply during selenization\",\n    \"Early bottom selenization initiates conversion of Cu2SnSe3 intermediates to CZTSSe\",\n    \"Redistributed Cd2+ reduces defect-assisted recombination and enhances carrier transport\"\n  ],\n  \"scientific_significance\": \"This work establishes a method to coordinate phase evolution and crystallization kinetics in kesterite absorbers by enabling in-situ Se release at the buried interface, addressing a fundamental transport limitation in multinary chalcogenide solar cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates phase evolution and crystallization kinetics in DMF-derived kesterite solar cells by introducing an ultrathin CdSe sacrificial layer at the Mo/precursor interface during selenization. The layer rapidly consumes to provide in-situ Se supply, overcoming surface transport delays and enabling early bottom selenization. This promotes CZTSSe formation, suppresses intermediate accumulation, and enhances grain growth. The approach achieved 14.78% certified efficiency, demonstrating a viable strategy for improving kesterite absorber quality through interface engineering.",
+          "key_findings": [
+            "Ultrathin CdSe layer at Mo/precursor interface provides in-situ Se supply during selenization",
+            "Early bottom selenization initiates conversion of Cu2SnSe3 intermediates to CZTSSe",
+            "Redistributed Cd2+ reduces defect-assisted recombination and enhances carrier transport"
+          ],
+          "scientific_significance": "This work establishes a method to coordinate phase evolution and crystallization kinetics in kesterite absorbers by enabling in-situ Se release at the buried interface, addressing a fundamental transport limitation in multinary chalcogenide solar cells."
+        },
+        "elapsed_seconds": 24.3844,
+        "input_tokens": 769,
+        "output_tokens": 250,
+        "thoughts_tokens": null,
+        "total_tokens": 1019,
+        "model_eval_seconds": 18.7093,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43059384",
+        "title": "Glutamine metabolic reprogramming remodels the immunosuppressive microenvironment and modulates immunotherapy response in renal cell carcinoma (Review).",
+        "abstract": "NA: Clear cell renal cell carcinoma (ccRCC) is characterized by profound metabolic reprogramming, with glutamine addiction emerging as a central hallmark that extends beyond supporting tumor proliferation. This review synthesizes current knowledge on how glutamine metabolic reprogramming remodels the immunosuppressive tumor microenvironment and modulates immunotherapy response in renal cell carcinoma. The molecular basis of glutamine addiction is discussed, focusing on the von Hippel‑Lindau/hypoxia‑inducible factor axis, MYC activation and epigenetic regulation. The mechanisms by which glutamine metabolism orchestrates immune evasion are examined, including tumor immune cell competition, impaired effector T‑cell function, expansion of immunosuppressive populations such as regulatory T cells and M2 polarized macrophages, and upregulation of immune checkpoints. Therapeutic strategies targeting glutamine metabolism, from transporter and glutaminase inhibition to dietary restriction, are summarized along with mixed clinical trial outcomes that underscore the need for patient selection. Candidate predictive biomarkers across genetic, metabolic, immune and imaging domains are also reviewed. This review aims to provide an integrated framework for understanding glutamine‑driven immune modulation and to guide future therapeutic development in ccRCC.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.3892/or.2026.9222",
+        "doi_url": "https://doi.org/10.3892/or.2026.9222",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43059384/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Oncology reports",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines glutamine metabolic reprogramming in clear cell renal cell carcinoma (ccRCC), highlighting its role in remodeling the immunosuppressive tumor microenvironment and influencing immunotherapy response. It discusses molecular mechanisms like the VHL/hypoxia-inducible factor axis, MYC activation, and epigenetic regulation. Key processes include immune cell competition, impaired T-cell function, immunosuppressive cell expansion, and immune checkpoint upregulation. Therapeutic strategies targeting glutamine metabolism and candidate biomarkers are evaluated, emphasizing the need for patient selection in clinical applications.\",\n  \"key_findings\": [\n    \"Glutamine addiction in ccRCC drives immunosuppressive microenvironment remodeling through VHL/hypoxia-inducible factor axis and MYC activation\",\n    \"Glutamine metabolism promotes immunosuppressive cell expansion and impaired T-cell function in ccRCC\",\n    \"Therapeutic targeting of glutamine metabolism shows mixed clinical outcomes requiring precise patient selection\"\n  ],\n  \"scientific_significance\": \"This review provides an integrated framework for understanding glutamine-driven immune modulation in ccRCC, advancing knowledge on metabolic reprogramming's role in immunotherapy resistance and guiding targeted therapeutic strategies.\"\n}",
+        "parsed": {
+          "summary": "This review examines glutamine metabolic reprogramming in clear cell renal cell carcinoma (ccRCC), highlighting its role in remodeling the immunosuppressive tumor microenvironment and influencing immunotherapy response. It discusses molecular mechanisms like the VHL/hypoxia-inducible factor axis, MYC activation, and epigenetic regulation. Key processes include immune cell competition, impaired T-cell function, immunosuppressive cell expansion, and immune checkpoint upregulation. Therapeutic strategies targeting glutamine metabolism and candidate biomarkers are evaluated, emphasizing the need for patient selection in clinical applications.",
+          "key_findings": [
+            "Glutamine addiction in ccRCC drives immunosuppressive microenvironment remodeling through VHL/hypoxia-inducible factor axis and MYC activation",
+            "Glutamine metabolism promotes immunosuppressive cell expansion and impaired T-cell function in ccRCC",
+            "Therapeutic targeting of glutamine metabolism shows mixed clinical outcomes requiring precise patient selection"
+          ],
+          "scientific_significance": "This review provides an integrated framework for understanding glutamine-driven immune modulation in ccRCC, advancing knowledge on metabolic reprogramming's role in immunotherapy resistance and guiding targeted therapeutic strategies."
+        },
+        "elapsed_seconds": 22.7956,
+        "input_tokens": 695,
+        "output_tokens": 253,
+        "thoughts_tokens": null,
+        "total_tokens": 948,
+        "model_eval_seconds": 18.3446,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42985850",
+        "title": "A Noninvasive Approach to Study Localized Forces in 3D Epithelia.",
+        "abstract": "NA: Epithelial tissue integrity and remodeling rely on mechanical coupling between cytoskeletal organization and adhesion complexes, but their orchestration in three-dimensional (3D) epithelia remains unresolved. Here, we introduced a noninvasive strategy to locally probe forces within 3D epithelial tissues. We engineered elastic polyacrylamide (PAAm) microbeads with cell-like size and mechanical properties, enabling their integration into tissues. PAAm microbeads were spontaneously engulfed by the tissue, establishing an intrinsic interface. This allowed bead deformation to be directly correlated with local cytoskeletal architecture and adhesion organization, visualized through high-resolution imaging and quantitative 3D computational reconstruction. Using this approach, we demonstrated that localized mechanical perturbations trigger cytoskeletal remodeling while preserving tissue polarity. We further identified extracellular matrix composition as a key determinant of bead-tissue interactions. At the bead-cell interface, cells assembled tension-bearing focal adhesions and actin stress fibers. Quantitative analysis of bead deformation revealed sub-cellular scale patterns of cell-bead interaction forces, which correlated with the localization of cytoskeletal elements. Our findings extend previous traction force microscopy observations to 3D, revealing coordinated, spatially heterogeneous forces specifically at the cell-bead interface. Taken together, this enabled us to dissect the interplay between cellular processes and tissue mechanics in a noninvasive way in 3D model systems.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75628",
+        "doi_url": "https://doi.org/10.1002/adma.75628",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42985850/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates force dynamics in 3D epithelial tissues using a noninvasive method involving elastic polyacrylamide microbeads. The approach integrates microbeads into epithelia, enabling direct correlation between bead deformation and cytoskeletal architecture. Results show localized mechanical perturbations induce cytoskeletal remodeling without disrupting tissue polarity, with extracellular matrix composition influencing bead-tissue interactions. The technique reveals spatially heterogeneous force patterns at the cell-bead interface, extending traction force microscopy to 3D systems.\",\n  \"key_findings\": [\n    \"Localized mechanical perturbations trigger cytoskeletal remodeling while preserving tissue polarity\",\n    \"Extracellular matrix composition determines bead-tissue interaction dynamics\",\n    \"Quantitative analysis identifies sub-cellular scale force patterns at the cell-bead interface\"\n  ],\n  \"scientific_significance\": \"This work extends traction force microscopy to 3D epithelia, revealing spatially heterogeneous force patterns critical for understanding tissue mechanics without invasive perturbations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates force dynamics in 3D epithelial tissues using a noninvasive method involving elastic polyacrylamide microbeads. The approach integrates microbeads into epithelia, enabling direct correlation between bead deformation and cytoskeletal architecture. Results show localized mechanical perturbations induce cytoskeletal remodeling without disrupting tissue polarity, with extracellular matrix composition influencing bead-tissue interactions. The technique reveals spatially heterogeneous force patterns at the cell-bead interface, extending traction force microscopy to 3D systems.",
+          "key_findings": [
+            "Localized mechanical perturbations trigger cytoskeletal remodeling while preserving tissue polarity",
+            "Extracellular matrix composition determines bead-tissue interaction dynamics",
+            "Quantitative analysis identifies sub-cellular scale force patterns at the cell-bead interface"
+          ],
+          "scientific_significance": "This work extends traction force microscopy to 3D epithelia, revealing spatially heterogeneous force patterns critical for understanding tissue mechanics without invasive perturbations."
+        },
+        "elapsed_seconds": 19.7446,
+        "input_tokens": 726,
+        "output_tokens": 208,
+        "thoughts_tokens": null,
+        "total_tokens": 934,
+        "model_eval_seconds": 14.7807,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43059755",
+        "title": "Single-cell Profiling of Airway-associated CD4+ T cells in Metal-induced Hypersensitivity.",
+        "abstract": "NA: Omics-based approaches are increasingly used to identify unique molecular signatures that may serve as biomarkers for early disease detection and potential therapeutic targets. Chronic beryllium disease (CBD), resulting from beryllium-induced hypersensitivity, is characterized by the accumulation and expansion of pathogenic CD4+ T cells in the lungs, ultimately contributing to impaired pulmonary function. In this study, we performed single-cell RNA sequencing (scRNA-seq) on sorted viable bronchoalveolar lavage (BAL) cells from beryllium-exposed patients (n=2) and compared their transcriptional profiles with publicly available scRNA-seq datasets from healthy controls (n=10). We identified 11 distinct CD3-associated cell clusters comprising T cells, natural killer (NK) cells, and regulatory T cells. Further analysis of CD4+ T cells from beryllium-exposed patients revealed increased expression of genes associated with T cell activation, immune regulation, and persistence, including IFNG, TNF, TNFAIP3, and CD74. Gene Ontology (GO) enrichment analysis further revealed upregulation of pathways associated with cellular activation, immune responses, and immune effector functions, whereas pathways related to metabolic processes were downregulated in beryllium samples compared with healthy controls. Overall, our findings identify distinct transcriptional signatures, including IFI27 and FABP4, in CD4+ T cells from beryllium-exposed patients, providing insights into the molecular mechanisms underlying beryllium-induced pulmonary inflammation and highlighting potential candidates for further investigation as disease biomarkers and therapeutic targets.",
+        "publication_types": [
+          "Journal Article",
+          "Preprint"
+        ],
+        "doi": "10.64898/2026.11.11.765065",
+        "doi_url": "https://doi.org/10.64898/2026.11.11.765065",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43059755/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "bioRxiv : the preprint server for biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study used single-cell RNA sequencing to compare transcriptional profiles of airway CD4+ T cells in beryllium-exposed patients versus healthy controls. It identified 11 distinct cell clusters, including pathogenic CD4+ T cells with elevated expression of activation and immune regulatory genes (IFNG, TNF, TNFAIP3, CD74). Gene Ontology analysis showed upregulated immune activation pathways and downregulated metabolic processes in exposed patients, suggesting molecular mechanisms driving beryllium-induced pulmonary inflammation and potential biomarkers for chronic beryllium disease.\",\n  \"key_findings\": [\n    \"Beryllium-exposed patients exhibited pathogenic CD4+ T cells with elevated IFNG, TNF, TNFAIP3, and CD74 expression\",\n    \"Gene Ontology analysis revealed upregulated immune activation pathways and downregulated metabolic processes in exposed patients\",\n    \"Distinct transcriptional signatures including IFI27 and FABP4 were identified as potential biomarkers for chronic beryllium disease\"\n  ],\n  \"scientific_significance\": \"This work identifies specific transcriptional signatures in CD4+ T cells that may elucidate molecular mechanisms of beryllium-induced pulmonary inflammation, offering potential biomarkers and therapeutic targets for chronic beryllium disease.\"\n}",
+        "parsed": {
+          "summary": "This study used single-cell RNA sequencing to compare transcriptional profiles of airway CD4+ T cells in beryllium-exposed patients versus healthy controls. It identified 11 distinct cell clusters, including pathogenic CD4+ T cells with elevated expression of activation and immune regulatory genes (IFNG, TNF, TNFAIP3, CD74). Gene Ontology analysis showed upregulated immune activation pathways and downregulated metabolic processes in exposed patients, suggesting molecular mechanisms driving beryllium-induced pulmonary inflammation and potential biomarkers for chronic beryllium disease.",
+          "key_findings": [
+            "Beryllium-exposed patients exhibited pathogenic CD4+ T cells with elevated IFNG, TNF, TNFAIP3, and CD74 expression",
+            "Gene Ontology analysis revealed upregulated immune activation pathways and downregulated metabolic processes in exposed patients",
+            "Distinct transcriptional signatures including IFI27 and FABP4 were identified as potential biomarkers for chronic beryllium disease"
+          ],
+          "scientific_significance": "This work identifies specific transcriptional signatures in CD4+ T cells that may elucidate molecular mechanisms of beryllium-induced pulmonary inflammation, offering potential biomarkers and therapeutic targets for chronic beryllium disease."
+        },
+        "elapsed_seconds": 25.7514,
+        "input_tokens": 778,
+        "output_tokens": 270,
+        "thoughts_tokens": null,
+        "total_tokens": 1048,
+        "model_eval_seconds": 20.0523,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42989520",
+        "title": "In Situ Bulk Passivation and Carrier Transport Modulation in Te-TeOx Films Enable Low-Noise Monolithic Near-Infrared Imagers.",
+        "abstract": "NA: Near-infrared (NIR) imagers are essential for applications ranging from material sorting and autonomous driving to biomedical diagnostics, yet their performance is often limited by severe carrier recombination and high dark current. Here, we demonstrate a low-noise NIR photodiode based on Te-TeOx nanocrystalline-in-matrix films, in which the surrounding oxide matrix provides in situ bulk passivation and enables the modulation of carrier transport to balance carrier loss and extraction. This approach reduces trap density, suppresses recombination, and prolongs carrier lifetime, while controlled oxide incorporation tunes the optical bandgap and interfacial offsets of the heterojunction photodiode, resulting in spectral response spanning the visible and NIR regions with low dark current. The resulting photodiodes exhibit a low dark current of 9.70 nA cm-2 at a bias of -10 mV, a detectivity of 3.85 × 1012 Jones and an ultralow detectable power of 1.35 pW for NIR photodetection. The strategy is compatible with direct monolithic integration with readout integrated circuits, enabling a 256 × 256 focal-plane imager with excellent pixel uniformity. It further supports high-quality focal-plane imaging in both visible and NIR regions, as well as solution identification and imaging through smoke.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75669",
+        "doi_url": "https://doi.org/10.1002/adma.75669",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42989520/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing near-infrared (NIR) imager performance by reducing carrier recombination and dark current in Te-TeOx nanocrystalline-in-matrix films. The approach involves in situ bulk passivation via the oxide matrix, which modulates carrier transport to balance loss and extraction. Key results include reduced trap density, suppressed recombination, prolonged carrier lifetime, and tuned optical bandgap. The photodiodes achieve low dark current (9.70 nA cm-2), high detectivity (3.85 × 10^12 Jones), and ultralow detectable power (1.35 pW) for NIR detection, enabling monolithic integration with readout circuits for 256×256 focal-plane imagers.\",\n  \"key_findings\": [\n    \"Reduced trap density and suppressed recombination in Te-TeOx films\",\n    \"Tuned optical bandgap and interfacial offsets via controlled oxide incorporation\",\n    \"Low dark current (9.70 nA cm-2) and high detectivity (3.85 × 10^12 Jones) for NIR photodetection\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a strategy for low-noise NIR imaging through in situ bulk passivation and carrier transport modulation in Te-TeOx films, advancing photodetector design for applications requiring high sensitivity and low noise in the visible to NIR spectrum.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing near-infrared (NIR) imager performance by reducing carrier recombination and dark current in Te-TeOx nanocrystalline-in-matrix films. The approach involves in situ bulk passivation via the oxide matrix, which modulates carrier transport to balance loss and extraction. Key results include reduced trap density, suppressed recombination, prolonged carrier lifetime, and tuned optical bandgap. The photodiodes achieve low dark current (9.70 nA cm-2), high detectivity (3.85 × 10^12 Jones), and ultralow detectable power (1.35 pW) for NIR detection, enabling monolithic integration with readout circuits for 256×256 focal-plane imagers.",
+          "key_findings": [
+            "Reduced trap density and suppressed recombination in Te-TeOx films",
+            "Tuned optical bandgap and interfacial offsets via controlled oxide incorporation",
+            "Low dark current (9.70 nA cm-2) and high detectivity (3.85 × 10^12 Jones) for NIR photodetection"
+          ],
+          "scientific_significance": "This work demonstrates a strategy for low-noise NIR imaging through in situ bulk passivation and carrier transport modulation in Te-TeOx films, advancing photodetector design for applications requiring high sensitivity and low noise in the visible to NIR spectrum."
+        },
+        "elapsed_seconds": 25.0011,
+        "input_tokens": 832,
+        "output_tokens": 309,
+        "thoughts_tokens": null,
+        "total_tokens": 1141,
+        "model_eval_seconds": 23.2005,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43059770",
+        "title": "Cytotoxic CD4+ exTregs expressing KLRG1 retain immunosuppressive function in cancer.",
+        "abstract": "UNLABELLED: The role of cytotoxic CD4+ T cells in cancer remains controversial, with both pro- and anti-tumor functionality described. Based on a prior observation that putatively cytotoxic KLRG1+ FoxP3-conventional T cells (Tconv) associated with tumor progression, we deeply investigated the phenotype and function of KLRG1+ Tconv in multiple murine tumor models and in human clear cell renal cell carcinoma (ccRCC) specimens. We found KLRG1+ Tconv have a conserved, highly activated, terminally differentiated phenotype across species. In murine tumors, KLRG1+ Tconv resemble tumor-infiltrating regulatory T cells (Tregs) at both transcriptional and proteomic levels, upregulating a spectrum of exhaustion-related checkpoint receptors, producing IL-10 and granzyme B (GzmB), and silencing expression of IFNγ and TNFα. Functionally, KLRG1+ Tconv exhibited immunosuppressive function in ex vivo assays. Using an in vivo Treg fate mapping approach in tumor-bearing mice, we found a subset of KLRG1+ Tconv are derived from Tregs that have lost FoxP3 protein expression. Ex vivo functional assays demonstrated the exTreg component of the KLRG1+ Tconv compartment is responsible for IL-10 production and reduced pro-inflammatory cytokine expression. In treatment studies, we found that KLRG1-targeted antibody-mediated depletion was more efficient than anti-KLRG1 blockade at slowing tumor growth and improving survival, with responses associating with depletion of intratumoral KLRG1+ Tconv and Tregs. In sum, our study discovered a novel conserved pathway of CD4+ T cell plasticity, wherein intratumoral, cytotoxic KLRG1+ CD4+ Tconv cells can be derived from Tregs and maintain immunosuppressive function, despite loss of FoxP3, and that KLRG1-targeted depletion may outperform KLRG1 blockade as an immunotherapeutic strategy in cancer.\nONE SENTENCE SUMMARY: KLRG1-expressing FoxP3-negative CD4+ T cells in tumors harbor a pool of exTregs that retain an immunosuppressive and cytotoxic profile.",
+        "publication_types": [
+          "Journal Article",
+          "Preprint"
+        ],
+        "doi": "10.64898/2026.11.09.765461",
+        "doi_url": "https://doi.org/10.64898/2026.11.09.765461",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43059770/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "bioRxiv : the preprint server for biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates cytotoxic CD4+ T cells expressing KLRG1 in cancer contexts. Using murine tumor models and human ccRCC specimens, researchers identified KLRG1+ Tconv as terminally differentiated cells with immunosuppressive functions, including IL-10 production and granzyme B secretion. These cells, derived from FoxP3-negative exTregs, maintain suppressive activity despite losing FoxP3. KLRG1-targeted depletion showed superior efficacy over blockade in slowing tumor growth.\",\n  \"key_findings\": [\n    \"KLRG1+ Tconv exhibit a terminally differentiated phenotype with immunosuppressive functions\",\n    \"KLRG1+ Tconv derive from FoxP3-negative exTregs and retain suppressive capacity\",\n    \"KLRG1-targeted depletion outperforms blockade in reducing tumor growth\"\n  ],\n  \"scientific_significance\": \"This work reveals a conserved pathway of CD4+ T cell plasticity in tumors, demonstrating that cytotoxic KLRG1+ T cells can originate from Tregs and maintain immunosuppressive function without FoxP3, offering insights into immunotherapeutic strategies targeting T cell exhaustion.\"\n}",
+        "parsed": {
+          "summary": "This study investigates cytotoxic CD4+ T cells expressing KLRG1 in cancer contexts. Using murine tumor models and human ccRCC specimens, researchers identified KLRG1+ Tconv as terminally differentiated cells with immunosuppressive functions, including IL-10 production and granzyme B secretion. These cells, derived from FoxP3-negative exTregs, maintain suppressive activity despite losing FoxP3. KLRG1-targeted depletion showed superior efficacy over blockade in slowing tumor growth.",
+          "key_findings": [
+            "KLRG1+ Tconv exhibit a terminally differentiated phenotype with immunosuppressive functions",
+            "KLRG1+ Tconv derive from FoxP3-negative exTregs and retain suppressive capacity",
+            "KLRG1-targeted depletion outperforms blockade in reducing tumor growth"
+          ],
+          "scientific_significance": "This work reveals a conserved pathway of CD4+ T cell plasticity in tumors, demonstrating that cytotoxic KLRG1+ T cells can originate from Tregs and maintain immunosuppressive function without FoxP3, offering insights into immunotherapeutic strategies targeting T cell exhaustion."
+        },
+        "elapsed_seconds": 26.571,
+        "input_tokens": 922,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 1173,
+        "model_eval_seconds": 18.5918,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42989521",
+        "title": "Smart Luminescent Materials: From Basic Luminophores to Stimuli-Responsive Luminescent Systems.",
+        "abstract": "NA: Smart luminescent materials (SLMs) represent an emerging class of intelligent optical systems that can convert external stimuli into adaptive and programmable photonic outputs. By integrating molecular photophysics with dynamic structural regulation, SLMs enable precise modulation of emission intensity, wavelength, polarization, lifetime, and energy conversion pathways with high spatiotemporal controllability. Recent advances in molecular engineering, supramolecular assembly, and hierarchical material design have driven a transition from conventional luminescence switching toward multifunctional systems featuring multilevel, multistimulus, and information-enriched optical responses. This review provides a comprehensive and mechanism-oriented overview of recent progress in SLMs across diverse material platforms, including solution-phase systems, solid-state materials, dynamic hydrogels, chiral circularly polarized luminescence (CPL) systems, and lanthanide-doped upconversion nanoparticles. Particular emphasis is placed on how external stimuli regulate excited-state electronic structures, molecular conformations, supramolecular organizations, and hierarchical architectures to achieve adaptive luminescent behaviors. In addition, emerging strategies for stimuli-responsive CPL regulation and intelligent photon conversion based on upconversion nanomaterials are highlighted, demonstrating how molecular-level control can be translated into dynamic optical functionalities. Finally, current challenges and future opportunities are discussed toward the rational design of next-generation smart luminescent materials for applications in information security, wearable electronics, soft robotics, biophotonics, and intelligent photonic devices.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75663",
+        "doi_url": "https://doi.org/10.1002/adma.75663",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42989521/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines smart luminescent materials (SLMs) that convert external stimuli into programmable photonic outputs. It integrates molecular photophysics with structural dynamics to modulate emission properties like intensity, wavelength, polarization, and lifetime. The study covers solution-phase systems, solid-state materials, hydrogels, chiral systems, and lanthan: doped nanoparticles, highlighting how stimuli regulate excited states and molecular conformations. Key applications include information security, wearable electronics, and biophotonics.\",\n  \"key_findings\": [\n    \"SLMs enable precise modulation of emission intensity, wavelength, polarization, and lifetime through external stimuli\",\n    \"Stimuli regulate excited-state electronic structures and molecular conformations to achieve adaptive luminescent behaviors\",\n    \"Emerging strategies for stimuli-responsive circularly polarized luminescence and intelligent photon conversion are highlighted\"\n  ],\n  \"scientific_significance\": \"This review advances understanding of how molecular-level control mechanisms translate to dynamic optical functionalities in smart luminescent materials.\"\n}",
+        "parsed": {
+          "summary": "This review examines smart luminescent materials (SLMs) that convert external stimuli into programmable photonic outputs. It integrates molecular photophysics with structural dynamics to modulate emission properties like intensity, wavelength, polarization, and lifetime. The study covers solution-phase systems, solid-state materials, hydrogels, chiral systems, and lanthan: doped nanoparticles, highlighting how stimuli regulate excited states and molecular conformations. Key applications include information security, wearable electronics, and biophotonics.",
+          "key_findings": [
+            "SLMs enable precise modulation of emission intensity, wavelength, polarization, and lifetime through external stimuli",
+            "Stimuli regulate excited-state electronic structures and molecular conformations to achieve adaptive luminescent behaviors",
+            "Emerging strategies for stimuli-responsive circularly polarized luminescence and intelligent photon conversion are highlighted"
+          ],
+          "scientific_significance": "This review advances understanding of how molecular-level control mechanisms translate to dynamic optical functionalities in smart luminescent materials."
+        },
+        "elapsed_seconds": 20.2589,
+        "input_tokens": 741,
+        "output_tokens": 211,
+        "thoughts_tokens": null,
+        "total_tokens": 952,
+        "model_eval_seconds": 15.0803,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43059866",
+        "title": "T cell receptors from CD8 regulatory T cells direct the development of natural intraepithelial lymphocytes.",
+        "abstract": "NA: CD8 regulatory T cells (CD8 Tregs) in mice have been identified by their expression of the surface receptor family Ly49 and the transcription factor Helios. To our surprise, many Ly49+ and Helios+ T cells express neither CD4 nor CD8, and many express only CD8αα. We found that CD8 Tregs in the spleen are linked to the CD8β- natural intraepithelial lymphocytes (IELs) that reside in the small intestine. Blocking trafficking to the intestine increased splenic CD8 Treg frequency, and transferred splenic CD8 Tregs gave rise to natural IELs. Unexpectedly, Helios was dispensable for natural IEL development, arguing against its role as a shared lineage-determining transcription factor. Instead, we found that T cell receptors (TCRs) from splenic Ly49+ CD8 Tregs deterministically direct natural IEL development. Our findings suggest that CD8 Tregs may derive from the same TCR-directed developmental program that generates natural IELs and shed light on the origins of these immunoregulatory cells.",
+        "publication_types": [
+          "Journal Article",
+          "Preprint"
+        ],
+        "doi": "10.64898/2026.11.11.765811",
+        "doi_url": "https://doi.org/10.64898/2026.11.11.765811",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43059866/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "bioRxiv : the preprint server for biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the role of CD8 regulatory T cells (CD8 Tregs) in natural intraepithelial lymphocyte (IEL) development. Using mouse models, researchers identified CD8 Tregs expressing Ly49 and Helios, which were linked to intestinal IELs. Blocking intestinal trafficking increased splenic CD8 Treg frequency, and transferred CD8 Tregs generated IELs. TCRs from splenic CD8 Tregs deterministically directed IEL development, while Helios was dispensable for this process.\",\n  \"key_findings\": [\n    \"CD8 regulatory T cells in the spleen are linked to natural intraepithelial lymphocytes in the small intestine\",\n    \"Blocking intestinal trafficking increases splenic CD8 regulatory T cell frequency\",\n    \"T cell receptors from splenic CD8 regulatory T cells deterministically direct natural intraepithelial lymphocyte development\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that T cell receptors from splenic CD8 regulatory T cells directly instruct the development of natural intraepithelial lymphocytes, revealing a shared developmental program between these immunoregulatory cell types.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the role of CD8 regulatory T cells (CD8 Tregs) in natural intraepithelial lymphocyte (IEL) development. Using mouse models, researchers identified CD8 Tregs expressing Ly49 and Helios, which were linked to intestinal IELs. Blocking intestinal trafficking increased splenic CD8 Treg frequency, and transferred CD8 Tregs generated IELs. TCRs from splenic CD8 Tregs deterministically directed IEL development, while Helios was dispensable for this process.",
+          "key_findings": [
+            "CD8 regulatory T cells in the spleen are linked to natural intraepithelial lymphocytes in the small intestine",
+            "Blocking intestinal trafficking increases splenic CD8 regulatory T cell frequency",
+            "T cell receptors from splenic CD8 regulatory T cells deterministically direct natural intraepithelial lymphocyte development"
+          ],
+          "scientific_significance": "This work demonstrates that T cell receptors from splenic CD8 regulatory T cells directly instruct the development of natural intraepithelial lymphocytes, revealing a shared developmental program between these immunoregulatory cell types."
+        },
+        "elapsed_seconds": 21.2348,
+        "input_tokens": 680,
+        "output_tokens": 239,
+        "thoughts_tokens": null,
+        "total_tokens": 919,
+        "model_eval_seconds": 16.932,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42989525",
+        "title": "In Situ Probing of Small-Molecule Electrolysis Using Ambient-Pressure X-Ray Photoelectron Spectroscopy.",
+        "abstract": "NA: Electrocatalytic small-molecule conversion addresses the need to couple renewable electricity with sustainable fuel and chemical production, yet challenges remain in resolving the dynamic gas/solid/liquid interfaces that govern catalytic activity, selectivity and stability. A key challenge is to correlate catalyst structures, reaction intermediates and local interfacial environments under comparable operating conditions. Ambient-pressure x-ray photoelectron spectroscopy (APXPS) provides surface-sensitive and chemically specific information on catalyst chemical states, interfacial species and local electrostatic environments at the same working interface, enabling direct correlations between catalyst evolution and reaction intermediates. We offer a forward-looking review of APXPS for probing gas/solid/liquid interfaces in small-molecule electrolysis. We discuss three categories of electrochemical XPS/APXPS configurations: quasi-in situ XPS, in which electrochemically treated catalysts are transferred under protected conditions for post-reaction analysis; thin-electrolyte-film (dip-and-pull) APXPS, which probes a potential-controlled interface through a nanometer-scale liquid film; and membrane-based APXPS, which accesses catalyst-ionomer-electrolyte interfaces. We introduce present-day challenges in electrochemical APXPS and describe a vision towards more realistic operating conditions, higher time resolution and multimodal measurements integrated with theoretical and data-driven spectral analysis. These developments provide potential avenues to establish reliable structure-intermediate-environment relationships in the further development of small-molecule electrocatalysis.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75636",
+        "doi_url": "https://doi.org/10.1002/adma.75636",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42989525/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review explores ambient-pressure X-ray photoelectron spectroscopy (APXPS) for in situ analysis of gas/solid/liquid interfaces in small-molecule electrocatalysis. It categorizes three electrochemical APXPS approaches: quasi-in situ XPS, thin-electrolyte-film (dip-and-pull) APXPS, and membrane-based APXPS. The study highlights how APXPS enables direct correlations between catalyst evolution, reaction intermediates, and interfacial environments under operating conditions, advancing understanding of structure-activity relationships in small-molecule electrolysis.\",\n  \"key_findings\": [\n    \"APXPS provides surface-sensitive chemical state information at working interfaces during electrocatalysis\",\n    \"Three distinct electrochemical APXPS configurations are identified for probing gas/solid/liquid interfaces\",\n    \"APXPS enables direct correlation of catalyst evolution with reaction intermediates under operating conditions\"\n  ],\n  \"scientific_significance\": \"This work establishes APXPS as a critical tool for resolving dynamic interfacial processes in small-molecule electrocatalysis, enabling structure-intermediate-environment relationships under realistic operating conditions.\"\n}",
+        "parsed": {
+          "summary": "This review explores ambient-pressure X-ray photoelectron spectroscopy (APXPS) for in situ analysis of gas/solid/liquid interfaces in small-molecule electrocatalysis. It categorizes three electrochemical APXPS approaches: quasi-in situ XPS, thin-electrolyte-film (dip-and-pull) APXPS, and membrane-based APXPS. The study highlights how APXPS enables direct correlations between catalyst evolution, reaction intermediates, and interfacial environments under operating conditions, advancing understanding of structure-activity relationships in small-molecule electrolysis.",
+          "key_findings": [
+            "APXPS provides surface-sensitive chemical state information at working interfaces during electrocatalysis",
+            "Three distinct electrochemical APXPS configurations are identified for probing gas/solid/liquid interfaces",
+            "APXPS enables direct correlation of catalyst evolution with reaction intermediates under operating conditions"
+          ],
+          "scientific_significance": "This work establishes APXPS as a critical tool for resolving dynamic interfacial processes in small-molecule electrocatalysis, enabling structure-intermediate-environment relationships under realistic operating conditions."
+        },
+        "elapsed_seconds": 22.0408,
+        "input_tokens": 744,
+        "output_tokens": 241,
+        "thoughts_tokens": null,
+        "total_tokens": 985,
+        "model_eval_seconds": 16.8167,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43059891",
+        "title": "Epigenetic Mechanisms Inhibit Smad7 and Contribute to Fibrosis in Crohn's Disease.",
+        "abstract": "BACKGROUND & AIMS: TGF-β1 is a central regulator of profibrotic gene expression, extracellular matrix deposition, and the development of intestinal fibrosis in patients with fibrostenotic Crohn's disease (CD). Unlike the increased expression of Smad7 in mucosal and lamina propria monocytes, where it impairs Treg function, mesenchymal cells from patients with fibrostenotic CD do not exhibit elevated Smad7 expression and instead display sustained TGF-β1 signaling. We therefore sought to elucidate the mechanisms underlying the unexpected silencing of Smad7 in fibrostenotic CD.\nMETHODS: Subepithelial myofibroblasts (SEMFs) and muscularis smooth muscle cells were isolated from paired normal and affected ileal tissues obtained from the same patients with each Montreal phenotype of CD, as well as from non-CD controls. Gene expression, RNA-binding affinity, transcriptional activity, promoter methylation, protein levels, and the mechanisms that regulate Smad7 expression were evaluated in ex vivo tissues and primary cultured cells. MicroRNA-21 (miR-21) localization was assessed by RNAscope. miR-21-mediated suppression of Smad7 was investigated using antagomiR-21. Smad7 silencing through promoter hypermethylation was confirmed using 5-Azacytidine treatment and DNA methyltransferase 1 (DNMT1) knockdown. Smad7 lysine acetylation and Smurf1/2-mediated ubiquitination were examined using selective inhibitors and proximity ligation assays.\nRESULTS: In SEMFs from patients with fibrostenotic CD, aberrant silencing of Smad7 resulted from DNMT1-dependent promoter hypermethylation and pSmad3-driven, miR-21-mediated degradation of Smad7 mRNA. In addition, Smurf1/2 promoted ubiquitination and proteasomal degradation of acetylated Smad7 protein. Inhibition of miR-21 with antagomiR-21 restored Smad7 expression and reduced TGF-β1-dependent profibrotic gene expression. Likewise, demethylation with 5-Azacytidine or knockdown of DNMT1 induced Smad7 promoter hypomethylation and restored Smad7 expression. Furthermore, modulation of the balance between p300 acetyltransferase and histone deacetylase 1 (HDAC1) stabilized Smad7 protein by protecting it from degradation.\nCONCLUSIONS: A distinctive pattern of epigenetic silencing and post-translational regulation of Smad7 was identified in patients with fibrostenotic CD. These mechanisms collectively promote unrestrained TGF-β1 signaling by suppressing Smad7 expression and stability in SEMFs, thereby contributing to the development of intestinal fibrosis.",
+        "publication_types": [
+          "Journal Article",
+          "Preprint"
+        ],
+        "doi": "10.64898/2026.11.09.765430",
+        "doi_url": "https://doi.org/10.64898/2026.11.09.765430",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43059891/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "bioRxiv : the preprint server for biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated epigenetic mechanisms suppressing Smad7 expression in fibrostenotic Crohn's disease (CD) to understand intestinal fibrosis pathogenesis. Researchers analyzed subepithelial myofibroblasts and muscularis smooth muscle cells from CD patients, revealing DNMT1-dependent promoter hypermethylation and miR-21-mediated degradation of Smad7 mRNA. Additionally, Smurf1/2 promoted proteasomal degradation of acetylated Smad7. Inhibition of miR-21 or demethylation restored Smad7 expression, reducing profibrotic signaling. These findings highlight how epigenetic and post-translational mechanisms collectively drive TGF-β1-mediated fibrosis in CD.\",\n  \"key_findings\": [\n    \"DNMT1-dependent promoter hypermethylation silences Smad7 in fibrostenotic CD myofibroblasts\",\n    \"miR-21 mediates Smad7 mRNA degradation via pSmad3 signaling\",\n    \"Smurf1/2 promotes proteasomal degradation of acetylated Smad7 protein\"\n  ],\n  \"scientific_significance\": \"This work identifies epigenetic and post-translational mechanisms that suppress Smad7 in Crohn's disease fibrosis, providing mechanistic insights into TGF-β1 dysregulation and potential therapeutic targets for intestinal fibrosis.\"\n}",
+        "parsed": {
+          "summary": "This study investigated epigenetic mechanisms suppressing Smad7 expression in fibrostenotic Crohn's disease (CD) to understand intestinal fibrosis pathogenesis. Researchers analyzed subepithelial myofibroblasts and muscularis smooth muscle cells from CD patients, revealing DNMT1-dependent promoter hypermethylation and miR-21-mediated degradation of Smad7 mRNA. Additionally, Smurf1/2 promoted proteasomal degradation of acetylated Smad7. Inhibition of miR-21 or demethylation restored Smad7 expression, reducing profibrotic signaling. These findings highlight how epigenetic and post-translational mechanisms collectively drive TGF-β1-mediated fibrosis in CD.",
+          "key_findings": [
+            "DNMT1-dependent promoter hypermethylation silences Smad7 in fibrostenotic CD myofibroblasts",
+            "miR-21 mediates Smad7 mRNA degradation via pSmad3 signaling",
+            "Smurf1/2 promotes proteasomal degradation of acetylated Smad7 protein"
+          ],
+          "scientific_significance": "This work identifies epigenetic and post-translational mechanisms that suppress Smad7 in Crohn's disease fibrosis, providing mechanistic insights into TGF-β1 dysregulation and potential therapeutic targets for intestinal fibrosis."
+        },
+        "elapsed_seconds": 32.0736,
+        "input_tokens": 1038,
+        "output_tokens": 289,
+        "thoughts_tokens": null,
+        "total_tokens": 1327,
+        "model_eval_seconds": 22.4065,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42989551",
+        "title": "Interface-Directed Two-Dimensional Growth of Non-Layered NiO on MoS2 Under Coupled External Fields.",
+        "abstract": "NA: The controlled growth of two-dimensional (2D) non-layered transition metal oxides remains a key challenge in low-dimensional material synthesis. Achieving atomically precise construction of 2D structures requires a fundamental understanding of how external fields and interfacial interactions govern nucleation and growth processes. In this work, amorphous NiOx (a-NiOx) was deposited onto monolayer MoS2, and its transformation into crystalline 2D NiO nanosheets was directly visualized in situ using environmental transmission electron microscopy. The electron beam induces the decomposition of a-NiOx into mobile NiOx species, which migrate and nucleate on MoS2, demonstrating the synergistic roles of the electron beam and thermal field in NiO cluster formation and interface-dominated epitaxial growth. Combined notch-filtered imaging and theoretical calculations reveal that Ni-O units preferentially attach at the NiO/MoS2 interface to form one-dimensional growth fronts, while oriented attachment proceeds via nanosheet rotation, interfacial fusion, and defect-mediated reconstruction, culminating in lattice relaxation into a single-crystalline structure. High-throughput selected-area electron diffraction further uncovers the modulation of external fields on the multi-path structural evolution of NiOx. This work establishes an in situ strategy to resolve nucleation and growth pathways of 2D heterostructures, enabling active control over the 2D growth of non-layered metal oxides and advancing deterministic atomic-level construction.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75637",
+        "doi_url": "https://doi.org/10.1002/adma.75637",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42989551/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the controlled growth of non-layered NiO nanosheets on MoS2 using coupled external fields. By depositing amorphous NiOx onto monolayer MoS2 and visualizing in situ via environmental transmission electron microscopy, the research demonstrates electron beam-induced decomposition of NiOx into mobile species that nucleate on MoS2. The findings reveal interface-directed epitaxial growth mechanisms where Ni-O units attach preferentially at the interface, forming one-dimensional fronts through oriented attachment, interfacial fusion, and defect-mediated reconstruction, ultimately achieving single-crystalline NiO structures.\",\n  \"key_findings\": [\n    \"Electron beam decomposition of amorphous NiOx generates mobile species that nucleate on MoS2\",\n    \"Ni-O units preferentially attach at the NiO/MoS2 interface to form one-dimensional growth fronts\",\n    \"Oriented attachment proceeds via interfacial fusion and defect-mediated reconstruction, yielding single-crystalline NiO\"\n  ],\n  \"scientific_significance\": \"This work establishes an in situ method to resolve nucleation and growth pathways for non-layered 2D metal oxides, enabling precise control over their atomic-scale structural evolution through interface-directed mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the controlled growth of non-layered NiO nanosheets on MoS2 using coupled external fields. By depositing amorphous NiOx onto monolayer MoS2 and visualizing in situ via environmental transmission electron microscopy, the research demonstrates electron beam-induced decomposition of NiOx into mobile species that nucleate on MoS2. The findings reveal interface-directed epitaxial growth mechanisms where Ni-O units attach preferentially at the interface, forming one-dimensional fronts through oriented attachment, interfacial fusion, and defect-mediated reconstruction, ultimately achieving single-crystalline NiO structures.",
+          "key_findings": [
+            "Electron beam decomposition of amorphous NiOx generates mobile species that nucleate on MoS2",
+            "Ni-O units preferentially attach at the NiO/MoS2 interface to form one-dimensional growth fronts",
+            "Oriented attachment proceeds via interfacial fusion and defect-mediated reconstruction, yielding single-crystalline NiO"
+          ],
+          "scientific_significance": "This work establishes an in situ method to resolve nucleation and growth pathways for non-layered 2D metal oxides, enabling precise control over their atomic-scale structural evolution through interface-directed mechanisms."
+        },
+        "elapsed_seconds": 23.5568,
+        "input_tokens": 747,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 1006,
+        "model_eval_seconds": 18.2824,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43060088",
+        "title": "Deep phenomics of African green monkey and Baboon PBMCs using a 30-marker spectral flow cytometry panel.",
+        "abstract": "NA: Vaccines are the best way to prevent and combat diseases. Non-human primate (NHP) models have proven to be the gold standard model for studying the efficacy of certain vaccine candidates prior to human trials. Cell-mediated immunity serves as a surrogate marker for predicting vaccine efficacy. Despite the availability of deep-immunophenotyping panels for T cells in the peripheral blood of humans, their application to NHPs, particularly African Green Monkeys (AGMs) and baboons, remains limited. Notably, AGMs are valuable for HIV and COVID-19 research, while baboons are utilized for pertussis research as a natural infection model and vaccine trial. To overcome such limitation, using spectral flow cytometry, we developed a 30-parameter panel to profile major immune cell subsets (B cells, NK cells, DCs, monocytes) either in AGM or baboon PBMCs. We also profiled T cells, memory phenotypes, functional cytokines by tracking established Th1 markers IFNγ, TNF and IL-2; Th2 markers IL-4/5/13 and the Th17 marker, IL-17, activation-induced markers (AIMs) and FoxP3 + Tregs in both AGM and baboon PBMCs in steady state as well as in mitogen stimulated conditions. For AIMs, CD69, CD134 (OX40) and CD137 (4-1BB) are included and validated in both NHP species. This panel holds potential for exploratory analysis of the impact of these functional cytokines, AIMs, or Tregs on host immunity following infection or vaccination. The panel's high level of customization empowers researchers to tailor it to their specific research needs.",
+        "publication_types": [
+          "Journal Article",
+          "Preprint"
+        ],
+        "doi": "10.64898/2026.11.06.764971",
+        "doi_url": "https://doi.org/10.64898/2026.11.06.764971",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43060088/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "bioRxiv : the preprint server for biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a 30-parameter spectral flow cytometry panel to deeply phenotype peripheral blood mononuclear cells (PBMCs) from African green monkeys and baboons. The panel profiles key immune subsets including B cells, NK cells, dendritic cells, monocytes, T cells, memory phenotypes, functional cytokines, activation markers, and regulatory T cells in both steady-state and mitogen-stimulated conditions. The approach addresses the limited immunophenotyping tools for non-human primates, particularly for HIV and pertussis research applications.\",\n  \"key_findings\": [\n    \"A 30-parameter spectral flow cytometry panel was created for deep immunophenotyping of African green monkey and baboon PBMCs\",\n    \"The panel profiles major immune subsets including B cells, NK cells, dendritic cells, monocytes, T cells, memory phenotypes, functional cytokines, activation markers, and regulatory T cells\",\n    \"The panel enables analysis of immune responses in steady-state and mitogen-stimulated conditions for both species\"\n  ],\n  \"scientific_significance\": \"This work establishes a versatile immunophenotyping tool for non-human primates, advancing the ability to study immune responses in critical disease models like HIV and pertussis without human intervention.\"\n}",
+        "parsed": {
+          "summary": "This study developed a 30-parameter spectral flow cytometry panel to deeply phenotype peripheral blood mononuclear cells (PBMCs) from African green monkeys and baboons. The panel profiles key immune subsets including B cells, NK cells, dendritic cells, monocytes, T cells, memory phenotypes, functional cytokines, activation markers, and regulatory T cells in both steady-state and mitogen-stimulated conditions. The approach addresses the limited immunophenotyping tools for non-human primates, particularly for HIV and pertussis research applications.",
+          "key_findings": [
+            "A 30-parameter spectral flow cytometry panel was created for deep immunophenotyping of African green monkey and baboon PBMCs",
+            "The panel profiles major immune subsets including B cells, NK cells, dendritic cells, monocytes, T cells, memory phenotypes, functional cytokines, activation markers, and regulatory T cells",
+            "The panel enables analysis of immune responses in steady-state and mitogen-stimulated conditions for both species"
+          ],
+          "scientific_significance": "This work establishes a versatile immunophenotyping tool for non-human primates, advancing the ability to study immune responses in critical disease models like HIV and pertussis without human intervention."
+        },
+        "elapsed_seconds": 27.1348,
+        "input_tokens": 815,
+        "output_tokens": 268,
+        "thoughts_tokens": null,
+        "total_tokens": 1083,
+        "model_eval_seconds": 20.8586,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42989565",
+        "title": "Ambipolar Fiber Amplifiers for Highly Sensitive Biosignal Detection.",
+        "abstract": "NA: Biological signals are inherently weak and susceptible to noise, making in situ signal amplification critical for high-fidelity sensing. Electronic fibers offer unique advantages for conformal and scalable biointegration; however, fiber amplifiers are seldom reported due to the lack of suitable semiconducting materials that combine balanced ambipolar transport, scalable fiber fabrication, and high device performance. Herein, we report the first single-component ambipolar fiber platform based on a newly designed polymer, P(gTDPP-TQ), which combines balanced p- and n-type transport, low-cost synthesis, and continuous fiber fabrication. Fiber processing enhances molecular ordering and charge transport, yielding record-high µC* and gm,norm among reported semiconducting fibers, enabling high-performance fiber amplifiers with a high voltage gain of up to 150 V V-1 and low operating voltages down to 0.5 V. These fiber amplifiers enable high-fidelity electroencephalogram signal amplification over 20 times and sensitive cortisol sensing with a record-low detection limit of 3.7 fM. This work establishes a general ambipolar fiber platform for integrated bioelectronic amplification and sensing.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75671",
+        "doi_url": "https://doi.org/10.1002/adma.75671",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42989565/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of amplifying weak biological signals by developing ambipolar fiber amplifiers using a novel polymer. The research fabricated a single-component semiconductor fiber platform with balanced p- and n-type transport, achieving record-high charge transport metrics. The amplifiers demonstrated high voltage gain (up to 150 V/V) and low operating voltages (0.5 V), enabling high-fidelity electroencephalogram amplification and cortisol detection at 3.7 fM.\",\n  \"key_findings\": [\n    \"Record-high charge transport metrics in ambipolar polymer fibers\",\n    \"High voltage gain (up to 150 V/V) and low operating voltages (0.5 V)\",\n    \"High-fidelity electroencephalogram amplification and cortisol detection at 3.7 fM\"\n  ],\n  \"scientific_significance\": \"This work establishes a general ambipolar fiber platform for integrated bioelectronic amplification and sensing, advancing the field of highly sensitive biosignal detection through scalable, conformal amplification solutions.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of amplifying weak biological signals by developing ambipolar fiber amplifiers using a novel polymer. The research fabricated a single-component semiconductor fiber platform with balanced p- and n-type transport, achieving record-high charge transport metrics. The amplifiers demonstrated high voltage gain (up to 150 V/V) and low operating voltages (0.5 V), enabling high-fidelity electroencephalogram amplification and cortisol detection at 3.7 fM.",
+          "key_findings": [
+            "Record-high charge transport metrics in ambipolar polymer fibers",
+            "High voltage gain (up to 150 V/V) and low operating voltages (0.5 V)",
+            "High-fidelity electroencephalogram amplification and cortisol detection at 3.7 fM"
+          ],
+          "scientific_significance": "This work establishes a general ambipolar fiber platform for integrated bioelectronic amplification and sensing, advancing the field of highly sensitive biosignal detection through scalable, conformal amplification solutions."
+        },
+        "elapsed_seconds": 19.78,
+        "input_tokens": 678,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 902,
+        "model_eval_seconds": 15.5358,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
