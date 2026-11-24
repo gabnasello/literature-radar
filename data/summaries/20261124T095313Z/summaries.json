@@ -1,0 +1,957 @@
+{
+  "schema_version": 1,
+  "run_id": "20261124T095313Z",
+  "generated_at_utc": "2026-11-24 10:08:10 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 148,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42968452",
+        "title": "A Device-to-Package Perspective on Thermal Management Materials for Electronic Devices.",
+        "abstract": "NA: With the continued miniaturization and integration of electronic devices, power density and local heat flux have increased substantially, making heat dissipation a major constraint on device performance and reliability. Improving thermal transport inside devices through materials engineering has therefore attracted increasing attention. In this review, we systematically summarize the thermal transport mechanisms, recent progress, and manipulation strategies of materials for thermal management of electronic devices along the internal heat-dissipation pathway. At the device and die level, we discuss representative semiconductors, metals, and dielectrics, with emphasis on their thermal transport mechanisms and their thermal conductivity manipulation. In addition, thermal transport across microscopic interfaces is discussed. At the package level, we focus on thermal interface materials (TIMs) with emphasis on their structure-property relationships and thermal performance enhancement strategies. Across these different levels, a common principle emerges: intrinsic thermal conductivity alone is insufficient to determine the thermal performance of a material after integration, because dimensions, processing-induced changes, and interfaces are also important. By analyzing materials along the internal heat-dissipation pathway, this review identifies the key thermal bottlenecks and defines the material and interface requirements for a low-resistance internal heat-dissipation pathway in future electronic devices with high power density and a high degree of integration.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75567",
+        "doi_url": "https://doi.org/10.1002/adma.75567",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42968452/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines thermal management materials for electronic devices across device and package levels. It analyzes thermal transport mechanisms, material properties, and interface effects to identify bottlenecks in heat dissipation pathways. The study emphasizes that intrinsic thermal conductivity alone is insufficient; dimensions, processing, and interfaces critically influence thermal performance. Key bottlenecks and material requirements for high-power-density devices are defined.\",\n  \"key_findings\": [\n    \"Intrinsic thermal conductivity alone cannot determine thermal performance due to dimensional, processing, and interface effects\",\n    \"Device-level materials (semiconductors, metals, dielectrics) and thermal interface materials (TIMs) are critical for heat dissipation\",\n    \"Key bottlenecks in internal heat-dissipation pathways define material and interface requirements for high-power-density electronic devices\"\n  ],\n  \"scientific_significance\": \"This review establishes that thermal performance in high-power-density electronics depends on integrated material properties, interface engineering, and dimensional considerations beyond intrinsic thermal conductivity.\"\n}",
+        "parsed": {
+          "summary": "This review examines thermal management materials for electronic devices across device and package levels. It analyzes thermal transport mechanisms, material properties, and interface effects to identify bottlenecks in heat dissipation pathways. The study emphasizes that intrinsic thermal conductivity alone is insufficient; dimensions, processing, and interfaces critically influence thermal performance. Key bottlenecks and material requirements for high-power-density devices are defined.",
+          "key_findings": [
+            "Intrinsic thermal conductivity alone cannot determine thermal performance due to dimensional, processing, and interface effects",
+            "Device-level materials (semiconductors, metals, dielectrics) and thermal interface materials (TIMs) are critical for heat dissipation",
+            "Key bottlenecks in internal heat-dissipation pathways define material and interface requirements for high-power-density electronic devices"
+          ],
+          "scientific_significance": "This review establishes that thermal performance in high-power-density electronics depends on integrated material properties, interface engineering, and dimensional considerations beyond intrinsic thermal conductivity."
+        },
+        "elapsed_seconds": 38.4885,
+        "input_tokens": 688,
+        "output_tokens": 205,
+        "thoughts_tokens": null,
+        "total_tokens": 893,
+        "model_eval_seconds": 18.9981,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43047822",
+        "title": "Cardio-immune crosstalk in novel radioimmunotherapy: implications for tumor immune remodeling, radiosensitization, and cardiac safety.",
+        "abstract": "NA: Emerging radiotherapy modalities are reshaping cancer treatment by combining improved physical dose delivery with distinct immunobiological effects. FLASH radiotherapy, boron neutron capture therapy, spatially fractionated/lattice radiotherapy, proton and carbon-ion radiotherapy, and immunomodulatory stereotactic body radiotherapy can promote immunogenic cell death, innate immune sensing, antigen presentation, and effector lymphocyte responses, but may also induce checkpoint signaling, suppressive myeloid programs, regulatory T-cell activity, and other mechanisms of adaptive radioresistance. As these approaches are increasingly integrated with immunotherapy, their therapeutic window should be defined not only by tumor control but also by immune-mediated effects in normal tissues. This review focuses on cardio-immune crosstalk as an underexplored dimension of novel radioimmunotherapy, particularly in thoracic malignancies. We discuss how pathways that support tumor radiosensitization-including cGAS-STING-type I interferon signaling, myeloid-stromal remodeling, and checkpoint-regulated T-cell activation-may also perturb cardiac immune homeostasis after cardiac radiation exposure and systemic immune activation. We further examine how radiation modality, spatial dose distribution, dose rate, and cardiac substructure exposure may modify this balance. Direct characterization of cardiac immune responses remains limited for several emerging radiotherapy modalities, highlighting an important translational gap. Finally, we propose an integrated tumor-blood-heart framework combining tumor-response biomarkers, systemic immune profiling, and markers of cardiac vulnerability for future risk stratification and longitudinal assessment. This framework is conceptual and requires prospective clinical validation. Defining tissue-specific immune responses may help optimize novel radioimmunotherapy to maximize durable antitumor immunity while preserving cardiovascular safety.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.3389/fcell.2026.2000685",
+        "doi_url": "https://doi.org/10.3389/fcell.2026.2000685",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43047822/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in cell and developmental biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines cardio-immune interactions in novel radioimmunotherapy, particularly for thoracic cancers. It analyzes how tumor radiosensitization mechanisms like cGAS-STING signaling and myeloid remodeling may concurrently affect cardiac immune homeostasis. The study identifies radiation parameters (dose rate, distribution) as critical modulators of this balance and highlights a translational gap in cardiac immune profiling for emerging modalities. It proposes a tumor-blood-heart framework for risk stratification, emphasizing the need for prospective validation to optimize therapy safety and efficacy.\",\n  \"key_findings\": [\n    \"Tumor radiosensitization pathways (e.g., cGAS-STING) may disrupt cardiac immune homeostasis\",\n    \"Radiation parameters significantly influence the tumor-cardiac immune balance\",\n    \"Direct cardiac immune profiling remains limited for emerging radiotherapy modalities\"\n  ],\n  \"scientific_significance\": \"This work establishes cardio-immone immune crosstalk as a critical determinant in optimizing radioimmunotherapy safety and efficacy, advancing the understanding of tissue-specific immune responses during radiation treatment.\"\n}",
+        "parsed": {
+          "summary": "This review examines cardio-immune interactions in novel radioimmunotherapy, particularly for thoracic cancers. It analyzes how tumor radiosensitization mechanisms like cGAS-STING signaling and myeloid remodeling may concurrently affect cardiac immune homeostasis. The study identifies radiation parameters (dose rate, distribution) as critical modulators of this balance and highlights a translational gap in cardiac immune profiling for emerging modalities. It proposes a tumor-blood-heart framework for risk stratification, emphasizing the need for prospective validation to optimize therapy safety and efficacy.",
+          "key_findings": [
+            "Tumor radiosensitization pathways (e.g., cGAS-STING) may disrupt cardiac immune homeostasis",
+            "Radiation parameters significantly influence the tumor-cardiac immune balance",
+            "Direct cardiac immune profiling remains limited for emerging radiotherapy modalities"
+          ],
+          "scientific_significance": "This work establishes cardio-immone immune crosstalk as a critical determinant in optimizing radioimmunotherapy safety and efficacy, advancing the understanding of tissue-specific immune responses during radiation treatment."
+        },
+        "elapsed_seconds": 32.0239,
+        "input_tokens": 800,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 1025,
+        "model_eval_seconds": 21.3494,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. These findings demonstrate that short-term dietary states during inflammation can durably reprogram immune responses.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates skin inflammation to chronic obesity levels\",\n    \"HFD outside this window or switching obese mice to low-fat diet during the window blunts disease amplification\",\n    \"Neutrophil-mediated Nlrp3-Il1b axis licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells after recovery\"\n  ],\n  \"scientific_significance\": \"This work establishes that transient dietary states during acute inflammation can durably reprogram immune memory, revealing a critical temporal window for dietary interventions to modulate inflammatory disease trajectories.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. These findings demonstrate that short-term dietary states during inflammation can durably reprogram immune responses.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates skin inflammation to chronic obesity levels",
+            "HFD outside this window or switching obese mice to low-fat diet during the window blunts disease amplification",
+            "Neutrophil-mediated Nlrp3-Il1b axis licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells after recovery"
+          ],
+          "scientific_significance": "This work establishes that transient dietary states during acute inflammation can durably reprogram immune memory, revealing a critical temporal window for dietary interventions to modulate inflammatory disease trajectories."
+        },
+        "elapsed_seconds": 32.9024,
+        "input_tokens": 885,
+        "output_tokens": 299,
+        "thoughts_tokens": null,
+        "total_tokens": 1184,
+        "model_eval_seconds": 29.806,
+        "error": "summary must contain 45–90 words; received 111.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42968454",
+        "title": "Submolecular Selenium Enables Low-Pressure and Recyclable All-Solid-State Li-Se Batteries.",
+        "abstract": "NA: All-solid-state lithium-selenium (Li-Se) batteries offer high energy density and intrinsic safety, but their practical deployment is hindered by sluggish solid-state redox kinetics, large volume fluctuations, and unstable solid-solid interfaces, particularly under low stack pressure. Here we report a submolecular Sex cathode by converting crystalline cyclo-Se8 into amorphous single-atom and short-chain Se (Sex, x < 4) species anchored on graphene (Sex@G), which increases the electronic conductivity from 6.3 × 10-5 to 13 S cm-1 and Li+ diffusivity from 1.7 × 10-14 to 2.0 × 10-11 cm2 s-1. Meanwhile, a Li2O-nanoshell-modified sulfide solid electrolyte is designed to stabilize the interface against both Li metal and Se cathode. As a result, all-solid-state Li-Se batteries deliver the theoretical capacity of 673 mAh g-1 at 0.1 C and retain 86% capacity over 2800 cycles at 3 C under 8 MPa, with stable operation down to -30°C. All-solid-state Li-Se pouch cells further achieve an energy density of 420 Wh kg-1 and 94% capacity retention after 300 cycles under 2.5 MPa. Post-mortem analysis reveals that the submolecular Sex species are not only structurally preserved but also recyclable after electrochemical cycling within the solid-state reaction environment. This work establishes submolecular chalcogen chemistry as a new design paradigm for low-pressure, recyclable, and high-energy all-solid-state batteries.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75592",
+        "doi_url": "https://doi.org/10.1002/adma.75592",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42968454/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing all-solid-state lithium-selenium batteries by engineering submolecular selenium species. The researchers converted crystalline cyclo-Se8 into amorphous Sex (x < 4) anchored on graphene, improving electronic conductivity and lithium diffusion. A Li2O-nanoshell-modified sulfide electrolyte stabilized interfaces. Batteries achieved 86% capacity retention after 2800 cycles at 3 C under 8 MPa and 420 Wh kg-1 energy density at 2.5 MPa, with recyclable selenium species post-cycling.\",\n  \"key_findings\": [\n    \"Submolecular Sex cathodes (x < 4) anchored on graphene increased electronic conductivity to 13 S cm-1\",\n    \"Li2O-nanoshell-modified sulfide electrolyte stabilized interfaces with Li metal and Se cathode\",\n    \"All-solid-state Li-Se batteries retained 86% capacity after 2800 cycles at 3 C under 8 MPa\"\n  ],\n  \"scientific_significance\": \"This work establishes submolecular chalcogen chemistry as a design strategy for low-pressure, recyclable, high-energy all-solid-state batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing all-solid-state lithium-selenium batteries by engineering submolecular selenium species. The researchers converted crystalline cyclo-Se8 into amorphous Sex (x < 4) anchored on graphene, improving electronic conductivity and lithium diffusion. A Li2O-nanoshell-modified sulfide electrolyte stabilized interfaces. Batteries achieved 86% capacity retention after 2800 cycles at 3 C under 8 MPa and 420 Wh kg-1 energy density at 2.5 MPa, with recyclable selenium species post-cycling.",
+          "key_findings": [
+            "Submolecular Sex cathodes (x < 4) anchored on graphene increased electronic conductivity to 13 S cm-1",
+            "Li2O-nanoshell-modified sulfide electrolyte stabilized interfaces with Li metal and Se cathode",
+            "All-solid-state Li-Se batteries retained 86% capacity after 2800 cycles at 3 C under 8 MPa"
+          ],
+          "scientific_significance": "This work establishes submolecular chalcogen chemistry as a design strategy for low-pressure, recyclable, high-energy all-solid-state batteries."
+        },
+        "elapsed_seconds": 35.6954,
+        "input_tokens": 802,
+        "output_tokens": 257,
+        "thoughts_tokens": null,
+        "total_tokens": 1059,
+        "model_eval_seconds": 24.8382,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43047868",
+        "title": "Controversies and consensus on immune function and long-term health risks following adult thymectomy: a comprehensive review of molecular mechanisms and real-world evidence.",
+        "abstract": "OBJECTIVE: To evaluate the long-term immunological, oncological, and clinical consequences of adult thymectomy by synthesizing recent basic, translational, and real-world clinical evidence.\nBACKGROUND: Historical surgical paradigms regarded the post-pubertal adult thymus as an immunologically redundant, fatty involuted organ, justifying routine \"incidental\" resection during cardiac procedures. A high-profile 2023 cohort study in The New England Journal of Medicine (NEJM) challenged this concept, reporting that adult thymectomy significantly increased 5-year all-cause mortality and cancer risk. Subsequent population-level studies (US SEER/NCDB, French PMSI) and deep-learning imaging cohorts have sparked debate, offering both corroborating and conflicting insights into adult thymic function.\nMETHODS AND SYNTHESIS: This review synthesizes cellular mechanisms (TREC dynamics, TCR repertoire contraction, senescence-associated T cells, Treg lineage stability) and endocrine factors (thymulin-mediated myeloid regulation) with clinical data stratified by age at surgery, indication, resection extent, and follow-up duration.\nCONCLUSIONS: The adult thymus remains functionally active, exporting naïve T cells and humoral immunomodulators like thymulin that maintain peripheral immune tolerance and restrain inflammaging. Clinical evaluation must differentiate between incidental resection (which induces avoidable iatrogenic immunosenescence) and therapeutic resection (e.g., for thymic epithelial tumors or myasthenia gravis), where removing a diseased, immunosuppressive microenvironment can reduce secondary cancer risk. Partial thymectomy (PT) is emerging as an option to preserve immunocompetence when oncologically feasible.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.3389/fimmu.2026.1903197",
+        "doi_url": "https://doi.org/10.3389/fimmu.2026.1903197",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43047868/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in immunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review evaluates long-term immunological, oncological, and clinical outcomes after adult thymectomy by integrating molecular mechanisms and real-world evidence. It addresses historical misconceptions about the thymus as immunologically redundant, noting recent studies showing increased mortality and cancer risk post-surgery. The analysis highlights functional thymus activity in exporting naïve T cells and thymulin, emphasizing the need to distinguish incidental versus therapeutic resection to avoid iatrogenic immunosenescence while reducing cancer risk in specific conditions.\",\n  \"key_findings\": [\n    \"Adult thymectomy increases 5-year all-cause mortality and cancer risk in some populations\",\n    \"The thymus continues to export naïve T cells and produce thymulin for immune regulation\",\n    \"Partial thymectomy may preserve immunocompetence in oncologically feasible cases\"\n  ],\n  \"scientific_significance\": \"This synthesis clarifies the functional role of the adult th:ymus in immune maintenance and provides critical context for clinical decision-making regarding thymectomy indications.\"\n}",
+        "parsed": {
+          "summary": "This review evaluates long-term immunological, oncological, and clinical outcomes after adult thymectomy by integrating molecular mechanisms and real-world evidence. It addresses historical misconceptions about the thymus as immunologically redundant, noting recent studies showing increased mortality and cancer risk post-surgery. The analysis highlights functional thymus activity in exporting naïve T cells and thymulin, emphasizing the need to distinguish incidental versus therapeutic resection to avoid iatrogenic immunosenescence while reducing cancer risk in specific conditions.",
+          "key_findings": [
+            "Adult thymectomy increases 5-year all-cause mortality and cancer risk in some populations",
+            "The thymus continues to export naïve T cells and produce thymulin for immune regulation",
+            "Partial thymectomy may preserve immunocompetence in oncologically feasible cases"
+          ],
+          "scientific_significance": "This synthesis clarifies the functional role of the adult th:ymus in immune maintenance and provides critical context for clinical decision-making regarding thymectomy indications."
+        },
+        "elapsed_seconds": 31.7985,
+        "input_tokens": 812,
+        "output_tokens": 219,
+        "thoughts_tokens": null,
+        "total_tokens": 1031,
+        "model_eval_seconds": 20.8818,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42968462",
+        "title": "Realizing Reversible Photo-Charging via Stacked 1T/2H MoS2 Bifunctional Cathodes for Photo-Rechargeable Batteries.",
+        "abstract": "NA: Photo-rechargeable batteries that integrate solar energy harvesting, conversion, and storage in a single device are able to efficiently utilize sustainable energy. However, current photo-batteries based on bifunctional (photovoltaic conversion and energy storage) cathodes could only achieve photo-assisted charging, whereas light-only photo-charging remains incomplete and irreversible. Particularly, in absence of a photo-charging circuit, the observed charging phenomena are pseudo photo-charging due to side reactions. To realize genuine photo-charging, we design a bifunctional cathode of MoS2 by integrating photo active (2H) and energy storage (1T) phases. Nickel oxide is introduced to improve the interface conductivity and stabilize the 2H/1T phases of MoS2. Additionally, we employed an external resistance to balance the self-discharge current and the photo-charging current under illumination. For the first time, we demonstrate Zn2+ photo-batteries that can be reversibly photo-charged for over ten times, and the deposition of zinc at the anode is visualized. The photo-rechargeable batteries could realize a photo-charging capacity ratio of 100% by 2 h illumination, with a specific capacity of 110.55 mAh g-1. Furthermore, we assemble a sustainable energy harvest-conversion-storage mini-system that could practically provide energy to portable electronics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75600",
+        "doi_url": "https://doi.org/10.1002/adma.75600",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42968462/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates achieving reversible photo-charging in photo-rechargeable batteries using stacked 1T/2H MoS2 bifunctional cathodes. The researchers integrated photo-active 2H and energy-storage 1T MoS2 phases with nickel oxide to enhance conductivity and phase stability. An external resistance was used to balance self-discharge and photo-charging currents. The system demonstrated reversible photo-charging for over ten cycles with a 100% photo-charging capacity ratio within two hours of illumination, achieving 110.55 mAh g- 1 specific capacity.\",\n  \"key_findings\": [\n    \"Reversible photo-charging for over ten cycles using stacked 1T/2H MoS2 cathodes\",\n    \"100% photo-charging capacity ratio achieved within 2 hours of illumination\",\n    \"110.55 mAh g-1 specific capacity with zinc deposition at the anode\"\n  ],\n  \"scientific_significance\": \"This work establishes a method for genuine, reversible photo-charging in batteries without side reactions, advancing sustainable energy storage systems that directly convert solar energy into stored electrical energy.\"\n}",
+        "parsed": {
+          "summary": "This study investigates achieving reversible photo-charging in photo-rechargeable batteries using stacked 1T/2H MoS2 bifunctional cathodes. The researchers integrated photo-active 2H and energy-storage 1T MoS2 phases with nickel oxide to enhance conductivity and phase stability. An external resistance was used to balance self-discharge and photo-charging currents. The system demonstrated reversible photo-charging for over ten cycles with a 100% photo-charging capacity ratio within two hours of illumination, achieving 110.55 mAh g- 1 specific capacity.",
+          "key_findings": [
+            "Reversible photo-charging for over ten cycles using stacked 1T/2H MoS2 cathodes",
+            "100% photo-charging capacity ratio achieved within 2 hours of illumination",
+            "110.55 mAh g-1 specific capacity with zinc deposition at the anode"
+          ],
+          "scientific_significance": "This work establishes a method for genuine, reversible photo-charging in batteries without side reactions, advancing sustainable energy storage systems that directly convert solar energy into stored electrical energy."
+        },
+        "elapsed_seconds": 32.0557,
+        "input_tokens": 738,
+        "output_tokens": 245,
+        "thoughts_tokens": null,
+        "total_tokens": 983,
+        "model_eval_seconds": 23.0188,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43048024",
+        "title": "Remodeling of the tumor immune microenvironment and underlying oncogenic molecular mechanisms in HPV-associated OSCC.",
+        "abstract": "NA: Human papillomavirus (HPV)-positive oral squamous cell carcinoma (OSCC) possesses unique clinical and biological characteristics, while its specific clinicopathological features and underlying immune-molecular mechanisms remain unclear. This study aimed to systematically characterize the clinicopathological traits of HPV-associated OSCC and elucidate the key molecular and immune regulatory axes driving its malignant progression. We retrospectively analyzed the correlations between HPV infection status and multiple clinical parameters including age, gender, primary tumor location, clinical stage, pathological grade, and 5-year overall survival (OS) in OSCC patients. IHC was performed to detect the protein expression levels of p53, Cyclin D1 and pRb in OSCC tumor tissues, while flow cytometry was used to quantify the infiltration levels of myeloid-derived suppressor cells (MDSCs) and regulatory T cells (Tregs) in paired tumor tissues and peripheral blood specimens. Integrated transcriptomic RNA sequencing, miRNA target prediction and bioinformatic analyses were further conducted to screen core oncogenic immune targets and specific regulatory pathways in HPV-positive OSCC. Significant differences in primary tumor site, pathological differentiation and 5-year OS were identified between HPV-positive and HPV-negative OSCC patients, with no notable differences in age, gender and clinical stage across groups. And HPV-positive OSCC tissues presented markedly downregulated p53 and Cyclin D1 expression compared with the HPV-negative counterpart. MDSC levels progressively increased from controls to patients with oral precancerous lesions and OSCC, whereas Treg levels were significantly elevated in OSCC patients compared with both controls and patients with precancerous lesions. Bioinformatic analysis revealed that Calsequestrin 2 (CASQ2) expression was negatively correlated with tumor purity in HPV-positive OSCC, and two core circRNA-miRNA regulatory axes (hsa_circ_0058495/hsa-miR-2115-5p and hsa_circ_0032029/hsa-miR-2115-5p) were identified to target CASQ2 specifically. Collectively, HPV infection remodels the OSCC tumor microenvironment into an immunosuppressive phenotype via inducing abnormal accumulation of MDSCs and Tregs, thereby promoting OSCC malignant progression. The miRNA-mediated CASQ2 dysregulation may serve as a core pathogenic driver of HPV-positive OSCC. These findings uncover a novel immune-molecular mechanism underlying HPV-associated OSCC progression, and provide a theoretical basis for stratified precision immunotherapy for this unique OSCC subtype.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.62347/YYBR7909",
+        "doi_url": "https://doi.org/10.62347/YYBR7909",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43048024/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "American journal of cancer research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated HPV-positive oral squamous cell carcinoma (OSCC) by correlating clinical parameters with immune and molecular markers. Retrospective analysis revealed significant differences in tumor site, differentiation, and 5-year survival between HPV-positive and negative OSCC. IHC showed downregulated p53 and Cyclin D1 in HPV-positive tumors, while MDSCs increased progressively from precancerous lesions to OSCC, and Tregs were elevated in OSCC patients. Transcriptomic analysis identified circRNA-miRNA axes targeting Calsequestrin 2 (CASQ2), suggesting immunosuppressive remodeling and a core pathogenic mechanism for HPV-positive OSCC progression.\",\n  \"key_findings\": [\n    \"HPV-positive OSCC patients exhibited significant differences in tumor site, pathological differentiation, and 5-year survival compared to HPV-negative OSCC\",\n    \"HPV-positive OSCC tissues showed downregulated p53 and Cyclin D1 protein expression\",\n    \"Two circRNA-miRNA regulatory axes specifically target Calsequestrin 2 (CASQ2) in HPV-positive OSCC\"\n  ],\n  \"scientific_significance\": \"This work identifies a novel circRNA-miRNA regulatory mechanism driving immunosuppressive remodeling in HPV-positive OSCC, providing a potential target for precision immunotherapy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated HPV-positive oral squamous cell carcinoma (OSCC) by correlating clinical parameters with immune and molecular markers. Retrospective analysis revealed significant differences in tumor site, differentiation, and 5-year survival between HPV-positive and negative OSCC. IHC showed downregulated p53 and Cyclin D1 in HPV-positive tumors, while MDSCs increased progressively from precancerous lesions to OSCC, and Tregs were elevated in OSCC patients. Transcriptomic analysis identified circRNA-miRNA axes targeting Calsequestrin 2 (CASQ2), suggesting immunosuppressive remodeling and a core pathogenic mechanism for HPV-positive OSCC progression.",
+          "key_findings": [
+            "HPV-positive OSCC patients exhibited significant differences in tumor site, pathological differentiation, and 5-year survival compared to HPV-negative OSCC",
+            "HPV-positive OSCC tissues showed downregulated p53 and Cyclin D1 protein expression",
+            "Two circRNA-miRNA regulatory axes specifically target Calsequestrin 2 (CASQ2) in HPV-positive OSCC"
+          ],
+          "scientific_significance": "This work identifies a novel circRNA-miRNA regulatory mechanism driving immunosuppressive remodeling in HPV-positive OSCC, providing a potential target for precision immunotherapy."
+        },
+        "elapsed_seconds": 44.1913,
+        "input_tokens": 976,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1251,
+        "model_eval_seconds": 28.2266,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42968464",
+        "title": "A Sustainable, Robust, Soft-Gated Janus Bio-Membrane for High-Flux Aromatic Recovery From Saline Industrial Wastewaters.",
+        "abstract": "NA: The selective recovery of aromatic pollutants from saline wastewater remains a central challenge in sustainable chemical engineering. We present a bio-derived Janus membrane that couples a sorption-active, mechanically robust wood scaffold with an ultrathin polydimethylsiloxane (PDMS) layer for soft-gated aromatic transport. Spectroscopic, molecular, and free-volume analyses support transient hydroxyl-mediated phenol capture, favorable interfacial association, and onward diffusion through PDMS. The membrane achieves an overall phenol mass-transfer coefficient of 36.9 × 10-7 m s-1 and 99.4% salt rejection under ambient conditions, with sustained performance in petrochemical and offshore oilfield wastewaters. It combines a tensile strength of ∼70 MPa with consistent separation performance across a meter-long sheet. Life-cycle and national-scale analyses indicate over 85% reductions in environmental impact and over 42 000 tons of CO2-equivalent mitigation annually. This work establishes a scalable bio-derived membrane architecture that bridges molecular transport design with aromatic resource recovery, advancing the valorization of saline industrial wastewaters.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75488",
+        "doi_url": "https://doi.org/10.1002/adma.75488",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42968464/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a bio-derived Janus membrane for selective aromatic recovery from saline industrial wastewaters. The membrane integrates a wood scaffold with a polydimethylsiloxane (PDMS) layer to enable soft-gated transport of aromatic compounds. Spectroscopic analyses confirm transient hydroxyl-mediated phenol capture and efficient diffusion through PD. It achieves 99.4% salt rejection and a phenol mass-transfer coefficient of 36.9 × 10-7 m s-1, with high tensile strength (∼70 MPa) and sustained performance in petrochemical and oilfield wastewaters. Life-cycle assessments show over 85% environmental impact reduction and annual CO2 mitigation of 42,000 tons.\",\n  \"key_findings\": [\n    \"The membrane achieves 99.4% salt rejection and a phenol mass-transfer coefficient of 36.9 × 10-7 m s-1\",\n    \"It demonstrates sustained performance in petrochemical and offshore oilfield wastewaters with a tensile strength of ∼70 MPa\",\n    \"Life-cycle analyses indicate over 85% reductions in environmental impact and annual CO2 mitigation of 42,000 tons\"\n  ],\n  \"scientific_significance\": \"This bio-derived Janus membrane architecture enables efficient aromatic recovery from saline wastewaters while minimizing environmental impact, advancing sustainable resource recovery from industrial effluents.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a bio-derived Janus membrane for selective aromatic recovery from saline industrial wastewaters. The membrane integrates a wood scaffold with a polydimethylsiloxane (PDMS) layer to enable soft-gated transport of aromatic compounds. Spectroscopic analyses confirm transient hydroxyl-mediated phenol capture and efficient diffusion through PD. It achieves 99.4% salt rejection and a phenol mass-transfer coefficient of 36.9 × 10-7 m s-1, with high tensile strength (∼70 MPa) and sustained performance in petrochemical and oilfield wastewaters. Life-cycle assessments show over 85% environmental impact reduction and annual CO2 mitigation of 42,000 tons.",
+          "key_findings": [
+            "The membrane achieves 99.4% salt rejection and a phenol mass-transfer coefficient of 36.9 × 10-7 m s-1",
+            "It demonstrates sustained performance in petrochemical and offshore oilfield wastewaters with a tensile strength of ∼70 MPa",
+            "Life-cycle analyses indicate over 85% reductions in environmental impact and annual CO2 mitigation of 42,000 tons"
+          ],
+          "scientific_significance": "This bio-derived Janus membrane architecture enables efficient aromatic recovery from saline wastewaters while minimizing environmental impact, advancing sustainable resource recovery from industrial effluents."
+        },
+        "elapsed_seconds": 36.1892,
+        "input_tokens": 688,
+        "output_tokens": 307,
+        "thoughts_tokens": null,
+        "total_tokens": 995,
+        "model_eval_seconds": 28.5503,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43048559",
+        "title": "Combined Prognostic Value of Treg Cells, CRP, APTT, and Fibrinogen in Sepsis Patients.",
+        "abstract": "OBJECTIVE: This study aimed to analyze the correlation between CD3+T cells, Treg cells, APTT, FIB, and CRP in patients with sepsis to explore the predictive value of these combined indicators for the prognosis of sepsis patients.\nMETHODS: Clinical data were retrospectively collected to compare CD3+T cells, Treg cells, APTT, PT, FIB, D-dimer, CRP, PCT, and PLT levels between the septic shock group and non-septic shock group, as well as between the non-survivors group and the survivors group. Receiver operating characteristic (ROC) curves were plotted, and the area under the curve (AUC) was calculated to evaluate the predictive value of Treg cell, APTT, FIB, and CRP levels for prognosis in sepsis patients. Spearman correlation analysis was used to examine the associations between CD3+T cells, Treg cells, FIB, APTT, and CRP levels in sepsis patients and between Treg cells and ALT, AST, TBIL, DBIL, and IBIL levels.\nRESULTS: Treg cells, FIB, APTT, and CRP were used to predict sepsis mortality, the corresponding AUCs were 0.779, 0.635, 0.756, and 0.720. The combined AUC was 0.851, outperforming each single marker.\nCONCLUSION: Treg cells, FIB, APTT, and CRP levels correlate with the severity of sepsis. The combined use of these four indicators demonstrates promising predictive value for sepsis prognosis.",
+        "publication_types": [
+          "Case Reports",
+          "Journal Article"
+        ],
+        "doi": "10.2147/JIR.S630575",
+        "doi_url": "https://doi.org/10.2147/JIR.S630575",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43048559/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of inflammation research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study retrospectively analyzed clinical data from sepsis patients to evaluate the prognostic value of Treg cells, APTT, fibrinogen, and CRP. Using ROC curves and AUC calculations, the researchers found that combining these four markers improved mortality prediction accuracy (AUC 0.851) compared to individual markers (AUCs 0.779, 0.635, 0.756, 0.720). The results indicate these biomarkers collectively enhance sepsis prognosis assessment.\",\n  \"key_findings\": [\n    \"Combined Treg cells, APTT, fibrinogen, and CRP demonstrated an AUC of 0.851 for predicting sepsis mortality\",\n    \"Individual markers showed AUCs ranging from 0.635 to 0.779 for mortality prediction\",\n    \"The combination significantly outperformed single biomarkers in prognostic accuracy\"\n  ],\n  \"scientific_significance\": \"This work establishes a multi-marker approach that enhances the predictive capability for sepsis mortality, providing a potential tool for improved clinical risk stratification in sepsis management.\"\n}",
+        "parsed": {
+          "summary": "This study retrospectively analyzed clinical data from sepsis patients to evaluate the prognostic value of Treg cells, APTT, fibrinogen, and CRP. Using ROC curves and AUC calculations, the researchers found that combining these four markers improved mortality prediction accuracy (AUC 0.851) compared to individual markers (AUCs 0.779, 0.635, 0.756, 0.720). The results indicate these biomarkers collectively enhance sepsis prognosis assessment.",
+          "key_findings": [
+            "Combined Treg cells, APTT, fibrinogen, and CRP demonstrated an AUC of 0.851 for predicting sepsis mortality",
+            "Individual markers showed AUCs ranging from 0.635 to 0.779 for mortality prediction",
+            "The combination significantly outperformed single biomarkers in prognostic accuracy"
+          ],
+          "scientific_significance": "This work establishes a multi-marker approach that enhances the predictive capability for sepsis mortality, providing a potential tool for improved clinical risk stratification in sepsis management."
+        },
+        "elapsed_seconds": 35.37,
+        "input_tokens": 809,
+        "output_tokens": 254,
+        "thoughts_tokens": null,
+        "total_tokens": 1063,
+        "model_eval_seconds": 24.5229,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42968469",
+        "title": "Chemically Reactivatable Sulfide Interfaces for Low-Pressure Thick-Cathode Solid-State Na-S Batteries.",
+        "abstract": "NA: Low-pressure solid-state Na-S batteries with thick sulfur cathodes are attractive for high-energy storage, but their operation is fundamentally constrained by the progressive loss of solid-solid contact during sulfur conversion. Once insulating sulfides become poorly connected to the electronic network, charge recovery becomes incomplete and cathode passivation rapidly accumulates. Here, we construct chemically reactivatable sulfide interfaces by embedding Fe3C-MnO heteropoints within nitrogen-doped hollow carbon nanotubes. The heterointerface integrates carbon-side electronic coupling, sulfide-side affinity, and interfacial polarization, thereby suppressing localized sulfide accumulation and sustaining charge-stage sulfur recovery as mechanical confinement weakens. This effect is strongly pressure dependent. Under high compression, the electrochemical responses of different hosts converge, whereas under contact-limited conditions the Fe3C-MnO architecture preserves markedly higher sulfur utilization, lower polarization, and superior cycling stability. Consequently, the operational pressure required to retain ≥80% of the 10 MPa discharge capacity decreases from approximately 2 MPa for the control cathodes to 0.2 MPa for Fe3C-MnO/NC@S. A 200 µm cathode with 8.3 mg cm-2 sulfur sustains reversible cycling at 0.2 MPa, together with a pouch-cell energy density of 696 Wh kgcathode -1. These results establish sulfide-interface reactivation as a route to decouple reversible sulfur chemistry from stringent mechanical confinement.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75607",
+        "doi_url": "https://doi.org/10.1002/adma.75607",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42968469/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the mechanical instability in low-pressure solid-state Na-S batteries with thick sulfur cathodes, where solid-solid contact loss impedes charge recovery. Researchers developed chemically reactivatable sulfide interfaces using Fe3C-MnO heteropoints in nitrogen-doped carbon nanotubes. The interface maintains electronic coupling and sulfide affinity, enabling sustained sulfur recovery under low pressure. At 0.2 MPa, a 200 µm cathode with 8.3 mg cm⁻² sulfur achieved 696 Wh kg⁻¹ energy density and stable cycling.\",\n  \"key_findings\": [\n    \"Fe3C-MnO heteropoints in nitrogen-doped carbon nanotubes create reactivatable sulfide interfaces\",\n    \"The interface sustains sulfur recovery under low pressure (0.2 MPa) despite mechanical confinement\",\n    \"A 200 µm cathode with 8.3 mg cm⁻² sulfur achieved 696 Wh kg⁻¹ energy density and stable cycling\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a strategy to decouple reversible sulfur chemistry from mechanical constraints in solid-state Na-S batteries, enabling high-energy storage with thick cathodes under low operational pressure.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the mechanical instability in low-pressure solid-state Na-S batteries with thick sulfur cathodes, where solid-solid contact loss impedes charge recovery. Researchers developed chemically reactivatable sulfide interfaces using Fe3C-MnO heteropoints in nitrogen-doped carbon nanotubes. The interface maintains electronic coupling and sulfide affinity, enabling sustained sulfur recovery under low pressure. At 0.2 MPa, a 200 µm cathode with 8.3 mg cm⁻² sulfur achieved 696 Wh kg⁻¹ energy density and stable cycling.",
+          "key_findings": [
+            "Fe3C-MnO heteropoints in nitrogen-doped carbon nanotubes create reactivatable sulfide interfaces",
+            "The interface sustains sulfur recovery under low pressure (0.2 MPa) despite mechanical confinement",
+            "A 200 µm cathode with 8.3 mg cm⁻² sulfur achieved 696 Wh kg⁻¹ energy density and stable cycling"
+          ],
+          "scientific_significance": "This work demonstrates a strategy to decouple reversible sulfur chemistry from mechanical constraints in solid-state Na-S batteries, enabling high-energy storage with thick cathodes under low operational pressure."
+        },
+        "elapsed_seconds": 34.372,
+        "input_tokens": 761,
+        "output_tokens": 262,
+        "thoughts_tokens": null,
+        "total_tokens": 1023,
+        "model_eval_seconds": 24.8809,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43048619",
+        "title": "Maternal thyroid status and immune adaptation at the maternal-fetal interface: distinguishing direct from indirect pathways.",
+        "abstract": "NA: Pregnancy depends on coordinated endocrine and immune adaptation to support fetal tolerance, antimicrobial defense, trophoblast invasion, and vascular remodeling. Maternal thyroid dysfunction is associated with adverse pregnancy outcomes, but serum thyroid-stimulating hormone (TSH) and free thyroxine (FT4) do not define T4/T3 exposure in placental or decidual cells. This Mini Review examines direct and indirect immune pathways, distinguishing maternal thyroid status from local thyroid hormone (TH) transport and metabolism, receptor-dependent signaling, and thyroid autoimmunity. Placental hormone handling has the strongest experimental support: MCT8/MCT10 and DIO2/DIO3 regulate local availability, although much of the transport evidence comes from term placentas. Human trophoblast and endometrial or decidual stromal studies suggest context-dependent effects on decidualization and trophoblast behavior. These responses could affect immune adaptation indirectly through changes in the immune, metabolic, and vascular niche. Evidence for direct TH effects on uterine natural killer (uNK) cells and decidual macrophages remains limited and gestational-age dependent. Direct evidence for decidual regulatory or effector T cells and dendritic cells is lacking, and many proposed mechanisms come from animal or nonpregnant settings. The available data do not support a single TH-driven immune phenotype or establish whether maternal thyroid status acts mainly through immune cells or surrounding tissues. Studies combining paired blood and interface tissue, longitudinal sampling, local T3/T4 measurements, pathway-specific perturbation, and human multicellular models are needed to test both routes and connect hormone supply and metabolism with immune and vascular function. Thyroid autoimmunity should be analyzed separately from local TH receptor signaling.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.3389/fimmu.2026.1969706",
+        "doi_url": "https://doi.org/10.3389/fimmu.2026.1969706",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43048619/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in immunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review investigates maternal thyroid status and its impact on immune adaptation at the maternal-fetal interface, distinguishing direct versus indirect pathways. It examines how thyroid hormones influence immune cells through placental transport, metabolism, and receptor signaling. Key findings include limited evidence for direct effects on uterine natural killer cells and decidual macrophages, context-dependent effects on trophoblast behavior, and the need for integrated approaches to clarify hormone-immune interactions in pregnancy.\",\n  \"key_findings\": [\n    \"Placental transport proteins (MCT8/MCT10 and DIO2/DIO3) regulate local thyroid hormone availability\",\n    \"Human trophoblast and decidual studies show context-dependent effects on trophoblast invasion and decidualization\",\n    \"Direct evidence for thyroid hormone effects on uter. NK cells and decidual macrophages is gestational-age dependent and limited\"\n  ],\n  \"scientific_significance\": \"This review clarifies the complex interplay between maternal thyroid status and immune adaptation in pregnancy by distinguishing direct and indirect pathways, highlighting the need for integrated tissue-level analyses to resolve hormone-immune interactions.\"\n}",
+        "parsed": {
+          "summary": "This review investigates maternal thyroid status and its impact on immune adaptation at the maternal-fetal interface, distinguishing direct versus indirect pathways. It examines how thyroid hormones influence immune cells through placental transport, metabolism, and receptor signaling. Key findings include limited evidence for direct effects on uterine natural killer cells and decidual macrophages, context-dependent effects on trophoblast behavior, and the need for integrated approaches to clarify hormone-immune interactions in pregnancy.",
+          "key_findings": [
+            "Placental transport proteins (MCT8/MCT10 and DIO2/DIO3) regulate local thyroid hormone availability",
+            "Human trophoblast and decidual studies show context-dependent effects on trophoblast invasion and decidualization",
+            "Direct evidence for thyroid hormone effects on uter. NK cells and decidual macrophages is gestational-age dependent and limited"
+          ],
+          "scientific_significance": "This review clarifies the complex interplay between maternal thyroid status and immune adaptation in pregnancy by distinguishing direct and indirect pathways, highlighting the need for integrated tissue-level analyses to resolve hormone-immune interactions."
+        },
+        "elapsed_seconds": 33.1659,
+        "input_tokens": 795,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 1032,
+        "model_eval_seconds": 22.5894,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42968471",
+        "title": "Re(I)-Based Molecular Actuator-Equipped Nanomotors for Integrated Photodynamic and Photomechanical Therapy of Solid Tumor.",
+        "abstract": "NA: The dense stromal barrier of solid tumors severely hinders intratumoral distribution and therapeutic performance of conventional nanomedicines, and such limitation further compromises oxygen-dependent photodynamic therapy. Herein, through molecular engineering, we develop a Janus nanomotor (Re1@NMs) that integrates a three-dimensional rhenium(I)-based molecular actuator (Re1) with glucose oxidase (GOx)-powered propulsion. Owing to the Janus structure, asymmetric GOx-catalyzed glucose consumption generates local chemical gradients that fuel autonomous motility, thereby enhancing intratumoral distribution. Upon light activation, the engineered Re1, screened from six Re(I) complexes, functions both as a dual Type I/II photosensitizer generating reactive oxygen species (ROS) to induce oxidative stress and as a molecular actuator whose Y-axis motif undergoes E/Z photoisomerization and torsional deformation, thereby contributing to membrane permeabilization. The resulting integrated mechano-photodynamic action coordinately activates ferroptosis and pyroptosis. In a murine tumor model, Re1@NMs-mediated phototherapy achieves superior tumor suppression with excellent biosafety and further elicits robust antitumor immunity, as evidenced by enhanced dendritic cell maturation, increased tumor-infiltrating T cells, elevated effector cytokine expression, and damage-associated molecular pattern release. To the best of our knowledge, this work represents the first integration of a deliberately engineered metal-complex-based three-dimensional molecular actuator with a tumor-microenvironment-adaptive nanomotor, establishing a new paradigm for overcoming tumor barriers.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75590",
+        "doi_url": "https://doi.org/10.1002/adma.75590",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42968471/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of dense tumor stroma limiting nanomedicine efficacy by engineering a Janus nanomotor integrating rhenium(I)-based molecular actuators with glucose oxidase. The nanomotor generates autonomous motility via asymmetric glucose consumption, enhancing intratumoral delivery. Upon light activation, it simultaneously produces reactive oxygen species for photodynamic therapy and induces membrane permeabilization through photoisomerization. In murine models, this approach achieved superior tumor suppression with robust antitumor immunity, including increased T cells and dendritic cell maturation.\",\n  \"key_findings\": [\n    \"Engineered Re(I)-based molecular actuators enable autonomous nanomotor motility via glucose oxidase-catalyzed glucose consumption\",\n    \"Light-activated dual functionality: ROS generation for photodynamic therapy and membrane permeabilization via E/Z photoisomerization\",\n    \"Re1@N. Ms-mediated treatment induced ferroptosis/pyroptosis and enhanced antitumor immunity in murine tumors\"\n  ],\n  \"scientific_significance\": \"This work pioneers the integration of a metal-complex-based molecular actuator with tumor-microenvironment-adaptive nanomotors, establishing a novel strategy to overcome stromal barriers and enhance combined photodynamic-photomechanical therapy efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of dense tumor stroma limiting nanomedicine efficacy by engineering a Janus nanomotor integrating rhenium(I)-based molecular actuators with glucose oxidase. The nanomotor generates autonomous motility via asymmetric glucose consumption, enhancing intratumoral delivery. Upon light activation, it simultaneously produces reactive oxygen species for photodynamic therapy and induces membrane permeabilization through photoisomerization. In murine models, this approach achieved superior tumor suppression with robust antitumor immunity, including increased T cells and dendritic cell maturation.",
+          "key_findings": [
+            "Engineered Re(I)-based molecular actuators enable autonomous nanomotor motility via glucose oxidase-catalyzed glucose consumption",
+            "Light-activated dual functionality: ROS generation for photodynamic therapy and membrane permeabilization via E/Z photoisomerization",
+            "Re1@N. Ms-mediated treatment induced ferroptosis/pyroptosis and enhanced antitumor immunity in murine tumors"
+          ],
+          "scientific_significance": "This work pioneers the integration of a metal-complex-based molecular actuator with tumor-microenvironment-adaptive nanomotors, establishing a novel strategy to overcome stromal barriers and enhance combined photodynamic-photomechanical therapy efficacy."
+        },
+        "elapsed_seconds": 35.9079,
+        "input_tokens": 777,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 1048,
+        "model_eval_seconds": 26.022,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43048652",
+        "title": "Inflammation Induced Immune Suppression: Implications in Immune Regulation and Tumor Immunity.",
+        "abstract": "NA: The inflammatory process is a fundamentally conserved component of host defense, naturally intended to eliminate pathogens and repair damaged tissue. However, unresolved, persistent inflammation triggers immune regulatory pathways which attempt to maintain homeostasis by suppressing immune cell activities. Hence, the intended protective aspect of inflammatory response is gradually subverted into a state of compromised host immunity. While chronic inflammation directly promotes tumor initiation, progression, metastasis, and therapeutic resistance, the resulting inflammation induced immune suppression further facilitates cancer progression by evading immune surveillance. Tumor cells, surrounding stromal cells, infiltrating immune cells, and metabolic mediators generate continuous inflammatory signals which can activate interconnected signaling pathways involving NF-κB, STAT3, mTOR etc. These pathways promote the recruitment and functional activation of specialized immunosuppressive cell types, including myeloid-derived suppressor cells (MDSCs), tumor-associated macrophages (TAMs), regulatory T cells (Tregs), regulatory B cells (Bregs), and neutrophils. Chronic inflammation also contributes to T cell exhaustion, the upregulation of immune checkpoints, and metabolic competition, all of which hinder effective antitumor immunity. Advanced technological approaches using relevant preclinical models have started to reveal the complex nature of suppressive immune cell populations, their development, and expose previously unrecognized therapeutic targets. Here, the role of different suppressive immune and non-immune cells, pathways, and key mediators that are induced under inflammation and coordinatively generate and maintain an immunosuppressive state in cancer has been extensively discussed. Furthermore, the therapeutic possibilities of targeting these interconnected mechanisms for improving antitumor immunity and its related challenges have been reviewed. This overview of inflammation-driven immune-suppression may be further relevant for the understanding and management of other related immune disorders.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.2147/JIR.S653766",
+        "doi_url": "https://doi.org/10.2147/JIR.S653766",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43048652/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of inflammation research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how persistent inflammation leads to immune suppression, impairing host immunity and promoting cancer progression. It reviews mechanisms where inflammatory signals activate pathways like NF-κB and STAT3, recruiting immunosuppressive cells (MDSCs, TAMs, Tregs, Bregs, neutrophils) and causing T cell exhaustion. The research highlights interconnected pathways that facilitate tumor evasion of immune surveillance and suggests potential therapeutic targets for enhancing antitumor immunity.\",\n  \"key_findings\": [\n    \"Persistent inflammation triggers immune-suppressive pathways via NF-κB and STAT3 signaling\",\n    \"Inflammatory signals recruit and activate immunosuppressive cell types including MDSCs, TAMs, Tregs, Bregs, and neutrophils\",\n    \"Chronic inflammation causes T cell exhaustion and immune checkpoint upregulation, hindering antitumor immunity\"\n  ],\n  \"scientific_significance\": \"This review elucidates the mechanistic links between inflammation-induced immune suppression and cancer progression, providing a foundation for targeting immunosuppressive pathways to improve therapeutic responses in oncology.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how persistent inflammation leads to immune suppression, impairing host immunity and promoting cancer progression. It reviews mechanisms where inflammatory signals activate pathways like NF-κB and STAT3, recruiting immunosuppressive cells (MDSCs, TAMs, Tregs, Bregs, neutrophils) and causing T cell exhaustion. The research highlights interconnected pathways that facilitate tumor evasion of immune surveillance and suggests potential therapeutic targets for enhancing antitumor immunity.",
+          "key_findings": [
+            "Persistent inflammation triggers immune-suppressive pathways via NF-κB and STAT3 signaling",
+            "Inflammatory signals recruit and activate immunosuppressive cell types including MDSCs, TAMs, Tregs, Bregs, and neutrophils",
+            "Chronic inflammation causes T cell exhaustion and immune checkpoint upregulation, hindering antitumor immunity"
+          ],
+          "scientific_significance": "This review elucidates the mechanistic links between inflammation-induced immune suppression and cancer progression, providing a foundation for targeting immunosuppressive pathways to improve therapeutic responses in oncology."
+        },
+        "elapsed_seconds": 32.2206,
+        "input_tokens": 801,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 1026,
+        "model_eval_seconds": 21.4354,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42969304",
+        "title": "Underlying Mechanisms of Helicobacter pylori in Caries Progression and the Corresponding Dual-Responsive Hydrogel-Based Intervention.",
+        "abstract": "NA: Helicobacter pylori (H. pylori) infects nearly half of the global population. Given that H. pylori is considered poorly adapted to the oral environment, previous studies have mainly focused on gastric infection. By contrast, how H. pylori persists in the oral cavity and relates to oral diseases remains unclear. This study investigates the role of H. pylori in caries progression. The results show that H. pylori is retained within Streptococcus mutans (S. mutans) biofilms, and its presence is associated with transcriptional remodeling in S. mutans, alongside increased overall cariogenic potential of the mixed biofilm. In a rat caries model, H. pylori co-colonization aggravates caries progression and oral microbiota dysbiosis. To address this pathological niche, a multifunctional hydrogel, termed GPAM, is designed by integrating a Cu2O@Pt heterojunction (MCP) with amorphous calcium phosphate (ACP). Under activation by yellow light and ultrasound, MCP generates reactive oxygen species (ROS) to disrupt S. mutans-H. pylori mixed biofilms. Meanwhile, released Cu2+ reduces H. pylori urease activity, and ACP promotes tooth remineralization. GPAM also shows microbiota-modulating potential. Together, these findings provide insight into H. pylori-associated caries progression and support GPAM as a multifunctional therapeutic strategy for mixed biofilms and caries-related damage.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75595",
+        "doi_url": "https://doi.org/10.1002/adma.75595",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42969304/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates H. pylori's role in oral caries progression, revealing its retention within S. mutans biofilms and association with transcriptional remodeling that increases cariogenic potential. In vivo rat models showed H. pylori co-colonization exacerbates caries and dysbiosis. The researchers developed GPAM, a hydrogel that uses light and ultrasound to generate ROS, disrupt biofilms, inhibit H. pylori urease via Cu2+, and promote remineralization through ACP. This dual-responsive system offers a targeted therapeutic approach for H. pylori-associated caries.\",\n  \"key_findings\": [\n    \"H. pylori persists within S. mutans biofilms and induces transcriptional remodeling\",\n    \"H. pylori co-colonization accelerates caries progression and oral dysbiosis in rats\",\n    \"GPAM hydrogel disrupts mixed biofilms via ROS generation, inhibits H. pylori urease, and promotes remineralization\"\n  ],\n  \"scientific_significance\": \"The study provides mechanistic insights into H. pylori's oral pathogenesis and demonstrates a dual-responsive hydrogel therapy for targeted disruption of H. pylori-S. mutans biofilms in caries progression.\"\n}",
+        "parsed": {
+          "summary": "This study investigates H. pylori's role in oral caries progression, revealing its retention within S. mutans biofilms and association with transcriptional remodeling that increases cariogenic potential. In vivo rat models showed H. pylori co-colonization exacerbates caries and dysbiosis. The researchers developed GPAM, a hydrogel that uses light and ultrasound to generate ROS, disrupt biofilms, inhibit H. pylori urease via Cu2+, and promote remineralization through ACP. This dual-responsive system offers a targeted therapeutic approach for H. pylori-associated caries.",
+          "key_findings": [
+            "H. pylori persists within S. mutans biofilms and induces transcriptional remodeling",
+            "H. pylori co-colonization accelerates caries progression and oral dysbiosis in rats",
+            "GPAM hydrogel disrupts mixed biofilms via ROS generation, inhibits H. pylori urease, and promotes remineralization"
+          ],
+          "scientific_significance": "The study provides mechanistic insights into H. pylori's oral pathogenesis and demonstrates a dual-responsive hydrogel therapy for targeted disruption of H. pylori-S. mutans biofilms in caries progression."
+        },
+        "elapsed_seconds": 33.8521,
+        "input_tokens": 755,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 1014,
+        "model_eval_seconds": 24.5279,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43048816",
+        "title": "Linked suppression in transplantation: mechanistic boundaries and therapeutic opportunities.",
+        "abstract": "PURPOSE OF REVIEW: Linked suppression is often used to explain how antigen-specific regulatory T cells (Tregs) might control a complex, multivalent alloimmune response. This review separates linked suppression from bystander suppression and infectious tolerance and considers how direct, indirect, and semi-direct allorecognition define the antigen-presenting cell (APC) substrate on which it can occur.\nRECENT FINDINGS: Classic transplantation models showed that regulation directed to one antigen can restrain responses to additional antigens when they are physically linked within a graft or presented by the same APC. The breadth and mechanism may vary with donor-antigen burden and the degree of HLA sharing. Relevant interactions appear concentrated in the graft and draining lymph nodes rather than peripheral blood. CTLA-4-dependent B7 removal, local adenosine generation, and spatial organization within APC-rich niches are plausible mechanisms. Small-animal islet, minor-antigen-mismatch, and TCR-transgenic models provide tools to test these variables. Early clinical studies establish feasibility but do not yet prove linked suppression in humans.\nSUMMARY: Linked suppression is a strong preclinical principle and a useful therapeutic objective, but it is not yet a validated clinical mechanism. Trials should combine product characterization and tracking with linkage-dependent assays, tissue analysis, donor-versus-third-party testing, and protocolized immunosuppression reduction.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1097/MNH.0000000000001244",
+        "doi_url": "https://doi.org/10.1097/MNH.0000000000001244",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43048816/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Current opinion in nephrology and hypertension",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines linked suppression in transplantation, distinguishing it from bystander suppression and infectious tolerance. It investigates how antigen-specific regulatory T cells control multivalent alloimmune responses through direct, indirect, or semi-direct allorecognition. Findings indicate regulation of one antigen restrains other linked antigens in grafts or via shared APCs, with mechanisms involving CTLA-4, adenosine, and spatial organization. Clinical validation remains limited.\",\n  \"key_findings\": [\n    \"Regulation of one antigen restrains responses to physically linked antigens within a graft\",\n    \"Mechanisms include CTLA-:4-dependent B7 removal, adenosine generation, and APC spatial organization\",\n    \"Relevant interactions are concentrated in grafts and draining lymph nodes, not peripheral blood\"\n  ],\n  \"scientific_significance\": \"This study clarifies the mechanistic boundaries of linked suppression, providing a framework for translating preclinical models into clinical strategies for transplantation immunomodulation.\"\n}",
+        "parsed": {
+          "summary": "This review examines linked suppression in transplantation, distinguishing it from bystander suppression and infectious tolerance. It investigates how antigen-specific regulatory T cells control multivalent alloimmune responses through direct, indirect, or semi-direct allorecognition. Findings indicate regulation of one antigen restrains other linked antigens in grafts or via shared APCs, with mechanisms involving CTLA-4, adenosine, and spatial organization. Clinical validation remains limited.",
+          "key_findings": [
+            "Regulation of one antigen restrains responses to physically linked antigens within a graft",
+            "Mechanisms include CTLA-:4-dependent B7 removal, adenosine generation, and APC spatial organization",
+            "Relevant interactions are concentrated in grafts and draining lymph nodes, not peripheral blood"
+          ],
+          "scientific_significance": "This study clarifies the mechanistic boundaries of linked suppression, providing a framework for translating preclinical models into clinical strategies for transplantation immunomodulation."
+        },
+        "elapsed_seconds": 27.2121,
+        "input_tokens": 711,
+        "output_tokens": 205,
+        "thoughts_tokens": null,
+        "total_tokens": 916,
+        "model_eval_seconds": 19.1037,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42969687",
+        "title": "Synchronous and Unidirectional Epitaxy of Layer-Controlled Graphene on Oxidized Single-Crystal Copper Wafers With Tunable Stacking Order.",
+        "abstract": "NA: The deterministic synthesis of wafer-scale two-dimensional (2D) materials with programmable layer number, crystallographic orientation, and stacking order is essential for unlocking their layer-dependent quantum properties and enabling scalable device integration. Here, we demonstrate a synchronous and unidirectional epitaxy strategy for chemical vapor deposition growth of layer-controlled graphene on atomically flat oxidized single-crystal Cu wafers. Using a Cu(111)-Cu2O(111) heterogeneous catalytic substrate, we achieved 2-inch single-crystalline graphene films with precisely tunable layer numbers (2 to 5). By engineering the atomic steps of high-index Cu surfaces, we created deterministic spatial patterning of alternating Bernal and rhombohedral stacking in trilayer graphene, as confirmed by near-field nano-optics and angle-resolved photoemission spectroscopy. The resulting wafer-scale films exhibit exceptional thickness uniformity, high crystallinity, and an ultra-flat surface. This work provides a unified growth framework that concurrently resolves the intertwined challenges of layer control, wafer-scale single crystallinity, and stacking order modulation, laying a material foundation for advanced device studies and potential applications.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75580",
+        "doi_url": "https://doi.org/10.1002/adma.75580",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42969687/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a method for synthesizing wafer-scale graphene with controlled layer numbers, crystallographic orientation, and stacking order using chemical vapor deposition on oxidized single-crystal copper wafers. The approach employs a Cu(111)-Cu2O(using a Cu(111)-Cu2O(111) heterogeneous catalytic substrate to achieve 2-inch single-crystalline graphene films with tunable layer counts (2–5). The technique enables deterministic spatial patterning of alternating Bernal and rhombohedral stacking in trilayer graphene, confirmed by near-field nano-optics and angle-resolved photoemission spectroscopy. The films demonstrate exceptional thickness uniformity, high crystallinity, and ultra-flat surfaces, addressing key challenges in scalable 2D material production.\",\n  \"key_findings\": [\n    \"2-inch single-crystalline graphene films with tunable layer numbers (2–5) grown via chemical vapor deposition on oxidized Cu wafers\",\n    \"Deterministic spatial patterning of alternating Bernal and rhombohedral stacking in trilayer graphene\",\n    \"Exceptional thickness uniformity, high crystallinity, and ultra-flat surfaces in wafer-scale films\"\n  ],\n  \"scientific_significance\": \"This work establishes a unified growth strategy for layer-controlled graphene with programmable stacking order, advancing scalable production of 2D materials for quantum property studies and device applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a method for synthesizing wafer-scale graphene with controlled layer numbers, crystallographic orientation, and stacking order using chemical vapor deposition on oxidized single-crystal copper wafers. The approach employs a Cu(111)-Cu2O(using a Cu(111)-Cu2O(111) heterogeneous catalytic substrate to achieve 2-inch single-crystalline graphene films with tunable layer counts (2–5). The technique enables deterministic spatial patterning of alternating Bernal and rhombohedral stacking in trilayer graphene, confirmed by near-field nano-optics and angle-resolved photoemission spectroscopy. The films demonstrate exceptional thickness uniformity, high crystallinity, and ultra-flat surfaces, addressing key challenges in scalable 2D material production.",
+          "key_findings": [
+            "2-inch single-crystalline graphene films with tunable layer numbers (2–5) grown via chemical vapor deposition on oxidized Cu wafers",
+            "Deterministic spatial patterning of alternating Bernal and rhombohedral stacking in trilayer graphene",
+            "Exceptional thickness uniformity, high crystallinity, and ultra-flat surfaces in wafer-scale films"
+          ],
+          "scientific_significance": "This work establishes a unified growth strategy for layer-controlled graphene with programmable stacking order, advancing scalable production of 2D materials for quantum property studies and device applications."
+        },
+        "elapsed_seconds": 35.9367,
+        "input_tokens": 693,
+        "output_tokens": 300,
+        "thoughts_tokens": null,
+        "total_tokens": 993,
+        "model_eval_seconds": 28.149,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43049279",
+        "title": "The Role of Ginsenoside Rg3 in Cancer Treatment and the Regulation of the Tumor Immune Microenvironment.",
+        "abstract": "NA: The therapeutic paradigm for solid tumors is shifting toward comprehensive interventions targeting the tumor microenvironment (TME). Ginsenoside Rg3, a bioactive monomer derived from Panax ginseng, exhibits potent immunomodulatory potential. However, its clinical application is hindered by poor aqueous solubility, intestinal microbial metabolism, and variable systemic exposure. This review critically evaluates the preclinical and clinical evidence of Rg3 across solid tumors-including lung, breast, and liver cancers, and melanoma-focusing on its multidimensional remodeling of the TME. At the molecular level, Rg3 suppresses oncogenic signaling (STAT3, PI3K, and NF-κB) and downregulates immunosuppressive cytokines (IL-6, IL-10, and TGF-β) and chemokines (CCL3/4/5), while inducing immunogenic cell death (ICD) and upregulating IFN-γ and IL-2. At the cellular level, in selected preclinical models, Rg3 and Rg3-containing formulations altered macrophage polarization and other immune-associated responses and enhanced T-cell responses and NK-cell cytotoxicity. Concurrently, it impedes the recruitment of regulatory T cells (Tregs) and myeloid-derived suppressor cells (MDSCs). Furthermore, Rg3 regulates the HIF-1α/VEGF axis to modulate hypoxia-associated signaling. To overcome its pharmacokinetic limitations, nanocarrier delivery systems are discussed as investigational strategies. Ultimately, Rg3 warrants further investigation as an adjunct to cancer therapy, although its immunotherapeutic value remains to be established.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1155/jimr/6088528",
+        "doi_url": "https://doi.org/10.1155/jimr/6088528",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43049279/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of immunology research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines ginsenoside Rg3's role in solid tumor therapy by analyzing its impact on the tumor immune microenvironment. It evaluates preclinical and clinical evidence for Rg3 across lung, breast, liver cancers, and melanoma. The compound suppresses oncogenic pathways (STAT3, PI3K, NF-κB), reduces immunosuppressive cytokines, induces immunogenic cell death, and modulates immune cell functions including macrophage polarization, T-cell responses, NK-cell cytotoxicity, and Treg/MDSC suppression. Rg3 also regulates hypoxia signaling via HIF-1α/VEGF. Nanocarrier delivery systems are proposed to address pharmacokinetic challenges, though its immunotherapeutic efficacy requires further validation.\",\n  \"key_findings\": [\n    \"Rg3 suppresses oncogenic signaling pathways (STAT3, PI3K, NF-κB) in solid tumors\",\n    \"Rg3 reduces immunosuppressive cytokines (IL-6, IL-10, TGF-β) and chemokines while inducing immunogenic cell death\",\n    \"Rg3 modulates immune cell functions including macrophage polarization, T-cell responses, NK-cell cytotoxicity, and Treg/MDSC suppression\"\n  ],\n  \"scientific_significance\": \"This study provides mechanistic insights into ginsenoside Rg3's multifaceted modulation of the tumor immune microenvironment, highlighting potential strategies for enhancing cancer immunotherapy through targeted molecular and cellular interventions.\"\n}",
+        "parsed": {
+          "summary": "This review examines ginsenoside Rg3's role in solid tumor therapy by analyzing its impact on the tumor immune microenvironment. It evaluates preclinical and clinical evidence for Rg3 across lung, breast, liver cancers, and melanoma. The compound suppresses oncogenic pathways (STAT3, PI3K, NF-κB), reduces immunosuppressive cytokines, induces immunogenic cell death, and modulates immune cell functions including macrophage polarization, T-cell responses, NK-cell cytotoxicity, and Treg/MDSC suppression. Rg3 also regulates hypoxia signaling via HIF-1α/VEGF. Nanocarrier delivery systems are proposed to address pharmacokinetic challenges, though its immunotherapeutic efficacy requires further validation.",
+          "key_findings": [
+            "Rg3 suppresses oncogenic signaling pathways (STAT3, PI3K, NF-κB) in solid tumors",
+            "Rg3 reduces immunosuppressive cytokines (IL-6, IL-10, TGF-β) and chemokines while inducing immunogenic cell death",
+            "Rg3 modulates immune cell functions including macrophage polarization, T-cell responses, NK-cell cytotoxicity, and Treg/MDSC suppression"
+          ],
+          "scientific_significance": "This study provides mechanistic insights into ginsenoside Rg3's multifaceted modulation of the tumor immune microenvironment, highlighting potential strategies for enhancing cancer immunotherapy through targeted molecular and cellular interventions."
+        },
+        "elapsed_seconds": 42.3136,
+        "input_tokens": 795,
+        "output_tokens": 323,
+        "thoughts_tokens": null,
+        "total_tokens": 1118,
+        "model_eval_seconds": 31.6545,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42969755",
+        "title": "Dead Cell-Based Carriers: Strategies, Biomedical Applications, and Prospects.",
+        "abstract": "NA: Living cells have been explored for drug delivery due to their active motility and homing ability; however, their potential toxicity, uncontrolled proliferation, and poor stability severely hinder their practical application and clinical translation. In recent years, dead cells have emerged as promising delivery vehicles due to their enhanced safety, improved stability, and retention of key bioactive molecules. In this review, we summarize the fabrication strategies and delivery characteristics of four types of dead carriers including microalgae, yeasts, bacteria, and mammalian cells in treating diseases such as bacterial pneumonia, inflammatory bowel disease, and cancer. We also discuss the therapeutic mechanisms of endogenous bioactive components, platform-specific limitations, and the advantages/disadvantages of dead cell-based carriers. Finally, we formulate general design principles for dead cell carriers and provide a forward-looking perspective on key translational bottlenecks, including safety assessment, standardized manufacturing, and regulatory pathways, with the aim of guiding the development of safe and effective dead cell-based delivery systems.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75450",
+        "doi_url": "https://doi.org/10.1002/adma.75450",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42969755/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines dead cell-based carriers as safer alternatives to living cells for biomedical applications. It evaluates fabrication strategies and delivery characteristics of microalgae, yeasts, bacteria, and mammalian cells for treating bacterial pneumonia, inflammatory bowel disease, and cancer. The study highlights enhanced safety, stability, and retention of bioactive molecules while addressing platform-specific limitations and translational challenges like standardized manufacturing and regulatory pathways.\",\n  \"key_findings\": [\n    \"Dead cell carriers offer improved safety and stability compared to living cells\",\n    \"Four carrier types (microalgae, ye:sts, bacteria, mammalian cells) show therapeutic potential for specific diseases\",\n    \"Key translational challenges include standardized manufacturing and regulatory pathways\"\n  ],\n  \"scientific_significance\": \"This review establishes dead cell carriers as viable, safer delivery platforms with enhanced stability and retained bioactive molecules, advancing the field of biocompatible drug delivery systems.\"\n}",
+        "parsed": {
+          "summary": "This review examines dead cell-based carriers as safer alternatives to living cells for biomedical applications. It evaluates fabrication strategies and delivery characteristics of microalgae, yeasts, bacteria, and mammalian cells for treating bacterial pneumonia, inflammatory bowel disease, and cancer. The study highlights enhanced safety, stability, and retention of bioactive molecules while addressing platform-specific limitations and translational challenges like standardized manufacturing and regulatory pathways.",
+          "key_findings": [
+            "Dead cell carriers offer improved safety and stability compared to living cells",
+            "Four carrier types (microalgae, ye:sts, bacteria, mammalian cells) show therapeutic potential for specific diseases",
+            "Key translational challenges include standardized manufacturing and regulatory pathways"
+          ],
+          "scientific_significance": "This review establishes dead cell carriers as viable, safer delivery platforms with enhanced stability and retained bioactive molecules, advancing the field of biocompatible drug delivery systems."
+        },
+        "elapsed_seconds": 23.3275,
+        "input_tokens": 636,
+        "output_tokens": 191,
+        "thoughts_tokens": null,
+        "total_tokens": 827,
+        "model_eval_seconds": 17.1064,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43049677",
+        "title": "Interleukin-6 and the maternal-placental immune axis in preeclampsia: from implantation to postpartum cardiovascular disease.",
+        "abstract": "INTRODUCTION: Preeclampsia is a leading cause of maternal and perinatal morbidity and is increasingly understood as a disorder of maternal-fetal immune maladaptation, in which interleukin-6 (IL-6) occupies a central position. IL-6 is usually examined at a single disease stage, which obscures its role as a continuous mediator.\nCONTENT: This narrative review traces IL-6 across the preeclampsia continuum: signalling biology; the decidual immune niche; the regulatory T-cell/T-helper-17 and signal transducer and activator of transcription 3 axes; defective placentation; antiangiogenic endothelial injury; the clinical phenotype; postpartum inflammation; and remote cardiovascular disease. Evidence is labelled by provenance, the roles of IL-6 as biomarker, mediator and therapeutic target are distinguished, and aspirin, heparin and IL-6-directed therapies are appraised.\nSUMMARY: IL-6 links immune-tolerance failure to angiogenic imbalance and endothelial dysfunction, and altered inflammatory profiles persist years after delivery. Causal evidence, however, rests largely on animal and in vitro work; human data are associative and confounded by shared cardiometabolic risk; and the first large trial of IL-6 ligand inhibition lowered inflammation without reducing cardiovascular events.\nOUTLOOK: Longitudinal, signalling-specific measurement, explicit separation of marker from mediator and target, and safety-led evaluation in pregnancy are required before this axis can inform prevention or postpartum cardiovascular risk stratification.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1515/jpm-2026-0497",
+        "doi_url": "https://doi.org/10.1515/jpm-2026-0497",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43049677/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of perinatal medicine",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This narrative review examines interleukin-6's role across the preeclampsia spectrum from implantation to postpartum cardiovascular disease. It analyzes IL-6's involvement in maternal-fetal immune maladaptation, decidual immune dynamics, regulatory T-cell/T-helper-17 interactions, defective placentation, and endothelial injury. The study highlights IL-6 as a biomarker, mediator, and potential therapeutic target, noting human data remain associative with confounding cardiometabolic risks, while clinical trials show IL-6 inhibition reduces inflammation without improving cardiovascular outcomes.\",\n  \"key_findings\": [\n    \"IL-6 serves as a biomarker, mediator, and potential therapeutic target in preeclampsia\",\n    \"Human data on IL-6 are associative and confounded by shared cardiometabolic risk factors\",\n    \"IL-6 ligand inhibition reduces inflammation but does not decrease cardiovascular events in clinical trials\"\n  ],\n  \"scientific_significance\": \"This review clarifies IL-6's multifaceted role in preeclampsia pathogenesis and its persistent impact on postpartum cardiovascular health, emphasizing the need for targeted measurement and intervention strategies beyond current associative biomarker approaches.\"\n}",
+        "parsed": {
+          "summary": "This narrative review examines interleukin-6's role across the preeclampsia spectrum from implantation to postpartum cardiovascular disease. It analyzes IL-6's involvement in maternal-fetal immune maladaptation, decidual immune dynamics, regulatory T-cell/T-helper-17 interactions, defective placentation, and endothelial injury. The study highlights IL-6 as a biomarker, mediator, and potential therapeutic target, noting human data remain associative with confounding cardiometabolic risks, while clinical trials show IL-6 inhibition reduces inflammation without improving cardiovascular outcomes.",
+          "key_findings": [
+            "IL-6 serves as a biomarker, mediator, and potential therapeutic target in preeclampsia",
+            "Human data on IL-6 are associative and confounded by shared cardiometabolic risk factors",
+            "IL-6 ligand inhibition reduces inflammation but does not decrease cardiovascular events in clinical trials"
+          ],
+          "scientific_significance": "This review clarifies IL-6's multifaceted role in preeclampsia pathogenesis and its persistent impact on postpartum cardiovascular health, emphasizing the need for targeted measurement and intervention strategies beyond current associative biomarker approaches."
+        },
+        "elapsed_seconds": 33.7033,
+        "input_tokens": 768,
+        "output_tokens": 252,
+        "thoughts_tokens": null,
+        "total_tokens": 1020,
+        "model_eval_seconds": 24.0043,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42972981",
+        "title": "Suprasilica Nanosieves for Selective Capture of Aromatics Over Cyclic Aliphatics in Hydrocarbon Feedstocks.",
+        "abstract": "NA: Separating aromatic from cyclic aliphatic hydrocarbons remains a major challenge, as conventional distillation is both energy-intensive and poorly selective. Here, we report supramolecular silica nanosieves (suprasilica) that integrate organic molecular recognition sites directly into robust inorganic matrices. A hexasila-ureido-trianglamine (Δ-Si6) is co-condensed within the silica matrix through a self-assembly sol-gel approach at controlled loadings to produce suprasilica sieves (Δ-SiNx). In vapor sorption, Δ-SiNx reject cyclic aliphatic hydrocarbons while displaying high aromatic uptake, achieving benchmark ideal selectivity for benzene over cyclohexane (23.5, uptake 9.4 mmol g- 1) on Δ-SiN20 and for toluene over methylcyclohexane (6.3, uptake 6.3 mmol g- 1) on Δ-SiN10. The selectivity was further confirmed by Dynamic Column Breakthrough experiments, which demonstrated efficient separation under dynamic conditions. Importantly, the Δ-SiNx retain their molecular discrimination in the binary liquid phase, showing strong preferential uptake while preserving aromatic selectivity in neat naphtha and in diluted crude oil. Metadynamics simulations indicate that the selectivity is kinetic in origin, benzene passing the macrocyclic apertures with a modest barrier while cyclohexane is excluded. These suprasilica nanosieves deliver benchmark separation performance and provide a scalable, energy-efficient strategy for hydrocarbon purification.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75570",
+        "doi_url": "https://doi.org/10.1002/adma.75570",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42972981/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates supramolecular silica nanosieves (suprasilica) for selectively separating aromatic hydrocarbons from cyclic aliphatics in hydrocarbon feedstocks. Using a self-assembly sol-gel approach, researchers integrated hexasila-ureido-trianglamine (Δ-Si6) into silica matrices to create Δ-SiNx sieves. The nanosieves demonstrated high selectivity for benzene over cyclohexane (23.5) and toluene over methylcyclohexane (6.3) in vapor sorption and dynamic column tests, retaining performance in liquid phases like naphtha and crude oil. Metadynamics simulations suggest kinetic selectivity mechanisms.\",\n  \"key_findings\": [\n    \"Suprasilica nanosieves achieve high selectivity for aromatics over cyclic aliphatics in hydrocarbon feedstocks\",\n    \"Δ-SiNx sieves maintain selective separation performance in vapor, dynamic column, and liquid phases including crude oil\",\n    \"Metadynamics simulations indicate kinetic selectivity mechanisms where aromatic hydrocarbons pass through macrocyclic apertures with lower barriers\"\n  ],\n  \"scientific_significance\": \"These suprasilica nanosieves provide a scalable, energy-efficient separation strategy for hydrocarbon purification with benchmark selectivity, advancing molecularly selective hydrocarbon separation technologies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates supramolecular silica nanosieves (suprasilica) for selectively separating aromatic hydrocarbons from cyclic aliphatics in hydrocarbon feedstocks. Using a self-assembly sol-gel approach, researchers integrated hexasila-ureido-trianglamine (Δ-Si6) into silica matrices to create Δ-SiNx sieves. The nanosieves demonstrated high selectivity for benzene over cyclohexane (23.5) and toluene over methylcyclohexane (6.3) in vapor sorption and dynamic column tests, retaining performance in liquid phases like naphtha and crude oil. Metadynamics simulations suggest kinetic selectivity mechanisms.",
+          "key_findings": [
+            "Suprasilica nanosieves achieve high selectivity for aromatics over cyclic aliphatics in hydrocarbon feedstocks",
+            "Δ-SiNx sieves maintain selective separation performance in vapor, dynamic column, and liquid phases including crude oil",
+            "Metadynamics simulations indicate kinetic selectivity mechanisms where aromatic hydrocarbons pass through macrocyclic apertures with lower barriers"
+          ],
+          "scientific_significance": "These suprasilica nanosieves provide a scalable, energy-efficient separation strategy for hydrocarbon purification with benchmark selectivity, advancing molecularly selective hydrocarbon separation technologies."
+        },
+        "elapsed_seconds": 37.2349,
+        "input_tokens": 779,
+        "output_tokens": 282,
+        "thoughts_tokens": null,
+        "total_tokens": 1061,
+        "model_eval_seconds": 27.2432,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43049748",
+        "title": "Montelukast attenuates experimental food allergy and reduces colonic eosinophilic inflammation.",
+        "abstract": "BACKGROUND: Montelukast, a cysteinyl leukotriene receptor antagonist, may modulate eosinophilic inflammation and immune regulation in food allergy, but its effects in intestinal allergic inflammation remain unclear.\nMETHODS: The effects of pre-challenge montelukast administration were evaluated in an ovalbumin-induced mouse model of food allergy. Mice were assigned to Control, montelukast-treated, ovalbumin-sensitized, and montelukast-treated ovalbumin-sensitized groups. Allergic responses, serum ovalbumin-specific immunoglobulin E, colonic eosinophil infiltration, Foxp3 expression, and epithelial adhesion proteins were assessed.\nRESULTS: Time-point specific comparisons showed lower anaphylaxis scores and a smaller reduction in rectal temperature in the ML+OVA group than in the OVA group at selected post challenge time points. Montelukast also reduced colonic eosinophilic infiltration in ovalbumin-sensitized mice. Colonic Foxp3 protein expression was increased, whereas Foxp3 immunohistochemical staining showed no statistically significant difference between the ovalbumin and montelukast-treated ovalbumin groups. Montelukast did not restore the ovalbumin-associated reduction in E-cadherin expression, although N-cadherin expression tended to be lower after treatment. In exploratory correlation analyses of data pooled across all experimental groups, eosinophil infiltration and E-cadherin expression showed opposing associations with allergic symptom severity.\nCONCLUSION: Pre-challenge montelukast administration attenuated experimental food-allergic responses, primarily in association with reduced colonic eosinophilic inflammation. Although colonic Foxp3 protein expression increased, Foxp3 immunohistochemical staining did not differ significantly between the OVA and ML+OVA groups; therefore, these findings do not establish a change in Treg abundance or function.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1159/iaa/adfag040",
+        "doi_url": "https://doi.org/10.1159/iaa/adfag040",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43049748/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "International archives of allergy and immunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated montelukast's impact on experimental food allergy in mice. Using an ovalbumin-induced model, researchers assessed allergic responses, serum IgE, colonic eosinophils, Foxp3 expression, and epithelial adhesion proteins. Results showed reduced anaphylaxis scores and colonic eosinophil infiltration with montelukast, while Foxp3 protein levels increased without significant changes in Treg function or E-cadherin expression. The findings suggest montelukast attenuates intestinal allergic inflammation through eosinophil modulation.\",\n  \"key_findings\": [\n    \"Montelukast reduced colonic eosinophilic infiltration in ovalbumin-sensitized mice\",\n    \"Montelukast increased colonic Foxp3 protein expression without significant changes in Treg function\",\n    \"Eosinophil infiltration and E-cadherin expression showed opposing associations with allergic symptom severity\"\n  ],\n  \"scientific_significance\": \"This study provides evidence that montelukast can mitigate intestinal allergic inflammation in experimental food allergy models by targeting eosinophilic responses, offering insights into potential therapeutic mechanisms for food allergy-related conditions.\"\n}",
+        "parsed": {
+          "summary": "This study investigated montelukast's impact on experimental food allergy in mice. Using an ovalbumin-induced model, researchers assessed allergic responses, serum IgE, colonic eosinophils, Foxp3 expression, and epithelial adhesion proteins. Results showed reduced anaphylaxis scores and colonic eosinophil infiltration with montelukast, while Foxp3 protein levels increased without significant changes in Treg function or E-cadherin expression. The findings suggest montelukast attenuates intestinal allergic inflammation through eosinophil modulation.",
+          "key_findings": [
+            "Montelukast reduced colonic eosinophilic infiltration in ovalbumin-sensitized mice",
+            "Montelukast increased colonic Foxp3 protein expression without significant changes in Treg function",
+            "Eosinophil infiltration and E-cadherin expression showed opposing associations with allergic symptom severity"
+          ],
+          "scientific_significance": "This study provides evidence that montelukast can mitigate intestinal allergic inflammation in experimental food allergy models by targeting eosinophilic responses, offering insights into potential therapeutic mechanisms for food allergy-related conditions."
+        },
+        "elapsed_seconds": 35.26,
+        "input_tokens": 834,
+        "output_tokens": 243,
+        "thoughts_tokens": null,
+        "total_tokens": 1077,
+        "model_eval_seconds": 23.6188,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42972985",
+        "title": "Anchored Fluoro-Shielded Solvation for Lithium Metal Batteries.",
+        "abstract": "NA: Polyvinylidene fluoride (PVDF)-based polymer electrolytes are promising candidates for solid-state lithium metal batteries owing to their favorable overall electrochemical properties. However, conventional PVDF-based polymer electrolytes suffer from uneven solvation distribution, discontinuous ion-transport pathways, and unstable electrode/electrolyte interfaces caused by residual solvents and porous PVDF frameworks. Herein, we report an anchored fluoro-shielded solvation strategy to construct a high-performance PVDF-based polymer electrolyte. By integrating polyanionic anchoring sites with fluorinated shielding segments, the optimized electrolyte enables spatially distributed anion-rich solvation pathways, homogeneous Li+ transport, and robust LiF-rich solid electrolyte interphase (SEI). The polymer electrolyte delivers a high ionic conductivity of 1.26×10-3 S cm-1, a Li+ transference number of 0.69, an oxidative onset potential of 5.27 V, and a critical current density of 6.4 mA cm-2. Spectroscopic and interfacial analyses reveal that the anchored fluoro-shielded solvation structure promotes LiF-rich SEI formation and suppresses solvent decomposition. Consequently, Li||LiNi0.8Co0.1Mn0.1O2 batteries retain 80.2% capacity after 2000 cycles under high-voltage and high-rate conditions of 4.5 V and 5 C. This work highlights anchored fluoro-shielded solvation as an effective molecular design principle for advanced polymer electrolytes toward practical high-voltage and high-rate solid-state Li metal batteries.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75606",
+        "doi_url": "https://doi.org/10.1002/adma.75606",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42972985/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses uneven solvation and unstable interfaces in PVDF-based polymer electrolytes for solid-state lithium metal batteries. The researchers developed an anchored fluoro-shielded solvation strategy using polyanionic anchoring sites and fluorinated segments. This approach created homogeneous Li+ transport, robust LiF-rich SEI, and high performance: 1.26×10-3 S cm-1 conductivity, 0.69 Li+ transference number, 5.27 V oxidative stability, and 80.2% capacity retention after 2000 cycles in Li||LiNi0.8Co0.1Mn0.1O2 batteries at 4.5 V/5 C.\",\n  \"key_findings\": [\n    \"Homogeneous Li+ transport enabled by spatially distributed anion-rich solvation pathways\",\n    \"Robust LiF-rich solid electrolyte interphase formation\",\n    \"High ionic conductivity (1.26×10-3 S cm-1) and 80.2% capacity retention after 2000 cycles\"\n  ],\n  \"scientific_significance\": \"This molecular design strategy provides a pathway to enhance solvation stability and interfacial robustness in polymer electrolytes for high-voltage, high-rate solid-state lithium metal batteries.\"\n}",
+        "parsed": {
+          "summary": "This study addresses uneven solvation and unstable interfaces in PVDF-based polymer electrolytes for solid-state lithium metal batteries. The researchers developed an anchored fluoro-shielded solvation strategy using polyanionic anchoring sites and fluorinated segments. This approach created homogeneous Li+ transport, robust LiF-rich SEI, and high performance: 1.26×10-3 S cm-1 conductivity, 0.69 Li+ transference number, 5.27 V oxidative stability, and 80.2% capacity retention after 2000 cycles in Li||LiNi0.8Co0.1Mn0.1O2 batteries at 4.5 V/5 C.",
+          "key_findings": [
+            "Homogeneous Li+ transport enabled by spatially distributed anion-rich solvation pathways",
+            "Robust LiF-rich solid electrolyte interphase formation",
+            "High ionic conductivity (1.26×10-3 S cm-1) and 80.2% capacity retention after 2000 cycles"
+          ],
+          "scientific_significance": "This molecular design strategy provides a pathway to enhance solvation stability and interfacial robustness in polymer electrolytes for high-voltage, high-rate solid-state lithium metal batteries."
+        },
+        "elapsed_seconds": 36.9771,
+        "input_tokens": 780,
+        "output_tokens": 279,
+        "thoughts_tokens": null,
+        "total_tokens": 1059,
+        "model_eval_seconds": 26.931,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43050875",
+        "title": "PIKFYVE inhibition alters lysosomal, mitochondrial and redox homeostasis and promotes Foxp3+ cell generation under Th17-polarizing conditions.",
+        "abstract": "NA: PIKFYVE, a lipid kinase that generates the endolysosomal phosphoinositide PI(3,5)P2, has emerged as a regulator of Th17 lineage commitment, but how lysosomal phosphoinositide signaling relates to mitochondrial redox homeostasis and T cell epigenetic programming is unknown. Using quantitative proteomics and pharmacological PIKFYVE inhibition with apilimod in Th17-polarized CD4+ T cells, we found that PIKFYVE inhibition reduced IL-17+ cells and increased Foxp3+ cell generation, accompanied by changes in lysosomal, mitochondrial, and redox homeostasis. Proteomics showed higher levels of endolysosomal trafficking, lysosomal acidification, and autophagy proteins and lower levels of glycolytic enzymes. PIKFYVE inhibition lowered the mitochondrial fusion proteins OPA1 and MFN2 and raised respiratory-chain protein content, oxygen consumption, mitochondrial membrane potential, and mitochondrial reactive oxygen species (ROS), whereas intracellular ATP was lower. Lysosomal enlargement, higher LC3-II and p62, and lower PINK1 and Parkin suggest impaired organelle turnover that may contribute to the retention of hyperpolarized mitochondria. Higher ROS coincided with lower ATP citrate lyase (ACLY) abundance, less non-oxidized ACLY and STAT3, lower expression of Th17-associated genes, and reduced H3K27 acetylation, which N-acetylcysteine (NAC) partially restored. NAC strongly reduced Foxp3+ cell generation, including the increase induced by PIKFYVE inhibition. Similar mitochondrial, lysosomal, and redox changes were detected in CD4+ T cells from mice with experimental autoimmune encephalomyelitis (EAE), supporting their in vivo relevance. These findings associate PIKFYVE inhibition with altered lysosomal, mitochondrial, and redox homeostasis and a shift from Th17 toward regulatory T (Treg) cells.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.redox.2026.104489",
+        "doi_url": "https://doi.org/10.1016/j.redox.2026.104489",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43050875/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Redox biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how PIKFYVE inhibition affects lysosomal, mitochondrial, and redox homeostasis in Th17-polarized CD4+ T cells. Using proteomics and apilimod, it found reduced IL-17+ cells and increased Foxp3+ regulatory T cells. Key changes include enhanced lysosomal trafficking, mitochondrial hyperpolarization with elevated ROS, and decreased ATP. These alterations correlate with reduced Th17 differentiation and increased Treg generation, with NAC partially rescuing Foxp3+ cell production.\",\n  \"key_findings\": [\n    \"PIKFYVE inhibition reduced IL-17+ cells and increased Foxp3+ regulatory T cell generation\",\n    \"Enhanced lysosomal acidification and autophagy markers accompanied by mitochondrial hyperpolarization and elevated ROS\",\n    \"N-acetylcysteine partially restored Foxp3+ cell production, indicating redox sensitivity in the regulatory shift\"\n  ],\n  \"scientific_significance\": \"This work links lysosomal phosphoinositide signaling to mitochondrial redox dynamics in T cell differentiation, providing mechanistic insights into how PIKFYVE modulation can shift Th17 responses toward regulatory T cells.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how PIKFYVE inhibition affects lysosomal, mitochondrial, and redox homeostasis in Th17-polarized CD4+ T cells. Using proteomics and apilimod, it found reduced IL-17+ cells and increased Foxp3+ regulatory T cells. Key changes include enhanced lysosomal trafficking, mitochondrial hyperpolarization with elevated ROS, and decreased ATP. These alterations correlate with reduced Th17 differentiation and increased Treg generation, with NAC partially rescuing Foxp3+ cell production.",
+          "key_findings": [
+            "PIKFYVE inhibition reduced IL-17+ cells and increased Foxp3+ regulatory T cell generation",
+            "Enhanced lysosomal acidification and autophagy markers accompanied by mitochondrial hyperpolarization and elevated ROS",
+            "N-acetylcysteine partially restored Foxp3+ cell production, indicating redox sensitivity in the regulatory shift"
+          ],
+          "scientific_significance": "This work links lysosomal phosphoinositide signaling to mitochondrial redox dynamics in T cell differentiation, providing mechanistic insights into how PIKFYVE modulation can shift Th17 responses toward regulatory T cells."
+        },
+        "elapsed_seconds": 37.6845,
+        "input_tokens": 872,
+        "output_tokens": 253,
+        "thoughts_tokens": null,
+        "total_tokens": 1125,
+        "model_eval_seconds": 25.0598,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42973063",
+        "title": "Sub-10 nm Confined Channels in Edge-Closed MXene Nanoribbons Boost Proton Transport for Efficient Single-Atom Electrocatalysts.",
+        "abstract": "NA: Nanoribbons from atomic layers such as graphene, carbides, and nitrides (MXenes) have attracted considerable interest owing to their distinct quantum confinement effects and high surface activity. However, the controlled synthesis of MXene nanoribbons remains challenging due to their random fragmentation and poor stability. Here, an efficient stiffness-mediated strategy is developed to fabricate unique edge-closed MXene nanoribbons, featuring a large aspect ratio of 10∼40 and confined channels of sub-10 nm at both edges. The key protocol involves modulating the critical collapse pressure by reducing the bending stiffness of MXene layers, thereby triggering the tube collapse of pre-formed nanoscrolls into edge-closed nanoribbons upon solvent evaporation. The resulting nanoribbons exhibit an enhanced polarization electric field, leading to a higher surface proton concentration and enhanced proton transport rate compared to nanoscrolls and nanosheets. As a result, these MXene nanoribbons provide an efficient platform for anchoring single-atom Pt, achieving a low overpotential of 23 mV at 10 mA cm-2 and a Tafel slope of 25 mV dec-1 in the hydrogen evolution reaction (HER), outperforming the most reported electrocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75625",
+        "doi_url": "https://doi.org/10.1002/adma.75625",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973063/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing proton transport in MXene nanoribbons for efficient single-atom electrocatalysts. Researchers developed edge-closed nanoribbons with sub-10 nm confined channels using a stiffness-mediated strategy that modulates critical collapse pressure. The nanorusing exhibited higher proton transport rates and surface proton concentration compared to nanoscrolls and nanosheets, enabling low overpotential (23 mV) and a Tafel slope of 25 mV dec-1 for hydrogen evolution reactions with single-atom Pt catalysts.\",\n  \"key_findings\": [\n    \"Edge-closed MXene nanoribbons with sub-10 nm confined channels were synthesized via stiffness-mediated tube collapse\",\n    \"Enhanced proton transport rates and surface proton concentration relative to nanoscrolls and nanosheets\",\n    \"Single-atom Pt catalysts achieved low overpotential (23 mV) and Tafel slope of 25 mV dec-1 in hydrogen evolution reactions\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that engineered sub-10 nm confined channels in edge-closed MXene nanoribbons significantly improve proton transport for single-atom electrocatalysis, advancing the design of high-performance hydrogen evolution reaction catalysts.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing proton transport in MXene nanoribbons for efficient single-atom electrocatalysts. Researchers developed edge-closed nanoribbons with sub-10 nm confined channels using a stiffness-mediated strategy that modulates critical collapse pressure. The nanorusing exhibited higher proton transport rates and surface proton concentration compared to nanoscrolls and nanosheets, enabling low overpotential (23 mV) and a Tafel slope of 25 mV dec-1 for hydrogen evolution reactions with single-atom Pt catalysts.",
+          "key_findings": [
+            "Edge-closed MXene nanoribbons with sub-10 nm confined channels were synthesized via stiffness-mediated tube collapse",
+            "Enhanced proton transport rates and surface proton concentration relative to nanoscrolls and nanosheets",
+            "Single-atom Pt catalysts achieved low overpotential (23 mV) and Tafel slope of 25 mV dec-1 in hydrogen evolution reactions"
+          ],
+          "scientific_significance": "This work demonstrates that engineered sub-10 nm confined channels in edge-closed MXene nanoribbons significantly improve proton transport for single-atom electrocatalysis, advancing the design of high-performance hydrogen evolution reaction catalysts."
+        },
+        "elapsed_seconds": 33.8931,
+        "input_tokens": 722,
+        "output_tokens": 270,
+        "thoughts_tokens": null,
+        "total_tokens": 992,
+        "model_eval_seconds": 25.4155,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
