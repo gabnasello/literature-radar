@@ -1,0 +1,953 @@
+{
+  "schema_version": 1,
+  "run_id": "20261124T034107Z",
+  "generated_at_utc": "2026-11-24 04:02:34 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 171,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42963330",
+        "title": "Maleimide-Functionalized Conjugated Polymers Enable Covalent Biotic-Abiotic Integration to Boost Microbial Electrosynthesis.",
+        "abstract": "NA: Integrating advanced conductive materials into microbial electrosynthesis systems is a powerful paradigm for merging abiotic performance with biotic specificity, facilitating sustainable transformation of organic waste and carbon dioxide into value-added chemicals. The regulation of biotic-abiotic hybrid interfaces in biohybrids is crucial for improving surface microbial abundance, enhancing electron injection, and increasing electrosynthesis production. Herein, maleimide-functionalized conjugated polymers (p(mNDI-gT2)) were employed to construct robust, covalent bio-interfaces via in situ click reactions with cytochrome thiol groups of Shewanella oneidensis, resulting in a doubling of bacterial adhesion. Moreover, intimate contact and binding interactions drastically reduce interfacial resistance and boost electron injection. As a direct consequence of this optimized architecture, the system achieved a 23-fold increase in electron transfer and a 6-fold improvement in electrochemical reduction relative to bare S. oneidensis. Furthermore, it obviously outperformed the non-covalent group, yielding a 2-fold enhancement in total charge output and a 2-fold increase in succinate yield. Molecular docking simulations and proteomic analysis collectively reveal that p(mNDI-gT2) not only facilitates efficient charge transfer but also predominantly upregulates the expression of key respiratory and bio-interface protein complexes. Fundamentally, this covalent biotic-abiotic interface transcends traditional bulk-adsorption methods, shifting the paradigm from simple microbial coating to molecular-level interface engineering.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75571",
+        "doi_url": "https://doi.org/10.1002/adma.75571",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42963330/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates covalent integration of maleimide-functionalized conjugated polymers with Shewanella oneidensis to enhance microbial electrosynthesis. The approach utilized in situ click reactions with cytochrome thiols to create stable bio-interfaces. Results showed doubled bacterial adhesion, 23-fold increased electron transfer, and 6-fold higher electrochemical reduction compared to unmodified bacteria. The covalent strategy significantly improved charge output and succinate yield while upregulating respiratory proteins.\",\n  \"key_findings\": [\n    \"Covalent maleimide-functionalized conjugated polymers doubled bacterial adhesion via in situ click reactions with cytochrome thiols\",\n    \"23-fold increase in electron transfer and 6-fold improvement in electrochemical reduction relative to bare S. oneidensis\",\n    \"2-fold enhancement in total charge output and succinate yield with upregulation of respiratory protein complexes\"\n  ],\n  \"scientific_significance\": \"This covalent biotic-abiotic interface engineering strategy establishes a molecular-level approach for optimizing microbial electrosynthesis, advancing sustainable carbon conversion through enhanced electron transfer mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigates covalent integration of maleimide-functionalized conjugated polymers with Shewanella oneidensis to enhance microbial electrosynthesis. The approach utilized in situ click reactions with cytochrome thiols to create stable bio-interfaces. Results showed doubled bacterial adhesion, 23-fold increased electron transfer, and 6-fold higher electrochemical reduction compared to unmodified bacteria. The covalent strategy significantly improved charge output and succinate yield while upregulating respiratory proteins.",
+          "key_findings": [
+            "Covalent maleimide-functionalized conjugated polymers doubled bacterial adhesion via in situ click reactions with cytochrome thiols",
+            "23-fold increase in electron transfer and 6-fold improvement in electrochemical reduction relative to bare S. oneidensis",
+            "2-fold enhancement in total charge output and succinate yield with upregulation of respiratory protein complexes"
+          ],
+          "scientific_significance": "This covalent biotic-abiotic interface engineering strategy establishes a molecular-level approach for optimizing microbial electrosynthesis, advancing sustainable carbon conversion through enhanced electron transfer mechanisms."
+        },
+        "elapsed_seconds": 66.9213,
+        "input_tokens": 754,
+        "output_tokens": 236,
+        "thoughts_tokens": null,
+        "total_tokens": 990,
+        "model_eval_seconds": 32.158,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43044855",
+        "title": "Immune Mechanisms of Oral Tolerance in the Prevention of IgE-Mediated Food Allergy.",
+        "abstract": "NA: IgE-mediated food allergy develops when the immune response to dietary antigens is diverted from active tolerance towards a pathogenic type 2 immune response. Oral tolerance is the default, antigen-specific suppression of immune responses to ingested proteins. Early introduction trials, most notably the LEAP study, have demonstrated that oral exposure to food antigens during the first year of life can prevent food allergy and generate durable tolerance. Mechanistic advances have revealed that oral tolerance is governed by the coordinated activity of multiple overlapping immune layers. These include transcellular antigen transport through goblet cell-associated antigen passages (GAPs), tolerogenic antigen presentation by specialized RORγt+ antigen presenting cells (APCs) and classical dendritic cells (cDCs), induction and maintenance of heterogeneous regulatory T cell programs, and germinal center regulation of IgE and IgG responses. These cellular programs are further modulated by genetic determinants including HLA class II alleles, filaggrin variants, and microbial metabolites such as butyrate and indole derivatives and non-allergic dietary components. Infections can break tolerance by displacing or reprogramming tolerogenic APCs. Once food allergy has been established, regulatory pathways generated by oral allergen exposure are not sufficient to establish tolerance. These findings support a model in which tolerance and allergy represent competing, self-reinforcing immune states stabilized by redundant regulatory circuits. This review synthesizes the current understanding of these multilayered mechanisms and discusses their implications for prevention and treatment of food allergy.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.jaci.2026.10.029",
+        "doi_url": "https://doi.org/10.1016/j.jaci.2026.10.029",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43044855/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "The Journal of allergy and clinical immunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines immune mechanisms underlying oral tolerance in preventing IgE-mediated food allergy. It synthesizes how early dietary antigen exposure establishes durable tolerance through coordinated cellular pathways: transcellular antigen transport via goblet cell-associated passages, tolerogenic antigen presentation by RORγt+ APCs and cDCs, regulatory T cell induction, and germinal center regulation of antibody responses. Genetic and environmental factors modulate these pathways, while infections can disrupt tolerance. The study highlights tolerance and allergy as competing immune states stabilized by redundant regulatory circuits.\",\n  \"key_findings\": [\n    \"Early dietary antigen exposure during infancy prevents IgE-mediated food allergy through oral tolerance mechanisms\",\n    \"Oral tolerance requires coordinated activity of transcellular antigen transport, tolerogenic APCs, regulatory T cells, and germinal center regulation\",\n    \"Infections can disrupt established oral tolerance by reprogramming tolerogenic antigen-presenting cells\"\n  ],\n  \"scientific_significance\": \"This review provides a comprehensive model of multilayered immune mechanisms that govern oral tolerance, clarifying how dietary antigen exposure can prevent food allergy while highlighting the critical role of redundant regulatory circuits in maintaining immune homeostasis.\"\n}",
+        "parsed": {
+          "summary": "This review examines immune mechanisms underlying oral tolerance in preventing IgE-mediated food allergy. It synthesizes how early dietary antigen exposure establishes durable tolerance through coordinated cellular pathways: transcellular antigen transport via goblet cell-associated passages, tolerogenic antigen presentation by RORγt+ APCs and cDCs, regulatory T cell induction, and germinal center regulation of antibody responses. Genetic and environmental factors modulate these pathways, while infections can disrupt tolerance. The study highlights tolerance and allergy as competing immune states stabilized by redundant regulatory circuits.",
+          "key_findings": [
+            "Early dietary antigen exposure during infancy prevents IgE-mediated food allergy through oral tolerance mechanisms",
+            "Oral tolerance requires coordinated activity of transcellular antigen transport, tolerogenic APCs, regulatory T cells, and germinal center regulation",
+            "Infections can disrupt established oral tolerance by reprogramming tolerogenic antigen-presenting cells"
+          ],
+          "scientific_significance": "This review provides a comprehensive model of multilayered immune mechanisms that govern oral tolerance, clarifying how dietary antigen exposure can prevent food allergy while highlighting the critical role of redundant regulatory circuits in maintaining immune homeostasis."
+        },
+        "elapsed_seconds": 47.1722,
+        "input_tokens": 752,
+        "output_tokens": 242,
+        "thoughts_tokens": null,
+        "total_tokens": 994,
+        "model_eval_seconds": 31.7543,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether transient dietary changes during acute inflammation influence long-term immune memory. Using lean mice with type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation to levels seen in chronic obesity. The effect is confined to a specific 4-day window; HFD outside this window has no impact. Switching obese mice to a low-fat diet during the same window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. After recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent LFD. The findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β signaling.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure at disease onset exacerbates acute type 17 skin inflammation in lean mice to chronic obesity levels\",\n    \"The inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact\",\n    \"Neutrophil recruitment and NLRP3-IL-1β signaling drive pathogenic TH17 cell activation, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence\"\n  ],\n  \"scientific_significance\": \"This work identifies a critical temporal window where transient dietary changes can durably reprogram immune memory via neutrophil-NLRP3-IL-1β signaling, revealing how short-lived physiological states may become embedded in tissue inflammation responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether transient dietary changes during acute inflammation influence long-term immune memory. Using lean mice with type 17 skin inflammation, researchers found that a 4-day high-fat diet (HFD) exposure at disease onset exacerbates inflammation to levels seen in chronic obesity. The effect is confined to a specific 4-day window; HFD outside this window has no impact. Switching obese mice to a low-fat diet during the same window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. After recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent LFD. The findings demonstrate that dietary state during a narrow temporal window can durably reprogram disease trajectory through neutrophil-NLRP3-IL-1β signaling.",
+          "key_findings": [
+            "Transient high-fat diet exposure at disease onset exacerbates acute type 17 skin inflammation in lean mice to chronic obesity levels",
+            "The inflammatory effect is restricted to a 4-day peri-initiation window; HFD outside this window has no impact",
+            "Neutrophil recruitment and NLRP3-IL-1β signaling drive pathogenic TH17 cell activation, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence"
+          ],
+          "scientific_significance": "This work identifies a critical temporal window where transient dietary changes can durably reprogram immune memory via neutrophil-NLRP3-IL-1β signaling, revealing how short-lived physiological states may become embedded in tissue inflammation responses."
+        },
+        "elapsed_seconds": 52.7953,
+        "input_tokens": 885,
+        "output_tokens": 349,
+        "thoughts_tokens": null,
+        "total_tokens": 1234,
+        "model_eval_seconds": 47.4396,
+        "error": "summary must contain 45–90 words; received 124.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42963332",
+        "title": "Layered Precursor-Guided Growth of Nondegenerate Amorphous In2O3 Approaching the Thickness Limit.",
+        "abstract": "NA: Oxide semiconductors are promising channel materials for ultrathin electronics. However, conventional growth methods often produce excess carriers, poor stability, and interfacial issues, limiting their electronic applications. Here, we present a layered precursor-guided synthesis of atom-thin amorphous indium oxide (In2O3) by oxidizing a layered InSe precursor within a back-end-of-line (BEOL)-compatible thermal budget. The oxide thickness is precisely controlled by the number of precursor layers, enabling In2O3 as thin as 0.63 nm at the physical thickness limit. By avoiding localized nucleation and island coalescence issues, the resulting In2O3 exhibits atomically smooth surfaces and excellent electrostatic uniformity with potential variations below 22 meV. Capacitance-voltage analyses confirm a carrier density of 2.8 × 1018 cm-3 in the nondegenerate regime and a low interface trap density of 1010∼1011 cm-2·eV-1. We further demonstrate reproducible enhancement-mode transistors with sub-3 nm channels, featuring near-zero threshold voltage, a low subthreshold swing (SS) of ∼74 mV/dec, a negligible hysteresis of < 10 mV, and robust gate-stress stability. This work establishes a reliable route for integrating ultrathin, high-performance amorphous oxide semiconductors, pushing the limits of next-generation nanoelectronics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75594",
+        "doi_url": "https://doi.org/10.1002/adma.75594",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42963332/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates precise growth of ultrathin amorphous indium oxide (In2O3) using layered precursor-guided synthesis. By oxidizing a layered InSe precursor within BEOL-compatible thermal conditions, the researchers achieved atomically smooth In2O3 films as thin as 0.63 nm. The material exhibited nondegenerate electronic properties with low carrier density (2.8 × 1018 cm-3), minimal interface traps, and high electrostatic uniformity. These findings enable sub-3 nm channel transistors with near-zero threshold voltage and low hysteresis, advancing ultrathin oxide semiconductor applications.\",\n  \"key_findings\": [\n    \"Atomically smooth In2O3 films as thin as 0.63 nm achieved via layered precursor oxidation\",\n    \"Nondegenerate electronic properties with carrier density of 2.8 × 1018 cm-3 and low interface trap density\",\n    \"Sub-3 nm channel transistors showing near-zero threshold voltage and negligible hysteresis (<10 mV)\"\n  ],\n  \"scientific_significance\": \"This work establishes a scalable method for ultrathin amorphous oxide semiconductors with enhanced electronic properties, enabling next-generation nanoelectronic devices with improved stability and performance.\"\n}",
+        "parsed": {
+          "summary": "This study investigates precise growth of ultrathin amorphous indium oxide (In2O3) using layered precursor-guided synthesis. By oxidizing a layered InSe precursor within BEOL-compatible thermal conditions, the researchers achieved atomically smooth In2O3 films as thin as 0.63 nm. The material exhibited nondegenerate electronic properties with low carrier density (2.8 × 1018 cm-3), minimal interface traps, and high electrostatic uniformity. These findings enable sub-3 nm channel transistors with near-zero threshold voltage and low hysteresis, advancing ultrathin oxide semiconductor applications.",
+          "key_findings": [
+            "Atomically smooth In2O3 films as thin as 0.63 nm achieved via layered precursor oxidation",
+            "Nondegenerate electronic properties with carrier density of 2.8 × 1018 cm-3 and low interface trap density",
+            "Sub-3 nm channel transistors showing near-zero threshold voltage and negligible hysteresis (<10 mV)"
+          ],
+          "scientific_significance": "This work establishes a scalable method for ultrathin amorphous oxide semiconductors with enhanced electronic properties, enabling next-generation nanoelectronic devices with improved stability and performance."
+        },
+        "elapsed_seconds": 53.45,
+        "input_tokens": 764,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1039,
+        "model_eval_seconds": 37.1133,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43045000",
+        "title": "From broad suppression to precision targeting: the new era of antigen-specific immunotherapy for type 1 diabetes.",
+        "abstract": "NA: Type 1 diabetes (T1D) is an autoimmune disorder characterized by the selective destruction of pancreatic β-cells driven by autoreactive immune responses. In recent decades, the global incidence of T1D has risen markedly, with the most rapid increase observed among children and adolescents, imposing a substantial burden on healthcare systems worldwide. Conventional treatment primarily relies on exogenous insulin administration, which manages hyperglycemia but does not address the underlying autoimmune pathology or restore endogenous insulin production. Antigen-specific immunotherapy (ASI) has emerged as a promising strategy that may restore antigen-specific immune tolerance via multiple mechanisms, including clonal deletion/ anergy, immune deviation, induction of regulatory T cells (Tregs) and type 1 regulatory T (Tr1) cells, and tolerogenic antigen presentation. ASI may help preserve residual β-cell function and potentially modify disease progression. This review comprehensively summarizes recent advances in ASI for T1D, with a focus on the biological features of key T1D autoantigens, optimization of antigen delivery strategies, and prospects for clinical translation.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.autrev.2026.104255",
+        "doi_url": "https://doi.org/10.1016/j.autrev.2026.104255",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43045000/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Autoimmunity reviews",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines antigen-specific immunotherapy (ASI) for type 1 diabetes (T1D), addressing the autoimmune destruction of pancreatic β-cells. It evaluates ASI mechanisms like clonal deletion, immune deviation, regulatory T cell induction, and tolerogenic antigen presentation. The study highlights ASI's potential to preserve β-cell function and modify disease progression, emphasizing recent advances in autoantigen targeting and clinical translation strategies.\",\n  \"key_findings\": [\n    \"ASI mechanisms include clonal deletion, immune deviation, and regulatory T cell induction\",\n    \"ASI may preserve residual β-cell function and alter disease progression\",\n    \"Recent advances focus on autoantigen targeting and clinical translation strategies\"\n  ],\n  \"scientific_significance\": \"This review advances understanding of how antigen-specific immunotherapy can potentially restore immune tolerance in type 1 diabetes by targeting autoimmune mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This review examines antigen-specific immunotherapy (ASI) for type 1 diabetes (T1D), addressing the autoimmune destruction of pancreatic β-cells. It evaluates ASI mechanisms like clonal deletion, immune deviation, regulatory T cell induction, and tolerogenic antigen presentation. The study highlights ASI's potential to preserve β-cell function and modify disease progression, emphasizing recent advances in autoantigen targeting and clinical translation strategies.",
+          "key_findings": [
+            "ASI mechanisms include clonal deletion, immune deviation, and regulatory T cell induction",
+            "ASI may preserve residual β-cell function and alter disease progression",
+            "Recent advances focus on autoantigen targeting and clinical translation strategies"
+          ],
+          "scientific_significance": "This review advances understanding of how antigen-specific immunotherapy can potentially restore immune tolerance in type 1 diabetes by targeting autoimmune mechanisms."
+        },
+        "elapsed_seconds": 35.2036,
+        "input_tokens": 664,
+        "output_tokens": 180,
+        "thoughts_tokens": null,
+        "total_tokens": 844,
+        "model_eval_seconds": 23.5206,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015477",
+        "title": "Human replisomes direct a dedicated leading-strand primase for fork restart.",
+        "abstract": "NA: Disruptions to leading-strand synthesis impair and stall replication forks because DNA synthesis by the leading-strand polymerase, Pol ε, is essential for optimal template unwinding by the replicative CMG (CDC45-MCM-GINS) helicase1,2. Failure to efficiently restart and/or protect stalled replication forks is a major source of genomic instability3-6. Stalled forks can be restarted by a variety of mechanisms, including repriming downstream of the impediment4. In human cells, the primase-polymerase PRIMPOL promotes fork progression during replication stress7-10, but how its activity is coordinated by the replisome is unresolved. Here, by reconstituting replication fork stalling and restart with purified human proteins, we show that the CMG helicase directs PRIMPOL for efficient replication fork restart. Unexpectedly, the interaction between PRIMPOL and replication protein A9,11 is not critical for fork restart in this system. We show that PRIMPOL binds directly to CMG, and a cryo-electron microscopy structure illustrates how this targets PRIMPOL specifically for leading-strand priming to minimize the size of post-replicative gaps. Ablating the CMG-PRIMPOL interaction abolishes fork restart in vitro and PRIMPOL-dependent DNA damage tolerance in human cells. Our work establishes PRIMPOL as an integrated component of the human replisome dedicated to leading-strand priming.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11204-0",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11204-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015477/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how human replication forks restart after stalling, focusing on the role of the replisome. Using purified human proteins, the authors reconstituted fork stalling and restart to demonstrate that the CMG helicase directs the primase-polymerase PRIMPOL for efficient leading-strand priming during fork restart. The interaction between PRIMPOL and replication protein A was found non-essential, while direct CMG-PRIMPOL binding ensures minimal post-replicative gaps. Ablating this interaction abolished fork restart in vitro and DNA damage tolerance in cells.\",\n  \"key_findings\": [\n    \"CMG helicase directs PRIMPOL for efficient replication fork restart\",\n    \"Direct CMG-PRIMPOL binding targets PRIMPOL specifically for leading-strand priming\",\n    \"Ablating CMG-PRIMPOL interaction abolishes fork restart in vitro and PRIMPOL-dependent DNA damage tolerance\"\n  ],\n  \"scientific_significance\": \"This work establishes PRIMPOL as an integrated replisome component dedicated to leading-strand priming, providing mechanistic insight into how replication forks are restarted after stalling to maintain genomic stability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how human replication forks restart after stalling, focusing on the role of the replisome. Using purified human proteins, the authors reconstituted fork stalling and restart to demonstrate that the CMG helicase directs the primase-polymerase PRIMPOL for efficient leading-strand priming during fork restart. The interaction between PRIMPOL and replication protein A was found non-essential, while direct CMG-PRIMPOL binding ensures minimal post-replicative gaps. Ablating this interaction abolished fork restart in vitro and DNA damage tolerance in cells.",
+          "key_findings": [
+            "CMG helicase directs PRIMPOL for efficient replication fork restart",
+            "Direct CMG-PRIMPOL binding targets PRIMPOL specifically for leading-strand priming",
+            "Ablating CMG-PRIMPOL interaction abolishes fork restart in vitro and PRIMPOL-dependent DNA damage tolerance"
+          ],
+          "scientific_significance": "This work establishes PRIMPOL as an integrated replisome component dedicated to leading-strand priming, providing mechanistic insight into how replication forks are restarted after stalling to maintain genomic stability."
+        },
+        "elapsed_seconds": 48.3822,
+        "input_tokens": 737,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 985,
+        "model_eval_seconds": 33.4735,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42963917",
+        "title": "Dynamic Molecular Scaffold Enables Thermomechanical Stress Regulation and Adaptive Defect Healing for Stable Perovskite Solar Cells.",
+        "abstract": "NA: Thermally induced stress accumulation is a major origin of lattice disorder, defect evolution, and ion migration in perovskite solar cells (PSCs), limiting their long-term operational stability. We develop a dynamic molecular scaffold strategy based on the adduct of α-lipoic acid and N-hydroxysuccinimide ester to mitigate thermomechanical degradation through simultaneous thermomechanical stress buffering, lattice anchoring, and adaptive defect healing. During film formation, DL-α-lipoic acid-N-hydroxysuccinimide ester (LA-NHS) undergoes in situ polymerization to establish a crosslinked polydisulfide scaffold at grain boundaries. The dynamic scaffold accommodates thermally induced lattice expansion and contraction, dissipates accumulated stress, anchors the perovskite lattice, and continuously passivates stress-generated defects through reversible disulfide-bond exchange, thereby preserving lattice ordering and improving the thermal durability. Consequently, the optimized PSCs achieve a champion power conversion efficiency (PCE) of 27.19%. The devices retain 91.71% of their initial efficiency after 150 thermal cycles between 15°C and 100°C, and 85.72% after 1500 h at 85°C. The strategy is successfully translated to large-area PSCs (25.02% for 1 cm2 and 22.06% for 10 × 10 cm2). This work establishes a dynamic molecularscaffold framework for managing thermomechanical degradation through stress buffering, lattice anchoring, and adaptive defect healing, providing a route toward efficient, durable, and scalable perovskite photovoltaics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75585",
+        "doi_url": "https://doi.org/10.1002/adma.75585",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42963917/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates thermomechanical stress regulation in perovskite solar cells (PSCs) using a dynamic molecular scaffold. The researchers developed a crosslinked polydisulfide scaffold via in situ polymerization of DL-α-lipoic acid-N-hydroxysuccinimide ester (LA-NHS) at grain boundaries. The scaffold buffers thermal stress, anchors the perovskite lattice, and passivates defects through reversible disulfide exchange. Optimized PSCs achieved 27.19% power conversion efficiency with 91.71% retention after 150 thermal cycles (15–100°C) and 85.72% after 1500 hours at 85°C, demonstrating enhanced thermal stability and scalability.\",\n  \"key_findings\": [\n    \"In situ polymerization of LA-NHS establishes a crosslinked polydisulfide scaffold at grain boundaries\",\n    \"The scaffold buffers thermal stress, anchors the perovskite lattice, and passivates defects via reversible disulfide exchange\",\n    \"PSCs retained 91.71% efficiency after 150 thermal cycles (15–100°C) and 85.72% after 1500 hours at 85°C\"\n  ],\n  \"scientific_significance\": \"This work provides a dynamic molecular scaffold strategy for managing thermomechanical degradation in perovskite solar cells, enabling enhanced thermal stability and scalable high-efficiency photovoltaics through stress buffering, lattice anchoring, and adaptive defect healing.\"\n}",
+        "parsed": {
+          "summary": "This study investigates thermomechanical stress regulation in perovskite solar cells (PSCs) using a dynamic molecular scaffold. The researchers developed a crosslinked polydisulfide scaffold via in situ polymerization of DL-α-lipoic acid-N-hydroxysuccinimide ester (LA-NHS) at grain boundaries. The scaffold buffers thermal stress, anchors the perovskite lattice, and passivates defects through reversible disulfide exchange. Optimized PSCs achieved 27.19% power conversion efficiency with 91.71% retention after 150 thermal cycles (15–100°C) and 85.72% after 1500 hours at 85°C, demonstrating enhanced thermal stability and scalability.",
+          "key_findings": [
+            "In situ polymerization of LA-NHS establishes a crosslinked polydisulfide scaffold at grain boundaries",
+            "The scaffold buffers thermal stress, anchors the perovskite lattice, and passivates defects via reversible disulfide exchange",
+            "PSCs retained 91.71% efficiency after 150 thermal cycles (15–100°C) and 85.72% after 1500 hours at 85°C"
+          ],
+          "scientific_significance": "This work provides a dynamic molecular scaffold strategy for managing thermomechanical degradation in perovskite solar cells, enabling enhanced thermal stability and scalable high-efficiency photovoltaics through stress buffering, lattice anchoring, and adaptive defect healing."
+        },
+        "elapsed_seconds": 63.8907,
+        "input_tokens": 807,
+        "output_tokens": 340,
+        "thoughts_tokens": null,
+        "total_tokens": 1147,
+        "model_eval_seconds": 45.9815,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43045649",
+        "title": "Disrupting the interaction between T lymphocytes and microglia: Mechanism of Huanglian Jiedu Decoction in the treatment of ischemic stroke.",
+        "abstract": "NA: Our previous studies have shown that Huanglian Jiedu Decoction effectively suppresses central immune-inflammatory responses, modulates peripheral inflammatory mediators, reduces the infiltration of peripheral T lymphocytes into the central nervous system, and promotes the conversion of infiltrated T lymphocytes in the brain into Treg cells. However, whether Huanglian Jiedu Decoction can influence M2 microglial polarization by regulating T-lymphocyte phenotypic transformation and thereby modulate neuroinflammation after ischemic stroke remains unclear. This study focused on Treg-mediated microglial polarization to investigate the potential of Huanglian Jiedu Decoction to modulate interactions between T lymphocytes and microglia in the treatment of ischemic stroke. We established a rat model of middle cerebral artery occlusion, an inflammatory model of Jurkat T cells stimulated with phorbol 12-myristate 13-acetate and ionomycin, and a Transwell co-culture model of T lymphocytes and HMC3 microglia. The results showed that Huanglian Jiedu Decoction effectively alleviated cerebral ischemia-reperfusion injury in a rat model of middle cerebral artery, inhibited central inflammatory responses, and promoted the polarization of microglia toward the M2 phenotype. Huanglian Jiedu Decoction also promoted the conversion of CD4+ T cells in brain tissue into regulatory T cells and regulated regulatory T cells through the interleukin-10/Janus kinase 1/signal transducer and activator of transcription 3 pathway, thereby promoting the activation of M2 microglia. These findings suggest that Huanglian Jiedu Decoction, which has heat-clearing and detoxifying properties, can regulate immune homeostasis, inhibit secondary neuroinflammation associated with ischemic stroke, and exert neuroprotective effects. Huanglian Jiedu Decoction may therefore treat ischemic stroke by modulating the interaction between T lymphocytes and microglia, providing a traditional Chinese medicine-based strategy for the treatment of ischemic stroke.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.4103/NRR.NRRONLINE-D-26-00894",
+        "doi_url": "https://doi.org/10.4103/NRR.NRRONLINE-D-26-00894",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43045649/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Neural regeneration research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how Huanglian Jiedu Decoction modulates T lymphocyte-microglia interactions in ischemic stroke. Using rat models of cerebral ischemia-reperfusion injury, Jurkat T cell inflammation assays, and Transwell co-cultures, the research demonstrated that the decoction promotes Treg conversion in the brain, enhances M2 microglial polarization via IL-10/JAK1/STAT3 signaling, and reduces neuroinflammation. These mechanisms suggest a novel immunomodulatory pathway for stroke treatment.\",\n  \"key_findings\": [\n    \"Huanglian Jiedu Decoction promotes conversion of CD4+ T cells into regulatory T cells in brain tissue\",\n    \"The decoction induces M2 microglial polarization through IL-10/JAK1/STAT3 signaling\",\n    \"It alleviates cerebral ischemia-reperfusion injury and suppresses central inflammatory responses\"\n  ],\n  \"scientific_significance\": \"This work identifies a specific immunomodulatory mechanism by which a traditional Chinese medicine decoction regulates T lymphocyte-microglia crosstalk to mitigate neuroinflammation in ischemic stroke.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how Huanglian Jiedu Decoction modulates T lymphocyte-microglia interactions in ischemic stroke. Using rat models of cerebral ischemia-reperfusion injury, Jurkat T cell inflammation assays, and Transwell co-cultures, the research demonstrated that the decoction promotes Treg conversion in the brain, enhances M2 microglial polarization via IL-10/JAK1/STAT3 signaling, and reduces neuroinflammation. These mechanisms suggest a novel immunomodulatory pathway for stroke treatment.",
+          "key_findings": [
+            "Huanglian Jiedu Decoction promotes conversion of CD4+ T cells into regulatory T cells in brain tissue",
+            "The decoction induces M2 microglial polarization through IL-10/JAK1/STAT3 signaling",
+            "It alleviates cerebral ischemia-reperfusion injury and suppresses central inflammatory responses"
+          ],
+          "scientific_significance": "This work identifies a specific immunomodulatory mechanism by which a traditional Chinese medicine decoction regulates T lymphocyte-microglia crosstalk to mitigate neuroinflammation in ischemic stroke."
+        },
+        "elapsed_seconds": 54.2343,
+        "input_tokens": 877,
+        "output_tokens": 245,
+        "thoughts_tokens": null,
+        "total_tokens": 1122,
+        "model_eval_seconds": 33.2098,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015478",
+        "title": "Metasurface waveguides for all-day augmented reality glasses.",
+        "abstract": "NA: Augmented reality (AR) displays, originating from early optical see-through head-mounted systems1, have evolved towards lightweight glasses that seamlessly integrate digital information with the physical world2,3. However, their widespread adoption requires compact optical systems that enable bright, wide-field and comfortable viewing. Diffractive waveguides (WGs) offer a promising approach towards lightweight AR displays yet face inherent trade-offs among field of view (FoV), optical efficiency and eyebox size owing to limited degrees of freedom in light control. Here we show an all-day-wearable AR glass prototype based on spatially varying, interwoven metasurfaces that provide several grating vectors for multidirectional light control. The resulting dual-layer metasurface-based waveguide (meta-WG) achieves a 30° FoV and an 8 × 8-mm2 two-dimensional (2D) eyebox while maintaining an average luminance efficiency of 1,938 nits lm-1 (up to 4,225 nits lm-1) within a 1.5-mm-thick form factor. The prototype produces bright and stable virtual images under outdoor ambient illumination, demonstrating the compatibility of meta-WGs with practical wearable display requirements. By expanding the degrees of freedom for light routing beyond conventional diffractive WGs, our approach provides a scalable framework for balancing efficiency, viewing range and form factor, bringing high-performance AR glasses closer to practical consumer applications.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11277-x",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11277-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015478/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates compact optical systems for all-day augmented reality glasses using metasurface waveguides. Researchers developed a dual-layer metasurface-based waveguide (meta-WG) that achieves a 30° field of view, an 8×8 mm² eyebox, and 1,938 nits luminance efficiency within a 1.5-mm-thick form factor. The prototype demonstrates stable outdoor performance, addressing trade-offs in optical efficiency, field of view, and eyebox size for practical AR applications.\",\n  \"key_findings\": [\n    \"Dual-layer metasurface waveguide achieves 30° field of view\",\n    \"Maintains 8×8 mm² eyebox and 1,938 nits luminance efficiency\",\n    \"Operates stably under outdoor ambient illumination\"\n  ],\n  \"scientific_significance\": \"This approach expands light control degrees of freedom beyond conventional diffractive waveguides, enabling scalable trade-offs between optical efficiency, field of view, and form factor for practical augmented reality displays.\"\n}",
+        "parsed": {
+          "summary": "This study investigates compact optical systems for all-day augmented reality glasses using metasurface waveguides. Researchers developed a dual-layer metasurface-based waveguide (meta-WG) that achieves a 30° field of view, an 8×8 mm² eyebox, and 1,938 nits luminance efficiency within a 1.5-mm-thick form factor. The prototype demonstrates stable outdoor performance, addressing trade-offs in optical efficiency, field of view, and eyebox size for practical AR applications.",
+          "key_findings": [
+            "Dual-layer metasurface waveguide achieves 30° field of view",
+            "Maintains 8×8 mm² eyebox and 1,938 nits luminance efficiency",
+            "Operates stably under outdoor ambient illumination"
+          ],
+          "scientific_significance": "This approach expands light control degrees of freedom beyond conventional diffractive waveguides, enabling scalable trade-offs between optical efficiency, field of view, and form factor for practical augmented reality displays."
+        },
+        "elapsed_seconds": 44.3643,
+        "input_tokens": 740,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 964,
+        "model_eval_seconds": 29.4723,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42963922",
+        "title": "Air-Stable Radical Additives Modulate Spin-Dependent Recombination in High-Efficiency Organic Solar Cells.",
+        "abstract": "NA: Triplet-associated recombination remains a potential loss channel in high-efficiency nonfullerene organic solar cells, particularly when separated charges re-encounter to form spin-correlated charge-transfer or polaron-pair states. Here, we introduce the air-stable organic radical TTM-1Cz as an additive to manipulate the triplet formation by the single electron-occupied doublet state characteristic of radicals. Electron paramagnetic resonance measurements confirm that the radical character of TTM-1Cz is retained after solution processing. Grazing-incidence wide-angle x-ray scattering measurements show that TTM-1Cz and its structurally related closed-shell analogue αHTTM-1Cz induce comparable, modest increases in crystalline coherence, indicating a structural contribution associated with the common molecular framework. In contrast, charge-separated-state-normalized transient absorption spectroscopy reveals a pronounced reduction in the late-time triplet-associated signal only in the TTM-1Cz-containing blend. Together with magneto-photocurrent measurements and local molecular-complex calculations, these observations are consistent with an additional, radical-specific perturbation of spin-dependent charge-transfer recombination. The optimized D18:L8-BO:TTM-1Cz device achieves a champion power conversion efficiency of 20.63%, with a certified efficiency of 20.45%. These results reveal a design principle for radical additives in organic solar cells, in which molecular-packing effects and spin-active modulation of recombination act as distinct but complementary contributions.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75579",
+        "doi_url": "https://doi.org/10.1002/adma.75579",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42963922/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how air-stable radical additives influence spin-dependent recombination in high-efficiency organic solar cells. Using electron paramagnetic resonance and spectroscopic techniques, researchers confirmed the radical character of TTM-1Cz and its structural impact on crystalline coherence. The additive reduced triplet-associated recombination signals, leading to a 20.63% power conversion efficiency in optimized devices. The findings demonstrate that radical additives can modulate spin-dependent recombination through both structural and spin-active mechanisms.\",\n  \"key_findings\": [\n    \"TTM-1Cz retains radical character post-solution processing\",\n    \"Radical additive reduces late-time triplet-associated recombination signals\",\n    \"Optimized device achieves 20.63% power conversion efficiency\"\n  ],\n  \"scientific_significance\": \"This work establishes a design strategy for radical additives that simultaneously enhance crystalline order and suppress spin-dependent recombination in organic solar cells, offering a dual mechanism for improving device efficiency.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how air-stable radical additives influence spin-dependent recombination in high-efficiency organic solar cells. Using electron paramagnetic resonance and spectroscopic techniques, researchers confirmed the radical character of TTM-1Cz and its structural impact on crystalline coherence. The additive reduced triplet-associated recombination signals, leading to a 20.63% power conversion efficiency in optimized devices. The findings demonstrate that radical additives can modulate spin-dependent recombination through both structural and spin-active mechanisms.",
+          "key_findings": [
+            "TTM-1Cz retains radical character post-solution processing",
+            "Radical additive reduces late-time triplet-associated recombination signals",
+            "Optimized device achieves 20.63% power conversion efficiency"
+          ],
+          "scientific_significance": "This work establishes a design strategy for radical additives that simultaneously enhance crystalline order and suppress spin-dependent recombination in organic solar cells, offering a dual mechanism for improving device efficiency."
+        },
+        "elapsed_seconds": 42.8816,
+        "input_tokens": 751,
+        "output_tokens": 206,
+        "thoughts_tokens": null,
+        "total_tokens": 957,
+        "model_eval_seconds": 27.0783,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43046265",
+        "title": "Probiotic-based sequential delivery system for gut-brain co-therapy against inflammatory bowel disease-associated anxiety/depression.",
+        "abstract": "NA: With the emergence of the gut-brain axis, inflammatory bowel disease (IBD) is no longer simply regarded as a localized intestinal disease but as a systemic disorder intimately associated with psychiatric comorbidities, including anxiety and depression. However, conventional therapeutic strategies predominantly target localized colonic inflammation, which often yields suboptimal outcomes. This highlights a critical need for gut-brain co-therapy to achieve comprehensive IBD management. Based on our observation that indole-3-acetic acid (IAA) possesses the potential to attenuate hippocampal neuroinflammation and subsequently modulate intestinal inflammation via the acetylcholine pathway, we engineered a gut-brain co-therapy delivery platform (CB-ASA/IAA/L). This system comprises Clostridium butyricum (CB) loaded with 5-aminosalicylic acid (5-ASA), encapsulated by a pH-responsive Eudragit L100-55 layer incorporating IAA. This microecological preparation is based on effective protection and delivery of CB, achieving the delivery of IAA to the brain and 5-ASA to the colon simultaneously. This sequential-release delivery system achieved intestinal barrier repair, promoted macrophage polarization toward the M2 phenotype, and restored Th17/Treg balance to recover intestinal homeostasis, while simultaneously alleviating anxiety- and depression-like behaviors in colitis mice. Importantly, the system demonstrated a robust ability to prevent inflammatory recurrence, a major clinical challenge in IBD treatment. This research offers a new avenue for the effective treatment of IBD-associated anxiety/depression by coordinating neuroimmune modulation with local intestinal repair.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1186/s12951-026-04850-z",
+        "doi_url": "https://doi.org/10.1186/s12951-026-04850-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43046265/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of nanobiotechnology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated a gut-brain co-therapy approach for inflammatory bowel disease (IBD)-associated anxiety and depression using a probiotic-based sequential delivery system. The researchers engineered a microecological preparation combining Clostridium butyricum loaded with 5-aminosalicylic acid (5-ASA) and indole-3-acetic acid (IAA) within a pH-responsive polymer layer. The system delivered 5-ASA to the colon and IAA to the brain, improving intestinal barrier function, macrophage polarization, Th17/Treg balance, and reducing anxiety/depression-like behaviors in colitis mice while preventing disease recurrence.\",\n  \"key_findings\": [\n    \"The delivery system simultaneously targeted intestinal inflammation and neuroinflammation via sequential release of 5-ASA and IAA\",\n    \"It restored intestinal homeostasis by promoting macrophage M2 polarization and Th17/Treg balance\",\n    \"The system alleviated anxiety/depression-like behaviors and prevented inflammatory recurrence in colitis models\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a novel gut-brain co-therapy strategy that effectively addresses both intestinal and psychiatric comorbidities in IBD through coordinated neuroimmune modulation and local tissue repair.\"\n}",
+        "parsed": {
+          "summary": "This study investigated a gut-brain co-therapy approach for inflammatory bowel disease (IBD)-associated anxiety and depression using a probiotic-based sequential delivery system. The researchers engineered a microecological preparation combining Clostridium butyricum loaded with 5-aminosalicylic acid (5-ASA) and indole-3-acetic acid (IAA) within a pH-responsive polymer layer. The system delivered 5-ASA to the colon and IAA to the brain, improving intestinal barrier function, macrophage polarization, Th17/Treg balance, and reducing anxiety/depression-like behaviors in colitis mice while preventing disease recurrence.",
+          "key_findings": [
+            "The delivery system simultaneously targeted intestinal inflammation and neuroinflammation via sequential release of 5-ASA and IAA",
+            "It restored intestinal homeostasis by promoting macrophage M2 polarization and Th17/Treg balance",
+            "The system alleviated anxiety/depression-like behaviors and prevented inflammatory recurrence in colitis models"
+          ],
+          "scientific_significance": "This work demonstrates a novel gut-brain co-therapy strategy that effectively addresses both intestinal and psychiatric comorbidities in IBD through coordinated neuroimmune modulation and local tissue repair."
+        },
+        "elapsed_seconds": 52.3587,
+        "input_tokens": 781,
+        "output_tokens": 263,
+        "thoughts_tokens": null,
+        "total_tokens": 1044,
+        "model_eval_seconds": 35.7173,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43015479",
+        "title": "Hadean mantle depletion and 3.95-Gyr subduction implied by North China rocks.",
+        "abstract": "NA: The scarcity of terrestrial rocks older than 3.9 billion years (Gyr) has hindered our understanding of Earth's early evolution, fuelling persistent debates on how and when the first continental crust formed and plate tectonics started. At present, the only unequivocally documented >3.9-Gyr-old rocks are from the Acasta Gneiss Complex, Canada1-3. Here we report a 3.95-Gyr-old trondhjemitic gneiss from eastern Hebei, North China Craton, in which primary magmatic zircon records elevated δ18O values (average +6.77 ± 0.23‰) and positive εHf(t) values (weighted mean +1.45 ± 0.27). This suggests a low-temperature altered basaltic source that originated from a mantle depleted in the Hadean. In contrast to the low-pressure origin inferred for the roughly 4.0-Gyr-old Idiwhaa unit in Acasta2, the 3.95-Gyr-old trondhjemitic gneiss reported here exhibits geochemical signatures attributed to a high-pressure origin4. Thermodynamic and trace element modelling demonstrate that its parental magma formed by means of low-degree (8-16%) melting of basaltic crust at >1.6 GPa and 740-820 °C, suggesting rapid burial of (near-)surface-altered oceanic crust to mantle depths along a cool thermal gradient. We propose that this rapid burial was most likely achieved through a transient subduction event.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11280-2",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11280-2",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43015479/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the timing and processes of early Earth crust formation by analyzing 3.95-Gyr-old North China Craton rocks. Using geochemical and isotopic data from trondhjemitic gneiss, the research identifies elevated δ18O and positive εHf(t) values, indicating a Hadean mantle depleted source. The findings suggest rapid subduction of oceanic crust at high pressure, providing evidence for early plate tectonics starting by 3.95 Gyr ago.\",\n  \"key_findings\": [\n    \"3.95-Gyr-old trondhjemitic gneiss from North China Craton\",\n    \"Elevated δ18O values (+6.77 ± 0.23‰) and positive εHf(t) values (+1.45 ± 0.27)\",\n    \"High-pressure origin via rapid subduction of oceanic crust\"\n  ],\n  \"scientific_significance\": \"The study provides direct evidence of Hadean mantle depletion and early subduction processes, advancing understanding of Earth's crustal evolution and the onset of plate tectonics by 3.95 billion years ago.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the timing and processes of early Earth crust formation by analyzing 3.95-Gyr-old North China Craton rocks. Using geochemical and isotopic data from trondhjemitic gneiss, the research identifies elevated δ18O and positive εHf(t) values, indicating a Hadean mantle depleted source. The findings suggest rapid subduction of oceanic crust at high pressure, providing evidence for early plate tectonics starting by 3.95 Gyr ago.",
+          "key_findings": [
+            "3.95-Gyr-old trondhjemitic gneiss from North China Craton",
+            "Elevated δ18O values (+6.77 ± 0.23‰) and positive εHf(t) values (+1.45 ± 0.27)",
+            "High-pressure origin via rapid subduction of oceanic crust"
+          ],
+          "scientific_significance": "The study provides direct evidence of Hadean mantle depletion and early subduction processes, advancing understanding of Earth's crustal evolution and the onset of plate tectonics by 3.95 billion years ago."
+        },
+        "elapsed_seconds": 52.1953,
+        "input_tokens": 789,
+        "output_tokens": 261,
+        "thoughts_tokens": null,
+        "total_tokens": 1050,
+        "model_eval_seconds": 34.9203,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42963930",
+        "title": "Waveguided, Self-Sensing Sheath-Core Liquid Crystal Elastomer Fiber Actuators.",
+        "abstract": "NA: Soft actuators capable of operating in confined and hard-to-access environments, while providing integrated self-sensing capabilities, are highly desired for next-generation robotic systems. Here we report a waveguided sheath-core optical fiber actuator consisting of a liquid crystal elastomer core encased in a conductive sheath of carbon nanotubes/carbon black. Near-infrared light guided through the fiber actuator drives reversible contractions of up to 38% and enables a load-bearing capacity of up to 320 times the actuator's own weight. Arrays of these fibers enable independent optical addressing of individual actuators, allowing programmable multimodal gripping in confined environments. The conductive sheath simultaneously serves as a strain sensor, providing real-time monitoring of actuation states via changes in resistance. By integrating photothermal actuation and self-sensing into a single fiber architecture, this work establishes a multifunctional platform for soft robotic systems operating in spatially confined environments.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75597",
+        "doi_url": "https://doi.org/10.1002/adma.75597",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42963930/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates waveguided liquid crystal elastomer fiber actuators with integrated self-sensing capabilities for confined environments. The researchers designed a sheath-core optical fiber using a liquid crystal elastomer core and a conductive carbon nanotube/carbon black sheath. Near-infrared light activation enabled reversible contractions up to 38% and a load capacity 320 times the actuator's weight. The conductive sheath provided real-time strain monitoring via resistance changes, allowing programmable gripping in tight spaces without external sensors.\",\n  \"key_findings\": [\n    \"Reversible contractions of up to 38% via near-infrared light activation\",\n    \"Load-bearing capacity exceeding 320 times the actuator's weight\",\n    \"Conductive sheath enables real-time strain monitoring through resistance changes\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a multifunctional soft actuator platform that integrates photothermal actuation and self-sensing within a single fiber architecture for confined environments, advancing capabilities for soft robotics in spatially restricted settings.\"\n}",
+        "parsed": {
+          "summary": "This study investigates waveguided liquid crystal elastomer fiber actuators with integrated self-sensing capabilities for confined environments. The researchers designed a sheath-core optical fiber using a liquid crystal elastomer core and a conductive carbon nanotube/carbon black sheath. Near-infrared light activation enabled reversible contractions up to 38% and a load capacity 320 times the actuator's weight. The conductive sheath provided real-time strain monitoring via resistance changes, allowing programmable gripping in tight spaces without external sensors.",
+          "key_findings": [
+            "Reversible contractions of up to 38% via near-infrared light activation",
+            "Load-bearing capacity exceeding 320 times the actuator's weight",
+            "Conductive sheath enables real-time strain monitoring through resistance changes"
+          ],
+          "scientific_significance": "This work demonstrates a multifunctional soft actuator platform that integrates photothermal actuation and self-sensing within a single fiber architecture for confined environments, advancing capabilities for soft robotics in spatially restricted settings."
+        },
+        "elapsed_seconds": 38.781,
+        "input_tokens": 634,
+        "output_tokens": 224,
+        "thoughts_tokens": null,
+        "total_tokens": 858,
+        "model_eval_seconds": 28.6156,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43046864",
+        "title": "Cross-Species Single-Cell, Single-Nucleus, and Spatial Transcriptomics Reveal Remodeling Features of the Immune Microenvironment and Tissue Architecture Associated With Prostate Aging and Benign Prostatic Hyperplasia.",
+        "abstract": "NA: Benign prostatic hyperplasia (BPH) is closely associated with advancing age, but the tissue, cellular, and molecular features associated with prostate aging and BPH remain incompletely understood. We integrated single-cell RNA sequencing (scRNA-seq) data from Homo sapiens (Hsa) and Mus musculus (Mmu), single-nucleus RNA sequencing (snRNA-seq) data from Macaca fascicularis (Mfa), and spatial transcriptomics (ST) data from Hsa to characterize prostate remodeling across the available age groups. Cross-species integration using one-to-one ortholog mapping and scGen-based batch correction generated a prostate atlas comprising 47 samples and more than 400,000 cells. In species-specific analyses, CD4_Tem, CD4_Treg, CD8_CTL, Macro_IL1B, and Macro_LYVE1 were more abundant in Middle-aged or Old groups. These populations exhibited diverse pathway signatures related to inflammation, angiogenesis, and extracellular matrix (ECM) remodeling. In addition, basal, club, and hillock cells exhibited higher scores for EMT-related transcriptional features and features associated with ECM remodeling in Old Hsa and Old Mmu groups. Fibro_IL1R1, Fibro_C7, and SMC_CNN1 were more abundant in Old Hsa and Old Mmu groups, with higher activity of pathways related to inflammation and ECM remodeling. Tip endothelial cells were more abundant in Old Hsa and Old Mmu groups, with higher angiogenesis-related pathway activity, whereas venous endothelial cells had higher activity of pathways related to inflammation and ECM remodeling. In summary, our study characterizes remodeling features of the immune microenvironment and tissue architecture associated with prostate aging and BPH across species.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1111/acel.70811",
+        "doi_url": "https://doi.org/10.1111/acel.70811",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43046864/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Aging cell",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study integrated cross-species single-cell, single-nucleus, and spatial transcriptomics data to characterize prostate remodeling in aging and benign prostatic hyperplasia (BPH). By analyzing Homo sapiens, Mus musculus, and Macaca fascicularis samples, it identified species-specific immune cell enrichments (e.g., CD4_Tem, CD4_Treg, CD8_CTL) and tissue features linked to inflammation, angiogenesis, and extracellular matrix remodeling in older age groups. The findings reveal conserved remodeling patterns across species associated with prostate aging and BPH.\",\n  \"key_findings\": [\n    \"Increased abundance of CD4_Tem, CD4_Treg, CD8_CTL, Macro_IL1B, and Macro_LYVE1 in middle-aged or old groups\",\n    \"Basal, club, and hillock cells showed higher EMT-related and ECM remodeling features in old groups\",\n    \"Fibro_IL1R1, Fibro_C7, and SMC_CNN1 were enriched in old groups with active inflammation and ECM remodeling pathways\"\n  ],\n  \"scientific_significance\": \"The study provides cross-species insights into conserved immune and tissue remodeling mechanisms underlying prostate aging and BPH, advancing understanding of age-related pathophysiology across species.\"\n}",
+        "parsed": {
+          "summary": "This study integrated cross-species single-cell, single-nucleus, and spatial transcriptomics data to characterize prostate remodeling in aging and benign prostatic hyperplasia (BPH). By analyzing Homo sapiens, Mus musculus, and Macaca fascicularis samples, it identified species-specific immune cell enrichments (e.g., CD4_Tem, CD4_Treg, CD8_CTL) and tissue features linked to inflammation, angiogenesis, and extracellular matrix remodeling in older age groups. The findings reveal conserved remodeling patterns across species associated with prostate aging and BPH.",
+          "key_findings": [
+            "Increased abundance of CD4_Tem, CD4_Treg, CD8_CTL, Macro_IL1B, and Macro_LYVE1 in middle-aged or old groups",
+            "Basal, club, and hillock cells showed higher EMT-related and ECM remodeling features in old groups",
+            "Fibro_IL1R1, Fibro_C7, and SMC_CNN1 were enriched in old groups with active inflammation and ECM remodeling pathways"
+          ],
+          "scientific_significance": "The study provides cross-species insights into conserved immune and tissue remodeling mechanisms underlying prostate aging and BPH, advancing understanding of age-related pathophysiology across species."
+        },
+        "elapsed_seconds": 56.7096,
+        "input_tokens": 831,
+        "output_tokens": 269,
+        "thoughts_tokens": null,
+        "total_tokens": 1100,
+        "model_eval_seconds": 37.739,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42963965",
+        "title": "Crystal Integrity Suppresses Bulk Trapping in Potassium Poly(Heptazine Imide) for Selective Polyester Photoreforming.",
+        "abstract": "NA: Bulk defects in organic semiconductor photocatalysts intercept photogenerated charges before interfacial reaction, constraining activity and selectivity. Here, seeded molten-salt recrystallization yields potassium poly(heptazine imide) (PHI-K) nanocrystals with reduced cyano content and enhanced lattice coherence for polyester photoreforming. Density functional theory and transient absorption spectroscopy identify cyano-derived occupied states as bulk hole traps. Defect suppression preserves observable hole-polaron absorption and extends the average exciton-associated absorption decay time from 69.52 to 984.72 ps, consistent with reduced trap-assisted carrier loss. Under air mass 1.5 global (AM 1.5G) irradiation, crystalline PHI-K photoreforms alkaline-pretreated poly(glycolic acid) and poly(lactic acid) into glyoxylic and pyruvic acids with respective target-product carbon yields of 95.2% and 92.5%. Corresponding H2 evolution rates reach 42.6 and 26.0 mmol g-1 h-1, with apparent quantum yields of 50.8% and 30.1% at 400 nm, respectively. In situ infrared spectroscopy, isotope effects, and carrier kinetics support a pathway in which holes drive two-electron oxidation of surface-bound α-hydroxy species while electrons reduce protons on Pt. These findings establish crystal integrity as an organic semiconductor materials principle that couples bulk charge retention to selective bond conversion in conjugated photocatalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75601",
+        "doi_url": "https://doi.org/10.1002/adma.75601",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42963965/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how crystal integrity in potassium poly(heptazine imide) (PHI-K) enhances photoreforming selectivity for polyesters. Using molten-salt recrystallization, the researchers produced nanocrystals with reduced cyano content and improved lattice coherence. Spectroscopic and theoretical analyses revealed that suppressing bulk hole traps increased exciton decay times from 69.52 to 984.72 ps. Under AM 1.5G irradiation, crystalline PHI-K achieved high carbon yields (95.2% for polyglycolic acid, 92.5% for poly(lactic acid)) and significant hydrogen evolution rates (42.6 and 26.0 mmol g-1 h-1).\",\n  \"key_findings\": [\n    \"PHI-K nanocrystals with enhanced lattice coherence suppress bulk hole traps\",\n    \"Extended exciton-associated absorption decay time from 69.52 to 984.72 ps\",\n    \"High carbon yields (95.2% and 92.5%) and hydrogen evolution rates (42.6 and 26.0 mmol g-1 h-1) for polyesters under AM 1.5G irradiation\"\n  ],\n  \"scientific_significance\": \"This work establishes crystal integrity as a critical principle for organic semiconductors to maintain bulk charge retention and enable selective bond conversion in photocatalytic reactions.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how crystal integrity in potassium poly(heptazine imide) (PHI-K) enhances photoreforming selectivity for polyesters. Using molten-salt recrystallization, the researchers produced nanocrystals with reduced cyano content and improved lattice coherence. Spectroscopic and theoretical analyses revealed that suppressing bulk hole traps increased exciton decay times from 69.52 to 984.72 ps. Under AM 1.5G irradiation, crystalline PHI-K achieved high carbon yields (95.2% for polyglycolic acid, 92.5% for poly(lactic acid)) and significant hydrogen evolution rates (42.6 and 26.0 mmol g-1 h-1).",
+          "key_findings": [
+            "PHI-K nanocrystals with enhanced lattice coherence suppress bulk hole traps",
+            "Extended exciton-associated absorption decay time from 69.52 to 984.72 ps",
+            "High carbon yields (95.2% and 92.5%) and hydrogen evolution rates (42.6 and 26.0 mmol g-1 h-1) for polyesters under AM 1.5G irradiation"
+          ],
+          "scientific_significance": "This work establishes crystal integrity as a critical principle for organic semiconductors to maintain bulk charge retention and enable selective bond conversion in photocatalytic reactions."
+        },
+        "elapsed_seconds": 61.2915,
+        "input_tokens": 779,
+        "output_tokens": 314,
+        "thoughts_tokens": null,
+        "total_tokens": 1093,
+        "model_eval_seconds": 44.7089,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43046952",
+        "title": "Combined inhibition of BCL2 activity and CD28 signaling to prevent graft-versus-host disease.",
+        "abstract": "NA: Post-transplantation cyclophosphamide (PTCy)-based prophylaxis has become one of the most widely used strategies to prevent graft-versus-host disease (GVHD), particularly after HLA-haploidentical hematopoietic cell transplantation (HCT). Well-tolerated GVHD prophylaxis regimens beyond PTCy are needed, because adverse events associated with Cy administration, such as cardiac toxicity, remain a safety concern. Costimulation blockade using abatacept (ABA) is an established complementary strategy to improve GVHD prevention without a calcineurin inhibitor. Here, we investigated venetoclax (VEN), a selective B-cell leukemia/lymphoma 2 (BCL-2) inhibitor, as a candidate partner with ABA to prevent GVHD. In a murine MHC-haploidentical HCT model, we demonstrate that prevention of GVHD with a combination of short-term VEN and CD28 costimulation blockade using ABA (VEN+ABA) was comparable to that with Cy+ABA and superior to that with Cy monotherapy, while maintaining GVL effects. Flow cytometry analysis revealed a higher regulatory T (Treg)/conventional T (Tcon) ratio with the VEN+ABA combination compared to Cy+ABA. Using donor CD8+ alloreactive TCR-transgenic T cells, we show that the VEN+ABA combination produced a prominent cleaved caspase-3 signature only in allo-activated T cells, and cells from the spleen at day 9 after HCT with VEN+ABA did not respond after ex vivo CD3/CD28 stimulation. Collectively, our study supports a VEN+ABA GVHD prophylaxis strategy associated with preferential apoptosis of alloreactive T cells while preserving GVL activity to replace alkylator-based prophylaxis.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1182/bloodadvances.2026021048",
+        "doi_url": "https://doi.org/10.1182/bloodadvances.2026021048",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43046952/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Blood advances",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study evaluated combining venetoclax (a BCL-2 inhibitor) with abatacept (CD28 costimulation blockade) to prevent graft-versus-host disease (GVHD) post-haploidentical hematopoietic cell transplantation. In murine models, the VEN+ABA regimen matched cyclophosphamide-based prophylaxis in GVHD prevention while maintaining graft-versus-leukemia effects and showing enhanced regulatory T cell ratios. The combination induced apoptosis specifically in alloreactive T cells without compromising antitumor activity.\",\n  \"key_findings\": [\n    \"VEN+ABA prevented GVHD comparably to cyclophusingamide monotherapy and superior to cyclophosphamide-based regimens\",\n    \"VEN+ABA maintained graft-versus-leukemia effects while improving regulatory T cell ratios\",\n    \"The combination selectively induced apoptosis in alloreactive T cells without affecting graft-versus-leukemia activity\"\n  ],\n  \"scientific_significance\": \"This approach provides a targeted strategy for GVHD prophylaxis by preferentially eliminating alloreactive T cells through BCL-2 inhibition and costimulation blockade, potentially reducing toxicity associated with alkylating agents.\"\n}",
+        "parsed": {
+          "summary": "This study evaluated combining venetoclax (a BCL-2 inhibitor) with abatacept (CD28 costimulation blockade) to prevent graft-versus-host disease (GVHD) post-haploidentical hematopoietic cell transplantation. In murine models, the VEN+ABA regimen matched cyclophosphamide-based prophylaxis in GVHD prevention while maintaining graft-versus-leukemia effects and showing enhanced regulatory T cell ratios. The combination induced apoptosis specifically in alloreactive T cells without compromising antitumor activity.",
+          "key_findings": [
+            "VEN+ABA prevented GVHD comparably to cyclophusingamide monotherapy and superior to cyclophosphamide-based regimens",
+            "VEN+ABA maintained graft-versus-leukemia effects while improving regulatory T cell ratios",
+            "The combination selectively induced apoptosis in alloreactive T cells without affecting graft-versus-leukemia activity"
+          ],
+          "scientific_significance": "This approach provides a targeted strategy for GVHD prophylaxis by preferentially eliminating alloreactive T cells through BCL-2 inhibition and costimulation blockade, potentially reducing toxicity associated with alkylating agents."
+        },
+        "elapsed_seconds": 52.7157,
+        "input_tokens": 823,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 1074,
+        "model_eval_seconds": 34.056,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42966722",
+        "title": "Bottom-Cell Engineering as the Key to Perovskite/CIGS Tandem Solar Cells.",
+        "abstract": "NA: Perovskite/Cu(In,Ga)Se2 (CIGS) tandem solar cells have emerged as a highly promising thin-film photovoltaic architecture, combining the exceptional efficiency potential of perovskites with the industrial maturity of CIGS technology. Despite rapid advances in perovskite top cells, overall tandem performance remains fundamentally constrained by the CIGS bottom cell, which critically governs bandgap matching, voltage losses, and interfacial recombination. Here, we provide a comprehensive overview of recent progress in CIGS absorber and interface engineering for tandem applications. We highlight key strategies including Ga-gradient bandgap engineering, alkali post-deposition treatment, Ag alloying for low-temperature growth and bifacial operation, as well as buffer-layer and intermediate recombination layer optimization. We further discuss how surface morphology and defect chemistry collectively dictate carrier recombination dynamics and interfacial stability in monolithic device architectures. Finally, we outline a roadmap toward the commercialization of perovskite/CIGS tandem photovoltaics. By linking materials-level engineering with device-level constraints, this review establishes a unified framework to guide the development of high-efficiency, scalable, and industrially viable tandem solar technologies.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75576",
+        "doi_url": "https://doi.org/10.1002/adma.75576",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42966722/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines engineering strategies to overcome CIGS bottom cell limitations in perovskite/CIGS tandem solar cells. It identifies Ga-gradient bandgap engineering, alkali post-deposition treatments, Ag alloying for low-.temperature growth, and interface optimization as key approaches. The study demonstrates how surface morphology and defect chemistry impact carrier recombination and interfacial stability. These findings collectively advance the development of high-efficiency, scalable tandem photovoltaics for commercialization.\",\n  \"key_findings\": [\n    \"Ga-gradient bandgap engineering improves CIGS bandgap matching in tandem cells\",\n    \"Alkali post-deposition treatments reduce interfacial recombination losses\",\n    \"Ag alloying enables low-temperature growth and bifacial operation of CIGS absorbers\"\n  ],\n  \"scientific_significance\": \"This work establishes a unified framework for optimizing CIGS bottom cells to enable high-efficiency, industrially viable perovskite/CIGS tandem solar cells.\"\n}",
+        "parsed": {
+          "summary": "This review examines engineering strategies to overcome CIGS bottom cell limitations in perovskite/CIGS tandem solar cells. It identifies Ga-gradient bandgap engineering, alkali post-deposition treatments, Ag alloying for low-.temperature growth, and interface optimization as key approaches. The study demonstrates how surface morphology and defect chemistry impact carrier recombination and interfacial stability. These findings collectively advance the development of high-efficiency, scalable tandem photovoltaics for commercialization.",
+          "key_findings": [
+            "Ga-gradient bandgap engineering improves CIGS bandgap matching in tandem cells",
+            "Alkali post-deposition treatments reduce interfacial recombination losses",
+            "Ag alloying enables low-temperature growth and bifacial operation of CIGS absorbers"
+          ],
+          "scientific_significance": "This work establishes a unified framework for optimizing CIGS bottom cells to enable high-efficiency, industrially viable perovskite/CIGS tandem solar cells."
+        },
+        "elapsed_seconds": 40.4213,
+        "input_tokens": 689,
+        "output_tokens": 209,
+        "thoughts_tokens": null,
+        "total_tokens": 898,
+        "model_eval_seconds": 27.292,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43047479",
+        "title": "Transcriptomic identification of mitophagy-related plaque markers HAND2, NRP1 and RNF213, with external replication and in vivo validation of MLXIP.",
+        "abstract": "BACKGROUND: Atherosclerosis is a leading cause of cardiovascular mortality, and mitophagy dysfunction contributes to its pathogenesis. However, the mitophagy-related molecular signatures that could serve as plaque-associated markers remain incompletely characterized.\nMETHODS: Paired differential expression analysis of GSE43292 (32 plaque vs. 32 paired macroscopically intact carotid samples), combined with weighted gene co-expression network analysis, defined a plaque-associated module that was intersected with 4,922 mitophagy-associated genes (GeneCards) to identify mitophagy-related DEGs. LASSO, Random Forest and XGBoost were applied as an auxiliary, patient-grouped, cross-validated feature-selection step; a logistic-regression model fitted on the shared genes was evaluated by receiver operating characteristic (ROC) analysis with 95% confidence intervals (CIs). External validation used GSE100927 (69 plaque vs. 35 control peripheral artery samples). Immune infiltration was assessed by CIBERSORT, and MLXIP protein abundance was explored by Western blot in a small ApoE⁻/⁻ murine model. Comparator specimens were macroscopically intact tissue (Stary types I-II).\nRESULTS: Paired analysis of GSE43292 identified 1,249 differentially expressed genes, of which 107 were mitophagy-related. Patient-grouped machine-learning feature selection nominated three consensus markers-HAND2, NRP1 and RNF213-and a three-gene logistic-regression model reached an out-of-fold area under the curve (AUC) of 0.892 (95% CI 0.810-0.973); because selection and evaluation used the same cohort, these results are exploratory. All three were directionally reproduced in the independent external cohort GSE100927 (direction-locked AUC 0.814, 0.942 and 0.848 respectively). Of three genes examined a priori, MLXIP and EPB41L4A-AS1 replicated in the external cohort (AUC 0.834 for both), whereas RNU4ATAC did not (AUC 0.321). CIBERSORT showed higher macrophage and memory B-cell fractions and lower regulatory T-cell fractions in plaques. In an exploratory in vivo experiment (n = 3 per group), aortic MLXIP protein was 37.7-fold higher in atherosclerotic mice than in controls (P = 0.11) with unchanged MLXIP mRNA; these data were directional only.\nCONCLUSION: In this exploratory study, bioinformatics and machine learning nominated HAND2, NRP1 and RNF213 as candidate mitophagy-related plaque markers, with MLXIP and EPB41L4A-AS1 replicated in an independent cohort, and pointed to a mitophagy-immune axis in plaque pathogenesis. These findings are hypothesis-generating and require confirmation in larger cohorts.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.3389/fcvm.2026.1932411",
+        "doi_url": "https://doi.org/10.3389/fcvm.2026.1932411",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43047479/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in cardiovascular medicine",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated mitophagy-related molecular markers in atherosclerotic plaques using transcriptomic analysis of carotid tissue. Paired differential expression analysis identified 107 mitophagy-related genes, with machine learning selecting HAND2, NRP1, and RNF213 as consensus markers. External validation confirmed these markers in independent cohorts, and in vivo experiments showed elevated MLXIP protein in atherosclerotic mice. The findings suggest a mitophagy-immune axis in plaque pathogenesis and require further validation.\",\n  \"key_findings\": [\n    \"HAND2, NRP1, and RNF213 were identified as mitophagy-related markers consistently across paired plaque and control samples\",\n    \"External validation confirmed all three markers in an independent cohort with directional reproducibility\",\n    \"In vivo experiments demonstrated 37.7-fold higher MLXIP protein in atherosclerotic mouse models compared to controls\"\n  ],\n  \"scientific_significance\": \"The study provides preliminary evidence for mitophagy-related molecular markers in atherosclerosis, highlighting a potential mitophagy-immune axis that may inform future plaque-targeted therapeutic strategies.\"\n}",
+        "parsed": {
+          "summary": "This study investigated mitophagy-related molecular markers in atherosclerotic plaques using transcriptomic analysis of carotid tissue. Paired differential expression analysis identified 107 mitophagy-related genes, with machine learning selecting HAND2, NRP1, and RNF213 as consensus markers. External validation confirmed these markers in independent cohorts, and in vivo experiments showed elevated MLXIP protein in atherosclerotic mice. The findings suggest a mitophagy-immune axis in plaque pathogenesis and require further validation.",
+          "key_findings": [
+            "HAND2, NRP1, and RNF213 were identified as mitophagy-related markers consistently across paired plaque and control samples",
+            "External validation confirmed all three markers in an independent cohort with directional reproducibility",
+            "In vivo experiments demonstrated 37.7-fold higher MLXIP protein in atherosclerotic mouse models compared to controls"
+          ],
+          "scientific_significance": "The study provides preliminary evidence for mitophagy-related molecular markers in atherosclerosis, highlighting a potential mitophagy-immune axis that may inform future plaque-targeted therapeutic strategies."
+        },
+        "elapsed_seconds": 69.2934,
+        "input_tokens": 1118,
+        "output_tokens": 248,
+        "thoughts_tokens": null,
+        "total_tokens": 1366,
+        "model_eval_seconds": 36.3865,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42966723",
+        "title": "Blending With Insulating Polymers Enables Stable Anti-Ambipolar Characteristics in n-Type Organic Mixed-Conductors for Heterogeneous Spiking Neurons.",
+        "abstract": "NA: Mammalian neurons exhibit diverse structural and physiological properties: a heterogeneity not present in current neuromorphic systems. Recent advancements have led to bio-realistic spiking systems which are based on the integration and long-term operation of organic electrochemical transistors (OECTs) with anti-ambipolar characteristics. However, the library of materials enabling anti-ambipolarity (AA) is restricted by the lack of stable, fast, and scalable organic mixed ionic and electronic conductors (OMIECs) exhibiting this specific OFF-ON-OFF behavior. This complicates mimicking specialized neuron types. Blending semiconducting with insulating polymers is a classic organic and OMIEC electronics strategy to improve device performance and enable tunability, yet unexplored for improving anti-ambipolar stability in non-ladder-type anti-ambipolar materials. Here, the n-type OMIEC, P(gNDI-gT2), is blended with the insulating polymer, PMMA, yielding stable anti-ambipolar characteristics. The miscibility in solution forms a mechanically stabilizing and ion-permeable framework in the solid state that considerably reduces swelling-induced structural damage, thus preventing dramatic failure after the first operation cycles without compromising the conductive polymer's electronic pathways. Modulating the polymer blend ratio enables low-power, fast-spiking Hodgkin-Huxley neurons with tunable and programmable dynamics, without optimized device geometries, demonstrating frequency deconvolution and reservoir computing. These two computing primitive building blocks are essential for designing efficient spiking neural networks.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75538",
+        "doi_url": "https://doi.org/10.1002/adma.75538",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42966723/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing anti-ambipolar stability in n-type organic mixed-conductors for neuromorphic applications. By blending P(gNDI-gT2) with PMMA, the researchers achieved mechanically stable and ion-permeable frameworks that prevent structural damage during operation. The approach enabled low-power, fast-spiking Hodgkin-Huxley neurons with tunable dynamics, supporting frequency deconvolution and reservoir computing without optimized device geometries.\",\n  \"key_findings\": [\n    \"Blending P(gNDI-gT2) with PMMA stabilized anti-ambipolar characteristics in organic mixed-conductors\",\n    \"The polymer blend reduced swelling-induced structural damage, enabling durable device operation\",\n    \"Modulated blend ratios produced tunable, low-power spiking neurons for reservoir computing\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a material strategy to achieve stable anti-ambipolar behavior in organic mixed-conductors, advancing neuromorphic system design through robust, tunable spiking neuron implementations.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing anti-ambipolar stability in n-type organic mixed-conductors for neuromorphic applications. By blending P(gNDI-gT2) with PMMA, the researchers achieved mechanically stable and ion-permeable frameworks that prevent structural damage during operation. The approach enabled low-power, fast-spiking Hodgkin-Huxley neurons with tunable dynamics, supporting frequency deconvolution and reservoir computing without optimized device geometries.",
+          "key_findings": [
+            "Blending P(gNDI-gT2) with PMMA stabilized anti-ambipolar characteristics in organic mixed-conductors",
+            "The polymer blend reduced swelling-induced structural damage, enabling durable device operation",
+            "Modulated blend ratios produced tunable, low-power spiking neurons for reservoir computing"
+          ],
+          "scientific_significance": "This work demonstrates a material strategy to achieve stable anti-ambipolar behavior in organic mixed-conductors, advancing neuromorphic system design through robust, tunable spiking neuron implementations."
+        },
+        "elapsed_seconds": 46.1649,
+        "input_tokens": 773,
+        "output_tokens": 216,
+        "thoughts_tokens": null,
+        "total_tokens": 989,
+        "model_eval_seconds": 29.4029,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43047565",
+        "title": "Glutaminase Isoenzyme and Splice-Variant Remodeling in Hepatocellular Carcinoma: Redox Vulnerability, Ferroptosis, and Therapeutic Resistance.",
+        "abstract": "NA: Hepatocellular carcinoma (HCC) remodels glutamine metabolism within a liver often affected by fibrosis and impaired metabolic reserve. Rather than treating total GLS1 expression as a surrogate for dependency, this review examines how GLS isoform composition (GAC/KGA) and glutamate routing between alpha-ketoglutarate-dependent anaplerosis and glutathione-associated redox defense may influence ferroptosis and treatment response. EGFR-AKT-WTAP-mediated splicing favors GAC, whereas S100A14-mediated GLS/KGA stabilization contributes to sorafenib resistance in selected HCC models. The GAC-associated NADPH phenotype is indirect: glutaminase does not itself produce NADPH. Splice-switching ASO5 has shown proof of concept in HCC cells and locally treated xenografts, but systemic delivery and clinical relevance are untested. GOT2 loss and treatment-induced ASNS alter preclinical responses to CB-839. GLS2 has tumor-suppressive, pro-tumor metabolic and catalysis-independent functions in different experimental settings; GLS1-high/GLS2-low remodeling is also present in nonmalignant chronic liver disease. Human HCC spatial studies now link ammonia-rich niches to regulatory T-cell enrichment, although GLS1-specific ammonia causality remains unresolved. Future development requires isoform-aware patient selection, direct target-engagement measurements and liver and immune safety monitoring.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.2147/JHC.S641610",
+        "doi_url": "https://doi.org/10.2147/JHC.S641610",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43047565/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of hepatocellular carcinoma",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review investigates how glutaminase isoform composition (GAC/KGA) and splice-variants in hepatocellular carcinoma (HCC) influence redox balance, ferroptosis sensitivity, and therapeutic resistance. It highlights EGFR-AKT-WTAP-mediated splicing favoring GAC, S1.00A14-mediated stabilization contributing to sorafenib resistance, and the indirect NADPH phenotype associated with GAC. The study emphasizes the need for isoform-specific targeting strategies and clinical validation of splice-switching approaches like ASO5.\",\n  \"key_findings\": [\n    \"EGFR-AKT-WTAP-mediated splicing favors GAC isoform expression in HCC\",\n    \"S100A14-mediated GLS/KGA stabilization promotes sorafenib resistance in selected HCC models\",\n    \"GAC-associated NADPH phenotype is indirect, as glutaminase does not directly produce NADPH\"\n  ],\n  \"scientific_significance\": \"The study clarifies the role of glutaminase isoform dynamics in HCC redox regulation, providing a foundation for isoform-targeted therapies to overcome treatment resistance and enhance ferroptosis sensitivity.\"\n}",
+        "parsed": {
+          "summary": "This review investigates how glutaminase isoform composition (GAC/KGA) and splice-variants in hepatocellular carcinoma (HCC) influence redox balance, ferroptosis sensitivity, and therapeutic resistance. It highlights EGFR-AKT-WTAP-mediated splicing favoring GAC, S1.00A14-mediated stabilization contributing to sorafenib resistance, and the indirect NADPH phenotype associated with GAC. The study emphasizes the need for isoform-specific targeting strategies and clinical validation of splice-switching approaches like ASO5.",
+          "key_findings": [
+            "EGFR-AKT-WTAP-mediated splicing favors GAC isoform expression in HCC",
+            "S100A14-mediated GLS/KGA stabilization promotes sorafenib resistance in selected HCC models",
+            "GAC-associated NADPH phenotype is indirect, as glutaminase does not directly produce NADPH"
+          ],
+          "scientific_significance": "The study clarifies the role of glutaminase isoform dynamics in HCC redox regulation, providing a foundation for isoform-targeted therapies to overcome treatment resistance and enhance ferroptosis sensitivity."
+        },
+        "elapsed_seconds": 49.9357,
+        "input_tokens": 762,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 1013,
+        "model_eval_seconds": 34.002,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42966724",
+        "title": "Water-Heat Synergistic Regulation to Optimize Water State and Enhance Thermal Effect in Solar Interfacial Evaporation.",
+        "abstract": "NA: Solar-driven interfacial evaporation is a promising solution to the global freshwater shortage. However, current evaporation systems typically suffer from low water management efficiency and poor interfacial thermal effects. This work proposes a strategy to synergistically enhance the heat and mass transport of solar interfacial evaporators by balancing water transport capacity and water activity and reverse heat compensation. A higher proportion of loosely bound intermediate water (IW) with low enthalpy of vaporization is induced by in situ construction of a hydrophilic micron-to-submicron hierarchical pore structure within the wood-based biomass framework, while maintaining its water pumping capacity. Simultaneously, a biomimetic thermal compensation mechanism significantly enhances the thermal effect of the wood-based biomass evaporation interface (temperature up to 50.7°C). This synergistic design enables a record evaporation rate of 5.12 kg m-2 h-1 in wood-based evaporators. Furthermore, the vertically distributed hierarchical pore structure and surface polar groups endow it with excellent salt repellency and antifouling capabilities. This reported water-heat management strategy provides a scalable, low-cost, and environmentally friendly approach to highly efficient solar interfacial evaporation.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75554",
+        "doi_url": "https://doi.org/10.1002/adma.75554",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42966724/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates optimizing solar interfacial evaporation efficiency by synergistically managing water state and thermal effects. The researchers engineered a wood-based biomass framework with hydrophilic micron-to-submicron hierarchical pores to balance water transport capacity and activity, inducing loosely bound intermediate water with low vaporization enthalpy. This design enhanced thermal effects to 50.7°C and achieved a record evaporation rate of . The system also exhibited superior salt repellency and antifouling properties, offering a scalable, low-cost solution for freshwater production.\",\n  \"key_findings\": [\n    \"Induced loosely bound intermediate water with low vaporization enthalpy through hydrophilic hierarchical pores\",\n    \"Achieved temperature up to 50.7°C and evaporation rate of 5.12 kg m-2 h-1\",\n    \"Demonstrated salt repellency and antifouling capabilities via hierarchical pore structure and surface polar groups\"\n  ],\n  \"scientific_significance\": \"This work establishes a water-heat synergistic strategy for highly efficient solar evaporation, advancing sustainable freshwater production through biomimetic design principles.\"\n}",
+        "parsed": {
+          "summary": "This study investigates optimizing solar interfacial evaporation efficiency by synergistically managing water state and thermal effects. The researchers engineered a wood-based biomass framework with hydrophilic micron-to-submicron hierarchical pores to balance water transport capacity and activity, inducing loosely bound intermediate water with low vaporization enthalpy. This design enhanced thermal effects to 50.7°C and achieved a record evaporation rate of . The system also exhibited superior salt repellency and antifouling properties, offering a scalable, low-cost solution for freshwater production.",
+          "key_findings": [
+            "Induced loosely bound intermediate water with low vaporization enthalpy through hydrophilic hierarchical pores",
+            "Achieved temperature up to 50.7°C and evaporation rate of 5.12 kg m-2 h-1",
+            "Demonstrated salt repellency and antifouling capabilities via hierarchical pore structure and surface polar groups"
+          ],
+          "scientific_significance": "This work establishes a water-heat synergistic strategy for highly efficient solar evaporation, advancing sustainable freshwater production through biomimetic design principles."
+        },
+        "elapsed_seconds": 44.9633,
+        "input_tokens": 690,
+        "output_tokens": 237,
+        "thoughts_tokens": null,
+        "total_tokens": 927,
+        "model_eval_seconds": 32.1346,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43047696",
+        "title": "Cancer immunotherapy and mitochondrial metabolic reprogramming.",
+        "abstract": "NA: The complexity of the tumor microenvironment often leads to resistance to cancer immunotherapy, and mitochondrial metabolic reprogramming is an important mechanism underlying tumor immune evasion. Treatment selection and response prediction remain challenging because the mechanisms of resistance and changes in the tumor immune microenvironment are incompletely understood. Therefore, a comprehensive understanding of immunotherapy resistance will facilitate the development of targeted strategies to overcome resistance. This review synthesizes the manifestations and consequences of mitochondrial metabolic reprogramming in tumor cells and summarizes how tumor-derived metabolites shape an immunosuppressive TME. It focuses on how mitochondrial metabolic reprogramming in antitumor immune cells, including CD8+ T cells, dendritic cells, M1-like tumor-associated macrophages, and natural killer cells, and in immunosuppressive cells, including regulatory T cells, myeloid-derived suppressor cells, and M2-like tumor-associated macrophages, contributes to the exhaustion of antitumor immunity and promotes tumor immune evasion. This review examines how mitochondrial metabolism can be targeted to overcome immunotherapy resistance and summarizes the mechanisms and current status of related immunotherapeutic strategies. It also discusses the current bottlenecks and future directions of metabolism-targeted cancer immunotherapy. Overall, this review not only elucidates the mechanisms by which mitochondrial metabolic reprogramming drives tumor immune evasion but also provides a theoretical basis for optimizing metabolism-targeted immunotherapy.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.3389/fcell.2026.2001829",
+        "doi_url": "https://doi.org/10.3389/fcell.2026.2001829",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43047696/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in cell and developmental biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review investigates mitochondrial metabolic reprogramming in the tumor microenvironment as a mechanism driving immunotherapy resistance. It synthesizes how tumor cell and immune cell metabolic changes promote immunosuppression, leading to antitumor immunity exhaustion. The study identifies key metabolite-mediated pathways that facilitate immune evasion and evaluates strategies targeting mitochondrial metabolism to overcome resistance, highlighting current challenges and future directions in metabolism-focused immunotherapy.\",\n  \"key_findings\": [\n    \"Mitochondrial metabolic reprogramming in tumor cells and immune cells contributes to immunosuppressive tumor microenvironments\",\n    \"Metabolite exchange between tumor cells and immune cells drives antitumor immunity exhaustion\",\n    \"Targeting mitochondrial metabolism offers potential strategies to overcome immunotherapy resistance\"\n  ],\n  \"scientific_significance\": \"This review provides a mechanistic framework for understanding how mitochondrial metabolic reprogramming enables tumor immune evasion and informs the development of metabolism-targeted immunotherapeutic approaches.\"\n}",
+        "parsed": {
+          "summary": "This review investigates mitochondrial metabolic reprogramming in the tumor microenvironment as a mechanism driving immunotherapy resistance. It synthesizes how tumor cell and immune cell metabolic changes promote immunosuppression, leading to antitumor immunity exhaustion. The study identifies key metabolite-mediated pathways that facilitate immune evasion and evaluates strategies targeting mitochondrial metabolism to overcome resistance, highlighting current challenges and future directions in metabolism-focused immunotherapy.",
+          "key_findings": [
+            "Mitochondrial metabolic reprogramming in tumor cells and immune cells contributes to immunosuppressive tumor microenvironments",
+            "Metabolite exchange between tumor cells and immune cells drives antitumor immunity exhaustion",
+            "Targeting mitochondrial metabolism offers potential strategies to overcome immunotherapy resistance"
+          ],
+          "scientific_significance": "This review provides a mechanistic framework for understanding how mitochondrial metabolic reprogramming enables tumor immune evasion and informs the development of metabolism-targeted immunotherapeutic approaches."
+        },
+        "elapsed_seconds": 39.0888,
+        "input_tokens": 709,
+        "output_tokens": 192,
+        "thoughts_tokens": null,
+        "total_tokens": 901,
+        "model_eval_seconds": 25.5463,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42966725",
+        "title": "From Water Vapor Transmission Rate (WVTR) to Intrinsic Water Vapor Permeability (WVP).",
+        "abstract": "NA: Water vapor transmission rate (WVTR) is widely used to assess breathability in skin-interfaced electronics. In gravimetric wet-cup tests, however, the measured flux depends on transport through both the membrane and the apparatus. Apparatus resistance can dominate measurements of highly permeable membranes. Evaporation, headspace transport, membrane permeation, and external vapor spreading are modeled as resistances in series under a common chemical-potential driving force. The apparatus coefficients are calibrated using open-cup measurements in the same setup, independently of the reference permeability. For poly(dimethylsiloxane) membranes, where membrane resistance dominates, both a literature air-gap correction and the calibrated model reduce deviations from the reference. For a highly permeable anion-exchange membrane (AEM), the air-gap correction becomes unstable. Relative to a dynamic sweep-cell reference, the calibrated model reduces mean absolute relative deviation from 49.8% for classical conversion to 6.2%. It also provides model-based criteria for geometry selection and measurement duration, together with a procedure for converting WVTR to water vapor permeability (WVP).",
+        "publication_types": [],
+        "doi": "10.1002/adma.75578",
+        "doi_url": "https://doi.org/10.1002/adma.75578",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42966725/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the inaccuracy of water vapor transmission rate (WVTR) measurements in gravimetric wet-cup tests by modeling apparatus resistance as a series component. The calibrated model reduces deviations from reference permeability for poly(dimethylsiloxane) membranes and highly permeable anion-exchange membranes, improving accuracy from 49.8% to 6.2% mean absolute relative deviation. It provides a method to convert WVTR to intrinsic water vapor permeability (W. WVP) while accounting for air-gap effects and measurement geometry.\",\n  \"key_findings\": [\n    \"Calibrated model reduces WVTR deviation from reference permeability for poly(dimethylsiloxane) membranes\",\n    \"Model improves accuracy for highly permeable anion-exchange membranes, reducing mean absolute relative deviation from 49.8% to 6.2%\",\n    \"The model provides criteria for geometry selection and measurement duration, enabling conversion of WVTR to intrinsic water vapor permeability (WVP)\"\n  ],\n  \"scientific_significance\": \"This work establishes a method to accurately convert WVTR measurements to intrinsic water vapor permeability by accounting for apparatus resistance, resolving a critical limitation in assessing membrane breathability for skin-interfaced electronics.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the inaccuracy of water vapor transmission rate (WVTR) measurements in gravimetric wet-cup tests by modeling apparatus resistance as a series component. The calibrated model reduces deviations from reference permeability for poly(dimethylsiloxane) membranes and highly permeable anion-exchange membranes, improving accuracy from 49.8% to 6.2% mean absolute relative deviation. It provides a method to convert WVTR to intrinsic water vapor permeability (W. WVP) while accounting for air-gap effects and measurement geometry.",
+          "key_findings": [
+            "Calibrated model reduces WVTR deviation from reference permeability for poly(dimethylsiloxane) membranes",
+            "Model improves accuracy for highly permeable anion-exchange membranes, reducing mean absolute relative deviation from 49.8% to 6.2%",
+            "The model provides criteria for geometry selection and measurement duration, enabling conversion of WVTR to intrinsic water vapor permeability (WVP)"
+          ],
+          "scientific_significance": "This work establishes a method to accurately convert WVTR measurements to intrinsic water vapor permeability by accounting for apparatus resistance, resolving a critical limitation in assessing membrane breathability for skin-interfaced electronics."
+        },
+        "elapsed_seconds": 47.1829,
+        "input_tokens": 673,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 932,
+        "model_eval_seconds": 34.6221,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43047736",
+        "title": "Regulatory T cells in the bone marrow microenvironment: homeostatic crosstalk, disease remodeling, and therapeutic opportunities.",
+        "abstract": "NA: Regulatory T cells (Tregs) help maintain immune balance in hematopoietic niches by interacting with the bone marrow microenvironment. Under normal conditions, surrounding cells send signals that affect Treg movement, their length of stay in the bone marrow, their number and activity. In turn, Tregs affect hematopoietic stem cells, mesenchymal stromal cells, and other immune cells through direct contact or factors they release. When this balance is disturbed, Treg numbers and functions may change according to the disease condition, and these changes are related to the development and progression of multiple myeloma, myelodysplastic syndromes, acute myeloid leukemia, aplastic anemia, and immune thrombocytopenia. Epigenetic changes and other molecular abnormalities may further disturb this communication and allow the abnormal state to continue. Current investigational treatment methods mainly aim to increase Treg numbers, selectively remove certain Tregs, or adjust their functions by targeting the bone marrow environment. This review summarizes existing evidence about these interactions, explains how they become abnormal, and discusses their potential value in restoring normal blood cell production and immune balance.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.3389/fcell.2026.1990584",
+        "doi_url": "https://doi.org/10.3389/fcell.2026.1990584",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43047736/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Frontiers in cell and developmental biology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines regulatory T cell (Treg) interactions within the bone marrow microenvironment under homeostasis and disease. It describes how Tregs influence hematopoietic stem cells, mesenchym. stromal cells, and immune cells via direct contact or secreted factors. The study highlights disease-related disruptions in Treg function linked to multiple myeloma, myelodysplastic syndromes, and other hematologic disorders. It also discusses therapeutic strategies targeting Treg modulation to restore immune balance and blood cell production.\",\n  \"key_findings\": [\n    \"Tregs maintain immune balance in bone marrow niches through interactions with surrounding cells\",\n    \"Disease conditions alter Treg numbers and functions, contributing to hematologic disorders\",\n    \"Therapeutic approaches focus on modulating Treg activity to restore homeostasis in blood cell production\"\n  ],\n  \"scientific_significance\": \"This review provides a comprehensive framework for understanding Treg-mediated bone marrow homeostasis and its disruption in hematologic diseases, informing potential therapeutic strategies for immune dysregulation.\"\n}",
+        "parsed": {
+          "summary": "This review examines regulatory T cell (Treg) interactions within the bone marrow microenvironment under homeostasis and disease. It describes how Tregs influence hematopoietic stem cells, mesenchym. stromal cells, and immune cells via direct contact or secreted factors. The study highlights disease-related disruptions in Treg function linked to multiple myeloma, myelodysplastic syndromes, and other hematologic disorders. It also discusses therapeutic strategies targeting Treg modulation to restore immune balance and blood cell production.",
+          "key_findings": [
+            "Tregs maintain immune balance in bone marrow niches through interactions with surrounding cells",
+            "Disease conditions alter Treg numbers and functions, contributing to hematologic disorders",
+            "Therapeutic approaches focus on modulating Treg activity to restore homeostasis in blood cell production"
+          ],
+          "scientific_significance": "This review provides a comprehensive framework for understanding Treg-mediated bone marrow homeostasis and its disruption in hematologic diseases, informing potential therapeutic strategies for immune dysregulation."
+        },
+        "elapsed_seconds": 43.3408,
+        "input_tokens": 685,
+        "output_tokens": 225,
+        "thoughts_tokens": null,
+        "total_tokens": 910,
+        "model_eval_seconds": 30.7746,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
