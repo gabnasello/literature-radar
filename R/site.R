@@ -383,7 +383,7 @@ site_render_paper_card <- function(article) {
   abstract <- site_html_escape(site_text(article$abstract))
   summary <- article$summary
 
-  cat('<article class="paper-card">')
+  cat(sprintf('<article class="paper-card" id="paper-%s">', site_html_escape(site_text(article$pmid))))
   if (nzchar(pubmed_url)) {
     cat(sprintf('<h3><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h3>',
                 site_html_escape(pubmed_url), title))
