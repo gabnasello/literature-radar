@@ -1,0 +1,951 @@
+{
+  "schema_version": 1,
+  "run_id": "20261124T101149Z",
+  "generated_at_utc": "2026-11-24 10:24:59 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 125,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42973071",
+        "title": "A Retinal Matrix Stiffening Model Reveals FAK-Dependent Mechanotransduction in Pericytes Underlies Vascular Destabilization.",
+        "abstract": "NA: Pericyte loss, an early hallmark of diabetic retinopathy (DR), is linked to hyperglycemia and inflammation, whereas the contribution of mechanical changes in the retina remains unclear. We define design parameters for an iPSC-derived microphysiological system (MPS) comprising pericyte-endothelial capillary networks embedded in a dynamically stiffening hydrogel engineered to reproduce matrix stiffening in a controlled, human-relevant context. Microrheology of Ins2Akita mouse retinas revealed increased storage modulus in perivascular regions at a diabetic timepoint coincident with reduced pericyte coverage and vascular remodeling, establishing a stiffness magnitude used to inform the design of the MPS. In the MPS, progressive matrix stiffening alone, in the absence of hyperglycemic exposure, was sufficient to induce analogous vascular defects and to suppress pericyte expression of NOTCH3, HEY1, JAG1, and N-cadherin in a focal adhesion kinase (FAK)-dependent manner. Inhibition of FAK restored pericyte signaling and vascular integrity in stiffened conditions without altering soft controls, identifying a FAK-dependent mechanotransduction as a druggable target. Single-cell RNA-sequencing of human diabetic retinas validated enrichment of focal-adhesion components and alterations in Notch-pathway transcripts in pericytes. These findings establish a human MPS showing matrix stiffening as a key regulator of pericyte-mediated vascular stabilization and nominate it and FAK-dependent mechanotransduction as targets to prevent DR pathogenesis.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75598",
+        "doi_url": "https://doi.org/10.1002/adma.75598",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973071/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated mechanotransduction in pericytes during diabetic retinopathy using an iPSC-derived microphysiological system. The model replicated retinal matrix stiffening observed in diabetes, revealing that progressive matrix stiffening alone induces vascular destabilization by suppressing pericyte signaling molecules via FAK-dependent mechanisms. Inhibition of FAK restored vascular integrity without hyperglycemia, suggesting FAK-dependent mechanotransduction as a druggable target for preventing diabetic retage pathogenesis.\",\n  \"key_findings\": [\n    \"Progressive matrix stiffening alone induces vascular defects and pericyte signaling suppression\",\n    \"FAK-dependent mechanotransduction mediates pericyte signaling loss in stiffened conditions\",\n    \"FAK inhibition restores vascular integrity without hyperglyemic exposure\"\n  ],\n  \"scientific_significance\": \"This work identifies matrix stiffening as a key regulator of pericyte-mediated vascular stabilization in diabetic retinopathy, establishing FAK-dependent mechanotransduction as a druggable target for therapeutic intervention.\"\n}",
+        "parsed": {
+          "summary": "This study investigated mechanotransduction in pericytes during diabetic retinopathy using an iPSC-derived microphysiological system. The model replicated retinal matrix stiffening observed in diabetes, revealing that progressive matrix stiffening alone induces vascular destabilization by suppressing pericyte signaling molecules via FAK-dependent mechanisms. Inhibition of FAK restored vascular integrity without hyperglycemia, suggesting FAK-dependent mechanotransduction as a druggable target for preventing diabetic retage pathogenesis.",
+          "key_findings": [
+            "Progressive matrix stiffening alone induces vascular defects and pericyte signaling suppression",
+            "FAK-dependent mechanotransduction mediates pericyte signaling loss in stiffened conditions",
+            "FAK inhibition restores vascular integrity without hyperglyemic exposure"
+          ],
+          "scientific_significance": "This work identifies matrix stiffening as a key regulator of pericyte-mediated vascular stabilization in diabetic retinopathy, establishing FAK-dependent mechanotransduction as a druggable target for therapeutic intervention."
+        },
+        "elapsed_seconds": 31.4278,
+        "input_tokens": 767,
+        "output_tokens": 216,
+        "thoughts_tokens": null,
+        "total_tokens": 983,
+        "model_eval_seconds": 17.8216,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43051094",
+        "title": "Enhancing TCR-T cell responses with a TGFβ-specific chimeric antigen receptor.",
+        "abstract": "BACKGROUND: Overcoming the suppressive tumor microenvironment (TME) remains an important unmet challenge for chimeric antigen receptor (CAR)-T cell therapies. Transforming growth factor β (TGFβ) is a key driver of T-cell suppression, reducing T-cell receptor (TCR)-mediated cytotoxicity and driving the differentiation of immunosuppressive regulatory T cells (Tregs) in the TME.\nMETHODS: To overcome TGFβ-mediated immunosuppression, we employed a TGFβ-targeting CAR coexpressed with a human papillomavirus type 16 (HPV16) E711-19-specific, HLA-A*02:01-restricted TCR (E7 TCR) in T cells. TGFβ-CAR constructs incorporating either CD28 or 4-1BB costimulatory domains were evaluated for their effects on T-cell function and phenotype.\nRESULTS: Compared with T cells expressing E7 TCR only or E7 TCR with an irrelevant CD19 CAR, T cells co-transduced with E7 TCR and TGFβ-CAR showed enhanced proliferation and cytokine production while maintaining cytotoxicity upon repeated rounds of challenge with HPV16+ Ca Ski tumor cells, which provided a natural source of active TGFβ in coculture. TGFβ-CAR-expressing T cells also exhibited reduced exhaustion-marker expression and Treg differentiation after repeated antigen challenges. Transcriptional analysis further showed reduced FOXP3 expression and enhanced expression of proinflammatory genes including IFNG. In mice bearing B16-F10 tumors, TGFβ-BB-ζ-expressing pmel-1 cells reduced tumor burden and prolonged progression-free survival versus PBS and increased circulating donor T cells versus mock-transduced controls.\nCONCLUSIONS: Together, these data demonstrate that TGFβ-CAR can enhance T-cell effector function while limiting Treg differentiation, supporting its development as a platform to improve the function and persistence of TCR-T cell therapies in suppressive TMEs.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.neo.2026.101398",
+        "doi_url": "https://doi.org/10.1016/j.neo.2026.101398",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43051094/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Neoplasia (New York, N.Y.)",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated enhancing TCR-T cell responses in suppressive tumor microenvironments by targeting TGFβ. Researchers engineered TGFβ-specific chimeric antigen receptors (CARs) coexpressed with an HPV16 E7-targeted TCR. The TGFβ-CARs improved proliferation, cytokine production, and cytotoxicity against HPV16+ tumor cells while reducing Treg differentiation and exhaustion markers. Transcriptional changes included decreased FOXP3 and increased IFNG. In vivo, TGFβ-CAR-expressing T cells reduced tumor burden and prolonged survival in mouse models.\",\n  \"key_findings\": [\n    \"TGFβ-CAR coexpressing T cells showed enhanced proliferation and cytokine production against HPV16+ tumor cells\",\n    \"TGFβ-CAR-expressing T cells exhibited reduced exhaustion markers and Treg differentiation after repeated antigen exposure\",\n    \"In vivo, TGFβ-CAR-expressing T cells reduced tumor burden and prolonged progression-free survival in B16-F10 tumor models\"\n  ],\n  \"scientific_significance\": \"This work establishes TGFβ-targeting CARs as a strategy to counteract immunosuppressive TGFβ signaling in the tumor microenvironment, potentially improving TCR-T cell persistence and efficacy in suppressive settings.\"\n}",
+        "parsed": {
+          "summary": "This study investigated enhancing TCR-T cell responses in suppressive tumor microenvironments by targeting TGFβ. Researchers engineered TGFβ-specific chimeric antigen receptors (CARs) coexpressed with an HPV16 E7-targeted TCR. The TGFβ-CARs improved proliferation, cytokine production, and cytotoxicity against HPV16+ tumor cells while reducing Treg differentiation and exhaustion markers. Transcriptional changes included decreased FOXP3 and increased IFNG. In vivo, TGFβ-CAR-expressing T cells reduced tumor burden and prolonged survival in mouse models.",
+          "key_findings": [
+            "TGFβ-CAR coexpressing T cells showed enhanced proliferation and cytokine production against HPV16+ tumor cells",
+            "TGFβ-CAR-expressing T cells exhibited reduced exhaustion markers and Treg differentiation after repeated antigen exposure",
+            "In vivo, TGFβ-CAR-expressing T cells reduced tumor burden and prolonged progression-free survival in B16-F10 tumor models"
+          ],
+          "scientific_significance": "This work establishes TGFβ-targeting CARs as a strategy to counteract immunosuppressive TGFβ signaling in the tumor microenvironment, potentially improving TCR-T cell persistence and efficacy in suppressive settings."
+        },
+        "elapsed_seconds": 30.8402,
+        "input_tokens": 871,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1146,
+        "model_eval_seconds": 23.3161,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states can durably reprogram immune responses when coinciding with tissue inflammation.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute skin inflammation to chronic obesity levels\",\n    \"Neutrophil recruitment and Nlrp3/Il1b expression mediate HFD-induced inflammatory amplification\",\n    \"Chromatin-poised tissue-resident memory T cells persist post-recovery, causing exaggerated inflammation upon recurrence\"\n  ],\n  \"scientific_significance\": \"This work establishes that transient dietary states during acute inflammation can durably reprogram immune memory, revealing a critical temporal window for dietary interventions to modulate inflammatory disease trajectories.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, chromatin-poised tissue-resident memory T cells persist, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states can durably reprogram immune responses when coinciding with tissue inflammation.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute skin inflammation to chronic obesity levels",
+            "Neutrophil recruitment and Nlrp3/Il1b expression mediate HFD-induced inflammatory amplification",
+            "Chromatin-poised tissue-resident memory T cells persist post-recovery, causing exaggerated inflammation upon recurrence"
+          ],
+          "scientific_significance": "This work establishes that transient dietary states during acute inflammation can durably reprogram immune memory, revealing a critical temporal window for dietary interventions to modulate inflammatory disease trajectories."
+        },
+        "elapsed_seconds": 25.3467,
+        "input_tokens": 885,
+        "output_tokens": 293,
+        "thoughts_tokens": null,
+        "total_tokens": 1178,
+        "model_eval_seconds": 23.5499,
+        "error": "summary must contain 45–90 words; received 112.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42973073",
+        "title": "Quasi-Continuous Multimodal Sensing of Urinary Oxalate Dynamics for Home-Based Metabolic Monitoring.",
+        "abstract": "NA: Continuous at-home monitoring of urinary oxalate dynamics is vital for the comprehensive management of hyperoxaluria and thus reduces the risk of kidney stone formation. However, home-based devices for capturing dynamic oxalate profiles remain elusive, as urine is challenging to sample and unstable for subsequent biochemical testing. Here we report a remote multimodal sensing platform for achieving such urine monitoring during daily sequential urination through seamless embedding into a standard urine collection bucket. This platform integrates electrochemical oxalate sensing with simultaneous pH and urine-volume measurements to correct the matrix drift in oxalate quantification. We achieve quasi-continuous monitoring of 24 h urinary physicochemical dynamics under diet-induced transient hyperoxaluria. By decoupling oxalate concentration from multimodal signals per urination, we reveal distinct metabolic response profiles under different dietary oxalate loads, providing new real-time insights into oxalate metabolism and its associated risk of kidney stones. Our all-in-one sampling-and-testing platform could revolutionize clinical urine analysis for hyperoxaluria, shifting from a one-time, multi-day turnaround assay into a paradigm of quasi-continuous monitoring with immediate feedback. This work represents a practical route toward personalized management of hyperoxaluria and a decentralized metabolic monitoring strategy for urology.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75610",
+        "doi_url": "https://doi.org/10.1002/adma.75610",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973073/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates quasi-continuous monitoring of urinary oxalate dynamics using a home-based multimodal sensing platform integrated into standard urine collection buckets. The platform combines electrochemical oxalate sensing with pH and volume measurements to correct matrix drift during sequential urination. It enables 24-hour monitoring under dietary hyperoxaluria, revealing distinct metabolic responses to oxalate loads and providing real-time insights into kidney stone risk. The approach offers immediate feedback for hyperoxaluria management.\",\n  \"key_findings\": [\n    \"Quasi-continuous 24-hour urinary oxalate monitoring via integrated electrochemical sensing\",\n    \"Correction of matrix drift using simultaneous pH and volume measurements\",\n    \"Distinct metabolic response profiles under different dietary oxalate loads\"\n  ],\n  \"scientific_significance\": \"This work establishes a practical method for real-time oxalate metabolism assessment in hyperoxaluria, advancing decentralized metabolic monitoring strategies for kidney stone risk management.\"\n}",
+        "parsed": {
+          "summary": "This study investigates quasi-continuous monitoring of urinary oxalate dynamics using a home-based multimodal sensing platform integrated into standard urine collection buckets. The platform combines electrochemical oxalate sensing with pH and volume measurements to correct matrix drift during sequential urination. It enables 24-hour monitoring under dietary hyperoxaluria, revealing distinct metabolic responses to oxalate loads and providing real-time insights into kidney stone risk. The approach offers immediate feedback for hyperoxaluria management.",
+          "key_findings": [
+            "Quasi-continuous 24-hour urinary oxalate monitoring via integrated electrochemical sensing",
+            "Correction of matrix drift using simultaneous pH and volume measurements",
+            "Distinct metabolic response profiles under different dietary oxalate loads"
+          ],
+          "scientific_significance": "This work establishes a practical method for real-time oxalate metabolism assessment in hyperoxaluria, advancing decentralized metabolic monitoring strategies for kidney stone risk management."
+        },
+        "elapsed_seconds": 20.4632,
+        "input_tokens": 701,
+        "output_tokens": 199,
+        "thoughts_tokens": null,
+        "total_tokens": 900,
+        "model_eval_seconds": 15.7467,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43051596",
+        "title": "Sexual exposure to HIV-1 is associated with lower systemic inflammation and differential activation of CD8+, CD4+, and regulatory T cells in blood and genital mucosa.",
+        "abstract": "NA: A continued challenge for the development of efficacious HIV-1 vaccines is the lack of detailed knowledge of immune correlates of exposure or protection. Studies of HIV-1 exposed seronegative individuals (HESN) have been conducted in attempts to define host strategies to prevent infection upon natural HIV-1 exposure. Here, we utilized blood and cervicovaginal tissue samples collected from a cohort of heterosexual Kenyan couples wherein we compared HIV-seronegative women who were HIV-1-exposed or HIV-1-unexposed to characterize in detail the circulating and genital mucosal immune landscape associated with HIV-1 sexual exposure. HIV-1 exposure was associated with significantly lower levels of pro-inflammatory cytokines in serum without significant differences in the cervicovaginal fluid. Further, sexual HIV-1 exposure was associated with lower frequencies of activated circulating CD8 T cells yet higher levels of circulating conventional CD4 T cells expressing Ki67, a marker of recent proliferation. Finally, we report that HIV-1 exposure was associated with higher expression of immunosuppressive, migration, and proliferation markers by cervical tissue and circulating regulatory T cells. Overall, we demonstrate signatures indicating the possibility of both active immune surveillance and immunoregulation in circulation and genital tissues upon sexual HIV-1 exposure and highlight the importance of investigating T cell responses across relevant anatomic sites.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.mucimm.2026.100426",
+        "doi_url": "https://doi.org/10.1016/j.mucimm.2026.100426",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43051596/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Mucosal immunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study compared HIV-seronegative women with and without HIV-1 sexual exposure in a Kenyan cohort to characterize immune responses. It found significantly lower systemic inflammation markers in HIV-exposed individuals, reduced activated CD8+ T cells, increased proliferating CD4+ T cells, and elevated immunosuppressive markers in genital tissues and regulatory T cells. These results suggest potential immune adaptations to HIV-1 exposure that may mitigate infection risk.\",\n  \"key_findings\": [\n    \"HIV-1 exposure linked to lower systemic pro-inflammatory cytokines\",\n    \"Reduced activated circulating CD8+ T cells in exposed individuals\",\n    \"Elevated immunosuppressive markers in genital tissues and regulatory T cells\"\n  ],\n  \"scientific_significance\": \"The findings reveal immune adaptations to HIV-1 exposure that may contribute to natural resistance mechanisms, offering insights into immune correlates of protection against HIV-1 infection.\"\n}",
+        "parsed": {
+          "summary": "This study compared HIV-seronegative women with and without HIV-1 sexual exposure in a Kenyan cohort to characterize immune responses. It found significantly lower systemic inflammation markers in HIV-exposed individuals, reduced activated CD8+ T cells, increased proliferating CD4+ T cells, and elevated immunosuppressive markers in genital tissues and regulatory T cells. These results suggest potential immune adaptations to HIV-1 exposure that may mitigate infection risk.",
+          "key_findings": [
+            "HIV-1 exposure linked to lower systemic pro-inflammatory cytokines",
+            "Reduced activated circulating CD8+ T cells in exposed individuals",
+            "Elevated immunosuppressive markers in genital tissues and regulatory T cells"
+          ],
+          "scientific_significance": "The findings reveal immune adaptations to HIV-1 exposure that may contribute to natural resistance mechanisms, offering insights into immune correlates of protection against HIV-1 infection."
+        },
+        "elapsed_seconds": 21.1529,
+        "input_tokens": 731,
+        "output_tokens": 193,
+        "thoughts_tokens": null,
+        "total_tokens": 924,
+        "model_eval_seconds": 15.946,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42973079",
+        "title": "Attribution Fingerprinting by Interpretable Machine Learning Reveals Category-Specific Additive Design Rules for Zinc Anodes.",
+        "abstract": "NA: Electrolyte additives are one of the most direct remedy for interfacial instability in aqueous zinc-ion batteries, yet their development remains empirical. Existing machine-learning (ML) screening strategies presume a single global structure-property relationship shared by all additives. Here, an interpretable ML framework predicts cycle life from molecular descriptors and test conditions, and molecule-specific SHapley Additive exPlanations (SHAP) profiles serve as attribution fingerprints. Unsupervised clustering resolves the additives into three attribution-based categories, governed respectively by adsorption energetics, charge-transfer gap and hydrogen-bond-network regulation, indicating that one universal descriptor set may not hold across chemically distinct additives. Representative additives from each category, none present in the training set, agree with experiment to within 11%. Category I screening identifies 2-fluoropyridine-5-carbaldehyde (2FPD), predicted at 3218 h, and Zn//Zn cells deliver 3010 h at 1 mA cm-2 and 1 mAh cm-2, within 6.5% of prediction. Structural controls trace the improvement to the aldehyde: retaining it alone gives 900 h against an 89 h baseline, whereas fluorine alone gives 90 h. 2FPD constructs a graded organic-inorganic interphase that limits water access to the zinc surface and accelerates Zn2+ desolvation, and Zn//MnO2 full cells retain 96% capacity over 4000 cycles. This workflow offers a route towards interpretability-guided additive design.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75609",
+        "doi_url": "https://doi.org/10.1002/adma.75609",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973079/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how molecular descriptors and machine learning can predict cycle life in aqueous zinc-ion batteries using interpretable methods. By clustering additives into three categories based on SHAP profiles, the research identifies design rules tied to adsorption energetics, charge-transfer gaps, and hydrogen-bond networks. Predictions for novel additives align closely with experimental results, demonstrating that additive performance depends on specific structural features rather than a single universal descriptor. The approach provides a framework for rational design of stable zinc anodes.\",\n  \"key_findings\": [\n    \"Additives cluster into three categories governed by adsorption energetics, charge-transfer gaps, and hydrogen-bond network regulation\",\n    \"Predicted cycle life for 2-fluoropyridine-5-carbaldehyde (2FPD) matches experimental data within 6.5% (3218 h vs. 3010 h)\",\n    \"Structural features like aldehydes and fluorine atoms significantly enhance cycle life, with aldehydes alone improving performance from 89 h to 900 h\"\n  ],\n  \"scientific_significance\": \"This work establishes category-specific design rules for zinc anode additives, moving beyond empirical screening to enable interpretable, structure-guided optimization of aqueous zinc-ion battery stability.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how molecular descriptors and machine learning can predict cycle life in aqueous zinc-ion batteries using interpretable methods. By clustering additives into three categories based on SHAP profiles, the research identifies design rules tied to adsorption energetics, charge-transfer gaps, and hydrogen-bond networks. Predictions for novel additives align closely with experimental results, demonstrating that additive performance depends on specific structural features rather than a single universal descriptor. The approach provides a framework for rational design of stable zinc anodes.",
+          "key_findings": [
+            "Additives cluster into three categories governed by adsorption energetics, charge-transfer gaps, and hydrogen-bond network regulation",
+            "Predicted cycle life for 2-fluoropyridine-5-carbaldehyde (2FPD) matches experimental data within 6.5% (3218 h vs. 3010 h)",
+            "Structural features like aldehydes and fluorine atoms significantly enhance cycle life, with aldehydes alone improving performance from 89 h to 900 h"
+          ],
+          "scientific_significance": "This work establishes category-specific design rules for zinc anode additives, moving beyond empirical screening to enable interpretable, structure-guided optimization of aqueous zinc-ion battery stability."
+        },
+        "elapsed_seconds": 28.6474,
+        "input_tokens": 782,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 1053,
+        "model_eval_seconds": 22.6289,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43052467",
+        "title": "Pluripotent stem cell-derived extracellular vesicles for systemic immune modulation in diabetes therapy.",
+        "abstract": "NA: Embryonic development is characterized by remarkable immune tolerance, yet whether this property extends to pluripotent stem cell-derived extracellular vesicles (EVs) has remained unclear. Here we show that EVs from pluripotent stem cells (PSCs), including embryonic stem cells and induced pluripotent stem cells, outperform mesenchymal stem cell-derived EVs in suppressing proinflammatory cytokine secretion, reducing T cell activation and inducing regulatory T cells. PSC EVs display distinct molecular signatures, containing unique proteins and microRNAs absent from mesenchymal stem cell-derived EVs, including the pluripotency-associated proteins ROR1 and CD133 and members of the miR-302 family. Dynamic suspension culture of PSC aggregates enhances the EV yield, providing a scalable and reproducible source. Delivered via a biomaterial scaffold, two local injections of induced PSC EVs significantly improved diabetes-free survival in an antigen-specific type 1 diabetes model, increasing regulatory T cell populations in draining lymph nodes, as well as inducing systemic immune modulation and preserving β-cell mass. These findings establish PSC EVs as a scalable immunomodulatory platform for autoimmune disease and for immune tolerance in cell therapy.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1038/s41565-026-02320-z",
+        "doi_url": "https://doi.org/10.1038/s41565-026-02320-z",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43052467/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Nature nanotechnology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates whether pluripotent stem cell-derived extracellular vesicles (EVs) can modulate systemic immunity in diabetes therapy. Using PSC EVs from embryonic and induced pluripotent stem cells, the research demonstrated superior suppression of proinflammatory cytokines, reduced T cell activation, and induction of regulatory T cells compared to mesenchym. EVs exhibited unique molecular profiles with pluripotency markers like ROR1 and CD133. Local injections of induced PSC EVs via biomaterial scaffolds improved diabetes-free survival in a type 1 diabetes model by enhancing regulatory T cells and preserving β-cell mass.\",\n  \"key_findings\": [\n    \"PSC EVs outperform mesenchymal stem cell-derived EVs in suppressing proinflammatory cytokines and reducing T cell activation\",\n    \"PSC EVs contain unique pluripotency markers including ROR1, CD133, and miR-302 family members\",\n    \"Local injections of induced PSC EVs increased diabetes-free survival by boosting regulatory T cells and preserving β-cell mass in a type 1 diabetes model\"\n  ],\n  \"scientific_significance\": \"This work establishes pluripotent stem cell-derived extracellular vesicles as a scalable platform for systemic immune modulation in autoimmune diseases, offering a novel approach to induce immune tolerance without requiring cell transplantation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether pluripotent stem cell-derived extracellular vesicles (EVs) can modulate systemic immunity in diabetes therapy. Using PSC EVs from embryonic and induced pluripotent stem cells, the research demonstrated superior suppression of proinflammatory cytokines, reduced T cell activation, and induction of regulatory T cells compared to mesenchym. EVs exhibited unique molecular profiles with pluripotency markers like ROR1 and CD133. Local injections of induced PSC EVs via biomaterial scaffolds improved diabetes-free survival in a type 1 diabetes model by enhancing regulatory T cells and preserving β-cell mass.",
+          "key_findings": [
+            "PSC EVs outperform mesenchymal stem cell-derived EVs in suppressing proinflammatory cytokines and reducing T cell activation",
+            "PSC EVs contain unique pluripotency markers including ROR1, CD133, and miR-302 family members",
+            "Local injections of induced PSC EVs increased diabetes-free survival by boosting regulatory T cells and preserving β-cell mass in a type 1 diabetes model"
+          ],
+          "scientific_significance": "This work establishes pluripotent stem cell-derived extracellular vesicles as a scalable platform for systemic immune modulation in autoimmune diseases, offering a novel approach to induce immune tolerance without requiring cell transplantation."
+        },
+        "elapsed_seconds": 26.4792,
+        "input_tokens": 693,
+        "output_tokens": 286,
+        "thoughts_tokens": null,
+        "total_tokens": 979,
+        "model_eval_seconds": 21.9183,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42973093",
+        "title": "Cross-System Recycling of Spent Layered Oxides Boosts Synergistic Optimization of Na4Fe3(PO4)2P2O7 Cathodes via Site-Selective Ni/Mn Co-Doping.",
+        "abstract": "NA: To address the economic inviability of recycling spent sodium-ion batteries (SIBs) and the intrinsic drawbacks of Na4Fe3(PO4)2P2O7 (NFPP) cathodes, a \"cross-system recycling\" strategy is proposed to transform the waste layered oxides cathodes (NaNi1/3Fe1/3Mn1/3O2, NFM) into high-performance polyanionic cathodes (Na4Fe2.9Ni0.05Mn0.05(PO4)2P2O7, NFNMPP). Nickel and manganese in the waste NFM that degrades due to \"sodium deficiency\" and irreversible phase transitions are leached out and doped into the NFNMPP lattice. Benefiting from the synergistic optimization of NFNMPP via site-selective Ni/Mn co-doping, the impurities and [P2O7] distortion are suppressed, while the conductivity and Na+ diffusion kinetics are enhanced. Consequently, the high-purity NFNMPP (91.2%) exhibits an ideal initial coulombic efficiency of 92.84%, remarkable rate capability (75.21 mAh g-1 at 50 C), and excellent cycling stability (86.74% capacity retention after 12 000 cycles at 20 C). Furthermore, paired with hard carbon (HC) anode, NFNMPP//HC pouch cells exhibit high safety, a record-long cycling life of 5557 cycles, 82.37% capacity retention at 30 C, and a wide operating temperature range (-40°C to 55°C), demonstrating great potential for energy storage applications and powering low-speed electric vehicles. This study presents a viable pathway for optimizing cathode materials by recycling spent SIBs, and facilitates its practical applications validated by Ah-level pouch cells.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75621",
+        "doi_url": "https://doi.org/10.1002/adma.75621",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973093/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates cross-system recycling of spent sodium-ion battery cathodes to enhance Na4Fe3(PO4)2P2.9O7 cathodes. By leaching nickel and manganese from degraded layered oxides (NaNi1/3Fe1/3Mn1/3O2) and co-doping them into the polyanionic cathode, the researchers achieved site-selective optimization. The modified cathode (Na4Fe2.9Ni0.05Mn0.05(PO4)2P2O7) showed improved conductivity, Na+ diffusion, and stability, with 91.2% purity, 92.84% initial coulombic efficiency, 75.21 mAh g-1 at 50 C, and 86.74% capacity retention after 12,000 cycles.\",\n  \"key_findings\": [\n    \"Site-selective Ni/Mn co-doping from recycled layered oxides enhances Na4Fe3(PO4)2P2O7 cathode performance\",\n    \"The optimized cathode achieves 91.2% purity, 92.84% initial coulombic efficiency, and 86.74% capacity retention after 12,000 cycles\",\n    \"NFNMPP//HC pouch cells demonstrate 5557 cycles with 82.37% capacity retention at 30 C and a wide operating temperature range (-40°C to 55°C)\"\n  ],\n  \"scientific_significance\": \"This work establishes a cross-system recycling strategy to transform spent sodium-ion battery cathodes into high-performance polyanionic materials, advancing sustainable cathode optimization for energy storage applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates cross-system recycling of spent sodium-ion battery cathodes to enhance Na4Fe3(PO4)2P2.9O7 cathodes. By leaching nickel and manganese from degraded layered oxides (NaNi1/3Fe1/3Mn1/3O2) and co-doping them into the polyanionic cathode, the researchers achieved site-selective optimization. The modified cathode (Na4Fe2.9Ni0.05Mn0.05(PO4)2P2O7) showed improved conductivity, Na+ diffusion, and stability, with 91.2% purity, 92.84% initial coulombic efficiency, 75.21 mAh g-1 at 50 C, and 86.74% capacity retention after 12,000 cycles.",
+          "key_findings": [
+            "Site-selective Ni/Mn co-doping from recycled layered oxides enhances Na4Fe3(PO4)2P2O7 cathode performance",
+            "The optimized cathode achieves 91.2% purity, 92.84% initial coulombic efficiency, and 86.74% capacity retention after 12,000 cycles",
+            "NFNMPP//HC pouch cells demonstrate 5557 cycles with 82.37% capacity retention at 30 C and a wide operating temperature range (-40°C to 55°C)"
+          ],
+          "scientific_significance": "This work establishes a cross-system recycling strategy to transform spent sodium-ion battery cathodes into high-performance polyanionic materials, advancing sustainable cathode optimization for energy storage applications."
+        },
+        "elapsed_seconds": 38.7406,
+        "input_tokens": 860,
+        "output_tokens": 374,
+        "thoughts_tokens": null,
+        "total_tokens": 1234,
+        "model_eval_seconds": 31.4499,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43052505",
+        "title": "Promoting anti-tumor immune response in osteosarcoma by BETi through restoring Th17/Treg balance.",
+        "abstract": "NA: The immune landscape of osteosarcoma (OS) remains incompletely characterized. We examined the Th17/Treg balance using public single-cell RNA-sequencing datasets, multiplex immunohistochemistry, peripheral-blood flow cytometry, an exploratory xenogeneic mouse model, and mechanistic assays. Human datasets and specimens were consistent with a Treg-enriched, lower Th17/Treg immune state, with the most pronounced imbalance in the peripheral blood of patients with metastatic disease. In the mouse model, BET inhibitor (BETi) treatment produced parameter-specific attenuation of osteolytic changes and shifts in Th17 and Treg frequencies. BRD4 chromatin-occupancy, expression, and migration assays identified the CXCL12/CXCR4 pathway as a candidate mechanism. B7-H3 was elevated in metastatic OS in the analyzed cohort, but none of the evaluated checkpoint-associated genes was significantly associated with overall survival. Under the tested schedules, full-dose BETi produced the greatest overall improvement in observed survival time and tumor-burden measures; the reduced-dose BETi and anti-B7-H3 combination remained active but did not outperform BETi monotherapy. These findings support that BRD4 can serve as a potential therapeutic target for OS to reverse its immunosuppressive microenvironment, and further in-depth research is warranted.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1007/s00262-026-04539-0",
+        "doi_url": "https://doi.org/10.1007/s00262-026-04539-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43052505/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Cancer immunology, immunotherapy : CII",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated the role of BET inhibitors in modulating the Th17/Treg immune balance in osteosarcoma. Using public datasets, immunohistochemistry, flow cytometry, and xenogeneic mouse models, researchers found a Treg-enriched, Th1.7-deficient state in osteosarcoma patients, particularly in metastatic disease. BETi treatment reduced osteolytic changes and shifted Th17/Treg frequencies in mice, with BRD4 inhibition targeting the CXCL12/CXCR4 pathway. Full-dose BETi improved survival and tumor burden compared to reduced-dose regimens or combinations.\",\n  \"key_findings\": [\n    \"Osteosarcoma patients exhibit a Treg-enriched, Th17-deficient immune state, especially in metastatic disease\",\n    \"BET inhibitor treatment attenuated osteolytic changes and modulated Th17/Treg frequencies in mouse models\",\n    \"Full-dose BETi demonstrated superior survival and tumor burden reduction compared to reduced-dose BETi or anti-B7-H3 combinations\"\n  ],\n  \"scientific_significance\": \"This work identifies BET inhibition as a viable strategy to reverse immunosuppression in osteosarcoma by restoring Th17/Treg balance, offering a potential therapeutic target for improving anti-tumor immunity.\"\n}",
+        "parsed": {
+          "summary": "This study investigated the role of BET inhibitors in modulating the Th17/Treg immune balance in osteosarcoma. Using public datasets, immunohistochemistry, flow cytometry, and xenogeneic mouse models, researchers found a Treg-enriched, Th1.7-deficient state in osteosarcoma patients, particularly in metastatic disease. BETi treatment reduced osteolytic changes and shifted Th17/Treg frequencies in mice, with BRD4 inhibition targeting the CXCL12/CXCR4 pathway. Full-dose BETi improved survival and tumor burden compared to reduced-dose regimens or combinations.",
+          "key_findings": [
+            "Osteosarcoma patients exhibit a Treg-enriched, Th17-deficient immune state, especially in metastatic disease",
+            "BET inhibitor treatment attenuated osteolytic changes and modulated Th17/Treg frequencies in mouse models",
+            "Full-dose BETi demonstrated superior survival and tumor burden reduction compared to reduced-dose BETi or anti-B7-H3 combinations"
+          ],
+          "scientific_significance": "This work identifies BET inhibition as a viable strategy to reverse immunosuppression in osteosarcoma by restoring Th17/Treg balance, offering a potential therapeutic target for improving anti-tumor immunity."
+        },
+        "elapsed_seconds": 27.177,
+        "input_tokens": 731,
+        "output_tokens": 279,
+        "thoughts_tokens": null,
+        "total_tokens": 1010,
+        "model_eval_seconds": 21.9639,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42973168",
+        "title": "Homojunction Back Contacts Enable Efficient Cu2O Photocathodes.",
+        "abstract": "NA: Enhancing carrier separation and extraction is crucial to achieve efficient metal oxide photoelectrodes for photoelectrochemical (PEC) water splitting. Here, we report a highly efficient Cu2O photocathode based on p+/p back-contact homojunction. The homojunction significantly enhances hole-selective extraction while suppressing electron backflow at the back-contact interface, leading to marked improvements in PEC performance. The optimized photocathode delivers a hydrogen evolution reaction (HER) onset potential of 1.1 V and a saturated photocurrent density of ∼8.0 mA cm-2. Furthermore, the p+/p back homojunction design enables the fabrication of a semi-transparent Cu2O photocathode, which, when integrated with a perovskite solar cell in a tandem configuration, achieves a solar-to-hydrogen (STH) efficiency of 7.31%. This work demonstrates a viable strategy for advancing metal oxide photoelectrodes via homojunction engineering.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75583",
+        "doi_url": "https://doi.org/10.1002/adma.75583",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973168/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing Cu2O photocathode efficiency for photoelectrochemical water splitting using p+/p homojunction back contacts. The approach involves engineering a homojunction to improve hole-selective extraction and suppress electron backflow at the interface. Results show a hydrogen evolution reaction onset potential of 1.1 V and saturated photocurrent density of ∼8.0 mA cm-2. The design also enables semi-transparent Cu2O photocathodes for tandem solar cell integration, achieving a solar-to-hydrogen efficiency of 7.31%.\",\n  \"key_findings\": [\n    \"p+/p homojunction back contacts improve hole-selective extraction in Cu2O photocathodes\",\n    \"Optimized device achieves a hydrogen evolution reaction onset potential of 1.1 V\",\n    \"Semi-transparent Cu2O photocathodes enable tandem solar cell integration with 7.31% solar-to-hydrogen efficiency\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that homojunction engineering in Cu2O photocathodes can significantly enhance charge separation and extraction for efficient photoelectrochemical water splitting.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing Cu2O photocathode efficiency for photoelectrochemical water splitting using p+/p homojunction back contacts. The approach involves engineering a homojunction to improve hole-selective extraction and suppress electron backflow at the interface. Results show a hydrogen evolution reaction onset potential of 1.1 V and saturated photocurrent density of ∼8.0 mA cm-2. The design also enables semi-transparent Cu2O photocathodes for tandem solar cell integration, achieving a solar-to-hydrogen efficiency of 7.31%.",
+          "key_findings": [
+            "p+/p homojunction back contacts improve hole-selective extraction in Cu2O photocathodes",
+            "Optimized device achieves a hydrogen evolution reaction onset potential of 1.1 V",
+            "Semi-transparent Cu2O photocathodes enable tandem solar cell integration with 7.31% solar-to-hydrogen efficiency"
+          ],
+          "scientific_significance": "This work demonstrates that homojunction engineering in Cu2O photocathodes can significantly enhance charge separation and extraction for efficient photoelectrochemical water splitting."
+        },
+        "elapsed_seconds": 21.5718,
+        "input_tokens": 639,
+        "output_tokens": 242,
+        "thoughts_tokens": null,
+        "total_tokens": 881,
+        "model_eval_seconds": 17.8963,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43052727",
+        "title": "Genetic analyses prioritize a candidate peripheral ferroptosis-related immune-protein network in migraine.",
+        "abstract": "BACKGROUND: Migraine is a disabling neurological disorder with substantial clinical heterogeneity. Ferroptosis-annotated genes encompass functions related to iron and redox homeostasis, lipid peroxidation, and immune regulation, but the genetically supported relationships connecting these processes with peripheral immune-cell phenotypes and circulating proteins have not been systematically examined.\nMETHODS: We integrated summary-data-based Mendelian randomization, two-sample Mendelian randomization, colocalization analysis, indirect-effect analysis, PBMC single-cell RNA sequencing, and druggability annotation. Five migraine genome-wide association study datasets were analyzed; GCST90043743 included 166 cases and was treated as a sensitivity dataset. A set of 718 ferroptosis-related genes was evaluated using blood mQTL and eQTL resources and plasma pQTL datasets, while immune-cell MR included 731 immunophenotypes. Evidence was first assessed across molecular data types and migraine outcomes and was then integrated with immune-cell traits, circulating proteins, single-cell expression context, and druggability information.\nRESULTS: Thirteen genes met the highest cross-omics evidence criteria: ACADSB, ADAMTS13, CDH1, CHMP1A, DPP4, GCH1, GSTM1, ISCU, MAPK9, MAPK14, MUC1, TFRC, and TLR4. A further 25 genes showed recurrent but incomplete cross-omics evidence. Of 2,087 colocalization tests, 313 met the colocalization support criterion, and all 13 highest-evidence genes had at least one result meeting this criterion. Immune-cell MR identified recurrent CD27-related B-cell and CD33-related myeloid traits. Thirty-four matched results from the two indirect-effect analyses were retained; 22 shared CD27-related B-cell traits between GSTM1- or TFRC-related gene-side results and ENPP2-related protein-side results. Additional matched results involved MUC1, myeloid dendritic-cell or naive CD8bright T-cell traits, and HMOX1 or IDO1; ALOX15, CD38-related B-cell or activated Treg traits, and IL1B; and CISD2, a CD27-related B-cell trait, and IFNG. PBMC single-cell RNA sequencing provided peripheral cell-type expression context, and targeted pseudobulk analysis showed increased IFNG expression in CD8+ T cells after Bonferroni correction. Druggability annotation highlighted ENPP2, IDO1, IL1B, and IFNG for translational follow-up.\nCONCLUSIONS: This study prioritizes a candidate peripheral ferroptosis-related immune-protein network associated with migraine susceptibility. The most recurrent relationship involved GSTM1 or TFRC, CD27-related B-cell traits, and ENPP2, with additional myeloid, B-cell/Treg, and inflammatory components. These findings nominate genetically informed candidates for biomarker research, immune-metabolic stratification, and experimental target investigation in migraine.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1186/s10194-026-02494-w",
+        "doi_url": "https://doi.org/10.1186/s10194-026-02494-w",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43052727/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "The journal of headache and pain",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated genetic links between ferroptosis-related genes and migraine susceptibility using integrated genomic and immunological approaches. By analyzing five migraine GWAS datasets, the researchers identified 13 genes with strong cross-omics evidence (ACADSB, ADAMTS13, CDH1, CHMP1A, DPP4, GCH1, GSTM1, ISCU, MAPK9, MAPK14, MUC1, TFRC, TLR4) and 25 genes with recurrent but incomplete evidence. The findings reveal a peripheral immune-protein network involving B-cell traits, myeloid cells, and inflammatory markers, suggesting potential biomarkers and therapeutic targets for migraine.\",\n  \"key_findings\": [\n    \"Thirteen genes met high cross-omics evidence criteria for migraine susceptibility\",\n    \"Immune-cell MR identified recurrent CD27-related B-cell and CD33-related myeloid traits\",\n    \"PBMC single-cell RNA sequencing showed increased IFNG expression in CD8+ T cells\"\n  ],\n  \"scientific_significance\": \"The study provides genetically validated evidence of a peripheral ferroptosis-immune network implicated in migraine pathogenesis, advancing understanding of migraine's immunometabolic mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study investigated genetic links between ferroptosis-related genes and migraine susceptibility using integrated genomic and immunological approaches. By analyzing five migraine GWAS datasets, the researchers identified 13 genes with strong cross-omics evidence (ACADSB, ADAMTS13, CDH1, CHMP1A, DPP4, GCH1, GSTM1, ISCU, MAPK9, MAPK14, MUC1, TFRC, TLR4) and 25 genes with recurrent but incomplete evidence. The findings reveal a peripheral immune-protein network involving B-cell traits, myeloid cells, and inflammatory markers, suggesting potential biomarkers and therapeutic targets for migraine.",
+          "key_findings": [
+            "Thirteen genes met high cross-omics evidence criteria for migraine susceptibility",
+            "Immune-cell MR identified recurrent CD27-related B-cell and CD33-related myeloid traits",
+            "PBMC single-cell RNA sequencing showed increased IFNG expression in CD8+ T cells"
+          ],
+          "scientific_significance": "The study provides genetically validated evidence of a peripheral ferroptosis-immune network implicated in migraine pathogenesis, advancing understanding of migraine's immunometabolic mechanisms."
+        },
+        "elapsed_seconds": 24.053,
+        "input_tokens": 1182,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 1441,
+        "model_eval_seconds": 22.1614,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42973171",
+        "title": "High-Mobility p-Type TexSe1- x Films With Yb-Enabled Oxidation Suppression for Short-Wave Infrared Imaging Detection.",
+        "abstract": "NA: Scalable high-mobility p-type semiconductor films hold considerable promise for advancing the performance of both photoelectronic devices and complementary metal-oxide-semiconductor technologies. Currently, tellurium (Te)-based semiconductors exhibit high intrinsic hole mobility and compatibility with low-temperature processing, making them promising candidates for cost-effective p-type materials. However, owing to their low Gibbs free energy, they are prone to oxidation into TeO2, which introduces deep-level defects and severely degrades hole transport, thereby hindering practical applications. Here, we present an effective antioxidant strategy based on ytterbium (Yb) doping, wherein the strong Te-Yb bonding and high oxygen affinity of Yb effectively suppress the oxidation of Te to TeO2, fundamentally stabilizing TexSe1- x alloys. The resulting Te0.7Se0.3:Yb films exhibit a remarkable hole mobility of 177.5 cm2 V-1 s-1. Furthermore, ZnO/Te0.7Se0.3:Yb photodetectors achieve a high responsivity of 0.21 A/W at 1300 nm, enabling multispectral imaging for precise target discrimination. These results demonstrate the Yb-enabled oxidation suppression for Te-based semiconductor, making a crucial stride toward the establishment of commercially viable high-mobility p-type semiconductor technology and short-wavelength infrared photoelectronics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75614",
+        "doi_url": "https://doi.org/10.1002/adma.75614",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973171/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates ytterbium (Yb)-doped tellurium-selenium (TeSe) alloys to suppress oxidation-induced degradation in p-type semiconductors. The researchers developed a strategy using Yb's strong bonding with tellurium and high oxygen affinity to stabilize TeSe alloys against TeO2 formation. The resulting Te0.7Se0:Yb films achieved a hole mobility of 177.5 cm² V⁻¹ s⁻¹ and enabled ZnO/Te0.7Se0.3:Yb photodetectors with 0.21 A/W responsivity at 1300 nm for short-wave infrared imaging.\",\n  \"key_findings\": [\n    \"Yb doping suppresses Te oxidation to TeO2 in TeSe alloys through strong Te-Yb bonding and high oxygen affinity\",\n    \"Te0.7Se0.3:Yb films achieved 177.5 cm² V⁻¹ s⁻¹ hole mobility\",\n    \"ZnO/Te0.7Se0.3:Yb photodetectors showed 0.21 A/W responsivity at 1300 nm for short-wave infrared imaging\"\n  ],\n  \"scientific_significance\": \"This work establishes Yb-enabled oxidation suppression as a critical mechanism for stabilizing high-mobility p-type TeSe alloys, advancing practical short-wave infrared photodetectors and complementary metal-oxide-semiconductor technologies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates ytterbium (Yb)-doped tellurium-selenium (TeSe) alloys to suppress oxidation-induced degradation in p-type semiconductors. The researchers developed a strategy using Yb's strong bonding with tellurium and high oxygen affinity to stabilize TeSe alloys against TeO2 formation. The resulting Te0.7Se0:Yb films achieved a hole mobility of 177.5 cm² V⁻¹ s⁻¹ and enabled ZnO/Te0.7Se0.3:Yb photodetectors with 0.21 A/W responsivity at 1300 nm for short-wave infrared imaging.",
+          "key_findings": [
+            "Yb doping suppresses Te oxidation to TeO2 in TeSe alloys through strong Te-Yb bonding and high oxygen affinity",
+            "Te0.7Se0.3:Yb films achieved 177.5 cm² V⁻¹ s⁻¹ hole mobility",
+            "ZnO/Te0.7Se0.3:Yb photodetectors showed 0.21 A/W responsivity at 1300 nm for short-wave infrared imaging"
+          ],
+          "scientific_significance": "This work establishes Yb-enabled oxidation suppression as a critical mechanism for stabilizing high-mobility p-type TeSe alloys, advancing practical short-wave infrared photodetectors and complementary metal-oxide-semiconductor technologies."
+        },
+        "elapsed_seconds": 30.3035,
+        "input_tokens": 741,
+        "output_tokens": 312,
+        "thoughts_tokens": null,
+        "total_tokens": 1053,
+        "model_eval_seconds": 24.9045,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43053044",
+        "title": "Ultrasound-targeted nanobubble destruction induces Macro Ccl8 to suppress treg function and enhance immunotherapy efficacy in CRC.",
+        "abstract": "BACKGROUND: Microsatellite stable (MSS) colorectal cancer (CRC) is largely resistant to immune checkpoint blockade due to its immunosuppressive tumor microenvironment (TME). Ultrasound-targeted nanobubble destruction (UTND) offers a localized physical delivery method, but its active immunomodulatory mechanisms remain underexplored.\nMETHODS: Ultrasound-responsive NBs loaded with CTLA-4 antibody (PF4) were fabricated and characterized. A CT26 mouse CRC model was used to evaluate anti-tumor effects across four treatment groups. Single-cell RNA sequencing (scRNA-seq) analyzed cellular changes in the TME. The activation of the NF-κB pathway was verified through western blot analysis, qPCR, and immunofluorescence staining. Intracellular ROS production was assessed using flow cytometry, confocal microscopy, and an enzyme immunoassay. Furthermore, the effects of Ccl8 on regulatory T (Treg) cells were examined by flow cytometry, qPCR and western blot.\nRESULTS: Combination treatment with UTND and anti-CTLA-4 suppressed tumor growth relative to single-agent treatments. ScRNA-seq identified a CCL8-expressing macrophage subpopulation (Macro Ccl8) that was more abundant in the combination group. UTND promoted ROS production, which activated NF-κB signaling and increased Ccl8 transcription. CCL8 secreted by Macro Ccl8 modulated Treg function through the Ccl8-Ccr2 axis. Together with direct CTLA-4 checkpoint inhibition, this cascade contributed to elevated CD8 + T cell activity.\nCONCLUSIONS: In the CT26 mouse model, UTND combined with CTLA-4 antibody modulates the immunosuppressive TME partially through inducing Macro Ccl8 via the ROS-NF-κB-Ccl8 axis, in addition to direct CTLA-4 blockade. This dual mechanism attenuates Treg function and enhances antitumor immunity, providing a preclinical rationale for combining ultrasound-based physical intervention with immunotherapy in MSS CRC.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1186/s12964-026-03159-6",
+        "doi_url": "https://doi.org/10.1186/s12964-026-03159-6",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43053044/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Cell communication and signaling : CCS",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated how ultrasound-targeted nanobubble destruction (UTND) combined with anti-CTLA-4 therapy modulates the tumor microenvironment in microsatellite stable colorectal cancer. Using a CT26 mouse model, scRNA-seq and molecular analyses revealed UTND-induced ROS production activating NF-κB signaling to upregulate CCL8 in macrophages. This CCL8-expressing macrophage subpopulation suppressed regulatory T cell function via CCL8-CCR2 signaling, enhancing CD8+ T cell activity and improving tumor response compared to single treatments.\",\n  \"key_findings\": [\n    \"UTND with anti-CTLA-4 suppressed tumor growth in MSS CRC mouse models\",\n    \"UTND promoted ROS-mediated NF-κB activation increasing CCL8 transcription in macrophages\",\n    \"CCL8 from Macro Ccl8 suppressed Treg function through CCL8-CR2 signaling, enhancing CD8+ T cell activity\"\n  ],\n  \"scientific_significance\": \"This work identifies a ROS-NF-κB-CCL8 axis that UTND activates to overcome immunosuppression in MSS colorectal cancer, providing a mechanistic basis for combining physical interventions with immunotherapy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated how ultrasound-targeted nanobubble destruction (UTND) combined with anti-CTLA-4 therapy modulates the tumor microenvironment in microsatellite stable colorectal cancer. Using a CT26 mouse model, scRNA-seq and molecular analyses revealed UTND-induced ROS production activating NF-κB signaling to upregulate CCL8 in macrophages. This CCL8-expressing macrophage subpopulation suppressed regulatory T cell function via CCL8-CCR2 signaling, enhancing CD8+ T cell activity and improving tumor response compared to single treatments.",
+          "key_findings": [
+            "UTND with anti-CTLA-4 suppressed tumor growth in MSS CRC mouse models",
+            "UTND promoted ROS-mediated NF-κB activation increasing CCL8 transcription in macrophages",
+            "CCL8 from Macro Ccl8 suppressed Treg function through CCL8-CR2 signaling, enhancing CD8+ T cell activity"
+          ],
+          "scientific_significance": "This work identifies a ROS-NF-κB-CCL8 axis that UTND activates to overcome immunosuppression in MSS colorectal cancer, providing a mechanistic basis for combining physical interventions with immunotherapy."
+        },
+        "elapsed_seconds": 28.5187,
+        "input_tokens": 878,
+        "output_tokens": 260,
+        "thoughts_tokens": null,
+        "total_tokens": 1138,
+        "model_eval_seconds": 20.8779,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42973172",
+        "title": "Dichlorobenzodithiophene-4-8-dione Derived Polymer Donor Enables Efficient Thin-Film/Thick-Film Organic Solar Cells.",
+        "abstract": "NA: Polymer donors with electron-withdrawing benzodithiophene-4-8-dione (BDD) unit play an important role in improving power-conversion-efficiency (PCE) of organic solar cells (OSCs), although these achievements rely on high-cost electron-donating fluorinated thienyl-benzodithiophene (BDTT) moiety. Herein, a dichlorobenzodithiophene-4-8-dione (BDD2Cl) unit is developed to design fluorine-free BDTT-alt-BDD2Cl-structured cost-effective polymer donor (PBDTT-BDD2Cl). Compared to its halogen-free BDTT-alt-BDD-structured control (PBDB-T), PBDTT-BDD2Cl shows deep-shifted energy levels, improved solubility, crystallinity, and packing, tending to suppress energy loss, manipulate film-forming kinetics, and improve charge transport properties. Accordingly, the PBDTT-BDD2Cl:L8-BO device demonstrates dramatically higher photovoltage (0.947 V) and lower non-radiative energy loss (0.182 eV) and compared to the PBDB-T:L8-BO device (0.735 and 0.369 eV), while it achieves decreased PCE. When incorporating it into D18:L8-BO host, ternary D18:PBDTT-BDD2Cl:L8-BO shows optimized donor/acceptor miscibility, delayed material nucleation, and prolonged molecular ordered packing duration, leading to boosted charge dynamics and favorable morphology. Thereby, thin-film (100 nm) OSC achieves a superior PCE (21.1%, certified as 20.6%, ranking among the highest values) than the D18:PBDB-T:L8-BO control (19.3%), while its thick-film (500 nm) device also obtains a top-high PCE (17.3%) among these reported thick-films (≥500 nm). This work highlights that BDD2Cl is an ideal candidate for developing cost-effective polymer donors toward efficient thin-film/thick-film OSCs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75613",
+        "doi_url": "https://doi.org/10.1002/adma.75613",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973172/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates fluorine-free polymer donors for organic solar cells (OSCs) by designing a dichlorobenzodithiophene-4-8-dione (BDD2Cl) unit. The polymer donor PBDTT-BDD2Cl exhibits deeper energy levels, enhanced crystallinity, and improved solubility compared to fluorinated controls. It achieves higher photovoltage (0.947 V) and lower energy loss (0.182 eV) in thin-film devices (21.1% PCE) and thick-film devices (17.3% PCE), demonstrating cost-effective efficiency gains without fluorine.\",\n  \"key_findings\": [\n    \"PBDTT-BDD2Cl polymer donor shows deeper energy levels and improved crystallinity versus fluorinated BDTT-alt-BDD polymers\",\n    \"Thin-film OSCs achieve 21.1% certified PCE with BDD2Cl, surpassing fluorinated controls (19.3%)\",\n    \"Thick-film devices (500 nm) reach 17.3% PCE, outperforming other thick-film OSCs (≥500 nm)\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that fluorine-free benzodithiophene-4-8-dione units can enhance cost-effective organic solar cell performance across thin and thick films without compromising efficiency.\"\n}",
+        "parsed": {
+          "summary": "This study investigates fluorine-free polymer donors for organic solar cells (OSCs) by designing a dichlorobenzodithiophene-4-8-dione (BDD2Cl) unit. The polymer donor PBDTT-BDD2Cl exhibits deeper energy levels, enhanced crystallinity, and improved solubility compared to fluorinated controls. It achieves higher photovoltage (0.947 V) and lower energy loss (0.182 eV) in thin-film devices (21.1% PCE) and thick-film devices (17.3% PCE), demonstrating cost-effective efficiency gains without fluorine.",
+          "key_findings": [
+            "PBDTT-BDD2Cl polymer donor shows deeper energy levels and improved crystallinity versus fluorinated BDTT-alt-BDD polymers",
+            "Thin-film OSCs achieve 21.1% certified PCE with BDD2Cl, surpassing fluorinated controls (19.3%)",
+            "Thick-film devices (500 nm) reach 17.3% PCE, outperforming other thick-film OSCs (≥500 nm)"
+          ],
+          "scientific_significance": "This work demonstrates that fluorine-free benzodithiophene-4-8-dione units can enhance cost-effective organic solar cell performance across thin and thick films without compromising efficiency."
+        },
+        "elapsed_seconds": 34.6975,
+        "input_tokens": 923,
+        "output_tokens": 302,
+        "thoughts_tokens": null,
+        "total_tokens": 1225,
+        "model_eval_seconds": 26.2129,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43053160",
+        "title": "The immune microenvironment in MDS-to-AML transformation: dynamic ecological remodeling and therapeutic implications.",
+        "abstract": "NA: Myelodysplastic neoplasms (MDS) are clonal myeloid neoplasms characterized by ineffective hematopoiesis, cytopenias, and a variable risk of transformation to Acute myeloid leukemia (AML). Although genetic lesions are central to MDS pathogenesis, progression to AML cannot be explained by mutation accumulation alone. This review synthesizes evidence that MDS-to-AML transformation is a dynamic ecological process driven by reciprocal interactions between mutant hematopoietic stem and progenitor cell clones and the bone marrow immune microenvironment. In normal marrow, hematopoietic stem and progenitor cells, T cells, NK(natural killer) cells, myeloid cells, mesenchymal stromal cells, endothelial cells, and the extracellular matrix maintain hematopoietic homeostasis and immune surveillance. In MDS, chronic inflammation coexists with impaired immune effector function, including T-cell exhaustion, reduced NK-cell cytotoxicity, expansion of myeloid-derived suppressor cells and immunosuppressive regulatory T-cell subsets, monocyte-macrophage reprogramming, mesenchymal stromal cell dysfunction, extracellular matrix remodeling, and metabolic adaptation. Together, these alterations establish a proinflammatory but immunosuppressive niche that weakens clearance of abnormal clones while providing stromal and metabolic support for clonal expansion and treatment resistance. Mutant clones further remodel the niche through epigenetic silencing, altered chemokine and cytokine signaling, and inflammatory-metabolic reprogramming, generating positive-feedback circuits that link inflammation, DNA damage, immune escape, increasing clonal burden, and therapy resistance. This review discusses how integrating clonal genetics with immune, stromal, and metabolic features may refine risk stratification and inform microenvironment-directed combination therapies. Longitudinal single-cell and spatial profiling will be essential for identifying reversible immune dysfunction and developing individualized strategies to delay or prevent AML transformation.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1186/s40364-026-01046-3",
+        "doi_url": "https://doi.org/10.1186/s40364-026-01046-3",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43053160/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Biomarker research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines how myelod. neoplasms (MDS) transform into acute myeloid leukemia (AML) through dynamic interactions between mutant hematopoietic clones and the bone marrow immune microenvironment. It highlights chronic inflammation, immune suppression, and niche remodeling that facilitate clonal expansion and therapy resistance. The study emphasizes integrating genetic and immune features to improve risk stratification and develop microenvironment-targeted therapies.\",\n  \"key_findings\": [\n    \"MDS-to-AML transformation involves reciprocal interactions between mutant hematopoietic clones and the bone marrow immune microenvironment\",\n    \"Chronic inflammation coexists with immune suppression including T-cell exhaustion and myeloid-derived suppressor cell expansion\",\n    \"Mutant clones remodel the niche via epigenetic changes and inflammatory-metabolic reprogramming, creating feedback loops that drive therapy resistance\"\n  ],\n  \"scientific_significance\": \"This work establishes that MDS-to-AML progression is an ecological process driven by immune-niche crosstalk, providing a framework for targeting microenvironmental factors to delay leukemic transformation.\"\n}",
+        "parsed": {
+          "summary": "This review examines how myelod. neoplasms (MDS) transform into acute myeloid leukemia (AML) through dynamic interactions between mutant hematopoietic clones and the bone marrow immune microenvironment. It highlights chronic inflammation, immune suppression, and niche remodeling that facilitate clonal expansion and therapy resistance. The study emphasizes integrating genetic and immune features to improve risk stratification and develop microenvironment-targeted therapies.",
+          "key_findings": [
+            "MDS-to-AML transformation involves reciprocal interactions between mutant hematopoietic clones and the bone marrow immune microenvironment",
+            "Chronic inflammation coexists with immune suppression including T-cell exhaustion and myeloid-derived suppressor cell expansion",
+            "Mutant clones remodel the niche via epigenetic changes and inflammatory-metabolic reprogramming, creating feedback loops that drive therapy resistance"
+          ],
+          "scientific_significance": "This work establishes that MDS-to-AML progression is an ecological process driven by immune-niche crosstalk, providing a framework for targeting microenvironmental factors to delay leukemic transformation."
+        },
+        "elapsed_seconds": 26.8479,
+        "input_tokens": 842,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 1068,
+        "model_eval_seconds": 19.6111,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42973174",
+        "title": "Selective Hydrogen Transport Through Polymeric Fullerene Nanosheet Membranes.",
+        "abstract": "NA: Lamellar membranes, assembled from two-dimensional (2D) nanosheets, have attracted intensive attention for molecular and ion sieving due to their tunable interlayer channels and ultrathin selective layers. However, molecular transport in conventional lamellar membranes usually occurs through interlayer galleries whose dimensions vary with stacking, limiting ångström-scale control over selectivity. Therefore, developing a novel lamellar membrane with ångström-scale in-plane pores is highly desirable. In an idealized qTP lattice, four-directionally connected fullerene cages define periodically distributed apertures that converge from an approximately 5.87 Å entrance to a 3.11 Å waist. Upon assembly, the constriction regions can discriminate by size, while their converging entrances and the intersheet galleries govern molecular access and transport resistance through the in-plane apertures. The resulting polymeric fullerene nanosheet membrane exhibits an H2 permeance of 3896 ± 107 GPU and an H2/CO2 separation factor of 88.5 ± 5.9 for the separation of an equimolar H2/CO2 mixture at 303.15 K and a total feed pressure of 100 kPa. The separation performance remains stable over 200 h of operation. This study establishes topology-encoded pore geometry as a design principle for integrating short selective pathways with ångström-scale molecular discrimination in lamellar membranes.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75616",
+        "doi_url": "https://doi.org/10.1002/adma.75616",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973174/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates the design of polymeric fullerene nanosheet membranes for selective hydrogen transport. By engineering a qTP lattice with in-plane pores converging from 5.87 Å to 3.11 Å, the researchers achieved Ångström-scale molecular discrimination. The membrane demonstrated high H2 permeance (3896 ± 107 GPU) and an H2/CO2 separation factor of 88.5 ± 5.9 for equimolar mixtures at 303.15 K and 100 kPa. Performance remained stable over 200 hours.\",\n  \"key_findings\": [\n    \"Engineered polymeric fullerene nanosheets with in-plane pores converging from 5.87 Å to 3.11 Å\",\n    \"H2 permeance of 3896 ± 107 GPU and H2/CO2 separation factor of 88.5 ± 5.9\",\n    \"Stable separation performance over 200 hours of operation\"\n  ],\n  \"scientific_significance\": \"This work establishes topology-encoded pore geometry as a design principle for achieving Ångström-scale molecular discrimination in lamellar membranes, enabling precise control over selective transport pathways.\"\n}",
+        "parsed": {
+          "summary": "This study investigates the design of polymeric fullerene nanosheet membranes for selective hydrogen transport. By engineering a qTP lattice with in-plane pores converging from 5.87 Å to 3.11 Å, the researchers achieved Ångström-scale molecular discrimination. The membrane demonstrated high H2 permeance (3896 ± 107 GPU) and an H2/CO2 separation factor of 88.5 ± 5.9 for equimolar mixtures at 303.15 K and 100 kPa. Performance remained stable over 200 hours.",
+          "key_findings": [
+            "Engineered polymeric fullerene nanosheets with in-plane pores converging from 5.87 Å to 3.11 Å",
+            "H2 permeance of 3896 ± 107 GPU and H2/CO2 separation factor of 88.5 ± 5.9",
+            "Stable separation performance over 200 hours of operation"
+          ],
+          "scientific_significance": "This work establishes topology-encoded pore geometry as a design principle for achieving Ångström-scale molecular discrimination in lamellar membranes, enabling precise control over selective transport pathways."
+        },
+        "elapsed_seconds": 28.3065,
+        "input_tokens": 740,
+        "output_tokens": 272,
+        "thoughts_tokens": null,
+        "total_tokens": 1012,
+        "model_eval_seconds": 22.7932,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43053193",
+        "title": "Pathomics-based prediction of natural regulatory T cell infiltration in breast cancer.",
+        "abstract": "BACKGROUND: Natural regulatory T cells (nTregs) are a key immunosuppressive component of the tumor microenvironment (TME), but their assessment typically requires specialized molecular assays. This study aimed to develop and validate a deep learning-based pathomics model to predict nTregs infiltration directly from routine hematoxylin and eosin (H&E)-stained whole slide images (WSI) of breast cancer and evaluate its prognostic significance.\nMETHODS: Data from 1097 breast cancer patients in The Cancer Genome Atlas (TCGA) were analyzed. A cohort of 928 patients with complete RNA-seq data was used to establish the prognostic value of nTregs (estimated by ImmuneCellAI). A subset of 791 patients with matched high-quality H&E-stained WSI was randomly split into training (n = 633) and validation (n = 158) cohorts. A total of 1488 quantitative pathomic features were extracted. After feature selection via minimum Redundancy Maximum Relevance (mRMR) and Recursive Feature Elimination (RFE), a Gradient Boosting Machine (GBM) classifier was trained to predict high versus low nTregs status, generating a continuous Pathomics Score (PS). The PS was validated against FOXP3 immunohistochemistry (IHC) and evaluated for its association with overall survival (OS). Multi-omics analyses explored the underlying biology of PS-defined groups.\nRESULTS: High nTregs infiltration was an independent predictor of poor OS (HR = 1.58, 95% CI 1.10-2.28, p = 0.013). The GBM model achieved an area under the receiver operating characteristic curve (AUC-ROC) of 0.81 (95% CI 0.78-0.85) in the training cohort and 0.72 (95% CI 0.63-0.80) in the validation cohort. The PS showed a strong correlation with FOXP3+ cell density (p < 0.001) and was independently associated with worse OS (HR = 1.68, 95% CI 1.15-2.46, p = 0.008). Patients with high PS exhibited a distinct transcriptomic signature enriched for immune activation pathways (e.g., estrogen responses) and upregulated immune checkpoint genes (e.g., CD276, TNFSF4, TNFSF9), alongside an immunosuppressive microenvironment characterized by increased nTregs and M2-like macrophage estimates.\nCONCLUSION: We developed and validated a pathomics model that non-invasively predicts nTregs infiltration and patient prognosis from standard H&E images. The PS serves as a novel, accessible digital biomarker that captures the complexity of an inflamed yet immunosuppressive TME and has the potential to augment clinical decision-making, particularly in resource-limited settings.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1186/s13058-026-02370-0",
+        "doi_url": "https://doi.org/10.1186/s13058-026-02370-0",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43053193/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Breast cancer research : BCR",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed and validated a deep learning-based pathomics model using H&E-stained whole slide images to predict natural regulatory T cell (nTreg) infiltration in breast cancer. The model, trained on TCGA data with feature selection via mRMR and RFE, generated a Pathomics Score (PS) that correlated with FOXP3+ cell density and was independently associated with poor overall survival (HR = 1.68, p = 0.008). The PS also identified immune activation pathways and immunosuppressive features in the tumor microenvironment.\",\n  \"key_findings\": [\n    \"High nTreg infiltration predicted poor overall survival with a hazard ratio of 1.68 (95% CI 1.15-2.46, p = 0.008)\",\n    \"The Pathomics Score (PS) achieved an AUC-ROC of 0.72 in validation cohort and strongly correlated with FOXP3+ cell density (p < 0.001)\",\n    \"High PS patients exhibited immune activation pathways and immunosuppressive microenvironment features including upregulated immune checkpoint genes\"\n  ],\n  \"scientific_significance\": \"This work establishes a non-invasive digital biomarker derived from standard histopathology images that quantifies immunosuppressive regulatory T cell infiltration and its prognostic impact in breast cancer, advancing the field of computational pathomics.\"\n}",
+        "parsed": {
+          "summary": "This study developed and validated a deep learning-based pathomics model using H&E-stained whole slide images to predict natural regulatory T cell (nTreg) infiltration in breast cancer. The model, trained on TCGA data with feature selection via mRMR and RFE, generated a Pathomics Score (PS) that correlated with FOXP3+ cell density and was independently associated with poor overall survival (HR = 1.68, p = 0.008). The PS also identified immune activation pathways and immunosuppressive features in the tumor microenvironment.",
+          "key_findings": [
+            "High nTreg infiltration predicted poor overall survival with a hazard ratio of 1.68 (95% CI 1.15-2.46, p = 0.008)",
+            "The Pathomics Score (PS) achieved an AUC-ROC of 0.72 in validation cohort and strongly correlated with FOXP3+ cell density (p < 0.001)",
+            "High PS patients exhibited immune activation pathways and immunosuppressive microenvironment features including upregulated immune checkpoint genes"
+          ],
+          "scientific_significance": "This work establishes a non-invasive digital biomarker derived from standard histopathology images that quantifies immunosuppressive regulatory T cell infiltration and its prognostic impact in breast cancer, advancing the field of computational pathomics."
+        },
+        "elapsed_seconds": 38.8795,
+        "input_tokens": 1090,
+        "output_tokens": 314,
+        "thoughts_tokens": null,
+        "total_tokens": 1404,
+        "model_eval_seconds": 27.4997,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42973277",
+        "title": "Lignin-Based Supramolecular Dynamic Networks: A General Platform for Energy Harvesting and Sensing.",
+        "abstract": "NA: Lignin- based ionogels are promising sustainable materials for flexible electronics, yet their development is limited by a persistent tradeoff between mechanical robustness and dynamic multifunctionality. Here, we report a rigid flexible supramolecular design strategy that transforms lignin from a rigid bio-based component into an active network building block for dynamic ionogels. By coupling rigid lignin derived domains with flexible dynamic polymer segments, the resulting ionogel achieves efficient energy dissipation, reversible network reconstruction, and stable ionic transport. The ionogel exhibits an elongation at break of 1564%, underwater adhesion strength of 488.3 kPa on steel, and near complete self-healing at room temperature. It further functions as a strain sensor with a gauge factor of 2.83 and stable signal output over 350 stretching cycles. When assembled into a triboelectric nanogenerator, the ionogel delivers a stable voltage output of 75 V under deformation. This work establishes a lignin derived dynamic ionogel platform that integrates robustness, adaptability, sensing, and mechanical energy harvesting for sustainable flexible electronics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75521",
+        "doi_url": "https://doi.org/10.1002/adma.75521",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42973277/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates lignin-based supramolecular dynamic networks for sustainable flexible electronics. The researchers designed a rigid-flexible supramolecular strategy using lignin-derived domains and dynamic polymer segments to overcome mechanical robustness versus multifunctionality tradeoffs. The resulting ionogel demonstrates high elongation (1564%), strong underwater adhesion (488.3 kPa), self-healing, strain sensing (gauge factor 2.83), and energy harvesting via triboelectric nanogenerators (75 V output). These properties enable integrated mechanical robustness, sensing, and energy harvesting in sustainable electronics.\",\n  \"key_findings\": [\n    \"Lignin-derived ionogels achieve 1564% elongation at break\",\n    \"The material exhibits 488.3 kPa underwater adhesion strength on steel\",\n    \"Ionogels function as strain sensors with a gauge factor of 2.83 and stable output over 350 stretching cycles\"\n  ],\n  \"scientific_significance\": \"This work establishes lignin as a versatile platform for dynamic supramolecular networks that integrate mechanical robustness, sensing capabilities, and energy harvesting in sustainable flexible electronics.\"\n}",
+        "parsed": {
+          "summary": "This study investigates lignin-based supramolecular dynamic networks for sustainable flexible electronics. The researchers designed a rigid-flexible supramolecular strategy using lignin-derived domains and dynamic polymer segments to overcome mechanical robustness versus multifunctionality tradeoffs. The resulting ionogel demonstrates high elongation (1564%), strong underwater adhesion (488.3 kPa), self-healing, strain sensing (gauge factor 2.83), and energy harvesting via triboelectric nanogenerators (75 V output). These properties enable integrated mechanical robustness, sensing, and energy harvesting in sustainable electronics.",
+          "key_findings": [
+            "Lignin-derived ionogels achieve 1564% elongation at break",
+            "The material exhibits 488.3 kPa underwater adhesion strength on steel",
+            "Ionogels function as strain sensors with a gauge factor of 2.83 and stable output over 350 stretching cycles"
+          ],
+          "scientific_significance": "This work establishes lignin as a versatile platform for dynamic supramolecular networks that integrate mechanical robustness, sensing capabilities, and energy harvesting in sustainable flexible electronics."
+        },
+        "elapsed_seconds": 24.2665,
+        "input_tokens": 679,
+        "output_tokens": 253,
+        "thoughts_tokens": null,
+        "total_tokens": 932,
+        "model_eval_seconds": 19.7478,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43053218",
+        "title": "Baseline immune profiles are associated with positive outcomes in young children with a peanut allergy, enrolled in a randomised clinical trial for oral immunotherapy.",
+        "abstract": "BACKGROUND: Peanut allergy affects around 3% of Australian infants, can cause life-threatening anaphylactic reactions and often persists throughout life. Oral immunotherapy (OIT) is a promising treatment to achieve desensitisation, but treatment outcomes vary. This study describes the immunological profiles associated with favourable OIT outcomes.\nMETHODS: This study assessed blood samples from 49 peanut-allergic children (1-4 years old) who participated in the Early Peanut Immunotherapy in Children (EPIC) randomised controlled trial. Children randomised to undergo peanut OIT (n = 24), or to follow the current recommended clinical practise of strict peanut avoidance (n = 25) for twelve months, were immunologically evaluated. Desensitisation outcomes were assessed using an end of treatment (EOT) oral food challenge, and blood samples were collected at baseline, 12-week follow-up (OIT only), and EOT. Thirty immune cell subsets were identified using an established immune cell flow cytometry panel and an FcεR1 expression panel.\nRESULTS: As part of the clinical trial, OIT induced either partial or complete desensitisation in 91.3% of participants in the intervention group, compared to 20.8% in the avoidance group. After 12 weeks of treatment, OIT-treated patients displayed an expansion of basophils, monocytes and dendritic cells compared to levels at recruitment. At EOT, OIT increased the abundance of CD4- T effector memory cells and mast cell progenitors. Younger children with low levels of peanut-specific IgE were more likely to achieve complete desensitisation. Such outcome was also associated with low levels of CD4+ memory Tregs and CD4- central memory T cells at recruitment, whereas increased levels of basophils were associated with partial desensitisation. Differences between partial and complete desensitisation were also observed regarding dendritic cell activation and expression of the IgE receptor.\nCONCLUSION: Our findings suggest that immune signatures vary according to OIT clinical response and may have utility in monitoring treatment progress and in identifying children most likely to benefit from OIT in the future.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1186/s13223-026-01061-x",
+        "doi_url": "https://doi.org/10.1186/s13223-026-01061-x",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43053218/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Allergy, asthma, and clinical immunology : official journal of the Canadian Society of Allergy and Clinical Immunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated immune profiles predicting successful oral immunotherapy (OIT) outcomes in young peanut-allergic children. Using blood samples from 49 participants in a randomised trial, researchers assessed immune cell subsets and FcεR1 expression. OIT achieved desensitisation in 91.3% versus 20.8% of the avoidance group. Key immune markers included expanded basophils, monocytes, and dendritic cells in OIT responders, with younger children and low peanut-specific IgE levels correlating with complete desensitisation.\",\n  \"key_findings\": [\n    \"OIT induced desensitisation in 91.3% of participants versus 20.8% in strict avoidance\",\n    \"OIT responders showed expanded basophils, monocytes, and dendritic cells at 12 weeks\",\n    \"Younger children with low peanut-specific IgE and low CD4+ memory Tregs were more likely to achieve complete desensitisation\"\n  ],\n  \"scientific_significance\": \"The study identifies specific immune signatures associated with successful oral immunotherapy outcomes, providing potential biomarkers for monitoring treatment response and predicting desensitisation success in peanut-allergic children.\"\n}",
+        "parsed": {
+          "summary": "This study investigated immune profiles predicting successful oral immunotherapy (OIT) outcomes in young peanut-allergic children. Using blood samples from 49 participants in a randomised trial, researchers assessed immune cell subsets and FcεR1 expression. OIT achieved desensitisation in 91.3% versus 20.8% of the avoidance group. Key immune markers included expanded basophils, monocytes, and dendritic cells in OIT responders, with younger children and low peanut-specific IgE levels correlating with complete desensitisation.",
+          "key_findings": [
+            "OIT induced desensitisation in 91.3% of participants versus 20.8% in strict avoidance",
+            "OIT responders showed expanded basophils, monocytes, and dendritic cells at 12 weeks",
+            "Younger children with low peanut-specific IgE and low CD4+ memory Tregs were more likely to achieve complete desensitisation"
+          ],
+          "scientific_significance": "The study identifies specific immune signatures associated with successful oral immunotherapy outcomes, providing potential biomarkers for monitoring treatment response and predicting desensitisation success in peanut-allergic children."
+        },
+        "elapsed_seconds": 29.7257,
+        "input_tokens": 924,
+        "output_tokens": 257,
+        "thoughts_tokens": null,
+        "total_tokens": 1181,
+        "model_eval_seconds": 21.122,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42974659",
+        "title": "Sulfur Locking and Chlorination Synergistically Enable Efficient Charge Transport and Low Nonradiative Energy Loss in Organic Solar Cells.",
+        "abstract": "NA: Achieving efficient charge transport while maintaining low nonradiative energy loss remains a key challenge in the molecular design of small-molecule acceptors (SMAs) for organic solar cells (OSCs). Herein, we report a stepwise molecular engineering strategy based on sulfur locking and chlorination to regulate intermolecular packing and excited-state properties simultaneously. Sulfur locking modifies molecular conformation and intermolecular packing, leading to enhanced exciton diffusion and charge transport. Subsequent chlorination further strengthens intermolecular interactions through additional Cl···S contacts, resulting in tighter π-π stacking and improved crystalline ordering. Binary OSCs based on D18:Qx2Ph-SCl achieve an efficiency of 20.0% with a high open-circuit voltage (VOC) of 0.951 V, while maintaining a low nonradiative energy loss of ∼0.19 eV. Owing to its intrinsically lower reorganization energy and weaker electron-phonon coupling than L8-BO, Qx2Ph-SCl further serves as an effective third component in ternary OSCs, reducing nonradiative recombination and increasing the VOC. As a result, the ternary device delivers an efficiency of 21.3%. This work demonstrates that stepwise sulfur locking and chlorination provide an effective molecular design strategy for simultaneously optimizing charge transport and voltage loss in high-performance OSCs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75611",
+        "doi_url": "https://doi.org/10.1002/adma.75611",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974659/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates molecular engineering strategies to enhance charge transport and reduce nonradiative energy loss in organic solar cells. By integrating sulfur locking and chlorination, the researchers optimized intermolecular packing and excited-state properties. Binary cells achieved 20.0% efficiency with low nonradiative loss (∼0.19 eV) and high open-circuit voltage (0.951 V). Ternary devices incorporating Qx2Ph-SCl further improved efficiency to 21.3% by reducing recombination. The approach demonstrates synergistic effects for high-performance organic solar cells.\",\n  \"key_findings\": [\n    \"Sulfur locking enhances molecular conformation and intermolecular packing, improving exciton diffusion and charge transport\",\n    \"Chlorination strengthens intermolecular interactions via Cl···S contacts, enabling tighter π-π stacking and crystalline ordering\",\n    \"Binary OSCs with Qx2Ph-SCl achieved 20.0% efficiency and low nonradiative energy loss of ∼0.19 eV\"\n  ],\n  \"scientific_significance\": \"This work establishes a synergistic molecular design strategy for simultaneously optimizing charge transport and voltage loss in organic solar cells, advancing the field toward higher efficiency with reduced nonradiative recombination.\"\n}",
+        "parsed": {
+          "summary": "This study investigates molecular engineering strategies to enhance charge transport and reduce nonradiative energy loss in organic solar cells. By integrating sulfur locking and chlorination, the researchers optimized intermolecular packing and excited-state properties. Binary cells achieved 20.0% efficiency with low nonradiative loss (∼0.19 eV) and high open-circuit voltage (0.951 V). Ternary devices incorporating Qx2Ph-SCl further improved efficiency to 21.3% by reducing recombination. The approach demonstrates synergistic effects for high-performance organic solar cells.",
+          "key_findings": [
+            "Sulfur locking enhances molecular conformation and intermolecular packing, improving exciton diffusion and charge transport",
+            "Chlorination strengthens intermolecular interactions via Cl···S contacts, enabling tighter π-π stacking and crystalline ordering",
+            "Binary OSCs with Qx2Ph-SCl achieved 20.0% efficiency and low nonradiative energy loss of ∼0.19 eV"
+          ],
+          "scientific_significance": "This work establishes a synergistic molecular design strategy for simultaneously optimizing charge transport and voltage loss in organic solar cells, advancing the field toward higher efficiency with reduced nonradiative recombination."
+        },
+        "elapsed_seconds": 27.3441,
+        "input_tokens": 743,
+        "output_tokens": 271,
+        "thoughts_tokens": null,
+        "total_tokens": 1014,
+        "model_eval_seconds": 21.7028,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43053342",
+        "title": "Heparanase-Expressing Regulatory T Cells Drive Immunotherapy Resistance and Poor Outcomes in Lung Cancer.",
+        "abstract": "NA: Heparan sulfate proteoglycans (HSPGs) and their degrading enzyme heparanase (Hpse) play pivotal roles in tumor invasion and metastasis. Previous studies have reported associations between Hpse expression in tumor cells and patient prognosis. Although immune checkpoint inhibitors (ICIs) are a cornerstone of solid tumor therapy, the role of Hpse in antitumor immunity remains unclear. Here, we examined Hpse localization and its impact on the immune microenvironment in lung adenocarcinoma. To investigate the relationships among the Hpse expression, tumor prognosis, and tumor-infiltration of immune cells, an immunohistochemical analysis of Hpse1, Hpse2, regulatory T cells (Tregs), macrophages, and CD8+ T cells was performed in resected tumor tissue from lung adenocarcinoma patients. The effects of the Hpse inhibitor PG545 on the invasive capabilities of lymphocytes were investigated. In lung adenocarcinoma tissues, Hpse1 and Hpse2 were expressed in both epithelial tumor cells and immune cells. A high Hpse1 expression and low Hpse2 expression are poor postoperative prognostic factors in both epithelial cells and tumor-infiltrating hematopoietic cells. Single-cell RNA sequencing of human tumor-infiltrating immune cells revealed that Tregs and some subclusters of macrophages specifically express Hpse1. Lung adenocarcinoma tissue with high Hpse-expressing immune cells demonstrated an increase in tumor-infiltrating Tregs. PG545 suppressed the invasion of Tregs toward the HSPG-containing ECM. Furthermore, PG545 suppressed tumor progression and infiltration of Tregs in a mouse model. In addition, PG545 reinforced antitumor effects of PD-L1 blockade. Hpse expression in Tregs has a significant impact on lung cancer progression and is a promising therapeutic target for novel combination immunotherapy.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1002/ijc.70824",
+        "doi_url": "https://doi.org/10.1002/ijc.70824",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43053342/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "International journal of cancer",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated heparanase (Hpse) expression in regulatory T cells (Tregs) and its association with immunotherapy resistance in lung adenocarcinoma. Using immunohistochemistry and single-cell RNA sequencing, researchers found Hpse1 expression in Tregs and macrophages, linked high Hpse1 to poor prognosis, and demonstrated that Hpse-expressing Tregs increase tumor-infiltrating Tregs. PG545, an Hpse inhibitor, reduced Treg invasion into the extracellular matrix and enhanced PD-L1 blockade efficacy in mouse models.\",\n  \"key_findings\": [\n    \"Hpse1 expression in Tregs and macrophages was identified via single-cell RNA sequencing\",\n    \"High Hpse1 expression correlates with poor postoperative prognosis in lung adenocarcinoma\",\n    \"PG545 inhibits Treg invasion into HSPG-rich extracellular matrix and synergizes with PD-L1 blockade\"\n  ],\n  \"scientific_significance\": \"Hpse-mediated Treg modulation represents a novel mechanism of immunotherapy resistance in lung cancer, highlighting a targetable pathway for improving immunotherapy efficacy.\"\n}",
+        "parsed": {
+          "summary": "This study investigated heparanase (Hpse) expression in regulatory T cells (Tregs) and its association with immunotherapy resistance in lung adenocarcinoma. Using immunohistochemistry and single-cell RNA sequencing, researchers found Hpse1 expression in Tregs and macrophages, linked high Hpse1 to poor prognosis, and demonstrated that Hpse-expressing Tregs increase tumor-infiltrating Tregs. PG545, an Hpse inhibitor, reduced Treg invasion into the extracellular matrix and enhanced PD-L1 blockade efficacy in mouse models.",
+          "key_findings": [
+            "Hpse1 expression in Tregs and macrophages was identified via single-cell RNA sequencing",
+            "High Hpse1 expression correlates with poor postoperative prognosis in lung adenocarcinoma",
+            "PG545 inhibits Treg invasion into HSPG-rich extracellular matrix and synergizes with PD-L1 blockade"
+          ],
+          "scientific_significance": "Hpse-mediated Treg modulation represents a novel mechanism of immunotherapy resistance in lung cancer, highlighting a targetable pathway for improving immunotherapy efficacy."
+        },
+        "elapsed_seconds": 26.045,
+        "input_tokens": 844,
+        "output_tokens": 240,
+        "thoughts_tokens": null,
+        "total_tokens": 1084,
+        "model_eval_seconds": 18.8255,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42974669",
+        "title": "PASS-Derived O/S Donor Field-Directed Competitive-Cooperative Fe/Co Phase Evolution for Cross-Band Microwave Absorption.",
+        "abstract": "NA: Fe/Co bimetallic regulation enables high-performance microwave absorbers, yet the role of intrinsic coordination disparity in precursor conversion, nonequilibrium phase evolution, and cross-band loss redistribution remains unclear. We design a poly(arylene sulfide sulfone) (PASS)-predefined O/S heterogeneous donor-field strategy to direct competitive-cooperative nonequilibrium phase evolution in Fe/Co systems. Covalently embedded sulfone-O and thioether-S sites, with PASS's rigid backbone, create a molecularly preorganized donor field that amplifies non-equivalent Fe/Co coordination, promoting competitive bonding, differentiated phase pathways, and electronic-state reconstruction during confined pyrolysis. Fe/Co regulation thus reshapes local phases, O/S chemical environments, and interfacial charge states via Fe─O/Co─S coordination preferences, generating multiphase heterostructures, amorphous/crystalline interfaces, defects, and lattice strain while balancing dielectric polarization, conductive transport, magnetic response, and impedance matching. The resulting CFC absorber achieves cross-band absorption in low-frequency 5G and high-frequency radar bands. CFC-4 exhibits -73.83 dB at 6.23 GHz (3.20 mm) and -76.59 dB at 16.98 GHz (1.31 mm), with a maximum EAB of 5.03 GHz. CFC-4∼6 (1-5 mm) show >90% cumulative effective absorption over 2-18 GHz. Finite-element simulations reveal a maximum RCS reduction of 42.5 dB on PEC. This work establishes O/S donor-field engineering as a viable route to amplify Fe/Co coordination differentiation for efficient cross-band microwave absorption.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75634",
+        "doi_url": "https://doi.org/10.1002/adma.75634",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974669/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates how poly(arylene sulfide sulfone) (PASS)-predefined oxygen/sulfur donor fields direct competitive-cooperative phase evolution in Fe/Co bimetallic systems for cross-band microwave absorption. Using molecularly preorganized donor sites, the researchers enhanced non-equivalent Fe/Co coordination during pyrolysis, generating multiphase heterostructures with optimized dielectric, magnetic, and impedance properties. The CFC-4 absorber achieved -73.83 dB at 6.23 GHz and -76.59 dB at 16.98 GHz, demonstrating effective cross-band absorption from 2 to 18 GHz with a maximum EAB of 5.03 GHz.\",\n  \"key_findings\": [\n    \"PASS-defined O/S donor fields amplify non-equivalent Fe/Co coordination during pyrolysis\",\n    \"CFC-4 exhibits cross-band absorption across 5G and radar frequencies with -73.83 dB at 6.23 GHz\",\n    \"Cumulative effective absorption exceeds 90% over 2-18 GHz with minimal thickness (1-5 mm)\"\n  ],\n  \"scientific_significance\": \"This work establishes O/S donor-field engineering as a strategy to enhance cross-band microwave absorption in Fe/Co systems through controlled phase evolution and coordination differentiation.\"\n}",
+        "parsed": {
+          "summary": "This study investigates how poly(arylene sulfide sulfone) (PASS)-predefined oxygen/sulfur donor fields direct competitive-cooperative phase evolution in Fe/Co bimetallic systems for cross-band microwave absorption. Using molecularly preorganized donor sites, the researchers enhanced non-equivalent Fe/Co coordination during pyrolysis, generating multiphase heterostructures with optimized dielectric, magnetic, and impedance properties. The CFC-4 absorber achieved -73.83 dB at 6.23 GHz and -76.59 dB at 16.98 GHz, demonstrating effective cross-band absorption from 2 to 18 GHz with a maximum EAB of 5.03 GHz.",
+          "key_findings": [
+            "PASS-defined O/S donor fields amplify non-equivalent Fe/Co coordination during pyrolysis",
+            "CFC-4 exhibits cross-band absorption across 5G and radar frequencies with -73.83 dB at 6.23 GHz",
+            "Cumulative effective absorption exceeds 90% over 2-18 GHz with minimal thickness (1-5 mm)"
+          ],
+          "scientific_significance": "This work establishes O/S donor-field engineering as a strategy to enhance cross-band microwave absorption in Fe/Co systems through controlled phase evolution and coordination differentiation."
+        },
+        "elapsed_seconds": 25.3524,
+        "input_tokens": 920,
+        "output_tokens": 288,
+        "thoughts_tokens": null,
+        "total_tokens": 1208,
+        "model_eval_seconds": 23.5185,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43053499",
+        "title": "Regulatory T and Activated T Cells in the Chronic Unpredictable Mild Stress Mice: Sex Differences and Effects of Treatments.",
+        "abstract": "BACKGROUND: Major depressive disorder (MDD) is associated with immune dysregulation, including T-cell activation and reduced regulatory T cells. Pharmacological treatments like fluoxetine, simvastatin, curcumin, and S-adenosylmethionine (SAMe) show promise in alleviating depressive symptoms, but their effects on immune responses are not fully understood.\nMETHODS: This study explored immune status in MDD using the chronic unpredictable mild stress (CUMS) mouse model. It examined how fluoxetine, simvastatin, curcumin, and SAMe affected immune responses and depressive behaviors. The study also investigated sex differences. Six groups, each with 12 mice (6 males and 6 females), were included: control, CUMS and drug treatments. Male and female mice were housed separately in sex-specific cages throughout the experiment, with three mice per cage. Behavioral tests included sucrose preference, forced swimming, open field and active avoidance. Immune cell markers were analyzed by flow cytometry.\nRESULTS: CUMS mice showed immune imbalance, with Treg depletion (p = 0.047) and a higher CD154/CD152 ratio (p = 0.006). All treatments improved depressive-like behaviors (all p < 0.05), with SAMe normalizing the CD154/CD152 ratio (p = 0.009). Furthermore, female mice exhibited lower levels of Treg-related immune regulation and T-cell activation compared to males (both p < 0.001), along with a higher CD154/CD152 ratio (p = 0.008).\nCONCLUSION: This study highlights that curcumin, simvastatin, fluoxetine, and SAMe alleviate depressive-like behaviors, while SAMe also reduces the CD154/CD152 ratio. These findings reveal marked sex differences in T-cell activation and immune regulation, highlighting the importance of considering sex as a biological variable in CUMS research.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1155/jimr/3903319",
+        "doi_url": "https://doi.org/10.1155/jimr/3903319",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43053499/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Journal of immunology research",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated sex-specific immune responses in mice subjected to chronic unpredictable mild stress (CUMS), a model for depression. Using flow cytometry, it assessed T regulatory (Treg) cells and T-cell activation markers. CUMS induced Treg depletion and elevated CD154/CD152 ratios. Four treatments improved depressive behaviors, with SAMe normalizing the CD154/CD152 ratio. Females showed reduced Treg activity and higher activation ratios than males, indicating significant sex differences in immune regulation.\",\n  \"key_findings\": [\n    \"CUMS mice exhibited Treg depletion and increased CD154/CD152 ratio\",\n    \"All treatments alleviated depressive behaviors with SAMe normalizing CD154/CD152 ratio\",\n    \"Females had lower Treg activity and higher T-cell activation ratios than males\"\n  ],\n  \"scientific_significance\": \"The findings demonstrate sex-dependent immune dysregulation in depression models, emphasizing the necessity of sex as a biological variable in immune-mediated depression research.\"\n}",
+        "parsed": {
+          "summary": "This study investigated sex-specific immune responses in mice subjected to chronic unpredictable mild stress (CUMS), a model for depression. Using flow cytometry, it assessed T regulatory (Treg) cells and T-cell activation markers. CUMS induced Treg depletion and elevated CD154/CD152 ratios. Four treatments improved depressive behaviors, with SAMe normalizing the CD154/CD152 ratio. Females showed reduced Treg activity and higher activation ratios than males, indicating significant sex differences in immune regulation.",
+          "key_findings": [
+            "CUMS mice exhibited Treg depletion and increased CD154/CD152 ratio",
+            "All treatments alleviated depressive behaviors with SAMe normalizing CD154/CD152 ratio",
+            "Females had lower Treg activity and higher T-cell activation ratios than males"
+          ],
+          "scientific_significance": "The findings demonstrate sex-dependent immune dysregulation in depression models, emphasizing the necessity of sex as a biological variable in immune-mediated depression research."
+        },
+        "elapsed_seconds": 25.8931,
+        "input_tokens": 875,
+        "output_tokens": 227,
+        "thoughts_tokens": null,
+        "total_tokens": 1102,
+        "model_eval_seconds": 18.3274,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42974692",
+        "title": "Scalable Gigapascal Strength Bamboo Veneers via Nanocellulose Reinforcement.",
+        "abstract": "NA: Carbon neutrality demands materials that deliver both performance and low environmental impact. Carbon fiber and glass fiber rely on fossil feedstocks and energy-intensive processing, while nature bamboo the ecological marvel is limited by inefficient load transfer within their heterogeneous cell walls. Here we show that this limitation can be overcome by reprogramming the bamboo cell wall through supramolecular nano-reinforcement. Cellulose nanocrystals infiltrate the cell wall and promote the reorganization of the interfacial hydrogen-bonding network within the aligned cellulose framework converting structural discontinuities into a continuous load-bearing scaffold. This enhances interfibrillar stress transfer and homogenizes mechanical response across scales. The resulting material achieves a tensile strength of 0.98 GPa and a Young's modulus of 52.7 GPa, with specific strength rivaling many synthetic fiber materials. These gains are achieved with up to two orders of magnitude lower carbon intensity than that of carbon fiber. This work demonstrates a scalable route to transform abundant biomass into high-performance structural materials, decoupling mechanical performance from carbon intensity.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75630",
+        "doi_url": "https://doi.org/10.1002/adma.75630",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42974692/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates enhancing bamboo's mechanical properties through nanocellulose reinforcement to address its inefficient load transfer in heterogeneous cell walls. By infiltrating cellulose nanocrystals into bamboo cell walls, the researchers reorganized interfacial hydrogen-bonding networks, improving stress transfer and mechanical homogeneity. The material achieved a tensile strength of 0.98 GPa and Young's modulus of 52.7 GPa, with carbon intensity up to two orders of magnitude lower than carbon fiber, demonstrating scalable production of high-performance, low-carbon structural materials.\",\n  \"key_findings\": [\n    \"Cellulose nanocrystals infiltrate bamboo cell walls to reorganize interfacial hydrogen-bonding networks\",\n    \"Enhanced tensile strength (0.98 GPa) and Young's modulus (52.7 GPa) compared to natural bamboo\",\n    \"Carbon intensity reduced by up to two orders of magnitude relative to carbon fiber\"\n  ],\n  \"scientific_significance\": \"This work establishes a scalable method to produce high-performance structural materials from abundant biomass, decoupling mechanical strength from carbon footprint through nanoscale reinforcement.\"\n}",
+        "parsed": {
+          "summary": "This study investigates enhancing bamboo's mechanical properties through nanocellulose reinforcement to address its inefficient load transfer in heterogeneous cell walls. By infiltrating cellulose nanocrystals into bamboo cell walls, the researchers reorganized interfacial hydrogen-bonding networks, improving stress transfer and mechanical homogeneity. The material achieved a tensile strength of 0.98 GPa and Young's modulus of 52.7 GPa, with carbon intensity up to two orders of magnitude lower than carbon fiber, demonstrating scalable production of high-performance, low-carbon structural materials.",
+          "key_findings": [
+            "Cellulose nanocrystals infiltrate bamboo cell walls to reorganize interfacial hydrogen-bonding networks",
+            "Enhanced tensile strength (0.98 GPa) and Young's modulus (52.7 GPa) compared to natural bamboo",
+            "Carbon intensity reduced by up to two orders of magnitude relative to carbon fiber"
+          ],
+          "scientific_significance": "This work establishes a scalable method to produce high-performance structural materials from abundant biomass, decoupling mechanical strength from carbon footprint through nanoscale reinforcement."
+        },
+        "elapsed_seconds": 22.9923,
+        "input_tokens": 659,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 903,
+        "model_eval_seconds": 18.9604,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
