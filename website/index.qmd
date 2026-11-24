@@ -34,22 +34,3 @@ cat('<p class="read-more"><a href="journals/index.html">Read more journals</a></
 cat(site_render_homepage_keyword_list(site$keywords))
 cat('<p class="read-more"><a href="keywords/regulatory-t-cells.html">Read more keywords</a></p>')
 ```
-:::
-
-::: {.install-panel}
-<div class="install-icon" aria-hidden="true">↓</div>
-
-### Install Literature Radar
-
-Add it to your device for quick access, just like an app.
-
-<div class="install-options">
-<div class="install-option"><span class="option-icon">🌐</span><span>Install as an app in Chrome or Edge</span></div>
-<div class="install-option"><span class="option-icon">▶</span><span>Install on Android</span></div>
-<div class="install-option"><span class="option-icon">▣</span><span>Add to iPhone or iPad home screen</span></div>
-<div class="install-option"><span class="option-icon">▱</span><span>Install on Windows, macOS or Linux</span></div>
-</div>
-
-[Install app](#install-app){.btn .btn-primary .install-cta}
-:::
-:::
