@@ -1,0 +1,933 @@
+{
+  "schema_version": 1,
+  "run_id": "20261126T012132Z",
+  "generated_at_utc": "2026-11-26 01:38:52 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 24,
+  "remaining_after_run": 11,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "43004143",
+        "title": "Rate Capability of Lithium-Rich Manganese-Based Oxide Cathodes: Charge-Discharge Kinetics, Multiscale Bottlenecks, and Dynamic Rate-Determining Steps.",
+        "abstract": "NA: Lithium-rich manganese-based oxide (LRMO) cathode materials deliver a reversible specific capacity exceeding 250 mAh g-1 through synergistic anionic and cationic redox, promising for next-generation high-energy-density batteries, yet their poor rate capability remains a critical barrier to practical deployment, particularly for fast-charging applications. This review deconstructs rate-limiting mechanisms at three levels, namely direct charge-transport impediments, kinetic sluggishness of anionic redox, and degradation cascade of phase transformations, voltage decay, and microcracking that exacerbates kinetics. A central insight is that the rate-determining step (RDS) shifts from electron-transfer to ion-diffusion dominance, governed by the exchange current density (j0) and the limiting current density (jd). Modification strategies are classified into two threads, kinetic enhancement by shortening diffusion paths and lowering migration barriers, and structural stabilization by reinforcing bonds and suppressing oxygen release. Importantly, the often-overlooked charging kinetics are critically assessed, as the asymmetric nature of anionic redox imposes a more severe bottleneck for fast charging than for high-rate discharging. Methodological limitations in cross-study C-rate comparisons, arising from variations in electrode loading and testing protocols, are also examined to enable more rigorous evaluation of reported performance. This review ultimately provides a theoretical foundation for rational design of high-rate LRMO cathodes toward practical energy storage applications.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75619",
+        "doi_url": "https://doi.org/10.1002/adma.75619",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004143/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review investigates rate capability limitations in lithium-rich manganese oxide (LRMO) cathodes, identifying three hierarchical kinetic bottlenecks: direct charge-transfer impediments, sluggish anionic redox kinetics, and degradation cascades. It demonstrates that the rate-determining step shifts from electron-transfer to ion-diffusion dominance, influenced by exchange and limiting current densities. The study emphasizes charging kinetics as more critical for fast charging than discharging and highlights methodological inconsistencies in cross-study C-rate comparisons that hinder performance evaluation. The findings provide a theoretical framework for designing high-rate LRMO cathodes.\",\n  \"key_findings\": [\n    \"The rate-determining step shifts from electron-transfer to ion-diffusion dominance in LRMO cathodes\",\n    \"Charging kinetics impose a more severe bottleneck for fast charging than discharging\",\n    \"Methodological inconsistencies in C-rate comparisons due to electrode loading and testing variations limit cross-study performance evaluation\"\n  ],\n  \"scientific_significance\": \"This work establishes a hierarchical framework for understanding rate-limiting mechanisms in LRMO cathodes, enabling targeted design strategies to enhance high-rate performance for next-generation battery applications.\"\n}",
+        "parsed": {
+          "summary": "This review investigates rate capability limitations in lithium-rich manganese oxide (LRMO) cathodes, identifying three hierarchical kinetic bottlenecks: direct charge-transfer impediments, sluggish anionic redox kinetics, and degradation cascades. It demonstrates that the rate-determining step shifts from electron-transfer to ion-diffusion dominance, influenced by exchange and limiting current densities. The study emphasizes charging kinetics as more critical for fast charging than discharging and highlights methodological inconsistencies in cross-study C-rate comparisons that hinder performance evaluation. The findings provide a theoretical framework for designing high-rate LRMO cathodes.",
+          "key_findings": [
+            "The rate-determining step shifts from electron-transfer to ion-diffusion dominance in LRMO cathodes",
+            "Charging kinetics impose a more severe bottleneck for fast charging than discharging",
+            "Methodological inconsistencies in C-rate comparisons due to electrode loading and testing variations limit cross-study performance evaluation"
+          ],
+          "scientific_significance": "This work establishes a hierarchical framework for understanding rate-limiting mechanisms in LRMO cathodes, enabling targeted design strategies to enhance high-rate performance for next-generation battery applications."
+        },
+        "elapsed_seconds": 50.2467,
+        "input_tokens": 745,
+        "output_tokens": 239,
+        "thoughts_tokens": null,
+        "total_tokens": 984,
+        "model_eval_seconds": 25.8226,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43067475",
+        "title": "Early-Life Farm Exposure and Food Allergy.",
+        "abstract": "NA: Food allergy has increased substantially, increasing interest in environmental exposures that may promote immune tolerance. The \"farm effect,\" in which children raised in traditional farming environments have lower rates of allergic disease, may also extend to food allergy. This review summarizes epidemiologic and mechanistic evidence linking prenatal and early-life farm exposures with food allergy and related atopic outcomes. Protective associations likely reflect combined exposures to livestock, farm dust, environmental microbes, diet, and farm milk during critical developmental windows. Proposed mechanisms include altered gut microbiome maturation, microbial metabolites, reduced epithelial inflammation, innate immune programming, and enhanced regulatory T-cell responses. However, direct evidence for clinically confirmed food allergy remains limited compared with evidence for asthma and allergic sensitization. Future studies should identify specific microbial, metabolic, and immune pathways that mediate protection and determine whether safe, defined surrogates of farm exposure can be translated into food allergy prevention strategies.",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "doi": "10.1016/j.anai.2026.11.016",
+        "doi_url": "https://doi.org/10.1016/j.anai.2026.11.016",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43067475/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This review examines the relationship between early-life farm exposure and food allergy, focusing on prenatal and childhood exposures. It synthesizes evidence that farm environments may promote immune tolerance through livestock contact, farm dust, microbial exposure, and diet. Protective effects are hypothesized to involve gut microbiome development, reduced inflammation, and regulatory T-cell responses. However, direct evidence for food allergy prevention remains limited compared to asthma, highlighting the need for mechanistic studies to identify actionable pathways for intervention.\",\n  \"key_findings\": [\n    \"Early farm exposures correlate with reduced food allergy risk through multiple environmental factors\",\n    \"Protective mechanisms likely involve gut microbiome maturation and immune regulation\",\n    \"Direct evidence linking farm exposure to clinically confirmed food allergy is limited compared to asthma\"\n  ],\n  \"scientific_significance\": \"This review identifies critical pathways for understanding how early environmental exposures may prevent food allergy, emphasizing the need for mechanistic research to develop targeted interventions.\"\n}",
+        "parsed": {
+          "summary": "This review examines the relationship between early-life farm exposure and food allergy, focusing on prenatal and childhood exposures. It synthesizes evidence that farm environments may promote immune tolerance through livestock contact, farm dust, microbial exposure, and diet. Protective effects are hypothesized to involve gut microbiome development, reduced inflammation, and regulatory T-cell responses. However, direct evidence for food allergy prevention remains limited compared to asthma, highlighting the need for mechanistic studies to identify actionable pathways for intervention.",
+          "key_findings": [
+            "Early farm exposures correlate with reduced food allergy risk through multiple environmental factors",
+            "Protective mechanisms likely involve gut microbiome maturation and immune regulation",
+            "Direct evidence linking farm exposure to clinically confirmed food allergy is limited compared to asthma"
+          ],
+          "scientific_significance": "This review identifies critical pathways for understanding how early environmental exposures may prevent food allergy, emphasizing the need for mechanistic research to develop targeted interventions."
+        },
+        "elapsed_seconds": 27.0386,
+        "input_tokens": 636,
+        "output_tokens": 196,
+        "thoughts_tokens": null,
+        "total_tokens": 832,
+        "model_eval_seconds": 19.7707,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils expressing Nlrp3 and Il1b, which drive pathogenic TH17 cell activation. After recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states during specific temporal windows can durably reprogram immune responses.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute type 17 skin inflammation to chronic obesity levels\",\n    \"HFD outside this window or switching obese mice to low-fat diet during the window blunts disease amplification\",\n    \"Neutrophil-mediated NLRP3-IL-1β signaling licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence\"\n  ],\n  \"scientific_significance\": \"This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune responses, revealing a mechanism by which short-lived physiological changes become embedded in tissue immune memory.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels seen in chronic obesity. HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils expressing Nlrp3 and Il1b, which drive pathogenic TH17 cell activation. After recovery, a chromatin-poised tissue-resident memory T cell population persists, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet. The findings demonstrate that short-lived dietary states during specific temporal windows can durably reprogram immune responses.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates acute type 17 skin inflammation to chronic obesity levels",
+            "HFD outside this window or switching obese mice to low-fat diet during the window blunts disease amplification",
+            "Neutrophil-mediated NLRP3-IL-1β signaling licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence"
+          ],
+          "scientific_significance": "This work establishes that transient dietary states during narrow temporal windows can durably reprogram immune responses, revealing a mechanism by which short-lived physiological changes become embedded in tissue immune memory."
+        },
+        "elapsed_seconds": 39.1592,
+        "input_tokens": 885,
+        "output_tokens": 310,
+        "thoughts_tokens": null,
+        "total_tokens": 1195,
+        "model_eval_seconds": 35.5839,
+        "error": "summary must contain 45–90 words; received 114.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004148",
+        "title": "Upcycling Piezoelectric Single-Crystal Debris Into High-Performance Flexible 0-3 Composites.",
+        "abstract": "NA: High-value piezoelectric single-crystal debris remains an untapped resource for flexible electromechanical materials. Although relaxor-based ferroelectric single crystals offer exceptional piezoelectric properties, off-cuts inevitably generated during precision processing are typically discarded because their irregular geometries prevent direct device integration. Here, we report a recycling-to-device upcycling strategy that converts industrial Pb(Mg1/3Nb2/3)O3-PbTiO3 (PMN-PT) single-crystal debris into high-performance flexible 0-3 piezoelectric composites and energy harvesters through material-structure-mechanics co-design. A ball-milling-based particle refinement procedure converts the debris into dispersible particulate fillers, while dielectrophoresis (DEP)-assisted curing reorganizes randomly dispersed particles in a polydimethylsiloxane (PDMS) matrix into vertically connected quasi-1-3-like networks. The polymer matrix provides mechanical tunability, allowing flexibility and dynamic stress transfer to the aligned single-crystal network to be jointly optimized. The optimized composite achieves a d33 of 118.5 pC N-1 while retaining mechanical flexibility, placing it among the highest-performing flexible 0-3 piezoelectric composites. Comparative experiments and finite-element simulations reveal that single-crystal-derived fillers exhibit stronger DEP-induced enhancement than polycrystalline counterparts owing to more coherent intraparticle electromechanical conversion. Integrated into flexible energy harvesters, the optimized composite delivers a peak areal power density of 284.2 µW cm- 2. This work establishes a scalable upcycling pathway for reutilizing high-value functional crystal waste in flexible self-powered electromechanical systems.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75650",
+        "doi_url": "https://doi.org/10.1002/adma.75650",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004148/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates converting industrial piezoelectric single-crystal debris into high-performance flexible 0-3 composites. Using ball-milling and dielectrophoresis-assisted curing, the researchers transformed PMN-PT debris into dispersible fillers that form vertically connected quasi-1-3 networks within a PDMS matrix. The resulting composite achieved a d33 of 118.5 pC N-1 while maintaining flexibility, demonstrating superior electromechanical properties for energy harvesting applications.\",\n  \"key_findings\": [\n    \"PMN-PT single-crystal debris was converted into high-performance flexible 0-3 piezoelectric composites via ball-milling and dielectrophoresis-assisted curing\",\n    \"The composite achieved a d33 of 118.5 pC N-1 with retained mechanical flexibility\",\n    \"Single-crystal debris exhibited stronger dielectrophoresis-induced enhancement than polycrystalline materials due to coherent electromechanical conversion\"\n  ],\n  \"scientific_significance\": \"This work establishes a scalable method for upcycling high-value piezoelectric single-crystal waste into flexible energy harvesters, advancing sustainable resource utilization in electromechanical systems.\"\n}",
+        "parsed": {
+          "summary": "This study investigates converting industrial piezoelectric single-crystal debris into high-performance flexible 0-3 composites. Using ball-milling and dielectrophoresis-assisted curing, the researchers transformed PMN-PT debris into dispersible fillers that form vertically connected quasi-1-3 networks within a PDMS matrix. The resulting composite achieved a d33 of 118.5 pC N-1 while maintaining flexibility, demonstrating superior electromechanical properties for energy harvesting applications.",
+          "key_findings": [
+            "PMN-PT single-crystal debris was converted into high-performance flexible 0-3 piezoelectric composites via ball-milling and dielectrophoresis-assisted curing",
+            "The composite achieved a d33 of 118.5 pC N-1 with retained mechanical flexibility",
+            "Single-crystal debris exhibited stronger dielectrophoresis-induced enhancement than polycrystalline materials due to coherent electromechanical conversion"
+          ],
+          "scientific_significance": "This work establishes a scalable method for upcycling high-value piezoelectric single-crystal waste into flexible energy harvesters, advancing sustainable resource utilization in electromechanical systems."
+        },
+        "elapsed_seconds": 41.2771,
+        "input_tokens": 808,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 1067,
+        "model_eval_seconds": 28.7865,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43067490",
+        "title": "An ultrasound-triggered nanoplatform for enhanced sonodynamic immunotherapy achieved through Diels-Alder bond cleavage and in situ vaccine formation.",
+        "abstract": "NA: Sonodynamic immunotherapy (SIT) presents prominent potential in amplified therapy against malignant tumors due to its precise spatiotemporal controllability and systemic immune activation capability. However, achieving synergistic integration of sonodynamic therapy (SDT) and immunotherapy to maximize anti-tumor efficacy remains an urgent and critical challenge. Herein, we constructed an ultrasound-triggered nanoplatform (MRPT), where MRPT could generate reactive oxygen species (ROS) for SDT under ultrasound irradiation, while the Diels-Alder (D-A) bond was broken to release immunoadjuvant R837 and capture tumor-associated antigens (TAAs) as in-situ vaccine for enhanced SIT. The exposed Mal groups enabled efficient binding to sulfhydryl groups of TAAs, facilitating efficient antigen capture, where the amount of ovalbumin captured by MRPT was around 2.7-fold that without ultrasound. Benefiting from SDT-induced immunogenic cell death (ICD), R837-mediated immune-stimulation, as well as in-situ vaccine formed by captured TAAs, the proportion of mature dendritic cells (DCs) in the spleen significantly increased up to 40.6%, CD8+ T cell infiltration was promoted, and regulatory T cell (Treg) proportion was also greatly reduced. Thus, this strategy offers a promising avenue for enhanced SIT in malignant tumor treatment. STATEMENT OF SIGNIFICANCE: Sonodynamic immunotherapy offers a promising strategy for treating malignant tumors, yet its therapeutic efficacy is often limited by the insufficient coordination between sonodynamic therapy and immune activation. In this study, we developed an ultrasound-triggered MRPT nanoplatform that integrates reactive oxygen species generation, immunoadjuvant release, and tumor-associated antigen capture within a single system. Upon ultrasound irradiation, MRPT efficiently induced immunogenic cell death, released the immune agonist R837, and exposed maleimide groups for enhanced capture of tumor-associated antigens, with an approximately 2.7-fold increase in ovalbumin capture compared with the non-irradiated condition. This multifunctional design promoted dendritic-cell maturation, enhanced CD8+ T-cell infiltration, and reduced regulatory T-cell proportions, thereby remodeling the tumor immune microenvironment. These findings demonstrate that ultrasound-regulated antigen capture and immune stimulation can effectively strengthen sonodynamic immunotherapy and provide a promising platform for developing more potent tumor vaccines and systemic antitumor immune responses.",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "doi": "10.1016/j.actbio.2026.11.038",
+        "doi_url": "https://doi.org/10.1016/j.actbio.2026.11.038",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43067490/",
+        "journal_id": "keyword-regulatory-t-cells",
+        "journal_name": "Acta biomaterialia",
+        "report_id": "regulatory-t-cells__20261115__20261122"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed an ultrasound-triggered nanoplatform (MRPT) that integrates sonodynamic therapy (SDT) with immunotherapy. The platform generates reactive oxygen species under ultrasound, cleaves Diels-Alder bonds to release immunoadjuvant R837, and captures tumor-associated antigens via exposed maleimide groups. The system enhanced dendritic cell maturation, increased CD8+ T cell infiltration, and reduced regulatory T cells, achieving a 2.7-fold higher ovalbumin capture and a 40.6% rise in mature dendritic cells in the spleen.\",\n  \"key_findings\": [\n    \"Ultrasound activation triggers ROS generation and Diels-Alder bond cleavage for R837 release\",\n    \"Maleimide groups enable 2.7-fold higher ovalbumin capture compared to non-irradiated conditions\",\n    \"The platform increased mature dendritic cells in spleen by 40.6% and reduced regulatory T cells\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that ultrasound-regulated antigen capture and immune stimulation can synergistically enhance sonodynamic immunotherapy efficacy through integrated tumor antigen presentation and immune activation.\"\n}",
+        "parsed": {
+          "summary": "This study developed an ultrasound-triggered nanoplatform (MRPT) that integrates sonodynamic therapy (SDT) with immunotherapy. The platform generates reactive oxygen species under ultrasound, cleaves Diels-Alder bonds to release immunoadjuvant R837, and captures tumor-associated antigens via exposed maleimide groups. The system enhanced dendritic cell maturation, increased CD8+ T cell infiltration, and reduced regulatory T cells, achieving a 2.7-fold higher ovalbumin capture and a 40.6% rise in mature dendritic cells in the spleen.",
+          "key_findings": [
+            "Ultrasound activation triggers ROS generation and Diels-Alder bond cleavage for R837 release",
+            "Maleimide groups enable 2.7-fold higher ovalbumin capture compared to non-irradiated conditions",
+            "The platform increased mature dendritic cells in spleen by 40.6% and reduced regulatory T cells"
+          ],
+          "scientific_significance": "This work demonstrates that ultrasound-regulated antigen capture and immune stimulation can synergistically enhance sonodynamic immunotherapy efficacy through integrated tumor antigen presentation and immune activation."
+        },
+        "elapsed_seconds": 46.1348,
+        "input_tokens": 953,
+        "output_tokens": 249,
+        "thoughts_tokens": null,
+        "total_tokens": 1202,
+        "model_eval_seconds": 28.5087,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004150",
+        "title": "Fluoride-Mediated Host-Activator Engineering in Homogeneous Lithium Glass Scintillators for Thermal-Neutron Detection and Imaging.",
+        "abstract": "NA: Homogeneous lithium-aluminosilicate-glass scintillators offer transparency, scalable fabrication, and compositional flexibility, but their neutron response is limited by defect trapping and activator loading concentration. Here, fluoride-mediated host-activator engineering is introduced to overcome these coupled limitations in Ce3+-activated lithium aluminosilicate glasses. F- preferentially coordinates with Li+ and Mg2+, preserving the primary Si/Al─O tetrahedral units while reorganizing inter-tetrahedral linkages. The resulting host-network reconfiguration suppresses electronic disorder and defect-mediated trapping, modulates medium-range Ce-centered correlations, broadens the viable Ce-concentration window, and enables efficient excitation capture at ∼9 wt% CeO2 (twice that of GS20). After 6Li enrichment, it delivers 8003 photons neutron-1, an energy resolution of 6.8%, a decay time of 85.06 ns, and a neutron peak-to-trough ratio of 77:1. To the best of our knowledge, these values represent the highest light yield and best energy resolution reported for a homogeneous transparent 6Li-enriched glass scintillator, achieving single-digit neutron energy resolution for the first time and approaching the performance of 3He proportional counters and high-performance crystalline scintillators. A transparent plate exceeding 2 inches further enables proof-of-concept two-dimensional thermal-neutron imaging with a system-level spatial resolution of 1.35 mm, demonstrating the scalability of the glass for position-sensitive neutron imaging.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75647",
+        "doi_url": "https://doi.org/10.1002/adma.75647",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004150/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the limited neutron response in homogeneous lithium-aluminosilicate-glass scintillators by engineering fluoride-mediated host-activator interactions. The approach reconfigures the glass network to suppress electronic disorder and defect trapping while enabling higher cerium concentrations. Results show efficient neutron detection at 8003 photons per neutron, 6.8% energy resolution, and a neutron peak-to-trough ratio of 77:1. The material achieves single-digit neutron energy resolution and supports two-dimensional thermal-neutron imaging with 1.35 mm spatial resolution.\",\n  \"key_findings\": [\n    \"Fluoride-mediated host-activator engineering suppresses electronic disorder and defect trapping in Ce3+-activated lithium aluminosilicate glasses\",\n    \"The scintillator achieves 8003 photons per neutron with 6.8% energy resolution and 77:1 neutron peak-to-trough ratio\",\n    \"Transparent plates exceeding 2 inches enable two-dimensional thermal-neutron imaging with 1.35 mm spatial resolution\"\n  ],\n  \"scientific_significance\": \"This work establishes homogeneous glass scintillators as viable platforms for high-performance thermal-neutron detection and imaging, achieving energy resolution comparable to crystalline scintillators and enabling scalable position-sensitive neutron imaging.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the limited neutron response in homogeneous lithium-aluminosilicate-glass scintillators by engineering fluoride-mediated host-activator interactions. The approach reconfigures the glass network to suppress electronic disorder and defect trapping while enabling higher cerium concentrations. Results show efficient neutron detection at 8003 photons per neutron, 6.8% energy resolution, and a neutron peak-to-trough ratio of 77:1. The material achieves single-digit neutron energy resolution and supports two-dimensional thermal-neutron imaging with 1.35 mm spatial resolution.",
+          "key_findings": [
+            "Fluoride-mediated host-activator engineering suppresses electronic disorder and defect trapping in Ce3+-activated lithium aluminosilicate glasses",
+            "The scintillator achieves 8003 photons per neutron with 6.8% energy resolution and 77:1 neutron peak-to-trough ratio",
+            "Transparent plates exceeding 2 inches enable two-dimensional thermal-neutron imaging with 1.35 mm spatial resolution"
+          ],
+          "scientific_significance": "This work establishes homogeneous glass scintillators as viable platforms for high-performance thermal-neutron detection and imaging, achieving energy resolution comparable to crystalline scintillators and enabling scalable position-sensitive neutron imaging."
+        },
+        "elapsed_seconds": 41.2833,
+        "input_tokens": 779,
+        "output_tokens": 275,
+        "thoughts_tokens": null,
+        "total_tokens": 1054,
+        "model_eval_seconds": 29.7731,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004153",
+        "title": "Sustainable Soft Electronic Devices by High-Performance Recyclable Elastomers and Conductors.",
+        "abstract": "NA: Soft electronics have driven emerging advancements, which are expected to have wide-range and large-scale applications in health management, electronic skins, soft robotics, and interactive human-machine interfaces. However, existing strategies mainly focus on isolated components, and system-level soft electronic devices combining sustainable fabrication, robust performance, and versatile integrated functions have rarely been explored. Herein, we develop a recyclable soft electronic system enabled with multifunctional poly thioctic acid (TA) elastomer and high-performance elastic metallic conductors. The multifunctional TA elastomer exhibits an exceptional combination of stretchability (435% strain), fracture energy (5.5 kJ/m2), apparent adhesion energy on Cu (10.7 kJ/m2), and thermal conductivity (0.69 W/m·K). These properties enable robust mechanical and electronic interfacing with different electronic components for sustainable soft circuits, while also endowing the electronic systems with outstanding self-healing and recycling capabilities. Furthermore, by integrating with printable and recyclable elastic conductors based on eutectic liquid metals, the sustainable soft electronic systems can fully restore circuit functionality after complete mechanical rupture with the selfhealing capability of the composite elastomer and the elastic conductor. The system can be reprocessed to achieve full functionality restoration. The materials strategy developed in this study renders a promising solution for the development of soft and sustainable electronic devices.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75658",
+        "doi_url": "https://doi.org/10.1002/adma.75658",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004153/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates sustainable soft electronic devices using recyclable elastomers and conductors. Researchers developed a multifunctional poly thioctic acid elastomer with high stretchability (435% strain), fracture energy (5.5 kJ/m²), adhesion energy on Cu (10.7 kJ/m²), and thermal conductivity (0.69 W/m·K). The system integrates recyclable elastic metallic conductors, enabling self-healing and full circuit restoration after mechanical rupture. The approach demonstrates a sustainable pathway for robust, recyclable soft electronics with broad applications in health monitoring and human-machine interfaces.\",\n  \"key_findings\": [\n    \"Poly thioctic acid elastomer achieves 435% strain stretchability and 5.5 kJ/m² fracture energy\",\n    \"The elastomer exhibits 10.7 kJ/m² adhesion energy on copper and 0.69 W/m·K thermal conductivity\",\n    \"Integrated recyclable conductors enable full circuit restoration after mechanical rupture through self-healing\"\n  ],\n  \"scientific_significance\": \"This work establishes a recyclable soft electronic system with self-healing capabilities, advancing sustainable electronics design through material integration that maintains functionality after mechanical damage and supports circular manufacturing.\"\n}",
+        "parsed": {
+          "summary": "This study investigates sustainable soft electronic devices using recyclable elastomers and conductors. Researchers developed a multifunctional poly thioctic acid elastomer with high stretchability (435% strain), fracture energy (5.5 kJ/m²), adhesion energy on Cu (10.7 kJ/m²), and thermal conductivity (0.69 W/m·K). The system integrates recyclable elastic metallic conductors, enabling self-healing and full circuit restoration after mechanical rupture. The approach demonstrates a sustainable pathway for robust, recyclable soft electronics with broad applications in health monitoring and human-machine interfaces.",
+          "key_findings": [
+            "Poly thioctic acid elastomer achieves 435% strain stretchability and 5.5 kJ/m² fracture energy",
+            "The elastomer exhibits 10.7 kJ/m² adhesion energy on copper and 0.69 W/m·K thermal conductivity",
+            "Integrated recyclable conductors enable full circuit restoration after mechanical rupture through self-healing"
+          ],
+          "scientific_significance": "This work establishes a recyclable soft electronic system with self-healing capabilities, advancing sustainable electronics design through material integration that maintains functionality after mechanical damage and supports circular manufacturing."
+        },
+        "elapsed_seconds": 38.7547,
+        "input_tokens": 719,
+        "output_tokens": 264,
+        "thoughts_tokens": null,
+        "total_tokens": 983,
+        "model_eval_seconds": 28.9888,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004155",
+        "title": "Ultralow Loading Iridium Doped Hollandite Manganese Oxide Nanowires for Efficient Acidic Oxygen Evolution Reaction.",
+        "abstract": "NA: Efficient and durable catalysts for the acidic oxygen evolution reaction (OER) are critical for hydrogen production but remain limited by reliance on scarce iridium (Ir). We present an ultralow-loading Ir catalyst (3 at%, <16 µgIr cm- 2) integrated within a hollandite MnO2 framework, which lowers the overpotential at 10 mA cm- 2 from 580 mV (undoped α-MnO2) to 303 mV and delivers an Ir mass activity an order of magnitude higher than commercial IrOx. Varying pH and potential, we combine ICP-MS dissolution measurements with x-ray absorption spectroscopy, electron energy loss spectroscopy, and 4D scanning transmission electron microscopy. Dissolution is modest, with at least 79% of the Ir and 76% of the Mn remaining after 6 h under applied potential, and Ir remains oxidized and associated with the hollandite framework. Mn, in contrast, undergoes pH- and potential-dependent reduction and local structural disorder. Notably, the strongest Mn reconstruction (pH 0, 1.65 V) coincides with moderate dissolution, whereas the greatest Ir and Mn loss (pH 0, 1.60 V) occurs where the residual material is less reconstructed. Net dissolution therefore does not report on local structural change, highlighting the need to evaluate dissolution, reconstruction, and oxidation state together when designing and assessing Ir-efficient mixed-metal oxide catalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75604",
+        "doi_url": "https://doi.org/10.1002/adma.75604",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004155/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates ultralow-loading iridium-doped hollandite manganese oxide nanowires for acidic oxygen evolution reaction (OER) catalysis. The researchers developed a catalyst with 3 atomic percent iridium (<16 µgIr cm-2) integrated into a manganese dioxide framework. It reduced the overpotential at 10 mA cm-2 from 580 mV to 303 mV compared to undoped α-MnO2 and achieved Ir mass activity 10 times higher than commercial IrOx. The catalyst showed modest dissolution (79% Ir, 76% Mn retained after 6 h), with iridium remaining oxidized and bound to the framework while manganese underwent pH- and potential-dependent reduction and structural disorder. The findings emphasize the need to evaluate dissolution, reconstruction, and oxidation state together for designing efficient iridium-based catalysts.\",\n  \"key_findings\": [\n    \"Ultralow-loading iridium (3 at%, <16 µgIr cm-2) integrated into hollandite MnO2 framework\",\n    \"Reduced OER overpotential from 580 mV to 303 mV at 10 mA cm-2 compared to undoped α-MnO2\",\n    \"Modest dissolution (79% Ir, 76% Mn retained after 6 h) with iridium remaining oxidized and manganese undergoing pH- and potential-dependent reduction\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that ultralow iridium loading in hollandite manganese oxides can achieve high OER activity with minimal dissolution, providing critical insights for designing durable, iridium-efficient catalysts for acidic environments.\"\n}",
+        "parsed": {
+          "summary": "This study investigates ultralow-loading iridium-doped hollandite manganese oxide nanowires for acidic oxygen evolution reaction (OER) catalysis. The researchers developed a catalyst with 3 atomic percent iridium (<16 µgIr cm-2) integrated into a manganese dioxide framework. It reduced the overpotential at 10 mA cm-2 from 580 mV to 303 mV compared to undoped α-MnO2 and achieved Ir mass activity 10 times higher than commercial IrOx. The catalyst showed modest dissolution (79% Ir, 76% Mn retained after 6 h), with iridium remaining oxidized and bound to the framework while manganese underwent pH- and potential-dependent reduction and structural disorder. The findings emphasize the need to evaluate dissolution, reconstruction, and oxidation state together for designing efficient iridium-based catalysts.",
+          "key_findings": [
+            "Ultralow-loading iridium (3 at%, <16 µgIr cm-2) integrated into hollandite MnO2 framework",
+            "Reduced OER overpotential from 580 mV to 303 mV at 10 mA cm-2 compared to undoped α-MnO2",
+            "Modest dissolution (79% Ir, 76% Mn retained after 6 h) with iridium remaining oxidized and manganese undergoing pH- and potential-dependent reduction"
+          ],
+          "scientific_significance": "This work demonstrates that ultralow iridium loading in hollandite manganese oxides can achieve high OER activity with minimal dissolution, providing critical insights for designing durable, iridium-efficient catalysts for acidic environments."
+        },
+        "elapsed_seconds": 43.6878,
+        "input_tokens": 861,
+        "output_tokens": 365,
+        "thoughts_tokens": null,
+        "total_tokens": 1226,
+        "model_eval_seconds": 40.186,
+        "error": "summary must contain 45–90 words; received 114.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004415",
+        "title": "Sensitive, Broadband, and Stable Short-Wave Infrared Photodetection and Imaging in Mixed-Dimensional Organic/Inorganic Heterostructures.",
+        "abstract": "NA: Conventional short-wave infrared (SWIR) photodetectors confront cost disadvantages and fabrication complexity, whereas two-dimensional (2D) van der Waals devices exhibit inherent performance limitations. Mixed-dimensional organic/inorganic heterostructures offer a promising strategy for SWIR photodetection, synergizing strong optical absorption and tunability of organic semiconductors with high charge mobility and stability of inorganics. However, critical challenges remain in architecture design, including optimal carrier-collection geometry, material selection, and interface engineering for boosting devices' performance. Herein, a type-II band-aligned PTF/WSe2 mixed-dimensional heterostructure is reported for high-performance broadband SWIR photodetection via heterostructure synergy and rational Schottky barrier engineering. The Cr/p-WSe2/PTF configuration (∼ 0.28 eV barrier) achieves superior performance, while Cr/n-WSe2/PTF suffers from a higher barrier (∼ 1.18 eV). The optimized device achieves broad spectral photoresponsivity (∼ 103 A/W, 1060-1470 nm) and exceptional performance at 1310 nm: ultrahigh photoresponsivity (R = 2894 A/W), robust specific detectivity (D* = 1.0×1012 Jones), and excellent long-term ambient stability. Versus standalone PTF, it delivers 17-fold higher photoresponsivity and 96% lower bias voltage. High-resolution SWIR image-pattern reconstruction, together with concurrent performance improvements after six months of controlled storage, validates this PTF/WSe2 mixed-dimensional heterostructure's potential for advancing next-generation high-performance SWIR detectors.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75670",
+        "doi_url": "https://doi.org/10.1002/adma.75670",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004415/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates mixed-dimensional organic/inorganic heterostructures for high-performance short-wave infrared (SWIR) photodetection. By engineering a type-II band-aligned PTF/WSe2 heterostructure with optimized Schottky barriers, researchers achieved broadband photoresponsivity (103 A/W, 1060-1470 nm) and exceptional metrics at 1310 nm, including ultrahigh responsivity (2894 A/W) and robust detectivity (1.0×1012 Jones). The device demonstrated superior stability and performance over six months, highlighting its potential for next-generation SWIR detectors.\",\n  \"key_findings\": [\n    \"Optimized PTF/WSe2 heterostructure with 0.28 eV Schottky barrier achieves ultrahigh photoresponsivity (2894 A/W) at 1310 nm\",\n    \"Broadband photoresponsivity of 103 A/W across 1060-1470 nm with 96% lower bias voltage versus standalone PTF\",\n    \"Exceptional long-term stability with maintained performance after six months of ambient storage\"\n  ],\n  \"scientific_significance\": \"This work establishes mixed-dimensional heterostructures as a viable pathway to high-performance, stable SWIR photodetectors through synergistic design principles, addressing critical challenges in carrier collection and interface engineering.\"\n}",
+        "parsed": {
+          "summary": "This study investigates mixed-dimensional organic/inorganic heterostructures for high-performance short-wave infrared (SWIR) photodetection. By engineering a type-II band-aligned PTF/WSe2 heterostructure with optimized Schottky barriers, researchers achieved broadband photoresponsivity (103 A/W, 1060-1470 nm) and exceptional metrics at 1310 nm, including ultrahigh responsivity (2894 A/W) and robust detectivity (1.0×1012 Jones). The device demonstrated superior stability and performance over six months, highlighting its potential for next-generation SWIR detectors.",
+          "key_findings": [
+            "Optimized PTF/WSe2 heterostructure with 0.28 eV Schottky barrier achieves ultrahigh photoresponsivity (2894 A/W) at 1310 nm",
+            "Broadband photoresponsivity of 103 A/W across 1060-1470 nm with 96% lower bias voltage versus standalone PTF",
+            "Exceptional long-term stability with maintained performance after six months of ambient storage"
+          ],
+          "scientific_significance": "This work establishes mixed-dimensional heterostructures as a viable pathway to high-performance, stable SWIR photodetectors through synergistic design principles, addressing critical challenges in carrier collection and interface engineering."
+        },
+        "elapsed_seconds": 45.3651,
+        "input_tokens": 812,
+        "output_tokens": 299,
+        "thoughts_tokens": null,
+        "total_tokens": 1111,
+        "model_eval_seconds": 32.4425,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004494",
+        "title": "A Dual-Locked and H2S-NO Tandem-Activatable NIR-II Nanoagent for Colon Cancer Theranostics.",
+        "abstract": "NA: Dual-locked activatable theranostics have been emerging as a promising cancer therapy platform. However, most of the reported dual-locked systems only restricted to enzyme-responsive probes, new molecular tools with other biomarker-responsiveness still remain challenging. Moreover, optical manipulation in the second near-infrared (NIR-II) window can potentially boost the theranostic efficacy, but having rarely been explored. In this study, we report a dual-locked and gas tandem-activatable NIR-II nanoagent for colon cancer theranostics. Water-dispersible nanoparticles containing a nitrated organic small molecule (CTBN) and an acid-responsive NO donor (NONOate; CTBNN-NPs) are fabricated, displaying negligible emission in visible-NIR region. Upon uptake by colon cancer cells, CTBNN-NPs can be tandemly activated by the overexpressed H2S and the in situ released NO, thus turning on NIR-II emission extending to 1200 nm. Moreover, the activated CTBNN-NPs also demonstrate augmented NIR absorption as well as robust photothermal and type-I photodynamic performance, achieving NIR-II fluorescence imaging-guided efficient photo-elimination of colon cancer together with NO gas therapy, while exhibiting limited efficacy in the tested cervical and breast cancer models. This work provides a new molecular design approach to dual-locked and H2S-NO tandem-activatable nanoagents with gas-responsive and NIR-II active capabilities, highlighting the exciting potential for cancer theranostics.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75668",
+        "doi_url": "https://doi.org/10.1002/adma.75668",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004494/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a dual-locked NIR-II nanoagent responsive to H2S and NO for colon cancer theranostics. The nanoagent, CTBNN-NPs, remains inactive until colon cancer cells internalize it, where H2S and in situ released NO activate tandemly, enabling NIR-II fluorescence imaging at 1200 nm. It also shows enhanced photothermal and photodynamic effects, achieving cancer cell elimination through combined imaging-guided phototherapy and NO therapy, with limited efficacy in other cancer models.\",\n  \"key_findings\": [\n    \"CTBNN-NPs are activated by H2S and in situ NO release in colon cancer cells\",\n    \"The nanoagent enables NIR-II fluorescence imaging at 1200 nm for colon cancer detection\",\n    \"It achieves efficient colon cancer elimination via photothermal and NO gas therapy\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a novel dual-locked nanoagent design that integrates gas-responsive activation with NIR-II imaging for targeted cancer theranostics, advancing strategies for precise tumor treatment.\"\n}",
+        "parsed": {
+          "summary": "This study developed a dual-locked NIR-II nanoagent responsive to H2S and NO for colon cancer theranostics. The nanoagent, CTBNN-NPs, remains inactive until colon cancer cells internalize it, where H2S and in situ released NO activate tandemly, enabling NIR-II fluorescence imaging at 1200 nm. It also shows enhanced photothermal and photodynamic effects, achieving cancer cell elimination through combined imaging-guided phototherapy and NO therapy, with limited efficacy in other cancer models.",
+          "key_findings": [
+            "CTBNN-NPs are activated by H2S and in situ NO release in colon cancer cells",
+            "The nanoagent enables NIR-II fluorescence imaging at 1200 nm for colon cancer detection",
+            "It achieves efficient colon cancer elimination via photothermal and NO gas therapy"
+          ],
+          "scientific_significance": "This work demonstrates a novel dual-locked nanoagent design that integrates gas-responsive activation with NIR-II imaging for targeted cancer theranostics, advancing strategies for precise tumor treatment."
+        },
+        "elapsed_seconds": 34.3066,
+        "input_tokens": 758,
+        "output_tokens": 226,
+        "thoughts_tokens": null,
+        "total_tokens": 984,
+        "model_eval_seconds": 23.3169,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004495",
+        "title": "Preserving Polymorphic Crystalline Structures in Bulk Heterojunctions for Efficient Organic Solar Cells.",
+        "abstract": "NA: The crystal structure of a material profoundly influences its physical, optical, and electronic properties. However, precise control over polymorph formation of non-fullerene acceptors (NFAs) in bulk heterojunction active layers remains challenging for optimizing organic solar cell (OSC) performance. Here, we employ a non-halogenated mixed-solvent system comprising carbon disulfide (CS2) and o-xylene (OXY) to selectively regulate the crystallization of the high-performance acceptor BTP-eC9. A specific polymorph (Form II) is preferentially induced and consistently identified in powder, neat-film, and bulk heterojunction samples by correlating wide-angle x-ray scattering (WAXS) and grazing-incidence wide-angle x-ray scattering (GIWAXS) patterns with simulations derived from the corresponding single-crystal structures. Compared with Form I, Form II exhibits improved optoelectronic properties, including extended exciton diffusion length, balanced charge mobility, and suppressed non-radiative recombination. Consequently, Form II-based devices achieve a power conversion efficiency (PCE) of 20.61% with a fill factor of 82.85%, representing a 27.0% relative improvement over Form I devices (PCE = 16.23%). Moreover, this method enables scalable manufacturing, with flexible OSCs (1 cm2 active area) fabricated by slot-die coating achieving a PCE of 17.93%. This work establishes a practical pathway for solution-processed polymorph control and reveals the relationship among single-crystal packing, acceptor molecular packing, and device performance.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75646",
+        "doi_url": "https://doi.org/10.1002/adma.75646",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004495/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates controlling polymorph formation in non-fullerene acceptors for organic solar cells. Using a carbon disulfide and o-xylene mixed solvent system, researchers selectively induced a specific polymorph (Form II) of BTP-eC9. Form II demonstrated enhanced optoelectronic properties, including longer exciton diffusion length, balanced charge mobility, and reduced recombination. Devices based on Form II achieved 20.61% power conversion efficiency, a 27.0% improvement over Form I devices (16.23%), with scalable production via slot-die coating.\",\n  \"key_findings\": [\n    \"Form II of BTP-eC9 exhibits extended exciton diffusion length and balanced charge mobility compared to Form I\",\n    \"Form II-based devices achieve 20.61% power conversion efficiency, a 27.0% relative improvement over Form I devices\",\n    \"Slot-die coating enables scalable fabrication of flexible organic solar cells with 17.93% efficiency\"\n  ],\n  \"scientific_significance\": \"This work provides a practical method for solution-processed polymorph control in organic solar cells, linking molecular packing to device performance through selective crystallization strategies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates controlling polymorph formation in non-fullerene acceptors for organic solar cells. Using a carbon disulfide and o-xylene mixed solvent system, researchers selectively induced a specific polymorph (Form II) of BTP-eC9. Form II demonstrated enhanced optoelectronic properties, including longer exciton diffusion length, balanced charge mobility, and reduced recombination. Devices based on Form II achieved 20.61% power conversion efficiency, a 27.0% improvement over Form I devices (16.23%), with scalable production via slot-die coating.",
+          "key_findings": [
+            "Form II of BTP-eC9 exhibits extended exciton diffusion length and balanced charge mobility compared to Form I",
+            "Form II-based devices achieve 20.61% power conversion efficiency, a 27.0% relative improvement over Form I devices",
+            "Slot-die coating enables scalable fabrication of flexible organic solar cells with 17.93% efficiency"
+          ],
+          "scientific_significance": "This work provides a practical method for solution-processed polymorph control in organic solar cells, linking molecular packing to device performance through selective crystallization strategies."
+        },
+        "elapsed_seconds": 38.6625,
+        "input_tokens": 781,
+        "output_tokens": 257,
+        "thoughts_tokens": null,
+        "total_tokens": 1038,
+        "model_eval_seconds": 26.857,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004496",
+        "title": "pH-Responsive Synthetic Cells for Programmable In Situ Protein Synthesis and Release.",
+        "abstract": "NA: Lipid membrane-bound synthetic cells provide programmable, cell-like compartments for on-demand biomolecule production. However, most cell-free gene expression systems in synthetic cells are regulated by user-imposed cues rather than signals associated with environmental or physiological states. Here, we present an acidity-transducing synthetic cell that converts external pH changes into nucleic acid information to drive in situ protein synthesis. The system integrates gramicidin A proton channels for pH sensing, triplex-forming single-stranded DNA (ssDNA) that releases a trigger ssDNA upon acidification, and a toehold switch RNA that activates translation in response to the released trigger ssDNA. This work further reveals that tuning the annealing length between the pH-responsive and trigger ssDNAs controls the trigger-release pH, which is critical for enabling acid-triggered protein synthesis. The synthetic cells retain their pH-responsive activity when embedded in alginate hydrogels, creating acidity-responsive materials that synthesize proteins in situ rather than release preloaded cargo. Cell-penetrating peptide tagging further enables selective protein release and target-specific binding. This work establishes a molecular transduction strategy for programming synthetic cell materials to sense environmentally relevant acidity and generates functional biomolecules on demand.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75654",
+        "doi_url": "https://doi.org/10.1002/adma.75654",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004496/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed pH-responsive synthetic cells that convert external acidity into nucleic acid signals to drive in situ protein synthesis. The system uses gramicidin A channels for pH sensing, triplex-formin ssDNA for acid-triggered release, and toehold switch RNA for translation activation. Tuning ssDNA annealing lengths controls the trigger-release pH, enabling programmable protein synthesis in alginate hydrogels. Cell-penetrating peptides allow selective protein release and target binding, demonstrating environmental acidity sensing for on-demand biomolecule production.\",\n  \"key_findings\": [\n    \"The synthetic cells convert external pH changes into nucleic acid information for in situ protein synthesis\",\n    \"Tuning ssDNA annealing lengths controls the trigger-release pH threshold\",\n    \"The system retains functionality in alginate hydrogels with cell-penetrating peptides enabling selective protein release\"\n  ],\n  \"scientific_significance\": \"This work establishes a molecular transduction strategy for programming synthetic cell materials to sense environmentally relevant acidity and generate functional biomolecules on demand.\"\n}",
+        "parsed": {
+          "summary": "This study developed pH-responsive synthetic cells that convert external acidity into nucleic acid signals to drive in situ protein synthesis. The system uses gramicidin A channels for pH sensing, triplex-formin ssDNA for acid-triggered release, and toehold switch RNA for translation activation. Tuning ssDNA annealing lengths controls the trigger-release pH, enabling programmable protein synthesis in alginate hydrogels. Cell-penetrating peptides allow selective protein release and target binding, demonstrating environmental acidity sensing for on-demand biomolecule production.",
+          "key_findings": [
+            "The synthetic cells convert external pH changes into nucleic acid information for in situ protein synthesis",
+            "Tuning ssDNA annealing lengths controls the trigger-release pH threshold",
+            "The system retains functionality in alginate hydrogels with cell-penetrating peptides enabling selective protein release"
+          ],
+          "scientific_significance": "This work establishes a molecular transduction strategy for programming synthetic cell materials to sense environmentally relevant acidity and generate functional biomolecules on demand."
+        },
+        "elapsed_seconds": 30.6086,
+        "input_tokens": 682,
+        "output_tokens": 218,
+        "thoughts_tokens": null,
+        "total_tokens": 900,
+        "model_eval_seconds": 21.9121,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004497",
+        "title": "Designing a Thermochemically Active Hydrogel With In Situ-Formed Ceramic-Carbon Hybrid Barrier for Suppressing Thermal Runaway Propagation.",
+        "abstract": "NA: Preventing thermal runaway propagation (TRP) is critical for the safety of lithium-ion batteries (LIBs). While hydrogel interlayers actively cool through water evaporation, their mechanical reinforcement with conventional fillers dilutes the water-rich matrix and reduces enthalpy. Here, we propose a paradigm-shifting strategy by using boric acid (BA) as a thermochemically active cross-linker in a poly(AMPS) hydrogel. BA reconstructs the hydrogel network through dual N─H⋯O hydrogen bonding and B⋯O═C coordination, simultaneously enhancing compressive strength by 567%. Upon thermal runaway, the composite provides dual-mode protection: (1) synergistic heat absorption (volumetric enthalpy > 2000 J cm- 3) via water evaporation and BA stepwise dehydration, accompanied by flame-inhibiting SO2 release. (2) In situ formation of a highly insulating ceramic-carbon hybrid barrier. Post-test analysis reveals a critical BA content of 25 wt%, where tetrahedral boron coordination (63.3% BO4) maximizes covalent B─O─C bonds that chemically \"weld\" B2O3 to carbon. This trend in BO4 fraction with BA loading quantitatively explains the exceptional TRP suppression, reducing the adjacent cell's peak temperature by over 500°C. Beyond a high-performance material, this work establishes a general design principle: employing reactive fillers that orchestrate both multi-stage energy management and tailored barrier synthesis, paving the way for next-generation battery safety materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75659",
+        "doi_url": "https://doi.org/10.1002/adma.75659",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004497/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates a thermochemically active hydrogel designed to suppress thermal runaway propagation in lithium-ion batteries. Using boric acid as a cross-linker in poly(AMPS) hydro, the hydrogel enhances mechanical strength by 567% and provides dual-mode protection: synergistic heat absorption via water evaporation and boric acid dehydration, and in situ formation of a ceramic-carbon hybrid barrier. At 25 wt% boric acid, the hydrogel reduces adjacent cell peak temperatures by over 500°C, demonstrating significant thermal runaway suppression.\",\n  \"key_findings\": [\n    \"Boric acid cross-linking in poly(AMPS) hydrogel increases compressive strength by 567%\",\n    \"The composite exhibits volumetric enthalpy >2000 J cm-3 through water evaporation and boric acid dehydration\",\n    \"At 25 wt% boric acid, the hydrogel forms a ceramic-carbon hybrid barrier reducing adjacent cell peak temperatures by >500°C\"\n  ],\n  \"scientific_significance\": \"This work establishes a general design principle for battery safety materials through reactive fillers that enable multi-stage energy management and tailored barrier synthesis, advancing thermal runaway suppression strategies.\"\n}",
+        "parsed": {
+          "summary": "This study investigates a thermochemically active hydrogel designed to suppress thermal runaway propagation in lithium-ion batteries. Using boric acid as a cross-linker in poly(AMPS) hydro, the hydrogel enhances mechanical strength by 567% and provides dual-mode protection: synergistic heat absorption via water evaporation and boric acid dehydration, and in situ formation of a ceramic-carbon hybrid barrier. At 25 wt% boric acid, the hydrogel reduces adjacent cell peak temperatures by over 500°C, demonstrating significant thermal runaway suppression.",
+          "key_findings": [
+            "Boric acid cross-linking in poly(AMPS) hydrogel increases compressive strength by 567%",
+            "The composite exhibits volumetric enthalpy >2000 J cm-3 through water evaporation and boric acid dehydration",
+            "At 25 wt% boric acid, the hydrogel forms a ceramic-carbon hybrid barrier reducing adjacent cell peak temperatures by >500°C"
+          ],
+          "scientific_significance": "This work establishes a general design principle for battery safety materials through reactive fillers that enable multi-stage energy management and tailored barrier synthesis, advancing thermal runaway suppression strategies."
+        },
+        "elapsed_seconds": 39.8359,
+        "input_tokens": 793,
+        "output_tokens": 259,
+        "thoughts_tokens": null,
+        "total_tokens": 1052,
+        "model_eval_seconds": 27.5911,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004498",
+        "title": "Pd Single-Atom Engineered Janus BiOCl/MXene Heterostructure for Printed Self-Decoupled Temperature-Humidity Dual-Mode Sensors.",
+        "abstract": "NA: The advancement of flexible sensing technologies is of paramount importance in biomedical engineering. However, achieving high-fidelity multi-modal temperature-humidity sensing without inter-channel cross-talk and computational post-processing remains a formidable challenge due to overlapping transduction mechanisms. In this study, an unprecedented electron-ion synergistic functional material, featuring a unique inherent self-decoupling capability, was developed based on the Janus hierarchical heterostructure. Through interfacial chemical engineering of Pd single-atom anchoring and heterogeneous-nucleation-driven vertical growth of BiOCl on hollow MXene, the constructed material architecture successfully establishes fundamentally segregated electronic and ionic stimulus-response pathways. Specifically, humidity fluctuations trigger ultra-fast quasi-2D proton conduction facilitated by localized potential wells and electronic redistribution generated around atomically dispersed Pd sites, while temperature gradients induce entropy-driven carrier diffusion within the conductive MXene network. By suppressing signal cross-talk through rigorous mechanistic orthogonality, the fabricated sensing array exhibits outstanding response characteristics (37.5/50 ms for humidity response/recovery and 25/62.5 ms for high/low-temperature response), alongside superior oxidation resistance and robust functional durability (enduring 5000 cycles of testing). Ultimately, leveraging this multi-modal sensing platform and machine learning algorithm, the integrated closed-loop therapeutic system enables accurate evaluation of wound healing progression as well as on-demand drug release, pioneering a new paradigm for next-generation flexible electronics and adaptive healthcare modalities.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75664",
+        "doi_url": "https://doi.org/10.1002/adma.75664",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004498/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the challenge of high-fidelity multi-modal temperature-humidity sensing without cross-talk by developing a Pd single-atom engineered Janus BiOCl/MXene heterostructure. The material achieves segregated electronic and ionic pathways: humidity triggers ultra-fast proton conduction via localized potential wells and Pd sites, while temperature induces entropy-driven carrier diffusion. The sensor demonstrates rapid response/recovery (37.5/50 ms humidity; 25/62.5 ms temperature) and robust durability, enabling closed-loop wound healing monitoring with machine learning.\",\n  \"key_findings\": [\n    \"Humidity fluctuations induce ultra-fast proton conduction through localized potential wells and Pd sites\",\n    \"Temperature gradients cause entropy-driven carrier diffusion in the conductive MXene network\",\n    \"The sensor exhibits rapid response/recovery times (37.5/50 ms humidity; 25/62.5 ms temperature) and 5000-cycle durability\"\n  ],\n  \"scientific_significance\": \"This work establishes a fundamental mechanism for self-decoupled multi-modal sensing through electron-ion synergistic pathways, advancing flexible electronics for real-time physiological monitoring without post-processing.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the challenge of high-fidelity multi-modal temperature-humidity sensing without cross-talk by developing a Pd single-atom engineered Janus BiOCl/MXene heterostructure. The material achieves segregated electronic and ionic pathways: humidity triggers ultra-fast proton conduction via localized potential wells and Pd sites, while temperature induces entropy-driven carrier diffusion. The sensor demonstrates rapid response/recovery (37.5/50 ms humidity; 25/62.5 ms temperature) and robust durability, enabling closed-loop wound healing monitoring with machine learning.",
+          "key_findings": [
+            "Humidity fluctuations induce ultra-fast proton conduction through localized potential wells and Pd sites",
+            "Temperature gradients cause entropy-driven carrier diffusion in the conductive MXene network",
+            "The sensor exhibits rapid response/recovery times (37.5/50 ms humidity; 25/62.5 ms temperature) and 5000-cycle durability"
+          ],
+          "scientific_significance": "This work establishes a fundamental mechanism for self-decoupled multi-modal sensing through electron-ion synergistic pathways, advancing flexible electronics for real-time physiological monitoring without post-processing."
+        },
+        "elapsed_seconds": 37.2667,
+        "input_tokens": 754,
+        "output_tokens": 251,
+        "thoughts_tokens": null,
+        "total_tokens": 1005,
+        "model_eval_seconds": 26.1212,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004501",
+        "title": "Defined Matrices Reveal Epithelial- and Mesenchymal-Specific Responses to Stiffness and Adhesion in Human iPSC-Derived Intestinal Organoids.",
+        "abstract": "NA: Human intestinal organoids (hIOs) are powerful models for studying development and disease, yet dissecting how physical and matrix cues shape epithelial and mesenchymal responses remains challenging due to reliance on ill-defined matrices. Here, a fully defined hIO workflow was developed in which Matrigel was replaced by recombinant human substrates during pluripotent stem cell differentiation and by polyethylene glycol (PEG) hydrogels during 3D culture, while maintaining organoid viability and epithelial cytodifferentiation. Transcriptomic analyses show that both PEG- and Matrigel-cultured hIO epithelial cells are most similar to human duodenal reference populations, and have greater transcriptional similarity to fetal than adult duodenal references. Despite this overall similarity, PEG culture is associated with subtle shifts in epithelial differentiation-associated gene expression, together with altered mesenchymal ECM-remodelling and integrin-associated programs. Increasing matrix stiffness produces modest effects in epithelial cells, including increased MUC2-positive cells, whereas mesenchymal transcriptional responses to stiffness are limited. Together, these findings establish a fully defined hIO platform that retains responsiveness to inflammatory stimulation while enabling controlled investigation of how matrix composition and stiffness shape epithelial and mesenchymal cell states in models of intestinal development and fibrosis.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75649",
+        "doi_url": "https://doi.org/10.1002/adma.75649",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004501/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study developed a defined matrix system for human intestinal organoids (hIOs) by replacing Matrigel with recombinant human substrates and PEG hydrogels. Transcriptomic analysis revealed epithelial cells in both matrices closely resemble duodenal reference populations, with fetal-like expression patterns. PEG culture induced subtle shifts in epithelial differentiation and mesenchymal ECM-remodelling pathways. Matrix stiffness increased MUC2-positive cells in epithelia but had minimal effects on mesenchymal responses. The platform enables controlled investigation of matrix cues in intestinal development and fibrosis.\",\n  \"key_findings\": [\n    \"Epithelial cells in both matrices show high transcriptional similarity to fetal duodenal reference populations\",\n    \"PEG culture induces subtle shifts in epithelial differentiation-associated gene expression and mesenchymal ECM-remodelling pathways\",\n    \"Increasing matrix stiffness increases MUC2-positive cells in epithelia but has minimal effects on mesenchymal responses\"\n  ],\n  \"scientific_significance\": \"This work establishes a defined platform for studying matrix-dependent epithelial and mesenchymal responses in intestinal organoids, enabling precise manipulation of physical cues to investigate developmental and fibrotic mechanisms.\"\n}",
+        "parsed": {
+          "summary": "This study developed a defined matrix system for human intestinal organoids (hIOs) by replacing Matrigel with recombinant human substrates and PEG hydrogels. Transcriptomic analysis revealed epithelial cells in both matrices closely resemble duodenal reference populations, with fetal-like expression patterns. PEG culture induced subtle shifts in epithelial differentiation and mesenchymal ECM-remodelling pathways. Matrix stiffness increased MUC2-positive cells in epithelia but had minimal effects on mesenchymal responses. The platform enables controlled investigation of matrix cues in intestinal development and fibrosis.",
+          "key_findings": [
+            "Epithelial cells in both matrices show high transcriptional similarity to fetal duodenal reference populations",
+            "PEG culture induces subtle shifts in epithelial differentiation-associated gene expression and mesenchymal ECM-remodelling pathways",
+            "Increasing matrix stiffness increases MUC2-positive cells in epithelia but has minimal effects on mesenchymal responses"
+          ],
+          "scientific_significance": "This work establishes a defined platform for studying matrix-dependent epithelial and mesenchymal responses in intestinal organoids, enabling precise manipulation of physical cues to investigate developmental and fibrotic mechanisms."
+        },
+        "elapsed_seconds": 36.3916,
+        "input_tokens": 728,
+        "output_tokens": 254,
+        "thoughts_tokens": null,
+        "total_tokens": 982,
+        "model_eval_seconds": 26.3324,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004530",
+        "title": "Skunk Cabbage-Inspired AIEgen Photoactuators With Multiwavelength Response, Ultrafast Actuation, and Multicolor Fluorescence.",
+        "abstract": "NA: Near-infrared (NIR)-responsive polymer actuators doped with inorganic photothermal agents face trade-offs between photothermal performance and mechanical properties due to limited compatibility. Besides, most systems remain confined to 808 nm operation, as extending to 980 nm is hindered by poor absorption. Inspired by skunk cabbage thermogenesis, we develop ultra-fast, multicolor fluorescent NIR-responsive actuators by integrating aggregation-induced emission luminogens (AIEgens) with excellent compatibility and photothermal properties into Janus-structured polyimides (PIs) at ultra-low doping (0.25 wt%). The multi-donor-π structure of AIEgen achieves redshifted NIR absorption extending to 980 nm and enhanced photothermal abilities through boosted intramolecular donor-acceptor interactions and molecular motion-facilitated nonradiative decay (MMFND). Mirroring the mitochondrial working mode, AIEgens are uniformly embedded within PIs without compromising structural integrity, preserving mechanical properties above 100 MPa. Under NIR illumination, PI actuators achieve deformation with a bending speed of 900°/s, which facilitates crawling, gripping, and rapid continuous bidirectional flipping. The combination of multiwavelength photoresponse and multicolor fluorescence endows materials with dynamic information encoding. Programmable motions are implemented under different wavelengths through sequential, penetrative, and heat-transfer actuation. This work provides guidelines for smart materials requiring precise 980 nm actuation with maintained mechanical robustness.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75643",
+        "doi_url": "https://doi.org/10.1002/adma.75643",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004530/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study addresses the limitation of NIR-responsive polymer actuators by developing skunk cabbage-inspired aggregation-induced emission (AIE) luminogen-doped polyimides. The approach integrates ultra-low concentrations (0.25 wt%) of AIEgens into Janus-structured polymers to achieve 980 nm photothermal absorption, enhanced mechanical properties (>100 MPa), and multicolor fluorescence. Actuators demonstrate ultrafast bending (900°/s) under NIR light, enabling programmable motions via multiwavelength responses. The findings advance smart materials for precise 980 nm actuation without compromising mechanical integrity.\",\n  \"key_findings\": [\n    \"Integration of AIEgens at 0.25 wt% into Janus polyimides enables 980 nm photothermal absorption\",\n    \"Actuators achieve ultrafast bending (900°/s) and multicolor fluorescence under NIR illumination\",\n    \"Materials maintain mechanical strength (>100 MPa) while supporting programmable multiwavelength actuation\"\n  ],\n  \"scientific_significance\": \"This work establishes a strategy for NIR-responsive actuators that overcome wavelength limitations and maintain mechanical robustness, enabling precise 980 nm actuation with multicolor functionality for advanced smart materials applications.\"\n}",
+        "parsed": {
+          "summary": "This study addresses the limitation of NIR-responsive polymer actuators by developing skunk cabbage-inspired aggregation-induced emission (AIE) luminogen-doped polyimides. The approach integrates ultra-low concentrations (0.25 wt%) of AIEgens into Janus-structured polymers to achieve 980 nm photothermal absorption, enhanced mechanical properties (>100 MPa), and multicolor fluorescence. Actuators demonstrate ultrafast bending (900°/s) under NIR light, enabling programmable motions via multiwavelength responses. The findings advance smart materials for precise 980 nm actuation without compromising mechanical integrity.",
+          "key_findings": [
+            "Integration of AIEgens at 0.25 wt% into Janus polyimides enables 980 nm photothermal absorption",
+            "Actuators achieve ultrafast bending (900°/s) and multicolor fluorescence under NIR illumination",
+            "Materials maintain mechanical strength (>100 MPa) while supporting programmable multiwavelength actuation"
+          ],
+          "scientific_significance": "This work establishes a strategy for NIR-responsive actuators that overcome wavelength limitations and maintain mechanical robustness, enabling precise 980 nm actuation with multicolor functionality for advanced smart materials applications."
+        },
+        "elapsed_seconds": 40.3522,
+        "input_tokens": 767,
+        "output_tokens": 272,
+        "thoughts_tokens": null,
+        "total_tokens": 1039,
+        "model_eval_seconds": 28.8568,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43004957",
+        "title": "Determining Composition-Structure-Property Relationships in Quaternary Perovskitoids Through Megalibraries.",
+        "abstract": "NA: Understanding how composition governs structure and function is essential for designing functional materials, however, establishing these relationships remains prohibitively slow for materials with massive and tunable compositional spaces, such as Bi and Sb-based perovskitoids. Here, a novel megalibrary-based synthetic methodology has been developed and used to rapidly identify and characterize quaternary perovskite derivatives across an expansive compositional space. Parylene templates were used to synthesize one million compositionally distinct, positionally encoded Cs3Sb2-xBixBr9-yIy microcrystals on 2 × 2 cm2 chips with 20 µm periodicity. These megalibraries enabled the systematic investigation of structural and optoelectronic evolution across this compositional space using micro-area x-ray diffraction, position-resolved absorbance spectroscopy, scanning electron microscopy, and confocal fluorescence microscopy. An unusual non-monotonic bandgap shift was observed with increasing Br content, reaching a minimum at 33% Br. This behavior is attributed to the formation of halide-segregated heterostructures, consisting of low-dimensional, I-rich shells surrounding Br-rich layered cores. Phase separation was most pronounced in Sb-rich compositions, which were found to stabilize heterostructure formation. This study demonstrates how megalibraries enable the simultaneous evaluation of key optoelectronic parameters, including bandgap and phase purity, revealing complex, composition-dependent structure-function relationships in perovskitoids and providing a versatile platform for accelerating the discovery of optoelectronic-relevant materials.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75645",
+        "doi_url": "https://doi.org/10.1002/adma.75645",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004957/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates composition-structure-property relationships in quaternary perovskitoids using megalibraries. Researchers synthesized one million positionally encoded Cs3Sb2-xBixBr9-yIy microcrystals via parylene templates on 2 cm² chips. Micro-area x-ray diffraction and spectroscopy revealed a non-monotonic bandgap shift with Br content, minimizing at 33% Br due to halide-segregated heterostructures. Sb-rich compositions stabilized these heterostructures, enabling rapid evaluation of optoeaspects like bandgap and phase purity.\",\n  \"key_findings\": [\n    \"A non-monotonic bandgap shift occurs with increasing Br content, reaching minimum at 33% Br\",\n    \"Halide-segregated heterostructures form I-rich shells around Br-rich layered cores\",\n    \"Sb-rich compositions stabilize heterostructure formation, enhancing phase separation\"\n  ],\n  \"scientific_significance\": \"This work establishes a megalibrary approach for rapidly mapping complex composition-structure-property relationships in perovskitoids, advancing materials discovery through high-throughput characterization of optoelectronic properties.\"\n}",
+        "parsed": {
+          "summary": "This study investigates composition-structure-property relationships in quaternary perovskitoids using megalibraries. Researchers synthesized one million positionally encoded Cs3Sb2-xBixBr9-yIy microcrystals via parylene templates on 2 cm² chips. Micro-area x-ray diffraction and spectroscopy revealed a non-monotonic bandgap shift with Br content, minimizing at 33% Br due to halide-segregated heterostructures. Sb-rich compositions stabilized these heterostructures, enabling rapid evaluation of optoeaspects like bandgap and phase purity.",
+          "key_findings": [
+            "A non-monotonic bandgap shift occurs with increasing Br content, reaching minimum at 33% Br",
+            "Halide-segregated heterostructures form I-rich shells around Br-rich layered cores",
+            "Sb-rich compositions stabilize heterostructure formation, enhancing phase separation"
+          ],
+          "scientific_significance": "This work establishes a megalibrary approach for rapidly mapping complex composition-structure-property relationships in perovskitoids, advancing materials discovery through high-throughput characterization of optoelectronic properties."
+        },
+        "elapsed_seconds": 37.1089,
+        "input_tokens": 763,
+        "output_tokens": 244,
+        "thoughts_tokens": null,
+        "total_tokens": 1007,
+        "model_eval_seconds": 26.0305,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43006249",
+        "title": "Intrinsically Stretchable Fully π-Conjugated Polymer Films Enabled by Supramolecular Plasticized Micro-Crosslinking-Network for Flexible Polymer Light-Emitting Diodes.",
+        "abstract": "NA: Stretchable fully π-conjugated polymers (FπCPs) films with a fantastic optoelectronic property and outstanding deformation tolerance capacity, is a promising candidate for the fabrication of flexible optoelectronics devices. However, previous reported stretchable FπCPs films undergo irreversible chain slippage and alignment upon strain release, leading to plastic deformation, and consequently severe performance degradation during cyclic-deformation operation. Herein, we proposed a supramolecular soft-micro-crosslinked strategy to achieve the stretchable p-n FπCPs (PX-OXI1-X-HDI) films with a recoverable-deformation ability for the flexible electronics. Three-dimensional (3D) supramolecular micro-crosslinked network formed by oxime-urethane and hydrogen bonds allow for the excellent elastic deformation to dissipate transient stress while fundamentally suppressing permanent chain slippage. Micro-crosslinked p-n FπCPs free-standing films achieved an elongation at break of > 40%. Flexible PLED based on PX-OXI1-X-HDI showed a stable green emission with brightness of ∼3300 cd cm-2. Meanwhile, the performance of transferred PLED based on stretchable micro-crosslinked films are independent on the tensile ratio (>20%) with a maximum brightness of ∼2000 cd m-2, revealed the excellent cycle-deformation-stability than device based on crosslinked films. Therefore, these supramolecular micro-crosslinked networks can enhance instantaneous toughness and confer a critical resistance to long-term stress relaxation and plastic deformation, further ensure the device excellent deformation stability.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75688",
+        "doi_url": "https://doi.org/10.1002/adma.75688",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43006249/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates stretchable fully π-conjugated polymer films for flexible light-emitting diodes. The researchers developed supramolecular micro-crosslinked networks using oxime-urethane and hydrogen bonds to prevent irreversible chain slippage. Films achieved >40% elongation at break and maintained stable green emission in flexible PLEDs with brightness up to 3300 cd cm-2. The devices demonstrated cycle-deformation stability without significant performance degradation under tensile strains exceeding 20%.\",\n  \"key_findings\": [\n    \"Supramolecular micro-crosslinked networks prevent irreversible chain slippage in stretchable polymer films\",\n    \"Films achieved >40% elongation at break while maintaining stable green emission in PLEDs\",\n    \"Flexible devices retained performance under cyclic deformation with tensile strains >20%\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a supramolecular strategy to achieve highly stretchable, recoverable polymer films with enhanced mechanical stability for durable flexible optoelectronic applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates stretchable fully π-conjugated polymer films for flexible light-emitting diodes. The researchers developed supramolecular micro-crosslinked networks using oxime-urethane and hydrogen bonds to prevent irreversible chain slippage. Films achieved >40% elongation at break and maintained stable green emission in flexible PLEDs with brightness up to 3300 cd cm-2. The devices demonstrated cycle-deformation stability without significant performance degradation under tensile strains exceeding 20%.",
+          "key_findings": [
+            "Supramolecular micro-crosslinked networks prevent irreversible chain slippage in stretchable polymer films",
+            "Films achieved >40% elongation at break while maintaining stable green emission in PLEDs",
+            "Flexible devices retained performance under cyclic deformation with tensile strains >20%"
+          ],
+          "scientific_significance": "This work demonstrates a supramolecular strategy to achieve highly stretchable, recoverable polymer films with enhanced mechanical stability for durable flexible optoelectronic applications."
+        },
+        "elapsed_seconds": 35.292,
+        "input_tokens": 782,
+        "output_tokens": 218,
+        "thoughts_tokens": null,
+        "total_tokens": 1000,
+        "model_eval_seconds": 23.3623,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43006256",
+        "title": "Polymer-Directed Crystal Growth Regulation: Template-Free Synthesis of Mesoporous Single-Crystalline Mn2OBO3.",
+        "abstract": "NA: Transition metal borates are attractive anode candidates for lithium-ion batteries (LIBs) because of their high specific capacity and environmental benignity; however, their structural collapse induced by large volume changes during cycling leads to rapid capacity degradation. In this study, we report a polymer-directed crystal growth regulation strategy that enables the template-free synthesis of mesoporous single-crystalline Mn2OBO3 (MSC Mn2OBO3). Polyethyleneimine (PEI) acts as a bifunctional regulator, coordinating Mn2+ ions and hydrogen bonding with borate ions to modulate hydrolysis and condensation, thereby yielding a hybrid precursor. Subsequent hydrothermal treatment yields single-crystalline MnBO2OH nanobelts, which are converted by calcination into MSC Mn2OBO3. As an anode active material for lithium-ion batteries, MSC Mn2OBO3 delivers a reversible capacity of 1440 mAh g-1 at 0.2 A g-1, more than twice that of bulk Mn2OBO3. Notably, this polymer-directed strategy is readily extendable to doped MSC Mn2OBO3 (e.g., Fe, V, and Mg), providing a versatile platform for the design of porous single-crystalline materials for energy storage.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75700",
+        "doi_url": "https://doi.org/10.1002/adma.75700",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43006256/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates polymer-directed synthesis of mesoporous single-crystalline Mn2OBO3 for lithium-ion battery anodes. Using polyethyleneimine (PEI) as a bifunctional regulator, the researchers modulate hydrolysis and condensation to form a hybrid precursor, followed by hydrothermal treatment and calcination. The resulting material achieves a reversible capacity of 1440 mAh g-1 at 0.2 A g-1, significantly exceeding bulk Mn2OBO3. The approach demonstrates template-free synthesis of porous single-crystalline borates with potential for doping and energy storage applications.\",\n  \"key_findings\": [\n    \"Polyethyleneimine (PEI) coordinates Mn2+ ions and hydrogen bonds with borate ions to regulate hydrolysis and condensation\",\n    \"Single-crystalline Mn2OBO3 nanobelts yield a reversible capacity of 1440 mAh g-1 at 0.2 A g-1\",\n    \"The polymer-directed strategy enables template-free synthesis and is extendable to doped Mn2OBO3 for energy storage\"\n  ],\n  \"scientific_significance\": \"This work establishes a polymer-directed method for template-free synthesis of mesoporous single-crystalline borates, advancing porous material design for high-capacity lithium-ion battery anodes.\"\n}",
+        "parsed": {
+          "summary": "This study investigates polymer-directed synthesis of mesoporous single-crystalline Mn2OBO3 for lithium-ion battery anodes. Using polyethyleneimine (PEI) as a bifunctional regulator, the researchers modulate hydrolysis and condensation to form a hybrid precursor, followed by hydrothermal treatment and calcination. The resulting material achieves a reversible capacity of 1440 mAh g-1 at 0.2 A g-1, significantly exceeding bulk Mn2OBO3. The approach demonstrates template-free synthesis of porous single-crystalline borates with potential for doping and energy storage applications.",
+          "key_findings": [
+            "Polyethyleneimine (PEI) coordinates Mn2+ ions and hydrogen bonds with borate ions to regulate hydrolysis and condensation",
+            "Single-crystalline Mn2OBO3 nanobelts yield a reversible capacity of 1440 mAh g-1 at 0.2 A g-1",
+            "The polymer-directed strategy enables template-free synthesis and is extendable to doped Mn2OBO3 for energy storage"
+          ],
+          "scientific_significance": "This work establishes a polymer-directed method for template-free synthesis of mesoporous single-crystalline borates, advancing porous material design for high-capacity lithium-ion battery anodes."
+        },
+        "elapsed_seconds": 40.8181,
+        "input_tokens": 716,
+        "output_tokens": 287,
+        "thoughts_tokens": null,
+        "total_tokens": 1003,
+        "model_eval_seconds": 30.831,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43010567",
+        "title": "An Engineered Thio-Amino Polymer Achieves Potent, Safe, and Broad Cell Type Delivery in the Lung Mapped by Spatial Transcriptomics.",
+        "abstract": "NA: Efficient delivery of nucleic acids to the lung has the potential to impact future respiratory treatments. Current formulations exhibit significant limitations, including insufficient potency, single-cell delivery characterizations, efficacy demonstrations in disease models, and toxicology assessments. Here we describe polymer 81 (P81), which, when used with hypotonic solvents, is 34.1- to 77.8-fold more potent than previous polymers with various cargos for lung transfection by nebulized mRNA. Through the exploration of multiple routes of administration, P81 demonstrated a wide of range of cell-type delivery, including bronchial airway epithelial cells, tracheal basal stem cells, and 54% of all cells in the distal lung, assessed via single-cell spatial transcriptomics. Robust expression of mRNA-encoded antibodies in the lung by P81 enabled quantification of target protein and successful suppression of SARS-CoV-2 infection. The toxicology assessments of multiple doses of P81 polyplexes via nebulization in rodents were unremarkable. Overall, P81 represents a step forward for inhaled nucleic acid delivery to the respiratory tract, positioning itself as an efficient, safe, and translatable delivery formulation.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75699",
+        "doi_url": "https://doi.org/10.1002/adma.75699",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43010567/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated efficient inhaled nucleic acid delivery to the lung using a novel thio-amino polymer (P81). The researchers evaluated P81's transfection potency via nebulized mRNA, assessing cell-type specificity through single-cell spatial transcriptomics. Results showed P81 achieved 34.1- to 77.8-fold higher transfection efficiency than prior polymers, delivered to bronchial epithelial cells, tracheal stem cells, and 54% of distal lung cells, and suppressed SARS-CoV-2 infection without significant toxicity in rodents.\",\n  \"key_findings\": [\n    \"P81 demonstrated 34.1- to 77.8-fold higher transfection efficiency than previous polymers for nebulized mRNA delivery\",\n    \"Spatial transcriptomics revealed P81 delivered to bronchial airway epithelial cells, tracheal basal stem cells, and 54% of distal lung cells\",\n    \"P81 enabled SARS-CoV-2 suppression and showed low toxicity in rodent nebulization studies\"\n  ],\n  \"scientific_significance\": \"This work establishes a highly efficient, safe, and broadly applicable polymer-based delivery system for inhaled nucleic acids, advancing therapeutic potential for respiratory diseases through improved transfection and targeted delivery.\"\n}",
+        "parsed": {
+          "summary": "This study investigated efficient inhaled nucleic acid delivery to the lung using a novel thio-amino polymer (P81). The researchers evaluated P81's transfection potency via nebulized mRNA, assessing cell-type specificity through single-cell spatial transcriptomics. Results showed P81 achieved 34.1- to 77.8-fold higher transfection efficiency than prior polymers, delivered to bronchial epithelial cells, tracheal stem cells, and 54% of distal lung cells, and suppressed SARS-CoV-2 infection without significant toxicity in rodents.",
+          "key_findings": [
+            "P81 demonstrated 34.1- to 77.8-fold higher transfection efficiency than previous polymers for nebulized mRNA delivery",
+            "Spatial transcriptomics revealed P81 delivered to bronchial airway epithelial cells, tracheal basal stem cells, and 54% of distal lung cells",
+            "P81 enabled SARS-CoV-2 suppression and showed low toxicity in rodent nebulization studies"
+          ],
+          "scientific_significance": "This work establishes a highly efficient, safe, and broadly applicable polymer-based delivery system for inhaled nucleic acids, advancing therapeutic potential for respiratory diseases through improved transfection and targeted delivery."
+        },
+        "elapsed_seconds": 38.9565,
+        "input_tokens": 706,
+        "output_tokens": 280,
+        "thoughts_tokens": null,
+        "total_tokens": 986,
+        "model_eval_seconds": 29.3213,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43010571",
+        "title": "In Situ Topological Dealloying Enables Atomically Coupled Metal-Oxide Heterostructures.",
+        "abstract": "NA: Metal-oxide heterostructures are central to energy conversion and electronic devices because interfaces can modulate the configuration coupling among charge, spin, and orbit. However, conventional synthesis routes suffer from structural incompatibility and weak coupling, which hinder the universal construction of atomically coupled metal-oxide heterointerfaces. Here, we develop an in situ topological dealloying strategy to construct metal-oxide heterostructures with atomically interconnected interfaces. This strategy can be broadly applied to perovskite, spinel, columbite, and vanadate oxides, which enables the spontaneous formation of high-density magnetic nanoalloys embedded within dielectric oxide matrices. Direct nanoscale visualizations of electric and magnetic fields reveal the coexistence of interfacial charge polarization and vortex-like spin textures. These emergent dielectric and magnetic behaviors arise from atomically interfacial hybridization that mediates strong charge-spin interactions. When integrated into flexible architectures, these heterostructures exhibit broadband GHz-frequency absorption (effective absorption bandwidth up to 6.6 GHz at 3.0 mm), high efficiency, and rapid electromagnetic-to-thermal energy conversion under microwave irradiation. This work establishes a general route to engineer metal-oxide heterostructures for functional applications.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75678",
+        "doi_url": "https://doi.org/10.1002/adma.75678",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43010571/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates in situ topological dealloying to create atomically coupled metal-oxide heterostructures with enhanced interface properties. The approach involves synthesizing perovskite, spinel, columbite, and vanadate oxides via this method, enabling high-density magnetic nanoalloys within dielectric matrices. Results show coexisting interfacial charge polarization and vortex-like spin textures, along with broadband GHz-frequency absorption (up to .6 GHz) and rapid electromagnetic-to-thermal energy conversion under microwaves.\",\n  \"key_findings\": [\n    \"Atomically interconnected metal-oxide interfaces via in situ topological dealloying\",\n    \"Coexistence of interfacial charge polarization and vortex-like spin textures\",\n    \"Broadband GHz-frequency absorption (up to 6.6 GHz) and rapid electromagnetic-to-thermal energy conversion\"\n  ],\n  \"scientific_significance\": \"This work establishes a general synthetic strategy for engineering metal-oxide heterostructures with strong charge-spin interactions, advancing functional materials design for energy conversion and electronic applications.\"\n}",
+        "parsed": {
+          "summary": "This study investigates in situ topological dealloying to create atomically coupled metal-oxide heterostructures with enhanced interface properties. The approach involves synthesizing perovskite, spinel, columbite, and vanadate oxides via this method, enabling high-density magnetic nanoalloys within dielectric matrices. Results show coexisting interfacial charge polarization and vortex-like spin textures, along with broadband GHz-frequency absorption (up to .6 GHz) and rapid electromagnetic-to-thermal energy conversion under microwaves.",
+          "key_findings": [
+            "Atomically interconnected metal-oxide interfaces via in situ topological dealloying",
+            "Coexistence of interfacial charge polarization and vortex-like spin textures",
+            "Broadband GHz-frequency absorption (up to 6.6 GHz) and rapid electromagnetic-to-thermal energy conversion"
+          ],
+          "scientific_significance": "This work establishes a general synthetic strategy for engineering metal-oxide heterostructures with strong charge-spin interactions, advancing functional materials design for energy conversion and electronic applications."
+        },
+        "elapsed_seconds": 31.9955,
+        "input_tokens": 697,
+        "output_tokens": 221,
+        "thoughts_tokens": null,
+        "total_tokens": 918,
+        "model_eval_seconds": 22.7546,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43010573",
+        "title": "Scalable Hydrogel-Programmed Porous Photonic Cement for Passive Daytime Cooling.",
+        "abstract": "NA: Cement is among the most widely produced materials on Earth, yet its strong solar absorption causes building envelopes to act as heat sources, increasing cooling energy demand. Here, we structurally program cement hydration to transform conventional cementitious materials into passive cooling interfaces. Through hydrogel-confined mineralization of cement clinker, we construct a robust, hierarchically porous calcium-silicate-hydrate (C-S-H) network that integrates broadband light scattering, vapor transport and thermal insulation. By regulating the composition and crystallinity of the hydrates, the material achieves ∼95% solar reflectance and ∼98% infrared emissivity without the use of additional photonic fillers. The hygroscopic nature of the network further enables sustained evaporative cooling under humid or cloudy conditions where radiative cooling alone becomes inefficient. Life-cycle analysis indicates that this strategy provides a pathway to transform high-emission cement into carbon-mitigating materials integrated within opaque building envelopes, enabling the scalable deployment of daytime radiative cooling across the built environment.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75691",
+        "doi_url": "https://doi.org/10.1002/adma.75691",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43010573/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates transforming conventional cement into passive cooling materials by structurally programming cement hydration. The approach involves hydrogel-confined mineralization to create a hierarchically porous calcium-silicate-hydrate network with broadband light scattering, vapor transport, and thermal insulation. The material achieves ∼95% solar reflectance and ∼9.8% infrared emissivity, enabling evaporative cooling under humid conditions. Life-cycle analysis suggests this strategy reduces cement's carbon footprint by integrating daytime radiative cooling into building envelopes.\",\n  \"key_findings\": [\n    \"The hydrogel-confined mineralization process generates a hierarchically porous calcium-silicate-hydrate network\",\n    \"The material achieves ∼95% solar reflectance and ∼98% infrared emissivity without photonic fillers\",\n    \"The network enables sustained evaporative cooling under humid or cloudy conditions\"\n  ],\n  \"scientific_significance\": \"This work demonstrates a scalable method to convert high-emission cement into carbon-mitigating building materials through passive daytime radiative cooling, addressing a critical challenge in sustainable construction.\"\n}",
+        "parsed": {
+          "summary": "This study investigates transforming conventional cement into passive cooling materials by structurally programming cement hydration. The approach involves hydrogel-confined mineralization to create a hierarchically porous calcium-silicate-hydrate network with broadband light scattering, vapor transport, and thermal insulation. The material achieves ∼95% solar reflectance and ∼9.8% infrared emissivity, enabling evaporative cooling under humid conditions. Life-cycle analysis suggests this strategy reduces cement's carbon footprint by integrating daytime radiative cooling into building envelopes.",
+          "key_findings": [
+            "The hydrogel-confined mineralization process generates a hierarchically porous calcium-silicate-hydrate network",
+            "The material achieves ∼95% solar reflectance and ∼98% infrared emissivity without photonic fillers",
+            "The network enables sustained evaporative cooling under humid or cloudy conditions"
+          ],
+          "scientific_significance": "This work demonstrates a scalable method to convert high-emission cement into carbon-mitigating building materials through passive daytime radiative cooling, addressing a critical challenge in sustainable construction."
+        },
+        "elapsed_seconds": 31.8584,
+        "input_tokens": 647,
+        "output_tokens": 233,
+        "thoughts_tokens": null,
+        "total_tokens": 880,
+        "model_eval_seconds": 24.2346,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43010575",
+        "title": "Constructing Low-Friction Ion Transport Pathways in Crosslinked Polymer Electrolyte for Practical Quasi-Solid-State Lithium Metal Batteries.",
+        "abstract": "NA: Quasi-solid-state polymer electrolytes are promising candidates for lithium metal batteries (LMBs) with high energy density, but still suffer from sacrificed ionic conductivity caused by electrolyte solidification. Here, by tuning monomer structures with different Li+-affinity, we investigate the decisive role of the segmental solvation ability of the polymer matrix in cation transport. Owing to the overly strong affinity for cations, conventional ether segments significantly decrease the Li+ relaxation rate, and the resulting \"sticky\" polymer chains impede Li+ migration. In contrast, the weakly coordinating segments such as fluorinated ether could effectively minimize coupling with Li+ ions, thereby constructing \"low-friction\" cation transport pathways in crosslinked polymer electrolytes, as reflected by the nearly unchanged Li+ relaxation kinetics and high ionic conductivity. Therefore, the industrial Li metal pouch cells achieve excellent comprehensive electrochemical performance under harsh lean-electrolyte conditions, with electrolyte dosage even as low as 1.3 g Ah-1. The 2 Ah NCM811/Li cell exhibits an extended lifespan beyond 520 cycles and maintains stable operation across a wide temperature range from -50°C to +90°C. The 8.7 Ah NCM955/Li cell delivers 550 Wh kg-1 energy density and demonstrates impressive cycling stability over 260 cycles. This work could inspire fundamental understanding and further development toward practical LMBs.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75615",
+        "doi_url": "https://doi.org/10.1002/adma.75615",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43010575/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigates optimizing quasi-solid-state polymer electrolytes for lithium metal batteries by tuning monomer structures with varying Li+ affinity. The research demonstrates that weakly coordinating segments, like fluorinated ethers, reduce cation-transport friction by minimizing Li+ coupling, leading to high ionic conductivity and stable performance. The electrolyte enables long cycle life (>520 cycles), wide temperature operation (-5.0°C to +90°C), and high energy density (550 Wh kg-1) in practical cells.\",\n  \"key_findings\": [\n    \"Weakly coordinating segments (e.g., fluorinated ethers) minimize Li+ coupling, enhancing cation transport pathways\",\n    \"Crosslinked polymer electrolytes achieve high ionic conductivity and stable operation across -50°C to +90°C\",\n    \"Industrial Li metal pouch cells maintain >520 cycles and 550 Wh kg-1 energy density at low electrolyte dosage (1.3 g Ah-1)\"\n  ],\n  \"scientific_significance\": \"This work establishes a design principle for low-friction ion transport in crosslinked polymer electrolytes, advancing fundamental understanding of segmental solvation effects critical for high-performance lithium metal batteries.\"\n}",
+        "parsed": {
+          "summary": "This study investigates optimizing quasi-solid-state polymer electrolytes for lithium metal batteries by tuning monomer structures with varying Li+ affinity. The research demonstrates that weakly coordinating segments, like fluorinated ethers, reduce cation-transport friction by minimizing Li+ coupling, leading to high ionic conductivity and stable performance. The electrolyte enables long cycle life (>520 cycles), wide temperature operation (-5.0°C to +90°C), and high energy density (550 Wh kg-1) in practical cells.",
+          "key_findings": [
+            "Weakly coordinating segments (e.g., fluorinated ethers) minimize Li+ coupling, enhancing cation transport pathways",
+            "Crosslinked polymer electrolytes achieve high ionic conductivity and stable operation across -50°C to +90°C",
+            "Industrial Li metal pouch cells maintain >520 cycles and 550 Wh kg-1 energy density at low electrolyte dosage (1.3 g Ah-1)"
+          ],
+          "scientific_significance": "This work establishes a design principle for low-friction ion transport in crosslinked polymer electrolytes, advancing fundamental understanding of segmental solvation effects critical for high-performance lithium metal batteries."
+        },
+        "elapsed_seconds": 38.7036,
+        "input_tokens": 753,
+        "output_tokens": 254,
+        "thoughts_tokens": null,
+        "total_tokens": 1007,
+        "model_eval_seconds": 27.4358,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    },
+    {
+      "article": {
+        "pmid": "43010578",
+        "title": "A Coaxial Bioprinted Hydrogel With Semipermeable Sheath and Pro-Chondrogenic Core for Articular Cartilage Repair.",
+        "abstract": "NA: Stem cell-laden hydrogels represent a promising strategy for the functional repair of articular cartilage defects. However, the pathological joint microenvironment is often characterized by persistently elevated levels of pro-inflammatory cytokines, which severely compromise transplanted cell survival and impair their chondrogenic differentiation potential. Inspired by the hierarchical mechanical gradient of native cartilage, we developed a sheath-core biomimetic hydrogel (SCGAE) via embedded coaxial bioprinting, featuring a robust poly(ethylene glycol)-alginate (PA) sheath that spatially integrates mechanical support and immunoprotection around a soft, bioactive gelatin methacryloyl-alginate-decellularized extracellular matrix (GAE) core. The dense PA sheath provides immediate mechanical support and functions as a size-selective diffusion barrier, permitting nutrient and oxygen permeation while effectively blocking inflammatory cytokines (>40 kDa). This protective niche enables the pericellular matrix-mimicking GAE core to maintain stem cell viability >89% under pro-inflammatory conditions and support robust chondrogenic differentiation. In a rabbit osteochondral defect model, bone marrow stromal cell-laden SCGAE constructs promoted substantial cartilage repair, achieving defect filling, host integration, and regeneration of glycosaminoglycan-rich hyaline-like cartilage. This sheath-core architecture design spatially integrates structural, mechanical, and immunoprotection functions, presenting a promising platform for the regeneration of load-bearing articular cartilage.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75685",
+        "doi_url": "https://doi.org/10.1002/adma.75685",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43010578/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "ok",
+        "response_text": "{\n  \"summary\": \"This study investigated a biomimetic hydrogel strategy for articular cartilage repair using coaxial bioprinting to create a sheath-core structure. The approach integrated a poly(ethylene glycol)-alginate sheath for mechanical support and immunoprotection with a chondrogenic core gelatin methacryloyl-alginate-decellularized extracellular matrix. The design enabled stem cell survival >89% under pro-inflammatory conditions and promoted cartilage regeneration in rabbit models, achieving defect filling and glycosaminoglycan-rich tissue. The findings demonstrate a functional biomaterial platform addressing joint inflammation challenges.\",\n  \"key_findings\": [\n    \"The poly(ethylene glycol)-alginate sheath provided size-selective diffusion barrier activity, blocking inflammatory cytokines (>40 kDa) while allowing nutrient and oxygen permeation\",\n    \"Stem cell viability remained >89% under pro-inflammatory conditions within the hydrogel construct\",\n    \"The biomaterial achieved defect filling and regeneration of glycosaminoglycan-rich hyaline-like cartilage in rabbit osteochondral defects\"\n  ],\n  \"scientific_significance\": \"This biomimetic hydrogel design integrates mechanical support, immunoprotection, and chondrogenic differentiation capabilities to overcome inflammatory barriers in articular cartilage repair.\"\n}",
+        "parsed": {
+          "summary": "This study investigated a biomimetic hydrogel strategy for articular cartilage repair using coaxial bioprinting to create a sheath-core structure. The approach integrated a poly(ethylene glycol)-alginate sheath for mechanical support and immunoprotection with a chondrogenic core gelatin methacryloyl-alginate-decellularized extracellular matrix. The design enabled stem cell survival >89% under pro-inflammatory conditions and promoted cartilage regeneration in rabbit models, achieving defect filling and glycosaminoglycan-rich tissue. The findings demonstrate a functional biomaterial platform addressing joint inflammation challenges.",
+          "key_findings": [
+            "The poly(ethylene glycol)-alginate sheath provided size-selective diffusion barrier activity, blocking inflammatory cytokines (>40 kDa) while allowing nutrient and oxygen permeation",
+            "Stem cell viability remained >89% under pro-inflammatory conditions within the hydrogel construct",
+            "The biomaterial achieved defect filling and regeneration of glycosaminoglycan-rich hyaline-like cartilage in rabbit osteochondral defects"
+          ],
+          "scientific_significance": "This biomimetic hydrogel design integrates mechanical support, immunoprotection, and chondrogenic differentiation capabilities to overcome inflammatory barriers in articular cartilage repair."
+        },
+        "elapsed_seconds": 40.6524,
+        "input_tokens": 766,
+        "output_tokens": 276,
+        "thoughts_tokens": null,
+        "total_tokens": 1042,
+        "model_eval_seconds": 29.1306,
+        "error": null,
+        "quality_check": "passed",
+        "attempts": 1
+      }
+    }
+  ]
+}
