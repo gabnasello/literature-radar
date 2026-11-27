@@ -130,18 +130,42 @@ safe_ollama_call <- function(prompt, config, max_attempts = 2L) {
     result$quality_check <- "failed"
     result$attempts <- attempt
     result$error <- paste(validation$errors, collapse = "; ")
+
     if (attempt < max_attempts) {
-      attempt_prompt <- paste(
-        prompt,
-        "",
-        "QUALITY-CONTROL RETRY:",
-        "Your previous response did not pass validation for these reasons:",
-        paste0("- ", validation$errors, collapse = "\n"),
-        "Return a corrected JSON object using exactly the three requested fields.",
-        "The summary must contain 45–90 words. Proofread every field for spelling errors, malformed words, fragments, duplicated phrases, and punctuation mistakes.",
-        "Do not add a relevance assessment, limitations, caveats, or any other fields.",
-        sep = "\n"
-      )
+      word_count_error <- any(grepl("summary must contain [0-9]+", validation$errors))
+      if (word_count_error && identical(result$status, "ok") &&
+          !is.null(result$parsed) && is.character(result$parsed$summary)) {
+        # Keep the original answer as the source and request only a concise edit.
+        # This avoids asking the small model to regenerate every field again.
+        attempt_prompt <- paste(
+          "You are editing an existing scientific paper summary that exceeded its word-count limit.",
+          "Do not summarize the paper again from scratch.",
+          "Shorten ONLY the summary field below to 45–90 words, preserving its key scientific question, approach, main results, and implication.",
+          "Remove redundancy and secondary details first. Do not add any facts or change the scientific meaning.",
+          "Keep key_findings and scientific_significance exactly as they are.",
+          "Return one valid JSON object with exactly these fields: summary, key_findings, scientific_significance.",
+          "Do not include Markdown fences or commentary.",
+          "",
+          "Existing JSON response:",
+          result$response_text,
+          "",
+          "Validation feedback:",
+          paste0("- ", validation$errors, collapse = "\n"),
+          sep = "\n"
+        )
+      } else {
+        attempt_prompt <- paste(
+          prompt,
+          "",
+          "QUALITY-CONTROL RETRY:",
+          "Your previous response did not pass validation for these reasons:",
+          paste0("- ", validation$errors, collapse = "\n"),
+          "Return a corrected JSON object using exactly the three requested fields.",
+          "The summary must contain 45–90 words. Proofread every field for spelling errors, malformed words, fragments, duplicated phrases, and punctuation mistakes.",
+          "Do not add a relevance assessment, limitations, caveats, or any other fields.",
+          sep = "\n"
+        )
+      }
     }
   }
 
