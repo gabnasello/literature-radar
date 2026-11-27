@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "run_id": "20261127T155230Z",
+  "generated_at_utc": "2026-11-27 15:55:21 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 2,
+  "remaining_after_run": 2,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "43004155",
+        "title": "Ultralow Loading Iridium Doped Hollandite Manganese Oxide Nanowires for Efficient Acidic Oxygen Evolution Reaction.",
+        "abstract": "NA: Efficient and durable catalysts for the acidic oxygen evolution reaction (OER) are critical for hydrogen production but remain limited by reliance on scarce iridium (Ir). We present an ultralow-loading Ir catalyst (3 at%, <16 µgIr cm- 2) integrated within a hollandite MnO2 framework, which lowers the overpotential at 10 mA cm- 2 from 580 mV (undoped α-MnO2) to 303 mV and delivers an Ir mass activity an order of magnitude higher than commercial IrOx. Varying pH and potential, we combine ICP-MS dissolution measurements with x-ray absorption spectroscopy, electron energy loss spectroscopy, and 4D scanning transmission electron microscopy. Dissolution is modest, with at least 79% of the Ir and 76% of the Mn remaining after 6 h under applied potential, and Ir remains oxidized and associated with the hollandite framework. Mn, in contrast, undergoes pH- and potential-dependent reduction and local structural disorder. Notably, the strongest Mn reconstruction (pH 0, 1.65 V) coincides with moderate dissolution, whereas the greatest Ir and Mn loss (pH 0, 1.60 V) occurs where the residual material is less reconstructed. Net dissolution therefore does not report on local structural change, highlighting the need to evaluate dissolution, reconstruction, and oxidation state together when designing and assessing Ir-efficient mixed-metal oxide catalysts.",
+        "publication_types": [],
+        "doi": "10.1002/adma.75604",
+        "doi_url": "https://doi.org/10.1002/adma.75604",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/43004155/",
+        "journal_id": "advanced-materials",
+        "journal_name": "Advanced Materials",
+        "report_id": "advanced-materials__20261014__20261113"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates ultralow-loading iridium-doped hollandite manganese oxide nanowires as efficient acidic oxygen evolution reaction (OER) catalysts. The researchers integrated 3 at% iridium into a manganese dioxide framework, reducing the overpotential at 10 mA cm-2 from 580 mV to 303 mV compared to undoped α-MnO2. The catalyst demonstrates significantly higher iridium mass activity than commercial IrOx. Dissolution measurements and spectroscopic analyses revealed modest material loss (79% Ir, 76% Mn retained after 6 h), with iridium remaining oxidized and bound to the framework while manganese undergoes pH- and potential-dependent reduction and structural changes. The findings emphasize the importance of evaluating dissolution, reconstruction, and oxidation state together for designing durable iridium-efficient catalysts.\",\n  \"key_findings\": [\n    \"Ultralow-loading iridium (3 at%, <16 µgIr cm-2) in hollandite MnO2 reduces OER overpotential at 10 mA cm-2 from 580 mV to 303 mV\",\n    \"The catalyst achieves iridium mass activity an order of magnitude higher than commercial IrOx\",\n    \"Modest dissolution (79% Ir, 76% Mn retained after 6 h) with iridium remaining oxidized and associated with the framework\"\n  ],\n  \"scientific_significance\": \"This work demonstrates that ultralow-loading iridium-doped hollandite manganese oxides can achieve high OER activity with minimal iridium, providing a pathway to more sustainable and efficient catalysts for acidic environments.\"\n}",
+        "parsed": {
+          "summary": "This study investigates ultralow-loading iridium-doped hollandite manganese oxide nanowires as efficient acidic oxygen evolution reaction (OER) catalysts. The researchers integrated 3 at% iridium into a manganese dioxide framework, reducing the overpotential at 10 mA cm-2 from 580 mV to 303 mV compared to undoped α-MnO2. The catalyst demonstrates significantly higher iridium mass activity than commercial IrOx. Dissolution measurements and spectroscopic analyses revealed modest material loss (79% Ir, 76% Mn retained after 6 h), with iridium remaining oxidized and bound to the framework while manganese undergoes pH- and potential-dependent reduction and structural changes. The findings emphasize the importance of evaluating dissolution, reconstruction, and oxidation state together for designing durable iridium-efficient catalysts.",
+          "key_findings": [
+            "Ultralow-loading iridium (3 at%, <16 µgIr cm-2) in hollandite MnO2 reduces OER overpotential at 10 mA cm-2 from 580 mV to 303 mV",
+            "The catalyst achieves iridium mass activity an order of magnitude higher than commercial IrOx",
+            "Modest dissolution (79% Ir, 76% Mn retained after 6 h) with iridium remaining oxidized and associated with the framework"
+          ],
+          "scientific_significance": "This work demonstrates that ultralow-loading iridium-doped hollandite manganese oxides can achieve high OER activity with minimal iridium, providing a pathway to more sustainable and efficient catalysts for acidic environments."
+        },
+        "elapsed_seconds": 39.1693,
+        "input_tokens": 862,
+        "output_tokens": 361,
+        "thoughts_tokens": null,
+        "total_tokens": 1223,
+        "model_eval_seconds": 36.1029,
+        "error": "summary must contain 45–90 words; received 110.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    },
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Researchers exposed lean mice to a high-fat diet (HFD) at the onset of type 17 skin inflammation and found that a 4-day window of HFD exposure exacerbated disease severity comparably to chronic obesity. HFD outside this window had no effect, while switching obese mice to a low-fat diet during the window reduced inflammation. Mechanistically, HFD recruited neutrophils, which expressed Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, a chromatin-poised T cell memory persisted, causing exaggerated inflammation upon recurrence despite subsequent LFD. The findings suggest transient dietary states during inflammation can durably reprogram immune responses.\",\n  \"key_findings\": [\n    \"Transient HFD exposure during a 4-day window at disease onset exacerbates skin inflammation comparably to chronic obesity\",\n    \"HFD outside this window has no impact, but switching obese mice to LFD during the window blunts disease amplification\",\n    \"Neutrophil-mediated Nlrp3-Il1b signaling licenses pathogenic TH17 cells, with persistent chromatin-poised T cell memory after recovery\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that short-lived dietary states during acute inflammation can durably reprogram tissue immune memory, revealing a critical temporal window for dietary interventions to influence long-term inflammatory responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Researchers exposed lean mice to a high-fat diet (HFD) at the onset of type 17 skin inflammation and found that a 4-day window of HFD exposure exacerbated disease severity comparably to chronic obesity. HFD outside this window had no effect, while switching obese mice to a low-fat diet during the window reduced inflammation. Mechanistically, HFD recruited neutrophils, which expressed Nlrp3 and Il1b, driving pathogenic TH17 cell activation. Post-recovery, a chromatin-poised T cell memory persisted, causing exaggerated inflammation upon recurrence despite subsequent LFD. The findings suggest transient dietary states during inflammation can durably reprogram immune responses.",
+          "key_findings": [
+            "Transient HFD exposure during a 4-day window at disease onset exacerbates skin inflammation comparably to chronic obesity",
+            "HFD outside this window has no impact, but switching obese mice to LFD during the window blunts disease amplification",
+            "Neutrophil-mediated Nlrp3-Il1b signaling licenses pathogenic TH17 cells, with persistent chromatin-poised T cell memory after recovery"
+          ],
+          "scientific_significance": "The study demonstrates that short-lived dietary states during acute inflammation can durably reprogram tissue immune memory, revealing a critical temporal window for dietary interventions to influence long-term inflammatory responses."
+        },
+        "elapsed_seconds": 33.4325,
+        "input_tokens": 885,
+        "output_tokens": 302,
+        "thoughts_tokens": null,
+        "total_tokens": 1187,
+        "model_eval_seconds": 30.344,
+        "error": "summary must contain 45–90 words; received 110.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    }
+  ]
+}
