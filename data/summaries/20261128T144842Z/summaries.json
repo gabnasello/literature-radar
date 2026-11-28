@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "run_id": "20261128T144842Z",
+  "generated_at_utc": "2026-11-28 14:50:09 UTC",
+  "run_type": "automatic_summarization",
+  "prompt_version": "paper_summary_v3",
+  "prompt_template": "You are an evidence-focused scientific literature analyst. You are given a paper title, journal, and PubMed abstract. Use only the information supplied below.\n\nProduce a concise, scientifically faithful summary that helps a reader quickly understand what the study investigated, how it was approached, and what it found. Keep the assessment general and scientific. Do not judge the paper's relevance to any particular person, project, or research field.\n\nReturn exactly one valid JSON object. Do not use Markdown fences or add commentary outside the JSON. Use exactly this schema and no additional fields:\n{\n  \"summary\": \"A direct overview in 45-85 words, covering the scientific question, approach, main result, and implication where available.\",\n  \"key_findings\": [\n    \"Up to three concise, concrete findings reported in the abstract.\"\n  ],\n  \"scientific_significance\": \"One concise sentence describing the broader scientific contribution or what the findings add to scientific understanding, based only on the abstract; otherwise use an empty string.\"\n}\n\nRules:\n- The summary must contain 45-85 words. Count the words before returning the JSON. Do not pad with repetition or unsupported information to reach the target.\n- Do not add facts, mechanisms, results, sample sizes, or conclusions that are not supported by the abstract.\n- Preserve uncertainty and avoid overstating causality.\n- Scientific significance must describe the study's general contribution to scientific understanding, not its relevance to a particular research field, person, or project.\n- Do not include a separate limitations section, relevance assessment, personalised assessment, generic caveats, or any fields beyond the three specified above.\n- If the abstract is incomplete or unclear, reflect that briefly in the summary rather than adding a separate section.\n- Use plain, precise scientific language and avoid repetition.\n- Before returning the JSON, silently proofread every field for spelling errors, malformed words, accidental fragments, duplicated phrases, and punctuation mistakes. Correct them without changing the scientific meaning.\n\nTITLE: {{TITLE}}\nJOURNAL: {{JOURNAL}}\n\nABSTRACT:\n{{ABSTRACT}}",
+  "requested_batch_size": 24,
+  "actual_batch_size": 1,
+  "remaining_after_run": 1,
+  "models": {
+    "ollama": "qwen3:4b"
+  },
+  "papers": [
+    {
+      "article": {
+        "pmid": "42957863",
+        "title": "Diet at disease onset determines tissue inflammatory memory.",
+        "abstract": "NA: Obesity, which is often associated with prolonged exposure to an obesogenic diet, substantially alters immunity1-7, but whether brief dietary changes shape acute inflammatory responses and long-term tissue memory remains unclear. Here we show that transient high-fat diet (HFD) exposure at the onset of acute type 17 skin inflammation exacerbates disease in lean mice to levels comparable to those associated with chronic obesity. This effect is restricted to a discrete 4-day peri-initiation window; HFD outside this window has no impact, whereas switching obese mice to a low-fat diet (LFD) during a similar window fully blunts disease amplification. Mechanistically, HFD rapidly recruits neutrophils into the skin, and neutrophils in challenged skin express high levels of Nlrp3 (ref. 8) and Il1b. Neutrophil depletion, genetic Nlrp3 deficiency and pharmacological NLRP3 inhibition each blunt the HFD-induced inflammatory amplification. These findings nominate a neutrophil-NLRP3-IL-1β axis that licences pathogenic IL-1R1+CD4+ T helper type 17 (TH17) cells9,10. After recovery, a chromatin-poised tissue-resident memory T cell population persists. Consequently, mice exposed to HFD at disease onset develop exaggerated inflammation upon recurrence, despite recovery and maintenance on LFD. Transient HFD similarly amplifies lung TH17 inflammation through neutrophil- and IL-1R1-dependent mechanisms. Together, these findings show that dietary state during a narrow temporal window can durably reprogram disease trajectory, suggesting that short-lived physiological states may become embedded in local immune memory11 when they coincide with tissue inflammation.",
+        "publication_types": [],
+        "doi": "10.1038/s41586-026-11181-4",
+        "doi_url": "https://doi.org/10.1038/s41586-026-11181-4",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42957863/",
+        "journal_id": "nature",
+        "journal_name": "Nature",
+        "report_id": "nature__20261016__20261115"
+      },
+      "ollama": {
+        "provider": "ollama",
+        "model": "qwen3:4b",
+        "status": "invalid_summary",
+        "response_text": "{\n  \"summary\": \"This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels comparable with chronic obesity. HFD outside this window or switching obese mice to low: HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. A chromatin-poised tissue-resident memory T cell population persists post-recovery, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet.\",\n  \"key_findings\": [\n    \"Transient high-fat diet exposure within a 4-day window at disease onset exacerbates skin inflammation to levels comparable with chronic obesity\",\n    \"HFD outside the 4-day window or switching obese mice to low-fat diet during this window blunts disease amplification\",\n    \"Neutrophil-mediated Nlrp3-Il1b signaling licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence\"\n  ],\n  \"scientific_significance\": \"The study demonstrates that short-lived dietary states during acute inflammation can durably reprogram immune memory, revealing a temporal window where transient metabolic conditions influence long-term tissue immune responses.\"\n}",
+        "parsed": {
+          "summary": "This study investigates whether brief dietary changes during acute inflammation influence long-term tissue immune memory. Using lean mice with type 17 skin inflammation, researchers found that a transient high-fat diet (HFD) exposure within a 4-day window at disease onset exacerbates inflammation to levels comparable with chronic obesity. HFD outside this window or switching obese mice to low: HFD outside this window or switching obese mice to low-fat diet during the window reduces disease severity. Mechanistically, HFD rapidly recruits neutrophils, which express Nlrp3 and Il1b, driving pathogenic TH17 cell activation. A chromatin-poised tissue-resident memory T cell population persists post-recovery, causing exaggerated inflammation upon recurrence despite subsequent low-fat diet.",
+          "key_findings": [
+            "Transient high-fat diet exposure within a 4-day window at disease onset exacerbates skin inflammation to levels comparable with chronic obesity",
+            "HFD outside the 4-day window or switching obese mice to low-fat diet during this window blunts disease amplification",
+            "Neutrophil-mediated Nlrp3-Il1b signaling licenses pathogenic TH17 cells, with persistent tissue-resident memory T cells causing exaggerated inflammation upon recurrence"
+          ],
+          "scientific_significance": "The study demonstrates that short-lived dietary states during acute inflammation can durably reprogram immune memory, revealing a temporal window where transient metabolic conditions influence long-term tissue immune responses."
+        },
+        "elapsed_seconds": 36.4937,
+        "input_tokens": 435,
+        "output_tokens": 301,
+        "thoughts_tokens": null,
+        "total_tokens": 736,
+        "model_eval_seconds": 25.909,
+        "error": "summary must contain 45–90 words; received 107.",
+        "quality_check": "failed",
+        "attempts": 2
+      }
+    }
+  ]
+}
